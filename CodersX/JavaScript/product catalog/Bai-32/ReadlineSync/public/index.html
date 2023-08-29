@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Management</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Student Management</h1>
+
+    <div id="dataContainer"></div>
+
+    <div id="inputContainer" style="display: none">
+      <input type="text" id="nameInput" placeholder="Name" />
+      <input type="number" id="ageInput" placeholder="Age" />
+      <select id="genderInput">
+        <option value="male" selected>Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option>
+      </select>
+      <button onclick="addData()">Add Data</button>
+      <p id="error" class="error"></p>
+    </div>
+
+    <div id="showDataContainer">
+      <div id="showDataButtons">
+        <button onclick="toggleInput()">Add Student</button>
+        <button onclick="showData()">Show Data</button>
+        <button onclick="saveData()">Save</button>
+      </div>
+      <table id="showDataTable">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="showDataItems"></tbody>
+      </table>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

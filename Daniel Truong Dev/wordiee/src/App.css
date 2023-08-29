@@ -1,0 +1,74 @@
+/* CSS Reset Style Boilerplate */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  /* Color pallette */
+  --color-green: #2cffba;
+  --color-button-hover: #00a06b;
+  --color-dark-green: #151924;
+  --color-white: #f9f9f9;
+  --color-light-blue: #6eb9e3;
+
+  /* Border radius */
+  --border-rounded-md: 8px;
+  --border-rounded: 14px;
+
+  /* Font style */
+  --font-sm: 0.75rem;
+  --font-smd: 1rem;
+  --font-md: 1.15rem;
+  --font-lg: 1.25rem;
+  --font-xlg: 2.15rem;
+  --font-xxlg: 3.5rem;
+
+  /* Font weight */
+  --font-medium: 400;
+  --font-semibold: 500;
+  --font-bold: 600;
+  --font-xbold: 700;
+
+  /* Font family */
+  --font-poppins: "Poppins", sans-serif;
+}
+
+.App {
+  padding-top: 2em;
+  height: 100vh;
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+}
+
+html,
+body {
+  overflow: hidden;
+  margin: 0;
+  min-height: 100vh;
+}
+body {
+  text-align: left;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  color: var(--color-light-blue);
+  background-color: var(--color-dark-green);
+  font-size: var(--font-md);
+  font-family: var(--font-poppins);
+}
+
+.board-container {
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin-top: 1.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* End  */

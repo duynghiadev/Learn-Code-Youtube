@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://unpkg.com/react@17/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  </head>
+  <body>
+    <!-- 
+      ******** Props ************
+
+      - React Elements:
+        - Sử dụng props giống như với attribute của thẻ HTML
+        - 2 props class, for => className, htmlFor
+        - Phải tuân theo quy ước có sẵn
+      - React Components:
+        - Sử dụng props giống như đối số cho Function
+        - Tự do đặt tên Props:
+          - Đặt theo camelCase
+          - Có thể bao gồm dấu gạch ngang (không nên dùng)
+      - Chú ý:
+       - Prop "key" là props đặt biệt
+       - Prop cơ bản là đối số của Component
+        => Prop có thể là bất cứ kiểu dữ liệu gì
+      - Sử dụng destructuring
+     -->
+    <div id="root"></div>
+    <script type="text/babel">
+      function PostItem(props) {
+        return (
+          <div className="post-item">
+            <img src={props.image} alt={props.title} />
+            <h2 className="post-title">{props.title}</h2>
+            <p className="post-desc">{props.description}</p>
+            <p className="post-published">{props.publishedAt}</p>
+          </div>
+        );
+      }
+
+      function App() {
+        return (
+          <div id="wrapper">
+            <PostItem
+              image="https://files.fullstack.edu.vn/f8-prod/blog_posts/3796/62a83eb1bb7d9.jpg"
+              title="Lộ trình học C# .NET Core(5, 6)"
+              description="13 ngày trước"
+              publishedAt="2 phút đọc"
+            />
+            <PostItem
+              image="https://files.fullstack.edu.vn/f8-prod/blog_posts/3796/62a83eb1bb7d9.jpg"
+              title="Lộ trình học ReactJS"
+              description="13 ngày trước"
+              publishedAt="2 phút đọc"
+            />
+            <PostItem
+              image="https://files.fullstack.edu.vn/f8-prod/blog_posts/3796/62a83eb1bb7d9.jpg"
+              title="Lộ trình học JavaScript"
+              description="13 ngày trước"
+              publishedAt="2 phút đọc"
+            />
+          </div>
+        );
+      }
+      ReactDOM.render(<App />, document.getElementById("root"));
+    </script>
+  </body>
+</html>

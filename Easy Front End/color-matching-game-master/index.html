@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color Matching Game | Pure Javascript Application</title>
+
+  <!-- Primary Meta Tags -->
+  <title>Color Matching Game | Pure Javascript Application</title>
+  <meta name="title" content="Color Matching Game | Pure Javascript Application">
+  <meta name="description" content="A good way to practice javascript by building this simple game.">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://color-matching-game.vercel.app/">
+  <meta property="og:title" content="Color Matching Game | Pure Javascript Application">
+  <meta property="og:description" content="A good way to practice javascript by building this simple game.">
+  <meta property="og:image" content="https://color-matching-game.vercel.app/images/thumbnail.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://color-matching-game.vercel.app/">
+  <meta property="twitter:title" content="Color Matching Game | Pure Javascript Application">
+  <meta property="twitter:description" content="A good way to practice javascript by building this simple game.">
+  <meta property="twitter:image" content="https://color-matching-game.vercel.app/images/thumbnail.png">
+
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/game.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+
+  <section class="color-background">
+    <div class="game">
+      <h1 class="game__title">Color Matching</h1>
+      <p class="game__timer"></p>
+      <div class="game__button-wrapper">
+        <button class="game__button">Play Again</button>
+      </div>
+
+      <div class="game__board">
+        <ul id="colorList" class="color-list">
+          <li>
+            <div class="overlay"></div>
+          </li>
+          <li>
+            <div class="overlay"></div>
+          </li>
+          <li>
+            <div class="overlay"></div>
+          </li>
+          <li>
+            <div class="overlay"></div>
+          </li>
+          <li>
+            <div class="overlay"></div>
+          </li>
+          <li>
+            <div class="overlay"></div>
+          </li>
+          <li>
+            <div class="overlay"></div>
+          </li>
+          <li>
+            <div class="overlay"></div>
+          </li>
+          <li>
+            <div class="overlay"></div>
+          </li>
+          <li>
+            <div class="overlay"></div>
+          </li>
+          <li>
+            <div class="overlay"></div>
+          </li>
+          <li>
+            <div class="overlay"></div>
+          </li>
+          <li>
+            <div class="overlay"></div>
+          </li>
+          <li>
+            <div class="overlay"></div>
+          </li>
+          <li>
+            <div class="overlay"></div>
+          </li>
+          <li>
+            <div class="overlay"></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <footer>
+      Created by <a href="https://youtube.com/easyfrontend?sub_confirmation=1" target="_blank"
+        rel="noreferrer noopener">Easy Frontend</a> with ❤. Show me on <a
+        href="https://github.com/paulnguyen-mn/color-matching-game" target="_blank" rel="noreferrer noopener">Github</a>
+    </footer>
+  </section>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/randomcolor/0.6.1/randomColor.min.js"
+    integrity="sha512-vPeZ7JCboHcfpqSx5ZD+/jpEhS4JpXxfz9orSvAPPj0EKUVShU2tgy7XkU+oujBJKnWmu4hU7r9MMQNWPfXsYw=="
+    crossorigin="anonymous"></script>
+  <script type="module" src="./js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cat and Mouse</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="catInfo">
+      <h2>Cat Info</h2>
+      <p>Name: <span id="catName"></span></p>
+      <p>Stomach: <span id="catStomach"></span></p>
+    </div>
+
+    <div id="mouseInput">
+      <h2>Mouse Input</h2>
+      <input type="text" id="mouseName" placeholder="Enter mouse name" />
+      <button id="addMouseBtn" onclick="addMouse()">Add Mouse</button>
+      <p id="errorText" class="error-text"></p>
+    </div>
+
+    <button onclick="displayStomach()">Display Stomach</button>
+
+    <div id="stomachInfo">
+      <h2>Stomach Info</h2>
+      <ul id="stomachList"></ul>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

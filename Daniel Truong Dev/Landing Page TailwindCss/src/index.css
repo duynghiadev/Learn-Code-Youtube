@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .check-content {
+    @apply mb-[51px] flex gap-8 ml-[70px] mr-[29px] items-center md:mx-0;
+  }
+  .btn-hover {
+    @apply hover:text-purple-500 transition-all duration-200 cursor-pointer;
+  }
+}

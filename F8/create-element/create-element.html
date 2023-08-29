@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 
+    1. document.createElement()
+    2. document.body.appendChild();
+    3. console.dir();
+    4. innerText, id, className, style
+   -->
+    <div id="root"></div>
+    <script>
+      const root = document.getElementById("root");
+      const h1 = document.createElement("h1");
+
+      h1.innerText = "Hello guys !!";
+      h1.id = "heading";
+      h1.className = "test class-2";
+      Object.assign(h1.style, {
+        color: "blue",
+        backgroundColor: "#333",
+      });
+      console.log(h1);
+
+      // document.body.appendChild(h1);
+      root.appendChild(h1);
+    </script>
+  </body>
+</html>

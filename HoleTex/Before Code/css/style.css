@@ -1,0 +1,68 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.card {
+  width: 250px;
+  margin: 20px auto;
+  border-radius: 5px;
+  background-color: white;
+  padding: 10px;
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.4);
+}
+
+.user-info {
+  display: flex;
+  margin-bottom: 5px;
+}
+
+.name {
+  margin-left: 5px;
+  width: 100%;
+}
+
+.loading .logo,
+.loading .content,
+.loading .name {
+  position: relative;
+  overflow: hidden;
+}
+
+.loading .logo::before,
+.loading .name::before,
+.loading .content::before {
+  background-color: #dddddd;
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.loading .logo::after,
+.loading .name::after,
+.loading .content::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to right, #dddddd, #ffffff 50%, #dddddd);
+  animation: skeletonLoading 2s infinite alternate;
+}
+
+@keyframes skeletonLoading {
+  from {
+    left: -50%;
+  }
+  to {
+    left: 50%;
+  }
+}

@@ -1,0 +1,35 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-image: linear-gradient(145deg, #a4508b, #5f0a87);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	overflow: hidden;
+}
+
+.box {
+	height: 180px;
+	width: 180px;
+	margin: 10px;
+	border: solid 3px black;
+	background: white;
+	overflow: hidden;
+}
+
+.draggable {
+	background-image: url('bg.jpeg');
+	object-fit: cover;
+	object-position: center;
+	width: 100%;
+	height: 100%;
+}
+
+.dragging {
+	border: solid 5px #ccc;
+}

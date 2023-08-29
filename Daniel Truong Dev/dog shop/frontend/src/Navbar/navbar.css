@@ -1,0 +1,16 @@
+.navbar {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+}
+
+.navbar > * {
+  margin-left: 2rem;
+  color: #9c6644;
+  text-decoration: none;
+  transition: 200ms ease-in-out;
+}
+
+.navbar > *:hover {
+  color: #e76f51;
+}

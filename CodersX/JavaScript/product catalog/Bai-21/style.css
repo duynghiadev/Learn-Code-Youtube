@@ -1,0 +1,48 @@
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  margin-top: 20px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+.filter {
+  margin-bottom: 20px;
+}
+
+.category {
+  background-color: #f2f2f2;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.total-value p {
+  font-weight: bold;
+  font-size: 18px;
+  color: #007bff; /* Màu xanh dương */
+}
+
+.high-value-products ul li {
+  color: red;
+  font-weight: bold;
+}
+
+.filtered-products ul li {
+  color: green;
+}

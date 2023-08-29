@@ -1,0 +1,124 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+h1 {
+  margin-top: 50px;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+/* Thiết lập màu sắc cho ô input */
+input[type="text"],
+input[type="number"],
+select {
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-size: 16px;
+  color: #333;
+}
+
+/* Thiết lập màu sắc cho nút */
+button {
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 16px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Thiết lập màu sắc cho thông báo lỗi */
+.error {
+  color: #ff0000;
+}
+
+/* Thiết lập kiểu dáng cho bảng */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table th,
+table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+table th {
+  background-color: #f2f2f2;
+}
+
+/* Thiết lập kiểu dáng cho container chứa dữ liệu */
+#dataContainer {
+  margin-bottom: 20px;
+}
+
+/* Thiết lập kiểu dáng cho container chứa ô input */
+#inputContainer {
+  margin-bottom: 20px;
+}
+
+/* Thiết lập kiểu dáng cho container chứa nút */
+#showDataButtons {
+  margin-bottom: 10px;
+}
+
+#dataContainer {
+  text-align: left;
+  margin-top: 30px;
+  padding: 0 20px;
+}
+
+.error {
+  color: red;
+}
+
+#dataContainer {
+  margin-top: 20px;
+}
+
+#dataContainer p {
+  margin-bottom: 5px;
+  color: blue;
+}
+
+/* Hiển thị dữ liệu */
+#showDataTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+#showDataTable th,
+#showDataTable td {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+/* Nút xoá */
+.deleteButton {
+  background-color: #f44336;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.deleteButton:hover {
+  background-color: #d32f2f;
+}
