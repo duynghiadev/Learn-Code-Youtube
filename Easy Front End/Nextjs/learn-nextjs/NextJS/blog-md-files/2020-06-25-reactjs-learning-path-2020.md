@@ -13,7 +13,7 @@ Rất nhiều bạn thắc mắc không biết là học ReactJS là học nhữ
 <!-- truncate-->
 
 - **Đôi tượng**: mới bắt đầu học ReactJS mà không biết học những gì.
-- **Yêu cầu kiến thức**:
+- **Yêu cầu kiến thức**: 
   - Javascript cơ bản: [https://javascript.info/](https://javascript.info/)
   - ES6 syntax: [http://es6-features.org/#Constants](http://es6-features.org/#Constants)
   - Git cơ bản: Học cách quản lý source code
@@ -26,11 +26,11 @@ Nếu như mọi người chưa biết Javascript là gì, thì mình khuyên c�
 
 **MỘT VÀI NOTES:**
 
-- ReactJS là `thư viện` để xây dựng UI component, chứ không phải `framework` nha.
+- ReactJS là `thư viện` để xây dựng UI component, chứ không phải `framework` nha. 
 - `Lib (thư viện)` vs `framework` khác nhau cái gì? Các bạn chịu khó google để biết thêm nha.
-- Version hiện tại của ReactJS là bao nhiêu?
+- Version hiện tại của ReactJS là bao nhiêu? 
 - ReactJS là của ai hay tổ chức nào?
-- Tại sao phải cần ReactJS, sao không viết thuần javascript?
+- Tại sao phải cần ReactJS, sao không viết thuần javascript? 
 - Sẽ hơi khó hiểu khi mới đầu tiếp cận ReactJS, nhưng không sao, cứ đi tiếp nha hehee
 
 ### 0. Setup môi trường làm việc
@@ -58,16 +58,15 @@ Giờ học code ReactJS thôi hehe 😎
 
 - Đi hết phần Main Concepts của ReactJS, bắt đầu ở đây: [https://reactjs.org/docs/hello-world.html](https://reactjs.org/docs/hello-world.html)
 
-> **Lưu ý**:
->
+> **Lưu ý**: 
 > - Không vội vàng, đừng đi nhanh mà không hiểu gì hết.
 > - Đi từng mục một, đi chậm, học tới đâu, lấy code bỏ vào VSCode chạy lên thử coi nó ra như thế nào để hiêu nó.
 > - Nếu gặp khó khăn, không hiểu topic nào thì tìm thêm blog, videos về chủ đề đó mà coi thêm.
 
-- Sau khi đi hết phần kiến thức này, hãy tự làm một website đơn giản mà bạn thích:
+- Sau khi đi hết phần kiến thức này, hãy tự làm một website đơn giản mà bạn thích: 
   - `Todo App`: Thêm, Xoá, Sửa và hiển thị ra danh sách TODOS
   - `Simple Cart`: Hiển thị danh sách sản phẩm, thêm vào giỏ hàng và tính tiền.
-  - ...
+  - ... 
 
 > Mục đích cho phần này để đảm bảo các bạn hiểu và vận dụng được kiến thức của ReactJS.
 
@@ -76,10 +75,10 @@ Giờ học code ReactJS thôi hehe 😎
 ### 2. Type checking
 
 - Đây là một nội dung OPTIONAL. Không có Type Checking, code của bạn vẫn chạy được bình thường.
-- Thỉnh thoảng bạn thấy code như vầy:
+- Thỉnh thoảng bạn thấy code như vầy: 
 
-```js
-import PropTypes from 'prop-types'
+```js 
+import PropTypes from 'prop-types';
 
 function Item() {
   // ...
@@ -87,10 +86,10 @@ function Item() {
 
 Item.propTypes = {
   data: PropTypes.object.isRequired,
-  isSpecial: PropTypes.bool
+  isSpecial: PropTypes.bool,
 }
 
-export default Item
+export default Item;
 ```
 
 - Để ý cái phần `Item.propTypes`, khúc này dù có hay không thì code của bạn vẫn chạy.
@@ -101,11 +100,13 @@ export default Item
 - Type Checking nó chỉ hoạt động khi dev, còn khi lên production nó không chạy nên không sợ bị ảnh hưởng tới performance.
 - Khi component của bạn dần lớn, sử dụng nhiều props, việc khai báo tập trung này giúp bạn có thể biết được, à component này đang sử dụng props gì. Nếu không có, bạn phải scan hết code của component mới biết nó đang dùng những props nào 😭
 
+
 > Link tham khảo: https://reactjs.org/docs/typechecking-with-proptypes.html#proptypes
+
 
 ### 3. Form
 
-Trong dự án thực tế, ít ai mà tự xử lý các vấn đề liên quan tới form, thay vào đó là sử dụng một thư viện có sẵn. Ở đây mình có một vài ứng cử viên:
+Trong dự án thực tế, ít ai mà tự xử lý các vấn đề liên quan tới form, thay vào đó là sử dụng một thư viện có sẵn. Ở đây mình có một vài ứng cử viên: 
 
 - `React Hook Form` (recommended): mới nhất.
 - `Formik`: phổ biến nhất.
@@ -113,7 +114,7 @@ Trong dự án thực tế, ít ai mà tự xử lý các vấn đề liên quan
 
 Bạn có thể chọn 1 trong 3 để học và áp dụng vào dự án của mình. Nhưng recommend là học `React Hook Form` hoặc `Formik` thôi.
 
-Khi làm việc với Form, bạn sẽ cần tới một schema validator để hỗ trợ bạn validate dữ liệu trong Form, 2 ứng cử viên cho vị trí này:
+Khi làm việc với Form, bạn sẽ cần tới một schema validator để hỗ trợ bạn validate dữ liệu trong Form, 2 ứng cử viên cho vị trí này: 
 
 - [Joi](https://hapi.dev/module/joi/api/)
 - [Yup](https://github.com/jquense/yup): được inspired từ Joi
@@ -121,7 +122,7 @@ Khi làm việc với Form, bạn sẽ cần tới một schema validator để 
 **Làm việc với Form, cần lưu ý điều gì?**
 
 - Làm sao set được giá trị khởi tạo cho form.
-- Tổ chức Form như thế nào, bạn nên phân biệt rõ 3 levels
+- Tổ chức Form như thế nào, bạn nên phân biệt rõ 3 levels 
   - Thứ nhất là `Form`: Thư viện quản lý Form như `Formik` hay `react-hook-form`
   - Thứ hai là `Form Field`: cầu nối để bind giá trị của `form` vào `ui control`.
   - Thứ ba là `UI Control`: cái này là những control của thư viện Bootstrap, Material Design hay AntDesign.
@@ -129,7 +130,7 @@ Khi làm việc với Form, bạn sẽ cần tới một schema validator để 
 
 ### 4. Routing
 
-- Cái này thì bạn sẽ dùng package `react-router-dom` nè hehe
+- Cái này thì bạn sẽ dùng package `react-router-dom` nè hehe 
 - Tài liệu tham khảo đây: [https://reacttraining.com/react-router/web/guides/quick-start](https://reacttraining.com/react-router/web/guides/quick-start)
 - Setup routing trong project đơn giản: [https://youtu.be/mAhUJdf0Kug](https://youtu.be/mAhUJdf0Kug)
 
@@ -139,10 +140,11 @@ Một số điều bạn cần lưu ý khi làm việc với routing:
 - Tìm hiểu về Router, Switch, Route và Redirect.
 - Setup nested routing như thế nào? Đây chính là cách tạo ra layout chung ở component cha, và tuỳ vào routing con sẽ render component con tương ứng.
 
+
 ### 5. API
 
 - API là cách thức để client và server có thể giao tiếp với nhau.
-- Mình có một vài lựa chọn để thực hiện gọi một API:
+- Mình có một vài lựa chọn để thực hiện gọi một API: 
   - [XHR](https://javascript.info/xmlhttprequest): cái này hơi cũ cũ òi, viết dạng callback.
   - [Fetch](https://javascript.info/fetch): cái này có sẵn trong trình duyệt, viết dạng Promise.
   - [Axios](https://github.com/axios/axios) (recommended): cái này nên dùng trong project thực tế nè.
@@ -161,35 +163,35 @@ api
 |__ ... cứ mỗi một resource sẽ có một file API tương ứng 😉
 ```
 
-- Sắp tới sẽ có video giải thích về API module này. Mình bổ sung link sau hen hihi
+- Sắp tới sẽ có video giải thích về API module này. Mình bổ sung link sau hen hihi 
 
 ### 6. Hooks
 
 - Ông thần này ra đời giúp Functional component mạnh lên hẵn, thẩm chí vượt mặt cả Class component.
 - Mình có làm 1 series về hooks, đơn giản, dễ hiểu và khá là chi tiết, bạn có thể tham khảo ở đây hen [https://www.youtube.com/playlist?list=PLeS7aZkL6GOsHNoyeEpeL8B1PnbKoQD9m](https://www.youtube.com/playlist?list=PLeS7aZkL6GOsHNoyeEpeL8B1PnbKoQD9m)
 
+
 ### 7. State management
 
-Lưu ý khi có state cần đặt câu hỏi:
-
-- Nếu state này chỉ dùng cho 1 component hiện tại --> dùng component state.
+Lưu ý khi có state cần đặt câu hỏi: 
+- Nếu state này chỉ dùng cho 1 component hiện tại --> dùng component state. 
 - Nếu state này nó share cho nhiều components khác nhau --> cần thư viện quản lý state.
 
 Hiện tại thì [Redux](https://redux.js.org/introduction/getting-started) chiếm lợi thế trên thị trường òi khi nhắc tới state management.
-
 - Giờ có [Redux Toolkit](https://redux-toolkit.js.org/) giúp mình sử dụng Redux đơn giản hơn, code ít hơn và được handle bên dưới nhiều hơn.
 - Khuyến khích các bạn nên học Redux cơ bản trước, rồi hãy tới Redux Toolkit nhé.
 
 Nhưng gần đây, Facebook có đang thử nghiệm một thư viện để quản lý state cho ReactJS, đó là [Recoil](https://recoiljs.org/).
-
 - Lưu ý vẫn còn đang thử nghiệm, nên hãy khoan apply cho production.
 - Mình có làm 1 vài videos về Recoil, nếu quan tâm bạn có thể tham khảo hen.
 
-## Một vài topic nâng cao
+
+## Một vài topic nâng cao 
 
 ### 1. HOC
 
 - Tham khảo [https://reactjs.org/docs/higher-order-components.html](https://reactjs.org/docs/higher-order-components.html)
+
 
 ### 2. Authentication
 
@@ -204,18 +206,18 @@ Các bạn chịu khó đọc docs để hiểu nó là gì nha.
 
 - Cần hiểu được 1 cái flow đăng nhập, đăng ký diễn ra như thế nào.
 - Token là gì? Tại sao lại cần quản lý nó ? Không có token có được không?
-- Nhập username, password lên server có bị lộ thông tin giữa đường không?
+- Nhập username, password lên server có bị lộ thông tin giữa đường không? 
 - Nên lưu token trên website ở đâu?
-- Lỡ token mà bị expired thì phải xử lý thế nào?
+- Lỡ token mà bị expired thì phải xử lý thế nào? 
 - ...
 
 ### 3. I18n
 
 - Các bạn search Google xem i18n là viết tắt của cái gì nha.
 - Cái này được dùng cho việc hỗ trợ đa ngôn ngữ, khi click vào ngôn ngữ tương ứng thì website được đổi ngôn ngữ tức thì.
-- Package được sử dụng là [React i18 next](https://react.i18next.com/)
+- Package được sử dụng là [React i18 next](https://react.i18next.com/) 
 - Ông thần này sử dụng được cho cả Class component và Function component (có hooks)
-- Có phải project nào cũng hỗ trợ đa ngôn ngữ không? Cũng tuỳ project, nên xác định ngay từ đầu, nếu có làm đa ngôn ngữ thì setup từ đầu luôn cho đỡ khổ.
+- Có phải project nào cũng hỗ trợ đa ngôn ngữ không? Cũng tuỳ project, nên xác định ngay từ đầu, nếu có làm đa ngôn ngữ thì setup từ đầu luôn cho đỡ khổ. 
 
 ### 4. Static sites
 
@@ -227,14 +229,16 @@ Các bạn chịu khó đọc docs để hiểu nó là gì nha.
 
 Làm thế nào để deploy website lên server để share cho người khác xem thành quả cày cuốc của mình.
 
-- Deploy siêu đơn giản giống mình trong video này:
+- Deploy siêu đơn giản giống mình trong video này: 
 - Tham khảo full options tại đây: [https://create-react-app.dev/docs/deployment/](https://create-react-app.dev/docs/deployment/)
+
 
 ## Nguồn tài liệu tham khảo
 
-Rất nhiều link tham khảo về các thư viện làm việc về ReactJS được tổng hợp ở đây: [https://github.com/enaqx/awesome-react](https://github.com/enaqx/awesome-react). Có gì mọi người tham khảo thêm hen. 😉
+Rất nhiều link tham khảo về các thư viện làm việc về ReactJS được tổng hợp ở đây: [https://github.com/enaqx/awesome-react](https://github.com/enaqx/awesome-react). Có gì mọi người tham khảo thêm hen. 😉 
 
 > CẢNH BÁO: Lạc lối do nhiều links tham khảo quá 🤣
 
 Những thông tin mình ghi nhận trong bài này là từ kinh nghiệm cá nhân, nên sẽ có phần thiếu sót, mọi người hãy cùng bổ sung, đóng góp cho nó hoàn chỉnh nhé. <br/>
 Cảm ơn mọi người rất nhiều nè ❤️
+

@@ -25,14 +25,13 @@ git checkout develop # switch sang nhánh develop
 git pull # lấy code mới nhất về
 ```
 
-## 2. Làm task trực tiếp trên nhánh develop
-
+## 2. Làm task trực tiếp trên nhánh develop 
 CODING CHANGES 😎
 <br />Sau khi code xong, nhờ review lại những thay đổi của mình, review cẩn thận, từ từ.
 <br />Review về coding convention.
 <br />Review về console log đã xoá chưa?
 <br />Review về imports (có dư thừa gì ko?)
-<br />Review về eslints
+<br />Review về eslints 
 <br />Review xem chỗ nào logic phức tạp nên add thêm comment vào.
 <br />Review xem chỗ nào code nhiều if/else quá thì refactor lại.
 <br />...
@@ -81,17 +80,17 @@ git commit -m "[123] Add address ui
 
 > 📝Lưu ý chỗ chữ màu vàng
 > <br/> - Dòng đầu tiên là title
-> <br/> - Dòng thứ 2 là empty ( BẮT BUỘC )
+> <br/> - Dòng thứ 2 là empty ( BẮT BUỘC ) 
 > <br/> - Dòng thứ 3 trở đi là dòng mô tả thêm về Pull Request của mình.
 > <br/> Convention này nó giúp bạn tự động điền title, description vào ô tương ứng trên Github, Gitlab, Bitbucket, ...
 
 ## 7. Push code lên remote repository (Github, Gitlab, Bitbucket, ...)
 
 ```sh
-git push -u origin feature/123-address-ui
+git push -u origin feature/123-address-ui 
 ```
 
-## Cuối cùng, lên remote repo tạo PR/MR vào nhánh develop. Xong nhờ lead review thôi hehe
+## Cuối cùng, lên remote repo tạo PR/MR vào nhánh develop. Xong nhờ lead review thôi hehe 
 
 **📝LƯU Ý**
 
