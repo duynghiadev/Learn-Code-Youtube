@@ -1,0 +1,120 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+body {
+  line-height: 1.5;
+}
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+input,
+button,
+textarea,
+select {
+  outline: none;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #04aa6d;
+  color: white;
+}
+
+.create-user-container {
+  padding: 15px;
+  text-align: center;
+}
+
+.create-user-container label {
+  display: block;
+}
+
+.create-user-container .btn-submit {
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+.update-user-container {
+  padding: 15px;
+  text-align: center;
+}
+
+.update-user-container label {
+  display: block;
+  margin-top: 10px;
+}
+
+form > button {
+  cursor: pointer;
+  padding: 3px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.btn-save {
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+.btn-detail {
+  text-decoration: none;
+  border-radius: 3px;
+  padding: 3px;
+  display: block;
+}
+
+.upload-file-container {
+  padding: 15px;
+}
+
+.upload-file-container label {
+  display: block;
+}
+
+hr {
+  border-top: 3px solid #eee !important;
+}

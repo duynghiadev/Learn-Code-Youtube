@@ -1,0 +1,5 @@
+###
+GET https://api.covid19api.com/
+
+###
+GET https://api.covid19api.com/countries
