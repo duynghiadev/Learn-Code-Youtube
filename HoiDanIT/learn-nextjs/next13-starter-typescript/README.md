@@ -1,5 +1,7 @@
 ## Các bước cần làm sau khi clone source code:
 
+### ❌ Lưu ý: Trong khoá học này mình học NextJS version 13 (thay vì 12 và 11 đã cũ). Và đọc docs thì chọn vào `Using App Router`
+
 ### 1. Cài đặt thư viện: npm i
 
 ### 2. Chạy project: npm run dev
