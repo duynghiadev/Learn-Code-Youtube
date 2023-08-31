@@ -10,7 +10,6 @@ export default function Home() {
     const fetchData = async () => {
       const res = await fetch('http://localhost:8000/blogs')
       const data = await res.json()
-      console.log('>>> check res: ', data)
     }
     fetchData()
   }, [])
