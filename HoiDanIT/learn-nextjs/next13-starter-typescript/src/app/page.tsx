@@ -14,6 +14,10 @@ export default function Home() {
     revalidateOnReconnect: false
   })
 
+  if (!data) {
+    return <div>Loading...</div>
+  }
+
   return (
     <div>
       <div>{data?.length}</div>
@@ -30,7 +34,7 @@ export default function Home() {
           <Link href={'/tiktok'}>Tiktok</Link>
         </li>
       </ul>
-      <AppTable />
+      <AppTable blogs={data} />
     </div>
   )
 }
