@@ -1,5 +1,22 @@
+'use client'
+
+import { useRouter } from 'next/navigation'
+
 const Facebook = () => {
-  return <div>Facebook page</div>
+  const router = useRouter()
+
+  const handleBtn = () => {
+    router.push('/')
+  }
+
+  return (
+    <div>
+      Facebook page
+      <div>
+        <button onClick={() => handleBtn()}>Back Home</button>
+      </div>
+    </div>
+  )
 }
 
 export default Facebook
