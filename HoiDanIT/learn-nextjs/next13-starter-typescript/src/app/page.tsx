@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import x from '@/styles/app.module.css'
 import y from '@/styles/hoidanit.module.css'
+import AppTable from '@/components/app.table'
 
 export default function Home() {
   return (
@@ -12,12 +13,13 @@ export default function Home() {
           </Link>
         </li>
         <li style={{ margin: '20px 0' }}>
-          <Link href={'/youtube'}>Youtube</Link>
+          <a href='/youtube'> Youtube</a>
         </li>
         <li>
-          <Link href={'/tiktok'}>Tiktok</Link>
+          <a href='/tiktok'>Tiktok</a>
         </li>
       </ul>
+      <AppTable />
     </div>
   )
 }
