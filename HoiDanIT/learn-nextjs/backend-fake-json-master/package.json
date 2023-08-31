@@ -1,0 +1,22 @@
+{
+  "name": "fake-backend",
+  "version": "1.0.0",
+  "description": "fake backend for series nextjs basic",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "json-server --watch db.json",
+    "dev": "json-server --watch db.json"
+  },
+  "keywords": [
+    "fake",
+    "backend",
+    "json",
+    "server"
+  ],
+  "author": "Hỏi Dân IT",
+  "license": "ISC",
+  "dependencies": {
+    "json-server": "0.17.3"
+  }
+}
