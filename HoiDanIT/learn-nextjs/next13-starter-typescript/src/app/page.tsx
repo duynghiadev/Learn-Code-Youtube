@@ -34,7 +34,7 @@ export default function Home() {
           <Link href={'/tiktok'}>Tiktok</Link>
         </li>
       </ul>
-      <AppTable blogs={data} />
+      <AppTable blogs={data?.sort((a: any, b: any) => b.id - a.id)} />
     </div>
   )
 }
