@@ -19,7 +19,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang='en'>
       <body className={inter.className}>
         <AppHeader />
-        <Container>{children}</Container>
+        <Container style={{ minHeight: 'calc(100vh - 106px)' }}>{children}</Container>
 
         <AppFooter />
         <ToastContainer
