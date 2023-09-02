@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Đếm ngược đến Tết Nguyên Đán 2019</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="description"
+      content="Còn bao nhiêu ngày nữa đến Tết Nguyên Đán Kỷ Hợi 2019?"
+    />
+    <meta property="og:title" content="Đếm ngược đến Tết" />
+    <meta
+      property="og:description"
+      content="Còn bao nhiêu ngày nữa đến Tết Nguyên Đán Kỷ Hợi 2019?"
+    />
+    <meta property="og:url" content="https://www.vantuanblog.com/" />
+    <meta property="og:site_name" content="Sắp Tết" />
+    <meta property="og:image" content="saptet.com.png" />
+    <script src="jquery-3.2.1.min.js"></script>
+    <script src="js.js"></script>
+    <style type="text/css">
+      html,body,div,span,h1,h2 {
+          padding: 0;
+          border: 0;
+          margin: 0;
+          background: transparent;
+          font-size: 100%;
+          font-weight: inherit;
+          vertical-align: baseline;
+      }
+
+      .clearfix:after {
+          content: "\00A0";
+          display: block;
+          clear: both;
+          visibility: hidden;
+          line-height: 0;
+          height: 0;
+      }
+
+      html[xmlns] .clearfix {
+          display: block;
+      }
+
+      * html .clearfix {
+          height: 1%;
+      }
+
+      html {
+          height: 100%;
+          background: radial-gradient(ellipse at bottom, #e82219 10%, #33201a 100%);
+          overflow: hidden;
+          text-align: center;
+      }
+
+      body {
+          font-size: 1.6em;
+          background: transparent;
+          color: #ffffff;
+          font-family: 'Dancing Script',Helvetica,Arial,sans-serif;
+      }
+
+      #topbar {
+          background-color: #000;
+          padding: 5px 0;
+      }
+
+      #main {
+          max-width: 1100px;
+          margin: auto;
+          margin-top: 5%;
+      }
+
+      .colorlight {
+          text-shadow: 0 0 10px #efe81d,0 0 20px #efe81d,0 0 30px #efe81d,0 0 40px #f80f1f,0 0 70px #f80f1f,0 0 80px #f80f1f,0 0 100px #f80f1f,0 0 150px #f80f1f;
+      }
+
+      h1 {
+          font-size: 3em;
+          margin: .35em 0 0;
+      }
+
+      h2 {
+          margin: 0;
+      }
+
+      .clock {
+          float: left;
+          overflow: hidden;
+          background-color: #fff;
+          color: #222;
+          border-radius: 30%;
+          position: relative;
+          width: 20%;
+          height: 0;
+          padding-bottom: 20%;
+          margin: 3% 0 3% 4%;
+      }
+
+      .clock .num {
+          font-size: 350%;
+          font-weight: 700;
+          height: 0;
+          line-height: 190%;
+      }
+
+      .clock .text {
+          font-size: 130%;
+          text-transform: uppercase;
+          background-color: #eee;
+          position: absolute;
+          bottom: 0;
+          width: 100%;
+          line-height: 180%;
+      }
+
+      .clock.tet {
+          background-color: #f6361e;
+      }
+
+      .clock.tet .text {
+          background-color: #d00120;
+      }
+
+      #taitro {
+          margin-top: 3.4em;
+      }
+
+      #taitro a {
+          color: #f7e158;
+          text-decoration: none;
+          font-size: 1.5em;
+      }
+
+      #footer {
+          position: absolute;
+          bottom: 20px;
+          width: 100%;
+      }
+
+      @media (max-width: 767px) {
+          body {
+              font-size:14px;
+          }
+
+          h2 {
+              font-size: 1.6em;
+          }
+
+          @media (max-width: 480px) {
+              .clock {
+                  width:35%;
+                  padding-bottom: 35%;
+                  margin: 5% 0 0 10%;
+              }
+
+              h1 {
+                  margin-top: .55em;
+              }
+          }
+
+          @media only screen and (max-width: 767px) and (orientation: landscape) {
+              #main {
+                  margin-top:1%;
+              }
+
+              h1 {
+                  margin-top: 0;
+              }
+          }
+    </style>
+    <link
+      href="https://fonts.googleapis.com/css?family=Dancing+Script:400,700&amp;subset=vietnamese"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-NT7TLWH"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <div id="main">
+      <h2 id="tetornot" class="">Sắp Tết rồi!!!</h2>
+      <div class="clearfix">
+        <div class="clock">
+          <div id="days" class="num">&nbsp;</div>
+          <div id="days-text" class="text">Ngày</div>
+        </div>
+        <div class="clock">
+          <div id="hours" class="num">&nbsp;</div>
+          <div id="hours-text" class="text">Giờ</div>
+        </div>
+        <div class="clock">
+          <div id="mins" class="num">&nbsp;</div>
+          <div id="mins-text" class="text">Phút</div>
+        </div>
+        <div class="clock">
+          <div id="secs" class="num">&nbsp;</div>
+          <div id="secs-text" class="text">Giây</div>
+        </div>
+      </div>
+      <!---h1 id="tet" class=""></h1---->
+      <div id="taitro">
+        <!--a href="https://www.duynghiablog.com/" target="_blank">DuyNghia Blog</a-->
+        <a href="https://nam.name.vn/" target="_blank">
+          Đếm ngược<br />
+          Tết Nguyên Đán <span id="tentet">&nbsp;</span><br />Duy Nghĩa Blog
+        </a>
+      </div>
+    </div>
+    <iframe
+      src="https://www.nhaccuatui.com/lh/background/6DqYD1PatM8q"
+      width="1"
+      height="1"
+      frameborder="0"
+      allowfullscreen
+      allow="autoplay"
+    ></iframe>
+  </body>
+</html>

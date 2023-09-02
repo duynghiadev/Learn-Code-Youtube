@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Task Management App - Claymorphism</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="container">
+  <div class="screen-1 raised">
+    <div class="cs-name">
+      <span>John Doe</span>
+      <span class="material-icons bell">
+        notifications
+      </span>
+    </div>
+
+    <div class="cs-search">
+      <input type="search" placeholder="Search ...">
+      <span class="material-icons search-icon">
+        search
+      </span>
+    </div>
+
+    <div class="cs-calendar clay">
+      <div class="month-year-controls">
+        <div class="arrows">
+          <span class="material-icons chevron-left">
+            chevron_left
+          </span>
+          <span class="material-icons chevron-right">
+            chevron_right
+          </span>
+        </div>
+        <div class="month-year">March 2022</div>
+
+      </div>
+      <div class="month-table">
+        <span class="days">Su</span>
+        <span class="days">Mo</span>
+        <span class="days">Tu</span>
+        <span class="days">We</span>
+        <span class="days">Th</span>
+        <span class="days">Fr</span>
+        <span class="days">Sa</span>
+        <span class="off">27</span>
+        <span class="off">28</span>
+        <span>01</span>
+        <span>02</span>
+        <span>03</span>
+        <span>04</span>
+        <span>05</span>
+        <span>06</span>
+        <span>07</span>
+        <span>08</span>
+        <span>09</span>
+        <span>10</span>
+        <span>11</span>
+        <span>12</span>
+        <span>13</span>
+        <span>14</span>
+        <span>15</span>
+        <span>16</span>
+        <span>17</span>
+        <span class="today">18</span>
+        <span>19</span>
+        <span>20</span>
+        <span>21</span>
+        <span>22</span>
+        <span>23</span>
+        <span>24</span>
+        <span>25</span>
+        <span>26</span>
+        <span>27</span>
+        <span>28</span>
+        <span>29</span>
+        <span>30</span>
+        <span>31</span>
+        <span class="off">1</span>
+        <span class="off">2</span>
+      </div>
+    </div>
+
+    <div class="cs-footer">
+      <span class="material-icons btn-home">
+        home
+      </span>
+
+      <span class="material-icons btn-cart">
+        calendar_month
+      </span>
+
+      <span class="material-icons btn-add clay">
+        add
+      </span>
+    </div>
+
+    <div class="cs-activities">
+      <div class="cs-name">
+        <span>Activities</span>
+        <span class="see-all">
+          See all
+        </span>
+      </div>
+      <menu class="activities-list">
+        <li class="item-category work">
+          <span class="material-icons folder">
+            folder
+          </span>
+          <span class="text">
+            Work
+          </span>
+        </li>
+        <li class="item-category leisure not-active">
+          <span class="material-icons-outlined">
+            radio
+          </span>
+          <span class="text">
+            Leisure
+          </span>
+        </li>
+        <li class="item-category education not-active">
+          <span class="material-icons-outlined">
+            edit
+          </span>
+          <span class="text">
+            Education
+          </span>
+        </li>
+      </menu>
+    </div>
+
+    <div class="cs-activities chores">
+      <div class="cs-name">
+        <span>Chores</span>
+        <span class="see-all">
+          See all
+        </span>
+      </div>
+      <menu class="activities-list">
+        <li class="item-category work home">
+          <span class="text">
+            Home
+          </span>
+        </li>
+        <li class="item-category leisure not-active">
+          <span class="material-icons-outlined">
+            radio
+          </span>
+          <span class="text">
+            Work
+          </span>
+        </li>
+        <li class="item-category education not-active">
+          <span class="material-icons">
+            folder
+          </span>
+          <span class="text">
+            Work
+          </span>
+        </li>
+      </menu>
+    </div>
+
+  </div>
+  <div class="screen-2 raised">
+    <div class="top">
+      <div class="bubbles">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+      </div>
+
+    </div>
+    <div class="bottom">
+      <div class="nav">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot active"></div>
+      </div>
+      <h1 class="title">Plan and manage your day</h1>
+      <p>Create and track daily tasks on your smartphone</p>
+      <div class="call-to-action">
+        <button class="clay">Get started</button>
+      </div>
+    </div>
+
+  </div>
+  <div class="screen-3 raised">
+    <div class="cs-name date flex-center">
+      <span class="num">18</span>
+      <div class="day-details">
+        <div class="date-day">Fri</div>
+        <div class="date-mo-year">Mar 2022</s>
+        </div>
+        <span class="material-icons bell">
+          apps
+        </span>
+      </div>
+      <!--day details -->
+
+    </div> <!-- cs-name -->
+
+    <div class="your-plans flex-center">
+      <span class="title">Your plans</span>
+      <button class="clay flatter flex-center">This week
+        <span class="material-icons expand">
+          expand_more
+        </span>
+      </button>
+    </div> <!-- your-plans -->
+
+    <div class="timeline flex-center">
+
+      <table>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr class="days">
+          <td>Su</td>
+          <td>Mo</td>
+          <td>Tu</td>
+          <td>We</td>
+          <td>Th</td>
+          <td>Fr</td>
+          <td>Sa</td>
+        </tr>
+      </table>
+      <div class="bars">
+        <div class="bar extra-flat flex-center">Work</div>
+        <div class="bar extra-flat flex-center">Design</div>
+        <div class="bar extra-flat "></div>
+        <div class="bar extra-flat flex-center">Chores</div>
+        <div class="bar extra-flat flex-center">Sports</div>
+        <div class="bar extra-flat"></div>
+        <div class="bar extra-flat flex-center">Sports</div>
+      </div>
+      <div class="cut-off flex-center">
+        <div class="dot"></div>
+      </div>
+    </div>
+    <!---timeline -->
+
+    <div class="status flex-center">
+      <div class="text">
+        <div class="title">You are doing great</div>
+        <div class="description">You have completed all weekly plans</div>
+      </div>
+      <div class="arrow flex-center">
+        <span class="material-icons">
+          chevron_right
+        </span>
+      </div>
+    </div> <!-- status -->
+
+    <div class="cs-name flex-center today-plans-title">
+      <span>Today plans</span>
+      <span class="see-all">
+        See all
+      </span>
+    </div> <!-- today plans -->
+
+    <div class="today-plans flex-center">
+      <div class="item flex-center">
+        <span class="material-icons item-icon">
+          folder
+        </span>
+        <div class="description">
+          Meeting with dev team/ app improvements
+        </div>
+
+        <input type="radio">
+      </div>
+      <div class="info flex-center">
+        <div class="date">
+          <span class="material-icons calendar">
+            date_range
+          </span>
+
+          <span class="text">18 Mar</span>
+        </div>
+
+        <div class="time">
+          <span class="material-icons">
+            schedule
+          </span>
+          <div class="text">
+            9pm - 11pm
+          </div>
+        </div>
+
+        <div class="attendees flex-center">
+          <span class="attendee-item flex-center">M</span>
+          <span class="attendee-item flex-center">V</span>
+          <span class="attendee-item flex-center">R</span>
+          <span class="plus">+1</span>
+        </div>
+      </div> <!-- info -->
+    </div> <!-- today-plans -->
+
+    <div class="cs-footer">
+      <span class="material-icons btn-home">
+        home
+      </span>
+
+      <span class="material-icons btn-cart">
+        calendar_month
+      </span>
+
+      <span class="material-icons btn-add clay">
+        add
+      </span>
+    </div>
+    <!--footer-->
+  </div>
+
+  <!--background-->
+
+  <section class="sticky">
+    <div class="bubbles">
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+    </div>
+  </section>
+
+</div>
+
+<div class="credit">
+  <div class="author">
+    <strong>Made by:</strong> @chrisbautista
+  </div>
+
+  <div><strong> Inspired by:</strong> <a href="https://dribbble.com/shots/17325605-Task-Management-Mobile-App-Claymorphism-UI" rel="noopener noreferrer" target="_blank">Vitalii Zhy</a> &nbsp;&nbsp; Dribble - Task Management</div>
+
+  <div><strong>3D Rendered rocket by:</strong>
+    <a href="https://unsplash.com/photos/O1jUvZX9DOA"> Andy Hermawan</a> in Unsplash
+  </div>
+</div>
+<!-- partial -->
+  
+</body>
+</html>

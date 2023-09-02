@@ -1,0 +1,11 @@
+.computer-card {
+  height: 220px;
+  padding: 25px 0;
+  background-color: white;
+  margin-bottom: 20px;
+  border-radius: 20px;
+}
+
+.waiting-message {
+  margin-top: 20px;
+}

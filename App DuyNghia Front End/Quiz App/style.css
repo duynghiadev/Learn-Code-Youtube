@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap");
+
+h1 {
+  font-family: "Raleway", sans-serif;
+  text-align: center;
+  color: #cfd3da;
+  font-size: 35px;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  font-family: "Raleway", sans-serif;
+  font-size: 2em;
+  color: #374a6b;
+}
+
+input[type="radio"] {
+  border: 0px;
+  width: 20px;
+  height: 2em;
+}
+p {
+  font-family: "Raleway", sans-serif;
+}
+
+.quizContainer {
+  background-color: #748198;
+  border-radius: 8px;
+  width: 75%;
+  margin: auto;
+  margin-top: 190px;
+  padding-top: 5px;
+  position: relative;
+}
+
+.nextButton {
+  text-align: center;
+  background-color: #374a6b;
+  border-radius: 6px;
+  width: 150px;
+  height: 40px;
+
+  color: #cfd3da;
+  font-family: "Raleway", sans-serif;
+  font-weight: bold;
+  position: relative;
+  margin: auto;
+  padding-top: 20px;
+}
+
+.question {
+  font-family: "Raleway", sans-serif;
+  font-size: 2em;
+  width: 90%;
+  height: auto;
+  margin: auto;
+  border-radius: 6px;
+  background-color: #cfd3da;
+  text-align: center;
+  color: #374a6b;
+}
+
+.quizMessage {
+  font-family: "Raleway", sans-serif;
+  width: 30%;
+  margin: auto;
+  padding: 2px;
+  border-radius: 6px;
+  background-color: #cfd3da;
+  text-align: center;
+  color: #374a6b;
+}
+
+.choiceList {
+  font-family: "Raleway", sans-serif;
+  color: crimson;
+}
+
+.result {
+  font-family: "Raleway", sans-serif;
+  width: 30%;
+  height: auto;
+  margin: auto;
+  margin-top: 35px;
+  border-radius: 6px;
+  background-color: #cfd3da;
+  text-align: center;
+}

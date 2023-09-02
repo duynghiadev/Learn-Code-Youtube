@@ -1,0 +1,212 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  height: 100%;
+  background-color: #f5e0e5;
+  background-image: linear-gradient(45deg, #ff9b9c 0%, #ffd4a7 100%);
+  position: relative;
+  font-family: "Roboto", sans-serif;
+}
+
+*::selection {
+  background-color: unset;
+}
+
+.player {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 330px;
+  height: 530px;
+  border-radius: 15px;
+  background-color: #fff6e7;
+  box-shadow: 0 15px 20px 0 #c58371;
+}
+.player input[type="range"] {
+  -webkit-appearance: none !important;
+  margin: 0px;
+  padding: 0px;
+  background: #f2eae4;
+  height: 5px;
+  width: 150px;
+  outline: none;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 5px;
+}
+.player input[type="range"]::-ms-fill-lower {
+  background: #f2eae4;
+}
+.player input[type="range"]::-ms-fill-upper {
+  background: #f2eae4;
+}
+.player input[type="range"]::-moz-range-track {
+  border: none;
+  background: #f2eae4;
+}
+.player input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none !important;
+  background: #ff3677;
+  height: 5px;
+  width: 5px;
+  border-radius: 50%;
+  box-shadow: -100vw 0 0 100vw #f7d9b9;
+}
+.player input[type="range"]::-moz-range-thumb {
+  background: #ff3677;
+  height: 8px;
+  width: 8px;
+  border-radius: 100%;
+}
+.player input[type="range"]::-ms-thumb {
+  -webkit-appearance: none !important;
+  background: #ff3677;
+  height: 8px;
+  width: 8px;
+  border-radius: 100%;
+}
+.player .cover {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: absolute;
+  left: 50%;
+  top: 50px;
+  transform: translateX(-50%);
+  box-shadow: 0 5px 20px 0 #d56c006d;
+}
+.player .cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.player .info {
+  position: absolute;
+  left: 50%;
+  top: 240px;
+  transform: translateX(-50%);
+  text-align: center;
+}
+.player .info .title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #444;
+  margin-bottom: 2px;
+}
+.player .info .singer {
+  font-size: 12px;
+  color: #72646f;
+}
+.player .btn-box {
+  position: absolute;
+  top: 330px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.player .btn-box i {
+  font-size: 24px;
+  color: #72646f;
+  margin: 0 30px;
+  cursor: pointer;
+}
+.player .btn-box i.active {
+  color: #ff3677;
+}
+.player .volume-box {
+  display: none;
+  position: absolute;
+  left: 50%;
+  top: 295px;
+  transform: translateX(-50%);
+  z-index: 1;
+  padding: 0 20px;
+}
+.player .volume-box .volume-down {
+  position: absolute;
+  left: -15px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #72646f;
+}
+.player .volume-box .volume-up {
+  position: absolute;
+  right: -15px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #72646f;
+}
+.player .volume-box .volume-up::selection {
+  background-color: unset;
+}
+.player .volume-box input[type="range"] {
+  height: 5px;
+  width: 150px;
+  margin: 0 0 15px 0;
+}
+.player .volume-box.active {
+  display: block;
+}
+.player .music-box {
+  position: absolute;
+  left: 50%;
+  top: 385px;
+  transform: translateX(-50%);
+}
+.player .music-box input[type="range"] {
+  height: 5px;
+  width: 230px;
+  margin: 0 0 10px 0;
+}
+.player .music-box input[type="range"]::-webkit-slider-thumb {
+  height: 5px;
+  width: 7px;
+}
+.player .music-box .current-time {
+  position: absolute;
+  left: -35px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 12px;
+  color: #72646f;
+}
+.player .music-box .duration {
+  position: absolute;
+  right: -35px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 12px;
+  color: #72646f;
+}
+.player .music-box .play,
+.player .music-box .pause {
+  position: absolute;
+  left: 50%;
+  top: 55px;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  background-color: #fff6e7;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+.player .music-box .play i,
+.player .music-box .pause i {
+  font-size: 36px;
+  color: #72646f;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-48%, -50%);
+}
+.player .music-box .pause i {
+  font-size: 32px;
+  transform: translate(-50%, -50%);
+}

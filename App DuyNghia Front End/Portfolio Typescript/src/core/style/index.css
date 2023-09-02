@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@100;200;300;500;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0;
+  font-family: "Be Vietnam Pro", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 1.6rem;
+  line-height: 2.3rem;
+}
+
+.left-in {
+  animation: left-in 0.5s cubic-bezier(0.07, 0.4, 0.68, 1);
+}
+.left-out {
+  animation: left-out 0.4s linear;
+}
+.right-in {
+  animation: right-in 0.5s cubic-bezier(0.07, 0.4, 0.68, 1);
+}
+.right-out {
+  animation: right-out 0.4s linear;
+}
+.hidden-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hidden-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.fade-in {
+  animation: fade-in 0.5s cubic-bezier(0.07, 0.4, 0.68, 1);
+}
+.fade-out {
+  animation: fade-out 0.5s linear;
+}
+
+@keyframes left-in {
+  from {
+    left: -1500px;
+    opacity: 0;
+  }
+  to {
+    left: 0px;
+    opacity: 1;
+  }
+}
+
+@keyframes left-out {
+  from {
+    left: 0px;
+  }
+  to {
+    left: -1500px;
+  }
+}
+
+@keyframes right-in {
+  from {
+    right: -1500px;
+    opacity: 0;
+  }
+  to {
+    right: 0px;
+    opacity: 1;
+  }
+}
+
+@keyframes right-out {
+  from {
+    right: 0px;
+    opacity: 1;
+  }
+  to {
+    right: -1500px;
+    opacity: 0;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

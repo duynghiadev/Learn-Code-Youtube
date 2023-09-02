@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined"
+      rel="stylesheet"
+    />
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <title>Sư Phụ Âm Nhạc</title>
+  </head>
+  <body>
+    <div
+      id="Header"
+      style="display: flex; align-items: center; position: relative"
+    >
+      <span
+        id="ArrowLeft"
+        class="material-icons-outlined Arrow"
+        onclick="Previous()"
+        >arrow_back_ios</span
+      >
+      <label class="BarBI">|</label>
+      <div id="StyleCard">
+        <div
+          class="Gradient-Style active"
+          style="--fromColor: #c9256b; --toColor: #74107c"
+          onclick="StyleCustom(1)"
+          id="Style1"
+        >
+          Tất Cả
+        </div>
+        <div
+          class="Gradient-Style"
+          style="--fromColor: #d4145a; --toColor: #fbb03b"
+          onclick="StyleCustom(2)"
+          id="Style2"
+        >
+          Nhạc Tết
+        </div>
+        <div
+          class="Gradient-Style"
+          style="--fromColor: #2e3192; --toColor: #1bffff"
+          onclick="StyleCustom(3)"
+          id="Style3"
+        >
+          Nhạc Buồn
+        </div>
+        <div
+          class="Gradient-Style"
+          style="--fromColor: #009245; --toColor: #fcee21"
+          onclick="StyleCustom(4)"
+          id="Style4"
+        >
+          Nhạc Vui
+        </div>
+        <div
+          class="Gradient-Style"
+          style="--fromColor: #ff9a9e; --toColor: #fecfef"
+          onclick="StyleCustom(5)"
+          id="Style5"
+        >
+          Nhạc Tình Cảm
+        </div>
+      </div>
+      <label class="BarBI">|</label>
+      <span
+        id="ArrowRight"
+        class="material-icons-outlined Arrow"
+        onclick="Next()"
+        >arrow_forward_ios</span
+      >
+    </div>
+    <div id="DivMusic" class="grid-container"></div>
+    <div id="ShowMusic">
+      <audio id="musicaudio" controls>
+        <source src="music/AnhNangCuaAnh.mp4" type="video/mp4" />
+      </audio>
+      <label id="NameMusic">Không bài nào...</label>
+    </div>
+    <script src="jquery/jquery.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

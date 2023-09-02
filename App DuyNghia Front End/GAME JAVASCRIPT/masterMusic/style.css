@@ -1,0 +1,248 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pangolin&display=swap");
+
+body {
+  background-color: #181818;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  -moz-user-select: none !important;
+  -webkit-touch-callout: none !important;
+  -webkit-user-select: none !important;
+  -khtml-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+}
+
+.Gradient-Style {
+  background: linear-gradient(
+    to right,
+    var(--fromColor) 20%,
+    var(--toColor) 150%
+  );
+  display: inline-block;
+  min-width: 200px;
+  height: 100px;
+  line-height: 100px;
+  font-family: "Lobster", cursive;
+  color: white;
+  font-size: 32px;
+  text-align: center;
+  border-radius: 25px;
+  margin: 10px 10px;
+  overflow: hidden;
+}
+
+.Gradient-Style:hover {
+  box-shadow: 0 0 20px gray;
+  cursor: pointer;
+}
+
+#DivMusic {
+  border-width: 5px;
+  border-color: white;
+  border-style: solid;
+  height: calc(100vh - 250px - 20px);
+  width: 96vw;
+  border-radius: 15px;
+  padding: 15px;
+  overflow: auto;
+  white-space: nowrap;
+}
+
+#ShowMusic {
+  margin-top: 10px;
+  background-color: #771d32;
+  height: 100px;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+  width: 100vw !important;
+}
+
+#StyleCard {
+  display: flex;
+  overflow: auto;
+  width: 100%;
+}
+
+.BarBI {
+  background-color: orange;
+  box-shadow: 0 0 10px orange;
+  height: 100px !important;
+  z-index: 100;
+}
+
+#StyleCard::-webkit-scrollbar {
+  width: 10px;
+  height: 8px;
+}
+
+#StyleCard::-webkit-scrollbar-thumb {
+  background: darkred;
+  border-radius: 3px;
+}
+
+audio {
+  margin-top: 5px;
+  width: 100%;
+}
+
+audio::-webkit-media-controls-fullscreen-button {
+  background-color: #771d32;
+}
+
+audio::-webkit-media-controls-panel {
+  background-color: #771d32;
+}
+
+.cardMusic {
+  color: white;
+  background: linear-gradient(to left, #e65758 0%, #771d32 100%);
+  display: inline-block;
+  overflow: hidden;
+  width: 200px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  border-radius: 15px;
+  font-family: "Pangolin", cursive;
+  font-size: 20px;
+  margin: 10px;
+}
+
+.cardMusic2 {
+  background-color: none;
+  display: inline-block;
+  overflow: hidden;
+  width: 200px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  border-radius: 15px;
+  margin: 10px;
+}
+
+.active {
+  /* box-shadow: 0 0 15px gold; */
+  height: 90px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: white;
+}
+
+.active:hover {
+  box-shadow: 0 0 15px gold;
+  cursor: context-menu;
+}
+
+.cardMusic .material-icons-outlined {
+  margin-right: 10px;
+}
+
+.cardMusic:hover,
+.activeCard {
+  cursor: pointer;
+  background: linear-gradient(to left, #e68869 0%, #770e21 100%);
+}
+
+#ShowMusic label {
+  font-size: 25px;
+  margin-left: 15px;
+  font-family: "Lobster", cursive;
+  color: whitesmoke;
+}
+
+.grid-container {
+  display: inline-grid;
+  grid-template-columns: auto auto auto auto auto;
+  padding: 10px;
+}
+
+@media only screen and (min-width: 950px) and (max-width: 1180px) {
+  .grid-container {
+    grid-template-columns: auto auto auto auto;
+  }
+}
+
+@media only screen and (min-width: 700px) and (max-width: 950px) {
+  .grid-container {
+    grid-template-columns: auto auto auto;
+  }
+}
+
+@media only screen and (min-width: 540px) and (max-width: 700px) {
+  .grid-container {
+    grid-template-columns: auto auto;
+  }
+}
+
+@media only screen and (min-width: 500px) and (max-width: 700px) {
+  .grid-container {
+    grid-template-columns: auto auto;
+  }
+}
+
+@media only screen and (min-width: 1300px) {
+  .grid-container {
+    grid-template-columns: auto auto auto auto auto auto;
+  }
+}
+
+.Arrow {
+  font-size: 50px !important;
+  color: white;
+  text-decoration: none;
+}
+
+.Arrow:hover {
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 500px) {
+  body {
+    background-color: #771d32;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: initial;
+  }
+
+  #ShowMusic {
+    position: fixed !important;
+    bottom: 30px !important;
+    width: 100vw;
+    margin-left: 0px;
+  }
+  #DivMusic {
+    border-width: 0;
+    width: 100vw;
+    border-radius: 0;
+    padding: 5px;
+    overflow: auto;
+    background-color: #181818;
+  }
+  .grid-container {
+    grid-template-columns: auto;
+  }
+  .cardMusic {
+    color: white;
+    background: linear-gradient(to left, #e65758 0%, #771d32 100%);
+    overflow: hidden;
+    width: 90vw;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    border-radius: 15px;
+    font-family: "Pangolin", cursive;
+    font-size: 20px;
+    margin: 10px;
+  }
+  #Header {
+    background-color: #181818;
+  }
+}

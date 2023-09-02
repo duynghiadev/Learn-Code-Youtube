@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CodePen - Analog Clock</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <body>
+      <section>
+        <div class="clock-container">
+          <span class="num n-12">12</span>
+          <span class="num n-3">3</span>
+          <span class="num n-6">6</span>
+          <span class="num n-9">9</span>
+          <div class="clock-body">
+            <div class="hour hand" id="hour">
+              <span></span>
+            </div>
+            <div class="minute hand" id="minute">
+              <span></span>
+            </div>
+            <div class="second hand" id="second">
+              <span></span>
+            </div>
+            <div class="dot"></div>
+          </div>
+        </div>
+        <div class="digital-time">
+          <h2 id="digital-hour"></h2>
+          <span>&nbsp;:&nbsp;</span>
+          <h2 id="digital-minute"></h2>
+          <span>&nbsp;:&nbsp;</span>
+          <h2 id="digital-second"></h2>
+        </div>
+      </section>
+      <script src="./main.js"></script>
+    </body>
+    <!-- partial -->
+    <script src="./script.js"></script>
+  </body>
+</html>

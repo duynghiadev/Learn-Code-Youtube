@@ -1,0 +1,10 @@
+.choice-icon {
+  border-radius: 50%;
+  transition: transform 0.1s;
+}
+
+.choice-icon:hover {
+  cursor: pointer;
+  background-color: rgb(224, 224, 224);
+  transform: scale(1.1);
+}

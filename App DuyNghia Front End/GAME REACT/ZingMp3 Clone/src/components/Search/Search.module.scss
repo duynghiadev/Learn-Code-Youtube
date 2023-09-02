@@ -1,0 +1,111 @@
+.wrapper {
+    max-width: 440px;
+    display: block;
+
+    @media (max-width: 600px) {
+        //mobile
+        max-width: none;
+        width: 100vw;
+    }
+}
+
+.search_input {
+    position: relative;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    justify-content: center;
+    background-color: var(--border-player);
+    @media (max-width: 600px) {
+        //mobile
+        border-radius: 0;
+        margin-top: 10px;
+    }
+    input {
+        width: 95%;
+        font-size: 14px;
+        background-clip: padding-box;
+        background-color: transparent;
+        border: 0;
+        height: 34px;
+        padding: 5px 0;
+        margin: 0 35px;
+        line-height: 34px;
+        text-overflow: ellipsis;
+    }
+    input::placeholder {
+        color: var(--search-text);
+    }
+    input:not(:focus) .search_input {
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+    }
+}
+.button_search {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 0;
+    margin-left: 10px;
+    font-size: 20px;
+    transform: translateY(-50%);
+}
+.button_close {
+    position: absolute;
+    right: 0;
+    margin-right: 20px;
+    font-size: 18px;
+    color: var(--text-primary);
+}
+.button_loading {
+    position: absolute;
+    right: 0;
+    font-size: 16px;
+    margin-right: 20px;
+    color: var(--text-secondary);
+    animation: loading 1s linear infinite 0s;
+}
+.result_search {
+    width: 100%;
+    padding-right: 8px;
+    max-height: calc(100vh - 180px);
+    overflow: overlay;
+    background-color: var(--primary-bg);
+    z-index: 1;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding: 13px 10px;
+    color: var(--text-primary);
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 39px;
+    @media (max-width: 600px) {
+        //mobile
+        height: 100vh;
+        max-height: calc(100vh - 150px);
+        border-radius: unset;
+    }
+}
+
+// handle input have tippy
+.isCollap {
+    background-color: var(--primary-bg);
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+.result_title {
+    padding: 0 10px 15px 10px;
+}
+.search_result_modal {
+    inset: 0 !important;
+}
+@keyframes loading {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
