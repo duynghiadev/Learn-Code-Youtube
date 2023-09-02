@@ -1,20 +1,20 @@
-// import { isPositive } from './04-main'
+import { isPositive } from './04-main'
 
-// describe('isPositive()', () => {
-//   it('should return true when n > 0', () => {
-//     expect(isPositive(1)).toBe(true)
-//     expect(isPositive(2)).toBe(true)
-//     expect(isPositive(3)).toBe(true)
-//   })
+describe('isPositive()', () => {
+  it('should return true when n > 0', () => {
+    expect(isPositive(1)).toBe(true)
+    expect(isPositive(2)).toBe(true)
+    expect(isPositive(3)).toBe(true)
+  })
 
-//   it('should return false when n = 0', () => {
-//     expect(isPositive(0)).toBe(false)
-//   })
+  it('should return false when n = 0', () => {
+    expect(isPositive(0)).toBe(false)
+  })
 
-//   it('should return false when n < 0', () => {
-//     expect(isPositive(-1)).toBe(false)
-//   })
-// })
+  it('should return false when n < 0', () => {
+    expect(isPositive(-1)).toBe(false)
+  })
+})
 
 // ---👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇--- //
 
@@ -29,26 +29,26 @@
  * - Mã kiểm tra được gọi và thực thi trong hàm testIsPositive như trước, nhưng với kiểu dữ liệu TypeScript.
  */
 
-function isPositive(n: number): boolean {
-  return n >= 0
-}
+// function isPositive(n: number): boolean {
+//   return n >= 0
+// }
 
-function assertIsPositive(testInput: number, expected: boolean): void {
-  const actual: boolean = isPositive(testInput)
-  console.log(`Test case: isPositive(${testInput})`)
-  console.log(`Expected: ${expected}`)
-  console.log(`Actual: ${actual}`)
-  console.log(actual === expected ? 'Test passed' : 'Test failed')
-  console.log('')
-}
+// function assertIsPositive(testInput: number, expected: boolean): void {
+//   const actual: boolean = isPositive(testInput)
+//   console.log(`Test case: isPositive(${testInput})`)
+//   console.log(`Expected: ${expected}`)
+//   console.log(`Actual: ${actual}`)
+//   console.log(actual === expected ? 'Test passed' : 'Test failed')
+//   console.log('')
+// }
 
-function testIsPositive(): void {
-  assertIsPositive(1, true)
-  assertIsPositive(2, true)
-  assertIsPositive(3, true)
-  assertIsPositive(0, false)
-  assertIsPositive(-1, false)
-}
+// function testIsPositive(): void {
+//   assertIsPositive(1, true)
+//   assertIsPositive(2, true)
+//   assertIsPositive(3, true)
+//   assertIsPositive(0, false)
+//   assertIsPositive(-1, false)
+// }
 
-// Run the test
-testIsPositive()
+// // Run the test
+// testIsPositive()
