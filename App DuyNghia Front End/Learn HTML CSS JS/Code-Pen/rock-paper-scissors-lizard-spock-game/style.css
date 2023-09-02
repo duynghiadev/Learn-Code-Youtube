@@ -1,0 +1,353 @@
+@charset "UTF-8";
+/**
+Rock Paper Scissors Lizard Spock Game
+author: @chrisbautista
+website: https://www.codespud.com
+*/
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&family=Source+Serif+Pro:ital@1&display=swap");
+.visually-hidden {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+  display: none;
+}
+
+body {
+  font-family: serif;
+  font-family: "Source Serif Pro", serif;
+  background-color: #f1f2f3;
+}
+
+h1 {
+  font-family: "Fredoka One", cursive;
+  font-size: 2.3vw;
+  margin-left: 2rem;
+  text-align: left;
+  background: -webkit-linear-gradient(red, green);
+  background: linear-gradient(red, green);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  margin-block-end: 0;
+}
+@media screen and (max-width: 1200px) {
+  h1 {
+    font-size: 3vw;
+  }
+}
+@media screen and (max-width: 900px) {
+  h1 {
+    font-size: 4vw;
+  }
+}
+@media screen and (max-width: 600px) {
+  h1 {
+    font-size: 6vw;
+  }
+}
+
+.cs-game {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 2rem;
+  flex-direction: column;
+}
+.cs-game-board {
+  border-top: 4px solid #333;
+}
+
+.cs-win-lose,
+.cs-computer,
+.cs-player, .cs-score {
+  font-size: 2rem;
+  padding: 1.5rem 0;
+}
+
+.cs-score {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cs-win-lose,
+.cs-computer,
+.cs-player {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 70%;
+  border-bottom: 4px solid #333;
+}
+
+.cs-player div {
+  display: inline-flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.win {
+  background-color: rgba(187, 241, 187, 0.5);
+}
+
+.lose {
+  background-color: rgba(214, 187, 187, 0.5);
+}
+
+.tie {
+  background-color: #ccc;
+}
+
+.hidden {
+  display: none;
+}
+
+.cs-game-number {
+  padding: 4px;
+  display: inline-block;
+  width: 60px;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0 auto;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  color: #333;
+}
+
+.cs-win-lose {
+  border: 3px solid #333;
+  flex-direction: column;
+  padding: 2rem;
+}
+.cs-win-lose p {
+  padding-top: 0;
+  margin: 0 0 20px;
+  font-size: 3rem;
+}
+.cs-win-lose .cs-play-btn {
+  cursor: pointer;
+  border: 2px solid #333;
+  border-radius: 0.8rem;
+  padding: 0.8rem 1.2rem;
+  box-shadow: 2px 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background-color: #ffc83d;
+  font-weight: bold;
+  font-family: "Fredoka One", cursive;
+  font-size: 1.2rem;
+  letter-spacing: 3px;
+  transition: all 0.2s;
+  margin-top: 3rem;
+  border-radius: 20px;
+  box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.25), inset -4px -4px 8px 0 rgba(0, 0, 0, 0.25), inset 4px 4px 8px 0 rgba(255, 255, 255, 0.4);
+  /* Light inset shadow */
+}
+.cs-win-lose .cs-play-btn:hover {
+  transform: rotate(-10deg);
+}
+
+.cs-hand, .cs-computer .cs-player-1[data-choice]:after,
+.cs-computer .cs-player-2[data-choice]:after {
+  border: none;
+  padding: 1.5rem;
+  background-color: transparent;
+  border-radius: 0.9rem;
+  font-size: 3rem;
+  text-shadow: -2px 2px 4px rgba(0, 0, 0, 0.3);
+  transition: text-shadow 0.4s;
+}
+
+@keyframes popleft {
+  50% {
+    transform: scale(-1.2, 1.2) rotate(90deg);
+  }
+}
+@keyframes popleft2 {
+  50% {
+    transform: scale(-1.2, 1.2) rotate(0deg);
+  }
+}
+@keyframes popright {
+  50% {
+    transform: scale(1.2, 1.2) rotate(90deg);
+  }
+}
+@keyframes popright2 {
+  50% {
+    transform: scale(1.2, 1.2) rotate(0deg);
+  }
+}
+.cs-computer {
+  color: green;
+  font-family: "Fredoka One", cursive;
+  font-style: bold;
+  font-size: 3rem;
+  padding: 3rem 0;
+  transition: background-color 0.4s ease-out;
+  position: relative;
+}
+@media screen and (max-width: 600px) {
+  .cs-computer {
+    font-size: 2.5rem;
+  }
+}
+@media screen and (max-width: 420px) {
+  .cs-computer {
+    font-size: 1.5rem;
+  }
+}
+.cs-computer div {
+  display: inline-flex;
+}
+.cs-computer .cs-spacer {
+  width: 4px;
+  background-color: #333;
+}
+.cs-computer .cs-player-1,
+.cs-computer .cs-player-2 {
+  position: relative;
+}
+.cs-computer .cs-player-1[data-choice]:after,
+.cs-computer .cs-player-2[data-choice]:after {
+  width: 160px;
+  font-size: 5rem;
+  display: inline-flex;
+  justify-content: center;
+}
+@media screen and (max-width: 600px) {
+  .cs-computer .cs-player-1[data-choice]:after,
+.cs-computer .cs-player-2[data-choice]:after {
+    width: 75px;
+    font-size: 3rem;
+  }
+}
+.cs-computer .cs-player-1[data-choice="0"]:after,
+.cs-computer .cs-player-2[data-choice="0"]:after {
+  content: "🤛";
+}
+.cs-computer .cs-player-1[data-choice="1"]:after,
+.cs-computer .cs-player-2[data-choice="1"]:after {
+  content: "✋";
+}
+.cs-computer .cs-player-1[data-choice="2"]:after,
+.cs-computer .cs-player-2[data-choice="2"]:after {
+  content: "✌";
+}
+.cs-computer .cs-player-1[data-choice="3"]:after,
+.cs-computer .cs-player-2[data-choice="3"]:after {
+  content: "🦎";
+}
+.cs-computer .cs-player-1[data-choice="4"]:after,
+.cs-computer .cs-player-2[data-choice="4"]:after {
+  content: "🖖";
+}
+.cs-computer .cs-player-1 {
+  color: red;
+}
+.cs-computer .cs-player-1[data-choice]:after {
+  transform: scale(-1, 1) rotate(0deg);
+}
+.cs-computer .cs-player-1[data-choice="2"]:after, .cs-computer .cs-player-1[data-choice="1"]:after {
+  transform: scale(-1, 1) rotate(-90deg);
+}
+.cs-computer .cs-player-1.enter[data-choice]:after {
+  animation: popleft 0.3s ease-out 1;
+}
+.cs-computer .cs-player-1.enter[data-choice="2"]:after, .cs-computer .cs-player-1.enter[data-choice="1"]:after {
+  animation: popleft2 0.3s ease-out 1;
+}
+.cs-computer .cs-player-2 {
+  flex-direction: row-reverse;
+}
+.cs-computer .cs-player-2[data-choice]:after {
+  transform: scale(1, 1) rotate(0deg);
+}
+.cs-computer .cs-player-2[data-choice="2"]:after, .cs-computer .cs-player-2[data-choice="1"]:after {
+  transform: scale(1, 1) rotate(-90deg);
+}
+.cs-computer .cs-player-2.enter[data-choice]:after {
+  animation: popright 0.3s ease-out 1;
+}
+.cs-computer .cs-player-2.enter[data-choice="2"]:after, .cs-computer .cs-player-2.enter[data-choice="1"]:after {
+  animation: popright2 0.3s ease-out 1;
+}
+
+.cs-hand {
+  background-color: #ffc83d;
+  width: 150px;
+  height: 150px;
+  margin-right: 12px;
+  margin-top: 12px;
+  transition: all 0.2s;
+  cursor: pointer;
+  text-shadow: 2px 2px 0 #333, 2px 2px 4px #333, 2px -2px 0 #333, -2px 2px 0 #333, -2px -2px 0 #333, 2px 0px 0 #333, 0px 2px 0 #333, -2px 0px 0 #333, 0px -4px 0 #333;
+  border-radius: 20px;
+  box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.25), inset -4px -4px 8px 0 rgba(0, 0, 0, 0.25), inset 4px 4px 8px 0 rgba(255, 255, 255, 0.4);
+  /* Light inset shadow */
+}
+.cs-hand:before {
+  display: inline-flex;
+  content: attr(data-image);
+}
+.cs-hand:hover {
+  transform: scale(1.1);
+}
+.cs-hand.clicked {
+  text-shadow: 4px 4px 0 #4074b5, 4px -4px 0 #4074b5, -4px 4px 0 #4074b5, -4px -4px 0 #4074b5, 4px 0px 0 #4074b5, 0px 4px 0 #4074b5, -4px 0px 0 #4074b5, 0px -4px 0 #4074b5;
+}
+@media screen and (max-width: 600px) {
+  .cs-hand {
+    width: 80px;
+    height: 80px;
+    font-size: 2rem;
+  }
+}
+
+.info {
+  padding: 3px;
+  background-color: #f8f9fb;
+  border-radius: 1rem;
+  width: calc(100% - 6rem);
+  margin: 1rem auto 0;
+}
+.info p {
+  padding-left: 20px;
+}
+.info label {
+  cursor: pointer;
+}
+.info > div {
+  padding: 1.2rem;
+}
+.info .rule-list {
+  overflow: hidden;
+  transition: height 0.3s ease-out;
+}
+.info #toggle-rules + .rule-list {
+  height: 0;
+}
+.info #toggle-rules:checked ~ .rule-list {
+  height: 360px;
+}
+.info strong {
+  margin-left: 8px;
+  font-family: "Fredoka One", cursive;
+  font-size: 1.2rem;
+}
+.info i {
+  display: inline-flex;
+  width: 1.2rem;
+  height: 1.2rem;
+  position: relative;
+  top: -4px;
+  left: 10px;
+  justify-content: center;
+  align-items: center;
+  background-color: blue;
+  color: #f1f2f3;
+  margin: 0 10px;
+}
+.info li {
+  list-style-type: "👉";
+  padding-inline-start: 1ch;
+}

@@ -1,0 +1,66 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+body {
+  line-height: 1.5;
+}
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+input,
+button,
+textarea,
+select {
+  outline: none;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+body {
+  height: 100vh;
+}
+.tool {
+  background: #6470db;
+  display: flex;
+  align-items: center;
+}
+.tool > * {
+  height: 40px;
+  width: 40px;
+  background: white;
+  margin: 5px;
+  font-size: 20px;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#save {
+  margin-left: auto;
+}
+canvas {
+  border: 1px solid black;
+  margin: 0 auto;
+}
+.container {
+  display: flex;
+  justify-content: center;
+}

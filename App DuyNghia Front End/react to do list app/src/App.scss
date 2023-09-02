@@ -1,0 +1,20 @@
+// Override default variables before the import
+$container-max-widths: (
+  sm: 540px,
+  md: 540px,
+  lg: 540px,
+  xl: 687px
+);
+
+// Import Bootstrap and its default variables
+@import '~bootstrap/scss/bootstrap.scss';
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;600;900&display=swap');
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Overpass', sans-serif;
+  background-color: #fcfcfc;
+}

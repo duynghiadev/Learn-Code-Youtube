@@ -1,0 +1,10 @@
+.wrapper {
+    margin-top: 20px; 
+    padding-bottom: 50px;
+    .list_card_artist {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;    
+
+    }
+}

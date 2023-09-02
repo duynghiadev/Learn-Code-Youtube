@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.label {
+    display: flex;
+    flex-direction: column;
+    background-color: #1c1c1c;
+    padding: 3.75% 5% 4.25% 5%;
+    border-radius: 12px;
+}
+
+.label-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.label-header h2 {
+    font-size: 29px;
+    margin-bottom: 4.25%;
+    color: white;
+}
+
+.label-header div {
+    display: flex;
+    gap: 6px;
+}
+
+.autofill,
+.github,
+.save {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    justify-content: center;
+    font-size: 16px;
+    border: 1px transparent;
+    border-radius: 12px;
+    font-family: 'Kumbh Sans', sans-serif;
+    transition: .2s;
+    cursor: pointer;
+}
+
+.buttonText {
+    font-family: 'Kumbh Sans', sans-serif;
+    font-size: 16px;
+    color: #2e2e2e
+}
+
+.autofill,
+.save {
+    background-color: #79d2b5;
+    color: #2e2e2e;
+    margin-bottom: 6%;
+    padding: 0px 20px;
+}
+
+.credit {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.credit a {
+    text-decoration: none;
+}
+
+.github {
+    background-color: #242424;
+    color: #a6a6a6;
+    gap: 10px;
+    padding: 10px 24px;
+}
+
+.github:hover {
+    color: #79d2b5;
+    background-color: #2e2e2e;
+}
+
+.autofill:active,
+.save:active,
+.github:active {
+    transform: scale(0.9);
+}
+
+.icon {
+    width: 16px;
+}
+
+.download {
+    width: 19px;
+}
+
+@media (max-width: 620px) {
+    .buttonText {
+        display: none;
+    }
+}
+
+@media (max-width: 400px) {
+    .autofill,
+    .github {
+        font-size: 12px;
+    }
+
+    .label-header h2 {
+        font-size: 20px;
+    }
+}

@@ -1,0 +1,38 @@
+.wrapper {
+    position: relative;
+    padding: 0;
+    height: calc(100vh - 160px);
+    background-color: var(--hover-blur-bg) ;
+    @import url('https://fonts.googleapis.com/css?family=Montserrat:300');
+
+    .content {
+        color: var(--text-primary);
+        font-family: 'Montserrat', sans-serif;
+        font-size: 16px;
+        position: relative;
+        z-index: 22222;
+        transform: translate(20%, 20%);
+        h1 {
+            font-size: 30vh;
+        }
+        h2 span {
+            font-size: 4rem;
+            font-weight: 600;
+        }
+        a:link,
+        a:visited {
+            text-decoration: none;
+            color: var(--text-secondary);
+        }
+        h3 a:hover {
+            text-decoration: none;
+
+            color: var(--link-text-hover);
+            cursor: pointer;
+        }
+        .btn-return {
+            margin-top: 20px;
+            display: inline-flex;
+        }
+    }
+}

@@ -1,0 +1,716 @@
+@import url("https://fonts.googleapis.com/css2?family=Ranchers&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nerko+One&display=swap");
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  cursor: url(https://raw.githubusercontent.com/elsemeow/cdn/main/img/cdpn/gOwYMNR/cursor-default.png),
+    default;
+}
+
+.room {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(147deg, #ff6666 0%, #db3445 74%);
+}
+
+.floating-container {
+  z-index: 1;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-animation: aFloating 2s ease-in-out alternate infinite;
+  animation: aFloating 2s ease-in-out alternate infinite;
+}
+
+.overlay {
+  z-index: 100;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.35);
+  transition: 1s ease-in-out;
+  transition-property: opacity, z-index;
+  -webkit-animation: aModal 1s ease-in-out;
+  animation: aModal 1s ease-in-out;
+}
+.overlay_state_disabled {
+  z-index: -1;
+  opacity: 0;
+  -webkit-animation: none;
+  animation: none;
+}
+
+.modal {
+  width: 100%;
+  max-width: 280px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 5px;
+  border-bottom: 5px solid rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.15) 0 4px 4px, rgba(0, 0, 0, 0.15) 0 8px 8px,
+    rgba(0, 0, 0, 0.15) 0 16px 16px, rgba(0, 0, 0, 0.15) 0 32px 32px;
+}
+.modal p {
+  font-family: "Nerko One", cursive;
+  margin: 0;
+  margin-top: 20px;
+  font-size: 20px;
+  line-height: 120%;
+  color: #333;
+}
+.modal p .timer {
+  display: inline-block;
+  color: #e0455f;
+  font-size: 24px;
+  margin-top: 8px;
+}
+.modal__person {
+  display: flex;
+  align-items: center;
+}
+.modal__person .santa {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-image: url(https://raw.githubusercontent.com/elsemeow/cdn/main/img/cdpn/mdrrZPe/santa.png);
+  width: 70px;
+  height: 70px;
+  border: 3px solid rgba(0, 0, 0, 0.15);
+  background-color: rgba(0, 0, 0, 0.05);
+  margin-right: 20px;
+}
+.modal__person h3 {
+  margin: 0;
+  font-family: "Ranchers", cursive;
+  font-size: 30px;
+  color: #009b77;
+  text-shadow: 2px 2px 0 #232323;
+}
+.modal__btn {
+  font-family: "Ranchers", cursive;
+  display: inline-block;
+  margin: 0;
+  margin-top: 20px;
+  padding: 8px 32px;
+  font-size: 20px;
+  color: #fff;
+  background-color: #e0455f;
+  border: 2px solid rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  box-shadow: 4px 4px 0 #333;
+  transition: 0.1s ease-in-out;
+  transition-property: box-shadow, transform;
+  cursor: url(https://raw.githubusercontent.com/elsemeow/cdn/main/img/cdpn/gOwYMNR/cursor-pointer.png),
+    pointer;
+}
+.modal__btn:focus {
+  outline: none;
+}
+.modal__btn:hover,
+.modal__btn:focus {
+  transform: translate(4px, 4px);
+  box-shadow: 0 0 0 transparent;
+}
+
+.spr {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+.spr_name_rail {
+  width: 90vmin;
+  height: 90vmin;
+  background-image: url(https://raw.githubusercontent.com/elsemeow/cdn/main/img/cdpn/mdrrZPe/railway.svg);
+  filter: drop-shadow(0 18vmin 3vmin rgba(0, 0, 0, 0.35));
+}
+.spr_name_loco {
+  width: 4vmin;
+  height: 4vmin;
+  background-image: url(https://raw.githubusercontent.com/elsemeow/cdn/main/img/cdpn/mdrrZPe/locomotive.svg);
+}
+.spr_name_wagon {
+  width: 4vmin;
+  height: 4vmin;
+  background-image: url(https://raw.githubusercontent.com/elsemeow/cdn/main/img/cdpn/mdrrZPe/wagon-gift.svg);
+}
+.spr_name_tunnel {
+  width: 25vmin;
+  height: 25vmin;
+  background-image: url(https://raw.githubusercontent.com/elsemeow/cdn/main/img/cdpn/mdrrZPe/tunnel-bottom.svg);
+  filter: drop-shadow(10vmin 0 3vmin rgba(0, 0, 0, 0.35));
+}
+.spr_name_arrow {
+  width: 6vmin;
+  height: 6vmin;
+  background-image: url(https://raw.githubusercontent.com/elsemeow/cdn/main/img/cdpn/mdrrZPe/arrow.svg);
+  transform: rotateY(180deg);
+  transition: 0.35s ease-in-out;
+  transition-property: transform;
+}
+.spr_name_tree {
+  width: 16vmin;
+  height: 16vmin;
+  background-image: url(https://raw.githubusercontent.com/elsemeow/cdn/main/img/cdpn/mdrrZPe/decorated-tree.svg);
+  -webkit-animation: aTree 3s ease-in-out alternate infinite;
+  animation: aTree 3s ease-in-out alternate infinite;
+  filter: drop-shadow(0vmin 1vmin 1vmin rgba(0, 0, 0, 0.6));
+}
+.spr_name_gifts {
+  width: 6vmin;
+  height: 6vmin;
+  background-image: url(https://raw.githubusercontent.com/elsemeow/cdn/main/img/cdpn/mdrrZPe/gifts.svg);
+  display: none;
+}
+.spr_name_snowman {
+  width: 7vmin;
+  height: 7vmin;
+  background-image: url(https://raw.githubusercontent.com/elsemeow/cdn/main/img/cdpn/mdrrZPe/snowman.svg);
+}
+.spr_name_snowman-dec {
+  width: 7vmin;
+  height: 7vmin;
+  background-image: url(https://raw.githubusercontent.com/elsemeow/cdn/main/img/cdpn/mdrrZPe/snowman-active.png);
+  -webkit-animation: aSnowmanAppear 0.35s ease-in-out;
+  animation: aSnowmanAppear 0.35s ease-in-out;
+}
+
+.obj {
+  position: absolute;
+}
+.obj_type_btn {
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+  transition: 0.15s ease-in-out;
+  transition-property: filter;
+  filter: drop-shadow(0 0 0.3vmin #ff0);
+  cursor: url(https://raw.githubusercontent.com/elsemeow/cdn/main/img/cdpn/gOwYMNR/cursor-pointer.png),
+    pointer;
+}
+.obj_type_btn:focus {
+  outline: none;
+}
+.obj_type_btn:hover,
+.obj_type_btn:focus {
+  filter: drop-shadow(0 0 0.4vmin #0f0);
+}
+.obj_name_rail {
+  z-index: 1;
+}
+.obj_name_loco {
+  z-index: 2;
+  display: none;
+}
+.obj_name_wagon {
+  z-index: 3;
+  display: none;
+}
+.obj_name_tunnel {
+  z-index: 4;
+  transform: translate(-31.5vmin, 11.5vmin);
+}
+.obj_name_arrow {
+  z-index: 5;
+  transform: translate(-5vmin, 5vmin);
+}
+.obj_name_tree {
+  z-index: 5;
+  transform: translate(28vmin, -17vmin);
+}
+.obj_name_gifts {
+  z-index: 6;
+  transform: translate(25vmin, -9vmin);
+}
+.obj_name_gifts.obj_type_btn {
+  cursor: url(https://raw.githubusercontent.com/elsemeow/cdn/main/img/cdpn/gOwYMNR/cursor-default.png),
+    default;
+}
+.obj_name_snowman {
+  z-index: 6;
+  transform: translate(-31vmin, 4vmin);
+  transition: 0.35s ease-in-out;
+  transition-property: filter, opacity;
+}
+.obj_name_snowman-dec {
+  display: none;
+  z-index: 7;
+  transform: translate(-31vmin, 3.5vmin);
+}
+.obj_state_run.obj_name_loco {
+  display: block;
+  -webkit-animation: aLoco 10s ease-in-out infinite;
+  animation: aLoco 10s ease-in-out infinite;
+}
+.obj_state_run.obj_name_wagon {
+  display: block;
+  -webkit-animation: aWagon 10s ease-in-out infinite;
+  animation: aWagon 10s ease-in-out infinite;
+}
+.obj_state_run.obj_name_gifts {
+  -webkit-animation: aGiftsBounce 1s ease-in-out;
+  animation: aGiftsBounce 1s ease-in-out;
+}
+.obj_state_run.obj_name_gifts.obj_type_btn {
+  cursor: url(https://raw.githubusercontent.com/elsemeow/cdn/main/img/cdpn/gOwYMNR/cursor-pointer.png),
+    pointer;
+}
+.obj_state_run .spr_name_gifts {
+  display: block;
+}
+.obj_state_active.obj_type_btn {
+  cursor: url(https://raw.githubusercontent.com/elsemeow/cdn/main/img/cdpn/gOwYMNR/cursor-default.png),
+    default;
+}
+.obj_state_active.obj_name_loco,
+.obj_state_active.obj_name_wagon {
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
+}
+.obj_state_active .spr_name_loco,
+.obj_state_active .spr_name_wagon {
+  opacity: 0;
+  -webkit-animation: aSprZoomOut 1.5s ease-in-out;
+  animation: aSprZoomOut 1.5s ease-in-out;
+}
+.obj_state_active.obj_name_arrow {
+  filter: none;
+  -webkit-animation: aArrowBounce 0.5s ease-in-out;
+  animation: aArrowBounce 0.5s ease-in-out;
+}
+.obj_state_active .spr_name_arrow {
+  transform: none;
+}
+.obj_state_active.obj_name_gifts.obj_type_btn {
+  filter: none;
+  cursor: url(https://raw.githubusercontent.com/elsemeow/cdn/main/img/cdpn/gOwYMNR/cursor-default.png),
+    default;
+}
+.obj_state_active.obj_name_snowman {
+  opacity: 0;
+}
+.obj_state_active.obj_name_snowman-dec {
+  display: block;
+}
+.obj_state_active .spr_name_snowman-dec {
+  opacity: 1;
+}
+
+@-webkit-keyframes aFloating {
+  0% {
+    transform: translateY(0) translateX(1vmin);
+  }
+  100% {
+    transform: translateY(-1vmin) translateX(-1vmin);
+  }
+}
+
+@keyframes aFloating {
+  0% {
+    transform: translateY(0) translateX(1vmin);
+  }
+  100% {
+    transform: translateY(-1vmin) translateX(-1vmin);
+  }
+}
+@-webkit-keyframes aModal {
+  0% {
+    transform: scale(1);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes aModal {
+  0% {
+    transform: scale(1);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@-webkit-keyframes aLoco {
+  0% {
+    transform: translate(-27vmin, 11vmin);
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(29vmin, -18vmin);
+  }
+}
+@keyframes aLoco {
+  0% {
+    transform: translate(-27vmin, 11vmin);
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(29vmin, -18vmin);
+  }
+}
+@-webkit-keyframes aWagon {
+  0% {
+    transform: translate(-30vmin, 12.5vmin);
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(26vmin, -16.5vmin);
+  }
+}
+@keyframes aWagon {
+  0% {
+    transform: translate(-30vmin, 12.5vmin);
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(26vmin, -16.5vmin);
+  }
+}
+@-webkit-keyframes aSprZoomOut {
+  0% {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+  }
+  15% {
+    transform: rotate(-10deg) scale(1.2);
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(360deg) scale(0);
+  }
+}
+@keyframes aSprZoomOut {
+  0% {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+  }
+  15% {
+    transform: rotate(-10deg) scale(1.2);
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(360deg) scale(0);
+  }
+}
+@-webkit-keyframes aArrowBounce {
+  0% {
+    transform: translate(-5vmin, 5vmin) scale(1);
+  }
+  50% {
+    transform: translate(-5vmin, 5vmin) scale(0.8);
+  }
+  100% {
+    transform: translate(-5vmin, 5vmin) scale(1);
+  }
+}
+@keyframes aArrowBounce {
+  0% {
+    transform: translate(-5vmin, 5vmin) scale(1);
+  }
+  50% {
+    transform: translate(-5vmin, 5vmin) scale(0.8);
+  }
+  100% {
+    transform: translate(-5vmin, 5vmin) scale(1);
+  }
+}
+@-webkit-keyframes aTree {
+  0% {
+    transform: skewX(3deg);
+  }
+  100% {
+    transform: skewX(-2deg);
+  }
+}
+@keyframes aTree {
+  0% {
+    transform: skewX(3deg);
+  }
+  100% {
+    transform: skewX(-2deg);
+  }
+}
+@-webkit-keyframes aGiftsBounce {
+  0% {
+    opacity: 0;
+    transform: translate(25vmin, -9vmin) scale(0);
+  }
+  50% {
+    transform: translate(25vmin, -9vmin) scale(1.3);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(25vmin, -9vmin) scale(1);
+  }
+}
+@keyframes aGiftsBounce {
+  0% {
+    opacity: 0;
+    transform: translate(25vmin, -9vmin) scale(0);
+  }
+  50% {
+    transform: translate(25vmin, -9vmin) scale(1.3);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(25vmin, -9vmin) scale(1);
+  }
+}
+@-webkit-keyframes aSnowmanAppear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes aSnowmanAppear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.snowflakes {
+  color: #fff;
+  font-size: 1em;
+  font-family: Arial;
+  text-shadow: 0 0 1px #000;
+}
+
+@-webkit-keyframes snowflakes-fall {
+  0% {
+    top: -10%;
+  }
+  100% {
+    top: 100%;
+  }
+}
+
+@keyframes snowflakes-fall {
+  0% {
+    top: -10%;
+  }
+  100% {
+    top: 100%;
+  }
+}
+@-webkit-keyframes snowflakes-shake {
+  0% {
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateX(80px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+@keyframes snowflakes-shake {
+  0% {
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateX(80px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+.snowflake {
+  position: fixed;
+  top: -10%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-animation-name: snowflakes-fall, snowflakes-shake;
+  animation-name: snowflakes-fall, snowflakes-shake;
+  -webkit-animation-duration: 10s, 3s;
+  animation-duration: 10s, 3s;
+  -webkit-animation-timing-function: linear, ease-in-out;
+  animation-timing-function: linear, ease-in-out;
+  -webkit-animation-iteration-count: infinite, infinite;
+  animation-iteration-count: infinite, infinite;
+  -webkit-animation-play-state: running, running;
+  animation-play-state: running, running;
+}
+
+.snowflake:nth-of-type(0) {
+  left: 1%;
+  -webkit-animation-delay: 0s, 0s;
+  animation-delay: 0s, 0s;
+}
+
+.snowflake:nth-of-type(1) {
+  left: 10%;
+  -webkit-animation-delay: 1s, 1s;
+  animation-delay: 1s, 1s;
+}
+
+.snowflake:nth-of-type(2) {
+  left: 20%;
+  -webkit-animation-delay: 6s, 0.5s;
+  animation-delay: 6s, 0.5s;
+}
+
+.snowflake:nth-of-type(3) {
+  left: 30%;
+  -webkit-animation-delay: 4s, 2s;
+  animation-delay: 4s, 2s;
+}
+
+.snowflake:nth-of-type(4) {
+  left: 40%;
+  -webkit-animation-delay: 2s, 2s;
+  animation-delay: 2s, 2s;
+}
+
+.snowflake:nth-of-type(5) {
+  left: 50%;
+  -webkit-animation-delay: 8s, 3s;
+  animation-delay: 8s, 3s;
+}
+
+.snowflake:nth-of-type(6) {
+  left: 60%;
+  -webkit-animation-delay: 6s, 2s;
+  animation-delay: 6s, 2s;
+}
+
+.snowflake:nth-of-type(7) {
+  left: 70%;
+  -webkit-animation-delay: 2.5s, 1s;
+  animation-delay: 2.5s, 1s;
+}
+
+.snowflake:nth-of-type(8) {
+  left: 80%;
+  -webkit-animation-delay: 1s, 0s;
+  animation-delay: 1s, 0s;
+}
+
+.snowflake:nth-of-type(9) {
+  left: 90%;
+  -webkit-animation-delay: 3s, 1.5s;
+  animation-delay: 3s, 1.5s;
+}
+
+.toggle-song {
+  z-index: 1000;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  align-items: center;
+}
+.toggle-song__btn {
+  border: none;
+  background-color: transparent;
+  color: #fafafa;
+  transition: 0.2s ease-in-out;
+  transition-property: transform, opacity;
+  cursor: url(https://raw.githubusercontent.com/elsemeow/cdn/main/img/cdpn/gOwYMNR/cursor-pointer.png),
+    pointer;
+}
+.toggle-song__btn:focus {
+  outline: none;
+}
+.toggle-song__btn:hover,
+.toggle-song__btn:focus {
+  transform: translateY(2px);
+  opacity: 0.7;
+}
+.toggle-song__text {
+  font-family: "Nerko One", cursive;
+  font-size: 14px;
+  color: #f1f1f1;
+  margin-left: 8px;
+  text-shadow: 1px 1px 0 #333;
+}
+
+.gg-play-button-o,
+.gg-play-pause-o {
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  transform: scale(var(--ggs, 1));
+  width: 22px;
+  height: 22px;
+  border: 2px solid;
+  border-radius: 22px;
+}
+
+.gg-play-button-o::before {
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+  width: 0;
+  height: 10px;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 6px solid;
+  top: 4px;
+  left: 7px;
+}
+
+.gg-play-pause-o::before {
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  left: 6px;
+  top: 6px;
+  border-left: 2px solid;
+  border-right: 2px solid;
+}

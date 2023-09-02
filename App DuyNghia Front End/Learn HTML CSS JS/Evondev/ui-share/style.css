@@ -1,0 +1,226 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+a {
+  text-decoration: none;
+}
+.share {
+  width: 200px;
+  border: 1px solid #eee;
+  margin: 50px auto;
+}
+.top {
+  border-bottom: 1px solid #eee;
+  padding: 15px;
+  text-align: center;
+  font-size: 18px;
+  color: black;
+  text-transform: uppercase;
+}
+.bottom a {
+  display: block;
+  text-align: center;
+  font-size: 14px;
+  color: #ccc;
+  text-transform: uppercase;
+  padding: 15px;
+}
+.content ul {
+  display: flex;
+  flex-flow: row wrap;
+}
+.content ul li {
+  width: 99px;
+  border-bottom: 1px solid #eee;
+  height: 99px;
+}
+.content ul li:nth-of-type(even) {
+  border-left: 1px solid #eee;
+}
+.content ul li * {
+  transition: color 0.2s linear, background-color 0.2s linear;
+}
+.content ul li a {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.content ul li i {
+  font-size: 25px;
+}
+.content ul li span {
+  font-size: 10px;
+  color: #ccc;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+.content ul li.twitter i {
+  color: #19cbe6;
+}
+.content ul li.facebook i {
+  color: #606ee2;
+}
+.content ul li.google i {
+  color: #ff4a5e;
+}
+.content ul li.mail i {
+  color: #ffc034;
+}
+.content ul li.twitter:hover a {
+  background-color: #19cbe6;
+}
+.content ul li.facebook:hover a {
+  background-color: #606ee2;
+}
+.content ul li.google:hover a {
+  background-color: #ff4a5e;
+}
+.content ul li.mail:hover a {
+  background-color: #ffc034;
+}
+.content ul li a:hover i,
+.content ul li a:hover span {
+  color: white;
+}

@@ -1,0 +1,75 @@
+@import "reset.css";
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 255, 255);flex-flow: column;
+    -webkit-user-select: none;      
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+    background: #cccccc;
+    box-shadow:  3px 1px 40px #555555;
+    padding: 5px;
+    margin-bottom: 40px;
+    margin-top: 70px;
+}
+
+.board div {
+    font-size: 60px;
+    font-family: "Permanent Marker", cursive;
+    border: rgb(180, 180, 180) 1px solid;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+    
+.div1 { grid-area: 1 / 1 / 2 / 2; border-top-left-radius: 10px;}
+.div2 { grid-area: 1 / 2 / 2 / 3; }
+.div3 { grid-area: 1 / 3 / 2 / 4; border-top-right-radius: 10px;}
+.div4 { grid-area: 2 / 1 / 3 / 2; }
+.div5 { grid-area: 2 / 2 / 3 / 3; }
+.div6 { grid-area: 2 / 3 / 3 / 4; }
+.div7 { grid-area: 3 / 1 / 4 / 2; border-bottom-left-radius: 10px;}
+.div8 { grid-area: 3 / 2 / 4 / 3; }
+.div9 { grid-area: 3 / 3 / 4 / 4; border-bottom-right-radius: 10px;}
+
+.status {
+    font-size: xx-large;
+    font-family: sans-serif;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px 15px 10px 15px;
+    margin-bottom: 30px;
+    background-color: rgb(36, 230, 29);
+    border: none;
+    cursor: pointer;
+    box-shadow: 0px 3px 5px #858585;
+    transition: 0.2s;
+    border-radius: 5px;
+}
+
+button:hover {
+    box-shadow: 0px 1px 4px #858585;
+}
+
+@media (max-width: 576px) {
+    .board {
+        width: 95%;
+    }
+}

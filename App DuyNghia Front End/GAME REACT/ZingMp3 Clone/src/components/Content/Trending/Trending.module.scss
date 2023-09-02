@@ -1,0 +1,47 @@
+.wrapper {
+    padding-bottom: 30px;
+    .title_section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        span {
+            color: var(--text-secondary);
+            font-size: 12px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            .chevon_right {
+                font-size: 16px;
+                padding: 5px;
+            }
+        }
+    }
+
+    .button_select_national {
+        display: flex;
+        padding: 20px 0; 
+        width: 100%;
+        gap: 20px;
+          @media (max-width: 600px) {
+            //mobile
+            
+        }
+    }
+    .container_list_song {
+        display: grid;
+        column-gap: 20px; 
+        justify-content: center;
+        align-items: center;
+        grid-template-columns:1fr 1fr 1fr; 
+        align-items: center;
+        @media (max-width: 1200px) {
+            //tablet
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @media (max-width: 600px) {
+            //tablet
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+}

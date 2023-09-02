@@ -1,0 +1,44 @@
+@import "variables";
+@import "header";
+@import "mixins";
+
+section button {
+  @include buttonStyle();
+  background-color: green;
+}
+
+footer {
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// footer button {
+//   @include buttonStyle();
+// }
+
+%buttonStyle {
+  background-color: $main-color;
+  border: 0;
+  padding: 5px 10px;
+  color: white;
+}
+
+.button1 {
+  @extend %buttonStyle;
+}
+
+.button2 {
+  @extend %buttonStyle;
+}
+
+footer {
+  button {
+    @include buttonStyle();
+  }
+
+  p {
+    font-size: 20px;
+  }
+}

@@ -1,0 +1,247 @@
+@charset "UTF-8";
+@property --houdini {
+  syntax: "<integer>";
+  initial-value: 1;
+  inherits: true;
+}
+html {
+  height: 100%;
+  background: #000014;
+}
+html:before, html:after {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  opacity: 0.05;
+  color: #fff;
+  font: italic 900 4vmin/2 petit formal script;
+  text-align: center;
+}
+html:after {
+  content: "Missing you every day";
+}
+html:before {
+  content: "1st of June 1927 - 18th of January 2019";
+}
+
+body, div {
+  display: grid;
+}
+
+body {
+  --s: var(--houdini, 0);
+  --not-s: calc(1 - var(--s));
+  overflow: hidden;
+  margin: 0;
+  min-height: 18.75em;
+  perspective: 39em;
+}
+
+div, ::before, ::after {
+  grid-area: 1/1;
+  place-self: center;
+}
+
+::before, ::after {
+  --not-k: calc(1 - var(--k));
+  --sgn-k: calc(2*var(--k) - 1) ;
+}
+
+::before {
+  --k: 0 ;
+}
+
+::after {
+  --k: 1 ;
+}
+
+div {
+  transform-style: preserve-3d;
+}
+
+.toy {
+  animation: rot-y 12s linear infinite;
+}
+.toy > .hang {
+  transform: rotatey(calc(var(--py)*1turn)) translate(9.375em);
+}
+
+@keyframes rot-y {
+  to {
+    transform: rotatey(calc((1 - var(--py, 0))*1turn));
+  }
+}
+.hang {
+  --not-typ: calc(1 - var(--typ));
+  position: relative;
+}
+.hang > .hang {
+  --not-pos: calc(1 - var(--pos, 0));
+  transform: rotatex(calc(var(--pos)*var(--dl, 0deg))) translate3d(0, calc((1.2 + var(--sf))*var(--not-pos)*6.25em), calc(var(--pos)*-6.25em)) rotatex(calc(-1*var(--pos)*var(--dl, 0deg))) translatey(calc(var(--pos)*var(--sf)*6.25em));
+}
+.hang:before {
+  position: absolute;
+  bottom: 50%;
+  width: 4px;
+  height: 12.5em;
+  transform: rotatey(calc(var(--py)*-1turn));
+  background: repeating-linear-gradient(60deg, darkorange 0 4px, maroon 0 8px);
+  animation: rot-y 12s linear infinite reverse;
+  content: "";
+}
+
+@property --int {
+  syntax: "<integer>";
+  initial-value: 0;
+  inherits: false;
+}
+.⭐ > .lat {
+  --p: calc(var(--i)/var(--n));
+  --not-up: Min(1, var(--i));
+  --up: calc(1 - var(--not-up));
+  --dif: calc(2*var(--i) - var(--n));
+  --not-dn: Min(1, Max(var(--dif), calc(-1*var(--dif))));
+  --dn: calc(1 - var(--not-dn));
+  height: 0;
+  transform: rotatex(calc(var(--p)*1turn)) translatey(calc(-1*var(--sf)*6.25em));
+}
+.⭐ > .lat::before, .⭐ > .lat::after {
+  --sum: calc(var(--p) + var(--sgn-k)*var(--rcm) + 1);
+  --int: calc(var(--sum) - .5);
+  --mod: calc(var(--sum) - var(--int));
+  --term: calc(var(--s)*var(--mod) + var(--not-s)*var(--p));
+  --abs: Max(calc(var(--term) - .5), calc(.5 - var(--term)));
+  --inc: calc(2*var(--abs) - .5);
+  --sgn-j: calc(var(--dn)*var(--sgn-k) -
+  							var(--up)*var(--sgn-k) +
+  							var(--not-dn)*var(--not-up)*clamp(-1, var(--dif), 1));
+  --j: calc(.5*(var(--sgn-j) + 1));
+  width: calc(var(--sf)*(var(--not-typ)*1em + 2*var(--typ)*var(--rsw, 0)*6.25em));
+  height: calc(var(--sf)*(var(--not-typ)*var(--re) + var(--typ)*var(--rsh, 0))*6.25em);
+  transform-origin: 50% 0;
+  transform: rotatey(calc(var(--k)*.5turn)) rotatex(var(--ax)) scalex(calc(var(--not-typ) + var(--typ)*var(--sgn-q, 0)*var(--sgn-k))) rotatey(var(--ay, 0deg));
+}
+.⭐ .main::before, .⭐ .main::after {
+  -webkit-clip-path: polygon(var(--vx));
+  clip-path: polygon(var(--vx));
+}
+
+@property --intl {
+  syntax: "<integer>";
+  initial-value: 0;
+  inherits: true;
+}
+@property --ints {
+  syntax: "<integer>";
+  initial-value: 0;
+  inherits: true;
+}
+@property --rndl {
+  syntax: "<integer>";
+  initial-value: 0;
+  inherits: true;
+}
+@property --rnds {
+  syntax: "<integer>";
+  initial-value: 0;
+  inherits: true;
+}
+.🌙 > .lat {
+  --p: calc((var(--i) + .5)/var(--n));
+  --pl: calc(.25 - var(--rsl) - var(--p)*var(--rdl) + 1);
+  --ps: calc(.25 - var(--rss) - var(--p)*var(--rds) + 1);
+  --intl: calc(var(--pl) - .5);
+  --ints: calc(var(--ps) - .5);
+  --modl: calc(var(--pl) - var(--intl));
+  --mods: calc(var(--ps) - var(--ints));
+  --absl: Max(calc(var(--modl) - .5), calc(.5 - var(--modl)));
+  --abss: Max(calc(var(--mods) - .5), calc(.5 - var(--mods)));
+  --incl: calc(2*var(--absl) - .5);
+  --incs: calc(2*var(--abss) - .5);
+  --rndl: var(--modl);
+  --rnds: var(--mods);
+}
+.🌙 > .lat::before, .🌙 > .lat::after {
+  --r: calc((var(--k) + var(--not-k)*var(--rf))*6.25em);
+  --ax: calc(var(--not-k)*(var(--rss)*-1turn - var(--p)*var(--ds)) +
+  					 var(--k)*(var(--rsl)*-1turn - var(--p)*var(--dl)));
+  --h: calc((var(--not-k)*var(--res) + var(--k)*var(--rel))*6.25em);
+  --inc: calc(var(--k)*var(--incl) + var(--not-k)*var(--incs));
+  --rnd: calc(var(--k)*var(--rndl) + var(--not-k)*var(--rnds));
+  --dif: calc(var(--k) - var(--rnd));
+  --not-xor: calc(1 - var(--dif)*var(--dif));
+  --sh: calc(-.5*var(--not-xor));
+  width: 1em;
+  height: var(--h);
+  transform: translatez(calc(var(--not-k)*var(--ofx)*6.25em)) rotatex(var(--ax)) translatez(var(--r)) scaley(1.05);
+  background-position: 50% calc(-1*var(--i)*var(--h));
+  background-size: auto calc(var(--n)*var(--h));
+  background-color: hsl(25, 50%, calc(50%*(1 - 1.5*var(--sgn-k)*var(--inc))));
+}
+.🌙 > .main::before, .🌙 > .main::after {
+  --sh: calc(-.25 - .5*var(--k));
+  --mask:
+  	radial-gradient(circle at calc(50%*(1 + var(--ofx))),
+  			transparent calc(var(--rf)*6.25em),
+  			red calc(var(--rf)*6.25em + 1px));
+  -webkit-mask: var(--mask);
+  mask: var(--mask);
+}
+
+.🟫.⭐ .lat {
+  --sh: calc(.5*var(--j) - 1.5) ;
+}
+.🟫.⭐ .main {
+  --sh: calc(-.5*var(--j) - .75) ;
+}
+.🟫 .comp::before, .🟫 .comp::after {
+  background: var(--over,  ) url(https://assets.codepen.io/2017/wood_door.jpg) 50%/cover burlywood;
+  background-blend-mode: overlay;
+}
+.🟫 .lat::before, .🟫 .lat::after {
+  background-color: hsl(25, 50%, calc(50%*(1 + var(--inc))));
+}
+
+.🟨 .lat {
+  --sgn-q: calc(2*var(--q) - 1);
+}
+.🟨 .lat::before, .🟨 .lat::after {
+  --sh: calc(-.25*(3*var(--q) - var(--sgn-q)*(1 - var(--j))) - .125);
+  background: repeating-radial-gradient(circle at 100% 100%, transparent 0 5px, hsla(47, 100%, calc(44%*(1 + var(--inc))), 0.3), transparent 7px), repeating-radial-gradient(circle at 100% 100%, transparent 0 11px, hsla(48, 100%, calc(45%*(1 + var(--inc))), 0.3), transparent 13px), repeating-radial-gradient(circle at 100% 100%, transparent 0 17px, hsla(49, 100%, calc(47%*(1 + var(--inc))), 0.3), transparent 19px), repeating-radial-gradient(circle at 100% 100%, transparent 0 41px, hsla(41, 100%, calc(43%*(1 + var(--inc))), 0.3), transparent 43px), linear-gradient(90deg, transparent 50%, hsl(40, 100%, calc(50%*(1 + var(--inc)))) 0, hsl(55, 100%, calc(52%*(1 + var(--inc)))));
+  background-blend-mode: multiply;
+  clip-path: polygon(50% 0, 50% calc(var(--re)*6.25em), 100% 100%);
+}
+
+.comp {
+  place-self: center;
+}
+.comp::before, .comp::after {
+  animation: shade 6s ease-in-out calc((var(--sh) - var(--py))*12s) infinite alternate;
+  content: "";
+}
+
+@keyframes shade {
+  to {
+    filter: brightness(0.5);
+  }
+}
+.main::before, .main::after {
+  --over: linear-gradient(#fff, #000), ;
+  padding: calc(var(--sf, 1)*6.25em);
+  border-radius: 50%;
+  transform: rotateY(calc(-90deg)) scalez(var(--sgn-k)) translatez(calc(.5*var(--sf, 1)*1em));
+}
+
+audio {
+  --hl: 0;
+  position: fixed;
+  top: 100vh;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  opacity: calc((1 + 3*var(--hl))*.25);
+  filter: invert(1) sepia(1) hue-rotate(180deg);
+}
+audio:focus, audio:hover {
+  --hl: 1;
+  outline: none;
+}

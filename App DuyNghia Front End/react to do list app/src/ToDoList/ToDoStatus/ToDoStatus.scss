@@ -1,0 +1,19 @@
+.ToDoStatus {
+  height: 100%;
+  background-color: #ffffff;
+  border: 1px solid #d9d9d9;
+  box-shadow: 0px 10px 20px rgba(240, 240, 240, 0.25);
+
+  .todo__status {
+    padding: 10px 16px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+
+    background: linear-gradient(270.16deg, #cc00ff -2.84%, #5756ff 33.42%, #07fdfd 99.91%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+  }
+}

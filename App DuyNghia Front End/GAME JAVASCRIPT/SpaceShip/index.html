@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Spaceship Game</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
+  </head>
+  <body>
+    <div id="FinishGame" style="display: none">
+      <h1>Space Game</h1>
+      <p id="Score">Score: 0</p>
+      <button
+        onclick="{
+			document.getElementById ('FinishGame').style.display = 'none';
+			document.getElementById ('readyScreen').style.display = 'flex';
+		}"
+      >
+        Home
+      </button>
+    </div>
+    <div id="readyScreen">
+      <h1>Space Game</h1>
+      <button onclick="PlayGame ()">Play Game</button>
+      <button onclick="Setting()">Setting</button>
+      <p
+        style="
+          color: white;
+          font-family: 'Arials', sans-serif;
+          font-style: italic;
+        "
+      >
+        While playing the game, you can press Enter to directly end!
+      </p>
+    </div>
+    <div id="settingScreen" style="display: none">
+      <label id="backgroundVolume_label">Background volume (100)</label>
+      <input
+        id="backgroundVolume"
+        class="volume"
+        type="range"
+        value="100"
+        min="0"
+        max="100"
+        oninput="document.getElementById('backgroundVolume_label').innerHTML = 'Background volume (' + this.value/100 + ')'"
+      />
+      <label id="shotVolume_label">Shot volume (100)</label>
+      <input
+        id="shotVolume"
+        class="volume"
+        type="range"
+        value="100"
+        min="0"
+        max="100"
+        oninput="document.getElementById('shotVolume_label').innerHTML = 'Shot volume (' + this.value/100 + ')'"
+      />
+      <label id="boomVolume_label">Boom volume (100)</label>
+      <input
+        id="boomVolume"
+        class="volume"
+        type="range"
+        value="100"
+        min="0"
+        max="100"
+        oninput="document.getElementById('boomVolume_label').innerHTML = 'Boom volume (' + this.value/100 + ')'"
+      />
+      <button>Change bullet</button>
+      <button onclick="ChangeSpaceShip ()">Change Spaceship</button>
+      <button
+        onclick="{
+				document.getElementById ('settingScreen').style.display = 'none';
+				document.getElementById ('setLevel').style.display = 'flex';	
+				LevelBTN[Level-1].style.backgroundColor = '#990000';
+				temp_Level = Level;		
+				ChooseLevel (Level);
+		}"
+      >
+        Set Level
+      </button>
+      <div></div>
+      <div style="display: flex">
+        <button
+          class="buttonSetting"
+          id="ReturnSetting"
+          onclick="{
+				document.getElementById ('settingScreen').style.display = 'none';
+				document.getElementById ('readyScreen').style.display = 'flex';				
+			}"
+        >
+          Return
+        </button>
+        <button class="buttonSetting" id="ApplySetting" onclick="Apply()">
+          Confirm
+        </button>
+      </div>
+    </div>
+    <div id="changeSpaceShip" style="display: none">
+      <h1>Choose SpaceShip</h1>
+      <div id="chooseCharSpaceShip"></div>
+      <div style="display: flex">
+        <button
+          class="buttonSetting"
+          style="background-color: red !important"
+          onclick="{
+				document.getElementById ('changeSpaceShip').style.display = 'none';
+				document.getElementById ('settingScreen').style.display = 'flex';				
+			}"
+        >
+          Return
+        </button>
+        <button
+          class="buttonSetting"
+          style="background-color: #4dba58 !important"
+          onclick="ApplySpaceShip ()"
+        >
+          Confirm
+        </button>
+      </div>
+    </div>
+    <div id="setLevel" style="display: none">
+      <div id="Levels"></div>
+
+      <div style="display: flex">
+        <button
+          class="buttonSetting"
+          style="background-color: red !important"
+          onclick="{
+				document.getElementById ('setLevel').style.display = 'none';
+				document.getElementById ('settingScreen').style.display = 'flex';				
+			}"
+        >
+          Return
+        </button>
+        <button
+          class="buttonSetting"
+          style="background-color: #4dba58 !important"
+          onclick="ApplyLevel ()"
+        >
+          Confirm
+        </button>
+      </div>
+    </div>
+    <canvas id="canvas" style="display: none"></canvas>
+    <audio id="audioBG" style="display: none" controls="">
+      <source src="Background.mp3" type="audio/mpeg" />
+    </audio>
+    <audio id="audioShoot" style="display: none" controls="">
+      <source src="Shoot.mp3" type="audio/mpeg" />
+    </audio>
+    <audio id="audioBoom" style="display: none" controls="">
+      <source src="Boom.mp3" type="audio/mpeg" />
+    </audio>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="jquery/jquery.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+  </body>
+</html>

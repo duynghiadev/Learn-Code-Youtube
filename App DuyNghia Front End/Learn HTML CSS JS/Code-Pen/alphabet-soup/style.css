@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Gluten:wght@600&family=Space+Mono&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  --color-noodle: hsl(32 100% 75%);
+  --color-soup: hsl(10 100% 34%);
+  --color-placemat: hsla(0 100% 39% / 0.5);
+
+  display: grid;
+  grid-template-areas: "body";
+  place-items: center;
+  font-family: "Gluten", monospace;
+  background: hsl(186deg 67% 74%);
+}
+
+body > * {
+  grid-area: body;
+}
+
+.placemat {
+  width: 90vmin;
+  aspect-ratio: 5 / 4;
+  background: white;
+  background-image: linear-gradient(
+      90deg,
+      var(--color-placemat) 50%,
+      transparent 0
+    ),
+    linear-gradient(var(--color-placemat) 50%, transparent 0);
+  background-size: 4vmin 4vmin;
+  border-radius: 0.5vmin;
+  box-shadow: hsla(0 0% 0% / 0.1) 0 1vmin 1vmin -0.5vmin;
+}
+
+.bowl {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  grid-template-areas: "bowl";
+  aspect-ratio: 1;
+  width: 75vmin;
+  font-size: 10vmin;
+  text-transform: uppercase;
+  background: var(--color-soup);
+  color: var(--color-noodle);
+  border-radius: 50%;
+  border: 5vmin solid white;
+  box-shadow: hsla(0 0% 0% / 0.05) 2vmin 2vmin 2vmin -2vmin,
+    hsla(0 0% 0% / 0.05) -2vmin -2vmin 2vmin -2vmin, white 0 0 0 5vmin,
+    hsla(0 0% 0% / 0.1) -5vmin -5vmin 10vmin 1vmin inset,
+    hsla(0 0% 0% / 0.1) 5vmin 5vmin 10vmin 1vmin inset,
+    hsl(0 0% 0% / 0.1) 0 0 0 0.5vmin inset,
+    hsla(0 0% 0% / 0.07) 5vmin 5vmin 1vmin;
+}
+
+.bowl > * {
+  grid-area: bowl;
+}
+
+.text {
+  width: 100%;
+  text-align: center;
+}
+
+.char {
+  position: relative;
+  letter-spacing: -0.1em;
+  transform: scaleX(0.8);
+}
+
+.btn {
+  --bg-color: hsl(60deg 95% 60%);
+  position: fixed;
+  top: 0.5rem;
+  left: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-family: "Space Mono", monospace;
+  background-color: var(--bg-color);
+  border: 2px dashed black;
+  border-radius: 0.125rem;
+  cursor: pointer;
+  transform: translateY(-1px);
+  box-shadow: var(--bg-color) 0 0 0 2px, hsla(0 0% 0% / 0.2) 2px 2px 6px;
+}
+
+.btn:focus-visible {
+  box-shadow: none;
+  border-color: transparent;
+  outline-offset: -4px;
+}
+
+.btn:active {
+  transform: translateY(0);
+  box-shadow: var(--bg-color) 0 0 0 2px, hsla(0 0% 0% / 0.2) 2px 2px 4px;
+}
