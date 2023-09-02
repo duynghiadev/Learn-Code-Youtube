@@ -1,5 +1,22 @@
 # Học Lập Trình React Qua Dự Án
 
+![Hoi Dan IT](hoidanit.png)
+
+### Mô tả
+
+Chào mừng các bạn đến với channel "Hỏi Dân IT".
+Mình tên là Eric && Và mình ở đây để giải đáp, hỗ trợ cũng như chia sẻ các kiến thức khi các bạn cần đến một "thằng ai ti".
+Channel này là nơi mình chia sẻ những gì mình biết về ngành IT cũng như các kĩ năng sử dụng các phần mềm dành cho những người KHÔNG RÀNH KỸ THUẬT.
+
+Đối với mình, việc học được một điều mới đã là khó, tuy nhiên việc giúp những người khác học điều đấy còn khó hơn nhiều. Với phương châm không ngừng học hỏi, cập nhật những kiến thức mới nhất, mình sẽ cố gắng mang đến những nội dung mới nhất dành cho mọi người, từ các kỹ năng văn phòng ( Word, Excel, PowerPoint...) cho đến kỹ năng làm đồ họa, chỉnh sửa video(Photoshop, Camtasia..) hay thậm chí những vấn đề chuyên sâu của IT.
+
+Hãy nhớ rằng "Khi nào bạn gặp khó, thì đã có mình ở đây"
+
+🌹 Bạn nào muốn donate, mua cho mình cốc cà phê thì các bạn dùng link:
+❤ https://hoidanit.com.vn/donate
+
+Facebook Fanpage: https://www.facebook.com/askITwithERIC
+
 ## Giới Thiệu
 
 Folder này chứa tất cả các dự án mà tôi đã thực hiện trong quá trình học lập trình React thông qua việc theo dõi các khóa học trực tuyến, video hướng dẫn trên YouTube và nhiều nguồn tài liệu khác. Mục tiêu chính của việc này là nâng cao kiến thức và kỹ năng lập trình của tôi trong lĩnh vực React và phát triển khả năng giải quyết vấn đề cũng như làm việc nhóm.
