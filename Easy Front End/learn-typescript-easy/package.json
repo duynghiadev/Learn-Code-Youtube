@@ -1,0 +1,20 @@
+{
+  "name": "learn-typescript-easy",
+  "version": "1.0.0",
+  "description": "learn typescript from easy frontend",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "keywords": [
+    "typescript"
+  ],
+  "author": "Duy Nghia Dev",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^29.5.4",
+    "jest": "^29.6.4",
+    "ts-jest": "^29.1.1",
+    "typescript": "^5.2.2"
+  }
+}
