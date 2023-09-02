@@ -1,4 +1,4 @@
-import { isPositive } from './04-main'
+import { isPositive } from './01-04-main'
 
 describe('isPositive()', () => {
   it('should return true when n > 0', () => {
