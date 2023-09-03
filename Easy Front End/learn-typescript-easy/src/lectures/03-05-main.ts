@@ -28,6 +28,12 @@ const studentList3: List<Student5> = [
 
 console.log('List 🚀', studentList2)
 
+// keyof operator 👇
+
+type StudentKeys = keyof Student5
+const keys_1: StudentKeys = 'id'
+const keys_2: StudentKeys = 'name'
+
 // typeof operator 👇
 
 console.log('string ✅', typeof 'easy frontend') // 'string'
