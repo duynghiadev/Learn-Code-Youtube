@@ -1,4 +1,5 @@
-const age1: number = 20;
+const age1: number = 20; // option 1 ✅
+// const age1: number = 30; // option 2 ❌
 
 switch (age1) {
   case 20:
@@ -10,6 +11,7 @@ switch (age1) {
     console.log("Đang làm sinh viên");
     break;
   default:
+    // Nếu không đúng với điều kiện đã đặt ở trước đó thì sẽ chạy vào chỗ này 👇
     // code block
     console.log(">>> Run default");
     break;
