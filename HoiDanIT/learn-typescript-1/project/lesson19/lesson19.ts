@@ -17,6 +17,10 @@ function addNumberOrString(a: ericType, b: number | string) {
 
 // lỗi khi running
 // lỗi khi compile
+// Nếu lỗi thì sẽ bắn ra lỗi (new Error)
+
+// console.log(">>> check: ", addNumberOrString(true, false));
+
 console.log(">>> check number + number: ", addNumberOrString(6, 9));
 console.log(">>> check boolean + string: ", addNumberOrString(true, " ku nhi"));
 console.log(
