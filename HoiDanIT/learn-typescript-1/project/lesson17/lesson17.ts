@@ -14,6 +14,7 @@ console.log(">> check a= ", a);
  *
  * - Lưu ý: các hàm mà trả về void là nó có trả về kết quả, và tên của kết quả đó là undefined nha ❌
  */
+
 function runInfinity(): void {
   while (true) {
     console.log("running...");
