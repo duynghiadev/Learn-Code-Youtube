@@ -20,7 +20,7 @@ let products1 = [
 ];
 
 let discount = 0;
-let product = products1[1];
+let product = products1[2];
 
 switch (product.name) {
   case "samsung":
