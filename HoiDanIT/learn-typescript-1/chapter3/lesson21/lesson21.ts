@@ -12,7 +12,6 @@ switch (age1) {
     break;
   default:
     // Nếu không đúng với điều kiện đã đặt ở trước đó thì sẽ chạy vào chỗ này 👇
-    // code block
     console.log(">>> Run default");
     break;
 }
