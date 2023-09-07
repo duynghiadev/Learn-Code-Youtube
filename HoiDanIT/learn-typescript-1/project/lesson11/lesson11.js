@@ -1,6 +1,8 @@
 let mine = {};
 
-mine = { name: "Eric" };
+mine = {
+  name: "Eric",
+}; // using method asignment
 
 mine.address = "Hỏi Dân IT";
 
