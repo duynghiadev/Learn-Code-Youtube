@@ -61,6 +61,29 @@ app.get('/api/v1/todos/:id', (req, res) => {
   }
 })
 
+// API xoá thông tin một công việc theo id
+app.delete('/api/v1/todos/:id', (req, res) => {
+  // Lấy id từ client gửi lên
+  const id = req.params.id
+  try {
+    // Đọc file todos.json
+    const todos = JSON.parse(fs.readFileSync('./dev-data/todos.json'))
+    // Kiểm tra, lọc thông tin những job khác với id được gửi lên
+    const newTodo = todos.filter((todo) => todo.id != id)
+    // Tiến hành ghi đè file
+    fs.writeFileSync('./dev-data/todos.json', JSON.stringify(newTodo))
+    return res.status(200).json({
+      status: 200,
+      message: 'Xoá thành công'
+    })
+  } catch (error) {
+    return res.status(500).json({
+      message: 'Lỗi hệ thống',
+      error: error
+    })
+  }
+})
+
 app.listen(port, () => {
   console.log(`http://localhost:${port}`)
 })
