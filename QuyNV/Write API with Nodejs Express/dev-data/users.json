@@ -1,0 +1,56 @@
+[
+  {
+    "_id": "1",
+    "name": "duynghia",
+    "email": "abc@gmail.com",
+    "role": "admin",
+    "active": true,
+    "photo": "user-1.jpg",
+    "password": "duynghia123"
+  },
+  {
+    "_id": "2",
+    "name": "duynghia",
+    "email": "abc@gmail.com",
+    "role": "admin",
+    "active": true,
+    "photo": "user-2.jpg",
+    "password": "duynghia123"
+  },
+  {
+    "_id": "3",
+    "name": "duynghia",
+    "email": "abc@gmail.com",
+    "role": "admin",
+    "active": true,
+    "photo": "user-3.jpg",
+    "password": "duynghia123"
+  },
+  {
+    "_id": "4",
+    "name": "duynghia",
+    "email": "abc@gmail.com",
+    "role": "user",
+    "active": true,
+    "photo": "user-4.jpg",
+    "password": "duynghia123"
+  },
+  {
+    "_id": "5",
+    "name": "duynghia",
+    "email": "abc@gmail.com",
+    "role": "user",
+    "active": true,
+    "photo": "user-5.jpg",
+    "password": "duynghia123"
+  },
+  {
+    "_id": "6",
+    "name": "duynghia",
+    "email": "abc@gmail.com",
+    "role": "user",
+    "active": true,
+    "photo": "user-6.jpg",
+    "password": "duynghia123"
+  }
+]
