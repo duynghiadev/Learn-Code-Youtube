@@ -1,8 +1,11 @@
 const express = require('express')
 const fs = require('fs')
-
 const app = express()
 const port = 8080
+
+const bodyParser = require('body-parser')
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: true }))
 
 // API lấy thông tin tất cả công việc
 app.get('/api/v1/todos', (req, res) => {
@@ -75,6 +78,59 @@ app.delete('/api/v1/todos/:id', (req, res) => {
     return res.status(200).json({
       status: 200,
       message: 'Xoá thành công'
+    })
+  } catch (error) {
+    return res.status(500).json({
+      message: 'Lỗi hệ thống',
+      error: error
+    })
+  }
+})
+
+// Kiểm tra dữ liệu không được để trống
+const checkIsEmpty = (filed) => {
+  if (filed === null || filed === undefined || filed === '') {
+    return true
+  } else {
+    return false
+  }
+}
+
+// Middleware kiểm tra dữ liệu đầu vào
+const validateData = (req, res, next) => {
+  const { title } = req.body
+  if (checkIsEmpty(title)) {
+    return res.status(400).json({
+      status: 400,
+      message: 'Tên công việc không được phép để trống'
+    })
+  }
+  // Cho phép đi đến hàm tiếp theo
+  next()
+}
+
+// API thêm mới công việc
+app.post('/api/v1/todos', validateData, (req, res) => {
+  const id = Math.ceil(Math.random() * 100000)
+  // Lấy dữ liệu từ người dùng
+  const { UserId, title } = req.body
+  // Tạo ra 1 newTodo
+  const newTodo = {
+    userId: UserId,
+    id: 10,
+    title: title,
+    completed: false
+  }
+  try {
+    const datas = JSON.parse(fs.readFileSync('./dev-data/todos.json'))
+    // Push vào mảng
+    datas.push(newTodo)
+    // writeFile
+    fs.writeFileSync('./dev-data/todos.json', JSON.stringify(datas))
+    // Hiển thị cho người dùng
+    return res.status(201).json({
+      status: 201,
+      message: 'Thêm thành công'
     })
   } catch (error) {
     return res.status(500).json({
