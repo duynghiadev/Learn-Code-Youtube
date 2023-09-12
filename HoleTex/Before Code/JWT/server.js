@@ -1,49 +1,49 @@
-import express from "express";
-import jwt from "jsonwebtoken";
-import dotenv from "dotenv";
+import express from 'express'
+import jwt from 'jsonwebtoken'
+import dotenv from 'dotenv'
 
-dotenv.config();
+dotenv.config()
 
-const app = express();
-const PORT = process.env.PORT || 5000;
+const app = express()
+const PORT = process.env.PORT || 5000
 
-app.use(express.json());
+app.use(express.json())
 
 const books = [
   {
     id: 1,
-    name: "Chi Pheo",
-    author: "ABC",
+    name: 'Chi Pheo',
+    author: 'ABC'
   },
   {
     id: 2,
-    name: "Chien tranh va Hoa Binh",
-    author: "DEF",
+    name: 'Chien tranh va Hoa Binh',
+    author: 'DEF'
   },
   {
     id: 3,
-    name: "Hello cac ban minh la ToiDiCodeDao",
-    author: "Toi Di Code Dao",
-  },
-];
+    name: 'Hello cac ban minh la ToiDiCodeDao',
+    author: 'Toi Di Code Dao'
+  }
+]
 
-app.get("/books", authenToken, (req, res) => {
-  res.json({ status: "Success", data: books });
-});
+app.get('/books', authenToken, (req, res) => {
+  res.json({ status: 'Success', data: books })
+})
 
 function authenToken(req, res, next) {
-  const authorizationHeader = req.headers["authorization"];
+  const authorizationHeader = req.headers['authorization']
   // 'Beaer [token]'
-  const token = authorizationHeader.split(" ")[1];
-  if (!token) res.sendStatus(401);
+  const token = authorizationHeader.split(' ')[1]
+  if (!token) res.sendStatus(401)
 
   jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, data) => {
-    console.log(err, data);
-    if (err) res.sendStatus(403);
-    next();
-  });
+    console.log(err, data)
+    if (err) res.sendStatus(403)
+    next()
+  })
 }
 
 app.listen(PORT, () => {
-  console.log(`Server is running on PORT ${PORT}`);
-});
+  console.log(`Server is running on PORT ${PORT}`)
+})
