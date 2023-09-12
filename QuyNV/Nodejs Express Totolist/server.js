@@ -140,6 +140,33 @@ app.post('/api/v1/todos', validateData, (req, res) => {
   }
 })
 
+// Cập nhật thông tin công việc
+app.put('/api/v1/todos/:id', (req, res) => {
+  // Lấy id từ client
+  const { id } = req.params
+  // Lấy thông tin trạng thái của công việc
+  const isComplete = req.body.completed
+  try {
+    // Đọc file
+    const datas = JSON.parse(fs.readFileSync('./dev-data/todos.json'))
+    // Kiểm tra id có tồn tại hay không
+    datas.forEach((data) => {
+      if (data.id == id) {
+        datas.completed = isComplete
+      }
+    })
+    return res.status(200).json({
+      status: 200,
+      message: 'Cập nhật thành công'
+    })
+  } catch (error) {
+    return res.status(500).json({
+      message: 'Lỗi hệ thống',
+      error: error
+    })
+  }
+})
+
 app.listen(port, () => {
   console.log(`http://localhost:${port}`)
 })
