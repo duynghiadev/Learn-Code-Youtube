@@ -8,6 +8,8 @@ router.get('/', (req, res) => {
 
 router.post('/login', (req, res) => {
   // email, password
+  const { email, password } = req.body
+  debugger
   res.send('POST login users')
 })
 
