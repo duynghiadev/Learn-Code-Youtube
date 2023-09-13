@@ -1,0 +1,8 @@
+{
+  "name": "nodejs-tutorials",
+  "version": "1.0.0",
+  "description": "This is a tutorials nodejs",
+  "main": "index.js",
+  "author": "DuynghiaDev",
+  "license": "MIT"
+}
