@@ -2,8 +2,13 @@ import express from 'express'
 import * as dotenv from 'dotenv'
 import { usersRouter, studentsRouter } from './routes/index.js'
 
+// send test requests => use Postman
 dotenv.config() // must have
 const app = express()
+
+// middleware
+// Allows reading the body tag of the request
+app.use(express.json())
 
 const port = process.env.PORT ?? 3000
 
