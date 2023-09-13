@@ -27,23 +27,27 @@ const books = [
   }
 ]
 
-// Create API login
-app.post('/login', (req, res) => {
-  // Authentication
-  // Authorization
-  // {username: 'Tesy'}
-  const data = req.body
-  const accessToken = jwt.sign(data, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '30s' })
-  res.json({ accessToken })
-})
-
 // Create API books to get all book in array
-app.get('/books', (req, res) => {
+app.get('/books', authenToken, (req, res) => {
   res.json({
     status: 'Success',
     data: books
   })
 })
+
+// Middleware
+function authenToken(req, res, next) {
+  const authorizationHeader = req.headers['authorization']
+  // 'Beaer [token]'
+  const token = authorizationHeader.split(' ')[1]
+  if (!token) res.sendStatus(401)
+
+  jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, data) => {
+    console.log(err, data)
+    if (err) res.sendStatus(403)
+    next()
+  })
+}
 
 app.listen(PORT, () => {
   console.log(`Server is running on PORT http://localhost:${PORT}`)
