@@ -1,4 +1,8 @@
 import express from 'express'
+import jwt from 'jsonwebtoken'
+import dotenv from 'dotenv'
+
+dotenv.config()
 
 const app = express()
 const PORT = process.env.PORT || 5000
@@ -22,6 +26,16 @@ const books = [
     author: 'Toi Di Code Dao'
   }
 ]
+
+// Create API login
+app.post('/login', (req, res) => {
+  // Authentication
+  // Authorization
+  // {username: 'Tesy'}
+  const data = req.body
+  const accessToken = jwt.sign(data, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '30s' })
+  res.json({ accessToken })
+})
 
 // Create API books to get all book in array
 app.get('/books', (req, res) => {
