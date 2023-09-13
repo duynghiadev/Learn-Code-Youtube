@@ -5,7 +5,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "startServer": "nodemon server"
+    "startServer": "nodemon server",
+    "startAuthServer": "nodemon authServer"
   },
   "keywords": [],
   "author": "",
