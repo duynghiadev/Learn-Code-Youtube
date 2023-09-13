@@ -1,10 +1,16 @@
 import express from 'express'
 import * as dotenv from 'dotenv'
+import { usersRouter, studentsRouter } from './routes/index.js'
 
 dotenv.config() // must have
 const app = express()
 
 const port = process.env.PORT ?? 3000
+
+// routers
+// this is middleware
+app.use('/users', usersRouter)
+app.use('/students', studentsRouter)
 
 app.get('/', (req, res) => {
   res.send('response from root router')
