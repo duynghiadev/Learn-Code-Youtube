@@ -1,5 +1,6 @@
 {
   "name": "nodejs-tutorials",
+  "type": "module",
   "version": "1.0.0",
   "description": "This is a tutorials nodejs",
   "main": "index.js",
