@@ -1,10 +1,14 @@
 {
-  "name": "nodejs-tutorials",
+  "name": "nodejs-tutorials-2023",
   "type": "module",
   "version": "1.0.0",
   "description": "This is a tutorials nodejs",
-  "main": "index.js",
-  "author": "DuynghiaDev",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "debug": "node inspect server.js"
+  },
+  "author": "Duy Nghia Dev",
   "license": "MIT",
   "dependencies": {
     "@faker-js/faker": "^7.6.0",
