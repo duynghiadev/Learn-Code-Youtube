@@ -7,6 +7,7 @@ router.get('/', (req, res) => {
 })
 
 router.post('/login', (req, res) => {
+  // email, password
   res.send('POST login users')
 })
 
