@@ -1,17 +1,20 @@
+import { print, OutputType } from '../helpers/print.js'
+
 const login = async ({ email, password }) => {
-  console.log('login user in user repository, duynghiadev')
+  print('login user in user repository, duynghiadev', OutputType.INFORMATION)
 }
 
 const register = async ({ name, email, password, phoneNumber, address }) => {
   // validation already done
-  console.log(
+  print(
     'register user with: name: ' + name + ' email: ',
     email + ' password: ',
     +password,
     ' phoneNumber: ',
     +phoneNumber,
     ' address: ',
-    +address
+    +address,
+    OutputType.INFORMATION
   )
 }
 
