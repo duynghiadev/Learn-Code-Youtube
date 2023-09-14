@@ -6,6 +6,7 @@ export default class Exception extends Error {
   static CANNOT_CONNECT_MONGODB = 'Cannot connect to Mongoose'
   static USER_EXIST = 'User already exists'
   static CANNOT_REGISTER_USER = 'Cannot register user'
+  static WRONG_EMAIL_AND_PASSWORD = 'Wrong email and password'
 
   constructor(message) {
     super(message) // call constructor of parent class (Error)

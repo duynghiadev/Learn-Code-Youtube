@@ -18,11 +18,17 @@ const login = async (req, res) => {
   }
   const { email, password } = req.body
   // call repository
-  await userRepository.login({ email, password })
-  res.status(HttpStatusCode.OK).json({
-    message: 'Login user successfully'
-    // data: 'detail user here'
-  })
+  try {
+    await userRepository.login({ email, password })
+    res.status(HttpStatusCode.OK).json({
+      message: 'Login user successfully'
+      // data: 'detail user here'
+    })
+  } catch (exception) {
+    res.status(HttpStatusCode.INTERNAL_SERVER_ERROR).json({
+      message: exception.toString()
+    })
+  }
 }
 
 const register = async (req, res) => {
