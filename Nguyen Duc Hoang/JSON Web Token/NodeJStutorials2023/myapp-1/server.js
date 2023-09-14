@@ -1,9 +1,9 @@
 import express from 'express'
 import * as dotenv from 'dotenv'
+dotenv.config() // must have
+import connect from './database/database.js'
 import { usersRouter, studentsRouter } from './routes/index.js'
 
-// send test requests => use Postman
-dotenv.config() // must have
 const app = express()
 
 // middleware
@@ -22,6 +22,7 @@ app.get('/', (req, res) => {
 })
 
 app.listen(port, async () => {
+  await connect()
   console.log(`listening on port http://localhost:${port}`)
 })
 
