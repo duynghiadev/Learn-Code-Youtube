@@ -4,7 +4,19 @@ import User from '../models/User.js'
 import bcrypt from 'bcrypt'
 
 const login = async ({ email, password }) => {
-  print('login user in user repository, duynghiadev', OutputType.INFORMATION)
+  // print('login user in user repository, duynghiadev', OutputType.INFORMATION)
+  let existingUser = await User.findOne({ email }).exec()
+  if (existingUser) {
+    // not encrypt password !
+    let isMatch = await bcrypt.compare(password, existingUser.password)
+    if (!!isMatch) {
+      // create Java Web Token
+    } else {
+      throw new Exception(Exception.WRONG_EMAIL_AND_PASSWORD)
+    }
+  } else {
+    throw new Exception(Exception.WRONG_EMAIL_AND_PASSWORD)
+  }
 }
 
 const register = async ({ name, email, password, phoneNumber, address }) => {
