@@ -1,5 +1,6 @@
 import mongoose from 'mongoose'
 import { OutputType, print } from '../helpers/print.js'
+import Exception from '../exceptions/Exception.js'
 
 mongoose.set('strictQuery', true)
 
@@ -7,18 +8,17 @@ async function connect() {
   try {
     let connection = await mongoose.connect(process.env.MONGO_URI)
     debugger
-    print('connect mongoose successfully', OutputType.SUCCESS)
+    print('Connect mongoose successfully', OutputType.SUCCESS)
     return connection
   } catch (error) {
-    print('Connect mongoose error', OutputType.ERROR)
     const { code } = error
     debugger
     if (error.code === 8000) {
-      throw new Error("Wrong database's username and password")
+      throw new Exception(Exception.WRONG_DB_USERNAME_PASSWORD)
     } else if (code == 'ENOTFOUND') {
-      throw new Error('Wrong server name/connection string')
+      throw new Exception(Exception.WRONG_CONNECTION_STRING)
     }
-    throw new Error('Cannot connect to Mongoose')
+    throw new Exception(Exception.CANNOT_CONNECT_MONGODB)
   }
 }
 
