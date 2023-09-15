@@ -4,7 +4,11 @@ dotenv.config() // must have
 import connect from './database/database.js'
 import { usersRouter, studentsRouter } from './routes/index.js'
 
+// authentication middleware
+import checkToken from './authentication/auth.js'
+
 const app = express()
+app.use(checkToken)
 
 // middleware
 // Allows reading the body tag of the request
