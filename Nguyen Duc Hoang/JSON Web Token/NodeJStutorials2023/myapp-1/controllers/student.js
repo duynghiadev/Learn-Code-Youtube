@@ -41,7 +41,8 @@ async function insertStudent(req, res) {
     })
   } catch (exception) {
     res.status(HttpStatusCode.INTERNAL_SERVER_ERROR).json({
-      message: 'Cannot insert student:' + error
+      message: 'Cannot insert student:' + exception,
+      validationErrors: exception.validationErrors
     })
   }
 }
