@@ -18,7 +18,8 @@ const login = async ({ email, password }) => {
         },
         process.env.JWT_SECRET,
         {
-          expiresIn: '10 days'
+          expiresIn: '30 days' // 30 days
+          // expiresIn: '60' // 1 minute
         }
       )
       // clone an add more properties
