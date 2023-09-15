@@ -47,4 +47,17 @@ async function insertStudent(req, res) {
   }
 }
 
-export default { getAllStudents, getStudentById, updateStudent, insertStudent }
+async function generateFakeStudents(req, res) {
+  await studentRepository.generateFakeStudents(req.body)
+  res.status(HttpStatusCode.INSERT_OK).json({
+    message: 'Insert fake students successfully'
+  })
+}
+
+export default {
+  getAllStudents,
+  getStudentById,
+  updateStudent,
+  insertStudent,
+  generateFakeStudents // should be 'private'
+}
