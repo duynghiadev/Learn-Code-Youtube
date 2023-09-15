@@ -39,8 +39,8 @@ const Student = mongoose.model(
       type: String,
       required: true,
       validate: {
-        validator: (phoneNumber) => phoneNumber.length > 5 && phoneNumber.length <= 20,
-        message: 'Phone number must be at least 5 characters, max: 20'
+        validator: (phoneNumber) => phoneNumber.length > 5 && phoneNumber.length <= 50,
+        message: 'Phone number must be at least 5 characters, max: 50'
       }
     },
     address: {
