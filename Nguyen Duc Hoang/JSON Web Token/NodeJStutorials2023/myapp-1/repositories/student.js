@@ -3,8 +3,36 @@ import Exception from '../exceptions/Exception.js'
 import { faker } from '@faker-js/faker'
 import { print } from '../helpers/print.js'
 
-const getAllStudents = async ({ page, size, searching }) => {
-  console.log('get all students with paging')
+const getAllStudents = async ({ page, size, searchString }) => {
+  // aggregate data for all students
+  page = parseInt(page)
+  size = parseInt(size)
+  // searchString? name,email,address contains searchString
+
+  let filteredStudents = await Student.aggregate([
+    {
+      $match: {
+        $or: [
+          {
+            name: { $regex: `.*${searchString}.*`, $options: 'i' } // ignore case
+          },
+          {
+            name: { $regex: `.*${searchString}.*`, $options: 'i' } // ignore case
+          },
+          {
+            name: { $regex: `.*${searchString}.*`, $options: 'i' } // ignore case
+          }
+        ]
+      }
+    },
+    {
+      $skip: (page - 1) * size
+    },
+    {
+      $limit: size
+    }
+  ])
+  return filteredStudents
 }
 
 // language: "english, vietnamese, japanese"
