@@ -4,6 +4,7 @@ import { studentRepository } from '../repositories/index.js'
 import { MAX_RECORDS } from '../Global/constants.js'
 
 async function getAllStudents(req, res) {
+  //http:locahost: 3002?page=1&size=100
   let { page = 1, size = MAX_RECORDS, searchString = '' } = req.query
   size = size >= MAX_RECORDS ? MAX_RECORDS : size
   try {
@@ -13,11 +14,27 @@ async function getAllStudents(req, res) {
       searchString
     })
     res.status(HttpStatusCode.OK).json({
-      message: 'GET students successfully',
+      message: 'Get students successfully',
       size: filteredStudents.length,
       page,
       searchString,
       data: filteredStudents
+    })
+  } catch (exception) {
+    res.status(HttpStatusCode.InternalServerError).json({
+      message: exception.message
+    })
+  }
+}
+
+async function getStudentById(req, res) {
+  debugger
+  let studentId = req.params.id
+  try {
+    const student = await studentRepository.getStudentById(studentId)
+    res.status(HttpStatusCode.OK).json({
+      message: 'Get detail student successfully',
+      data: student
     })
   } catch (exception) {
     res.status(HttpStatusCode.INTERNAL_SERVER_ERROR).json({
@@ -26,9 +43,22 @@ async function getAllStudents(req, res) {
   }
 }
 
-async function getStudentById(req, res) {}
-
-async function updateStudent(req, res) {}
+async function updateStudent(req, res) {
+  const { id, name, email, languages, gender, phoneNumber, address } = req.body
+  debugger
+  //not validate !
+  try {
+    const student = await studentRepository.updateStudent(req.body)
+    res.status(HttpStatusCode.OK).json({
+      message: 'Update student successfully',
+      data: student
+    })
+  } catch (exception) {
+    res.status(HttpStatusCode.INTERNAL_SERVER_ERROR).json({
+      message: exception.message
+    })
+  }
+}
 
 async function insertStudent(req, res) {
   try {
@@ -57,5 +87,5 @@ export default {
   getStudentById,
   updateStudent,
   insertStudent,
-  generateFakeStudents // should be 'private'
+  generateFakeStudents //shoule be "private"
 }
