@@ -26,6 +26,8 @@
     "ejs": "3.1.6",
     "express": "4.17.2",
     "mysql2": "2.2.3",
-    "nodemon": "2.0.15"
+    "nodemon": "2.0.15",
+    "sequelize": "6.13.0",
+    "sequelize-cli": "6.3.0"
   }
 }
