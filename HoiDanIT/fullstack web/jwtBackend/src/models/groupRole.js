@@ -15,8 +15,8 @@ module.exports = (sequelize, DataTypes) => {
   // object relational mapping
   Group_Role.init(
     {
-      groupId: DataTypes.INTERGER,
-      roleId: DataTypes.INTERGER
+      groupId: DataTypes.INTEGER,
+      roleId: DataTypes.INTEGER
     },
     {
       sequelize,

@@ -15,8 +15,8 @@ module.exports = (sequelize, DataTypes) => {
   // object relational mapping
   Project_User.init(
     {
-      projectId: DataTypes.INTERGER,
-      userId: DataTypes.INTERGER
+      projectId: DataTypes.INTEGER,
+      userId: DataTypes.INTEGER
     },
     {
       sequelize,
