@@ -16,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
   Group_Role.init(
     {
       groupId: DataTypes.INTERGER,
-      roleId: DataTypes.STRING
+      roleId: DataTypes.INTERGER
     },
     {
       sequelize,
