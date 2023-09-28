@@ -25,9 +25,26 @@ const createNewUser = async (email, password, username) => {
 }
 
 const getUserList = async () => {
-  let users = []
-  users = db.User.findAll()
+  // Test relationships
+  let newUser = await db.User.findOne({
+    where: { id: 1 },
+    attributes: ['id', 'username', 'email'],
+    include: { model: db.Group, attributes: ['name', 'description'] },
+    raw: true,
+    nest: true
+  })
 
+  let r = await db.Role.findAll({
+    include: { model: db.Group, where: { id: 1 } },
+    raw: true,
+    nest: true
+  })
+
+  console.log('check new users:', newUser)
+  console.log('check new g:', r)
+
+  let users = []
+  users = await db.User.findAll()
   return users
 
   // create the connection, spectify bluebird as Promise
