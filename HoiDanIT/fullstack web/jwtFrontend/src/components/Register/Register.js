@@ -11,7 +11,7 @@ const Register = () => {
   }
 
   useEffect(() => {
-    axios.get('https://reqres.in/api/users?page=2').then((data) => {
+    axios.get('http://localhost:8080/api/test-api').then((data) => {
       console.log('>>> check data axios:', data)
     })
   })
