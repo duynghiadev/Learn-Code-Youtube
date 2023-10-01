@@ -43,6 +43,7 @@
     ]
   },
   "devDependencies": {
-    "@babel/preset-react": "^7.22.15"
+    "@babel/preset-react": "^7.22.15",
+    "lodash": "^4.17.21"
   }
 }
