@@ -10,7 +10,8 @@ const initApiRoutes = (app) => {
   // rest api
   // GET - R, POST - C, PUT - U, DELETE - D
   router.get('/test-api', apiController.testAPI)
-  router.post('/register', apiController.handeRegister)
+  router.post('/register', apiController.handleRegister)
+  router.post('/login', apiController.handleLogin)
 
   return app.use('/api/v1/', router)
 }
