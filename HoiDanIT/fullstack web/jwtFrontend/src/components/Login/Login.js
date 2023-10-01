@@ -35,7 +35,22 @@ const Login = () => {
       return
     }
 
-    await loginUser(valueLogin, password)
+    let response = await loginUser(valueLogin, password)
+
+    if (response && response.data && +response.data.EC === 0) {
+      // success
+      let data = {
+        isAuthenticated: true,
+        token: 'fake token'
+      }
+      sessionStorage.setItem('account', JSON.stringify(data))
+      history.push('/users')
+    }
+
+    if (response && response.data && +response.data.EC !== 0) {
+      // error
+      toast.error(response.data.EM)
+    }
   }
 
   return (
