@@ -4,7 +4,6 @@
   "private": true,
   "dependencies": {
     "@babel/eslint-parser": "^7.5.4",
-    "@babel/preset-react": "^7.22.15",
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
@@ -42,5 +41,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/preset-react": "^7.22.15"
   }
 }
