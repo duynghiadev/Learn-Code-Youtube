@@ -13,7 +13,7 @@ const handleRegister = async (req, res) => {
       return res.status(200).json({
         EM: 'Missing required parameters', // Error Message
         EC: '1', // Error Code
-        DT: '' // Date
+        DT: '' // Data
       })
     }
 
@@ -21,7 +21,7 @@ const handleRegister = async (req, res) => {
       return res.status(200).json({
         EM: 'Your password must have more than 3 letters', // Error Message
         EC: '1', //Error Code
-        DT: '' //Date
+        DT: '' //Data
       })
     }
 
@@ -31,23 +31,32 @@ const handleRegister = async (req, res) => {
     return res.status(200).json({
       EM: data.EM, // Error Message
       EC: data.EC, // Error Code
-      DT: '' // Date
+      DT: '' // Data
     })
   } catch (e) {
     return res.status(500).json({
       EM: 'error from server', // Error Message
       EC: '-1', // Error Code
-      DT: '' // Date
+      DT: '' // Data
     })
   }
 }
 
 const handleLogin = async (req, res) => {
-  console.log('>>> check login from react:', req.body)
-  return res.status(200).json({
-    message: 'ok',
-    data: 'test api login'
-  })
+  try {
+    let data = await loginRegisterService.handleUserLogin(req.body)
+    return res.status(200).json({
+      EM: data.EM, // Error Message
+      EC: data.EC, // Error Code
+      DT: data.DT // Data
+    })
+  } catch (error) {
+    return res.status(500).json({
+      EM: 'error from server', // Error Message
+      EC: '-1', // Error Code
+      DT: '' // Data
+    })
+  }
 }
 
 module.exports = {
