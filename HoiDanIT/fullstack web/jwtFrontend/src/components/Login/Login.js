@@ -1,11 +1,41 @@
 import { useHistory } from 'react-router-dom'
 import './Login.scss'
+import { useState } from 'react'
+import { toast } from 'react-toastify'
+import { loginUser } from '../../services/userService'
 
 const Login = () => {
   let history = useHistory()
 
+  const [valueLogin, setValueLogin] = useState('')
+  const [password, setPassword] = useState('')
+
+  const defaultObjValidInput = {
+    isValidValueLogin: true,
+    isValidPassword: true
+  }
+
+  const [objValidInput, setObjValidInput] = useState(defaultObjValidInput)
+
   const handleClickNewAccount = () => {
     history.push('/register')
+  }
+
+  const handleLogin = async () => {
+    setObjValidInput(defaultObjValidInput)
+
+    if (!valueLogin) {
+      setObjValidInput({ ...defaultObjValidInput, isValidValueLogin: false })
+      toast.error('Please enter your email address or phone number')
+      return
+    }
+    if (!password) {
+      setObjValidInput({ ...defaultObjValidInput, isValidPassword: false })
+      toast.error('Please enter your password')
+      return
+    }
+
+    await loginUser(valueLogin, password)
   }
 
   return (
@@ -22,11 +52,23 @@ const Login = () => {
             <div className='brand d-sm-none'>Duy Nghia Dev</div>
             <input
               type='text'
-              className='form-control'
+              className={
+                objValidInput.isValidValueLogin ? 'form-control' : 'is-invalid form-control'
+              }
               placeholder='Email address or phone number'
+              value={valueLogin}
+              onChange={(event) => setValueLogin(event.target.value)}
             />
-            <input type='password' className='form-control' placeholder='Password' />
-            <button className='btn btn-primary'>Login</button>
+            <input
+              type='password'
+              className={objValidInput.isValidPassword ? 'form-control' : 'is-invalid form-control'}
+              placeholder='Password'
+              value={password}
+              onChange={(event) => setPassword(event.target.value)}
+            />
+            <button className='btn btn-primary' onClick={() => handleLogin()}>
+              Login
+            </button>
             <span className='text-center'>
               <a className='forgot-password' href='/#'>
                 Forgot your password?
