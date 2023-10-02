@@ -45,11 +45,19 @@ const Login = () => {
       }
       sessionStorage.setItem('account', JSON.stringify(data))
       history.push('/users')
+      window.location.reload()
+      // redux
     }
 
     if (response && response.data && +response.data.EC !== 0) {
       // error
       toast.error(response.data.EM)
+    }
+  }
+
+  const handlePressEnter = (event) => {
+    if (event.charCode === 13 && event.code === 'Enter') {
+      handleLogin()
     }
   }
 
@@ -80,6 +88,7 @@ const Login = () => {
               placeholder='Password'
               value={password}
               onChange={(event) => setPassword(event.target.value)}
+              onKeyPress={(event) => handlePressEnter(event)}
             />
             <button className='btn btn-primary' onClick={() => handleLogin()}>
               Login
