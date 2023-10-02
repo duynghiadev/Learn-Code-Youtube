@@ -1,6 +1,6 @@
 import { useHistory } from 'react-router-dom'
 import './Login.scss'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { toast } from 'react-toastify'
 import { loginUser } from '../../services/userService'
 
@@ -60,6 +60,14 @@ const Login = () => {
       handleLogin()
     }
   }
+
+  useEffect(() => {
+    let session = sessionStorage.getItem('account')
+    if (session) {
+      history.push('/')
+      window.location.reload()
+    }
+  }, [])
 
   return (
     <div className='login-container'>
