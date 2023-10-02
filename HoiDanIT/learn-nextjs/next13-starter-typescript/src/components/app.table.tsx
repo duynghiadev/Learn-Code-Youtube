@@ -39,7 +39,8 @@ const AppTable = (props: IProps) => {
   }
   return (
     <>
-      <div className='mb-3' style={{ display: 'flex', justifyContent: 'space-between' }}>
+      <div className='mb-3'
+           style={{ display: 'flex', justifyContent: 'space-between' }}>
         <h3>Table Blogs</h3>
         <Button variant='secondary' onClick={() => setShowModalCreate(true)}>
           Add New
@@ -47,45 +48,47 @@ const AppTable = (props: IProps) => {
       </div>
       <Table bordered hover size='sm'>
         <thead>
-          <tr>
-            <th>Numerical Order</th>
-            <th>Title</th>
-            <th>Author</th>
-            <th>Action</th>
-          </tr>
+        <tr>
+          <th>Numerical Order</th>
+          <th>Title</th>
+          <th>Author</th>
+          <th>Action</th>
+        </tr>
         </thead>
         <tbody>
-          {blogs.map((item) => {
-            return (
-              <tr key={item.id}>
-                <td>{item.id}</td>
-                <td>{item.title}</td>
-                <td>{item.author}</td>
-                <td>
-                  <Link className='btn btn-primary' href={`/blogs/${item.id}`}>
-                    View
-                  </Link>
+        {blogs.map((item) => {
+          return (
+            <tr key={item.id}>
+              <td>{item.id}</td>
+              <td>{item.title}</td>
+              <td>{item.author}</td>
+              <td>
+                <Link className='btn btn-primary' href={`/blogs/${item.id}`}>
+                  View
+                </Link>
 
-                  <Button
-                    variant='warning'
-                    className='mx-3'
-                    onClick={() => {
-                      setBlog(item)
-                      setShowModalUpdate(true)
-                    }}
-                  >
-                    Edit
-                  </Button>
-                  <Button variant='danger' onClick={() => handleDeleteBlog(item.id)}>
-                    Delete
-                  </Button>
-                </td>
-              </tr>
-            )
-          })}
+                <Button
+                  variant='warning'
+                  className='mx-3'
+                  onClick={() => {
+                    setBlog(item)
+                    setShowModalUpdate(true)
+                  }}
+                >
+                  Edit
+                </Button>
+                <Button variant='danger'
+                        onClick={() => handleDeleteBlog(item.id)}>
+                  Delete
+                </Button>
+              </td>
+            </tr>
+          )
+        })}
         </tbody>
       </Table>
-      <CreateModal showModalCreate={showModalCreate} setShowModalCreate={setShowModalCreate} />
+      <CreateModal showModalCreate={showModalCreate}
+                   setShowModalCreate={setShowModalCreate} />
       <UpdateModal
         showModalUpdate={showModalUpdate}
         setShowModalUpdate={setShowModalUpdate}
