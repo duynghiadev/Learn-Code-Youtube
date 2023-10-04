@@ -45,6 +45,7 @@
     "@babel/preset-react": "^7.22.15",
     "eslint-config-react": "^1.1.7",
     "eslint-config-react-app": "^7.0.1",
-    "lodash": "^4.17.21"
+    "lodash": "^4.17.21",
+    "react-paginate": "^8.1.0"
   }
 }
