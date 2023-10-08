@@ -48,8 +48,14 @@ const createFunc = async (req, res) => {
   }
 }
 
-const updateFunc = (req, res) => {
+const updateFunc = async (req, res) => {
   try {
+    let data = await userApiService.updateUser(req.body)
+    return res.status(200).json({
+      EM: data.EM, // Error Message
+      EC: data.EC, // Error Code
+      DT: data.DT // Data
+    })
   } catch (error) {
     console.log(error)
     return res.status(500).json({
