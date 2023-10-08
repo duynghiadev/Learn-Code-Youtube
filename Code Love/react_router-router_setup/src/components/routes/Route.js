@@ -1,18 +1,19 @@
-import React, {useContext} from 'react';
-import {RouterContext} from './Routes';
+import React, {useContext} from 'react'
+import {RouterContext} from './Routes'
 
-function Route(props) {
+function Route(props)
+{
 
-    const RouterContextStore = useContext(RouterContext);
+	const RouterContextStore = useContext(RouterContext)
 
-    const pathName = RouterContextStore.location.pathname;
+	const pathName = RouterContextStore.location.pathname
 
-    if(pathName === props.path) {
-        return props.element;
-    } else {
-        return null;
-    }
+	if (pathName === props.path) {
+		return props.element
+	} else {
+		return null
+	}
 
 }
 
-export default Route;
+export default Route
