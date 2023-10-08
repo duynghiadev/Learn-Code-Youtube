@@ -2,7 +2,8 @@
 const imageSmallAll = document.querySelectorAll('.cursor')
 const imageBig = document.querySelector('.mySlides img')
 
-function handleClickShowImage(event) {
+function handleClickShowImage(event)
+{
 	const clicked = event.target
 	const srcImageSmall = clicked.getAttribute('src')
 
@@ -10,7 +11,8 @@ function handleClickShowImage(event) {
 	imageBig.setAttribute('src', srcImageSmall)
 
 	// 2.1 remove all class active
-	imageSmallAll.forEach(function (imageSmallElement) {
+	imageSmallAll.forEach(function (imageSmallElement)
+	{
 		imageSmallElement.classList.remove('active')
 	})
 
@@ -18,7 +20,8 @@ function handleClickShowImage(event) {
 	clicked.classList.add('active')
 }
 
-imageSmallAll.forEach(function (imageSmallElement) {
+imageSmallAll.forEach(function (imageSmallElement)
+{
 	imageSmallElement.addEventListener('click', handleClickShowImage)
 })
 
