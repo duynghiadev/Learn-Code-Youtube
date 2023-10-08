@@ -1,20 +1,20 @@
-import React, { createContext } from 'react';
+import React, {createContext} from 'react'
 
-export const RouterContext = createContext();
+export const RouterContext = createContext()
 
-function Routes(props) {
+function Routes(props)
+{
 
-    const objectData = {
-        location: window.location,
-        history: window.history
-    }
+	const objectData = {
+		location: window.location,
+		history: window.history
+	}
 
-    return (
-        <RouterContext.Provider value={objectData}>
-            {props.children}
-        </RouterContext.Provider>
-    )
-
+	return (
+		<RouterContext.Provider value={objectData}>
+			{props.children}
+		</RouterContext.Provider>
+	)
 
 }
 
