@@ -113,7 +113,9 @@ const handleUserLogin = async (rawData) => {
           EC: 0,
           DT: {
             access_token: token,
-            groupWithRoles
+            groupWithRoles,
+            email: user.email,
+            username: user.username
           }
         }
       }
