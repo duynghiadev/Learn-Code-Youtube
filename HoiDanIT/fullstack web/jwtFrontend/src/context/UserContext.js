@@ -4,14 +4,17 @@ import { getUserAccount } from '../services/userService'
 const UserContext = createContext(null)
 
 const UserProvider = ({ children }) => {
-  const [user, setUser] = useState({
+  const userDefault = {
+    isLoading: true,
     isAuthenticated: false,
     token: '',
     account: {}
-  })
+  }
+
+  const [user, setUser] = useState(userDefault)
 
   const loginContext = (userData) => {
-    setUser(userData)
+    setUser({ ...userData, isLoading: false })
   }
 
   const logout = (name) => {
@@ -32,14 +35,19 @@ const UserProvider = ({ children }) => {
       let data = {
         isAuthenticated: true,
         token,
-        account: { groupWithRoles, email, username }
+        account: { groupWithRoles, email, username },
+        isLoading: false
       }
       setUser(data)
+    } else {
+      setUser({ ...userDefault, isLoading: false })
     }
   }
 
   useEffect(() => {
-    fetchUser()
+    if (window.location.pathname !== '/' || window.location.pathname !== '/login') {
+      fetchUser()
+    }
   }, [])
 
 
