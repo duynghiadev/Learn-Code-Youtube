@@ -52,11 +52,9 @@ const Login = (props) => {
         token,
         account: { groupWithRoles, email, username }
       }
+      localStorage.setItem('jwt', token)
       loginContext(data)
-
       history.push('/users')
-      // window.location.reload()
-      // redux
     }
 
     if (response && +response.EC !== 0) {
