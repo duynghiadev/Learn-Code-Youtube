@@ -6,7 +6,7 @@ import { useContext } from 'react'
 import AppRoutes from './routes/AppRoutes'
 import { Rings } from 'react-loader-spinner'
 import { UserContext } from './context/UserContext'
-import NavHeader from './components/Navigation/Nav'
+import NavHeader from './components/Navigation/NavHeader'
 
 function App() {
   const { user } = useContext(UserContext)
