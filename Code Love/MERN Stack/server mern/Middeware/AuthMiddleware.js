@@ -17,7 +17,7 @@ const isAuthentication = (req, res, next) =>
 			}
 			return res.status(401).send('Authentication not valid')
 		}
-
+		
 	}
 
 // check role is admin
@@ -33,10 +33,9 @@ const isAdmin = async (req, res, next) =>
 		} catch (error) {
 			return res.status(401).send('Authentication not valid')
 		}
-
+		
 	}
 
 module.exports = {
-	isAuthentication: isAuthentication,
-	isAdmin: isAdmin
+	isAuthentication: isAuthentication, isAdmin: isAdmin
 }

@@ -6,11 +6,9 @@ import Footer from '../components/Footer'
 
 function AdminLayout(props)
 {
-	return (
-		<div className="wrapper">
-			<NavBar /> <Aside /> {props.children} <Footer />
-		</div>
-	)
+	return (<div className="wrapper">
+		<NavBar /> <Aside /> {props.children} <Footer />
+	</div>)
 }
 
 export default AdminLayout

@@ -9,14 +9,14 @@ function Admin()
 {
 	const dispatch = useDispatch()
 	const users = useSelector((state) => state.user)
-
+	
 	useEffect(() =>
 	{
 		async function getUser()
 		{
 			try {
 				const response = await axios.get('auth/admin/user')
-
+				
 				// save to store
 				dispatch({
 					type: 'GET_USER_LIST',
@@ -26,10 +26,10 @@ function Admin()
 				// log error
 			}
 		}
-
+		
 		getUser()
 	}, [])
-
+	
 	const handleDeleteUser = async (userId) =>
 		{
 			try {
@@ -44,7 +44,7 @@ function Admin()
 			} catch (error) {
 			}
 		}
-
+	
 	return (
 		<AdminLayout id="User">
 			<div className="content-wrapper">
@@ -67,7 +67,7 @@ function Admin()
 						</div>
 					</div>
 				</div>
-
+				
 				<div className="content">
 					<div className="container-fluid">
 						<div className="row">

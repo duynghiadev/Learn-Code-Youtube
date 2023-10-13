@@ -3,9 +3,7 @@ function authReducer(state = {isLogin: false, user: {}}, action)
 	switch (action.type) {
 		case 'LOGIN_SUCCESS':
 			return {
-				...state,
-				isLogin: true,
-				user: action.payload
+				...state, isLogin: true, user: action.payload
 			}
 			break
 		default:

@@ -18,7 +18,7 @@ const register = async (req, res) =>
 		} catch (error) {
 			console.log('error', error)
 		}
-
+		
 	}
 
 const login = async (req, res) =>
@@ -28,13 +28,13 @@ const login = async (req, res) =>
 		if (!user) {
 			return res.status(400).send('Invalid Email Or Password')
 		}
-
+		
 		// check Password
 		const isPassvalid = bcrypt.compareSync(req.body.password, user.password)
 		if (!isPassvalid) {
 			return res.status(400).send('Invalid Email Or Password')
 		}
-
+		
 		const jwtToken = jwt.sign({
 			_id: user.id,
 			username: user.username,
@@ -42,16 +42,16 @@ const login = async (req, res) =>
 		}, process.env.SECRET_JWT, {
 			expiresIn: 3600
 		})
-
+		
 		return res.status(200).send({
 			accessToken: jwtToken
 		})
-
+		
 	}
 
 const getUserLogin = async (req, res) =>
 	{
-
+		
 		try {
 			const userId = req.userId
 			const user = await userModel.findById(userId)
@@ -62,7 +62,7 @@ const getUserLogin = async (req, res) =>
 				roe: user.role
 			})
 		} catch (error) {
-
+		
 		}
 	}
 
