@@ -13,7 +13,6 @@ const getListUser = async (req, res) =>
 
 const postUser = (req, res) =>
 	{
-
 		try {
 			// 3. save data to user collection
 			const {username, password, email, role} = req.body
@@ -27,7 +26,6 @@ const postUser = (req, res) =>
 		} catch (error) {
 			// log errors
 		}
-
 	}
 
 const deleteUser = async (req, res) =>
