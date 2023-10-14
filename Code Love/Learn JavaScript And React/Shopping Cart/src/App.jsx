@@ -7,17 +7,32 @@ import cartList from './service/cart'
 
 function App() {
   const [carts, setCarts] = useState(cartList)
-  console.log(carts)
+
+  function cartTotal() {
+    let cartTotal = 0
+    for (let i = 0; i < carts.length; i++) {
+      cartTotal = cartTotal + carts[i].amount
+    }
+    return cartTotal
+  }
+
+  function cartAmount() {
+    let cartAmount = 0
+    for (let i = 0; i < carts.length; i++) {
+      cartAmount = cartAmount + carts[i].amount * carts[i].price
+    }
+    return cartAmount
+  }
 
   return (
     <main>
-      <NavBar />
+      <NavBar cartTotal={cartTotal()} />
       <section className='cart'>
         <header>
           <h2>your bag</h2>
         </header>
         <CartList carts={carts} />
-        <FooterCart />
+        <FooterCart cartAmount={cartAmount()} />
       </section>
     </main>
   )
