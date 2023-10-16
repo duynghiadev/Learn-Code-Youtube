@@ -24,6 +24,18 @@ function App() {
     return cartAmount
   }
 
+  /**
+   * - Có 2 cách tính tổng của một mảng:
+   * + Cách thứ 1 là mình dùng vòng lặp for
+   * + Cách thứ 2 là mình dùng hàm reduce
+   */
+  const totalCart = carts.reduce(function (total, currentValue) {
+    console.log('total:', total)
+    console.log('currentValue:', currentValue)
+    return total + currentValue.amount
+  }, 0)
+  console.log('totalCart:', totalCart)
+
   return (
     <main>
       <NavBar cartTotal={cartTotal()} />
