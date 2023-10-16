@@ -45,6 +45,8 @@ function App() {
     setCarts(newStateCart)
   }
 
+  console.dir(handleClickRemove)
+
   return (
     <main>
       <NavBar cartTotal={cartTotal()} />
