@@ -36,6 +36,15 @@ function App() {
   }, 0)
   console.log('totalCart:', totalCart)
 
+  const handleClickRemove = (id) => {
+    const newStateCart = carts.filter(function (cartItem) {
+      if (cartItem.id !== id) {
+        return true
+      }
+    })
+    setCarts(newStateCart)
+  }
+
   return (
     <main>
       <NavBar cartTotal={cartTotal()} />
@@ -43,7 +52,7 @@ function App() {
         <header>
           <h2>your bag</h2>
         </header>
-        <CartList carts={carts} />
+        <CartList carts={carts} onClickRemove={handleClickRemove} />
         <FooterCart cartAmount={cartAmount()} />
       </section>
     </main>
