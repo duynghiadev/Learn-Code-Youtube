@@ -242,3 +242,28 @@ console.log(z4) // trường hợp này thì in ra được nhé. Vì nó chỉ 
 console.log(document)
 console.log(typeof document)
 console.dir(document)
+
+/**
+ * Phần 7: Các phương thức truy vấn DOM cơ bản js ✅
+ */
+// 1. Trả về 1 phần tử đầu tiên trong DOM thỏa mãn
+let pFirst = document.querySelector(".element")
+console.log(pFirst)
+
+// 2. Lấy ra nhiều phần tử thỏa mãn trong DOM
+let pAll = document.querySelectorAll(".element")
+console.log(pAll)
+
+// 3. Chúng ta cũng có thể truy vấn DOM trong function
+let document1 = {
+  querySelector: function querySelector(param) {
+    console.log(param)
+    return 1
+  },
+  querySelectorAll: function querySelectorAll(params) {
+    console.log(params)
+    return 2
+  },
+}
+console.log(document1.querySelector(".element"))
+console.log(document1.querySelectorAll(".element"))
