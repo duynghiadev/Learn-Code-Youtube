@@ -73,6 +73,10 @@ function App() {
     console.log('cart after down:', cartNewState)
   }
 
+  const handleClearAllCart = () => {
+    setCarts([])
+  }
+
   const cartsCheckAmountNoEmpty = carts.filter(function (cartItem) {
     if (cartItem.amount > 0) {
       return true
@@ -103,7 +107,7 @@ function App() {
           onClickIncrement={handleClickIncrement}
           onClickDecrement={handleClickDecrement}
         />
-        <FooterCart cartAmount={cartAmount()} />
+        <FooterCart cartAmount={cartAmount()} onClearAllCart={handleClearAllCart} />
       </section>
     </main>
   )

@@ -104,3 +104,13 @@ const carts =
 * Khi người dùng action, trước khi re-render lại nó sử dụng cái trước đấy đã lưu để tính toán
 
 => ✅ Bản chất của react là closure (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures). Nếu mình master được closure thì mình học react rất dễ dàng
+
+## Đây là nội dung không liên quan đến project này, nhưng nó liên quan đến cách sử dụng React
+
+- Khi code mình sử dụng `hook` => thì tư tưởng của mình là `closure` và `sync`
+
+  - Đồng bộ (Sync): là nó liên quan đến function nó cứ render và data nó cứ render lại
+
+- Còn khi mình code sử dụng `class` => thì tư tưởng của mình là `life cycle` và `contructor`
+
+  - Vòng đời (life cycle): là nó tác động đến vị trí nào đấy thôi
