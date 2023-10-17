@@ -1,11 +1,18 @@
 import CartItem from './CartItem'
 
 function CartList(props) {
-  const { carts, onClickRemove } = props
+  const { carts, onClickRemove, onClickIncrement } = props
 
   function cartRenderList() {
     const cartListRender = carts.map((cartItem) => {
-      return <CartItem cartItem={cartItem} key={cartItem.id} onClickRemove={onClickRemove} />
+      return (
+        <CartItem
+          cartItem={cartItem}
+          key={cartItem.id}
+          onClickRemove={onClickRemove}
+          onClickIncrement={onClickIncrement}
+        />
+      )
     })
     return cartListRender
   }
