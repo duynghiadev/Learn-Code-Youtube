@@ -156,3 +156,26 @@ if (true) {
   console.log(x6)
 }
 // console.log(x6) // Sẽ bị lỗi. Vì biến x6 chỉ được in ra ở trong phạm vi function scope
+
+/**
+ * Phần 5: Hiểu sâu cách scope hoạt động trong js ✅
+ */
+// 1. Cách phán đoán value của biến tại vị trí nào đó trong mã
+// 1.1 Xác định phạm vi của câu lệnh lấy giá trị biến cần phán đoán
+// 1.2 Nếu trong phạm vi đó không có, nó có thể di chuyển lên phạm vi cha gần nhất để nhận giá trị
+
+let x7 = "global scope"
+
+if (true) {
+  let x7 = "x in if"
+  x7 = "scope in if change"
+  console.log(x7)
+}
+
+function changeValue() {
+  let x7 = "variable in function"
+  x7 = "change value in function"
+  console.log(x7)
+}
+changeValue()
+console.log(x7)
