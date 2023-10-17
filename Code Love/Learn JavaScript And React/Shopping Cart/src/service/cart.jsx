@@ -26,7 +26,7 @@ const carts = [
 
 export default carts
 
-// giả sử mình click vào sản phẩm số 1 -> 3-> 4
-// dau vào
+// giả sử mình click vào sản phẩm số 1 -> 3-> 4 (click into product 1 then product from 3 to 4)
+// input is object
 // tìm ra index của phần tử cần xóa
 // cập nhất số lượng theo index -> carts[index].amount++

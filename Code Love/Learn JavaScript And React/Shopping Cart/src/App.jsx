@@ -46,7 +46,16 @@ function App() {
   }
 
   const handleClickIncrement = (cartItem) => {
-    console.log('parent call cartItem:', cartItem)
+    // Tìm index tăng số lượng
+    const indexElement = carts.findIndex(function (cartItemLoop) {
+      return cartItemLoop.id === cartItem.id
+    })
+    const cartNewState = [...carts]
+    cartNewState[indexElement].amount++
+    setCarts(cartNewState)
+
+    console.log('cart before:', carts)
+    console.log('cart after:', cartNewState)
   }
 
   if (carts.length === 0) {
