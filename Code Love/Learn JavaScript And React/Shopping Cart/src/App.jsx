@@ -47,6 +47,17 @@ function App() {
 
   console.dir(handleClickRemove)
 
+  if (carts.length === 0) {
+    return (
+      <section className='cart'>
+        <header>
+          <h2>Your bag</h2>
+          <h4 className='empty-cart'>is current empty</h4>
+        </header>
+      </section>
+    )
+  }
+
   return (
     <main>
       <NavBar cartTotal={cartTotal()} />
