@@ -45,6 +45,7 @@ function App() {
     setCarts(newStateCart)
   }
 
+  // write function up product
   const handleClickIncrement = (cartItem) => {
     // Tìm index tăng số lượng
     const indexElement = carts.findIndex(function (cartItemLoop) {
@@ -54,8 +55,22 @@ function App() {
     cartNewState[indexElement].amount++
     setCarts(cartNewState)
 
-    console.log('cart before:', carts)
-    console.log('cart after:', cartNewState)
+    console.log('cart before up:', carts)
+    console.log('cart after up:', cartNewState)
+  }
+
+  // write function down product
+  const handleClickDecrement = (cartItem) => {
+    // Tìm index giảm số lượng
+    const indexElement = carts.findIndex(function (cartItemLoop) {
+      return cartItemLoop.id === cartItem.id
+    })
+    const cartNewState = [...carts]
+    cartNewState[indexElement].amount--
+    setCarts(cartNewState)
+
+    console.log('cart before down:', carts)
+    console.log('cart after down:', cartNewState)
   }
 
   if (carts.length === 0) {
@@ -76,7 +91,12 @@ function App() {
         <header>
           <h2>your bag</h2>
         </header>
-        <CartList carts={carts} onClickRemove={handleClickRemove} onClickIncrement={handleClickIncrement} />
+        <CartList
+          carts={carts}
+          onClickRemove={handleClickRemove}
+          onClickIncrement={handleClickIncrement}
+          onClickDecrement={handleClickDecrement}
+        />
         <FooterCart cartAmount={cartAmount()} />
       </section>
     </main>
