@@ -112,3 +112,19 @@ for (var index = 0; index < car4.length; index++) {
 }
 
 // 6. Các hàm thông dụng thao tác với object
+
+/**
+ * Phần 3: let, const khai báo biến thay var ✅
+ */
+console.log(x1)
+var x1 = 11
+// ❌ => Tại vì khi trình biên dịch code khi nó dịch thì nó đọc tới biến x và phát hiện nó là biến global nên nó đưa biến x lên đầu tiên ❌
+
+// ❌ => Tại vì sao nó lại không in ra 11 mà in undefined. Bản chất nó là 2 câu lệnh. Thứ nhất là khai báo biến cho nó. Thứ hai 2 gán giá trị khởi tạo ban đầu lên cho nó.Nó chỉ copy tên biến thôi chứ không có giá trị ❌
+
+// ❌ => Khi chúng ta sử dụng biến var khi code thì rất khó để control được code mình đang code ❌
+
+// Đây là khai báo biến let
+let x2 = 12
+console.log(x2)
+// ❌ => Phải khai báo biến trước rồi mới chạy được. Nếu chưa khai báo mà chạy thì nó sẽ báo lỗi❌
