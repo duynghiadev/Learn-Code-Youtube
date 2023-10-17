@@ -234,3 +234,11 @@ const z4 = {
 }
 z4.name = "buck"
 console.log(z4) // trường hợp này thì in ra được nhé. Vì nó chỉ thay đổi item trong object thôi, chứ đâu có gán lại biến z2 đâu. (Ví dụ: z4 = 'duynghiabuck' => thì trường hợp này mới là lỗi mấy bạn nhé !!). Trong thuật ngữ JavaScript thì nó được gọi là mutate
+
+/**
+ * Phần 6: Hiểu cách DOM hình thành trong js ✅
+ */
+
+console.log(document)
+console.log(typeof document)
+console.dir(document)
