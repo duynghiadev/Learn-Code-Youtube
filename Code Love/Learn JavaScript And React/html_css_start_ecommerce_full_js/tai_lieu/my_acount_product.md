@@ -11,7 +11,3 @@
 3. Price không được nhập string
 4. Ảnh sản phẩm không được để trống
 5. Description không được để trống
-
-
-
-
