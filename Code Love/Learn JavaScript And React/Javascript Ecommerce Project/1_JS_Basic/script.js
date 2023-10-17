@@ -179,3 +179,58 @@ function changeValue() {
 }
 changeValue()
 console.log(x7)
+
+/**
+ * Phần 6: Phân biệt các từ khóa var, let, const ✅
+ */
+
+// I. Phân biệt cách khai báo biến với từ khóa var, let (trước khi có es6), const (es6)
+// 1. Khai báo lại cùng tên biến trong cùng 1 phạm vi
+var x8 = "global scope x8"
+var x9 = "global scope x9"
+console.log(x9)
+
+// const y = 1 // error
+// const y = 23 // error
+
+// let y = 1 // error
+// let y = 23 // error
+
+// 2. Scope: var là function scope, còn let là block scope
+var y = "global scope"
+if (true) {
+  var y = "global scope init"
+}
+console.log(y) // function scope
+
+let y1 = "global scope let"
+if (true) {
+  let y1 = "global scope let init"
+}
+// console.log(y1) // block scope
+
+var y2 = "global scope"
+function changeValue() {
+  var y2 = "global scope init function"
+  console.log(y2)
+}
+changeValue()
+console.log(y2)
+
+// 3. Hoisting: var thì có, còn let và const thì không
+console.log(z)
+var z = 20 // thực chất ra thì nó chỉ in ra tên biến thôi chứ không in ra giá trị của biến đó
+
+// console.log(z1)
+// let z1 = 10 // Lập tức nó lỗi ngay, vì không thể in ra mà chưa khai báo
+
+// 4. Gán lại value hay còn gọi là update value thì chỉ var, let có. const thì không thể (vì const là hằng số)
+// const z3 = "duynghia"
+// z3 = "dev"
+// console.log(z3) // trường hợp này là lỗi nhé. Vì không thể gán lại giá trị của biến const đã khai báo trước đó rồi
+
+const z4 = {
+  name: "duynghiadev",
+}
+z4.name = "buck"
+console.log(z4) // trường hợp này thì in ra được nhé. Vì nó chỉ thay đổi item trong object thôi, chứ đâu có gán lại biến z2 đâu. (Ví dụ: z4 = 'duynghiabuck' => thì trường hợp này mới là lỗi mấy bạn nhé !!). Trong thuật ngữ JavaScript thì nó được gọi là mutate
