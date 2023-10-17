@@ -4,6 +4,7 @@ import CartList from './components/CartList'
 import FooterCart from './components/FooterCart'
 import NavBar from './components/NavBar'
 import cartList from './service/cart'
+import Test from './components/Test'
 
 function App() {
   const [carts, setCarts] = useState(cartList)
@@ -101,13 +102,17 @@ function App() {
         <header>
           <h2>your bag</h2>
         </header>
+
         <CartList
           carts={carts}
           onClickRemove={handleClickRemove}
           onClickIncrement={handleClickIncrement}
           onClickDecrement={handleClickDecrement}
         />
+
         <FooterCart cartAmount={cartAmount()} onClearAllCart={handleClearAllCart} />
+
+        <Test />
       </section>
     </main>
   )
