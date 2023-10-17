@@ -128,3 +128,31 @@ var x1 = 11
 let x2 = 12
 console.log(x2)
 // ❌ => Phải khai báo biến trước rồi mới chạy được. Nếu chưa khai báo mà chạy thì nó sẽ báo lỗi❌
+
+/**
+ * Phần 4: Các loại scope trong javascript ✅
+ */
+// 1. Biến được tạo ra
+let x4 = 10
+
+// 2. Biến được update hay còn được gọi là thay đổi value
+x4 = 20
+x4 = 30
+
+// 3. Scope 1 biến
+// 3.1 Global Scope
+// 3.2 Function Scope
+
+function showTotal() {
+  let x5 = 50
+  console.log(x5)
+}
+showTotal()
+// console.log(x5) // Sẽ bị lỗi. Vì biến x5 chỉ được in ra ở trong phạm vi function scope
+
+// 3.3 Block Scope
+if (true) {
+  let x6 = 300
+  console.log(x6)
+}
+// console.log(x6) // Sẽ bị lỗi. Vì biến x6 chỉ được in ra ở trong phạm vi function scope
