@@ -28,9 +28,14 @@ function handleSignUpClick(event) {
       divMessageSelector.textContent = message
     } else if (name === 'email') {
       // validate password tối thiểu 3 kí tự
-      minLengthValidate(inputSelector, name, 'email phải có tối thiểu 3 kí tự')
+      let isMinlengthValid = minLengthValidate(inputSelector, name)
       // validate email
-      emailRegexValidate(inputSelector, name)
+      let isEmailRegexValid
+      if (isMinlengthValid) {
+        isEmailRegexValid = emailRegexValidate(inputSelector, name)
+      }
+      // validate những trường hợp case khác
+      // ...
     } else if (name === 'password') {
       // validate password tối thiểu 8 kí tự
       minLengthValidate(
@@ -44,12 +49,14 @@ function handleSignUpClick(event) {
 
 // rule validate email
 function emailRegexValidate(inputSelector, name, message) {
+  let isValid = true
   let valueInput = inputSelector.value
   let divMessageSelector = inputSelector
     .closest('.form-group')
     .querySelector('.error_message')
   let isValidRegex = regexEmail.test(valueInput)
   if (isValidRegex === false) {
+    isValid = false
     inputSelector.classList.add('error')
     let messageError = name + ' không phải định dạng email hợp lệ'
     if (message) {
@@ -57,10 +64,12 @@ function emailRegexValidate(inputSelector, name, message) {
     }
     divMessageSelector.textContent = messageError
   }
+  return isValid
 }
 
 // rule validate min-length
 function minLengthValidate(inputSelector, name, message) {
+  let isValid = true
   let valueInput = inputSelector.value
   let divMessageSelector = inputSelector
     .closest('.form-group')
@@ -69,12 +78,14 @@ function minLengthValidate(inputSelector, name, message) {
   let minLength = inputSelector.getAttribute('min_length')
 
   if (valueInput.length < minLength) {
+    isValid = false
     let messageError = name + ' tối thiểu ' + minLength + ' kí tự'
     if (message) {
       messageError = message
     }
     divMessageSelector.textContent = messageError
   }
+  return isValid
 }
 
 // 3. Thêm sự kiện cho phần tử
