@@ -5,6 +5,7 @@ const inputEmailSelector = document.querySelector('.email')
 const inputPasswordSelector = document.querySelector('.password')
 
 const inputAllSelector = document.querySelectorAll('.form-group input')
+const regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
 
 // 2. function xử lý sự kiện + chạy lần đầu khi load
 function handleSignUpClick(event) {
