@@ -22,6 +22,13 @@ function handleSignUpClick(event) {
     // validate not empty
     if (name === 'name') {
       // require
+      if (!require(inputSelector)) {
+        // show error
+        showError(inputSelector, 'Tên không được để trống')
+      } else {
+        // show success
+        showSuccess(inputSelector)
+      }
     } else if (name === 'email') {
       // 1. require
       // 2. minlength
@@ -39,20 +46,31 @@ function handleSignUpClick(event) {
   // kiểm tra không có ô input nào có lỗi validate
   // 1. lưu user vào localStorage
   // 2. redirect đến màn hình login
-  for (let i = 0; i < errorMessageAll.length; i++) {
-    if (errorMessageAll[i].textContent !== '') {
-      isFormValid = false
-      break
-    }
-  }
-  if (isFormValid) {
-    console.log('to page login')
-  }
+}
+
+// rule require
+// output: return true or false
+
+function require(inputSelector) {
+  return inputSelector.value ? true : false
+}
+
+function showError(inputSelector, message = null) {
+  // 1. Hiển thị màu đỏ cho ô input
+  inputSelector.classList.add('error')
+  // 2. Thêm nội dung lỗi cho div message dưới ô input
+  let divMessageSelector = inputSelector
+    .closest('.form-group')
+    .querySelector('.error_message')
+  divMessageSelector.textContent = message
 }
 
 // rule show success
-function showSuccess(inputSelector, divMessageSelector) {
+function showSuccess(inputSelector) {
   inputSelector.classList.remove('error')
+  let divMessageSelector = inputSelector
+    .closest('.form-group')
+    .querySelector('.error_message')
   divMessageSelector.textContent = ''
 }
 
