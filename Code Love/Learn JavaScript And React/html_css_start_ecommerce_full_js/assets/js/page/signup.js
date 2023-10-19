@@ -6,6 +6,7 @@ const inputPasswordSelector = document.querySelector('.password')
 
 const inputAllSelector = document.querySelectorAll('.form-group input')
 const regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+const errorMessageAll = document.querySelectorAll('.error_message')
 
 // validate cho từng field một (từng ô input một)
 // trong từng ô input check sẽ đính kèm các rule (qua tắc validate) của nó
@@ -13,6 +14,7 @@ const regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
 // 2. function xử lý sự kiện + chạy lần đầu khi load
 function handleSignUpClick(event) {
   event.preventDefault()
+  let isFormValid = true
   // 1. Thực hiện validate
   for (let i = 0; i < inputAllSelector.length; i++) {
     let inputSelector = inputAllSelector[i]
@@ -83,6 +85,15 @@ function handleSignUpClick(event) {
   // kiểm tra không có ô input nào có lỗi validate
   // 1. lưu user vào localStorage
   // 2. redirect đến màn hình login
+  for (let i = 0; i < errorMessageAll.length; i++) {
+    if (errorMessageAll[i].textContent !== '') {
+      isFormValid = false
+      break
+    }
+  }
+  if (isFormValid) {
+    console.log('to page login')
+  }
 }
 
 // rule show success
