@@ -27,24 +27,32 @@ function handleSignUpClick(event) {
       divMessageSelector.textContent = message
     } else if (name === 'email') {
       // validate password tối thiểu 3 kí tự
-      minLengthValidate(inputSelector, name)
+      minLengthValidate(inputSelector, name, 'email phải có tối thiểu 3 kí tự')
     } else if (name === 'password') {
       // validate password tối thiểu 8 kí tự
-      minLengthValidate(inputSelector, name)
+      minLengthValidate(
+        inputSelector,
+        name,
+        'password phải có tối thiểu 8 kí tự cho bảo mật'
+      )
     }
   }
 }
 
 // rule validate min-length
-function minLengthValidate(inputSelector, name) {
+function minLengthValidate(inputSelector, name, message) {
   let valueInput = inputSelector.value
   let divMessageSelector = inputSelector
     .closest('.form-group')
     .querySelector('.error_message')
   // optional
   let minLength = inputSelector.getAttribute('min_length')
+
   if (valueInput.length < minLength) {
-    let message = name + ' tối thiểu ' + minLength + ' kí tự'
+    let messageError = name + ' tối thiểu ' + minLength + ' kí tự'
+    if (message) {
+      messageError = message
+    }
     divMessageSelector.textContent = message
   }
 }
