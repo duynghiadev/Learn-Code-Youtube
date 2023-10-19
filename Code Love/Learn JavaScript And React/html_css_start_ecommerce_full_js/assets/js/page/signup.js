@@ -79,6 +79,10 @@ function handleSignUpClick(event) {
       }
     }
   }
+
+  // kiểm tra không có ô input nào có lỗi validate
+  // 1. lưu user vào localStorage
+  // 2. redirect đến màn hình login
 }
 
 // rule show success
