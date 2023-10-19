@@ -16,14 +16,20 @@ function handleSignUpClick(event) {
     let divMessageSelector = inputSelector
       .closest('.form-group')
       .querySelector('.error_message')
+    let name = inputSelector.name
 
     // validate not empty
     if (valueInput === '') {
       // thêm viền đỏ cho input
       inputSelector.classList.add('error')
       // hiển thị message lỗi
-      let name = inputSelector.name
       let message = name + ' không được để trống'
+      divMessageSelector.textContent = message
+    } else if (
+      valueInput.length < 3 &&
+      inputSelector.getAttribute('minValidate') === 'have_validate'
+    ) {
+      let message = name + ' tối thiểu 3 kí tự'
       divMessageSelector.textContent = message
     }
   }
