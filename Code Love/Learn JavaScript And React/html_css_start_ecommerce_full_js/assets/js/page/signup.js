@@ -21,14 +21,7 @@ function handleSignUpClick(event) {
 
     // validate not empty
     if (name === 'name') {
-      // require
-      if (!require(inputSelector)) {
-        // show error
-        showError(inputSelector, 'Tên không được để trống')
-      } else {
-        // show success
-        showSuccess(inputSelector)
-      }
+      validateName(inputSelector)
     } else if (name === 'email') {
       if (!require(inputSelector)) {
         showError(inputSelector, 'Email không được để trống')
@@ -76,9 +69,19 @@ function handleSignUpClick(event) {
   // 2. redirect đến màn hình login
 }
 
+function validateName(inputSelector) {
+  // require
+  if (!require(inputSelector)) {
+    // show error
+    showError(inputSelector, 'Tên không được để trống')
+  } else {
+    // show success
+    showSuccess(inputSelector)
+  }
+}
+
 // rule require
 // output: return true or false
-
 function require(inputSelector) {
   return inputSelector.value ? true : false
 }
@@ -128,7 +131,14 @@ function showSuccess(inputSelector) {
 
 // hàm chỉ chạy khi người dùng nhập value => có sự thay đổi ô input
 function handleChangeValue(event) {
-  console.log(event.target)
+  let inputSelector = event.target
+  let nameInput = inputSelector.name
+  if (nameInput === 'name') {
+    validateName(inputSelector)
+  } else if (nameInput === 'email') {
+  } else if (nameInput === 'password') {
+  } else {
+  }
 }
 
 // 3. Thêm sự kiện cho phần tử
