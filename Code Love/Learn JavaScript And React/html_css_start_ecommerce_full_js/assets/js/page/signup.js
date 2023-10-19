@@ -59,7 +59,18 @@ function handleSignUpClick(event) {
         showSuccess(inputSelector, divMessageSelector)
       }
     } else {
-      showSuccess(inputSelector, divMessageSelector)
+      let isRequireValid = requireValidate(inputSelector, name)
+      let isMinlengthValid
+      // validate password tối thiểu 8 kí tự
+      isMinlengthValid = minLengthValidate(
+        inputSelector,
+        name,
+        'confirm password phải có tối thiểu 8 kí tự cho bảo mật'
+      )
+      // check success
+      if (isRequireValid && isMinlengthValid) {
+        showSuccess(inputSelector, divMessageSelector)
+      }
     }
   }
 }
@@ -123,6 +134,7 @@ function minLengthValidate(inputSelector, name, message) {
 
   if (valueInput.length < minLength) {
     isValid = false
+    inputSelector.classList.add('error')
     let messageError = name + ' tối thiểu ' + minLength + ' kí tự'
     if (message) {
       messageError = message
