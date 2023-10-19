@@ -42,16 +42,32 @@ function handleSignUpClick(event) {
       } else {
         showSuccess(inputSelector)
       }
-      // 1. require
-      // 2. minlength
-      // 3. regex validate email
     } else if (name === 'password') {
-      // 1. require
-      // 2. minlength
+      if (!require(inputSelector)) {
+        showError(inputSelector, 'password không được để trống')
+      } else if (!minlength(inputSelector)) {
+        showError(
+          inputSelector,
+          `password tối thiểu ${inputSelector.getAttribute('min_length')} kí tự`
+        )
+      } else {
+        showSuccess(inputSelector)
+      }
     } else {
-      // 1. require
-      // 2. minlength
-      // 3. compare password
+      if (!require(inputSelector)) {
+        showError(inputSelector, 'confirm password không được để trống')
+      } else if (!minlength(inputSelector)) {
+        showError(
+          inputSelector,
+          `confirm password tối thiểu ${inputSelector.getAttribute(
+            'min_length'
+          )} kí tự`
+        )
+      } else if (!comparePass(inputSelector)) {
+        showError(inputSelector, 'confirm password không trùng với password')
+      } else {
+        showSuccess(inputSelector)
+      }
     }
   }
 
@@ -79,6 +95,16 @@ function minlength(inputSelector) {
 function emailRegex(inputSelector) {
   let inputValue = inputSelector.value
   return regexEmail.test(inputValue)
+}
+
+function comparePass(inputSelector) {
+  let valueConfirmPass = inputSelector.value
+  let passwordSelector = document.querySelector(
+    '.' + inputSelector.getAttribute('selector_compare')
+  )
+  let valuePassword = passwordSelector.value
+
+  return valueConfirmPass === valuePassword
 }
 
 function showError(inputSelector, message = null) {
