@@ -30,6 +30,18 @@ function handleSignUpClick(event) {
         showSuccess(inputSelector)
       }
     } else if (name === 'email') {
+      if (!require(inputSelector)) {
+        showError(inputSelector, 'Email không được để trống')
+      } else if (!minlength(inputSelector)) {
+        showError(
+          inputSelector,
+          `Email tối thiểu ${inputSelector.getAttribute('min_length')} kí tự`
+        )
+      } else if (!emailRegex(inputSelector)) {
+        showError(inputSelector, 'Email không đúng định dạng')
+      } else {
+        showSuccess(inputSelector)
+      }
       // 1. require
       // 2. minlength
       // 3. regex validate email
@@ -55,6 +67,20 @@ function require(inputSelector) {
   return inputSelector.value ? true : false
 }
 
+function minlength(inputSelector) {
+  let minLength = inputSelector.getAttribute('min_length')
+  let inputValue = inputSelector.value
+  if (inputValue.length < minLength) {
+    return false
+  }
+  return true
+}
+
+function emailRegex(inputSelector) {
+  let inputValue = inputSelector.value
+  return regexEmail.test(inputValue)
+}
+
 function showError(inputSelector, message = null) {
   // 1. Hiển thị màu đỏ cho ô input
   inputSelector.classList.add('error')
@@ -72,98 +98,6 @@ function showSuccess(inputSelector) {
     .closest('.form-group')
     .querySelector('.error_message')
   divMessageSelector.textContent = ''
-}
-
-// rule compare data
-function compareFieldsValidate(inputSelector, name, message) {
-  let isValid = true
-  let valueInput = inputSelector.value
-  let compareSelectorClass = inputSelector.getAttribute('selector_compare')
-  let compareSelector = document.querySelector('.' + compareSelectorClass)
-  let divMessageSelector = inputSelector
-    .closest('.form-group')
-    .querySelector('.error_message')
-  if (compareSelector.value !== valueInput) {
-    isValid = false
-    inputSelector.classList.add('error')
-    // hiển thị message lỗi
-    let messageError =
-      'dữ liệu nhập ở ' +
-      name +
-      ' không trùng với dữ liệu nhập ở ' +
-      compareSelectorClass
-    if (message) {
-      messageError = message
-    }
-    divMessageSelector.textContent = messageError
-  }
-  return isValid
-}
-
-// rule required validate
-function requireValidate(inputSelector, name, message) {
-  // 1. Kiểm tra xem rule có hợp lệ hay không?
-  // 2. Nếu không hợp lệ, hiển thị thông báo lỗi dưới ô input
-
-  let isValid = true
-  let valueInput = inputSelector.value
-  let divMessageSelector = inputSelector
-    .closest('.form-group')
-    .querySelector('.error_message')
-  if (valueInput === '') {
-    isValid = false
-    // thêm viền đỏ cho input
-    inputSelector.classList.add('error')
-    // hiển thị message lỗi
-    let messageError = name + ' không được để trống'
-    if (message) {
-      messageError = message
-    }
-    divMessageSelector.textContent = messageError
-  }
-  return isValid
-}
-
-// rule validate email
-function emailRegexValidate(inputSelector, name, message) {
-  let isValid = true
-  let valueInput = inputSelector.value
-  let divMessageSelector = inputSelector
-    .closest('.form-group')
-    .querySelector('.error_message')
-  let isValidRegex = regexEmail.test(valueInput)
-  if (isValidRegex === false) {
-    isValid = false
-    inputSelector.classList.add('error')
-    let messageError = name + ' không phải định dạng email hợp lệ'
-    if (message) {
-      messageError = message
-    }
-    divMessageSelector.textContent = messageError
-  }
-  return isValid
-}
-
-// rule validate min-length
-function minLengthValidate(inputSelector, name, message) {
-  let isValid = true
-  let valueInput = inputSelector.value
-  let divMessageSelector = inputSelector
-    .closest('.form-group')
-    .querySelector('.error_message')
-  // optional
-  let minLength = inputSelector.getAttribute('min_length')
-
-  if (valueInput.length < minLength) {
-    isValid = false
-    inputSelector.classList.add('error')
-    let messageError = name + ' tối thiểu ' + minLength + ' kí tự'
-    if (message) {
-      messageError = message
-    }
-    divMessageSelector.textContent = messageError
-  }
-  return isValid
 }
 
 // 3. Thêm sự kiện cho phần tử
