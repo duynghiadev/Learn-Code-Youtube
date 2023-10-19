@@ -29,6 +29,8 @@ function handleSignUpClick(event) {
     } else if (name === 'email') {
       // validate password tối thiểu 3 kí tự
       minLengthValidate(inputSelector, name, 'email phải có tối thiểu 3 kí tự')
+      // validate email
+      emailRegexValidate(inputSelector, name)
     } else if (name === 'password') {
       // validate password tối thiểu 8 kí tự
       minLengthValidate(
@@ -37,6 +39,23 @@ function handleSignUpClick(event) {
         'password phải có tối thiểu 8 kí tự cho bảo mật'
       )
     }
+  }
+}
+
+// rule validate email
+function emailRegexValidate(inputSelector, name, message) {
+  let valueInput = inputSelector.value
+  let divMessageSelector = inputSelector
+    .closest('.form-group')
+    .querySelector('.error_message')
+  let isValidRegex = regexEmail.test(valueInput)
+  if (isValidRegex === false) {
+    inputSelector.classList.add('error')
+    let messageError = name + ' không phải định dạng email hợp lệ'
+    if (message) {
+      messageError = message
+    }
+    divMessageSelector.textContent = messageError
   }
 }
 
@@ -54,7 +73,7 @@ function minLengthValidate(inputSelector, name, message) {
     if (message) {
       messageError = message
     }
-    divMessageSelector.textContent = message
+    divMessageSelector.textContent = messageError
   }
 }
 
