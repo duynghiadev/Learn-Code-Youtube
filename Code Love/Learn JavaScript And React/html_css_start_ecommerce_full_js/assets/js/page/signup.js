@@ -1,9 +1,5 @@
 // 1. chọn element
 const btnSignUpSelector = document.querySelector('.btn-signup')
-const inputNameSelector = document.querySelector('.name')
-const inputEmailSelector = document.querySelector('.email')
-const inputPasswordSelector = document.querySelector('.password')
-
 const inputAllSelector = document.querySelectorAll('.form-group input')
 const regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
 const errorMessageAll = document.querySelectorAll('.error_message')
@@ -14,7 +10,6 @@ const errorMessageAll = document.querySelectorAll('.error_message')
 // 2. function xử lý sự kiện + chạy lần đầu khi load
 function handleSignUpClick(event) {
   event.preventDefault()
-  let isFormValid = true
   // 1. Thực hiện validate
   for (let i = 0; i < inputAllSelector.length; i++) {
     let inputSelector = inputAllSelector[i]
@@ -26,59 +21,18 @@ function handleSignUpClick(event) {
 
     // validate not empty
     if (name === 'name') {
-      let isRequireValid = requireValidate(inputSelector, name)
-      // check success
-      if (isRequireValid) {
-        showSuccess(inputSelector, divMessageSelector)
-      }
+      // require
     } else if (name === 'email') {
-      let isMinlengthValid
-      let isEmailRegexValid
-      let isRequireValid = requireValidate(inputSelector, name)
-      // validate email tối thiểu 3 kí tự
-      if (isRequireValid) {
-        isMinlengthValid = minLengthValidate(inputSelector, name)
-      }
-      // validate email
-      if (isRequireValid && isMinlengthValid) {
-        isEmailRegexValid = emailRegexValidate(inputSelector, name)
-      }
-      // check validate success
-      if (isRequireValid && isMinlengthValid && isEmailRegexValid) {
-        showSuccess(inputSelector, divMessageSelector)
-      }
+      // 1. require
+      // 2. minlength
+      // 3. regex validate email
     } else if (name === 'password') {
-      let isRequireValid = requireValidate(inputSelector, name)
-      let isMinlengthValid
-      // validate password tối thiểu 8 kí tự
-      isMinlengthValid = minLengthValidate(
-        inputSelector,
-        name,
-        'password phải có tối thiểu 8 kí tự cho bảo mật'
-      )
-      // check success
-      if (isRequireValid && isMinlengthValid) {
-        showSuccess(inputSelector, divMessageSelector)
-      }
+      // 1. require
+      // 2. minlength
     } else {
-      let isRequireValid = requireValidate(inputSelector, name)
-      let isMinlengthValid
-      let isCompareValid
-      // validate password tối thiểu 8 kí tự
-      isMinlengthValid = minLengthValidate(
-        inputSelector,
-        name,
-        'confirm password phải có tối thiểu 8 kí tự cho bảo mật'
-      )
-      // validate compare with password
-      if (isRequireValid && isMinlengthValid) {
-        isCompareValid = compareFieldsValidate(inputSelector, name)
-      }
-
-      // check success
-      if (isRequireValid && isMinlengthValid && isCompareValid) {
-        showSuccess(inputSelector, divMessageSelector)
-      }
+      // 1. require
+      // 2. minlength
+      // 3. compare password
     }
   }
 
@@ -130,6 +84,9 @@ function compareFieldsValidate(inputSelector, name, message) {
 
 // rule required validate
 function requireValidate(inputSelector, name, message) {
+  // 1. Kiểm tra xem rule có hợp lệ hay không?
+  // 2. Nếu không hợp lệ, hiển thị thông báo lỗi dưới ô input
+
   let isValid = true
   let valueInput = inputSelector.value
   let divMessageSelector = inputSelector
