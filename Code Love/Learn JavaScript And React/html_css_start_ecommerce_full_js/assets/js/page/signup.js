@@ -26,20 +26,26 @@ function handleSignUpClick(event) {
       let message = name + ' không được để trống'
       divMessageSelector.textContent = message
     } else if (name === 'email') {
-      // validate email tối thiểu 3 kí tự
-      let minLength = inputSelector.getAttribute('min_length')
-      if (valueInput.length < minLength) {
-        let message = name + ' tối thiểu ' + minLength + ' kí tự'
-        divMessageSelector.textContent = message
-      }
+      // validate password tối thiểu 3 kí tự
+      minLengthValidate(inputSelector, name)
     } else if (name === 'password') {
       // validate password tối thiểu 8 kí tự
-      let minLength = inputSelector.getAttribute('min_length')
-      if (valueInput.length < minLength) {
-        let message = name + ' tối thiểu ' + minLength + ' kí tự'
-        divMessageSelector.textContent = message
-      }
+      minLengthValidate(inputSelector, name)
     }
+  }
+}
+
+// rule validate min-length
+function minLengthValidate(inputSelector, name) {
+  let valueInput = inputSelector.value
+  let divMessageSelector = inputSelector
+    .closest('.form-group')
+    .querySelector('.error_message')
+  // optional
+  let minLength = inputSelector.getAttribute('min_length')
+  if (valueInput.length < minLength) {
+    let message = name + ' tối thiểu ' + minLength + ' kí tự'
+    divMessageSelector.textContent = message
   }
 }
 
