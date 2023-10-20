@@ -3,6 +3,8 @@
 - [node](https://nodejs.org/en/download/)
 - yarn: npm install --global yarn (optional)
 
+- Link tutorial: [JS First Step - Cách làm việc với Event](https://bom.so/lzs4Lk)
+
 # Installation
 
 Install package and start running the app
