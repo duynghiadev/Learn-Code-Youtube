@@ -9,6 +9,10 @@ const regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
 // 2. function xử lý sự kiện + chạy lần đầu khi load
 function handleSignUpClick(event) {
   event.preventDefault()
+  let isNameValid
+  let isEmailValid
+  let isPassValid
+  let isConfirmPassValid
   // 1. Thực hiện validate
   for (let i = 0; i < inputAllSelector.length; i++) {
     let inputSelector = inputAllSelector[i]
@@ -16,17 +20,20 @@ function handleSignUpClick(event) {
 
     // validate not empty
     if (name === 'name') {
-      validateName(inputSelector)
+      isNameValid = validateName(inputSelector)
     } else if (name === 'email') {
-      validateEmail(inputSelector)
+      isEmailValid = validateEmail(inputSelector)
     } else if (name === 'password') {
-      validatePassword(inputSelector)
+      isPassValid = validatePassword(inputSelector)
     } else {
-      validateConfirmPassword(inputSelector)
+      isConfirmPassValid = validateConfirmPassword(inputSelector)
     }
   }
 
   // kiểm tra không có ô input nào có lỗi validate
+  if (isNameValid && isEmailValid && isPassValid && isConfirmPassValid) {
+    console.log('login page')
+  }
 }
 
 // =============== Start Listener Funtion ===============
@@ -51,6 +58,7 @@ function handleChangeValue(event) {
 // =============== Start Validate Input Funtion ===============
 
 function validateName(inputSelector) {
+  let isValid = false
   // require
   if (!require(inputSelector)) {
     // show error
@@ -58,10 +66,13 @@ function validateName(inputSelector) {
   } else {
     // show success
     showSuccess(inputSelector)
+    isValid = true
   }
+  return isValid
 }
 
 function validateEmail(inputSelector) {
+  let isValid = false
   if (!require(inputSelector)) {
     showError(inputSelector, 'email không được để trống')
   } else if (!minlength(inputSelector)) {
@@ -73,10 +84,13 @@ function validateEmail(inputSelector) {
     showError(inputSelector, 'email không đúng định dạng')
   } else {
     showSuccess(inputSelector)
+    isValid = true
   }
+  return isValid
 }
 
 function validatePassword(inputSelector) {
+  let isValid = false
   if (!require(inputSelector)) {
     showError(inputSelector, 'password không được để trống')
   } else if (!minlength(inputSelector)) {
@@ -86,10 +100,13 @@ function validatePassword(inputSelector) {
     )
   } else {
     showSuccess(inputSelector)
+    isValid = true
   }
+  return isValid
 }
 
 function validateConfirmPassword(inputSelector) {
+  let isValid = false
   if (!require(inputSelector)) {
     showError(inputSelector, 'confirm password không được để trống')
   } else if (!minlength(inputSelector)) {
@@ -103,7 +120,9 @@ function validateConfirmPassword(inputSelector) {
     showError(inputSelector, 'confirm password không trùng với password')
   } else {
     showSuccess(inputSelector)
+    isValid = true
   }
+  return isValid
 }
 
 // =============== End Validate Input Funtion ===============
