@@ -43,3 +43,34 @@ const rules = {
   confirm_password: required | minlength:8 | same_pass: password
 }
 ```
+
+1. Chuẩn hóa dữ liệu
+
+- Chuẩn hóa dữ liệu có nghĩa là đưa vào yêu cầu của đầu vào
+
+- Trong phần này thì ta cần bóc tách các item trong rules thành các phần nhỏ (gồm key: value)
+
+- Lưu ý: item có nghĩa là 1 object gồm có key và value
+
+- Khi chuyển về kiểu này thì chúng ta nhìn sẽ dễ nhìn hơn rất nhiều
+
+```jsx
+const rules = {
+  name: {
+    required: true,
+  },
+  email: {
+    required: true,
+    minlength: 3,
+  },
+  password: {
+    required: true,
+    minlength: 8,
+  },
+  confirm_password: {
+    required: true,
+    minlength: 8,
+    equal_to: password,
+  },
+}
+```
