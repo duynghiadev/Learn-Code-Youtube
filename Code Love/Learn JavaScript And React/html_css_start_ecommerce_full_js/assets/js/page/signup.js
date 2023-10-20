@@ -28,7 +28,21 @@ const rules = {
 
 function handleSignUpClick(event) {
   event.preventDefault()
-  console.log('click button')
+  // loop qua từng phần tử validate
+  let i = 1
+  for (const keyNameInput in rules) {
+    console.group()
+    console.log('lan chay thu', i)
+    console.log('validate cho input', keyNameInput)
+
+    let ruleAllForInput = rules[keyNameInput]
+    // loop qua từng rule validate của input đấy
+    for (const ruleItemKey in ruleAllForInput) {
+      console.log('validate rule cho input ' + keyNameInput, ruleItemKey)
+    }
+    console.groupEnd()
+    i++
+  }
 }
 
 // =============== End Listener Funtion ===============
