@@ -24,24 +24,40 @@ const rules = {
   },
 }
 
+const methodsRule = {
+  required: function (valueInput, paramsInput) {
+    console.log('require running')
+  },
+  minlength: function (valueInput, paramsInput) {
+    console.log('minlength running')
+  },
+  email: function (valueInput, paramsInput) {
+    console.log('email running')
+  },
+  equal_to: function (valueInput, paramsInput) {
+    console.log('equal_to running')
+  },
+}
+
 // =============== Start Listener Funtion ===============
 
 function handleSignUpClick(event) {
   event.preventDefault()
   // loop qua từng phần tử validate
-  let i = 1
   for (const keyNameInput in rules) {
-    console.group()
-    console.log('lan chay thu', i)
-    console.log('validate cho input', keyNameInput)
+    let inputElement = document.querySelector('.' + keyNameInput)
+    let valueInput = inputElement.value
+    console.log(inputElement)
 
     let ruleAllForInput = rules[keyNameInput]
+    console.log(ruleAllForInput)
     // loop qua từng rule validate của input đấy
     for (const ruleItemKey in ruleAllForInput) {
-      console.log('validate rule cho input ' + keyNameInput, ruleItemKey)
+      console.log(ruleItemKey)
+      let paramsInput = ruleAllForInput[ruleItemKey]
+      console.log(paramsInput)
+      methodsRule[ruleItemKey](valueInput, paramsInput)
     }
-    console.groupEnd()
-    i++
   }
 }
 
