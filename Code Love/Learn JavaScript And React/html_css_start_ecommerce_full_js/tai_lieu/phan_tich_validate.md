@@ -28,3 +28,18 @@
 - Hiển thị lỗi validate **cho từng ô input**
 - Khi tất cả input **hợp lệ thì sẽ submit form**
 - Thêm các sự kiện khác nhau để hiển thị lỗi **tốt cho trải nghiệm người dùng (phần phụ)**
+
+## Chuyển các yêu cầu từ dạng text sang dạng coding
+
+- Chúng ta sẽ chuyển những yêu cầu đó thành dạng object
+
+- Từ cái bài toán mình đã đưa vào cái đầu vào dưới dạng 1 cái biến (variable) để thể hiện qua tất cả những yêu câu ở đây
+
+```jsx
+const rules = {
+  name: required,
+  email: required | minlength:3 | email,
+  password: required | minlength:8,
+  confirm_password: required | minlength:8 | same_pass: password
+}
+```
