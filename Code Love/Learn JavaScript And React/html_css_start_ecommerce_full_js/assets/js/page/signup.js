@@ -187,5 +187,5 @@ btnSignUpSelector.addEventListener('click', handleSignUpClick)
 // Thêm sự kiện cho các ô input nhập liệu
 for (let i = 0; i < inputAllSelector.length; i++) {
   let inputElement = inputAllSelector[i]
-  inputElement.addEventListener('input', handleChangeValue)
+  inputElement.addEventListener('blur', handleChangeValue)
 }
