@@ -74,3 +74,36 @@ const rules = {
   },
 }
 ```
+
+2. Chúng ta cần ôn tập lại các kiến thức về hàm để apply (ứng dụng) validate
+
+- Function declarations (Khai báo hàm)
+
+```jsx
+function getValue(x) {
+  console.log('function declaration', x)
+}
+
+getValue(1) // gọi hàm
+```
+
+- Function expressions (Biểu thức hàm)
+
+```jsx
+let xData = function(y){
+  console.log('Function expressions',y)
+}
+
+xData(true)
+
+const obj = {
+  xDataTest:function(){
+    console.log('Function expressions 2')
+  }
+}
+
+obj.xDataTest() // Cách 1
+
+let x3 = 'xDataTest'
+obj.[xDataTest]() // Cách 2
+```
