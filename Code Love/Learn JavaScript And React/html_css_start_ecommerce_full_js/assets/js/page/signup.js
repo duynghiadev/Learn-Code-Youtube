@@ -50,12 +50,24 @@ function handleSignUpClick(event) {
     let inputElement = document.querySelector('.' + keyNameInput)
     let valueInput = inputElement.value
 
+    // reset all error
+    inputElement.classList.remove('error')
+    inputElement.nextElementSibling.textContent = ''
+
     let ruleAllForInput = rules[keyNameInput]
 
     // loop qua từng rule validate của input đấy
     for (const ruleItemKey in ruleAllForInput) {
       let paramsInput = ruleAllForInput[ruleItemKey]
-      methodsRule[ruleItemKey](valueInput, paramsInput)
+      let result = methodsRule[ruleItemKey](valueInput, paramsInput)
+      console.log(result)
+
+      // kiểm tra validate rule thất bại
+      if (!result) {
+        inputElement.classList.add('error')
+        inputElement.nextElementSibling.textContent =
+          keyNameInput + ' not valid'
+      }
     }
   }
 }
