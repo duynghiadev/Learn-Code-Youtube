@@ -26,16 +26,18 @@ const rules = {
 
 const methodsRule = {
   required: function (valueInput, paramsInput) {
-    console.log('require running')
+    return valueInput !== ''
   },
   minlength: function (valueInput, paramsInput) {
-    console.log('minlength running')
+    return valueInput.length >= paramsInput
   },
   email: function (valueInput, paramsInput) {
-    console.log('email running')
+    return regexEmail.test(valueInput)
   },
   equal_to: function (valueInput, paramsInput) {
-    console.log('equal_to running')
+    let passSelector = document.querySelector('.' + paramsInput)
+    let valuePass = passSelector.value
+    return valuePass === valueInput
   },
 }
 
@@ -47,15 +49,12 @@ function handleSignUpClick(event) {
   for (const keyNameInput in rules) {
     let inputElement = document.querySelector('.' + keyNameInput)
     let valueInput = inputElement.value
-    console.log(inputElement)
 
     let ruleAllForInput = rules[keyNameInput]
-    console.log(ruleAllForInput)
+
     // loop qua từng rule validate của input đấy
     for (const ruleItemKey in ruleAllForInput) {
-      console.log(ruleItemKey)
       let paramsInput = ruleAllForInput[ruleItemKey]
-      console.log(paramsInput)
       methodsRule[ruleItemKey](valueInput, paramsInput)
     }
   }
