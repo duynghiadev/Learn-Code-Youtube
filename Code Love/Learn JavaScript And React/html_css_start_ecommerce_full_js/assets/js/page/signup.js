@@ -41,9 +41,16 @@ const methodsRule = {
   },
 }
 
+const message = {
+  name_required: 'Tên không được để trống',
+  email_required: 'Email không được để trống',
+}
+
 // =============== Start Listener Funtion ===============
 
 function handleSignUpClick(event) {
+  console.group()
+
   event.preventDefault()
   // loop qua từng phần tử validate
   for (const keyNameInput in rules) {
@@ -60,16 +67,21 @@ function handleSignUpClick(event) {
     for (const ruleItemKey in ruleAllForInput) {
       let paramsInput = ruleAllForInput[ruleItemKey]
       let result = methodsRule[ruleItemKey](valueInput, paramsInput)
-      console.log(result)
+      let keyMessage = keyNameInput + '_' + ruleItemKey
+      console.log(message[keyMessage])
+      console.log('result:', result)
 
       // kiểm tra validate rule thất bại
       if (!result) {
         inputElement.classList.add('error')
-        inputElement.nextElementSibling.textContent =
-          keyNameInput + ' not valid'
+        inputElement.nextElementSibling.textContent = message[keyMessage]
+          ? message[keyMessage]
+          : keyNameInput + ' not valid'
+        break
       }
     }
   }
+  console.groupEnd()
 }
 
 // =============== End Listener Funtion ===============
