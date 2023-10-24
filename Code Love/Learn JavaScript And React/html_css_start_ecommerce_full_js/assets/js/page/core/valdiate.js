@@ -33,16 +33,18 @@ function Validate(options) {
   function handleSignUpClick(event) {
     event.preventDefault()
     errors = []
+
     for (const keyInputName in rules) {
       let inputSelector = container.querySelector('.' + keyInputName)
       let valueInput = inputSelector.value
-
       const ruleAllForInputItem = rules[keyInputName]
 
       for (const ruleItemKey in ruleAllForInputItem) {
         let valueRule = ruleAllForInputItem[ruleItemKey]
         let result = rulesMethod[ruleItemKey](valueInput, valueRule)
         let keyMessage = keyInputName + '_' + ruleItemKey
+        // reset all errors
+        resetErrors(inputSelector)
 
         if (!result) {
           // Đẩy lỗi vào biến đang lưu trữ
@@ -57,6 +59,17 @@ function Validate(options) {
       }
     }
     // Hiển thị lỗi
+    if (errors.length) {
+      showErrors()
+    }
+
+    function resetErrors(inputSelector) {
+      inputSelector.classList.remove('error')
+      inputSelector.nextElementSibling.textContent = ''
+    }
+  }
+
+  function showErrors() {
     errors.forEach(function (element) {
       let inputElement = element.elementError
       let divError = inputElement.nextElementSibling
