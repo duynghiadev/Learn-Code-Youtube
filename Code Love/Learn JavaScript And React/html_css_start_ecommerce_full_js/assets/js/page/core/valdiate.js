@@ -7,6 +7,7 @@ function Validate(options) {
   const btnSignUpSelector = container.querySelector('.btn-signup')
   const rules = options.rules
   const messages = options.messages
+  let errors
 
   const rulesMethod = {
     required: function (valueInput, valueRule) {
@@ -31,25 +32,37 @@ function Validate(options) {
 
   function handleSignUpClick(event) {
     event.preventDefault()
+    errors = []
     for (const keyInputName in rules) {
-      console.group()
       let inputSelector = container.querySelector('.' + keyInputName)
       let valueInput = inputSelector.value
-      console.log('rules for item input', rules[keyInputName])
 
       const ruleAllForInputItem = rules[keyInputName]
 
       for (const ruleItemKey in ruleAllForInputItem) {
         let valueRule = ruleAllForInputItem[ruleItemKey]
         let result = rulesMethod[ruleItemKey](valueInput, valueRule)
-        console.log('result for input: ' + keyInputName, result)
+        let keyMessage = keyInputName + '_' + ruleItemKey
+
         if (!result) {
-          // show error
+          // Đẩy lỗi vào biến đang lưu trữ
+          errors.push({
+            elementError: inputSelector,
+            message: messages[keyMessage]
+              ? messages[keyMessage]
+              : keyInputName + ' not valid'
+          })
           break
         }
       }
-      console.groupEnd()
     }
+    // Hiển thị lỗi
+    errors.forEach(function (element) {
+      let inputElement = element.elementError
+      let divError = inputElement.nextElementSibling
+      inputElement.classList.add('error')
+      divError.textContent = element.message
+    })
   }
 
   // add event listener + data init
