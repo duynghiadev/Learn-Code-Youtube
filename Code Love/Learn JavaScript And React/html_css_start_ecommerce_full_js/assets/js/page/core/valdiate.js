@@ -1,4 +1,6 @@
 function Validate(options) {
+  const regexEmail =
+    /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
   // 1. Lấy ra container bao đóng form
   const container = document.querySelector(options.container)
   // 2. Tất cả các elements khác query dựa vào container
@@ -8,16 +10,18 @@ function Validate(options) {
 
   const rulesMethod = {
     required: function (valueInput, valueRule) {
-      console.log('required', valueRule)
+      return valueInput !== ''
     },
     minlength: function (valueInput, valueRule) {
-      console.log('minlength', valueRule)
+      return valueInput.length >= valueRule
     },
     email: function (valueInput, valueRule) {
-      console.log('email', valueRule)
+      return regexEmail.test(valueInput)
     },
     equal_to: function (valueInput, valueRule) {
-      console.log('equal_to', valueRule)
+      let passSelector = container.querySelector('.' + valueRule)
+      let valuePass = passSelector.value
+      return valueInput === valuePass
     }
   }
 
@@ -28,19 +32,23 @@ function Validate(options) {
   function handleSignUpClick(event) {
     event.preventDefault()
     for (const keyInputName in rules) {
+      console.group()
       let inputSelector = container.querySelector('.' + keyInputName)
       let valueInput = inputSelector.value
-      console.log(valueInput)
-
-      console.log('keyInputName', keyInputName)
       console.log('rules for item input', rules[keyInputName])
 
       const ruleAllForInputItem = rules[keyInputName]
 
       for (const ruleItemKey in ruleAllForInputItem) {
         let valueRule = ruleAllForInputItem[ruleItemKey]
-        rulesMethod[ruleItemKey](valueInput, valueRule)
+        let result = rulesMethod[ruleItemKey](valueInput, valueRule)
+        console.log('result for input: ' + keyInputName, result)
+        if (!result) {
+          // show error
+          break
+        }
       }
+      console.groupEnd()
     }
   }
 
