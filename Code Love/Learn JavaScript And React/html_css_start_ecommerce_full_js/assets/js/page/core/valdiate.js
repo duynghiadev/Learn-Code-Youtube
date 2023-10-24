@@ -63,14 +63,21 @@ function Validate(options) {
 
     function resetErrors(inputSelector) {
       inputSelector.classList.remove('error')
-      inputSelector.nextElementSibling.textContent = ''
+      let divError = inputSelector
+        .closest('.form-group')
+        .querySelector('.error_message')
+
+      divError.textContent = ''
     }
   }
 
   function showErrors() {
     errors.forEach(function (element) {
       let inputElement = element.elementError
-      let divError = inputElement.nextElementSibling
+      let divError = inputElement
+        .closest('.form-group')
+        .querySelector('.error_message')
+
       inputElement.classList.add('error')
       divError.textContent = element.message
     })
