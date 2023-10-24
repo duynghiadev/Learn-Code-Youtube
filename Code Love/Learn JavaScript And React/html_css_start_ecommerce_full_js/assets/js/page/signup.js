@@ -1,3 +1,3 @@
 let signupInstanceValidate = new Validate({
-  container: '#page_register'
+  container: '.form_register'
 })
