@@ -41,7 +41,7 @@ const methodsRule = {
   },
 }
 
-const message = {
+const messages = {
   name_required: 'Tên không được để trống',
   email_required: 'Email không được để trống',
 }
@@ -49,8 +49,6 @@ const message = {
 // =============== Start Listener Funtion ===============
 
 function handleSignUpClick(event) {
-  console.group()
-
   event.preventDefault()
   // loop qua từng phần tử validate
   for (const keyNameInput in rules) {
@@ -58,30 +56,39 @@ function handleSignUpClick(event) {
     let valueInput = inputElement.value
 
     // reset all error
-    inputElement.classList.remove('error')
-    inputElement.nextElementSibling.textContent = ''
+    resetAllError(inputElement)
 
     let ruleAllForInput = rules[keyNameInput]
 
     // loop qua từng rule validate của input đấy
     for (const ruleItemKey in ruleAllForInput) {
+      // lấy ra value của object item rule
       let paramsInput = ruleAllForInput[ruleItemKey]
+      // kết quả validate từng rule trả về
       let result = methodsRule[ruleItemKey](valueInput, paramsInput)
       let keyMessage = keyNameInput + '_' + ruleItemKey
-      console.log(message[keyMessage])
-      console.log('result:', result)
 
       // kiểm tra validate rule thất bại
       if (!result) {
-        inputElement.classList.add('error')
-        inputElement.nextElementSibling.textContent = message[keyMessage]
-          ? message[keyMessage]
-          : keyNameInput + ' not valid'
+        showMessageError(inputElement, keyMessage, keyNameInput)
         break
       }
     }
   }
-  console.groupEnd()
+}
+
+function showMessageError(inputElement, keyMessage, keyNameInput) {
+  let message = keyNameInput + ' not valid'
+  inputElement.classList.add('error')
+  if (messages[keyMessage]) {
+    message = messages[keyMessage]
+  }
+  inputElement.nextElementSibling.textContent = message
+}
+
+function resetAllError(inputElement) {
+  inputElement.classList.remove('error')
+  inputElement.nextElementSibling.textContent = ''
 }
 
 // =============== End Listener Funtion ===============
