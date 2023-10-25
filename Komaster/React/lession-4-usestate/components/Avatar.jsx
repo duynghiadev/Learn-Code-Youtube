@@ -1,5 +1,5 @@
 function Avatar({ src }) {
-  return <img className="avatar" src={src} alt="" />;
+  return <img className='avatar' src={src} alt='' />
 }
 
-export default Avatar;
+export default Avatar
