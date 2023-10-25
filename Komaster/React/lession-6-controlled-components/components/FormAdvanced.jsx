@@ -1,43 +1,43 @@
-import { useState } from "react";
+import { useState } from 'react'
 
 function FormAdvanced() {
   const [fields, setFields] = useState({
-    user: "",
-    desc: "",
-    fruits: "",
-  });
+    user: '',
+    desc: '',
+    fruits: ''
+  })
 
   const onChange = (ev) => {
-    const target = ev.target;
-    const id = target.id;
-    const value = target.value;
+    const target = ev.target
+    const id = target.id
+    const value = target.value
 
     setFields((prevFields) => ({
       ...prevFields,
       ...{
-        [id]: value,
-      },
-    }));
-  };
+        [id]: value
+      }
+    }))
+  }
 
   return (
-    <form className="form">
+    <form className='form'>
       <label>Input text</label>
-      <input id="user" value={fields.user} onChange={onChange} />
+      <input id='user' value={fields.user} onChange={onChange} />
 
       <label>Textarea</label>
-      <textarea id="desc" value={fields.desc} onChange={onChange} />
+      <textarea id='desc' value={fields.desc} onChange={onChange} />
 
       <label>Single select</label>
-      <select id="fruits" value={fields.fruits} onChange={onChange}>
-        <option value="apple">Apple</option>
-        <option value="orange">Orange</option>
-        <option value="watermelon">Watermelon</option>
-        <option value="avocado">Avocado</option>
-        <option value="pineapple">Pineapple</option>
+      <select id='fruits' value={fields.fruits} onChange={onChange}>
+        <option value='apple'>Apple</option>
+        <option value='orange'>Orange</option>
+        <option value='watermelon'>Watermelon</option>
+        <option value='avocado'>Avocado</option>
+        <option value='pineapple'>Pineapple</option>
       </select>
     </form>
-  );
+  )
 }
 
-export default FormAdvanced;
+export default FormAdvanced
