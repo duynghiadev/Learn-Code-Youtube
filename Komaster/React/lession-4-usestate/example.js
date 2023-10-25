@@ -16,6 +16,7 @@ const setGreeting = (newState) => {
     console.log('color-1:', color)
     console.log('newColor-1:', newColor)
     console.log('re-render view')
+    console.log('=============================')
     return
   }
 
@@ -28,4 +29,7 @@ console.log('greeting after:', { ...greeting })
 console.log('color after:', { color: 'red' })
 console.log('=============================')
 
-setGreeting({ ...greeting, ...{ color: 'red' } })
+greeting.color = 'red'
+setGreeting(greeting)
+console.log('=============================')
+setGreeting({ ...greeting, ...{ color: 'red' } }) // Merge Object should object root no changes
