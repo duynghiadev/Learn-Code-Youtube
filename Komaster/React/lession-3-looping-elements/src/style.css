@@ -1,7 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&display=swap');
 
 * {
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 
 .flex {
@@ -33,13 +33,13 @@
   align-items: center;
 }
 
-.review-reaction img{
+.review-reaction img {
   width: 17px;
   padding: 0 5px;
   cursor: pointer;
 }
 
-.review-reaction span{
+.review-reaction span {
   font-size: 10px;
   background-color: #efefef;
   padding: 0 7px;
@@ -75,7 +75,7 @@
 .review .carousel {
   display: flex;
   gap: 0.5rem;
-  padding-top: 0.5rem
+  padding-top: 0.5rem;
 }
 
 .review .carousel img {
@@ -88,24 +88,24 @@
   align-items: center;
   justify-content: space-between;
   max-width: 300px;
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
   background: #fff;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
   border: 1px solid #e5e7eb;
-  border-radius: .25rem;
-  font-size: .825rem;
+  border-radius: 0.25rem;
+  font-size: 0.825rem;
 }
 
-.btn-delete{
+.btn-delete {
   border: none;
   background: none;
   color: rgb(233, 103, 103);
   cursor: pointer;
-  padding: .25rem .5rem;
-  border-radius: .25rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
 }
 
-.btn-delete:hover{
+.btn-delete:hover {
   color: rgb(211, 38, 38);
   background: #f3f3f3;
 }
