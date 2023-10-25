@@ -1,25 +1,24 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react'
 
 export default function List() {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState(null)
 
   useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/todos")
+    fetch('https://jsonplaceholder.typicode.com/todos')
       .then((res) => res.json())
-      .then((data) => setData(data));
-  }, []);
+      .then((data) => setData(data))
+  }, [])
 
   return (
-    <div className="container-md">
+    <div className='container-md'>
       {data &&
         data.map((item) => {
           return (
-            <p className="todo" key={item.id}>
+            <p className='todo' key={item.id}>
               {item.title}
             </p>
-          );
+          )
         })}
     </div>
-  );
+  )
 }
-
