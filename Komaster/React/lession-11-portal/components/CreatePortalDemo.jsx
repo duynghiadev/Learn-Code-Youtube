@@ -1,12 +1,12 @@
-import { useState } from "react";
-import Modal from "./Modal";
+import { useState } from 'react'
+import Modal from './Modal'
 
 function CreatePortalDemo() {
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(false)
 
   return (
-    <div className="container">
-      <button onClick={() => setVisible(true)} className="btn">
+    <div className='container'>
+      <button onClick={() => setVisible(true)} className='btn'>
         Show modal
       </button>
       <Modal visible={visible} setVisible={setVisible}>
@@ -17,7 +17,7 @@ function CreatePortalDemo() {
         </p>
       </Modal>
     </div>
-  );
+  )
 }
 
-export default CreatePortalDemo;
+export default CreatePortalDemo
