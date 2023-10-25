@@ -1,24 +1,31 @@
 const greeting = {
-  title: "Hello world",
-  color: "aqua",
+  title: 'Hello world',
+  color: 'aqua'
 }
 
 console.log('greeting:', greeting)
-console.log('new greeting:', {...greeting, ...{color: 'red'}})
+console.log('new greeting:', { ...greeting, ...{ color: 'red' } })
 
-// const setGreeting = (newState) => {
-//   const { color } = greeting;
-//   const { color: newColor } = newState;
+console.log('=============================')
 
-//   if (color !== newColor) {
-//     console.log('re-render view')
-//     return;
-//   }
+const setGreeting = (newState) => {
+  const { color } = greeting
+  const { color: newColor } = newState
 
-//   console.log('old Color:', color)
-//   console.log('new Color:', newColor)
-//   console.log('nothing changed')
-  
-// }
+  if (color !== newColor) {
+    console.log('color-1:', color)
+    console.log('newColor-1:', newColor)
+    console.log('re-render view')
+    return
+  }
 
-// setGreeting({...greeting, ...{color: 'red'}});
+  console.log('old Color:', color)
+  console.log('new Color:', newColor)
+  console.log('nothing changed')
+}
+
+console.log('greeting after:', { ...greeting })
+console.log('color after:', { color: 'red' })
+console.log('=============================')
+
+setGreeting({ ...greeting, ...{ color: 'red' } })
