@@ -1,7 +1,7 @@
 function ReviewContent({ content }) {
   const onShowMore = () => {
     // code here
-  };
+  }
 
   return (
     <>
@@ -10,7 +10,7 @@ function ReviewContent({ content }) {
         See more
       </a> */}
     </>
-  );
+  )
 }
 
-export default ReviewContent;
+export default ReviewContent
