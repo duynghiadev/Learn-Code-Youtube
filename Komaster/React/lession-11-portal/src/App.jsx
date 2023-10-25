@@ -1,11 +1,11 @@
-import CreatePortalDemo from "../components/CreatePortalDemo";
+import CreatePortalDemo from '../components/CreatePortalDemo'
 
 function App() {
   return (
     <>
       <CreatePortalDemo />
     </>
-  );
+  )
 }
 
-export default App;
+export default App
