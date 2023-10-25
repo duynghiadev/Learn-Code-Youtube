@@ -10,6 +10,8 @@ function App() {
     }, 3000)
   }, [])
 
+  console.log('hide all comment 🙈')
+
   return <>{visible ? <UseEffect /> : null}</>
 }
 
