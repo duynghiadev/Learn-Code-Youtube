@@ -1,19 +1,14 @@
-import UseStateProblem from "../components/UseStateProblem";
-import UseContextDemo from "../components/UseContextDemo";
-import UseReducerDemo from "../components/UseReducerDemo";
-import ContextAndReducerDemo from "../components/ContextAndReducerDemo";
-import UseStateComparison from "../components/UseStateComparison";
+import Todos from '../components/UseReducerWithContext'
+import UseStateComparison from '../components/UseStateComparison'
 
 function App() {
   return (
     <>
-      {/* <UseStateProblem /> */}
-      {/* <UseContextDemo /> */}
-      {/* <UseReducerDemo /> */}
-      {/* <ContextAndReducerDemo /> */}
       <UseStateComparison />
+      <h1 style={{ textAlign: 'center' }}>===========================</h1>
+      <Todos />
     </>
-  );
+  )
 }
 
-export default App;
+export default App
