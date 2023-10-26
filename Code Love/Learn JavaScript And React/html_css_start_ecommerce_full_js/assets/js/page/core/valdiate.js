@@ -11,6 +11,13 @@ function Validate(options) {
   const container = document.querySelector(options.container)
   const btnSignUpSelector = container.querySelector('.' + btnClassSubmit)
 
+  const messageDefault = {
+    required: 'This field is required',
+    minlength: 'Please enter at latest {min} characters',
+    regex: 'Please enter true format',
+    equal_to: 'This field not same value'
+  }
+
   let errors
   const rulesMethod = {
     required: function (valueInput, valueRule) {
@@ -51,11 +58,13 @@ function Validate(options) {
 
         if (!result) {
           // Đẩy lỗi vào biến đang lưu trữ
+          let messageErrorDefault = messageDefault[ruleItemKey]
+          messageErrorDefault = messageErrorDefault.replace('{min}', valueRule)
           errors.push({
             elementError: inputSelector,
             message: messages[keyMessage]
               ? messages[keyMessage]
-              : keyInputName + ' not valid'
+              : messageErrorDefault
           })
           break
         }
