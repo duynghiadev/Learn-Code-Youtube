@@ -23,7 +23,7 @@
 
       let validation = new Validator(data, rules)
 
-      // validation.passes() // true
+      validation.passes() // true
 
       let ruleFormat = {}
       for (const keyInputName in rules) {
@@ -45,7 +45,7 @@
       }
       console.log(ruleFormat)
 
-      // validation.fails() // false
+      validation.fails() // false
     </script>
   </body>
 </html>
