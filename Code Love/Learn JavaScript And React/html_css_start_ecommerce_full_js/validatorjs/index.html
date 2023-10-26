@@ -29,16 +29,18 @@
       for (const keyInputName in rules) {
         const ruleAllInputStr = rules[keyInputName]
         const ruleAllInputArr = ruleAllInputStr.split('|')
-        let ruleFormatArr = []
+        let ruleFormatArr = {}
 
         for (let i = 0; i < ruleAllInputArr.length; i++) {
           let ruleItem = ruleAllInputArr[i]
-          ruleAllInputArr.push({
-            name: ruleItem
-          })
+          console.log(ruleItem)
+          if (ruleItem.includes(':')) {
+            const [name, value] = ruleItem.split(':')
+            ruleFormatArr[name] = value
+          } else {
+            ruleFormatArr[ruleItem] = true
+          }
         }
-        console.log(ruleFormatArr)
-
         ruleFormat[keyInputName] = ruleFormatArr
       }
       console.log(ruleFormat)
