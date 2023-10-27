@@ -52,35 +52,41 @@ function Validate(options) {
     console.log('input dang change', event.target)
   }
 
+  function validateOneElement(element) {
+    const valueInput = element.value
+    const keyInputName = element.name
+    const ruleAllForInputItem = rules[keyInputName]
+
+    for (const ruleItemKey in ruleAllForInputItem) {
+      const valueRule = ruleAllForInputItem[ruleItemKey]
+      const result = rulesMethod[ruleItemKey](valueInput, valueRule)
+      const keyMessage = keyInputName + '_' + ruleItemKey
+
+      if (!result) {
+        // Đẩy lỗi vào biến đang lưu trữ
+        let messageErrorDefault = messageDefault[ruleItemKey]
+        messageErrorDefault = messageErrorDefault.replace('{min}', valueRule)
+        errors.push({
+          elementError: element,
+          message: messages[keyMessage]
+            ? messages[keyMessage]
+            : messageErrorDefault
+        })
+        break
+      }
+    }
+  }
+
   function handleSignUpClick(event) {
     event.preventDefault()
     errors = []
 
     for (const keyInputName in rules) {
       const inputSelector = container.querySelector('.' + keyInputName)
-      const valueInput = inputSelector.value
-      const ruleAllForInputItem = rules[keyInputName]
       // reset all errors
       resetErrors(inputSelector)
-
-      for (const ruleItemKey in ruleAllForInputItem) {
-        const valueRule = ruleAllForInputItem[ruleItemKey]
-        const result = rulesMethod[ruleItemKey](valueInput, valueRule)
-        const keyMessage = keyInputName + '_' + ruleItemKey
-
-        if (!result) {
-          // Đẩy lỗi vào biến đang lưu trữ
-          let messageErrorDefault = messageDefault[ruleItemKey]
-          messageErrorDefault = messageErrorDefault.replace('{min}', valueRule)
-          errors.push({
-            elementError: inputSelector,
-            message: messages[keyMessage]
-              ? messages[keyMessage]
-              : messageErrorDefault
-          })
-          break
-        }
-      }
+      // check validate passed for one element input
+      validateOneElement(inputSelector)
     }
     // Hiển thị lỗi
     if (errors.length) {
