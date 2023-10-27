@@ -1,3 +1,4 @@
+const formRegister = document.querySelector('.form_register')
 const togglePass = document.querySelector('.toogle_password')
 
 function rules() {
@@ -35,7 +36,7 @@ function validateSuccess() {
   let dataForm = {}
   let users = JSON.parse(localStorage.getItem('users')) || []
   // check email is exit
-  const email = document.querySelector('.form_register .email').value
+  const email = formRegister.querySelector('.email').value
   let isEmailExit = users.some(function (element) {
     return element.email === email
   })
@@ -43,18 +44,19 @@ function validateSuccess() {
 
   // Nếu email chưa tồn tại thì mới thêm thông tin user vào local
   if (!isEmailExit) {
-    document
-      .querySelectorAll('.form_register input')
-      .forEach(function (element) {
-        if (element.name !== 'confirm_password') {
-          dataForm[element.name] = element.value
-        }
-      })
+    formRegister.querySelectorAll('input').forEach(function (element) {
+      if (element.name !== 'confirm_password') {
+        dataForm[element.name] = element.value
+      }
+    })
     // 2.1 Create data users array
     dataForm['id'] = crypto.randomUUID()
+    dataForm['status'] = ''
     users.push(dataForm)
     // 2.2 Save to localStorage
     localStorage.setItem('users', JSON.stringify(users))
+    // 3. redirect to page login
+    window.location.href = './login.html'
   }
 }
 
