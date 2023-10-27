@@ -48,8 +48,20 @@ function Validate(options) {
   }
 
   function handleInputChange(event) {
+    errors = errors || []
     const inputSelector = event.target
-    console.log('input dang change', event.target)
+    // xóa bỏ lỗi element input ra khỏi mảng lỗi
+    errors = errors.filter(function (element) {
+      return element.elementError.name !== inputSelector.name
+    })
+    // thêm lỗi vào nếu element có lỗi
+    validateOneElement(inputSelector)
+    // reset error
+    resetErrors(inputSelector)
+    // hiển thị lỗi
+    if (errors.length) {
+      showErrors()
+    }
   }
 
   function validateOneElement(element) {
@@ -92,15 +104,16 @@ function Validate(options) {
     if (errors.length) {
       showErrors()
     }
+    console.log(errors)
+  }
 
-    function resetErrors(inputSelector) {
-      inputSelector.classList.remove(errorClass)
-      let divError = inputSelector
-        .closest(`.${formGroupClass}`)
-        .querySelector(`.${errorMessageClass}`)
+  function resetErrors(inputSelector) {
+    inputSelector.classList.remove(errorClass)
+    let divError = inputSelector
+      .closest(`.${formGroupClass}`)
+      .querySelector(`.${errorMessageClass}`)
 
-      divError.textContent = ''
-    }
+    divError.textContent = ''
   }
 
   function showErrors() {
