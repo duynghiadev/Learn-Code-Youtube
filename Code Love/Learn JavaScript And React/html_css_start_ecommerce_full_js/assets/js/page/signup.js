@@ -25,6 +25,20 @@ let signupInstanceValidate = new Validate({
     email_regex: 'Email không đúng định dạng'
   },
   success: function () {
-    console.log('validate success')
+    // 1. Lấy dữ liệu input
+    let dataForm = {}
+    let users = []
+    document
+      .querySelectorAll('.form_register input')
+      .forEach(function (element) {
+        if (element.name !== 'confirm_password') {
+          dataForm[element.name] = element.value
+        }
+      })
+    // 2.1 Create data users array
+    dataForm['id'] = crypto.randomUUID()
+    users.push(dataForm)
+    // 2.2 Save to localStorage
+    localStorage.setItem('users', JSON.stringify(users))
   }
 })
