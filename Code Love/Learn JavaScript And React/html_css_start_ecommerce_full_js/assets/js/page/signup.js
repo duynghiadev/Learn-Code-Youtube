@@ -28,18 +28,27 @@ let signupInstanceValidate = new Validate({
     // 1. Lấy dữ liệu input
     let dataForm = {}
     let users = JSON.parse(localStorage.getItem('users')) || []
+    // check email is exit
+    const email = document.querySelector('.form_register .email').value
+    let isEmailExit = users.some(function (element) {
+      return element.email === email
+    })
+    console.log('isEmailExit', isEmailExit)
 
-    document
-      .querySelectorAll('.form_register input')
-      .forEach(function (element) {
-        if (element.name !== 'confirm_password') {
-          dataForm[element.name] = element.value
-        }
-      })
-    // 2.1 Create data users array
-    dataForm['id'] = crypto.randomUUID()
-    users.push(dataForm)
-    // 2.2 Save to localStorage
-    localStorage.setItem('users', JSON.stringify(users))
+    // Nếu email chưa tồn tại thì mới thêm thông tin user vào local
+    if (!isEmailExit) {
+      document
+        .querySelectorAll('.form_register input')
+        .forEach(function (element) {
+          if (element.name !== 'confirm_password') {
+            dataForm[element.name] = element.value
+          }
+        })
+      // 2.1 Create data users array
+      dataForm['id'] = crypto.randomUUID()
+      users.push(dataForm)
+      // 2.2 Save to localStorage
+      localStorage.setItem('users', JSON.stringify(users))
+    }
   }
 })
