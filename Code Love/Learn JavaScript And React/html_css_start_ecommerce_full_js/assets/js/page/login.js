@@ -21,7 +21,25 @@ function messages() {
 }
 
 function validateSuccess() {
-  console.log('validate success')
+  // 1. Lấy thông tin email và password khi submit form
+  const email = document.querySelector('.email').value
+  const password = document.querySelector('.password').value
+  // 2. So sánh email và password với tất cả các users trong hệ thống
+  const users = JSON.parse(localStorage.getItem('users')) || []
+
+  if (users.length) {
+    users.forEach(function (element) {
+      if (element.email === email && element.password === password) {
+        element.status = 'active'
+      } else {
+        element.status = ''
+      }
+    })
+    // 3. Cập nhật vào localStorage
+    localStorage.setItem('users', JSON.stringify(users))
+    // 4. Chuyển đến màn hình admin hoặc home
+    window.location.href = './my-account.html'
+  }
 }
 
 let loginInstanceValidate = new Validate({
