@@ -59,9 +59,7 @@ function Validate(options) {
     // reset error
     resetErrors(inputSelector)
     // hiển thị lỗi
-    if (errors.length) {
-      showErrors()
-    }
+    showErrors()
   }
 
   function validateOneElement(element) {
@@ -73,7 +71,6 @@ function Validate(options) {
       const valueRule = ruleAllForInputItem[ruleItemKey]
       const result = rulesMethod[ruleItemKey](valueInput, valueRule)
       const keyMessage = keyInputName + '_' + ruleItemKey
-
       if (!result) {
         // Đẩy lỗi vào biến đang lưu trữ
         let messageErrorDefault = messageDefault[ruleItemKey]
@@ -84,7 +81,7 @@ function Validate(options) {
             ? messages[keyMessage]
             : messageErrorDefault
         })
-        break
+        return false
       }
     }
   }
@@ -101,10 +98,7 @@ function Validate(options) {
       validateOneElement(inputSelector)
     }
     // Hiển thị lỗi
-    if (errors.length) {
-      showErrors()
-    }
-    console.log(errors)
+    showErrors()
   }
 
   function resetErrors(inputSelector) {
@@ -117,15 +111,17 @@ function Validate(options) {
   }
 
   function showErrors() {
-    errors.forEach(function (element) {
-      let inputElement = element.elementError
-      let divError = inputElement
-        .closest(`.${formGroupClass}`)
-        .querySelector(`.${errorMessageClass}`)
+    if (errors.length) {
+      errors.forEach(function (element) {
+        let inputElement = element.elementError
+        let divError = inputElement
+          .closest(`.${formGroupClass}`)
+          .querySelector(`.${errorMessageClass}`)
 
-      inputElement.classList.add(errorClass)
-      divError.textContent = element.message
-    })
+        inputElement.classList.add(errorClass)
+        divError.textContent = element.message
+      })
+    }
   }
 
   // add event listener + data init
