@@ -37,7 +37,19 @@ function Validate(options) {
   }
 
   function initEventAndData() {
+    // Sự kiện nhấn button submit form
     btnSignUpSelector.addEventListener('click', handleSignUpClick)
+    // Sự kiện input khi thay đổi value cho element
+    container
+      .querySelectorAll(`.${formGroupClass} input`)
+      .forEach(function (element) {
+        element.addEventListener('input', handleInputChange)
+      })
+  }
+
+  function handleInputChange(event) {
+    const inputSelector = event.target
+    console.log('input dang change', event.target)
   }
 
   function handleSignUpClick(event) {
