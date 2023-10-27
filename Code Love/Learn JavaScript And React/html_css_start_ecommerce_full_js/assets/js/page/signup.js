@@ -27,7 +27,8 @@ let signupInstanceValidate = new Validate({
   success: function () {
     // 1. Lấy dữ liệu input
     let dataForm = {}
-    let users = []
+    let users = JSON.parse(localStorage.getItem('users')) || []
+
     document
       .querySelectorAll('.form_register input')
       .forEach(function (element) {
