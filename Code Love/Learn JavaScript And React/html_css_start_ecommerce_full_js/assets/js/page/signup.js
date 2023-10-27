@@ -1,3 +1,5 @@
+const togglePass = document.querySelector('.toogle_password')
+
 function rules() {
   return {
     name: {
@@ -56,6 +58,20 @@ function validateSuccess() {
   }
 }
 
+function handleTogglePass(event) {
+  const clicked = event.target
+  const inputChangeType = clicked
+    .closest('.form-group')
+    .querySelector('.password')
+  const type =
+    inputChangeType.getAttribute('type') === 'password' ? 'text' : 'password'
+
+  inputChangeType.setAttribute('type', type)
+  clicked.classList.toggle('fa-eye-slash')
+  clicked.classList.toggle('fa-eye')
+}
+
+togglePass.addEventListener('click', handleTogglePass)
 // config validate form
 let signupInstanceValidate = new Validate({
   container: '.form_register',
