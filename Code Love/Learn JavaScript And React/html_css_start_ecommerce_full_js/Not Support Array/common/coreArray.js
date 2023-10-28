@@ -7,6 +7,16 @@ function checkOneElementExit(userArray, callback) {
   return false
 }
 
+Array.prototype.someCustom = function (callback) {
+  console.log('>>> this is callback', callback)
+  for (let i = 0; i < this.length; i++) {
+    if (callback(this[i])) {
+      return true
+    }
+  }
+  return false
+}
+
 // không chính xác
 // 1. Đảm bảo code mới hoạt động ok
 // 2. Code cũ cũng hoạt động ok
