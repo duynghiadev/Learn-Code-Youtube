@@ -12,10 +12,10 @@ let users = [
 // 1. Nó sẽ return true nếu 1 callback trả về true
 // 2. Nếu nó chạy hết tất cả các phần tử trong mảng --> không có phần tử nào return true --> return false
 
-function checkOneElementTrue(userArray) {
+// Hàm chung
+function checkOneElementExit(userArray, keyName, value) {
   for (let i = 0; i < userArray.length; i++) {
-    console.log(userArray[i])
-    if (userArray[i].name === 'duynghia10') {
+    if (userArray[i][keyName] === value) {
       return true
     }
   }
@@ -23,5 +23,13 @@ function checkOneElementTrue(userArray) {
 }
 
 // Call function
-let isCheckExitName = checkOneElementTrue(users)
+let isCheckExitName = checkOneElementExit(users, 'name', 'duynghia1')
+let isCheckExitEmail = checkOneElementExit(
+  users,
+  'email',
+  'duynghia1@gmail.com'
+)
 console.log(isCheckExitName)
+console.log(isCheckExitEmail)
+
+// Junior viết này là oke rồi -> nhưng không -> không ổn đâu -> some -> middle, senior
