@@ -29,12 +29,21 @@ function handleAdd() {
     id: crypto.randomUUID(),
     name: name
   }
+
+  // Hiển thị dữ liệu mới
+  const liHtmlNew = document.createElement('li')
+  liHtmlNew.innerHTML = `${name}
+    <button class="delete">Delete</button>
+    `
+  document.querySelector('ul').prepend(liHtmlNew)
+
+  // thêm sự kiện delete
+  liHtmlNew.querySelector('.delete').addEventListener('click', deleteData)
+
   const todos = JSON.parse(localStorage.getItem('todos')) || []
-  const todosUpdate = [...todos, todo]
+  const todosUpdate = [todo, ...todos]
   localStorage.setItem('todos', JSON.stringify(todosUpdate))
 
-  // Hiển thị từ localStorage
-  showTodosFromLocal()
   document.querySelector('input').value = ''
 }
 
