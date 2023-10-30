@@ -16,11 +16,6 @@ function showTodosFromLocal() {
     </li>`
   })
   document.querySelector('ul').innerHTML = htmlResult
-  // Đưa sự kiện delete
-  // thêm sự kiện delete dữ liệu
-  document.querySelectorAll('.delete').forEach(function (element) {
-    element.addEventListener('click', deleteData)
-  })
 }
 
 function handleAdd() {
@@ -37,9 +32,6 @@ function handleAdd() {
     `
   document.querySelector('ul').prepend(liHtmlNew)
 
-  // thêm sự kiện delete
-  liHtmlNew.querySelector('.delete').addEventListener('click', deleteData)
-
   const todos = JSON.parse(localStorage.getItem('todos')) || []
   const todosUpdate = [todo, ...todos]
   localStorage.setItem('todos', JSON.stringify(todosUpdate))
@@ -49,3 +41,27 @@ function handleAdd() {
 
 showTodosFromLocal()
 btn.addEventListener('click', handleAdd)
+
+// thêm sự kiện delete cho cả 2
+document.querySelector('ul').addEventListener('click', deleteData)
+
+// cách 1: đồng bộ data ok vì nó nằm đồng bộ ở trên local + hiệu năng
+// cách 2: chỉ thêm phần tử mới lên đầu danh sách -> hiệu năng ok hơn -> nhưng về đồng bộ khó maintain code
+
+// -> đặt ra câu hỏi -> vậy có cách nào tốt cả về mặt đồng bộ data + hiệu năng
+// cách nào tạo event cho cả 2 trường hợp
+
+// document.querySelectorAll('.box').forEach(function (element) {
+//   element.addEventListener('click', function (event) {
+//     console.log(event.target.textContent)
+//   })
+// })
+
+document
+  .querySelector('.container')
+  .addEventListener('click', function (event) {
+    const clicked = event.target
+    if (clicked.classList.contains('box')) {
+      console.log(event.target.textContent)
+    }
+  })

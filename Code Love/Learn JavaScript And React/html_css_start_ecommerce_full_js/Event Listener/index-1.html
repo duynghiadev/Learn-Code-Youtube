@@ -4,6 +4,45 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Event Listener</title>
+    <style>
+      ul {
+        list-style: none;
+        width: 500px;
+        margin: 0;
+        padding: 0;
+        margin-top: 20px;
+      }
+      ul li {
+        background: rgb(108, 95, 95);
+        padding: 10px;
+        margin-bottom: 20px;
+        color: #fff;
+        display: flex;
+        justify-content: space-between;
+      }
+      .delete {
+        padding: 6px 12px;
+        background-color: rgb(119, 119, 225);
+        border: none;
+        color: #fff;
+        cursor: pointer;
+      }
+      .container {
+        width: 1200px;
+        margin: 0 auto;
+        border: 2px dashed brown;
+        display: flex;
+        justify-content: space-between;
+      }
+      .box {
+        width: 300px;
+        height: 300px;
+        background: rgb(226, 99, 99);
+      }
+      .box2 {
+        background: yellow;
+      }
+    </style>
   </head>
   <body>
     <div>
@@ -12,6 +51,11 @@
     </div>
 
     <ul></ul>
+
+    <div class="container">
+      <div class="box box1">box1</div>
+      <div class="box box2">box2</div>
+    </div>
 
     <script src="./script-1.js"></script>
   </body>
