@@ -1,3 +1,7 @@
+const tbodyCate = document.querySelector('.category_table')
+const categoryInputName = document.querySelector('.category_name')
+const buttonSave = document.querySelector('.btn_category_save')
+
 function showDataCateFromLocal() {
   // 1. Lấy toàn bộ danh mục trong local
   const categories = JSON.parse(localStorage.getItem('categories')) || []
@@ -9,7 +13,7 @@ function showDataCateFromLocal() {
       `<tr>
           <td>${element.name}</td>
           <td>
-            <button class="btn_common btn_eidt">
+            <button data-id="${element.id}" class="btn_common btn_eidt">
               Edit
             </button>
             <button data-id="${element.id}" class="btn_common btn_delete">
@@ -19,12 +23,12 @@ function showDataCateFromLocal() {
         </tr>`
   })
   // 3. Đưa kết quả toàn bộ danh mục tbody của table
-  document.querySelector('.category_table').innerHTML = htmlResult
+  tbodyCate.innerHTML = htmlResult
 }
 
 function validateSuccess() {
   // 1. Lấy ra thông tin của danh mục
-  const nameCategory = document.querySelector('.category_name').value
+  const nameCategory = categoryInputName.value
   // 2. Tạo ra object chứa thông tin danh mục
   const newCate = {
     id: crypto.randomUUID(),
@@ -43,6 +47,8 @@ function handleProcessData(event) {
   const clicked = event.target
   // Lấy ra tất cả danh mục trong local
   const categories = JSON.parse(localStorage.getItem('categories')) || []
+
+  // Khi người dùng click vào button click delete
   if (
     clicked.classList.contains('btn_delete') &&
     confirm('Bạn chắc chắn muốn delete')
@@ -56,6 +62,36 @@ function handleProcessData(event) {
     localStorage.setItem('categories', JSON.stringify(categoriesFilter))
     // 5. Hiển thị dữ liệu ngay lập tức khi thêm thành công --> Re-render app
     showDataCateFromLocal()
+  }
+
+  // Khi người dùng click vào button click edit
+  else if (clicked.classList.contains('btn_eidt')) {
+    // 1. Lấy ra id của element edit
+    const idEdit = clicked.getAttribute('data-id')
+
+    // 2. Cách lấy ra object element theo id edit (cách làm dễ hiểu hơn. Nhưng mà dài dòng, nên dùng method find theo ở dưới phần 2.1 👇)
+
+    // let elementEditing = undefined
+    // for (let i = 0; i < categories.length; i++) {
+    //   if (categories[i].id === idEdit) {
+    //     elementEditing === categories[i]
+    //     break
+    //   }
+    // }
+
+    // 2.1 Lấy ra object element theo id edit (dùng method find)
+    const elementEditing = categories.find(function (element) {
+      return element.id === idEdit
+    })
+    // 3. Đưa name lên ô input đang chỉnh sửa
+    categoryInputName.value = elementEditing.name
+    // 4. Chỉnh sửa để người dùng nhận biết hiện tại đang edit form
+    // 4.1 Thay đổi text button đến update
+    buttonSave.textContent = 'Update'
+    // 4.2 Thêm class âm thầm để biết là update
+    buttonSave.classList.add('update')
+    // 4.3 Thêm id để biết update cho object nào
+    buttonSave.setAttribute('data-id', idEdit)
   }
 }
 
@@ -76,6 +112,4 @@ let validateCategory = new Validate({
   success: validateSuccess
 })
 
-document
-  .querySelector('.category_table')
-  .addEventListener('click', handleProcessData)
+tbodyCate.addEventListener('click', handleProcessData)
