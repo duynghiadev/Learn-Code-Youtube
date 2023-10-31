@@ -48,20 +48,27 @@ document.querySelector('ul').addEventListener('click', deleteData)
 // cách 1: đồng bộ data ok vì nó nằm đồng bộ ở trên local + hiệu năng
 // cách 2: chỉ thêm phần tử mới lên đầu danh sách -> hiệu năng ok hơn -> nhưng về đồng bộ khó maintain code
 
-// -> đặt ra câu hỏi -> vậy có cách nào tốt cả về mặt đồng bộ data + hiệu năng
+// Tới level middle hoặc senior thì phải -> đặt ra câu hỏi -> vậy có cách nào tốt cả về mặt đồng bộ data + hiệu năng
 // cách nào tạo event cho cả 2 trường hợp
 
-// document.querySelectorAll('.box').forEach(function (element) {
-//   element.addEventListener('click', function (event) {
-//     console.log(event.target.textContent)
-//   })
-// })
+document.querySelectorAll('.box').forEach(function (element) {
+  element.addEventListener('click', function (event) {
+    console.log(
+      '❌ element clicked contain full class container box:',
+      event.target.textContent
+    )
+  })
+})
 
 document
   .querySelector('.container')
   .addEventListener('click', function (event) {
     const clicked = event.target
+    console.log('❌ element clicked contain class box include value:', clicked)
     if (clicked.classList.contains('box')) {
-      console.log(event.target.textContent)
+      console.log(
+        '✅ element clicked contain class box:',
+        event.target.textContent
+      )
     }
   })
