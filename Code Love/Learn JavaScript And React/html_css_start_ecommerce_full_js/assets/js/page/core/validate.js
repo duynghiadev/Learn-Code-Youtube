@@ -45,6 +45,16 @@ function Validate(options) {
       .forEach(function (element) {
         element.addEventListener('input', handleInputChange)
       })
+    container
+      .querySelectorAll(`.${formGroupClass} select`)
+      .forEach(function (element) {
+        element.addEventListener('input', handleInputChange)
+      })
+    container
+      .querySelectorAll(`.${formGroupClass} textarea`)
+      .forEach(function (element) {
+        element.addEventListener('input', handleInputChange)
+      })
   }
 
   function handleInputChange(event) {
