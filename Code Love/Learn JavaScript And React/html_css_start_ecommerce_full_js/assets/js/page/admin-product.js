@@ -14,13 +14,27 @@ function showCategoryInProduct() {
 }
 
 function validateProductSuccess() {
-  // 1. Lấy ra value của input
+  // 1. Lấy ra value của input và tạo ra object chứa thông tin sản phẩm
   let objValue = {}
   const inputAll = formProduct.querySelectorAll('.form-control-item')
   inputAll.forEach(function (element) {
-    objValue[element.name] = element.value
+    if (element.name === 'category_wrapper_form') {
+      objValue['category_id'] = element.value
+    } else {
+      objValue[element.name] = element.value
+    }
   })
-  console.log(objValue)
+
+  objValue.id = crypto.randomUUID()
+  const productType = document.querySelector('.type_product:checked').value
+  objValue.product_type = productType
+
+  // 2. Đưa object vào trong mảng
+  let products = JSON.parse(localStorage.getItem('products')) || []
+  const productNew = [objValue, ...products]
+
+  // 3. Lưu dữ liệu vào trong localStorage
+  localStorage.setItem('products', JSON.stringify(productNew))
 }
 
 // Hiển thị danh mục khi load trang lần đầu
