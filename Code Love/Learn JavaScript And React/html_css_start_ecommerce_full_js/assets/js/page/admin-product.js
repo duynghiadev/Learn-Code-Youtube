@@ -1,4 +1,5 @@
 const selectCate = document.querySelector('.category_wrapper_form')
+const formProduct = document.querySelector('#form_save_product')
 
 function showCategoryInProduct() {
   // 1. Lấy toàn bộ danh mục trong local
@@ -13,7 +14,13 @@ function showCategoryInProduct() {
 }
 
 function validateProductSuccess() {
-  console.log('validate success')
+  // 1. Lấy ra value của input
+  let objValue = {}
+  const inputAll = formProduct.querySelectorAll('.form-control-item')
+  inputAll.forEach(function (element) {
+    objValue[element.name] = element.value
+  })
+  console.log(objValue)
 }
 
 // Hiển thị danh mục khi load trang lần đầu
