@@ -3,16 +3,16 @@
  */
 
 // 1. Tìm hiểu câu lệnh đầu tiên console.log
-console.log("hello world")
+console.log('hello world')
 
 // 2. Cách khai báo 1 biến trong JavaScript
 var nameInfo
 
 // 3. Khởi tạo giá trị cho biến
-nameInfo = "duynghia"
+nameInfo = 'duynghia'
 
 // 4. Khai báo và khởi tạo cùng 1 câu lệnh
-var nameInfo = "duynghia dev"
+var nameInfo = 'duynghia dev'
 
 // 5. Các kiểu dữ liệu cơ bản trong JavaScript
 // 5.1 Kiểu dữ liệu boolean
@@ -27,8 +27,8 @@ var y = 12
 console.log(typeof y)
 
 // 5.3 Kiểu dữ liệu string
-console.log(typeof "hello")
-console.log(typeof "hello")
+console.log(typeof 'hello')
+console.log(typeof 'hello')
 console.log(typeof `hello`)
 
 // 5.4 Kiểu dữ liệu undefined
@@ -45,12 +45,12 @@ console.log(typeof z2)
  */
 
 // 1. Tại sao cần dữ liệu mảng
-var car1 = "Toyota"
-var car2 = "Ford"
-var car3 = "BMW"
+var car1 = 'Toyota'
+var car2 = 'Ford'
+var car3 = 'BMW'
 
 // 2. Cách khai báo mảng
-var cars = ["Toyota", "Ford", "BMW"]
+var cars = ['Toyota', 'Ford', 'BMW']
 
 // 3. Các thành phần của một mảng
 console.log(cars)
@@ -67,9 +67,9 @@ console.log(cars[1])
 console.log(cars[2])
 
 // 4.1 gán lại value
-cars[0] = "Toyota Edit"
-cars[1] = "Ford Edit"
-cars[2] = "BMW Edit"
+cars[0] = 'Toyota Edit'
+cars[1] = 'Ford Edit'
+cars[2] = 'BMW Edit'
 console.log(cars)
 
 // 5. Các hàm thông dụng thao tác với mảng
@@ -78,25 +78,25 @@ console.log(cars)
  * Phần 2: Kiểu dữ liệu object ✅
  */
 // 1. Tại sao cần dữ liệu object
-var students = ["duy", 12, "minh", "7a"]
+var students = ['duy', 12, 'minh', '7a']
 
 // 2. Cách khai báo object
 var students1 = {
-  name: "nghia",
+  name: 'nghia',
   age: 12,
-  class: "7a",
+  class: '7a'
 }
 
 // 3. Các thành phần của 1 object
 
 // 4. Cách truy xuất lấy value và set lại value của object
-var x = "name"
+var x = 'name'
 console.log(students1.x)
 console.log(students1.name)
 console.log(students1[x])
 
 // 5. Liên hệ với mảng
-var car4 = ["Toyota", "Ford", "BMW"]
+var car4 = ['Toyota', 'Ford', 'BMW']
 console.log(car4)
 // ❌ => Mảng chẳng qua là trường hợp đặc biệt của object với key index bắt đầu từ 0 ❌
 
@@ -164,17 +164,17 @@ if (true) {
 // 1.1 Xác định phạm vi của câu lệnh lấy giá trị biến cần phán đoán
 // 1.2 Nếu trong phạm vi đó không có, nó có thể di chuyển lên phạm vi cha gần nhất để nhận giá trị
 
-let x7 = "global scope"
+let x7 = 'global scope'
 
 if (true) {
-  let x7 = "x in if"
-  x7 = "scope in if change"
+  let x7 = 'x in if'
+  x7 = 'scope in if change'
   console.log(x7)
 }
 
 function changeValue() {
-  let x7 = "variable in function"
-  x7 = "change value in function"
+  let x7 = 'variable in function'
+  x7 = 'change value in function'
   console.log(x7)
 }
 changeValue()
@@ -186,8 +186,8 @@ console.log(x7)
 
 // I. Phân biệt cách khai báo biến với từ khóa var, let (trước khi có es6), const (es6)
 // 1. Khai báo lại cùng tên biến trong cùng 1 phạm vi
-var x8 = "global scope x8"
-var x9 = "global scope x9"
+var x8 = 'global scope x8'
+var x9 = 'global scope x9'
 console.log(x9)
 
 // const y = 1 // error
@@ -197,21 +197,21 @@ console.log(x9)
 // let y = 23 // error
 
 // 2. Scope: var là function scope, còn let là block scope
-var y = "global scope"
+var y = 'global scope'
 if (true) {
-  var y = "global scope init"
+  var y = 'global scope init'
 }
 console.log(y) // function scope
 
-let y1 = "global scope let"
+let y1 = 'global scope let'
 if (true) {
-  let y1 = "global scope let init"
+  let y1 = 'global scope let init'
 }
 // console.log(y1) // block scope
 
-var y2 = "global scope"
+var y2 = 'global scope'
 function changeValue() {
-  var y2 = "global scope init function"
+  var y2 = 'global scope init function'
   console.log(y2)
 }
 changeValue()
@@ -230,9 +230,9 @@ var z = 20 // thực chất ra thì nó chỉ in ra tên biến thôi chứ khô
 // console.log(z3) // trường hợp này là lỗi nhé. Vì không thể gán lại giá trị của biến const đã khai báo trước đó rồi
 
 const z4 = {
-  name: "duynghiadev",
+  name: 'duynghiadev'
 }
-z4.name = "buck"
+z4.name = 'buck'
 console.log(z4) // trường hợp này thì in ra được nhé. Vì nó chỉ thay đổi item trong object thôi, chứ đâu có gán lại biến z2 đâu. (Ví dụ: z4 = 'duynghiabuck' => thì trường hợp này mới là lỗi mấy bạn nhé !!). Trong thuật ngữ JavaScript thì nó được gọi là mutate
 
 /**
@@ -247,11 +247,11 @@ console.dir(document)
  * Phần 7: Các phương thức truy vấn DOM cơ bản js ✅
  */
 // 1. Trả về 1 phần tử đầu tiên trong DOM thỏa mãn
-let pFirst = document.querySelector(".element")
+let pFirst = document.querySelector('.element')
 console.log(pFirst)
 
 // 2. Lấy ra nhiều phần tử thỏa mãn trong DOM
-let pAll = document.querySelectorAll(".element")
+let pAll = document.querySelectorAll('.element')
 console.log(pAll)
 
 // 3. Chúng ta cũng có thể truy vấn DOM trong function
@@ -263,7 +263,7 @@ let document1 = {
   querySelectorAll: function querySelectorAll(params) {
     console.log(params)
     return 2
-  },
+  }
 }
-console.log(document1.querySelector(".element"))
-console.log(document1.querySelectorAll(".element"))
+console.log(document1.querySelector('.element'))
+console.log(document1.querySelectorAll('.element'))

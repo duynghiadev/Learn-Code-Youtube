@@ -15,30 +15,30 @@
 // Đây là cách 2: viết theo kiểu OOP trong Javascript ✅
 
 function Toggle(options) {
-	const container = options.container
-	const containerSelector = document.querySelector('.' + container)
-	console.log(containerSelector)
+  const container = options.container
+  const containerSelector = document.querySelector('.' + container)
+  console.log(containerSelector)
 
-// 1. save variable can access in function (querySelector, querySelectorAll)
-	const buttonSelector = containerSelector.querySelector('.btn')
-	const divSelector = containerSelector.querySelector('.my-style')
+  // 1. save variable can access in function (querySelector, querySelectorAll)
+  const buttonSelector = containerSelector.querySelector('.btn')
+  const divSelector = containerSelector.querySelector('.my-style')
 
-	function handleClickToggle() {
-		divSelector.classList.toggle('hide')
-	}
+  function handleClickToggle() {
+    divSelector.classList.toggle('hide')
+  }
 
-	// 2. add listener
-	function initEvent() {
-		buttonSelector.addEventListener('click', handleClickToggle)
-	}
+  // 2. add listener
+  function initEvent() {
+    buttonSelector.addEventListener('click', handleClickToggle)
+  }
 
-	initEvent()
+  initEvent()
 }
 
 let instanceToggle = new Toggle({
-	container: 'container_toggle'
+  container: 'container_toggle'
 })
 
 let instanceToggle2 = new Toggle({
-	container: 'container_toggle_2'
+  container: 'container_toggle_2'
 })

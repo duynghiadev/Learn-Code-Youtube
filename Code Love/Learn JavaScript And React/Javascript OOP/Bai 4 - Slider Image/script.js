@@ -7,19 +7,19 @@ const imageSmallAll = document.querySelectorAll('.cursor')
 const imageBig = document.querySelector('.mySlides')
 
 function handleClickShowImageBig(event) {
-	const clicked = event.target
-	if (clicked.classList.contains('cursor')) {
-		const srcImageSmall = clicked.getAttribute('src')
-		// add src to image big
-		imageBig.setAttribute('src', srcImageSmall)
-		// 2.1 remove all class active
-		imageSmallAll.forEach(function (imageSmallElement) {
-			imageSmallElement.classList.remove('active')
-		})
+  const clicked = event.target
+  if (clicked.classList.contains('cursor')) {
+    const srcImageSmall = clicked.getAttribute('src')
+    // add src to image big
+    imageBig.setAttribute('src', srcImageSmall)
+    // 2.1 remove all class active
+    imageSmallAll.forEach(function (imageSmallElement) {
+      imageSmallElement.classList.remove('active')
+    })
 
-		// 2. chon ảnh con đang click thêm class active
-		clicked.classList.add('active')
-	}
+    // 2. chon ảnh con đang click thêm class active
+    clicked.classList.add('active')
+  }
 }
 
 // add event listener

@@ -40,21 +40,15 @@ function Validate(options) {
     // Sự kiện nhấn button submit form
     btnSignUpSelector.addEventListener('click', handleSignUpClick)
     // Sự kiện input khi thay đổi value cho element
-    container
-      .querySelectorAll(`.${formGroupClass} input`)
-      .forEach(function (element) {
-        element.addEventListener('input', handleInputChange)
-      })
-    container
-      .querySelectorAll(`.${formGroupClass} select`)
-      .forEach(function (element) {
-        element.addEventListener('input', handleInputChange)
-      })
-    container
-      .querySelectorAll(`.${formGroupClass} textarea`)
-      .forEach(function (element) {
-        element.addEventListener('input', handleInputChange)
-      })
+    container.querySelectorAll(`.${formGroupClass} input`).forEach(function (element) {
+      element.addEventListener('input', handleInputChange)
+    })
+    container.querySelectorAll(`.${formGroupClass} select`).forEach(function (element) {
+      element.addEventListener('input', handleInputChange)
+    })
+    container.querySelectorAll(`.${formGroupClass} textarea`).forEach(function (element) {
+      element.addEventListener('input', handleInputChange)
+    })
   }
 
   function handleInputChange(event) {
@@ -87,9 +81,7 @@ function Validate(options) {
         messageErrorDefault = messageErrorDefault.replace('{min}', valueRule)
         errors.push({
           elementError: element,
-          message: messages[keyMessage]
-            ? messages[keyMessage]
-            : messageErrorDefault
+          message: messages[keyMessage] ? messages[keyMessage] : messageErrorDefault
         })
         return false
       }

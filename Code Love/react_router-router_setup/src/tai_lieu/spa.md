@@ -12,7 +12,7 @@
 
 1. Browser gửi 1 request đến serve cho page cần lấy dữ liệu hiển thị cho người dùng
 2. Serve không quan tâm về pathname. Thay vào đó nó return a standard index.html that includes the
-	 React app and any static assets
+   React app and any static assets
 3. The React app mounts
 4. React dựa vào pathname định danh URL và sử dụng định danh này để call api fetch data
 5. The React app renders the page using data it received from the API call
