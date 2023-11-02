@@ -1,0 +1,59 @@
+* {
+  padding: 0;
+  margin: 0;
+  /* chiều rộng width sẽ bao gồm padding và boder rồi; */
+  /* box-sizing: border-box; */
+}
+
+.item {
+  background-color: aqua;
+  /* background-clip: content-box; */
+  margin: 10px;
+  padding: 10px;
+  width: calc(50% - 20px);
+}
+
+/* yêu cầu 1: cần các item lên cùng 1 hàng */
+/* 1. chọn cha flex container */
+.wrapper {
+  display: flex;
+  /* mặc định nó để tất cả trên 1 hàng */
+  /* muốn xuống hàng thì cần thuộc tính này, quá 100% content sẽ xuống */
+  flex-wrap: wrap;
+}
+
+/* phần 2 căn chỉnh vị trị */
+ul {
+  background-color: antiquewhite;
+  display: flex;
+  height: 100px;
+  /* căn chỉnh các item sang phải, center */
+  justify-content: space-between;
+  /* căn chỉnh theo chiều đứng */
+  align-items: flex-end;
+}
+ul li {
+  list-style: none;
+  /* cho độ rộng và độ cao li tăng lên */
+  padding: 10px 20px;
+}
+
+/* flex-direction */
+/* flex-basic */
+/* flex-shirk */
+/* flex-grow */
+
+.box {
+  /* width bằng content box là 300px */
+  width: 300px;
+  height: 300px;
+  background-color: aquamarine;
+  padding: 10px;
+  /* chiều rộng thực tế */
+  /* width thuc te = 300 + 10 + 10 */
+
+  /* hộp không phình ra, chiều rộng thực tế là 300px và đã bao gồm padding và border */
+  /* 300 = padding + contentBox + border */
+  /* contentBox = 300 - 10 - 10 */
+  box-sizing: border-box;
+}

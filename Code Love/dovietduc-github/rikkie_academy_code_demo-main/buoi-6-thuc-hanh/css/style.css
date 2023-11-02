@@ -1,0 +1,279 @@
+/* bước 1 reset css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+/* đưa 2 khối trái phải nằm trên cùng 1 hàng */
+
+nav {
+  display: flex;
+  /* đẩy không gian trống ở giữa */
+  justify-content: space-between;
+  align-items: center;
+}
+
+header ul {
+  display: flex;
+  align-items: center;
+}
+/* bỏ dấu . li */
+header ul li {
+  list-style: none;
+  padding: 20px 10px;
+}
+/* bỏ gạch chân thẻ a */
+header ul li a {
+  text-decoration: none;
+  color: rgb(20, 21, 21);
+}
+
+.slug_flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.slug_flex ul {
+  display: flex;
+}
+.slug_flex ul li {
+  list-style: none;
+  margin-left: 12px;
+  font-size: 15px;
+}
+
+.slug_flex p {
+  font-size: 27px;
+  font-weight: bold;
+  color: rgb(20, 21, 21);
+}
+
+.slug_flex ul li.breadcrum {
+  color: rgb(117, 125, 133);
+}
+.slug {
+  background-color: rgb(247, 248, 251);
+  padding: 60px 0;
+  margin-bottom: 26px;
+}
+
+/* articles */
+.article_wrapper_flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.article_wrapper_flex .article_item {
+  width: 33.33333%;
+  padding: 0 10px;
+}
+
+.article_wrapper_flex .article_item img {
+  max-width: 100%;
+}
+
+.article_wrapper_flex .content {
+  padding: 18px 15px;
+}
+.article_wrapper_flex .content h3 {
+  font-size: 18px;
+  line-height: 1.5;
+}
+.article_wrapper_flex .content .calendar {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.article_wrapper_flex .content p {
+  font-size: 16px;
+  color: #687188;
+  line-height: 1.5;
+}
+
+.article_wrapper_flex .content .calendar span i {
+  color: #ff324d;
+}
+.article_wrapper_flex .content .calendar span:nth-child(2) {
+  margin-right: 12px;
+}
+.pagination ul {
+  display: flex;
+  justify-content: center;
+}
+.pagination ul li {
+  list-style: none;
+  margin-right: 7px;
+}
+.pagination ul li a {
+  text-decoration: none;
+  padding: 8px 13px;
+  border: 1px solid grey;
+  display: inline-block;
+}
+
+.pagination {
+  margin-top: 20px;
+}
+.pagination .active {
+  background-color: #ff324d;
+  color: white;
+}
+
+/* email */
+.subcrible_flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.subcrible {
+  padding: 40px 0;
+  background-color: #ff324d;
+  margin-top: 20px;
+}
+.subcrible_flex p {
+  color: white;
+  font-size: 28px;
+  font-weight: bold;
+  width: 50%;
+}
+.email {
+  display: flex;
+  width: 50%;
+  justify-content: flex-end;
+}
+
+.subcrible_flex button {
+  color: white;
+  font-size: 20px;
+  background-color: #343a40;
+  padding: 10px 25px;
+}
+
+.subcrible_flex input {
+  padding: 0 35px;
+  width: 100%;
+}
+
+.footer-top-flex {
+  display: flex;
+}
+
+.footer-top-logo {
+  width: 30%;
+}
+
+.useful_link,
+.category,
+.my-acount {
+  width: 15%;
+}
+.contact_info {
+  width: 25%;
+}
+.footer-top {
+  padding: 40px 0;
+  background-color: #202325;
+  border-bottom: 1px solid #37393b;
+}
+
+.footer-top-logo ul {
+  display: flex;
+}
+
+.footer-top li a,
+.footer-top h3,
+.footer-top p {
+  color: white;
+}
+.footer-top ul li {
+  list-style: none;
+}
+.footer-top ul li a {
+  text-decoration: none;
+}
+.footer-top-logo img {
+  margin-bottom: 30px;
+  display: inline-block;
+  max-width: 100%;
+  object-fit: cover;
+}
+.footer-top-logo p {
+  line-height: 1.5;
+  margin-bottom: 30px;
+  font-size: 16px;
+}
+
+.footer-top h3 {
+  margin-bottom: 30px;
+}
+
+.footer-top a {
+  display: inline-block;
+  padding: 5px;
+}
+.footer-top-logo ul li a {
+  display: inline-block;
+  padding: 10px;
+}
+
+.footer-bottom-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-bottom-flex ul {
+  display: flex;
+}
+.footer-bottom-flex ul li {
+  list-style: none;
+  margin-right: 3px;
+}
+.footer-bottom {
+  padding: 10px 0;
+  background-color: #202325;
+}
+.footer-bottom p {
+  color: white;
+}
+
+/* reponsive */
+
+/* apply css khi màn hình lớn nhất 600px */
+@media only screen and (max-width: 600px) {
+  /* // tất cả css reponsive ở đây */
+  header {
+    display: none;
+  }
+  .container {
+    width: 100%;
+  }
+
+  /* định dạng dưới dạng column */
+  .slug_flex {
+    flex-direction: column;
+  }
+  .slug_flex div {
+    margin-bottom: 10px;
+  }
+  .article_wrapper_flex .article_item {
+    width: 100%;
+  }
+  .subcrible_flex {
+    flex-wrap: wrap;
+  }
+  .subcrible_flex p {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .email {
+    width: 100%;
+  }
+  .footer-top-flex {
+    /* flex-direction: column; */
+  }
+}

@@ -1,0 +1,17 @@
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
+ul {
+  display: flex;
+  justify-content: center;
+}
+
+ul li {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: grey;
+  list-style: none;
+  margin-right: 2px;
+}

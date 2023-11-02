@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+.left {
+  width: 35%;
+}
+
+.right {
+  width: 65%;
+}
+
+ul {
+  background-color: rgb(222, 216, 216);
+}
+
+ul li {
+  list-style: none;
+  padding: 10px 5px;
+}
+ul li a {
+  display: inline-block;
+}
+
+ul li:hover {
+  background: green;
+}

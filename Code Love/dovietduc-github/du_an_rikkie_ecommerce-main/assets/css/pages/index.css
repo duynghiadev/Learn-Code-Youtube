@@ -1,0 +1,5 @@
+.main_content img {
+    width: 262px;
+    height: 290px;
+    object-fit: cover;
+}

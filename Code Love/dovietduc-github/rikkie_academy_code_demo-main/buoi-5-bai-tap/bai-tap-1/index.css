@@ -1,0 +1,18 @@
+h1,
+p {
+  text-align: center;
+}
+h1 {
+  padding: 10px 0;
+  background-color: rgb(20, 20, 20);
+  color: white;
+  font-size: 25px;
+}
+main {
+  /* text-align: center; */
+}
+main img {
+  display: block;
+  width: 25%;
+  margin: 0 auto;
+}
