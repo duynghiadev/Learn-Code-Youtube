@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="renderStudent()" onkeypress="pressSave(event)">
+<div class="container">
+    <h2>ADD STUDENT</h2>
+    <input type='hidden' id="index">
+
+    <input id="male" type="radio" value="male" name="gender"> <span>Male</span>&nbsp;&nbsp;&nbsp;&nbsp;
+    <input id="female" type="radio" value="female" name="gender"> <span>Female</span>
+    <div class="error" id="errorGender"></div>
+
+    <input id="name" class="input" type="text" placeholder="name">
+    <div class="error" id="errorName"></div>
+
+    <input id="email" class="input" type="email" placeholder="email">
+    <div class="error" id="errorEmail"></div>
+
+    <input id="phone" class="input" type="text" placeholder="phone">
+    <div class="error" id="errorPhone"></div>
+
+    <input id="address" class="input" type="text" placeholder="address">
+    <div class="error" id="errorAdd"></div>
+
+    <input id="dob" class="input" type="date" placeholder="dob">
+    <div class="error" id="errorDob"></div>
+
+    <button id="saveBtn" onclick="saveStudent()" style="display: block">Save Student</button>
+    <button id="changeBtn" onclick="changeStudent()">Update Student</button>
+</div>
+
+<table id="tableContent" width="1200" cellspacing="0" cellpadding="0">
+
+</table>
+<script src="main.js"></script>
+</body>
+</html>
