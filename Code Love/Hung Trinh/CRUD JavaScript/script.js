@@ -1,4 +1,10 @@
 // CRUD
+
+function resetInput() {
+  document.getElementById('name').value = ''
+  document.getElementById('address').value = ''
+}
+
 function validateInput() {
   let formElement = document.querySelector('.form')
   let inputElement = formElement.querySelectorAll('.form-input')
@@ -37,6 +43,7 @@ function addNew() {
     })
     localStorage.setItem('list-student', JSON.stringify(listStudent))
     renderStudent()
+    resetInput()
   }
 }
 
@@ -57,10 +64,41 @@ function renderStudent() {
         <td>${value.name}</td>
         <td>${value.address}</td>
         <td>
-          <button>Edit</button>
+          <button onclick="editStudent(${index})">Edit</button>
           <button>Delete</button>
         </td>
       </tr>`
   })
   document.getElementById('tableContent').innerHTML = student
+}
+
+function editStudent(index) {
+  let listStudent = localStorage.getItem('list-student')
+    ? JSON.parse(localStorage.getItem('list-student'))
+    : []
+
+  document.getElementById('name').value = listStudent[index].name
+  document.getElementById('address').value = listStudent[index].address
+  document.getElementById('index').value = index
+  ;(document.getElementById('save').style.display = 'none'),
+    (document.getElementById('update').style.display = 'inline-block')
+}
+
+function changeStudent() {
+  let listStudent = localStorage.getItem('list-student')
+    ? JSON.parse(localStorage.getItem('list-student'))
+    : []
+  let index = document.getElementById('index').value
+
+  listStudent[index] = {
+    name: document.getElementById('name').value,
+    address: document.getElementById('address').value
+  }
+
+  localStorage.setItem('list-student', JSON.stringify(listStudent))
+  ;(document.getElementById('save').style.display = 'inline-block'),
+    (document.getElementById('update').style.display = 'none')
+
+  renderStudent()
+  resetInput()
 }
