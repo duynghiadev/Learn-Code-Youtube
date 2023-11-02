@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="./style.css" />
     <title>CRUD JavaScript</title>
   </head>
-  <body>
+  <body onload="renderStudent()">
     <div class="form">
       <div class="form-group">
         <label for="name">Name: </label>
@@ -22,6 +22,9 @@
 
       <button onclick="addNew()">Add New</button>
     </div>
+
+    <table id="tableContent"></table>
+
     <script src="./script.js"></script>
   </body>
 </html>
