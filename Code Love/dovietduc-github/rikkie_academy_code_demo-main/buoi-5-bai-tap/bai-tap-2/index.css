@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+h1 {
+  padding: 50px 0;
+  background: black;
+  color: white;
+  text-align: center;
+}
+ul li {
+  display: inline-block;
+  padding: 10px;
+  list-style: none;
+}
+ul {
+  text-align: center;
+  background-color: #c5bdbd;
+}
+ul li a {
+  text-decoration: none;
+  color: black;
+}

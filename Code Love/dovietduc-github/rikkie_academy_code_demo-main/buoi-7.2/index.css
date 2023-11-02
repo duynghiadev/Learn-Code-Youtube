@@ -1,0 +1,27 @@
+.boxs {
+  border: 5px solid #698340;
+  position: relative;
+}
+
+.box {
+  width: 200px;
+  height: 200px;
+}
+
+.box-1 {
+  background-color: antiquewhite;
+}
+
+.box-2 {
+  background-color: gold;
+  position: absolute;
+  bottom: 0;
+  right: calc(50% - 100px);
+}
+
+.box-3 {
+  background-color: green;
+}
+
+/* 1. mặc định position static */
+/* 1.1 position relative */

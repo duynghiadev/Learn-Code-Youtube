@@ -1,0 +1,23 @@
+/* tên của thẻ */
+p {
+    color: red;
+}
+
+/* cách 2: đặt tên class cho thẻ sau đấy dùng . */
+.first_tag {
+    color: green;
+}
+
+/* cách 3: sử dụng id để css */
+#first_tag_one {
+    color: blue;
+}
+
+/* cách 4: chọn theo cấp độ lồng nhau */
+/* .common {
+    color: blueviolet;
+} */
+
+ul li {
+    color: blueviolet;
+}
