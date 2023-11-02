@@ -1,6 +1,7 @@
 const selectCate = document.querySelector('.category_wrapper_form')
 const formProduct = document.querySelector('#form_save_product')
 const tbodyProduct = document.querySelector('.product_table')
+const btnSaveProduct = document.querySelector('.btn_save')
 
 function showCategoryInProduct() {
   // 1. Lấy toàn bộ danh mục trong local
@@ -13,7 +14,16 @@ function showCategoryInProduct() {
   selectCate.innerHTML = htmlOption
 }
 
+function handleUpdateProduct() {
+  console.log('update data')
+}
+
 function validateProductSuccess() {
+  if (btnSaveProduct.classList.contains('update')) {
+    handleUpdateProduct()
+    return
+  }
+
   // 1. Lấy ra value của input và tạo ra object chứa thông tin sản phẩm
   let objValue = {}
   const inputAll = formProduct.querySelectorAll('.form-control-item')
@@ -98,6 +108,11 @@ function handleProcessProduct(event) {
     })
     // Đưa value vào radio box
     document.querySelector(`.type_product[value="${elementEditting.product_type}"]`).checked = true
+
+    // 4. Phân biệt trạng thái create hay update cho button save
+    btnSaveProduct.textContent = 'Update'
+    btnSaveProduct.classList.add('update')
+    btnSaveProduct.setAttribute('data-id', idEdit)
   }
 }
 
