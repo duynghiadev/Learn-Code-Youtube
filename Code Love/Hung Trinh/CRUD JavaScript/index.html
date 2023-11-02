@@ -20,7 +20,12 @@
         <div class="error-message"></div>
       </div>
 
-      <button onclick="addNew()">Add New</button>
+      <div class="form-group">
+        <input type="hidden" id="index" />
+      </div>
+
+      <button id="save" onclick="addNew()">Add New</button>
+      <button id="update" onclick="changeStudent()" style="display: none">Update</button>
     </div>
 
     <table id="tableContent"></table>
