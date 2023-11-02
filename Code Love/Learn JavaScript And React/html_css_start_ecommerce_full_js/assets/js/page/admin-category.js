@@ -92,10 +92,7 @@ function handleProcessData(event) {
   const categories = JSON.parse(localStorage.getItem('categories')) || []
 
   // Khi người dùng click vào button click delete
-  if (
-    clicked.classList.contains('btn_delete') &&
-    confirm('Bạn chắc chắn muốn delete')
-  ) {
+  if (clicked.classList.contains('btn_delete') && confirm('Bạn chắc chắn muốn delete')) {
     const idDelete = clicked.getAttribute('data-id')
     // Mảng lọc ra phần tử cần delete
     const categoriesFilter = categories.filter(function (element) {

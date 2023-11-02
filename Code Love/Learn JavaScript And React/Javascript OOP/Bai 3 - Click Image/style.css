@@ -1,47 +1,47 @@
 /* Định dạng ảnh lớn nhất */
 .mySlides {
-	display    : block;
-	max-width  : 100%;
-	height     : auto;
-	margin     : 0 auto;
-	text-align : center;
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  text-align: center;
 }
 
 /* Định dạng hàng ngang chứa các ảnh nhỏ */
 .row {
-	display         : flex;
-	justify-content : center;
-	align-items     : center;
-	flex-wrap       : wrap;
-	margin-top      : 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
 }
 
 /* Định dạng cột chứa ảnh nhỏ */
 .column {
-	flex       : 1;
-	max-width  : 100px; /* Điều chỉnh độ rộng tối đa của mỗi cột */
-	margin     : 5px;
-	text-align : center; /* Căn giữa nội dung trong cột */
+  flex: 1;
+  max-width: 100px; /* Điều chỉnh độ rộng tối đa của mỗi cột */
+  margin: 5px;
+  text-align: center; /* Căn giữa nội dung trong cột */
 }
 
 /* Định dạng ảnh nhỏ */
 .demo {
-	display    : block;
-	max-width  : 100%;
-	height     : auto;
-	cursor     : pointer;
-	transition : opacity 0.3s ease;
-	border     : 2px solid transparent; /* Đường viền mặc định là trong suốt */
+  display: block;
+  max-width: 100%;
+  height: auto;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  border: 2px solid transparent; /* Đường viền mặc định là trong suốt */
 }
 
 /* Định dạng ảnh khi hover */
 .demo:hover {
-	opacity : 0.7;
+  opacity: 0.7;
 }
 
 /* Định dạng ảnh khi được chọn */
 .active {
-	opacity       : 0.7;
-	border-color  : red; /* Đường viền màu đỏ khi ảnh được chọn */
-	border-radius : 10px;
+  opacity: 0.7;
+  border-color: red; /* Đường viền màu đỏ khi ảnh được chọn */
+  border-radius: 10px;
 }

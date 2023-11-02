@@ -7,7 +7,7 @@ const pAll = document.querySelectorAll('p')
 console.log('Node List pAll:', pAll)
 
 pAll.forEach(function (element) {
-	console.log('p element:', element)
+  console.log('p element:', element)
 })
 console.log(pAll)
 

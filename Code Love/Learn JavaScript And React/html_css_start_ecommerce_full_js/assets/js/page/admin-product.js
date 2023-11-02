@@ -7,8 +7,7 @@ function showCategoryInProduct() {
   const cateAll = JSON.parse(localStorage.getItem('categories')) || []
   let htmlOption = '<option value="">Chọn danh mục</option>'
   cateAll.forEach(function (element) {
-    htmlOption =
-      htmlOption + `<option value="${element.id}">${element.name}</option>`
+    htmlOption = htmlOption + `<option value="${element.id}">${element.name}</option>`
   })
   // 2. Đưa options vào trong select
   selectCate.innerHTML = htmlOption
@@ -70,10 +69,7 @@ function handleProcessProduct(event) {
   const clicked = event.target
 
   // Kiểm tra nếu click vào button delete mới xử lý xóa
-  if (
-    clicked.classList.contains('btn_delete') &&
-    confirm('Bạn chắc chắn muốn xóa?')
-  ) {
+  if (clicked.classList.contains('btn_delete') && confirm('Bạn chắc chắn muốn xóa?')) {
     // 1. Lấy ra id của object cần xóa
     const idDelete = clicked.getAttribute('data-id')
     // 2. Xóa object có chứa idDelete
@@ -97,14 +93,11 @@ function handleProcessProduct(event) {
     const inputAll = document.querySelectorAll('.form-control-item')
     // Đưa value vào input trừ radio
     inputAll.forEach(function (element) {
-      const keyName =
-        element.name === 'category_wrapper_form' ? 'category_id' : element.name
+      const keyName = element.name === 'category_wrapper_form' ? 'category_id' : element.name
       element.value = elementEditting[keyName]
     })
     // Đưa value vào radio box
-    document.querySelector(
-      `.type_product[value="${elementEditting.product_type}"]`
-    ).checked = true
+    document.querySelector(`.type_product[value="${elementEditting.product_type}"]`).checked = true
   }
 }
 
