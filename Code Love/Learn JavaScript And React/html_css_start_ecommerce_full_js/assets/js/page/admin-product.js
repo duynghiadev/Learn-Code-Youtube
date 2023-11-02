@@ -15,7 +15,41 @@ function showCategoryInProduct() {
 }
 
 function handleUpdateProduct() {
-  console.log('update data')
+  const idUpdate = btnSaveProduct.getAttribute('data-id')
+  // 1. Tạo ra object cho idEdit
+  let objValue = {}
+  const inputAll = formProduct.querySelectorAll('.form-control-item')
+  inputAll.forEach(function (element) {
+    if (element.name === 'category_wrapper_form') {
+      objValue['category_id'] = element.value
+    } else {
+      objValue[element.name] = element.value
+    }
+  })
+  objValue.id = idUpdate
+  const productType = document.querySelector('.type_product:checked').value
+  objValue.product_type = productType
+
+  // 2. Tạo ra mảng chứa object cần edit và các object khác
+  const products = JSON.parse(localStorage.getItem('products')) || []
+  const productsUpdate = products.map(function (element) {
+    if (element.id === idUpdate) {
+      return objValue
+    } else {
+      return element
+    }
+  })
+
+  // 3. Lưu dữ liệu vào trong localStorage
+  localStorage.setItem('products', JSON.stringify(productsUpdate))
+
+  // 4. Hiển thị dữ liệu từ trong local
+  showProductsInLocal()
+
+  // 5. Reset đến trạng thái thêm mới sản phẩm
+  btnSaveProduct.textContent = 'Save'
+  btnSaveProduct.classList.remove('update')
+  btnSaveProduct.removeAttribute('data-id')
 }
 
 function validateProductSuccess() {
