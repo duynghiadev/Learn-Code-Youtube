@@ -42,3 +42,7 @@ function program6() {
 }
 
 program1(program6)
+
+// Những callback trong JavaScript mà hầu hết khi code JS mà mọi người không để ý: setTimeout, setInterval, map,...
+
+// Ví dụ của map: example.map(function(){})
