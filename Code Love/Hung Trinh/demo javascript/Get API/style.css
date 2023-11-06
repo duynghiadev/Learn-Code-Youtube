@@ -106,3 +106,12 @@ label {
 #table tr:hover {
   background-color: #e0e0e0;
 }
+
+/* CSS pagination */
+#pagination {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  list-style: none;
+  cursor: pointer;
+}
