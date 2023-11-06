@@ -10,6 +10,52 @@ body {
   padding: 0;
 }
 
+h2 {
+  text-align: center;
+  align-items: center;
+  padding-top: 20px;
+  margin: 10px;
+  padding: 10px;
+  background-color: violet;
+  border-radius: 10px;
+}
+
+/* Center the label */
+label {
+  display: block;
+  margin: 20px auto; /* Center the label horizontally */
+  font-size: 16px;
+  color: #333;
+  text-align: center; /* Center the text within the label */
+}
+
+/* Style for the input field */
+#search {
+  width: 60%; /* Reduce the width to make it smaller */
+  padding: 5px; /* Reduce the padding */
+  border: 2px solid #007bff;
+  border-radius: 5px;
+  font-size: 18px; /* Reduce the font size to make it smaller */
+  outline: none;
+  display: block; /* Make the input field a block-level element */
+  margin: 0 auto; /* Center the input field horizontally within the label */
+}
+
+/* Style the placeholder text */
+#search::placeholder {
+  color: #999;
+}
+
+/* Add some hover effect for the input field */
+#search:hover {
+  border-color: #0056b3;
+}
+
+/* Add focus styles for the input field */
+#search:focus {
+  border-color: #007bff;
+}
+
 #table {
   border-collapse: collapse;
   width: 80%;
