@@ -1,0 +1,52 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Times New Roman', Times, serif;
+  line-height: 30px;
+}
+
+.act-menu-mobile {
+  border: none;
+  background: #414141;
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-left: 10px;
+  width: 50px;
+  height: 50px;
+  font-size: 30px;
+  transition: all 0.25s ease;
+}
+
+.menu {
+  position: fixed;
+  left: -240px;
+  top: 0;
+  background: #d0d0d0;
+  width: 240px;
+  box-sizing: border-box;
+  padding: 20px;
+  height: 100vh;
+  transition: all 0.25s ease;
+  font-size: 18px;
+}
+
+.sub-menu {
+  padding: 0 20px;
+  font-size: 13px;
+  display: none;
+}
+
+.sub-menu li {
+  margin-bottom: 0;
+}
+
+li {
+  display: block;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
