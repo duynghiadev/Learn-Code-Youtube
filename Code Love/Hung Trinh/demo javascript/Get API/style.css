@@ -10,6 +10,7 @@ body {
   padding: 0;
 }
 
+/* CSS title */
 h2 {
   text-align: center;
   align-items: center;
@@ -18,6 +19,29 @@ h2 {
   padding: 10px;
   background-color: violet;
   border-radius: 10px;
+}
+
+/* CSS select */
+#sort {
+  width: 30%; /* Điều chỉnh kích thước của select box tùy theo nhu cầu */
+  margin: 0 auto; /* Canh giữa theo chiều ngang */
+  display: block; /* Để đảm bảo nó nằm trên một dòng riêng biệt */
+  font-size: 16px; /* Điều chỉnh kích thước chữ */
+  padding: 5px; /* Tùy chỉnh khoảng cách giữa nội dung và viền */
+  border: 1px solid #ccc; /* Đường viền để tạo cảm giác đẹp hơn */
+  border-radius: 5px; /* Để làm tròn các góc */
+}
+
+label[for='sort'] {
+  display: block; /* Đảm bảo label nằm trên một dòng riêng biệt */
+  text-align: center; /* Canh giữa label theo chiều ngang */
+  margin-bottom: 10px; /* Tùy chỉnh khoảng cách giữa label và select box */
+}
+
+#sort {
+  display: flex;
+  text-align: center;
+  align-items: center;
 }
 
 /* Center the label */

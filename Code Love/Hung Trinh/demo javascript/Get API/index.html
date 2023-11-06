@@ -7,10 +7,20 @@
     <title>Get Data From Fake API Using Axios</title>
   </head>
   <body onload="getUser()">
-    <h2>Get Data From Fake API Using Axios</h2>
+    <!-- title -->
+    <h2>🈸 Get Data From Fake API Using Axios 🈸</h2>
+
+    <!-- select option -->
+    <label for="sort"></label>
+    <select onchange="ascending()" id="sort">
+      <option value="default">🤷‍♂️ sort by default 🤷‍♂️</option>
+      <option value="az">A - Z</option>
+      <option value="za">Z - A</option>
+    </select>
+
     <!-- table search -->
     <label for="search">
-      <input type="text" id="search" placeholder="search" oninput="searchUser()" />
+      <input type="text" id="search" placeholder="search 🔍" oninput="searchUser()" />
     </label>
 
     <!-- pain table contains data -->

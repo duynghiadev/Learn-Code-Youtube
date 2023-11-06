@@ -10,12 +10,12 @@ async function getUser() {
   }
 }
 
-function renderUser(array) {
+function renderUser() {
   let element = `<tr>
-            <th>ID</th>
-            <th align='left'>Name</th>
+            <th>ID 🔑</th>
+            <th align='left'>Name 🧑</th>
           </tr>`
-  array.map((value) => {
+  users.map((value) => {
     element += `<tr>
               <td>${value.id}</td>
               <td align='center'>${value.name}</td>
@@ -30,4 +30,18 @@ function searchUser() {
     return value.name.toUpperCase().includes(valueSearchInput.toUpperCase())
   })
   renderUser(userSearch)
+}
+
+function ascending() {
+  let valueSelect = document.getElementById('sort').value
+  users.sort((a, b) => {
+    if (valueSelect === 'az') {
+      return a.name.localeCompare(b.name)
+    } else if (valueSelect === 'za') {
+      return b.name.localeCompare(a.name)
+    } else {
+      return a.id - b.id
+    }
+  })
+  renderUser()
 }
