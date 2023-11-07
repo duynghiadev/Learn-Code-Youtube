@@ -1,44 +1,58 @@
-<!doctype html>
-<html lang='en'>
-<head>
-  <meta charset='UTF-8'>
-  <meta name='viewport'
-        content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0'>
-  <meta http-equiv='X-UA-Compatible' content='ie=edge'>
-  <title>Document</title>
-</head>
-<body onload='CheckLogin()'>
-<input type='text' placeholder='username' id='username'>
-<input type='password' placeholder='password' id='password'>
-<button onclick='Login()'>Login</button>
-<script>
-  const listAccount = [{
-    username: 'admin', password: 'admin'
-  }, {
-    username: 'admin1', password: 'admin'
-  }, {
-    username: 'admin2', password: 'admin'
-  }];
-  let isLogin = !!localStorage.getItem('token');
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body onload="CheckLogin()">
+    <input type="text" placeholder="username" id="username" />
+    <input type="password" placeholder="password" id="password" />
+    <button onclick="Login()">Login</button>
+    <script>
+      const listAccount = [
+        {
+          username: 'admin',
+          password: 'admin'
+        },
+        {
+          username: 'admin1',
+          password: 'admin'
+        },
+        {
+          username: 'admin2',
+          password: 'admin'
+        }
+      ]
 
-  function CheckLogin () {
-    if (isLogin) {
-      window.location.href = 'index.html';
-    }
-  }
+      let isLogin = !!localStorage.getItem('token') // cách viết tắt (nhanh gọn lẹ)
+      // let isLogin = localStorage.getItem('token') ? true : false // cách viết đầy đủ (nếu có token thì true không thì false)
 
-  function Login () {
-    let username = document.getElementById('username').value;
-    let password = document.getElementById('password').value;
-    let checkLogin = listAccount.some(value => value.username === username && value.password === password);
-    if (checkLogin) {
-      localStorage.setItem('token', username);
-      isLogin = true;
-      CheckLogin();
-    } else {
-      alert('wrong username or password');
-    }
-  }
-</script>
-</body>
+      function CheckLogin() {
+        if (isLogin) {
+          window.location.href = 'index.html'
+        }
+      }
+
+      function Login() {
+        let username = document.getElementById('username').value
+        let password = document.getElementById('password').value
+        // Sử dụng phương thức some() thì nó sẽ trả về 2 giá trị: nếu ĐÚNG thì TRUE ✅, SAI thì FALSE ❌
+        let checkLogin = listAccount.some(
+          (value) => value.username === username && value.password === password
+        )
+        if (checkLogin) {
+          localStorage.setItem('token', username)
+          isLogin = true
+          CheckLogin()
+        } else {
+          alert('wrong username or password')
+        }
+      }
+    </script>
+  </body>
 </html>
