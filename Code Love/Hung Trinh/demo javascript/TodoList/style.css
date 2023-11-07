@@ -1,0 +1,34 @@
+/* Định dạng container chứa input và button */
+#inputContainer {
+  text-align: center; /* Căn giữa theo chiều ngang */
+}
+
+/* Định dạng phần input text và button */
+#toDo {
+  width: 200px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+/* Định dạng nút "add new" */
+button {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* Định dạng bảng và căn giữa trang */
+table {
+  width: 50%; /* Bảng chiếm 50% chiều rộng của trang */
+  margin: 0 auto; /* Căn giữa bảng theo chiều ngang */
+  border-collapse: collapse;
+}
+
+/* Định dạng các ô trong bảng */
+th,
+td {
+  padding: 5px; /* Giảm khoảng cách giữa nội dung và đường viền */
+  text-align: center;
+}
