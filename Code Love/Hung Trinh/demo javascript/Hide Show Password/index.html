@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Hide/Show Password</title>
+  </head>
+  <body>
+    <div class="form">
+      <div class="form-field">
+        <input class="form-input" type="text" placeholder=" " id="email" />
+        <label class="form-label" for="">Email</label>
+      </div>
+      <div class="form-field">
+        <input class="form-input" type="password" placeholder=" " id="password" />
+        <label class="form-label" for="">Password</label>
+        <div class="toggle-password">
+          <label class="switcher">
+            <input onclick="togglePassword()" type="checkbox" id="checkbox" />
+            <span class="slider"></span>
+          </label>
+        </div>
+      </div>
+      <div class="form-button">
+        <button onclick="checkForm()" id="button">Check Form</button>
+      </div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
