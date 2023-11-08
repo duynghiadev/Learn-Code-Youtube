@@ -32,3 +32,22 @@ let myArr3 = [1, 2, 3, 4]
 let result2 = myArr3.filter((value) => value < 4)
 console.log('filter', result2)
 console.log('-------------------')
+
+/**
+ * some: Chỉ trả về giá trị true hoặc false.Thằng này thì chỉ cần duy nhất 1 thằng đúng thôi thì nó mới trả về true
+ */
+let myArr4 = [1, 2, 3, 4]
+let result3 = myArr4.some((value) => value < 3)
+let result4 = myArr4.some((value) => value < 0)
+console.log('some 1', result3)
+console.log('some 2', result4)
+console.log('-------------------')
+
+/**
+ * every: Chỉ trả về giá trị true hoặc false.Thằng này thì bắt buộc tất cả thằng đều đúng thì nó mới trả về true
+ */
+let myArr5 = [1, 2, 3, 4]
+let result5 = myArr5.every((value) => value < 4)
+let result6 = myArr5.every((value) => value <= 4)
+console.log('every 1', result5)
+console.log('every 2', result6)
