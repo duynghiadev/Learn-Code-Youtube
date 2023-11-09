@@ -1,0 +1,63 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+select {
+  padding: 10px;
+  margin: 5px;
+  font-size: 16px;
+}
+
+#provinces,
+#districts,
+#wards {
+  width: 200px;
+}
+
+#provinces {
+  background-color: #fff;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+}
+
+#districts,
+#wards {
+  background-color: #f8f9fa;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+}
+
+#wards {
+  margin-right: 0;
+}
+
+/* Optional: Style the default text color for the options */
+option {
+  color: #495057;
+}
+
+/* Optional: Style the select dropdown arrow */
+select::-ms-expand {
+  display: none;
+}
+
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  text-overflow: '';
+}
+
+/* Optional: Style when the select is focused */
+select:focus {
+  border-color: #80bdff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
