@@ -1,0 +1,17 @@
+span {
+  display: inline-block;
+  background-color: aqua;
+  width: 200px;
+  height: 200px;
+  padding: 20px;
+  margin: 30px;
+  border: 10px solid red;
+}
+div {
+  background-color: burlywood;
+  width: 200px;
+}
+.demo2 {
+  background-color: brown;
+  border: 10px solid green;
+}
