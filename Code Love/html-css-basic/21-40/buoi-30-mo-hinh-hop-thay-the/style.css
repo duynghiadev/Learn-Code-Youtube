@@ -1,0 +1,10 @@
+.box {
+  width: 300px;
+  height: 300px;
+  border: 20px solid brown;
+  padding: 30px;
+  margin: 20px;
+
+  /* kích thướt thực tế của box bao gồm padding + border + content */
+  box-sizing: border-box;
+}
