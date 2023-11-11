@@ -1,18 +1,16 @@
 .box {
   width: 500px;
-  height: 500px;
+  height: 100px;
+  background-color: #ccc;
+  background-clip: content-box;
+  border: 10px solid red;
 
-  /* Viết đầy đủ: độ dày, kiểu dáng, màu sắc 👎*/
-  /* border-top-width: 5px;
-  border-top-style: solid;
-  border-top-color: blueviolet; */
+  /* Cách viết đầy đủ 👎*/
+  /* padding-top: 10px;
+  padding-right: 20px;
+  padding-bottom: 10px;
+  padding-left: 20px; */
 
-  /* Viết ngắn gọn 👍*/
-  /* border-top: 5px solid blueviolet;
-  border-right: 5px solid blueviolet;
-  border-bottom: 5px solid blueviolet;
-  border-left: 5px solid blueviolet; */
-
-  /* Viết tắt 4 chiều 🚀*/
-  border: 5px solid blueviolet;
+  /* Cách viết ngắn gọn 👍 */
+  padding: 10px 20px;
 }
