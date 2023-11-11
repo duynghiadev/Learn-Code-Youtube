@@ -1,0 +1,7 @@
+.box p {
+  color: red;
+}
+
+.box > p {
+  color: blue;
+}
