@@ -128,9 +128,7 @@ function showListStudent() {
                 <td>${student.introduce}</td>
                 <td>${hobbys}</td>
                 <td>
-                    <button type="button" data-id="${
-                      student.id
-                    }" class="btn btn-blue">Edit</button>
+                    <button type="button" data-id="${student.id}" class="btn btn-blue">Edit</button>
                     <button type="button" data-id="${
                       student.id
                     }" class="btn btn-danger">Delete</button>
@@ -368,9 +366,7 @@ function handleSearch() {
                 <td>${student.address}</td>
                 <td>${student.sex}</td>
                 <td>
-                    <button type="button" data-id="${
-                      student.id
-                    }" class="btn btn-blue">Edit</button>
+                    <button type="button" data-id="${student.id}" class="btn btn-blue">Edit</button>
                     <button type="button" data-id="${
                       student.id
                     }" class="btn btn-danger">Delete</button>
