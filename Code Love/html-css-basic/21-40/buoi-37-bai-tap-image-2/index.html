@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form cơ bản</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      .container {
+        width: 600px;
+        margin: 0 auto;
+      }
+      form {
+        padding: 20px;
+        border: 1px dashed red;
+      }
+      .form-group label {
+        display: inline-block;
+        margin-bottom: 10px;
+      }
+      .form-group .form-control {
+        display: block;
+        padding: 12px;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Form Demo</h2>
+      <form>
+        <!-- Group nhập name -->
+        <div class="form-group">
+          <label for="">Name</label>
+          <input class="form-control" type="text" placeholder="Nhập thông tin name" />
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
