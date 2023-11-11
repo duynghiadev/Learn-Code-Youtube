@@ -1,18 +1,8 @@
 .box {
-  width: 500px;
-  height: 500px;
-
-  /* Viết đầy đủ: độ dày, kiểu dáng, màu sắc 👎*/
-  /* border-top-width: 5px;
-  border-top-style: solid;
-  border-top-color: blueviolet; */
-
-  /* Viết ngắn gọn 👍*/
-  /* border-top: 5px solid blueviolet;
-  border-right: 5px solid blueviolet;
-  border-bottom: 5px solid blueviolet;
-  border-left: 5px solid blueviolet; */
-
-  /* Viết tắt 4 chiều 🚀*/
-  border: 5px solid blueviolet;
+  width: 900px;
+  height: 200px;
+  border: 2px solid black;
+  border-top-style: dashed;
+  border-right-width: 20px;
+  border-bottom-color: pink;
 }
