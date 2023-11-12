@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Luyện tập với hình ảnh</title>
+    <style>
+      .box {
+        border: 5px solid red;
+        width: 500px;
+        height: 400px;
+        margin: 20px;
+      }
+      .box img {
+        /* làm cho 100% container nhưng không giữ được tỉ lệ khung hình gốc */
+        width: 100%;
+        height: 100%;
+        /* cắt bớt phần dư thừa*/
+        object-fit: contain;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ảnh gốc: 3456 x 5184  = (3:2)-->
+    <!-- container hay ảnh render trong vùng chứa: 500 x 400 -->
+
+    <!-- tỉ lệ chia: 6,91 x 12,96 -->
+
+    <!-- giả sử ảnh  được resize đến chiều rộng 500px -->
+    <!-- chiều cao: (500 x 2) / 3 = 333. Vậy ta được kích thướt 500 x 333 (px) -->
+    <div class="box">
+      <img src="./natural.jpg" alt="natural" />
+    </div>
+  </body>
+</html>
