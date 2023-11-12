@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form cơ bản</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      .container {
+        width: 600px;
+        margin: 0 auto;
+      }
+      form {
+        padding: 20px;
+        border: 1px dashed red;
+      }
+      .form-group {
+        margin-bottom: 15px;
+      }
+      .form-group label {
+        display: inline-block;
+        margin-bottom: 10px;
+        font-weight: bold;
+      }
+      .form-group .form-control {
+        display: block;
+        padding: 12px;
+        width: 100%;
+      }
+      /* style radio */
+      .form-check-group {
+        margin-bottom: 15px;
+      }
+      .form-check-group > label {
+        display: inline-block;
+        margin-bottom: 10px;
+        font-weight: bold;
+      }
+      .form-check-group .form-check input {
+        width: 16px;
+        height: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Form Demo</h2>
+      <form>
+        <!-- Group nhập name -->
+        <div class="form-group">
+          <label for="">Name</label>
+          <input class="form-control" type="text" placeholder="Nhập thông tin name" />
+        </div>
+
+        <!-- Group nhập email -->
+        <div class="form-group">
+          <label for="">Email</label>
+          <input class="form-control" type="email" placeholder="Nhập thông tin email" />
+        </div>
+
+        <!-- Group nhập password -->
+        <div class="form-group">
+          <label for="">Password</label>
+          <input class="form-control" type="password" placeholder="Nhập thông tin password" />
+        </div>
+
+        <!-- Group check radio -->
+        <div class="form-check-group">
+          <label for="">Chọn giới tính</label>
+          <div class="form-check-wrapper">
+            <div class="form-check">
+              <input type="radio" value="1" name="gender" />
+              <label for="">Nam</label>
+            </div>
+            <div class="form-check">
+              <input type="radio" value="0" name="gender" />
+              <label for="">Nữ</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Group check radio -->
+        <div class="form-check-group">
+          <label for="">Chọn sở thích</label>
+          <div class="form-check-wrapper">
+            <div class="form-check">
+              <input type="checkbox" name="hobby" />
+              <label for="">Bóng đá</label>
+            </div>
+            <div class="form-check">
+              <input type="checkbox" name="hobby" />
+              <label for="">Cầu lông</label>
+            </div>
+            <div class="form-check">
+              <input type="checkbox" name="hobby" />
+              <label for="">Bóng rổ</label>
+            </div>
+            <div class="form-check">
+              <input type="checkbox" name="hobby" />
+              <label for="">Bóng chuyền</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- textarea -->
+        <div class="form-group">
+          <label for="">Nhập mô tả</label>
+          <textarea class="form-control" rows="5"></textarea>
+        </div>
+
+        <!-- select -->
+        <div class="form-group">
+          <label for="">Chọn danh mục</label>
+          <select class="form-control">
+            <option>Giày dép</option>
+            <option>Quần áo</option>
+            <option>Mũ nón</option>
+          </select>
+        </div>
+
+        <!-- upload file -->
+        <div class="form-group">
+          <label for="">Chọn file upload</label>
+          <input type="file" class="form-control" />
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
