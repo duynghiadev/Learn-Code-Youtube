@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bài tập độ ưu tiên</title>
+    <style>
+      /* Specificity more */
+      #container #inner h1 {
+        color: red;
+      }
+      /* Specificity less */
+      #inner h1 {
+        color: blueviolet;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Độ ưu tiên: ID > class > Element name (tag name) -->
+    <!-- Selector: Identifiers(ID) Classes Elements => Total specificity -->
+
+    <!-- Nó ưu tiên khi mình trỏ 2 lần thằng id khi CSS -->
+    <!-- Khi mình CSS 1 thằng ID thôi thì nó sẽ không ưu tiên hơn khi mình sử dụng 2 thằng id -->
+    <div id="container">
+      <div id="inner">
+        <h1>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, atque excepturi culpa
+          fugit provident laboriosam cum libero impedit magnam eveniet facilis optio quod nulla
+          perspiciatis rem maiores ullam necessitatibus assumenda.
+        </h1>
+      </div>
+    </div>
+  </body>
+</html>
