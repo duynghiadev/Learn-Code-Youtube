@@ -5,24 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Luyện tập độ ưu tiên</title>
     <style>
-      /* 0,0,3 */
-      ul li a {
-        text-decoration: underline;
-        color: blue;
-      }
-      /* 0,0,3 */
-      ul > li > a {
-        text-decoration: none;
+      #demo_unique {
         color: red;
+      }
+      .container .head1 .head2 .head3 .head4 .head5 .head6 {
+        color: blue;
       }
     </style>
   </head>
   <body>
     <!-- Độ ưu tiên: ID > class > Element name (tag name) -->
     <!-- Selector: Identifiers(ID) Classes Elements => Total specificity -->
-    <ul>
-      <li><a href="">Home</a></li>
-      <li><a href="">About</a></li>
-    </ul>
+    <div class="container">
+      <h1 id="demo_unique" class="head1 head2 head3 head4 head5 head6">Demo multiple class</h1>
+    </div>
   </body>
 </html>
