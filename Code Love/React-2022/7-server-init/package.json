@@ -1,0 +1,12 @@
+{
+  "name": "7-server-init",
+  "version": "1.0.0",
+  "description": "Learn about package.jon file",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "yarn dev"
+  },
+  "author": "Duynghiadev",
+  "license": "MIT"
+}
