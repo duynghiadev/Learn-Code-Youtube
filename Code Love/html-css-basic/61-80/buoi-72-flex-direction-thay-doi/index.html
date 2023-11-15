@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flexbox</title>
+    <style>
+      .flex_container {
+        display: flex;
+        height: 400px;
+        width: 500px;
+        border: 2px dashed red;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 50px;
+        /* 1. Xác định chiều chính để các flexs item sắp xếp */
+        /* row là mặc định của flex rồi, nên không cần chỉnh css 😆*/
+        /* flex-direction: row; */
+
+        /* Đảo chiều 😁*/
+        /* flex-direction: row-reverse; */
+
+        /* Điều chỉnh theo column 😁*/
+        /* flex-direction: column; */
+
+        /* Đảo chiều theo column 😆*/
+        flex-direction: column-reverse;
+      }
+      .flex_container > .box {
+        width: 200px;
+        height: 200px;
+        background: #ccc;
+        border: 1px solid green;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- flexbox -->
+    <!--
+      1. Flexbox bao gồm những thành phần nào
+      2. Cách flex-items sắp xếp trên container theo mặc định
+    -->
+
+    <div class="flex_container">
+      <div class="box">Lorem ipsum</div>
+
+      <div class="box">Hello</div>
+
+      <div class="box">Ronaldo</div>
+
+      <div class="box">Messi</div>
+    </div>
+  </body>
+</html>
