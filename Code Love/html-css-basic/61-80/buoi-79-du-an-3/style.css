@@ -32,4 +32,27 @@ body {
 ul {
   display: flex;
 }
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  margin-top: 40px;
+}
 /* Căn chỉnh layout */
+
+/* style chi tiết hình ảnh */
+.image {
+  width: 40%;
+}
+
+.post_content {
+  width: 60%;
+}
+
+.image a {
+  display: block;
+}
+
+.image a img {
+  max-width: 100%;
+}
