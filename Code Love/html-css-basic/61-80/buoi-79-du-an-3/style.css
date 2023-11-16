@@ -27,6 +27,9 @@ body {
 /* Căn chỉnh layout */
 .blog_post {
   display: flex;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #ccc;
 }
 
 ul {
@@ -52,10 +55,15 @@ ul {
 
 .image a {
   display: block;
+  width: 320px;
+  height: 270px;
 }
 
 .image a img {
   max-width: 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 /* style chi tiết hình ảnh */
 
