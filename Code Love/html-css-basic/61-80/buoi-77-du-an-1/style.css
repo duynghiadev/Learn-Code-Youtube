@@ -7,6 +7,7 @@
 
 ul {
   list-style: none;
+  display: flex;
 }
 
 a {
@@ -18,4 +19,15 @@ body {
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
   color: #fff;
+  background: #aeb9eb;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.wrapper_menu {
+  display: flex;
+  justify-content: space-between;
 }
