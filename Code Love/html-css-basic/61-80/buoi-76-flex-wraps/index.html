@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>flexbox</title>
+    <style>
+      .flex_container {
+        display: flex;
+        width: 500px;
+        border: 2px dashed brown;
+        /* Mặc định của thằng này là nowrap */
+
+        /* Mục đích dùng thằng này là để các flex items có width mà dài hơn flex container thì các flex items sẽ xuống hàng và kích thước độ rộng của nó vẫn giữ nguyên. Nếu như không có thuộc tính flex-wrap: wrap; thì các kích thước của các flex items sẽ bị tự động giảm kích thước lại để vừa với độ rộng của flex container */
+        flex-wrap: wrap;
+      }
+      .box {
+        width: 200px;
+        background: #ccc;
+        border: 1px solid red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex_container">
+      <div class="box">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus dolorum qui voluptatum
+        autem quo molestiae dignissimos sapiente odio eius illum? Omnis beatae alias consectetur
+        quisquam numquam, dicta quaerat voluptate! Vero!
+      </div>
+      <div class="box">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam iste voluptate enim nobis
+        ducimus. Enim, recusandae voluptatem provident aspernatur a doloremque vitae facilis fuga,
+        tenetur, vel optio libero reiciendis eos?
+      </div>
+      <div class="box">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos et, iusto modi
+        laboriosam, qui sapiente optio rerum ullam esse ratione libero id veritatis, provident
+        debitis cum numquam eligendi! Ipsam, non?
+      </div>
+    </div>
+  </body>
+</html>
