@@ -22,6 +22,10 @@ body {
   background: #aeb9eb;
 }
 
+.header {
+  background: #24252a;
+}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -30,4 +34,16 @@ body {
 .wrapper_menu {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+
+/* style image */
+.logo a {
+  display: block;
+  width: 60px;
+}
+
+.logo a img {
+  max-width: 100%;
+  border-radius: 50%;
 }
