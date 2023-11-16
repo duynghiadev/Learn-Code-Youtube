@@ -13,6 +13,7 @@ ul {
 a {
   text-decoration: none;
 }
+/* reset css */
 
 /* config default content */
 body {
@@ -21,7 +22,9 @@ body {
   color: #fff;
   background: #aeb9eb;
 }
+/* config default content */
 
+/* style for wrapper */
 .header {
   background: #24252a;
 }
@@ -36,8 +39,9 @@ body {
   justify-content: space-between;
   align-items: center;
 }
+/* style for wrapper */
 
-/* style image */
+/* style detail image */
 .logo a {
   display: block;
   width: 60px;
@@ -48,8 +52,9 @@ body {
   border-radius: 50%;
   display: block;
 }
+/* style detail image */
 
-/* style menu main */
+/* style detail menu main */
 ul li a {
   display: inline-block;
   padding: 15px 10px;
@@ -60,9 +65,9 @@ ul li a {
 ul li a:hover {
   color: red;
 }
-/* style menu main */
+/* style detail menu main */
 
-/* style register */
+/* style detail register */
 .register {
   padding: 10px 25px;
   color: inherit;
@@ -74,4 +79,4 @@ ul li a:hover {
 .register:hover {
   background: rgb(255, 0, 0, 0.6);
 }
-/* style register */
+/* style detail register */
