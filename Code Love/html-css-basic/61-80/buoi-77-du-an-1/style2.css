@@ -1,0 +1,87 @@
+/* reset css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+}
+
+a {
+  text-decoration: none;
+}
+/* reset css */
+
+/* config default content */
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  color: #fff;
+  background: #aeb9eb;
+}
+/* config default content */
+
+/* style for wrapper */
+.header {
+  background: #24252a;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.wrapper_menu {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+/* style for wrapper */
+
+/* style detail image */
+.logo {
+  margin-right: auto;
+}
+
+.logo a {
+  display: block;
+  width: 60px;
+}
+
+.logo a img {
+  max-width: 100%;
+  border-radius: 50%;
+  display: block;
+}
+/* style detail image */
+
+/* style detail menu main */
+ul li a {
+  display: inline-block;
+  padding: 15px 10px;
+  color: #fff;
+  transition: all 0.5s;
+}
+
+ul li a:hover {
+  color: red;
+}
+/* style detail menu main */
+
+/* style detail register */
+.register {
+  padding: 10px 25px;
+  color: inherit;
+  background: rgb(255, 0, 0, 1);
+  border-radius: 50px;
+  transition: all 0.5s;
+  margin-left: 20px;
+}
+
+.register:hover {
+  background: rgb(255, 0, 0, 0.6);
+}
+/* style detail register */
