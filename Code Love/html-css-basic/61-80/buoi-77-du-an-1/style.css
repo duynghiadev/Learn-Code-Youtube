@@ -48,3 +48,16 @@ body {
   border-radius: 50%;
   display: block;
 }
+
+/* style menu main */
+ul li a {
+  display: inline-block;
+  padding: 15px 10px;
+  color: #fff;
+  transition: all 0.5s;
+}
+
+ul li a:hover {
+  color: red;
+}
+/* style menu main */
