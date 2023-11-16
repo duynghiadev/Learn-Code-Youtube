@@ -61,3 +61,17 @@ ul li a:hover {
   color: red;
 }
 /* style menu main */
+
+/* style register */
+.register {
+  padding: 10px 25px;
+  color: inherit;
+  background: rgb(255, 0, 0, 1);
+  border-radius: 50px;
+  transition: all 0.5s;
+}
+
+.register:hover {
+  background: rgb(255, 0, 0, 0.6);
+}
+/* style register */
