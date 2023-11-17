@@ -1,6 +1,7 @@
 import './App.css'
 import Counter from './component/Counter'
 import Counter1 from './component/Counter1'
+import Tab from './component/Tab'
 import Wrapping from './component/Warning'
 
 function App() {
@@ -13,7 +14,8 @@ function App() {
       {/* <img className='img_feature' src={urlImage} alt='photo' /> */}
       {/* <Counter /> */}
       {/* <Counter1 /> */}
-      <Wrapping />
+      {/* <Wrapping /> */}
+      <Tab />
     </div>
   )
 }
