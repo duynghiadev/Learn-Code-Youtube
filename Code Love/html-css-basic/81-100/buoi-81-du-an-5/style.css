@@ -1,9 +1,15 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 .container {
   max-width: 500px;
   margin: 0 auto;
 }
 .container h2 {
   text-align: center;
+  margin-bottom: 20px;
 }
 .form-control {
   display: block;
@@ -31,4 +37,15 @@ label {
 .btn-primary {
   background: blue;
   border-radius: 5px;
+}
+.flex {
+  display: flex;
+  align-items: center;
+}
+.wrapper_input {
+  width: 80%;
+}
+.label_item {
+  width: 20%;
+  margin-bottom: 0;
 }
