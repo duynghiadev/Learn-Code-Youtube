@@ -1,0 +1,34 @@
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+}
+.container h2 {
+  text-align: center;
+}
+.form-control {
+  display: block;
+  padding: 8px 14px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+}
+.form-control:focus {
+  border-color: blueviolet;
+}
+label {
+  display: inline-block;
+  margin-bottom: 7px;
+}
+.form-group {
+  margin-bottom: 14px;
+}
+.btn {
+  padding: 6px 12px;
+  border: none;
+  color: #fff;
+}
+.btn-primary {
+  background: blue;
+  border-radius: 5px;
+}
