@@ -1,25 +1,13 @@
-/* Lấy font google */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-
-/* reset css */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+.btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  margin-bottom: 10px;
 }
-
-ul {
-  list-style: none;
+.btn-gold {
+  background: gold;
 }
-
-a {
-  text-decoration: none;
+.btn-primary {
+  background: blue;
 }
-/* reset css */
-
-/* config default content */
-body {
-  font-family: 'Roboto', sans-serif;
-  font-size: 16px;
-}
-/* config default content */
