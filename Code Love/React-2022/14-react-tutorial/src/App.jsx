@@ -1,6 +1,7 @@
 import './App.css'
 import Counter from './component/Counter'
 import Counter1 from './component/Counter1'
+import Counter2 from './component/Counter2'
 import Tab from './component/Tab'
 import Tag from './component/Tag'
 import Wrapping from './component/Warning'
@@ -17,7 +18,8 @@ function App() {
       {/* <Counter1 /> */}
       {/* <Wrapping /> */}
       {/* <Tab /> */}
-      <Tag />
+      {/* <Tag /> */}
+      <Counter2 />
     </div>
   )
 }
