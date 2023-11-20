@@ -34,10 +34,15 @@ body {
 /* style common or default css */
 
 /* 1. Style layout */
+header {
+  margin: 10px 0;
+}
+
 .container {
   border: 1px dashed red;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 12px;
 }
 
 nav {
@@ -58,6 +63,7 @@ ul.pages_link {
 ul.search {
   display: flex;
   margin-left: 10px;
+  margin-right: -10px;
 }
 /* 1. Style layout */
 
