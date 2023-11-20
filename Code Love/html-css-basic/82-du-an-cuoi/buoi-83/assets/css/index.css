@@ -58,3 +58,15 @@ ul.search {
   display: flex;
 }
 /* 1. Style layout */
+
+/* 2. Style chi tiết hình ảnh */
+.logo a {
+  display: block;
+  width: 182px;
+}
+
+.logo a img {
+  display: block;
+  max-width: 100%;
+}
+/* 2. Style chi tiết hình ảnh */
