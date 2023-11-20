@@ -125,5 +125,16 @@ ul.search {
 
 .banner {
   display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.banner .image {
+  width: 40%;
+}
+
+.banner .content {
+  width: calc(60%-120px);
+  margin-left: 10%;
 }
 /* ========== End Banner ========== */
