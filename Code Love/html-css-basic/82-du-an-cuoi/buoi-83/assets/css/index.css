@@ -24,6 +24,7 @@ a {
   --color-green: #388e3c;
   --color-grey: #687188;
   --color-black: #292b2c;
+  --color-grey-while: #f4f9fc;
 }
 
 html {
@@ -116,3 +117,13 @@ ul.search {
 }
 /* 4. Style chi tiết search */
 /* ========== End Header ========== */
+
+/* ========== Start Banner ========== */
+.banner-full {
+  background: var(--color-grey-while);
+}
+
+.banner {
+  display: flex;
+}
+/* ========== End Banner ========== */
