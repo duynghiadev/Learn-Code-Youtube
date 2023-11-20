@@ -134,7 +134,15 @@ ul.search {
 }
 
 .banner .content {
-  width: calc(60%-120px);
+  width: calc(60%-8%);
   margin-left: 10%;
 }
+
+/* Style chi tiết hình ảnh */
+.banner .image img {
+  display: block;
+  max-width: 100%;
+  margin: 0 auto;
+}
+/* Style chi tiết hình ảnh */
 /* ========== End Banner ========== */
