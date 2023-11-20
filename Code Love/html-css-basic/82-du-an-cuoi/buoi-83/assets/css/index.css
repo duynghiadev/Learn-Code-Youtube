@@ -26,10 +26,14 @@ a {
   --color-black: #292b2c;
 }
 
+html {
+  font-size: 62.5%;
+}
+
 body {
   font-family: 'Poppins', sans-serif;
   color: var(--color-black);
-  font-size: 16px;
+  font-size: 1.6rem;
 }
 /* style common or default css */
 
@@ -42,7 +46,7 @@ header {
   border: 1px dashed red;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 12px;
+  padding: 0 1.2rem;
 }
 
 nav {
@@ -83,7 +87,7 @@ ul.search {
 .pages_link li a {
   display: inline-block;
   color: var(--color-black);
-  font-size: 14px;
+  font-size: 1.4rem;
   font-weight: 500;
   padding: 12px 10px;
   text-transform: uppercase;
