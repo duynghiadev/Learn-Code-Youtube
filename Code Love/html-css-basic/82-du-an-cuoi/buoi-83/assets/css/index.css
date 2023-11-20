@@ -17,7 +17,18 @@ a {
 /* reset css */
 
 /* style common or default css */
+:root {
+  --color-white: #fff;
+  --color-yellow: #f6bc3e;
+  --color-red: #ff324d;
+  --color-green: #388e3c;
+  --color-grey: #687188;
+  --color-black: #292b2c;
+}
+
 body {
   font-family: 'Poppins', sans-serif;
+  color: var(--color-black);
+  font-size: 16px;
 }
 /* style common or default css */
