@@ -48,6 +48,7 @@ nav {
 
 .right_menu {
   display: flex;
+  align-items: center;
 }
 
 ul.pages_link {
@@ -56,6 +57,7 @@ ul.pages_link {
 
 ul.search {
   display: flex;
+  margin-left: 10px;
 }
 /* 1. Style layout */
 
@@ -90,3 +92,15 @@ ul.search {
   color: var(--color-red);
 }
 /* 3. Style chi tiết pages link */
+
+/* 4. Style chi tiết search */
+.search li {
+  padding: 12px 10px;
+  transition: all 0.5s;
+}
+
+.search li:hover {
+  cursor: pointer;
+  color: var(--color-red);
+}
+/* 4. Style chi tiết search */
