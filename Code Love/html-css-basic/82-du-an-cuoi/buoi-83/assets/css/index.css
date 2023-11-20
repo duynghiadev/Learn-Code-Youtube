@@ -170,5 +170,12 @@ ul.search {
   background: var(--color-red);
   display: inline-block;
   color: var(--color-white);
+  border: 1px solid var(--color-red);
+  transition: all 0.5s;
+}
+
+.banner .content a:hover {
+  background: transparent;
+  color: var(--color-red);
 }
 /* ========== End Banner ========== */
