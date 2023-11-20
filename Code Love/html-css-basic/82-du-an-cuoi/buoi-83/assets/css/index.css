@@ -70,3 +70,23 @@ ul.search {
   max-width: 100%;
 }
 /* 2. Style chi tiết hình ảnh */
+
+/* 3. Style chi tiết pages link */
+.pages_link li a {
+  display: inline-block;
+  color: var(--color-black);
+  font-size: 14px;
+  font-weight: 500;
+  padding: 12px 10px;
+  text-transform: uppercase;
+  transition: all 0.5s;
+}
+
+.pages_link li a:hover {
+  color: var(--color-red);
+}
+
+.pages_link li a.active {
+  color: var(--color-red);
+}
+/* 3. Style chi tiết pages link */
