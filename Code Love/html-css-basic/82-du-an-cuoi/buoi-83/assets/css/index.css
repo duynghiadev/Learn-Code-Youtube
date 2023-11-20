@@ -32,3 +32,29 @@ body {
   font-size: 16px;
 }
 /* style common or default css */
+
+/* 1. Style layout */
+.container {
+  border: 1px dashed red;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.right_menu {
+  display: flex;
+}
+
+ul.pages_link {
+  display: flex;
+}
+
+ul.search {
+  display: flex;
+}
+/* 1. Style layout */
