@@ -49,6 +49,15 @@ class LinkedList {
     this.head = newNode;
     this.count++;
   }
+
+  removeHead() {
+    if (this.head === null) {
+      return;
+    }
+    // biến đổi 1 -> 2 -> 3 thành 2 -> 3
+    this.head = this.head.next;
+    this.count--;
+  }
 }
 
 const list = new LinkedList();
