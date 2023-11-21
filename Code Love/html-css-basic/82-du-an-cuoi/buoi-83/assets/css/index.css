@@ -223,4 +223,34 @@ ul.search {
   color: var(--color-red);
 }
 
+.product-price {
+  margin-bottom: 8px;
+}
+
+.product-price .price {
+  color: var(--color-red);
+}
+
+.product-price .price-origin {
+  color: var(--color-grey);
+  font-size: 14px;
+  display: inline-block;
+  margin: 0 4px;
+  text-decoration: line-through;
+}
+
+.product-price .sale-off {
+  color: var(--color-green);
+}
+
+.product-rating i {
+  color: var(--color-yellow);
+  font-size: 14px;
+}
+
+.product-rating span {
+  color: var(--color-grey);
+  font-size: 14px;
+}
+
 /* ========== End Product ========== */
