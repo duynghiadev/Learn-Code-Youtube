@@ -203,4 +203,24 @@ ul.search {
   text-align: center;
   margin: 40px 0;
 }
+
+.product-info {
+  padding: 15px;
+}
+
+.product-info > h6 {
+  margin-bottom: 8px;
+}
+
+.product-info > h6 > a {
+  font-size: 16px;
+  color: var(--color-black);
+  font-weight: 500;
+  transition: all 0.5s;
+}
+
+.product-info > h6 > a:hover {
+  color: var(--color-red);
+}
+
 /* ========== End Product ========== */
