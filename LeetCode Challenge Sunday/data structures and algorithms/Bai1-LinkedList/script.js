@@ -75,6 +75,30 @@ class LinkedList {
     }
     return currentNode;
   }
+
+  insertAfter(index, val) {
+    const newNode = new Node(val);
+    // Ta có dãy số: 1 -> 2 -> 3 -> 4
+    // Giả sử ta insertAfter(1, 2.5) => thì ta sẽ nhận được dãy số: 1 -> 2 -> 2.5 -> 3 -> 4
+    // 1 -> 2        -> 3 -> 4
+    //        -> 2.5
+    const currentNode = this.getByIndex(index);
+    const nextNode = this.getByIndex(index + 1);
+
+    currentNode.next = newNode;
+    newNode.next = nextNode;
+  }
+
+  insertBefore(index, val) {
+    const newNode = new Node(val);
+    // Ta có dãy số: 1 -> 2 -> 3 -> 4
+    // Giả sử ta insertBefore(1, 1.5) => thì ta sẽ nhận được dãy số: 1 -> 1.5 -> 2 -> 3 -> 4
+    const currentNode = this.getByIndex(index);
+    const prevNode = this.getByIndex(index - 1);
+
+    prevNode.next = newNode;
+    newNode.next = currentNode;
+  }
 }
 
 const list = new LinkedList();
