@@ -58,11 +58,29 @@ class LinkedList {
     this.head = this.head.next;
     this.count--;
   }
+
+  getByIndex(index) {
+    if (index < 0) {
+      return null;
+    }
+    // .............
+    // Ta có dãy số: 1 -> 2 -> 3 -> 4
+    // getByIndex(2) -> index: 2 ==> return 3
+    // Lưu ý: mình đang so sánh với số 2. Cho nên đến số 2 count không thể bé hơn 2 nên nó thoát vòng lặp
+    let count = 0;
+    let currentNode = this.head; // 1
+    while (count < index) {
+      currentNode = currentNode.next; // 2 // 3
+      count++; // 1 // 2
+    }
+    return currentNode;
+  }
 }
 
 const list = new LinkedList();
 list.insertTail(1);
 list.insertTail(2);
 list.insertTail(3);
+list.insertTail(4);
 // T
-// 1 -> 2 -> 3
+// 1 -> 2 -> 3 -> 4
