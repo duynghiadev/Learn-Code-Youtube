@@ -184,12 +184,11 @@ ul.search {
 .product-list {
   display: flex;
   flex-wrap: wrap;
-  margin-left: -24px;
+  justify-content: space-between;
 }
 
 .product-item {
-  width: calc(25% - 24px);
-  margin-left: 24px;
+  width: 23.5%;
   box-shadow: 1px 1px 7px rgb(0, 0, 0, 0.1);
   margin-bottom: 30px;
 }
@@ -252,5 +251,4 @@ ul.search {
   color: var(--color-grey);
   font-size: 14px;
 }
-
 /* ========== End Product ========== */
