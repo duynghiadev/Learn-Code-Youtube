@@ -9,6 +9,7 @@ class LinkedList {
   constructor() {
     this.head = null;
     this.tail = null;
+    this.count = 0;
   }
 
   insertTail(val) {
@@ -22,6 +23,7 @@ class LinkedList {
       this.tail.next = newNode;
       this.tail = newNode;
     }
+    this.count++;
   }
 
   removeTail() {
@@ -32,8 +34,20 @@ class LinkedList {
       prevNode = currentNode;
       currentNode = currentNode.next;
     }
+    // T
+    // 1 -> 2 -> null
     prevNode.next = null;
     this.tail = prevNode;
+    this.count--;
+  }
+
+  insertHead(val) {
+    const newNode = new Node(val);
+    // 0 ->
+    //      1 -> 2 -> 3
+    newNode.next = this.head;
+    this.head = newNode;
+    this.count++;
   }
 }
 
@@ -41,4 +55,5 @@ const list = new LinkedList();
 list.insertTail(1);
 list.insertTail(2);
 list.insertTail(3);
+// T
 // 1 -> 2 -> 3
