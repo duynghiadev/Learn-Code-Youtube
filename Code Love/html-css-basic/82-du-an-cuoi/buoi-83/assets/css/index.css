@@ -251,4 +251,9 @@ ul.search {
   color: var(--color-grey);
   font-size: 14px;
 }
+
+.product-item:empty {
+  height: 0;
+  box-shadow: none;
+}
 /* ========== End Product ========== */
