@@ -1,0 +1,85 @@
+{
+  "users": [],
+  "products": [
+    {
+      "id": 1,
+      "name": "Apple iPhone 13 Pro Max update",
+      "originalPrice": 2222,
+      "saleOffPrice": 1111,
+      "feature": "Apple iPhone 13 Pro Max",
+      "description": "Apple iPhone 13 Pro Max",
+      "img": "http://res.cloudinary.com/dectee66b/image/upload/v1658452919/ncpc2akyqnslewpzayxm.jpg"
+    },
+    {
+      "name": "Nguyễn Đắc Phương 11111",
+      "originalPrice": 11111111111111112,
+      "saleOffPrice": 22222222,
+      "categories": "laptop",
+      "feature": "adasdasd",
+      "description": "đâsdsa",
+      "id": 2
+    },
+    {
+      "name": "Sản phảm móaljdsadhlkas",
+      "originalPrice": 1212121,
+      "saleOffPrice": 1111,
+      "categories": "phone",
+      "feature": "adsasdasd",
+      "description": "ádsadsadasdsa",
+      "id": 3
+    },
+    {
+      "name": "Nguyễn Đắc Phương222",
+      "originalPrice": 3213213,
+      "saleOffPrice": 111221,
+      "categories": "laptop",
+      "feature": "dsadasdasda",
+      "description": "đâsdasdasdsadas",
+      "id": 4
+    },
+    {
+      "name": "Dac Phuong vippro 1",
+      "originalPrice": 23131,
+      "saleOffPrice": 11212,
+      "categories": "phone",
+      "feature": "sdasdasdsadsadas",
+      "description": "sadsadsadsadasdas",
+      "id": 5
+    },
+    {
+      "name": "Nguyễn Đắc Phương",
+      "originalPrice": 321312,
+      "saleOffPrice": 21212,
+      "categories": "phone",
+      "feature": "dấdsadsadas",
+      "description": "dsadsadsadsa",
+      "id": 6
+    },
+    {
+      "name": "Sản Phẩm A1111 aaa",
+      "originalPrice": 122222,
+      "saleOffPrice": 111,
+      "categories": "phone",
+      "feature": "dấdsadasdas",
+      "description": "sdasdasd",
+      "id": 7
+    }
+  ],
+  "categorys": [
+    {
+      "id": 1,
+      "name": "Danh mục sản phẩm mới",
+      "title": "Tiêu đề danh mục"
+    },
+    {
+      "name": "Danh mục mới",
+      "title": "dnsaldhlsabdk.sadlksjahdas",
+      "id": 2
+    },
+    {
+      "name": "Nguyễn Đắc Phương 11",
+      "title": "dsadadasd",
+      "id": 3
+    }
+  ]
+}
