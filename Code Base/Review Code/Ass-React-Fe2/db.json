@@ -1,0 +1,97 @@
+{
+  "users": [
+    {
+      "email": "admin@gmail.com",
+      "password": "$2a$10$O3tykLb0E5MvXm.CbG4Jzu.eZF9qCghoEBrGs2..qZEVpGovUOcIW",
+      "sdt": "012345678",
+      "status": 1,
+      "id": 2
+    },
+    {
+      "email": "admin1@gmail.com",
+      "password": "$2a$10$/rK3zjWvNgbOqUFGpLr...VxyWu8ToscQ7ylRkaaDE42dG4C9Pekq",
+      "sdt": "028723727228",
+      "status": 0,
+      "id": 3
+    },
+    {
+      "email": "admin@gmail.com1",
+      "password": "$2a$10$i2DIezNdG9LRK7OX/WYag.jexV1GhChTOzzBXZ0sWEiZ8VzRmKfuG",
+      "sdt": "123456",
+      "status": 0,
+      "id": 4
+    },
+    {
+      "email": "admin111@gmail.com",
+      "password": "$2a$10$3tT5tFPkyFqJLupywcF0Eu8Z66LRRC1dO5KO6lVh.LYmX.4HESXii",
+      "sdt": "09923201302",
+      "status": 0,
+      "id": 5
+    }
+  ],
+  "categories": [
+    {
+      "name": "điện thoại ",
+      "id": 1
+    },
+    {
+      "name": "máy tính ",
+      "id": 2
+    },
+    {
+      "name": "tai nghe",
+      "id": 3
+    },
+    {
+      "name": "laptop",
+      "id": 4
+    }
+  ],
+  "products": [
+    {
+      "id": 3,
+      "name": "tai nghe aiport pro",
+      "originalPrice": 4200000,
+      "saleOffPrice": 4000000,
+      "feature": "AirPods Pro sẽ đưa bạn chìm vào không gian âm nhạc sâu lắng và đem tới trải nghiệm giải trí ưu việt chưa từng có trên dòng tai nghe không dây Apple. Những nâng cấp mạnh mẽ về thiết kế và công nghệ giúp tai nghe AirPods Pro trở thành thiết bị nghe nhạc chuyên nghiệp thực thụ.",
+      "description": "AirPods Pro sẽ đưa bạn chìm vào không gian âm nhạc sâu lắng và đem tới trải nghiệm giải trí ưu việt chưa từng có trên dòng tai nghe không dây Apple. Những nâng cấp mạnh mẽ về thiết kế và công nghệ giúp tai nghe AirPods Pro trở thành thiết bị nghe nhạc chuyên nghiệp thực thụ.",
+      "img": "http://res.cloudinary.com/dien-thoai/image/upload/v1660834882/l0w28uinlcbnc1rcrlwn.jpg"
+    },
+    {
+      "id": 4,
+      "name": "laptop apple macbook",
+      "originalPrice": 35000000,
+      "saleOffPrice": 33000000,
+      "feature": "AirPods Pro sẽ đưa bạn chìm vào không gian âm nhạc sâu lắng và đem tới trải nghiệm giải trí ưu việt chưa từng có trên dòng tai nghe không dây Apple. Những nâng cấp mạnh mẽ về thiết kế và công nghệ giúp tai nghe AirPods Pro trở thành thiết bị nghe nhạc chuyên nghiệp thực thụ.",
+      "description": "AirPods Pro sẽ đưa bạn chìm vào không gian âm nhạc sâu lắng và đem tới trải nghiệm giải trí ưu việt chưa từng có trên dòng tai nghe không dây Apple. Những nâng cấp mạnh mẽ về thiết kế và công nghệ giúp tai nghe AirPods Pro trở thành thiết bị nghe nhạc chuyên nghiệp thực thụ.",
+      "img": "http://res.cloudinary.com/dien-thoai/image/upload/v1660834892/owqjit3bayukyhiyhoj2.jpg"
+    },
+    {
+      "id": 8,
+      "name": "samsung galasy s71",
+      "originalPrice": 10900000,
+      "saleOffPrice": 8999000,
+      "feature": "AirPods Pro sẽ đưa bạn chìm vào không gian âm nhạc sâu lắng và đem tới trải nghiệm giải trí ưu việt chưa từng có trên dòng tai nghe không dây Apple. Những nâng cấp mạnh mẽ về thiết kế và công nghệ giúp tai nghe AirPods Pro trở thành thiết bị nghe nhạc chuyên nghiệp thực thụ.",
+      "description": "AirPods Pro sẽ đưa bạn chìm vào không gian âm nhạc sâu lắng và đem tới trải nghiệm giải trí ưu việt chưa từng có trên dòng tai nghe không dây Apple. Những nâng cấp mạnh mẽ về thiết kế và công nghệ giúp tai nghe AirPods Pro trở thành thiết bị nghe nhạc chuyên nghiệp thực thụ.",
+      "img": "http://res.cloudinary.com/dien-thoai/image/upload/v1660834903/gmm4v7oksahcb60ybpdh.jpg"
+    },
+    {
+      "id": 9,
+      "name": "samsung galasy s22",
+      "originalPrice": 160000000,
+      "saleOffPrice": 15900000,
+      "feature": "Samsung Galaxy S22 ra mắt với diện mạo vô cùng tinh tế và trẻ trung, mang trong mình thiết kế phẳng theo xu hướng thịnh hành, màn hình 120 Hz mượt mà, cụm camera AI 50 MP và bộ xử lý đến từ Qualcomm.",
+      "description": "Samsung Galaxy S22 ra mắt với diện mạo vô cùng tinh tế và trẻ trung, mang trong mình thiết kế phẳng theo xu hướng thịnh hành, màn hình 120 Hz mượt mà, cụm camera AI 50 MP và bộ xử lý đến từ Qualcomm.",
+      "img": "http://res.cloudinary.com/dien-thoai/image/upload/v1660834923/qi9iokawwtgblwfooptk.jpg"
+    },
+    {
+      "img": "http://res.cloudinary.com/dien-thoai/image/upload/v1660834964/bb1wkvxdo0fjjtlkvfen.jpg",
+      "name": "Iphone 13promax",
+      "saleOffPrice": 11111,
+      "feature": "adasdasdasdas",
+      "description": "đâsdasdasdasdas",
+      "categoryId": 2,
+      "id": 10
+    }
+  ]
+}
