@@ -272,6 +272,21 @@ ul.search {
   width: 33.33%;
   padding: 0 40px;
   text-align: center;
+  position: relative;
+}
+
+.service-box .service-box-item::before {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 15%;
+  bottom: 15%;
+  width: 1px;
+  background: #ddd;
+}
+
+.service-box .service-box-item:last-child::before {
+  content: normal;
 }
 
 .box-image {
