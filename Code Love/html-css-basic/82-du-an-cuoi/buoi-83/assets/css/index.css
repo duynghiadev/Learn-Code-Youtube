@@ -260,6 +260,10 @@ ul.search {
 /* ========== End Product ========== */
 
 /* ========== Start Service ========== */
+.service-full {
+  margin-top: 50px;
+}
+
 .service-box {
   display: flex;
 }
@@ -268,5 +272,24 @@ ul.search {
   width: 33.33%;
   padding: 0 40px;
   text-align: center;
+}
+
+.box-image {
+  margin-bottom: 10px;
+}
+
+.box-image span {
+  font-size: 50px;
+  color: var(--color-grey);
+}
+
+.box-content h5 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.box-content p {
+  color: var(--color-grey);
 }
 /* ========== End Service ========== */
