@@ -194,8 +194,13 @@ ul.search {
   box-shadow: 1px 1px 7px rgb(0, 0, 0, 0.1);
 }
 
+.product-image a {
+  display: block;
+}
+
 .product-item img {
   max-width: 100%;
+  display: block;
 }
 
 .product-full h2 {
