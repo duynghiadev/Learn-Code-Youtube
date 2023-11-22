@@ -258,3 +258,15 @@ ul.search {
   font-size: 14px;
 }
 /* ========== End Product ========== */
+
+/* ========== Start Service ========== */
+.service-box {
+  display: flex;
+}
+
+.service-box .service-box-item {
+  width: 33.33%;
+  padding: 0 40px;
+  text-align: center;
+}
+/* ========== End Service ========== */
