@@ -5,6 +5,7 @@ import Counter2 from './component/Counter2'
 import Tab from './component/Tab'
 import Tag from './component/Tag'
 import Wrapping from './component/Warning'
+import HelloComponent from './component/HelloComponent.jsx'
 
 function App() {
   // const urlImage =
@@ -19,7 +20,8 @@ function App() {
       {/* <Wrapping /> */}
       {/* <Tab /> */}
       {/* <Tag /> */}
-      <Counter2 />
+      {/*<Counter2 />*/}
+      <HelloComponent />
     </div>
   )
 }
