@@ -45,3 +45,7 @@ console.log('---------------------------------------')
 console.log('son:', son)
 console.log('dad:', dad)
 console.log('---------------------------------------')
+
+// The mark-and-sweep algorithm has a solution to cyclic dependencies.
+// Instead of simply counting the references to a given object.
+// It detects if they are reachable from the root object.
