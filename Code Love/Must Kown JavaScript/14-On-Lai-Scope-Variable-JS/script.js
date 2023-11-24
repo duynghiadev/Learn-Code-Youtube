@@ -14,5 +14,10 @@ function getName() {
     getName_2()
   }
 }
+
+function getAge() {
+  // cùng là tên biến nhưng đặt khác function vẫn được. 2 biến đó nó không có liên quan gì hết. Nhớ nhé
+}
+
 getName()
 console.log('global:', name)
