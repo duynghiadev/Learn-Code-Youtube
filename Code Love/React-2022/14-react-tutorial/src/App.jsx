@@ -7,10 +7,14 @@ import Tag from './component/Tag'
 import Wrapping from './component/Warning'
 import HelloComponent from './component/HelloComponent.jsx'
 import JavComponent from './component/JavComponent.jsx'
+import { useState } from 'react'
+import Child from './component/Child.jsx'
 
 function App() {
   // const urlImage =
   //   'https://plus.unsplash.com/premium_photo-1683141316518-70595b251f01?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+
+  const [parentToChild, setParentToChild] = useState('parent to child')
 
   return (
     <div className='App'>
@@ -24,7 +28,8 @@ function App() {
       {/* <Tag /> */}
       {/*<Counter2 />*/}
       {/*<HelloComponent />*/}
-      <JavComponent />
+      {/*<JavComponent />*/}
+      <Child parentToChild={parentToChild} name='duynghiadev' />
     </div>
   )
 }
@@ -32,3 +37,5 @@ function App() {
 export default App
 
 // reserve keyword
+
+// cách truyền dữ liệu thì chỉ có 2 cách thôi: parent -> child và child -> parent
