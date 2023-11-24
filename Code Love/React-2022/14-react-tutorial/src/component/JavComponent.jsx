@@ -13,8 +13,13 @@ function JavComponent() {
 
   console.log('render end')
 
+  if (jav.length === 0) {
+    return <h2 style={{ textAlign: 'center' }}>Không có JAV để chọn</h2>
+  }
+
   return (
     <main className='container'>
+      <h2 style={{ textAlign: 'center' }}>Có {jav.length} diễn viên JAV để chọn</h2>
       <table className='table'>
         <thead>
           <tr>
