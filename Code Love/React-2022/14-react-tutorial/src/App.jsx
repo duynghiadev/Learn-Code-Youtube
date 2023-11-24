@@ -6,6 +6,7 @@ import Tab from './component/Tab'
 import Tag from './component/Tag'
 import Wrapping from './component/Warning'
 import HelloComponent from './component/HelloComponent.jsx'
+import JavComponent from './component/JavComponent.jsx'
 
 function App() {
   // const urlImage =
@@ -13,7 +14,8 @@ function App() {
 
   return (
     <div className='App'>
-      <h1>Hello World</h1>
+      {/* Mỗi cái component thực chất ra đó là instance trong JavaScript */}
+      {/*<h1>Hello World</h1>*/}
       {/* <img className='img_feature' src={urlImage} alt='photo' /> */}
       {/* <Counter /> */}
       {/* <Counter1 /> */}
@@ -21,7 +23,8 @@ function App() {
       {/* <Tab /> */}
       {/* <Tag /> */}
       {/*<Counter2 />*/}
-      <HelloComponent />
+      {/*<HelloComponent />*/}
+      <JavComponent />
     </div>
   )
 }
