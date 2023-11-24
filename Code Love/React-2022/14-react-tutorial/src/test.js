@@ -6,11 +6,17 @@ console.log('duynghiadev')
 
 function app() {
   let app_variable = 'parent to child'
-  child(app_variable)
+  const handleDelete = function (dataFromChild) {
+    console.log('dataFromChild', dataFromChild)
+  }
+  child(handleDelete)
 }
 
-function child(parentToChild) {
-  console.log(parentToChild)
+function child(callback) {
+  const childData = 'child data'
+  callback(childData)
 }
 
 app()
+
+// truyền data từ child -> parent
