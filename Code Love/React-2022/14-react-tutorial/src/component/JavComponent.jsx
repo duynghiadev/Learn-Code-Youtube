@@ -2,7 +2,16 @@ import { useState } from 'react'
 import javList from '../service/jav.js'
 
 function JavComponent() {
+  console.log('render begin')
   const [jav, setJav] = useState(javList)
+
+  const handleDeleteJav = (id) => {
+    const stateJavNew = jav.filter((javItem) => javItem.id !== id)
+    // Sau khi thay đổi state thì khi cập nhật lại setState thì function sẽ render lại
+    setJav(stateJavNew)
+  }
+
+  console.log('render end')
 
   return (
     <main className='container'>
@@ -18,14 +27,21 @@ function JavComponent() {
         <tbody>
           {jav.map(function (javItem) {
             return (
-              <tr>
+              <tr key={javItem.id}>
                 <th scope='row'>{javItem.id}</th>
                 <td>{javItem.name}</td>
                 <td>
                   <img src={javItem.image} style={{ width: 100 }} alt='image-jav' />
                 </td>
                 <td>
-                  <button className='btn btn-danger btn-sm'>Delete</button>
+                  <button
+                    onClick={() => {
+                      handleDeleteJav(javItem.id)
+                    }}
+                    className='btn btn-danger btn-sm'
+                  >
+                    Delete
+                  </button>
                 </td>
               </tr>
             )
