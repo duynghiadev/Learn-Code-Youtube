@@ -12,12 +12,15 @@ import Child from './component/Child.jsx'
 import NavBar from './component/NavBar.jsx'
 import CartList from './component/CartList.jsx'
 import FooterCart from './component/FooterCart.jsx'
+import cartList from './service/cart.jsx'
 
 function App() {
   // const urlImage =
   //   'https://plus.unsplash.com/premium_photo-1683141316518-70595b251f01?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
 
-  const [parentToChild, setParentToChild] = useState('parent to child')
+  // const [parentToChild, setParentToChild] = useState('parent to child')
+
+  const [carts, setCarts] = useState(cartList)
 
   return (
     /**
@@ -48,7 +51,7 @@ function App() {
           <h2>your bag</h2>
         </header>
 
-        <CartList />
+        <CartList carts={carts} />
 
         <FooterCart />
       </section>
