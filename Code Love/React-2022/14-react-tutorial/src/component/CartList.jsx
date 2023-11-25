@@ -1,7 +1,7 @@
 import CartItem from './CartItem.jsx'
 
 function CartList(props) {
-  const { carts } = props
+  const { carts, onClickRemove } = props
   // console.log(props)
   // console.log(props.carts)
   // console.log(props.carts[0])
@@ -10,7 +10,7 @@ function CartList(props) {
 
   function cartRenderList() {
     const cartListRender = carts.map((cartItem) => {
-      return <CartItem key={cartItem.id} cartItem={cartItem} />
+      return <CartItem key={cartItem.id} cartItem={cartItem} onClickRemove={onClickRemove} />
     })
     return cartListRender
   }

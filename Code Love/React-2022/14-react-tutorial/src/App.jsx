@@ -22,6 +22,9 @@ function App() {
 
   const [carts, setCarts] = useState(cartList)
 
+  console.log('------------------Render Start------------------')
+  console.log('------------------carts:------------------', carts)
+
   function cartTotal() {
     let cartTotal = 0
     for (let i = 0; i < carts.length; i++) {
@@ -39,10 +42,20 @@ function App() {
   }
 
   // Cách 2: Sử dụng phương thức reduce để xử lý mảng => nên dùng cách này
-  // Nếu chưa quen thì có thể dùng vòng lặp for. => Khuyến khích dùng reduce
+  // Nếu chưa quen thì có thể dùng vòng lặp for. => Khuyến khích dùng reduce✅
+
   // const totalCart = carts.reduce((total, currentValue) => {
   //   return total + currentValue.amount
   // }, 0)
+
+  const handleClickRemove = (id) => {
+    const newStateCart = carts.filter((cartItem) => {
+      if (cartItem.id !== id) {
+        return true
+      }
+    })
+    setCarts(newStateCart)
+  }
 
   return (
     /**
@@ -73,7 +86,7 @@ function App() {
           <h2>your bag</h2>
         </header>
 
-        <CartList carts={carts} />
+        <CartList carts={carts} onClickRemove={handleClickRemove} />
 
         <FooterCart cartAmount={cartAmount()} />
       </section>
