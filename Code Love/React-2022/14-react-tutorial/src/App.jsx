@@ -22,6 +22,22 @@ function App() {
 
   const [carts, setCarts] = useState(cartList)
 
+  function cartTotal() {
+    let cartTotal = 0
+    for (let i = 0; i < carts.length; i++) {
+      cartTotal += carts[i].amount
+    }
+    return cartTotal
+  }
+
+  function cartAmount() {
+    let cartAmount = 0
+    for (let i = 0; i < carts.length; i++) {
+      cartAmount += carts[i].amount * carts[i].price
+    }
+    return cartAmount
+  }
+
   return (
     /**
      * Đây là bài học ✅
@@ -44,7 +60,7 @@ function App() {
      * Đây là bài tập thực hành làm cart project ✅
      */
     <main>
-      <NavBar />
+      <NavBar cartTotal={cartTotal()} />
 
       <section className='cart'>
         <header>
@@ -53,7 +69,7 @@ function App() {
 
         <CartList carts={carts} />
 
-        <FooterCart />
+        <FooterCart cartAmount={cartAmount()} />
       </section>
     </main>
   )
