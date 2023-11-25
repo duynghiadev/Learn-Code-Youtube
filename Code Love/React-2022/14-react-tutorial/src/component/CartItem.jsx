@@ -1,6 +1,19 @@
+/*
+ * 1. Kiểm tra xem event đã chạy ở component con chưa ?
+ * 2. Truyền callback function từ cha cần thay đổi state dựa vào data con truyền lên đến component có event thành công từ bước 1
+ * 3. Chạy (kích hoạt) function callback từ con
+ * 4. Kiểm tra xem function cha đã chạy chưa
+ * 5. Dựa vào data truyền lên, thay đổi state làm app re-render => dẫn đến con cháu re-render => hoàn thành đồng bộ data
+ **/
+
 function CartItem(props) {
-  const { cartItem } = props
+  const { cartItem, onClickRemove } = props
   console.log('cartItem:', cartItem)
+  console.log('onClickRemove', onClickRemove)
+
+  const handleClickRemove = (id) => {
+    onClickRemove(id)
+  }
 
   return (
     <article className='cart-item'>
@@ -8,7 +21,9 @@ function CartItem(props) {
       <div>
         <h4>{cartItem.phone}</h4>
         <h4 className='item-price'>{cartItem.price}</h4>
-        <button className='remove-btn'>remove</button>
+        <button className='remove-btn' onClick={() => handleClickRemove(cartItem.id)}>
+          remove
+        </button>
       </div>
       <div>
         <button className='amount-btn'>
@@ -30,3 +45,8 @@ function CartItem(props) {
 }
 
 export default CartItem
+
+/*
+ * - truyền data từ component con lên component cha. ✅
+ * - Lưu ý: truyền từ con lên cha chỉ có 1 cách là truyền qua function ✅
+ * */
