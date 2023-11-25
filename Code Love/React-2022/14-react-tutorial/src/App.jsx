@@ -38,6 +38,12 @@ function App() {
     return cartAmount
   }
 
+  // Cách 2: Sử dụng phương thức reduce để xử lý mảng => nên dùng cách này
+  // Nếu chưa quen thì có thể dùng vòng lặp for. => Khuyến khích dùng reduce
+  // const totalCart = carts.reduce((total, currentValue) => {
+  //   return total + currentValue.amount
+  // }, 0)
+
   return (
     /**
      * Đây là bài học ✅
