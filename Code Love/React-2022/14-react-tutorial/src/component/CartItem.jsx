@@ -1,13 +1,13 @@
-function CartItem() {
+function CartItem(props) {
+  const { cartItem } = props
+  console.log('cartItem:', cartItem)
+
   return (
     <article className='cart-item'>
-      <img
-        src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzSddr6Hhm_qWP1q6YnqYm0dg8ccyN-Efno2-bwF9EJ8cHOGyjRXYt2G0EjUi9hImQyRw&usqp=CAU'
-        alt=''
-      />
+      <img src={cartItem.img} alt='cart-item' />
       <div>
-        <h4>iphone</h4>
-        <h4 className='item-price'>10</h4>
+        <h4>{cartItem.phone}</h4>
+        <h4 className='item-price'>{cartItem.price}</h4>
         <button className='remove-btn'>remove</button>
       </div>
       <div>
@@ -17,7 +17,7 @@ function CartItem() {
           </svg>
         </button>
 
-        <p className='amount'>2</p>
+        <p className='amount'>{cartItem.amount}</p>
 
         <button className='amount-btn'>
           <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'>
