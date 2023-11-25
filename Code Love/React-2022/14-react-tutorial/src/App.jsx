@@ -9,6 +9,9 @@ import HelloComponent from './component/HelloComponent.jsx'
 import JavComponent from './component/JavComponent.jsx'
 import { useState } from 'react'
 import Child from './component/Child.jsx'
+import NavBar from './component/NavBar.jsx'
+import CartList from './component/CartList.jsx'
+import FooterCart from './component/FooterCart.jsx'
 
 function App() {
   // const urlImage =
@@ -17,20 +20,39 @@ function App() {
   const [parentToChild, setParentToChild] = useState('parent to child')
 
   return (
-    <div className='App'>
-      {/* Mỗi cái component thực chất ra đó là instance trong JavaScript */}
-      {/*<h1>Hello World</h1>*/}
-      {/* <img className='img_feature' src={urlImage} alt='photo' /> */}
-      {/* <Counter /> */}
-      {/* <Counter1 /> */}
-      {/* <Wrapping /> */}
-      {/* <Tab /> */}
-      {/* <Tag /> */}
-      {/*<Counter2 />*/}
-      {/*<HelloComponent />*/}
-      {/*<JavComponent />*/}
-      <Child parentToChild={parentToChild} name='duynghiadev' />
-    </div>
+    /**
+     * Đây là bài học ✅
+     */
+    // <div className='App'>
+    //    Mỗi cái component thực chất ra đó là instance trong JavaScript
+    //   <h1>Hello World</h1>
+    //    <img className='img_feature' src={urlImage} alt='photo' />
+    //  <Counter />
+    //  <Counter1 />
+    //  <Wrapping />
+    //  <Tab />
+    //  <Tag />
+    // <Counter2 />
+    // <HelloComponent />
+    // <JavComponent />
+    // <Child parentToChild={parentToChild} name='duynghiadev' />
+    // </div>
+    /**
+     * Đây là bài tập thực hành làm cart project ✅
+     */
+    <main>
+      <NavBar />
+
+      <section className='cart'>
+        <header>
+          <h2>your bag</h2>
+        </header>
+
+        <CartList />
+
+        <FooterCart />
+      </section>
+    </main>
   )
 }
 
