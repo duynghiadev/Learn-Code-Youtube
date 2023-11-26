@@ -69,3 +69,7 @@ const handleClickRemove = (id) => {
 - Trước khi re-render thì nó sẽ nắm giữ tất cả các data trong `state`. Và khi lần thứ 2 mình click thì nó (`closure`) sẽ nhớ data lần thứ 2. Và cứ thế,... đến khi mình xóa hết các data trong `state` thì thôi.
 
 - Mỗi lần `App` render => thì sẽ tạo ra version riêng => trong version riêng đấy thì tất cả trong thân hàm khi render được tạo mới. Nhờ cơ chế `closure` nó nhớ `state`, `props`,... và khi người dùng `action` trước khi re-render lại thì nó sẽ sử dụng cái trước đó đã lưu lại và tính toán.
+
+#### Cách Debug khi code ReactJS (JavaScript):
+
+- Nếu mình muốn biết luồng code khi re-render thì mình sẽ đặt log trong đoạn code đó và một log ở ngoài hàm `let i = 0` => để xem thứ tự chạy.
