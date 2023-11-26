@@ -57,6 +57,10 @@ function App() {
     setCarts(newStateCart)
   }
 
+  const handleClickIncrement = (cartItem) => {
+    console.log('parent call cartItem:', cartItem)
+  }
+
   if (carts.length === 0) {
     return (
       <section className='cart'>
@@ -97,7 +101,7 @@ function App() {
           <h2>your bag</h2>
         </header>
 
-        <CartList carts={carts} onClickRemove={handleClickRemove} />
+        <CartList carts={carts} onClickRemove={handleClickRemove} onClickIncrement={handleClickIncrement} />
 
         <FooterCart cartAmount={cartAmount()} />
       </section>
