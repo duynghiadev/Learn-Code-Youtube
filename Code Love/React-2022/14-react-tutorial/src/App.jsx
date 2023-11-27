@@ -94,7 +94,15 @@ function App() {
     setCarts(cartNewState)
   }
 
-  if (carts.length === 0) {
+  const cartsCheckAmountNoEmpty = carts.filter((cartItem) => {
+    if (cartItem.amount > 0) {
+      return true
+    }
+  })
+
+  console.log('cartsCheckAmountNoEmpty:', cartsCheckAmountNoEmpty)
+
+  if (carts.length === 0 || cartsCheckAmountNoEmpty.length === 0) {
     return (
       <section className='cart'>
         <header>
@@ -104,6 +112,8 @@ function App() {
       </section>
     )
   }
+
+  console.log('carts check:', carts)
 
   return (
     /**
