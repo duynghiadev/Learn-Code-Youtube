@@ -26,7 +26,9 @@ const carts = [
 
 export default carts
 
-// giả sử mình click vào sản phẩm số 1 -> 3-> 4 (click into product 1 then product from 3 to 4)
-// input is object
-// tìm ra index của phần tử cần xóa
-// cập nhất số lượng theo index -> carts[index].amount++
+// giả sử mình click vào sản phẩm số 1 -> hiện tại nó đang có 3 sản phẩm -> thì sau khi click thì nó sẽ lên 4 (click into product 1 then product from 3 to 4)
+
+// Đầu vào của mình thì nó đang có cái object đấy (input is object)
+// Dưới đây là cách làm ✅
+// Đầu tiên chúng ta tìm ra index (index theo thứ tự là 0, 1, 2,...) của phần tử cần xóa
+// Sau đó chúng ta cập nhất số lượng theo index -> carts[index].amount++
