@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  /* background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb)); */
+  background-color: white;
+}
+
+/* Custom shadow class */
+.custom-shadow {
+  box-shadow:
+    rgba(0, 0, 0, 0.2) 0px 2px 4px -1px,
+    rgba(0, 0, 0, 0.14) 0px 4px 5px 0px,
+    rgba(0, 0, 0, 0.12) 0px 1px 10px 0px;
+}
+
+.header-cell {
+  @apply text-gray-800 border border-slate-300 border-collapse text-center p-2 dark:text-white;
+}
+
+.data-cell {
+  @apply text-gray-800 border border-slate-300 border-collapse text-left p-2 dark:text-white;
+}
+
+.btn-primary {
+  @apply inline-block rounded-md text-base font-bold text-white bg-[#d2445a] hover:bg-[#bb2c41] transition px-3 py-2;
+}
+
+.btn-secondary {
+  @apply inline-block rounded-md text-base font-bold text-black bg-white border border-gray-300 hover:bg-gray-300 transition px-3 py-2 ml-2;
+}
+
+.btn-close {
+  @apply bg-transparent text-gray-500 float-right text-2xl font-bold hover:text-gray-700 hover:cursor-pointer;
+}
+
+.btn-pagination {
+  @apply relative float-left cursor-pointer px-2 py-2 leading-6 no-underline border transition hover:bg-gray-300;
+}
+
+@keyframes progressBar {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.progressBar {
+  animation: progressBar 1.5s linear forwards;
+}
+
+@keyframes popoutModal {
+  0% {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.popoutModal {
+  animation: popoutModal 0.5s;
+}

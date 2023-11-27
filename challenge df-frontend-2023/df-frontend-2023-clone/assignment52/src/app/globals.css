@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --text: '#343a40';
+  --bgColor: '#adb5bd';
+  --backgroundElm: '#fff';
+  --border: '#adb5bd';
+  --primary: #e64980;
+}
+
+body {
+  box-sizing: border-box;
+  line-height: 1.5;
+  font-size: 16px;
+  color: var(--text);
+  background-color: var(--bgColor);
+}
+
+input[type='text']:not(:placeholder-shown) ~ label,
+input[type='text']:focus ~ label,
+input[type='password']:not(:placeholder-shown) ~ label,
+input[type='password']:focus ~ label {
+  @apply top-[-10px] left-[10px] scale-90 text-primary;
+}
+
+.modal {
+  width: 450px;
+  position: fixed;
+  left: calc(50% - 225px);
+
+  z-index: 100;
+}
+.border-2px-solid {
+  border: 2px solid var(--bor);
+}
+.main-login {
+  background-color: var(--backgroundElm);
+}
+td,
+th {
+  text-align: start;
+  padding: 10px;
+  border: 2px solid var(--border);
+}
