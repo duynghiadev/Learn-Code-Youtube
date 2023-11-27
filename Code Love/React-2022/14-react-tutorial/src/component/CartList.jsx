@@ -10,15 +10,17 @@ function CartList(props) {
 
   function cartRenderList() {
     const cartListRender = carts.map((cartItem) => {
-      return (
-        <CartItem
-          key={cartItem.id}
-          cartItem={cartItem}
-          onClickRemove={onClickRemove}
-          onClickIncrement={onClickIncrement}
-          onClickDecrement={onClickDecrement}
-        />
-      )
+      if (cartItem.amount > 0) {
+        return (
+          <CartItem
+            key={cartItem.id}
+            cartItem={cartItem}
+            onClickRemove={onClickRemove}
+            onClickIncrement={onClickIncrement}
+            onClickDecrement={onClickDecrement}
+          />
+        )
+      }
     })
     return cartListRender
   }
