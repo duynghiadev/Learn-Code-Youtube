@@ -94,6 +94,10 @@ function App() {
     setCarts(cartNewState)
   }
 
+  const handleClearAllCart = () => {
+    setCarts([])
+  }
+
   const cartsCheckAmountNoEmpty = carts.filter((cartItem) => {
     if (cartItem.amount > 0) {
       return true
@@ -151,7 +155,7 @@ function App() {
           onClickDecrement={handleClickDecrement}
         />
 
-        <FooterCart cartAmount={cartAmount()} />
+        <FooterCart cartAmount={cartAmount()} onClearAllCart={handleClearAllCart} />
       </section>
     </main>
   )

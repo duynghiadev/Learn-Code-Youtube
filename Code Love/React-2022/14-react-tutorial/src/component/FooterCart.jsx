@@ -1,5 +1,12 @@
 function FooterCart(props) {
-  const { cartAmount } = props
+  const { cartAmount, onClearAllCart } = props
+
+  console.log('cartAmount:', cartAmount)
+  console.log('onClearAllCart:', onClearAllCart)
+
+  const handleClearAllCart = () => {
+    onClearAllCart()
+  }
 
   return (
     <footer>
@@ -9,7 +16,9 @@ function FooterCart(props) {
           total <span>${cartAmount}</span>
         </h4>
       </div>
-      <button className='btn clear-btn'>clear cart</button>
+      <button className='btn clear-btn' onClick={handleClearAllCart}>
+        clear cart
+      </button>
     </footer>
   )
 }
