@@ -66,11 +66,30 @@ function App() {
 
     const cartNewState = [...carts]
     cartNewState[indexElement] = { ...cartItem }
-    console.log('cartNewState[indexElement]:', cartNewState[indexElement])
+    console.log('handleClickIncrement cartNewState[indexElement]:', cartNewState[indexElement])
 
     cartNewState[indexElement].amount++
     console.log('cart before:', carts)
     console.log('cart after:', cartNewState)
+
+    setCarts(cartNewState)
+  }
+
+  const handleClickDecrement = (cartItem) => {
+    console.log('handleClickDecrement parent:', cartItem)
+
+    //  Tìm index cần giảm số lượng
+    const indexElement = carts.findIndex((cartItemLoop) => {
+      return cartItemLoop.id === cartItem.id
+    })
+
+    const cartNewState = [...carts]
+    console.log('cartNewState:', cartNewState)
+
+    cartNewState[indexElement] = { ...cartItem }
+    console.log('handleClickDecrement cartNewState[indexElement]:', cartNewState[indexElement])
+
+    cartNewState[indexElement].amount--
 
     setCarts(cartNewState)
   }
@@ -115,7 +134,12 @@ function App() {
           <h2>your bag</h2>
         </header>
 
-        <CartList carts={carts} onClickRemove={handleClickRemove} onClickIncrement={handleClickIncrement} />
+        <CartList
+          carts={carts}
+          onClickRemove={handleClickRemove}
+          onClickIncrement={handleClickIncrement}
+          onClickDecrement={handleClickDecrement}
+        />
 
         <FooterCart cartAmount={cartAmount()} />
       </section>
