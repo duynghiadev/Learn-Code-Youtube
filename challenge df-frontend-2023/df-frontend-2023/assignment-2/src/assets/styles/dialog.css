@@ -1,0 +1,66 @@
+/**
+ * 1. Make the dialog container, and its child overlay spread across
+ *    the entire window.
+ */
+.dialog-container,
+.dialog-overlay {
+  position: fixed; /* 1 */
+  top: 0; /* 1 */
+  right: 0; /* 1 */
+  bottom: 0; /* 1 */
+  left: 0; /* 1 */
+}
+
+/**
+  * 1. Make sure the dialog container and all its descendants sits on
+  *    top of the rest of the page.
+  * 2. Make the dialog container a flex container to easily center the
+  *    dialog.
+  */
+.dialog-container {
+  z-index: 2; /* 1 */
+  display: flex; /* 2 */
+}
+
+/**
+  * 1. Make sure the dialog container and all its descendants are not
+  *    visible and not focusable when it is hidden.
+  */
+.dialog-container[aria-hidden='true'] {
+  display: none; /* 1 */
+}
+
+/**
+  * 1. Make the overlay look like an overlay.
+  */
+.dialog-overlay {
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+/**
+  * 1. Vertically and horizontally center the dialog in the page.
+  * 2. Make sure the dialog sits on top of the overlay.
+  * 3. Make sure the dialog has an opaque background.
+  */
+.dialog-content {
+  margin: auto; /* 1 */
+  z-index: 2; /* 2 */
+  position: relative; /* 2 */
+  background-color: var(--color-background); /* 3 */
+  border: 2px solid var(--color-gray);
+  min-width: 300px;
+  padding: 12px 18px;
+}
+
+.dialog-close {
+  all: unset;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.dialog-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+}

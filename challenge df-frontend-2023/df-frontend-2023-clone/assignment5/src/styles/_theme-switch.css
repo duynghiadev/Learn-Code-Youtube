@@ -1,0 +1,18 @@
+@layer components {
+  .theme-switch__light,
+  .theme-switch__dark {
+    @apply block transition-[opacity,transform] duration-300 ease-[cubic-bezier(0.5,1,0.25,1.5)];
+  }
+
+  .theme-switch__light {
+    text-shadow: 0 0 0.125rem yellow;
+  }
+
+  .theme-switch__dark {
+    text-shadow: 0 0 0.25rem white;
+
+    html:not(.dark) & {
+      @apply -translate-y-full translate-x-1/2 scale-50 opacity-0;
+    }
+  }
+}

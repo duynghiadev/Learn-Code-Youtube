@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Bookstore</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <!-- Header start -->
+    <header class="header">
+        <a data-i18n="titleSite" href="#" class="logo">Bookstore</a>
+        <div class="user-info">
+            <img class="user-avatar" src="./assets/images/user.png" alt="Avatar người dùng" />
+            <h1 class="user-name">Tân Nhật CMS</h1>
+            <!-- Inside the header section -->
+            <div class="theme-toggle">
+                <input type="checkbox" id="theme-switch" class="theme-switch">
+                <label for="theme-switch" class="theme-label">Dark Mode</label>
+            </div>
+
+            <div id="language-dropdown" class="dropdown">
+                <button class="dropbtn">
+                    <label data-i18n="language">English</label>
+                </button>
+                <div class="dropdown-content">
+                    <a href="#" id="english-button">
+                        English
+                    </a>
+                    <a href="#" id="vietnamese-button">
+                        Tiếng Việt
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header end -->
+    <main class="container">
+        <section>
+            <!-- Search form start -->
+            <div class="search-form">
+                <input id="search-input" name="search-book" class="search-input" type="search"
+                    placeholder="Search Book" />
+                <button data-i18n="addBook" class="add-button">Add book</button>
+            </div>
+            <!-- Search form end -->
+            <!-- Table start -->
+            <table id="table-book" class="table-book table-bordered table">
+                <thead>
+                    <tr>
+                        <th style="width:5%"><label data-i18n="idLabel">#</label></th>
+                        <th style="width:45%"><label for="name" data-i18n="nameLabel">Name</label></th>
+                        <th style="width:20%"><label for="author" data-i18n="authorLabel">Author</label></th>
+                        <th style="width:13%"><label for="topic" data-i18n="topicLabel">Topic</label></th>
+                        <th style="width:12%"><label for="topic" data-i18n="actionLabel">Action</label></th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <!-- Table end -->
+        </section>
+        <!-- Notification Delete Book start -->
+        <div class="container-modal delete-modal">
+            <div class="modal delete-book-modal">
+                <button type="button" class="close-btn" id="close-btn-delete" data-dismiss="modal" aria-label="Close">
+                    <ion-icon class="close-icon" name="close-outline"></ion-icon>
+                </button>
+                <div class="modal-header">
+                    <h1 data-i18n="deleteBook">Delete book</h1>
+                </div>
+                <div class="modal-body">
+                    <p class="book-name">
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button data-i18n="deleteButton" type="button" class="btn btn-danger" id="delete-book-button"
+                        data-dismiss="modal">
+                        Delete
+                    </button>
+                    <button data-i18n="cancelButton" type="button" class="btn btn-secondary" id="cancel-book-button">
+                        Cancel
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Notification Delete Book end -->
+        <!-- Form Add Book Start -->
+        <div class="container-modal add-modal">
+            <div class="modal add-book-modal">
+                <button type="button" class="close-btn" id="close-modal-add" data-dismiss="modal"
+                    aria-label="Close">x</button>
+                <div class="modal-header">
+                    <h1 data-i18n="addBook">Add book</h1>
+                </div>
+
+                <div class="modal-body">
+                    <form class="form-add-book">
+                        <div class="form-group">
+                            <label data-i18n="nameLabel" for="name">Name</label>
+                            <input required autocomplete="off" type="text" class="form-control" id="name" name="name"
+                                placeholder="Tên sách" />
+                        </div>
+                        <div class="form-group">
+                            <label data-i18n="authorLabel" for="author">Author</label>
+                            <input required autocomplete="off" type="text" class="form-control" id="author"
+                                name="author" placeholder="Tác giả" />
+                        </div>
+                        <div class="form-group">
+                            <label data-i18n="topicLabel" for="topic">Topic</label>
+                            <select class="form-control select" id="topic" name="topic"
+                                data-icon="ion-chevron-expand-outline">
+                                <option value="Programming">Programming</option>
+                                <option value="Database">Database</option>
+                                <option value="Devops">Devops</option>
+                                <option value="Frontend">Frontend</option>
+                                <option value="Backend">Backend</option>
+                            </select>
+                        </div>
+                        <div class="footer-form">
+                            <button type="submit" data-i18n="addButton" class="btn btn-success">Create</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- Form add book end -->
+        <!-- Form Edit Book Start -->
+        <div class="container-modal edit-modal">
+            <div class="modal edit-book-modal">
+                <button type="button" class="close-btn" id="close-modal-edit" data-dismiss="modal"
+                    aria-label="Close">X</button>
+                <div class="modal-header">
+                    <h1 data-i18n="editBook">Edit book</h1>
+                </div>
+                <div class="modal-body">
+                    <form class="form-edit-book">
+                        <div class="form-group">
+                            <label data-i18n="nameLabel" for="names">Name</label>
+                            <input required autocomplete="off" type="text" class="form-control" id="names" name="names"
+                                placeholder="Tên sách" />
+                        </div>
+                        <div class="form-group">
+                            <label data-i18n="authorLabel" for="authors">Author</label>
+                            <input required autocomplete="off" type="text" class="form-control" id="authors"
+                                name="authors" placeholder="Tác giả" />
+                        </div>
+                        <div class="form-group">
+                            <label data-i18n="topicLabel" for="topics">Topic</label>
+                            <select class="form-control select" id="topics" name="topics"
+                                data-icon="ion-chevron-expand-outline">
+                                <option value="Programming">Programming</option>
+                                <option value="Database">Database</option>
+                                <option value="Devops">Devops</option>
+                                <option value="Frontend">Frontend</option>
+                                <option value="Backend">Backend</option>
+                            </select>
+                        </div>
+                        <div class="footer-form">
+                            <button type="submit" class="btn btn-success">Save</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- Form edit book end -->
+
+    </main>
+    <div class="pagination-container">
+        <div id="pagination-numbers"></div>
+    </div>
+    <footer>
+        <div class="copyright">
+            &copy; 2023 || Made with TânNhậtCMS||
+            <a href="https://github.com/TanNhatCMS/df-frontend-2023/tree/main/assignment-1">Source code</a>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>

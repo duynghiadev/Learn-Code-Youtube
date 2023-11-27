@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Bookstore</title>
+    <link href="style-1.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <div id="app">
+      <!-- Login -->
+      <div class="modal_login">
+        <div class="inner">
+          <h3 class="title_login">Vui Lòng Nhập Tên Của Bạn!!!</h3>
+          <form class="form_login">
+            <div class="item">
+              <label for="fullname"> Full Name: </label>
+              <input id="fullname" required placeholder="Ex: Anh Tuan" />
+            </div>
+            <button class="btn btn_login" type="submit">Đăng nhập</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Section Main -->
+      <div class="main_section">
+        <header class="header">
+          <h1 class="title_section">Bookstore DuyNghiaDev</h1>
+          <div class="section_user">
+            <span class="user_name">
+              <span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="1em"
+                  viewBox="0 0 448 512"
+                >
+                  <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                  <style>
+                    svg {
+                      fill: #696969;
+                    }
+                  </style>
+                  <path
+                    d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"
+                  />
+                </svg>
+              </span>
+
+              <p class="name_user">_____</p>
+            </span>
+
+            <button class="btn btn_logout">Log out</button>
+          </div>
+        </header>
+
+        <div class="container">
+          <div class="search_item">
+            <input placeholder="Search books..." class="input_search" />
+            <button class="btn btn_addbook">Add book</button>
+          </div>
+
+          <table id="store">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Author</th>
+                <th>Topic</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="tableBody"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="wrapper add">
+        <div class="modal_addbook">
+          <span class="btn_close add">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="1em"
+              viewBox="0 0 384 512"
+            >
+              <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+              <path
+                d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"
+              />
+            </svg>
+          </span>
+          <h3>AddBook</h3>
+          <form class="form_addbook">
+            <div class="item_form_add">
+              <label for="name"> Name</label>
+              <input
+                required
+                placeholder="Ex: Languge C++"
+                name="name"
+                id="name"
+              />
+            </div>
+            <div class="item_form_add">
+              <label for="author">Author</label>
+              <input
+                required
+                placeholder="Ex: Martin Flower"
+                id="author"
+                name="author"
+              />
+            </div>
+            <div class="item_form_add">
+              <label for="topic">Topic</label>
+              <select required id=" topic" name="topic">
+                <div>
+                  <option>Programing</option>
+                </div>
+                <div>
+                  <option>Database</option>
+                </div>
+                <div>
+                  <option>DevOps</option>
+                </div>
+              </select>
+            </div>
+
+            <button type="submit" class="btn btn_create">Create</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="script-1.js"></script>
+  </body>
+</html>
