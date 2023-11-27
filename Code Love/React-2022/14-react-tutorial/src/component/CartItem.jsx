@@ -9,7 +9,8 @@
 import cart from '../service/cart.jsx'
 
 function CartItem(props) {
-  const { cartItem, onClickRemove, onClickIncrement } = props
+  const { cartItem, onClickRemove, onClickIncrement, onClickDecrement } = props
+
   console.log('cartItem:', cartItem)
   console.log('onClickRemove', onClickRemove)
   console.log('onClickIncrement:', onClickIncrement)
@@ -20,6 +21,10 @@ function CartItem(props) {
 
   const handleClickIncrement = (cartItem) => {
     onClickIncrement(cartItem)
+  }
+
+  const handleClickDecrement = (cartItem) => {
+    onClickDecrement(cartItem)
   }
 
   return (
@@ -41,7 +46,7 @@ function CartItem(props) {
 
         <p className='amount'>{cartItem.amount}</p>
 
-        <button className='amount-btn'>
+        <button onClick={() => handleClickDecrement(cartItem)} className='amount-btn'>
           <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'>
             <path d='M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z' />
           </svg>
