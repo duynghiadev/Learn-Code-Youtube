@@ -1,9 +1,10 @@
 import './App.css'
+import Tab from './components/Tab.jsx'
 
 function App() {
   return (
-    <div className='App'>
-      <h1>Hello World</h1>
+    <div className='App darkmode'>
+      <Tab />
     </div>
   )
 }
