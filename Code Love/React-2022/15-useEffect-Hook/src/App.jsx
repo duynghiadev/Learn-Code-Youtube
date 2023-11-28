@@ -2,19 +2,27 @@ import './App.css'
 import Counter from './components/Counter.jsx'
 import { useEffect, useState } from 'react'
 
-const App = () => {
-  const [post, setPost] = useState({})
+let i = 0
 
+const App = () => {
+  i++
+  console.log(`>>> %c render start version 00 ${i} `, 'background: #222; color: #bada55')
+
+  const id = 1
+  const [post, setPost] = useState({})
+  console.log(`id version 00 ${i}`, id)
   console.log('post render first:', post)
 
   useEffect(() => {
     console.log('function useEffect run 🚀')
-    fetch('https://jsonplaceholder.typicode.com/todos/1')
+    console.log(`useEffect running version 00 ${i}`)
+
+    fetch(`https://jsonplaceholder.typicode.com/todos/${id}`)
       .then((response) => response.json())
       .then((json) => {
         setPost(json)
       })
-  }, [])
+  }, [id])
 
   return (
     <div className='App'>
@@ -27,6 +35,7 @@ const App = () => {
       <div>
         <h1>{post.title}</h1>
       </div>
+      {console.log(`>>> %c render end version 00 ${i} `, 'background: red; color: white')}
       <Counter />
     </div>
   )
