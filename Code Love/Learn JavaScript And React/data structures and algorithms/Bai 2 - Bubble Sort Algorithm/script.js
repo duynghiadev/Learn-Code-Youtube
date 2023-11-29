@@ -9,18 +9,21 @@ let a = [100, 7, 5]
 //j = 1, 7,5,		100
 
 for (let i = 0; i < a.length - 1; i++) {
-	for (let j = 0; j < a.length - 1; j++) {
-		console.log('step by step for loop:', a)
-		console.table({
-			i: i, j: j, a_j: a[j], a_j_1: a[j + 1]
-		})
-		
-		if (a[j] > a[j + 1]) {
-			let tmp = a[j]
-			a[j] = a[j + 1]
-			a[j + 1] = tmp
-		}
-	}
+  for (let j = 0; j < a.length - 1; j++) {
+    console.log('step by step for loop:', a)
+    console.table({
+      i: i,
+      j: j,
+      a_j: a[j],
+      a_j_1: a[j + 1]
+    })
+
+    if (a[j] > a[j + 1]) {
+      let tmp = a[j]
+      a[j] = a[j + 1]
+      a[j + 1] = tmp
+    }
+  }
 }
 
 console.log('-----------------------------')
