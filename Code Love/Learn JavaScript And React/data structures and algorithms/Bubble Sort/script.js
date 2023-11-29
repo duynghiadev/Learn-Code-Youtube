@@ -27,8 +27,12 @@ for (let j = 0; j < a.length - 1; j++) {
   if (a[j] > a[j + 1]) {
     let tmp = a[j]
     a[j] = a[j + 1]
+    console.log('tmp_1_a[j]:', a[j])
     a[j + 1] = tmp
+    console.log('tmp_2_a[j+1]:', a[j + 1])
+    console.log('let tmp:', tmp)
   }
 }
 
+console.log('----------------------')
 console.log('Result:', a)
