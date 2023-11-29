@@ -5,7 +5,6 @@
     </CssCodeStyleSettings>
     <HTMLCodeStyleSettings>
       <option name="HTML_UNIFORM_INDENT" value="true" />
-      <option name="HTML_KEEP_WHITESPACES" value="true" />
       <option name="HTML_ATTRIBUTE_WRAP" value="4" />
       <option name="HTML_KEEP_BLANK_LINES" value="1" />
       <option name="HTML_ALIGN_TEXT" value="true" />
