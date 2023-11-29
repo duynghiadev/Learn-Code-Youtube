@@ -1,13 +1,45 @@
 import TabNavigation from './TabNavigation.jsx'
 import TabContent from './TabContent.jsx'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+
+let i = 0
+
+const currentState = {
+  current: ''
+}
 
 const Tab = () => {
+  i++
+
   const [activeTab, setActiveTab] = useState('react')
 
   const handleClickActiveTab = (idTab) => {
     setActiveTab(idTab)
   }
+
+  useEffect(() => {
+    // Luôn luôn chạy khi click sang tab khác và lần đầu render
+    console.group()
+    console.log('state before change:', currentState.current)
+    currentState.current = activeTab
+    console.log('state after change:', currentState.current)
+    console.groupEnd()
+
+    console.log('-----------------------------------')
+    console.log(`useEffect running version 00 ${i} is:`, activeTab)
+  }, [activeTab])
+
+  /**
+   * - Nếu click vào Vue thì component sẽ render => 1 version render ở Vue và 1 version render ở React.
+   * - activeTab hiện tại sẽ là activeTab('Vue') và activeTab trước đó sẽ là activeTab('React').
+   * - Điều đó dẫn đến nó làm thay đổi cái dependency trong useEffect => dẫn đến hàm đó chạy lại => dẫn đến thay đổi state => state thay đổi thì component render lại.
+   * - Ngoài cái việc render giao diện thì cái thằng useEffect cũng chạy lại.
+   *
+   * - Và cứ thế nếu ta thay đổi qua Angular thì version trước đó sẽ là Vue
+   * - active hiện tại sẽ là activeTab('Angular') và activeTab trước đó sẽ là Vue
+   * - Điều đó dẫn đến nó làm thay đổi cái dependency trong useEffect => dẫn đến hàm đó chạy lại => chạy lại thì nó thay đổi state => state thay đổi thì component re-render lại
+   * - Ngoài cái việc render giao diện thì cái thằng useEffect cũng chạy lại
+   */
 
   return (
     <div className='container'>
