@@ -12,4 +12,3 @@ let a = [100, 7, 5, 4]
 - i = 2 -> j chạy từ đầu đến cuối trừ 2 số lớn nhất ở cuối mảng -> chuyển số lớn thứ 3 về cuối dãy
 
 => kết thúc
-
