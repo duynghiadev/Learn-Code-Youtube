@@ -8,3 +8,5 @@
 
 - Khi sử dụng promise thì khi bắt lỗi thì chúng ta sử dụng `.catch()`. Còn trong `async await` thì
   chúng ta sử dụng `catch()` để bắt lỗi 
+
+![Ảnh thắc mắc](img.png)
