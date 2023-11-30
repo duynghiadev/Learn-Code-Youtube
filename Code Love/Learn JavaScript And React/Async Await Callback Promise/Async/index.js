@@ -9,7 +9,7 @@ console.log('-------------------')
 console.log('before') // Chạy đồng bộ
 
 setTimeout(function () {
-	console.log('This is function setTimeout...')
+  console.log('This is function setTimeout...')
 }, 2000) // Chạy bất đồng bộ
 
 console.log('after') // Chạy đồng bộ
