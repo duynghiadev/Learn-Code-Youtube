@@ -5,23 +5,41 @@
  * + Và cách code dùng callback: Đây là cách code của mấy bạn có kinh nghiệm hơn
  */
 
-function getListUser() {
-  const url = 'https://jsonplaceholder.typicode.com/users'
+function formatData(xhttp) {
+  // 1. data return success
+  const users = JSON.parse(xhttp.responseText)
+
+  //  2. format data and append list user
+  let userList = ''
+  for (let user of users) {
+    userList += '<p>' + user.name + '</p>'
+  }
+  document.getElementById('list-user').innerHTML = userList
+}
+
+// Mục đích của hàm này là call api và return data. Còn công việc format thì đó là công việc của function getListUser khi người dùng click vào
+function asyncXmlCallApi(url, callback) {
   const xhttp = new XMLHttpRequest()
   xhttp.open('GET', url, true)
   xhttp.send()
 
   xhttp.onreadystatechange = function () {
     if (xhttp.readyState === 4 && xhttp.status === 200) {
-      // 1. data return success
-      const users = JSON.parse(xhttp.responseText)
-
-      //  2. format data and append list user
-      let userList = ''
-      for (let user of users) {
-        userList += '<p>' + user.name + '</p>'
-      }
-      document.getElementById('list-user').innerHTML = userList
+      //  data response success
+      callback(xhttp)
     }
   }
 }
+
+function getListUser() {
+  asyncXmlCallApi('https://jsonplaceholder.typicode.com/users', function (data) {
+    //  muốn chạy câu lệnh ở đây
+    formatData(data)
+  })
+}
+
+/**
+ * - Các trường hợp sử dụng callback đó là:
+ * + 1. call api để lấy data
+ * + 2. format data để hiển thị ra màn hình
+ */
