@@ -1,0 +1,4 @@
+- Khai báo biến với từ khóa var (trước khi có es6)
+- Với tù khóa var biến có thể được khai báo lại trong cùng 1 scope
+- Khi nói đến từ khóa var thì các bạn nghĩ ngay đến function scope (gồm if else, while, do while, for,...)
+- Khai báo với từ khóa let, const (2 biến này thuộc es6)
