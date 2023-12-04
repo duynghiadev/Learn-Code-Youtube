@@ -1,4 +1,4 @@
-# Variable trong JavaScript 
+# Variable trong JavaScript
 
 > 1. Memory trong JavaScript
 
@@ -9,7 +9,7 @@
 > 2. Khai báo biến
 
 ```js
-var username = 'Duy Nghia' 
+var username = 'Duy Nghia'
 ```
 
 - This statement consists of a few part:
@@ -30,7 +30,7 @@ int main()
   printf("var: %d\n", var);
 
   // Notice the use of & before var
-  printf("address of var: %p", &var);  
+  printf("address of var: %p", &var);
   return 0;
 }
 ```
@@ -38,6 +38,6 @@ int main()
 - Output 🤷‍♀️:
 
 ```md
-var: 5 
+var: 5
 address of var: 2686778
 ```
