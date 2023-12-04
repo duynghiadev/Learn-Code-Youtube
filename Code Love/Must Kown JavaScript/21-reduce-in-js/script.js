@@ -27,10 +27,11 @@ const array = [1, 2, 3, 4]
 
 const sumWithInitial = array.reduce((accumulator, currentValue, index) => {
   console.table({
-    'lần chạy thứ': index,
+    'lần chạy thứ': index + 1,
     currentValue: currentValue,
-    accumulator: accumulator
+    accumulator: accumulator,
+    total: accumulator + currentValue
   })
   return accumulator + currentValue
-})
+}, 0)
 console.log('sumWithInitial:', sumWithInitial)
