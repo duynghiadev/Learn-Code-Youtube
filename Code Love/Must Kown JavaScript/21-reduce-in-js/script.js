@@ -15,15 +15,21 @@
 
 const array = [1, 2, 3, 4]
 
-// lan chay thu 1: accumulator = 0 (initValue), currentValue = 1 => return 0 + 1
-// lan chay thu 2: accumulator = 1, currentValue = 2 => return 1 + 2
-// lan chay thu 3: accumulator = 3, currentValue = 3 => return 3 + 3
-// lan chay thu 4: accumulator = 6, currentValue = 4 => return 6 + 4
-// khong co lan chay thu 5 ❌❌❌
+/**
+ * - Dưới đây là demo của method map 👇
+ */
 
-// lan chay thu 1: accumulator = array[0], currentValue = 2 => return 1 + 2
-// lan chay thu 2: accumulator = 3, currentValue = 3 => return 3 + 3
-// lan chay thu 3: accumulator = 6, currentValue = 4 => return 6 + 4
+// lần chạy thứ 1: accumulator = 0 (initValue), currentValue = 1 => return 0 + 1
+// lần chạy thứ 2: accumulator = 1, currentValue = 2 => return 1 + 2
+// lần chạy thứ 3: accumulator = 3, currentValue = 3 => return 3 + 3
+// lần chạy thứ 4: accumulator = 6, currentValue = 4 => return 6 + 4
+
+// không có lần chạy thứ 5 do mảng đã hết phần tử. Vì mảng đã kết thúc tại phần tử số 4 ❌❌❌
+// khi trong mảng không còn phần tử nào nữa thì vòng lặp nó sẽ tự return về giá trị của biến lưu trữ ❌❌❌
+
+// lần chạy thứ 1: accumulator = array[0], currentValue = 2 => return 1 + 2
+// lần chạy thứ 2: accumulator = 3, currentValue = 3 => return 3 + 3
+// lần chạy thứ 3: accumulator = 6, currentValue = 4 => return 6 + 4
 
 const sumWithInitial = array.reduce((accumulator, currentValue, index) => {
   console.table({
