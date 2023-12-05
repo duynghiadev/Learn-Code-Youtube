@@ -41,3 +41,122 @@ const sumWithInitial = array.reduce((accumulator, currentValue, index) => {
   return accumulator + currentValue
 }, 0)
 console.log('sumWithInitial:', sumWithInitial)
+console.log('----------------------------------------')
+
+/**
+ * - Sau đây là mình sẽ build lại hàm map theo cách custom method 👇
+ */
+
+/**
+ * 1. Khi phân tích phương thức reduce thì chúng ta nên chia làm 2 case:
+ * - case 1: có giá trị khởi tạo
+ * - case 2: callback nó không truyền vào (giá trị khởi tạo nó là optional => có cũng được mà không có cũng được)
+ *  - Trong case 2 này thì chúng ta có 2 cái cần xử lý đó là:
+ *    + Chúng ta phải gán giá trị khởi tạo bằng cái giá trị đầu tiên trong mảng
+ *    + Chúng ta phải loop từ phần tử thứ 2 => bỏ qua index = 1 đi => Bởi vì giá trị khởi tạo là bằng 1 và nó không có callback nào trả về => Cho nên chúng ta phải bỏ qua thằng giá trị 1 đi mà phải loop từ phần tử thứ 2
+ */
+
+/**
+ * Đây là ví dụ trong case 1: có giá trị khởi tạo
+ * @param {*} callback
+ * @param {*} initialValue
+ * @returns
+ */
+Array.prototype.reduceCustom = function (callback, initialValue) {
+  console.log('Dưới đây là ví dụ trong case 1: có giá trị khởi tạo 🚀🚀🚀')
+  console.log('----------------------------------------')
+
+  console.log('reduceCustom running....')
+  // this ở đây là cái gì? Do array gọi đến phương thức này (reduceCustom) nên this đó chính là cái mảng đó
+  console.log('this of reduceCustom:', this)
+  console.log('callback:', callback)
+  console.log('----------------------------------------')
+
+  let accumulator
+  accumulator = initialValue
+  let i = 0
+  while (i < this.length) {
+    console.log('accumulator initial:', accumulator)
+
+    accumulator = callback(accumulator, this[i])
+
+    console.log('result reduce:', accumulator)
+    console.log('----------------------------------------')
+
+    i++
+  }
+  return accumulator
+}
+
+const resultCustom = array.reduceCustom(function (accumulator, currentValue) {
+  console.log('accumulator in reduce custom:', accumulator)
+  console.log('currentValue in reduce custom:', currentValue)
+
+  console.table({
+    accumulator: accumulator,
+    currentValue: currentValue,
+    total: accumulator + currentValue
+  })
+  console.log('----------------------------------------')
+
+  let totalCustom = accumulator + currentValue
+  console.log('totalCustom:', totalCustom)
+  return totalCustom
+}, 10) // giá trị khởi tạo là 10
+console.log('resultCustom:', resultCustom)
+console.log('----------------------------------------')
+console.log('Dưới đây là ví dụ trong case 2: không có giá trị khởi tạo 🚀🚀🚀')
+console.log('----------------------------------------')
+
+/**
+ * Đây là ví dụ trong case 2: không có giá trị khởi tạo
+ * @param {*} callback
+ * @param {*} initialValue
+ * @returns
+ */
+Array.prototype.reduceCustom_1 = function (callback, initialValue) {
+  console.log('initialValue but not initial value:', initialValue)
+  console.log('reduceCustom_1 running....')
+  // this ở đây là cái gì? Do array gọi đến phương thức này (reduceCustom_1) nên this đó chính là cái mảng đó
+  console.log('this of reduceCustom_1:', this)
+  console.log('callback:', callback)
+  console.log('----------------------------------------')
+
+  let i = 0
+  let accumulator
+  if (initialValue === undefined) {
+    accumulator = this[0]
+    i++
+  } else {
+    accumulator = initialValue
+  }
+
+  while (i < this.length) {
+    console.log('accumulator initial:', accumulator)
+
+    accumulator = callback(accumulator, this[i])
+
+    console.log('result reduce:', accumulator)
+    console.log('----------------------------------------')
+
+    i++
+  }
+  return accumulator
+}
+
+const resultCustom_1 = array.reduceCustom_1(function (accumulator, currentValue) {
+  console.log('accumulator in reduce custom:', accumulator)
+  console.log('currentValue in reduce custom:', currentValue)
+
+  console.table({
+    accumulator: accumulator,
+    currentValue: currentValue,
+    total: accumulator + currentValue
+  })
+  console.log('----------------------------------------')
+
+  let totalCustom = accumulator + currentValue
+  console.log('totalCustom:', totalCustom)
+  return totalCustom
+}) // Ở đây không có giá trị khởi tạo
+console.log('resultCustom_1 but not pass initial value:', resultCustom_1)
