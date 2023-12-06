@@ -1,7 +1,11 @@
 import { Link } from 'react-router-dom'
 import CartItem from './CartItem'
+import { useShoppingContext } from '../contexts/ShoppingContext'
+import { formatCurrency } from '../helpers/common'
 
 const Header = () => {
+  const { cartItems, cartQty, totalPrice } = useShoppingContext()
+
   return (
     <nav className='navbar navbar-expand-lg navbar-light bg-light'>
       <div className='container'>
@@ -41,10 +45,15 @@ const Header = () => {
                 aria-expanded='false'
               >
                 <i className='fas fa-shopping-cart'></i>
-                <span className='position-absolute top-0 start-1 badge badge-pill bg-danger'>30</span>
+                <span className='position-absolute top-0 start-1 badge badge-pill bg-danger'>
+                  {cartQty}
+                </span>
               </a>
 
-              <ul className='dropdown-menu dropdown-menu-end cart-dropdown' aria-labelledby='navbarDropdownCart'>
+              <ul
+                className='dropdown-menu dropdown-menu-end cart-dropdown'
+                aria-labelledby='navbarDropdownCart'
+              >
                 <li>
                   <h3 className='dropdown-item'>Your Cart</h3>
                 </li>
@@ -55,9 +64,9 @@ const Header = () => {
                   <div className='table-responsive'>
                     <table className='table'>
                       <tbody>
-                        <CartItem />
-                        <CartItem />
-                        <CartItem />
+                        {cartItems.map((item) => {
+                          return <CartItem key={item.id} {...item} />
+                        })}
                       </tbody>
                     </table>
                   </div>
@@ -65,7 +74,7 @@ const Header = () => {
 
                 <li>
                   <span className='float-start ms-2'>
-                    <strong>Total: $64.97</strong>
+                    <strong>Total: {formatCurrency(totalPrice)}</strong>
                   </span>
                   <Link to='/checkout' className='btn btn-sm btn-success float-end me-2'>
                     Checkout
