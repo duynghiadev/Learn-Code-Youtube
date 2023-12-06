@@ -1,0 +1,5 @@
+- Thật ra là không có cái gì mà gọi là blocking hay blocking function cả. Nó chỉ là 1 cái function hay là cái method nào đó mà nó chạy chậm mà thôi
+- Mà cái thứ nào thì consider là chậm? => thì mấy cái thứ mà `console.log` ấy (nó chạy rất nhanh, đừng nhầm nha)
+  - Ví dụ mấy cái chạy chậm như là cái vòng for mà lặp 1 triệu lần vậy á thì nó là lâu
+  - Gọi api request, network request,... thì mấy cái đó là lâu
+  - => Và khi nó chạy thì các tác vụ khác thì sẽ bị chậm (thậm chí đứng yên) theo
