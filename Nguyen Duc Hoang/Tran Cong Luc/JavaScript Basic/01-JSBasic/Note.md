@@ -7,6 +7,6 @@
 
 ---
 
-- Giải bài tập JavaScript cơ bản
+- Giải bài tập JavaScript cơ bản bài 1
 
 ![Bài tập](image-2.png)
