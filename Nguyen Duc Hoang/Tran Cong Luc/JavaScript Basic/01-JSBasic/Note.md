@@ -1,3 +1,7 @@
+# Đây là lộ trình học khóa JavaScript Cơ Bản
+
+![Lộ trình](image-3.png)
+
 ## ![Toán tử gán](image.png)
 
 - Phép toán so sánh thì luôn trả về kiểu giá trị boolean
