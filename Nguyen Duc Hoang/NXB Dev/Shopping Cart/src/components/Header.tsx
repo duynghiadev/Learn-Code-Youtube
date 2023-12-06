@@ -56,6 +56,8 @@ const Header = () => {
                     <table className='table'>
                       <tbody>
                         <CartItem />
+                        <CartItem />
+                        <CartItem />
                       </tbody>
                     </table>
                   </div>
