@@ -1,4 +1,4 @@
-import { ReactNode, createContext, useContext, useState } from 'react'
+import { ReactNode, createContext, useContext, useEffect, useState } from 'react'
 
 type ShoppingContextProviderProps = {
   children: ReactNode
@@ -37,7 +37,14 @@ export const useShoppingContext = () => {
 }
 
 export const ShoppingContextProvider = ({ children }: ShoppingContextProviderProps) => {
-  const [cartItems, setCartItems] = useState<CartItem[]>([])
+  const [cartItems, setCartItems] = useState<CartItem[]>(() => {
+    const jsonCartData = localStorage.getItem('shopping_cart')
+    return jsonCartData ? JSON.parse(jsonCartData) : []
+  })
+
+  useEffect(() => {
+    localStorage.setItem('shopping_cart', JSON.stringify(cartItems))
+  }, [cartItems])
 
   const cartQty = cartItems.reduce((qty, item) => qty + item.qty, 0)
 
@@ -64,15 +71,16 @@ export const ShoppingContextProvider = ({ children }: ShoppingContextProviderPro
     if (currentCartItem) {
       if (currentCartItem.qty === 1) {
         removeCartItem(id)
+      } else {
+        const newItems = cartItems.map((item) => {
+          if (item.id === id) {
+            return { ...item, qty: item.qty - 1 }
+          } else {
+            return item
+          }
+        })
+        setCartItems(newItems)
       }
-      const newItems = cartItems.map((item) => {
-        if (item.id === id) {
-          return { ...item, qty: item.qty - 1 }
-        } else {
-          return item
-        }
-      })
-      setCartItems(newItems)
     }
   }
 
@@ -111,7 +119,16 @@ export const ShoppingContextProvider = ({ children }: ShoppingContextProviderPro
 
   return (
     <ShoppingContext.Provider
-      value={{ cartItems, cartQty, totalPrice, increaseQty, decreaseQty, addCartItem, removeCartItem, clearCart }}
+      value={{
+        cartItems,
+        cartQty,
+        totalPrice,
+        increaseQty,
+        decreaseQty,
+        addCartItem,
+        removeCartItem,
+        clearCart
+      }}
     >
       {children}
     </ShoppingContext.Provider>

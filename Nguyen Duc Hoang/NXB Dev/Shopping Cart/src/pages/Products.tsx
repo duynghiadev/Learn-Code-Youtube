@@ -1,5 +1,6 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
+import { useShoppingContext } from '../contexts/ShoppingContext'
 
 type productItem = {
   id: number
@@ -10,6 +11,8 @@ type productItem = {
 
 const Products = () => {
   const [products, setProducts] = useState<productItem[]>([])
+
+  const { addCartItem } = useShoppingContext()
 
   useEffect(() => {
     console.log('Get products data from APIs')
@@ -36,7 +39,7 @@ const Products = () => {
               <div className='card-body'>
                 <h5 className='card-title'>{item.name}</h5>
                 <p className='card-text'>{item.price}</p>
-                <a href='#' className='btn btn-sm btn-success'>
+                <a href='#' className='btn btn-sm btn-success' onClick={() => addCartItem(item)}>
                   <i className='fas fa-shopping-cart'></i>
                   Add to Cart
                 </a>
