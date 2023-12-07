@@ -1,50 +1,56 @@
 # Bài này chúng ta học về: Javascript DOM - #16 - Truy xuất phần tử HTML bằng Javascript DOM
 
 
-Qua bài học này mình học được:
-I.Các cách để truy xuất phần tử trong html
+## Qua bài học này mình học được:
+## Tóm tắt bài học:
 
-1. Truy xuất thông qua class
+>## Các cách để truy xuất phần tử trong html
 
-- lấy các phần tử bằng tên class  (dịch sang ing lịch là:  get elements by class name)
+Trong bài học này, chúng ta sẽ tìm hiểu về cách truy xuất các phần tử trong HTML bằng JavaScript DOM. Cụ thể, chúng ta sẽ học về ba cách chính để truy xuất phần tử:
 
-=> document.getElementsByClassName('xxx')
+1. **Truy xuất thông qua class:**
+  - Sử dụng `getElementsByClassName` để lấy tất cả các phần tử có class tương ứng.
+  - Kết quả trả về là một collection, tức là một tập hợp các phần tử HTML có cùng class.
 
-=> với việc truy xuất này ta sẽ thu được kết quả là 1 collection bao gồm tập hợp tất cả html có class là XXX
+    ```javascript
+    document.getElementsByClassName('xxx');
+    ```
 
-- collection là gì thì cuối bài sẽ rõ
+2. **Truy xuất thông qua id:**
+  - Sử dụng `getElementById` để lấy phần tử theo id. Vì id là duy nhất, kết quả trả về là một phần tử duy nhất.
 
-2. Truy xuất thông qua id
+    ```javascript
+    document.getElementById('x');
+    ```
 
-- lấy phần tử bằng tên id ( get element by id)
+3. **Truy xuất thông qua tên thẻ:**
+  - Sử dụng `getElementsByTagName` để lấy tất cả các phần tử có tên thẻ tương ứng.
+  - Kết quả trả về là một collection chứa những phần tử HTML có tên thẻ cần tìm.
 
-- nhiều bạn thắc mắc là tại sao không phải là elements (các phần tử ) như trên mà là element?
+    ```javascript
+    document.getElementsByTagName('div');
+    ```
+    
+---
 
-- lý do : id là duy nhất ( mỗi sản phẩm thì chỉ có 1 mã id) nếu bạn cố tình đặt các thẻ html đều có id='X' , khi bạn truy xuất thì kết quả trả về chỉ là 1 thằng duy nhất ( thẻ html đầu tiên có id này) chính lý do này=>element không có ''s" đằng sau
+>## Phần Collection
 
-=> document.getElementById('x')
+**Collection là gì?**
 
-3. Truy xuất thông qua tên thẻ
+- Gần giống như mảng, collection có thể chứa các phần tử bên trong nó. Do đó, bạn có thể sử dụng phương thức `length` với cú pháp `a.length` (với `a` là kết quả truy xuất). 
 
-- lấy các phần tử bằng tên thẻ ( get elements by tag name )
+- Tuy nhiên, khác với mảng, các phần tử trong collection không chỉ là dữ liệu thông thường (integer, string, Boolean, ...) mà còn có thể là các object (đối tượng). Để hiểu rõ hơn về object, bạn có thể tìm kiếm trên Google.
 
-=> document.getElementsByTagName('div');   ( ngoài ra còn có các thẻ khác : p, span, a, ul , li, …..)
+- Collection có điều gì đặc biệt?
 
-=> kết quả trả về những thằng html có tên thẻ là div
-II .collection
+  => Nếu có phương pháp để chuyển collection sang array, thì array có những điều gì đặc biệt? Tại sao chúng ta cần phải chuyển sang array? Đáp án là array cung cấp một loạt các phương thức hỗ trợ thao tác với mảng một cách nhanh chóng.
 
-collection ?
+**Cách chuyển Collection sang Array**
 
--  giống như mảng collection có thể chứa các phần tử bên trong nó( do đó có thể sử dụng được Phương thức length với cú pháp a.length (a : kết quả truy xuất). Tuy nhiên khác với mảng là các phần tử này không chỉ là dữ liệu thông thường ( integer, string, Boolean, … ) mà còn cả các object ( đối tượng ) , object là gì bạn search google nha.
+```javascript
+// Ví dụ: Chuyển collection có class 'money' sang array
+var x = document.getElementsByClassName('money');
+var x_array = Array.from(x); // vậy là ta chuyển xong ,giờ ta chỉ search các method thao tác với mảng!! Là ta đã dễ dàng
+```
 
-- collection có gì hay ?
-
-  => nếu có phương pháp gì chuyển collection sang array, array có gì hay? tại sao phải chuyển sang array? Trả lời là array có cả 1 rừng method hỗ trợ ta thao tác với nó 1 cách nhanh chóng.
-
-=> cách chuyển ? => Array.from(X);
-
-var x = document.getElementsByClass('money');
-
-x_array = Array.from(x); // vậy là ta chuyển xong ,giờ ta chỉ search các method thao tác với mảng!! Là ta đã dễ dàng
-
-xử lí collection rồi!!
+>Finish: xử lí collection rồi!!
