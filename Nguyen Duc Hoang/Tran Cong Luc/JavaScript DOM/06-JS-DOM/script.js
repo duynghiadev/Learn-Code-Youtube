@@ -60,3 +60,41 @@ function changeBg(fileName) {
  * 1. Nếu có -> Xử lý chuỗi, xử lý mảng để xóa thu được giá trị cuối cùng sau khi xóa là "container"
  * 2. Nếu không có "abc" -> Thì thôi không làm gì hết
  */
+
+let image = document.querySelector('.class-demo')
+image.setAttribute(
+  'src',
+  'https://images.unsplash.com/photo-1701894160394-58d5be1605b9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0fHx8ZW58MHx8fHx8'
+)
+
+function addClass(el, className) {
+  let oldClass = el.getAttribute('class')
+  console.log('oldClass:', oldClass)
+  console.log(`el is ${el}, className is ${className}`)
+  if (oldClass) {
+    // Khác null
+    // class cũ là "abc"
+    // className muốn thêm vào là "def"
+    // Nối lại sẽ ra class mới là "abc def"
+
+    /**
+     * - Trước khi mà mình xét giá trị mới thì phải kiểm tra xem className này đã tồn tại trong class cũ hay chưa?
+     * - Nếu chưa tồn tại thì ok -> Nối chuỗi bình thường
+     * - Nếu đã tồn tại rồi thì thôi -> Không thêm nữa
+     */
+    if (oldClass.indexOf(className) === -1) {
+      let newClass = oldClass + ' ' + className
+      el.setAttribute('class', newClass)
+    }
+  } else {
+    // Bằng null
+    el.setAttribute('class', className)
+  }
+}
+
+function removeClass(el, className) {}
+
+addClass(body, 'wrapper-content')
+addClass(image, 'image')
+addClass(image, 'demo-class')
+addClass(image, 'image')
