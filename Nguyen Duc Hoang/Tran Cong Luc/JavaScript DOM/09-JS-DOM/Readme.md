@@ -1,4 +1,4 @@
-# Bài này chúng ta học về: Javascript DOM - #24 - Cách dùng DOM Token List và CSS Style Declaration
+# Bài này chúng ta học về: Javascript DOM - #25 - Hiện thực lại Dropdown của Bootstrap bằng Javascript thuần
 
 Qua bài này mình học được
 
