@@ -1,0 +1,10 @@
+/* styles.css */
+.container {
+  border: 1px solid #000;
+  padding: 10px;
+  margin: 10px;
+}
+
+.style-02 {
+  background-color: lightblue;
+}
