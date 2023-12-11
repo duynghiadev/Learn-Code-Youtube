@@ -95,5 +95,28 @@
     <br />
     <bdo dir="ltr">Xác định hướng của văn bản</bdo>
     <hr />
+
+    <a href="https://trungquandev.com" target="_blank">Trang blog chính thức của mình.</a>
+    <br />
+    <a href="https://trungquandev.com" target="parent"><img src="/trungquandevlogo" /></a>
+    <!--
+      Những thuộc tính của target:
+        _self (mặc định mở trên cùng cửa sổ trang web hiện tại)
+        _blank: mở sang tab mới.
+        _parent: mở trong cái khung parent cha của nó (đọc thì rối, để demo sẽ dễ hiểu hơn nha)
+        _top: mở trong toàn bộ phần body của window (nghe lý thuyết cũng khó hiểu nốt =)))
+    -->
+    <br />
+    <iframe src="./frames/frame_1.1.html" width="500px" height="300px" id="frame-1" name="frame-1">
+    </iframe>
+    <div>Nested frame for test HTML Link Target attributes:</div>
+    <iframe
+      srcdoc="<a target='_parent' href='https://trungquandev.com'>Visit trungquandev.com</a>"
+      width="50%"
+      height="200px"
+      id="frame-1.1"
+      name="frame-1.1"
+    >
+    </iframe>
   </body>
 </html>

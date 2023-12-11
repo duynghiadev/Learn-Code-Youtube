@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="images/logo-trungquandev-transparent-bg-256x256-ico.ico"
+    />
+    <!-- <base href="https://trungquandev.com/" target="_blank" /> -->
+    <meta name="keywords" content="HTML, CSS, JavaScript, Trungquandev" />
+    <meta name="description" content="Trungquandev Web Tutorials" />
+    <meta name="author" content="Trungquandev" />
+    <!-- <meta http-equiv="refresh" content="5"> -->
+
+    <title>Đây là tiêu đề của một trang web</title>
+
+    <style>
+      /* table {
+      width: 70%;
+      border-collapse: collapse;
+    }
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 15px;
+    } */
+
+      /* odd - Những hàng lẻ: 1-3-5-7-9...vv */
+      /* tr:nth-child(odd) {
+      background-color: yellowgreen;
+    } */
+      /* even - Những hàng chẵn: 2-4-6-8-10...vv */
+      /* tr:nth-child(even) {
+      background-color: goldenrod;
+    } */
+
+      .class-20 {
+        color: lightseagreen;
+        font-size: 20px;
+        font-weight: bold;
+      }
+      #id-content-01 {
+        color: lightcoral;
+      }
+      #id-content-02 {
+        color: lightskyblue;
+      }
+
+      .lesson_25 {
+        font-size: 2em;
+        font-weight: bold;
+      }
+      @media screen and (max-width: 700px) {
+        .lesson_25 {
+          font-size: 1em;
+          font-weight: normal;
+          color: #78e08f;
+        }
+      }
+    </style>
+    <link href="lesson23.css" rel="stylesheet" />
+    <script src="lesson22.js" async></script>
+  </head>
+  <body>
+    <mark>Lesson 29 - HTML Multimedia (Video - Audio - YouTube)</mark><br /><br />
+    <iframe
+      width="560"
+      height="315"
+      title="Trungquandev MERN Stack"
+      frameborder="0"
+      allowfullscreen
+      src="https://www.youtube.com/embed/63opfUkPq6k?controls=1&loop=1"
+    >
+    </iframe>
+    <br /><br />
+    <audio controls autoplay muted loop>
+      <source src="audios/Invisible Beauty - Aakash Gandhi.mp3" type="audio/mpeg" />
+      Trình duyệt của bạn không hỗ trợ tệp âm thanh!
+    </audio>
+    <br />
+    <video width="320" height="240" controls autoplay muted playsinline loop>
+      <source src="videos/coffee-video.mp4" type="video/mp4" />
+      Trình duyệt của bạn không hỗ trợ hiển thị video!
+    </video>
+
+    <hr />
+    <mark>Lesson 28 - HTML Emojis</mark><br />
+    <div>☕ (&#9749;) ⏰ (&#9200;) ✅ (&#9989;) 🌏 (&#127759;) 🌸(&#127800;)</div>
+
+    <hr />
+    <mark>Lesson 27 - HTML Entities & Symbols</mark><br />
+    <div>♥(&#9829; &hearts;) ♦(&#9830; &diams;) ♣(&#9827; &clubs;) ♠(&#9824; &spades;)</div>
+
+    <hr />
+    <mark>Lesson 26 - HTML Semantic Elements</mark><br />
+    <div>Nội dung bài 26 chủ yếu là lý thuyết như ở video mình giải thích nha.</div>
+
+    <hr />
+    <mark>Lesson 25 - HTML Responsive</mark><br />
+    <div class="lesson_25">Đây là nội dung bài 25 nè!</div>
+
+    <hr />
+    <mark>Lesson 24 - HTML Meta</mark><br />
+    <p class="lesson_24">Nội dung bài 24 chủ yếu nằm ở phần thẻ &lt;head&gt; phía bên trên.</p>
+
+    <hr />
+    <mark>Lesson 23 - HTML Head</mark><br />
+    <p class="lesson_23">Nội dung bài 23 chủ yếu nằm ở phần thẻ &lt;head&gt; phía bên trên.</p>
+    <hr />
+    <mark>Lesson 22 - HTML JavaScript</mark><br />
+    <p>Cách 1: sử dụng JS trực tiếp trong thẻ HTML:</p>
+    <button type="button" onclick="alert('trungquandev abcxyz')">Show Alert</button>
+
+    <p>
+      Cách 2: sử dụng JS trong cặp thẻ &lt;script&gt; (tương tự buổi trước đã làm với Class và Id):
+    </p>
+    <p><strong id="lesson_22_js_cach_2"></strong></p>
+    <script>
+      document.getElementById('lesson_22_js_cach_2').innerHTML = 'Inserted text: Trungquandev'
+    </script>
+
+    <p>Cách 3: sử dụng JS trong một file riêng và nhúng vào trang HTML:</p>
+    <p><strong id="lesson_22_js_cach_3"></strong></p>
+    <em>Thẻ script của cách 3 đã để ở trên thẻ Head với khai báo thuộc tính async</em>
+
+    <hr />
+    <mark>Lesson 21 - HTML Iframe</mark><br />
+    <iframe
+      src="https://trungquandev.com"
+      width="500"
+      height="300"
+      style="border: none"
+      title="Blog Trungquandev"
+      name="iframe_01_tqd"
+    >
+    </iframe>
+    <p>
+      <a href="https://cv.trungquandev.com" target="iframe_01_tqd"
+        >Thay đổi Iframe ở trên thành trang CV Trungquandev</a
+      >
+    </p>
+
+    <hr />
+    <mark>Lesson 20 - HTML Class &amp; Id</mark><br />
+    <div class="class-20">Content Class 01</div>
+    <div class="class-20">Content Class 02</div>
+    <div class="class-20">Content Class 03</div>
+
+    <div id="id-content-01">Content Id 01</div>
+    <div id="id-content-02">Content Id 02</div>
+
+    <hr />
+    <mark>Lesson 19 - HTML Block &amp; Inline</mark><br />
+    <div>Block 01</div>
+    <div>Block 02</div>
+    <p>Block 03 <strong>Inline 01</strong></p>
+
+    <span>Inline 01</span>
+    <span>Inline 02</span>
+    <code>Inline 03</code>
+
+    <hr />
+    <mark>Lesson 18 - Tạo kiểu cho danh sách</mark><br />
+    <mark>Lesson 17 - Lists - Danh sách</mark><br />
+    <h3>Danh sách không sắp xếp:</h3>
+    <ul style="list-style-type: square">
+      <li>
+        Coffee
+        <ul style="list-style-type: square">
+          <li>
+            Black
+            <ul style="list-style-type: square">
+              <li>Black</li>
+              <li>Bac Xiu</li>
+            </ul>
+          </li>
+          <li>Bac Xiu</li>
+        </ul>
+      </li>
+      <li>Tea</li>
+      <li>Water</li>
+    </ul>
+
+    <h3>Danh sách có sắp xếp:</h3>
+    <ol type="1" start="4">
+      <li>
+        Coffee
+        <ol type="a">
+          <li>Black</li>
+          <li>Bac Xiu</li>
+        </ol>
+      </li>
+      <li>Tea</li>
+      <li>Water</li>
+    </ol>
+
+    <h3>Danh sách dạng mô tả - Description List:</h3>
+    <dl>
+      <dt>Coffee</dt>
+      <dd>- Pure black</dd>
+      <dd>- Brown</dd>
+      <dd>- Bạc xỉu</dd>
+
+      <dt>Tea</dt>
+      <dd>- Shan Tuyet</dd>
+
+      <dt>Water</dt>
+      <dd>- Nước lọc</dd>
+      <dd>- Nước đá</dd>
+    </dl>
+
+    <hr />
+    <mark>Lesson 16 - Table Colgroup</mark><br />
+    <table width="100%">
+      <colgroup>
+        <col span="2" style="background-color: pink" />
+        <col span="1" style="background-color: lightgreen" />
+        <col span="2" style="background-color: yellowgreen" />
+        <col span="2" style="background-color: lightcoral" />
+      </colgroup>
+      <tr style="text-align: left">
+        <th>MON</th>
+        <th>TUE</th>
+        <th>WED</th>
+        <th>THU</th>
+        <th>FRI</th>
+        <th>SAT</th>
+        <th>SUN</th>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+        <td>7</td>
+        <td>CN</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+        <td>7</td>
+        <td>CN</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+        <td>7</td>
+        <td>CN</td>
+      </tr>
+    </table>
+
+    <hr />
+    <mark>Lesson 15 - Table Colspan &amp; Rowspan</mark><br />
+    <h3>Table để test <mark>Rowspan</mark></h3>
+    <table>
+      <tr>
+        <th>Name</th>
+        <td>Trung Quân 01</td>
+        <td>Trung Quân 02</td>
+      </tr>
+
+      <tr>
+        <th rowspan="3">Email</th>
+        <td>trungquandev.official-1@gmail.com</td>
+        <td>trungquandev.official-2@gmail.com</td>
+      </tr>
+      <tr>
+        <td>trungquandev.official-3@gmail.com</td>
+        <td>trungquandev.official-4@gmail.com</td>
+      </tr>
+      <tr>
+        <td>trungquandev.official-5@gmail.com</td>
+        <td>trungquandev.official-6@gmail.com</td>
+      </tr>
+
+      <tr>
+        <th>YouTube</th>
+        <td>Trungquandev Official</td>
+        <td>Trungquandev Official</td>
+      </tr>
+    </table>
+
+    <h3>Table để test <mark>Colspan</mark></h3>
+    <table>
+      <tr>
+        <th colspan="2">Name (Fistname &amp; Lastname)</th>
+        <th>Email</th>
+        <th>Youtube</th>
+      </tr>
+      <tr>
+        <td>Trung</td>
+        <td>Quân</td>
+        <td>trungquandev.official@gmail.com</td>
+        <td>Trungquandev Official</td>
+      </tr>
+      <tr>
+        <td>Trung</td>
+        <td>Quân</td>
+        <td>trungquandev.official@gmail.com</td>
+        <td>Trungquandev Official</td>
+      </tr>
+    </table>
+
+    <h3>Table theo chiều ngang</h3>
+    <table>
+      <tr>
+        <th>Name</th>
+        <td>Trung Quân 01</td>
+        <td>Trung Quân 02</td>
+        <td>Trung Quân 03</td>
+      </tr>
+      <tr>
+        <th>Email</th>
+        <td>trungquandev.official@gmail.com</td>
+        <td>trungquandev.official@gmail.com</td>
+        <td>trungquandev.official@gmail.com</td>
+      </tr>
+      <tr>
+        <th>Youtube</th>
+        <td>Trungquandev Official</td>
+        <td>Trungquandev Official</td>
+        <td>Trungquandev Official</td>
+      </tr>
+    </table>
+
+    <hr />
+    <mark>Lesson 14 - Tables</mark><br />
+    <h3>Table theo chiều dọc</h3>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Youtube</th>
+      </tr>
+      <tr>
+        <td style="width: 10px">Trung Quân</td>
+        <td style="height: 100px">trungquandev.official@gmail.com</td>
+        <td>Trungquandev Official</td>
+      </tr>
+      <tr>
+        <td>Trung Quân</td>
+        <td>trungquandev.official@gmail.com</td>
+        <td>Trungquandev Official</td>
+      </tr>
+      <tr>
+        <td>Trung Quân</td>
+        <td>trungquandev.official@gmail.com</td>
+        <td>Trungquandev Official</td>
+      </tr>
+      <tr>
+        <td>Trung Quân</td>
+        <td>trungquandev.official@gmail.com</td>
+        <td>Trungquandev Official</td>
+      </tr>
+    </table>
+
+    <hr />
+    <mark>Lesson 13 - Favicon</mark><br />
+    <p>Nội dung bài này nằm trong thẻ head như ở trên!</p>
+
+    <hr />
+    <mark>Lesson 12 - Picture Element</mark><br />
+    <div>
+      <picture>
+        <source media="(min-width: 992px)" srcset="images/trungquandev-mern-stack-reviews/4.png" />
+        <source media="(min-width: 768px)" srcset="images/trungquandev-mern-stack-reviews/3.png" />
+        <source media="(min-width: 576px)" srcset="images/trungquandev-mern-stack-reviews/2.png" />
+        <img src="images/trungquandev-mern-stack-reviews/1.png" />
+      </picture>
+    </div>
+
+    <hr />
+    <mark>Lesson 11 - Background Images</mark><br />
+    <p
+      style="
+        width: 700px;
+        height: 500px;
+        background-image: url('images/lesson-11-bg-img/autumn.jpg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+      "
+    >
+      Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of
+      classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a
+      Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin
+      words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in
+      classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections
+      1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by
+      Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during
+      the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a
+      line in section 1.10.32.
+      <br />
+    </p>
+    <p
+      style="
+        width: 200px;
+        height: 100px;
+        color: #78e08f;
+        background-image: url('images/lesson-11-bg-img/dot.jpg');
+      "
+    >
+      trungquandev background-image ical literature, discovered the undoubtable source.
+    </p>
+
+    <hr />
+    <mark>Lesson 10 - Image map</mark><br />
+    <!-- Cái ảnh ở bài 10 nó khá to, nên mình sẽ thêm with height bằng 100 để thu nhỏ lại.
+    Khi nào cần test phần image map thì xóa thuộc tính width height đi
+  -->
+    <img
+      src="images/lesson-10-img-map/01-original.jpeg"
+      usemap="#my-img-map-trungquandev"
+      width="100"
+      height="100"
+    />
+    <map name="my-img-map-trungquandev">
+      <area
+        shape="rect"
+        coords="830,1766,1791,2126"
+        title="Keyboard"
+        href="lesson-10-img-map-content/keyboard.html"
+      />
+      <area
+        shape="circle"
+        coords="1217,1527,121"
+        title="Airpod"
+        href="lesson-10-img-map-content/airpod.html"
+      />
+      <area
+        shape="poly"
+        coords="1910,1860,1907,2045,1944,2192,2046,2232,2143,2175,2146,2025,2106,1871,2024,1829"
+        title="Mouse"
+        href="lesson-10-img-map-content/mouse.html"
+      />
+    </map>
+
+    <hr />
+    <mark>Lesson 09</mark><br />
+    <div>
+      <img
+        src="images/html-css-nen-tang-vung-chac-thumnail-trungquandev.png"
+        alt="Ảnh lấy từ thư mục của dự án"
+        width="200"
+        height="100"
+      />
+    </div>
+    <div>
+      <img
+        src="https://trungquandev.com/wp-content/uploads/2022/11/lo-trinh-hoc-lap-trinh-web-cho-nguoi-moi-bat-dau-tu-con-so-0-trungquandev.png"
+        alt="Ảnh lấy từ trang web trungquandev.com"
+        style="width: 200px; height: 100px"
+      />
+    </div>
+
+    <hr />
+    <mark>Lesson 08</mark><br />
+    <a href="product.html">Trỏ tới một file product.html trong dự án</a><br />
+    <a href="courses/mern-stack.html">Trỏ tới file mern-stack.html trong thư mục courses</a><br />
+    <a href="mailto:trungquandev.official@gmail.com">Tự động mở phần mềm gửi mail trên máy tính</a
+    ><br />
+    <button onclick="document.location='https://trungquandev.com'">
+      (Button) Link tới blog của mình.</button
+    ><br />
+    <a href="https://trungquandev.com" title="Blog chính thức của mình">Blog trungquandev.com</a
+    ><br />
+
+    <a href="#lesson_01">Trở về Lesson 01</a><br />
+    <a href="#lesson_02">Trở về Lesson 02</a><br />
+
+    <hr />
+    <mark>Lesson 07</mark><br />
+    <a href="https://trungquandev.com" target="_self">Trang blog chính thức của mình!!!</a>
+    <br /><br />
+    <a href="https://trungquandev.com" target="blank">
+      <img
+        width="100px"
+        src="https://trungquandev.com/wp-content/uploads/2022/11/lo-trinh-hoc-lap-trinh-web-cho-nguoi-moi-bat-dau-tu-con-so-0-trungquandev-1170x658.png"
+      />
+    </a>
+    <br /><br />
+    <iframe src="./frames/frame_1.1.html" width="500px" height="300px" id="frame-1" name="frame-1">
+    </iframe>
+
+    <hr />
+    <mark>Lesson 06</mark><br />
+    <!-- Đây là nội dung của buổi học thứ 6 -->
+    <blockquote>
+      Đoạn văn bản được trích dẫn từ nguồn khác. The OAuth 2.0 authorization framework enables a
+      third-party application to obtain limited access to an HTTP service, either on behalf of a
+      resource owner by orchestrating an approval interaction between the resource owner and the
+      HTTP service, or by allowing the third-party application to obtain access on its own behalf.
+      This specification replaces and obsoletes the OAuth 1.0 protocol described in RFC 5849.
+    </blockquote>
+    <q>Một trích dẫn ngắn, sẽ được đặt trong cặp nháy kép</q><br />
+    <abbr title="Việt Nam">VN (Định nghĩa các chữ / từ viết tắt)</abbr><br />
+    <address>
+      Thông tin các loại địa chỉ như:<br />
+      - Email: trungquandev.official@gmail.com<br />
+      - Website: https://trungquandev.com<br />
+      - Số điện thoại: 0123456789<br />
+      - Địa chỉ nhà/công ty…vv
+    </address>
+    <cite
+      >Xác định tiêu đề của một tác phẩm sáng tạo như: tên sách, bài thơ, bài hát, bức
+      tranh…vv</cite
+    ><br />
+    <bdo dir="rtl">Xác định hướng của văn bản</bdo>
+
+    <hr />
+    <mark>Lesson 05</mark><br />
+    <b>Bôi đậm đoạn văn bản bình thường</b><br />
+    <strong>Đánh dấu văn bản là quan trọng về mặt ngữ nghĩa, và nó cũng được bôi đậm</strong><br />
+    <i>In nghiêng đoạn văn bản bình thường</i><br />
+    <em>Nhấn mạnh đoạn văn bản về mặt ngữ nghĩa, và nó cũng được in nghiêng</em><br />
+
+    <mark>Đánh dấu đoạn văn bản</mark><br />
+    <del>Đoạn văn bản được coi là bị xóa</del><br />
+    <u>Gạch chân đoạn văn bản</u><br />
+    <ins>Một phần đoạn văn bản được xem là đã chèn mới vào</ins><br />
+    <sub>Văn bản chỉ số dưới, thường kích thước của nó sẽ nhỏ hơn, hiển thị bên dưới dòng</sub
+    ><br />
+    <p>H<sub>2</sub>O</p>
+
+    <sup>Văn bản chỉ số trên, kích thước vẫn nhỏ, nhưng hiển thị bên trên của một dòng</sup><br />
+    <p>X<sup>2</sup></p>
+
+    <hr />
+    <mark>Lesson 04</mark><br />
+    <p style="color: green">Đoạn văn bản 1</p>
+    <p style="background-color: Tomato; color: white">Đoạn văn bản 2</p>
+    <p style="font-size: 30px; color: #78e08f">Đoạn văn bản 3</p>
+
+    <hr />
+    <mark>Lesson 03</mark><br />
+    <p>Đoạn văn bản thứ nhất.<br />Đây là nội dung đã xuống dòng sau cái thẻ br.</p>
+    <p>Đoạn văn bản thứ hai</p>
+    <p>Đoạn văn bản thứ ba</p>
+
+    <hr />
+    <mark id="lesson_02">Lesson 02</mark><br />
+    <h1>
+      Đây là nội dung thẻ h1
+      <small>Nội dung nhỏ hơn</small>
+    </h1>
+    <h2>Tiêu đề 2 <small>Nội dung nhỏ hơn 2</small></h2>
+    <h3>Tiêu đề 3 <small>Nội dung nhỏ hơn 3</small></h3>
+    <h4>Tiêu đề 4 <small>Nội dung nhỏ hơn 4</small></h4>
+    <h5>Tiêu đề 5 <small>Nội dung nhỏ hơn 5</small></h5>
+    <h6>Tiêu đề 6 <small>Nội dung nhỏ hơn 6</small></h6>
+
+    <hr />
+    <mark id="lesson_01">Lesson 01</mark><br />
+    <p>Đây là một đoạn văn bản</p>
+    <p>Cấu trúc cơ bản của một trang web là đây!</p>
+  </body>
+
+  <script>
+    // DOM theo Class
+    const class20 = document.getElementsByClassName('class-20')
+    class20[0].style.color = 'red'
+
+    // DOM theo Id
+    const idContent01 = document.getElementById('id-content-01')
+    const idContent02 = document.getElementById('id-content-02')
+    idContent01.innerHTML = 'Thay đổi content.'
+    idContent02.style.fontSize = '12px'
+  </script>
+</html>
