@@ -457,5 +457,43 @@
     </ul>
     <!-- Danh sách dạng mô tả: Dạng này không có dạng danh sách lồng nhau -->
     <hr />
+
+    <!-- Tạo kiểu cơ bản cho danh sách: -->
+    <!-- Danh sách có sắp xếp: -->
+    <ol type="A">
+      <li>
+        Duynghiadev
+        <ol type="I">
+          <li>duynghia-favicon</li>
+          <li>duynghia-favicon</li>
+          <li>duynghia-favicon</li>
+        </ol>
+      </li>
+      <li>Duynghiadev</li>
+      <li>Duynghiadev</li>
+    </ol>
+    <!--
+      Sử dụng thuộc tính HTML (attribute): type -> với các giá trị: - 1, A, a, I, i, start, chỉ định giá trị bắt đầu của danh sách,
+      Giá trị là number (có thể kết hợp với type)
+    -->
+    <!-- Danh sách không sắp xếp: -->
+    <ul style="list-style-type: circle">
+      <li>
+        duynghia-favicon
+        <ul style="list-style-type: none">
+          <li>Duynghiadev</li>
+          <li>Duynghiadev</li>
+          <li>Duynghiadev</li>
+        </ul>
+      </li>
+      <li>duynghia-favicon</li>
+      <li>duynghia-favicon</li>
+    </ul>
+    <!--
+      Sử dụng thuộc tính CSS: list-style-type, với các giá trị: disc, circle, square, none
+    -->
+
+    <!-- Danh sách dạng mô tả: Dạng này không có kiểu style -->
+    <hr />
   </body>
 </html>
