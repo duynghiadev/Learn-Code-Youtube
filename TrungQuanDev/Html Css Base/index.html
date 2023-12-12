@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css" />
     <style>
       table {
-        width: 70%;
+        width: 100%;
         border-collapse: collapse;
       }
       td,
@@ -258,6 +258,7 @@
     <hr />
 
     <!-- Table: Bảng dữ liệu mà chúng ta sẽ hiển thị trên trang web:<table> -->
+    <strong><mark>Table theo chiều dọc</mark></strong>
     <table>
       <tr>
         <th>Name</th>
@@ -278,6 +279,64 @@
         <td>Duy Nghĩa</td>
         <td>duynghiadev22302@gmail.com</td>
         <td>Duynghiadev Official</td>
+      </tr>
+    </table>
+    <hr />
+
+    <!-- Colspan: Trải rộng một ô trên nhiều cột - hiểu đơn giản là merge ô đi =)) -->
+    <strong><mark>Table theo chiều ngang</mark></strong>
+    <table>
+      <tr>
+        <th colspan="2">Name</th>
+        <th>Email</th>
+      </tr>
+      <tr>
+        <td>Duy</td>
+        <td>Nghĩa</td>
+        <td>duynghiadev22302@gmail.com</td>
+      </tr>
+    </table>
+    <hr />
+
+    <!-- Rowspan: Trải rộng một ô trên nhiều hàng -->
+    <table>
+      <tr>
+        <th>Name</th>
+        <td>Trung Quân 01</td>
+        <td>Trung Quân 02</td>
+        <td>Trung Quân 03</td>
+        <td>Trung Quân 04</td>
+        <td>Trung Quân 05</td>
+      </tr>
+      <tr>
+        <th rowspan="2">Email</th>
+        <td>trungquandev1.official@gmail.com</td>
+        <td>trungquandev2.official@gmail.com</td>
+        <td>trungquandev3.official@gmail.com</td>
+        <td>trungquandev4.official@gmail.com</td>
+        <td>trungquandev5.official@gmail.com</td>
+      </tr>
+      <tr>
+        <td>trungquandev5.official@gmail.com</td>
+        <td>trungquandev6.official@gmail.com</td>
+        <td>trungquandev7.official@gmail.com</td>
+        <td>trungquandev8.official@gmail.com</td>
+        <td>trungquandev9.official@gmail.com</td>
+      </tr>
+      <tr>
+        <th rowspan="3">Password</th>
+        <td>trungquandev1.official@gmail.com</td>
+        <td>trungquandev2.official@gmail.com</td>
+        <td>trungquandev3.official@gmail.com</td>
+        <td>trungquandev4.official@gmail.com</td>
+        <td>trungquandev5.official@gmail.com</td>
+      </tr>
+      <tr>
+        <td>trungquandev5.official@gmail.com</td>
+        <td>trungquandev6.official@gmail.com</td>
+        <td>trungquandev7.official@gmail.com</td>
+        <td>trungquandev8.official@gmail.com</td>
+        <td>trungquandev9.official@gmail.com</td>
       </tr>
     </table>
     <hr />
