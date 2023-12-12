@@ -691,6 +691,48 @@
       - Và thực tế sẽ kết hợp các Library như Bootstrap hoặc Framework như TailwindCSS...vv để sử dụng trong dự án.
     -->
     <hr />
+
+    <!-- HTML Semantic Elements -->
+    <mark>HTML Semantic Elements</mark><br /><br />
+    <!--
+      - Semantic Elements dịch là “Những phần tử có ý nghĩa!”
+      - Nhớ lại thẻ <div> hoặc <span>...
+      - Ví dụ dùng thẻ <div class=”footer”> để tạo một cái footer cho trang web, thay vào đó chúng ta cũng có thể dùng một thẻ có ý nghĩa hơn tên là <footer> chẳng hạn - đây chính là một Semantic Element.
+
+      - Danh sách các thẻ Semantic:
+      - <article> <main> <header> <footer> <aside>
+      - <details> <summary> <figcaption> <figure> <mark>
+      - <section> <time> <nav>
+    -->
+    <hr />
+
+    <mark>Dưới đây là mình <strong>SỬ DỤNG</strong> HTML Semantic Elements</mark>
+    <header>Header</header>
+    <section>
+      <article>
+        <figure>
+          <img />
+          <figcaption></figcaption>
+        </figure>
+      </article>
+    </section>
+    <footer>Footer</footer>
+    <br />
+    <hr />
+
+    <mark>Dưới đây là mình <strong>KHÔNG SỬ DỤNG</strong> HTML Semantic Elements</mark>
+    <div id="header">Header</div>
+    <div class="section">
+      <div class="article">
+        <div class="figure">
+          <img />
+          <div class="figcaption"></div>
+        </div>
+      </div>
+    </div>
+    <div id="footer">Footer</div>
+    <br />
+    <hr />
   </body>
   <script>
     document.getElementById('test').innerHTML = 'Trungquandev'
