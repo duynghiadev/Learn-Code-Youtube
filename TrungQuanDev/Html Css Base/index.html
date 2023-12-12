@@ -23,6 +23,29 @@
       tr:nth-child(even) {
         background-color: goldenrod;
       }
+      .class-20 {
+        color: lightseagreen;
+        font-size: 20px;
+        font-weight: bold;
+      }
+      #id-content-01 {
+        color: lightcoral;
+      }
+      #id-content-02 {
+        color: lightskyblue;
+      }
+
+      .lesson_25 {
+        font-size: 2em;
+        font-weight: bold;
+      }
+      @media screen and (max-width: 700px) {
+        .lesson_25 {
+          font-size: 1em;
+          font-weight: normal;
+          color: #78e08f;
+        }
+      }
     </style>
   </head>
   <body>
@@ -541,6 +564,39 @@
         nam magni soluta voluptatibus! Quidem, deleniti.
       </p></span
     >
+    <hr />
+
+    <!-- HTML Class -->
+    <!--
+      - Class dịch ra tiếng Việt là “Lớp”, cơ mà đừng dịch nhé, cứ nhớ cái tên Class đi nha =))
+      - Trong thực tế chúng ta thường sử dụng Class cho các phần tử HTML để có thể CSS style cũng như
+      - dùng JavaScript truy cập DOM tới các phần tử đó.
+      - Có thể có nhiều phần tử HTML cùng sử dụng chung một tên class được.
+      - Cú pháp truy cập tới Class từ CSS: Dùng dấu chấm (.) trước tên class
+      - Cú pháp truy cập tới Class từ JS: Dùng method getElementsByClassName()
+    -->
+    <mark>Lesson 20 - HTML Class &amp; Id</mark><br />
+    <br />
+    <mark>Đây là class</mark>
+    <div class="class-20">Content Class 01</div>
+    <div class="class-20">Content Class 02</div>
+    <div class="class-20">Content Class 03</div>
+    <br />
+
+    <!-- HTML Id -->
+    <!--
+      - Id được sử dụng để định danh một phần tử duy nhất - Unique
+      - Tương tự  Class, chúng ta cũng dùng Id cho các phần tử HTML để có thể CSS style cũng như dùng
+      - Javascript truy cập DOM tới các phần tử đó.
+      - Tuy nhiên có một Điểm Khác quan trọng so với Class, Id là Unique, vì vậy một phần tử HTML chỉ nên được có một Id riêng biệt - không được trùng lặp với bất kỳ phần tử nào khác.
+      - Cú pháp truy cập tới Id từ CSS: Dùng dấu # trước tên class
+      - Cú pháp truy cập tới Id từ JS: Dùng method getElementById()
+
+      => (Nhớ lại bài HTML Link - Chúng ta đã dùng Id để làm một chiếc mục lục - unique)
+    -->
+    <mark>Đây là Id</mark>
+    <div id="id-content-01">Content Id 01</div>
+    <div id="id-content-02">Content Id 02</div>
     <hr />
   </body>
 </html>
