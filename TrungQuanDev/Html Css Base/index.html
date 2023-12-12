@@ -495,5 +495,52 @@
 
     <!-- Danh sách dạng mô tả: Dạng này không có kiểu style -->
     <hr />
+
+    <!--
+      - Block có thể hiểu theo nghĩa tiếng Việt là một khối.
+      - Trong HTML, Block là một kiểu hiển thị cho các Elements.
+      - Một Block thường bắt đầu trên một dòng mới, và mặc định chiếm 100% chiều rộng màn hình có sẵn.
+      - Cũng như trình duyệt sẽ tự động thêm một số khoảng trống - Margin vào.
+      - Có 2 thẻ HTML phổ biến dạng Block thường được sử dụng là <div> và <p>
+      - Ngoài ra còn nhiều thẻ khác như:
+        - <address> <article> <blockquote> <canvas> <dd> <dl> <dt> <footer> <form> <h1> đến <h6>
+        - <header> <hr> <li> <main> <nav> <ol> <pre> <section> <table> <tfoot> <ul> <video>
+    -->
+    <div>Block 1</div>
+    <div>Block 2</div>
+    <div>Block 3</div>
+
+    <p>Đây là thẻ p -> là thẻ block</p>
+    <p>Đây là thẻ p -> là thẻ block</p>
+    <p>Đây là thẻ p -> là thẻ block</p>
+    <!-- Thẻ hr cũng là thẻ block -->
+    <hr />
+    <!-- Thẻ br cũng là thẻ block -->
+    <br />
+
+    <!--
+      - Inline có thể hiểu đơn giản là ở trên cùng một hàng =))
+      - Inline là một kiểu hiển thị cho các Elements
+      - Inline sẽ chiếm chiều rộng đủ dùng (dựa vào nội dung mà nó chưa bên trong)
+      - Thẻ HTML phổ biến nhật dạng Inline thường được sử dụng là <span>
+      - Ngoài ra còn nhiều thẻ khác như:
+      - <a> <abbr> <b> <bdo> <br> <button> <cite> <code> <em> <i> <img> <input>  <label>
+      - <map> <object> <output> <q> <script> <select> <small> <strong> <sub> <sup>
+      - <textarea>
+      - Lưu ý: Code theo chuẩn thì phần tử dạng Inline không được phép chứa phần tử dạng Block nhé.
+    -->
+    <span>span là thẻ inline</span>
+    <span>span là thẻ inline</span>
+    <span>span là thẻ inline</span>
+    <!-- Nếu muốn xuống dòng giữa các element thì thêm thẻ br -->
+    <!-- Thẻ block không nên để trong thẻ inline -> không có ai code như thế cả -->
+    <span
+      ><p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur itaque dolore numquam
+        alias iusto necessitatibus blanditiis adipisci, ipsam provident, iure vero ullam corporis ex
+        nam magni soluta voluptatibus! Quidem, deleniti.
+      </p></span
+    >
+    <hr />
   </body>
 </html>
