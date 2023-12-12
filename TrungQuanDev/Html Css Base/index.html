@@ -766,6 +766,80 @@
       - https://www.w3schools.com/charsets/ref_emoji.asp
     -->
     <hr />
+
+    <!-- HTML Multimedia - Video -->
+    <mark>HTML Multimedia - Video</mark><br /><br />
+    <video width="320" height="240" controls autoplay muted playsinline loop>
+      <source src="videos/coffee-video.mp4" type="video/mp4" />
+      Trình duyệt của bạn không hỗ trợ hiển thị video!
+    </video>
+    <!--
+      - Multimedia hiểu là đa phương tiện, trên khía cạnh làm web thì chúng ta có các thẻ HTML để hiển thị những thứ như là âm nhạc hoặc video...vv
+
+      <video width="320" height="240" controls autoplay muted playsinline loop>
+          <source src="videos/coffee-video.mp4" type="video/mp4">
+          Trình duyệt của bạn không hỗ trợ hiển thị video!
+      </video>
+
+      - Giải thích những thuật ngữ trong thẻ video:
+        - controls: Hiển thị các nút điều khiển như play - pause, volume...vv
+        - autoplay kết hợp muted: Video sẽ tự động phát với âm thanh mặc định là tắt.
+        - loop: tự động lặp lại cho video.
+        - playsinline: Ở màn hình của thiết bị mobile, video sẽ được chạy mà không phải bật full screen.
+
+      - (https://css-tricks.com/what-does-playsinline-mean-in-web-video/)
+    -->
+    <br />
+    <hr />
+
+    <!-- HTML Multimedia - Audio -->
+    <mark>HTML Multimedia - Audio</mark> <br /><br />
+    <audio controls autoplay muted loop>
+      <source src="audios/Invisible Beauty - Aakash Gandhi.mp3" type="audio/mpeg" />
+      Trình duyệt của bạn không hỗ trợ tệp âm thanh!
+    </audio>
+    <!--
+      - Dưới đây là đoạn code mẫu:
+
+      <audio controls autoplay muted loop>
+        <source src="audios/Invisible Beauty - Aakash Gandhi.mp3" type="audio/mpeg" />
+        Trình duyệt của bạn không hỗ trợ tệp âm thanh!
+      </audio>
+
+      - Giải thích những thuật ngữ trong thẻ audio:
+        - controls: Hiển thị các nút điều khiển như play - pause, volume...vv
+        - autoplay kết hợp muted: Video sẽ tự động phát với âm thanh mặc định là tắt.
+        - loop: tự động lặp lại âm thanh.
+        - Vấn đề về tự động bật âm thanh / video: phần lớn các trình duyệt hiện đại đều đã chặn tính năng này mặc định bởi vì nó gây ra trải nghiệm người dùng không tốt.
+    -->
+    <hr />
+
+    <!-- HTML Multimedia - YouTube -->
+    <mark>HTML Multimedia - YouTube</mark> <br /><br />
+    <iframe
+      width="560"
+      height="315"
+      title="Trungquandev MERN Stack"
+      frameborder="0"
+      allowfullscreen
+      src="https://www.youtube.com/embed/63opfUkPq6k?controls=1&loop=1"
+    >
+    </iframe>
+    <!--
+      - Để nhúng video YouTube vào trang web, chúng ta sẽ sử dụng tới một kiến thức đã học đó là iframe nhé.
+      - Dưới đây là đoạn code mẫu:
+
+      <iframe width="560" height="315" title="Trungquandev MERN Stack"
+        frameborder="0" allowfullscreen
+        src="https://www.youtube.com/embed/63opfUkPq6k?controls=1&loop=1">
+      </iframe>
+
+      - Giải thích những thuật ngữ trong thẻ iframe:
+        - controls=1: Hiển thị các nút điều khiển như play - pause, volume...vv (Nếu giá trị là 0 thì ngược lại)
+        - loop=1: Cho phép lặp lại video (Nếu giá trị là 0 thì ngược lại)
+        - allowfullscreen: Cho phép bật full màn hình
+    -->
+    <hr />
   </body>
   <script>
     document.getElementById('test').innerHTML = 'Trungquandev'
