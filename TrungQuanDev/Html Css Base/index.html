@@ -209,5 +209,24 @@
       background-attachment: Chỉ định ảnh nền có cuộn cùng với trang không hay sẽ cố định: scroll - fixed - local - ...vv
     -->
     <hr />
+
+    <!--
+      Picture Element: Cho phép chúng ta hiển thị các hình ảnh khác nhau tùy theo những kích thước màn
+      hình khác nhau.
+    -->
+    <picture>
+      <source media="(min-width: 776px)" srcset="autumn.jpg" />
+      <source media="(min-width: 480px)" srcset="dot.jpg" />
+      <img src="autumn.jpg" />
+    </picture>
+    <!--
+      Source: Mỗi hình ảnh sẽ được gắn vào srcset và tùy theo kích thước màn hình trong media để hiển thị ra.
+      Lưu ý:  Phải luôn có một thẻ <img> ở cuối cùng để đối với những trình duyệt không hỗ trợ thẻ <picture>
+      hoặc màn hình không khớp với bất kỳ thẻ <source> nào thì thẻ <img> này sẽ mặc định được hiện ra.
+      Một số điểm breakpoint màn hình phổ biến: Extra small (xs) · Small (sm) · Medium (md) · Large (lg) · Extra
+      large (xl) · Extra extra large (xxl).
+    -->
+    <hr />
+    <hr />
   </body>
 </html>
