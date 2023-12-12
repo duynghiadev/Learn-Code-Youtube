@@ -157,5 +157,24 @@
       - Thông thường thì chúng ta sẽ sử dụng thuộc tính style (css) để định kiểu cho hình ảnh, khi nào cần truyền giá trị động hoặc muốn làm nhanh thì dùng width height attribute nha.
     -->
     <hr />
+
+    <!-- Image Map - Bản đồ cho một hình ảnh -->
+    <img src="trungquandev.jpg" usemap="#my-img-map" />
+    <map name="my-img-map">
+      <area shape="rect" coords="830,1766,1791,2126" title="Keyboard" href="keyboard.html" />
+      <area shape="circle" coords="1217,1527,121" title="Airpod" href="airpod.html" />
+      <area
+        shape="poly"
+        coords="1910,1860,1907,2045,1944,2192,2046,2232,2143,2175,2146,2025,2106,1871,2024,1829"
+        title="Mouse"
+        href="mouse.html"
+      />
+    </map>
+    <!--
+      usemap: Trỏ đến name của một thẻ <map>
+      <map>: Thẻ dùng để chứa các vùng chọn trên hình ảnh, phải có thuộc tính name tương ứng.
+      <area>: Thẻ dùng để định nghĩa vùng chọn theo các định dạng (shape) và toạ độ (coords) khác nhau.
+    -->
+    <hr />
   </body>
 </html>
