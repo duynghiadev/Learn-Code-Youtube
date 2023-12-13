@@ -50,3 +50,22 @@
   - Execution Context
   - Execution Stack
   - Variable environment
+
+4. By Value vs By Reference Trong Javascript | Justin Nguyen
+
+- Ở trong bài này thì chúng ta cùng tìm hiểu về Static types, Dynamic types, Primitive types (kiểu nguyên thủy), Object
+- By value và By references
+
+- Tất cả các kiểu primitive type đều là tham trị (pass by value)
+- Còn tất cả các kiểu mà mình khai báo kiểu object thì đều là tham chiếu (pass by reference)
+
+- Primitive type: được gán theo giá trị
+- Object type: được gán theo vùng nhớ
+
+- Từ mới Tiếng anh trong video, xem thêm video để hiểu ý nghĩa nhé:
+  - By Value
+  - By Reference
+  - Execution Context
+  - Variable Environment
+  - Dynamic Type, Static Type
+  - Primitive Type
