@@ -138,3 +138,39 @@ let someVar_2 = 10
 foo_2()
 console.log('done function foo_2')
 console.log('---------------------------------------')
+
+/**
+ * By Value vs By Reference Trong Javascript | Justin Nguyen🚀
+ */
+/**
+ * - Ở trong bài này thì chúng ta cùng tìm hiểu về Static types, Dynamic types, Primitive types (kiểu nguyên thủy), Object
+ * - By value và By references
+ *
+ * - Tất cả các kiểu primitive type đều là tham trị (pass by value)
+ * - Còn tất cả các kiểu mà mình khai báo kiểu object thì đều là tham chiếu (pass by reference)
+ *
+ * - Primitive type: được gán theo giá trị
+ * - Object type: được gán theo vùng nhớ
+ */
+var num = 10
+var str = 'Duy Nghia Dev'
+str = 'Ku Nhi' // chúng ta có thể thay đổi giá trị của biến đã khai báo trước đó rồi
+
+var num1 = num
+num = 100
+console.log('num1:', num1)
+console.log('num:', num)
+console.log('---------------------------------------')
+
+var obj = { str: 'hello duynghiadev' }
+var objRef = obj
+obj.str = 'Updated str'
+console.log('objRef:', objRef)
+hello_1(obj) // Khi chạy đến dòng này thì params trong obj.str đã thay đổi thành rồi, vì tham số mình truyền vào và biến obj có chung 1 vùng nhớ
+console.log('obj:', obj) // Khi log ra thì obj sẽ nhận giá trị mới trong hàm hello_1
+console.log('obj.str:', obj.str)
+console.log('---------------------------------------')
+
+function hello_1(object) {
+  object.str = 'Inline function'
+}
