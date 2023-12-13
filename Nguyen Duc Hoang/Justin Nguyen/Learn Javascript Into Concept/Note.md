@@ -69,3 +69,20 @@
   - Variable Environment
   - Dynamic Type, Static Type
   - Primitive Type
+
+5. Tại Sao 2 + 2 = 22 Trong Javascript | Justin Nguyen
+
+- Trong bài này thì chúng ta cùng tìm hiểu về bài so Sánh Strict Equality hay '==='
+- Dù sao đi chăng nữa thì chúng ta nên luôn luôn sử dụng 3 dấu bằng (`===`). Khi dùng cách đó thì khi kiểm tra thì nó nghiêm ngặt hơn và chính xác hơn
+- Nếu chúng ta sử dụng 2 dấu bằng (`==`) trừ khi chúng ta đang biết là ta đang làm gì đó, và hiểu được cách sử dụng của nó hoặc là đang hướng dẫn ai đó hiểu 2 dấu bằng khác nhau như thế nào với 3 dấu bằng
+- Trong thực tế thì mọi người hầu như đều sử dụng 3 dấu bằng (`===`) để so sánh cái gì đó
+
+- [MDN bảng so sánh bằng](https://bit.ly/3uVL7XD)
+- [MDN bảng Precedence](https://bom.so/0kf88Q)
+- ![img_6.png](img_6.png)
+
+- Từ mới Tiếng anh trong video, xem thêm video để hiểu ý nghĩa nhé:
+  - Coercion
+  - Strict Equality, Strict Inequality
+  - Precedence, Associativity
+  - Hoisting
