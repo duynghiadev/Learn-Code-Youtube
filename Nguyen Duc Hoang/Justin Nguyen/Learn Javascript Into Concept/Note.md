@@ -32,3 +32,21 @@
   - Execution Context
   - Execution Stack
   - Variable environment
+
+3. Scope Chain và Block Scope Trong Javascript | Justin Nguyen
+
+- Ví dụ về javascript về Scope Chain và Block Scope trong javascript
+
+- Tất cả các ví dụ ở trên là mình dùng biến `var`. Biến `var` được hiểu nôm na là `global scope` hoặc là `function scope`. Nên biến `var` rất ít người dùng. Hầu như là họ không dùng nữa mà chuyển qua dùng `let`, `const`
+- `let`, `const` là ES6 (ES2015) thì nó có hỗ trợ `block scope` 
+- `block scope` là gì? Thì nó có nghĩa là các dòng code nằm trong dấu ngoặc nhọn `{}`. Đó là block scope. Ví dụ như các dòng code nằm trong `if else`, `forEach`, `for`,...Mỗi cái block như này thì nó sẽ tạo ra cho mình cái scope riêng
+- Các biến nằm trong block đó thì biến đó chỉ tồn tại trong scope đó thôi. Nó không ảnh hưởng gì, và cũng không liên quan đến các biến bên ngoài
+
+![scope chain](img_5.png)
+
+- Từ mới Tiếng anh trong video, xem thêm video để hiểu ý nghĩa nhé:
+  - Scope chain
+  - Lexical environment
+  - Execution Context
+  - Execution Stack
+  - Variable environment
