@@ -1,5 +1,6 @@
+// Kí hiệu 🚀: có nghĩa là bài học mới. Mỗi bài học mới, mình sẽ để icon tên lửa (🚀)
 /**
- * Syntax parser, Lexical Enviroment, Execution Context (Creation/Hoisting, Run Phases)
+ * Syntax parser, Lexical Enviroment, Execution Context (Creation/Hoisting, Run Phases)🚀
  */
 console.log('i before:', i)
 var i = 10
@@ -12,7 +13,7 @@ console.log('i after:', i)
 console.log('---------------------------------------')
 
 /**
- * Javascript Execution Stack, Invocation và Variable Environment | Justin Nguyen
+ * Javascript Execution Stack, Invocation và Variable Environment | Justin Nguyen🚀
  * Trong bài này chúng ta cùng tìm hiểu về:
  * - Single thread (synchronous), Innocation and Execution stack
  */
@@ -82,4 +83,58 @@ function c_1() {
 }
 a_1()
 console.log('done function a_1')
+console.log('---------------------------------------')
+
+/**
+ * Scope Chain và Block Scope Trong Javascript | Justin Nguyen🚀
+ */
+/**
+ * Trong bài này mình học về scope chain
+ */
+// Đây là ví dụ 1 👍
+function foo() {
+  var someVar = 100
+  bar()
+}
+function bar() {
+  var someVar = 1000
+  console.log(`called bar: ${someVar}`)
+}
+var someVar = 10
+foo()
+console.log('done function foo')
+console.log('---------------------------------------')
+
+// Đây là ví dụ 2 👍
+function foo_1() {
+  function bar_1() {
+    // var someVar_1 = 1000
+    console.log(`called bar_1: ${someVar_1}`)
+  }
+  var someVar_1 = 100
+  bar_1()
+}
+var someVar_1 = 10
+foo_1()
+console.log('done function foo_1')
+console.log('---------------------------------------')
+
+// Đây là ví dụ 3 👍
+/**
+ * - Tất cả các ví dụ ở trên là mình dùng biến var. Biến var được hiểu nôm na là global scope hoặc là function scope. Nên biến var rất ít người dùng. Hầu như là họ không dùng nữa mà chuyển qua dùng let, const
+ * - let, const là ES6 (ES2015) thì nó có hỗ trợ block scope
+ * - block scope là gì? Thì nó có nghĩa là các dòng code nằm trong dấu ngoặc nhọn {}. Đó là block scope. Ví dụ như các dòng code nằm trong if else, forEach, for,...Mỗi cái block như này thì nó sẽ tạo ra cho mình cái scope riêng
+ * - Các biến nằm trong block đó thì biến đó chỉ tồn tại trong scope đó thôi. Nó không ảnh hưởng gì, và cũng không liên quan đến các biến bên ngoài
+ */
+function foo_2() {
+  function bar_2() {
+    let someVar_2 = 1000 // Nếu comment dòng này lại thì nó sẽ tìm ra bên ngoài và in ra giá trị đó
+    console.log(`called bar_2: ${someVar_2}`)
+  }
+  let someVar_2 = 100
+  bar_2()
+}
+let someVar_2 = 10
+foo_2()
+console.log('done function foo_2')
 console.log('---------------------------------------')
