@@ -174,3 +174,48 @@ console.log('---------------------------------------')
 function hello_1(object) {
   object.str = 'Inline function'
 }
+
+/**
+ * Tại Sao 2 + 2 = 22 Trong Javascript | Justin Nguyen🚀
+ */
+/**
+ * - Coercion, Precedence, Associativity
+ * - Comparision table, Booleans in Existence
+ *
+ * - Lưu ý: Không có giá trị là null hoặc undefined
+ */
+var num3 = 2
+var num4 = '2'
+var num5 = 0
+var totalNum = num3 + num4
+console.log('totalNum:', totalNum)
+console.log('typeof totalNum:', typeof totalNum)
+console.log('---------------------------------------')
+
+if (num3 == num4) {
+  console.log('Bằng nhau')
+} else {
+  console.log('Không bằng nhau')
+}
+console.log('---------------------------------------')
+
+if (num3 === num4) {
+  console.log('Bằng nhau')
+} else {
+  console.log('Không bằng nhau')
+}
+console.log('---------------------------------------')
+
+if (num5) {
+  console.log(`Có giá trị, num5 là ${num5}`)
+} else {
+  console.log(`Không có giá trị, num5 là ${num5}`)
+}
+console.log('---------------------------------------')
+
+if (num5 || num5 === 0) {
+  console.log(`Có giá trị, num5 là ${num5}`)
+} else {
+  console.log(`Không có giá trị, num5 là ${num5}`)
+}
+console.log('---------------------------------------')
