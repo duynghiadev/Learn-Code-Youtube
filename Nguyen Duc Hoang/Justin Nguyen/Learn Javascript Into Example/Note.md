@@ -14,3 +14,7 @@
   ![img.png](img.png)
 
 - const: nó cũng là block scope. Nhưng mà 1 khi nó đã khai báo rồi thì biến đó sẽ không thay đổi được. Nó được hiểu nôm na là 1 hằng số
+
+3. Object Và String Template Trong Javascript | Justin Nguyen
+
+- Trong object thì có key và value. Còn trong mảng thì không có như vậy
