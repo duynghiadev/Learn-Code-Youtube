@@ -124,3 +124,15 @@
   - Event Loop
   - Callback Queue, Task Queue, Event Queue
   - Spread operator
+
+### Giới Thiệu Prototypal Inheritance Trong Javascript | Justin Nguyen
+
+- Học Javascript Qua Khái Niệm về lập trình hướng đối tượng Prototypal Inheritance trong javascript
+
+![Prototype chain](image-1.png)
+
+- Từ mới Tiếng anh trong video, xem thêm video để hiểu ý nghĩa nhé:
+  - Constructor Function
+  - Prototypal Inheritance, Classical Inheritance
+  - Prototype Chain
+  - Sugar Syntax
