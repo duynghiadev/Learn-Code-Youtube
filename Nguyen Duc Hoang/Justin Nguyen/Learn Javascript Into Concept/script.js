@@ -219,3 +219,97 @@ if (num5 || num5 === 0) {
   console.log(`Không có giá trị, num5 là ${num5}`)
 }
 console.log('---------------------------------------')
+
+/**
+ * CLOSURE Trong Javascript Là Gì🚀
+ */
+/**
+ * JavaScript Closure (Lexical -> Closure, Factory method)
+ *
+ * Đây là ví dụ 1👍
+ */
+var say = 'Hello Ku Nhi Dev'
+function hello_2() {
+  var say = 'Hello DuyNghiaDev in function hello_2'
+  function sayHello() {
+    console.log('say in function hello_2:', say)
+  }
+  sayHello()
+}
+hello_2()
+console.log('---------------------------------------')
+
+// Đây là ví dụ 2👍
+function hello_3() {
+  var say = 'Hello DuyNghiaDev in function hello_3' // outer
+  function sayHello_1(name) {
+    console.log(`say in function hello_3: ${say} ${name}`) // local
+  }
+  return sayHello_1
+}
+const callSayHello = hello_3()
+callSayHello('Justin')
+console.log('callSayHelo:', callSayHello)
+console.log('---------------------------------------')
+
+// Đây là ví dụ 3👍
+function hello_4(say) {
+  function sayHello(name) {
+    console.log(`${say} ${name}`)
+  }
+  return sayHello
+}
+const sayEn = hello_4('Hello')
+const sayVn = hello_4('Xin chào')
+sayEn('Justin')
+sayVn('Duy Nghĩa')
+console.log('---------------------------------------')
+
+// Đây là ví dụ 4👍
+/**
+ * - Nếu như ta làm cách này thì sẽ sai quy tắc closure
+ * - Khi ta lấy phần tử đầu tiên của callSays thì nó có giá trị là 5, và cứ thế khi ta gọi tất cả phần tử trong đó thì nó cũng có giá trị là 5
+ *
+ * - Tại sao lại vậy? Ta sẽ sửa khai báo biến từ var thành let. Và sửa function bình thường thành arrow function
+ *  - Vì var scope là function cho nên nó sẽ được cập nhật theo vòng lặp, còn let scope là block (vòng lặp) cho nên mỗi lần lặp là có cái value riêng của nó
+ *  - Vì mỗi khi let lặp qua thì mỗi phần tử của nó đều có giá trị riêng và không bị ghi đè
+ *  - Còn var thì khi lặp qua, nó có giá trị và lần lặp tiếp theo thì nó bị ghi đè. Cho nên khi lặp qua thì nó có 1 giá trị thôi
+ *
+ *  - giải pháp bài này nằm ở ví dụ 5✅
+ */
+function hello_5() {
+  var says = []
+  for (var index = 0; index < 5; index++) {
+    says.push(function () {
+      console.log('index:', index)
+    })
+  }
+  return says
+}
+const callSays = hello_5()
+console.log('callSays:', callSays)
+callSays[0]()
+callSays[1]()
+callSays[2]()
+callSays[3]()
+callSays[4]()
+console.log('---------------------------------------')
+
+// Đây là ví dụ 5👍
+function hello_6() {
+  var says = []
+  for (let index = 0; index < 5; index++) {
+    says.push(() => {
+      console.log('index:', index)
+    })
+  }
+  return says
+}
+const callSays_1 = hello_6()
+console.log('callSays_1:', callSays_1)
+callSays_1[0]()
+callSays_1[1]()
+callSays_1[2]()
+callSays_1[3]()
+callSays_1[4]()
+console.log('---------------------------------------')
