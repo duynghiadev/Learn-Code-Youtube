@@ -118,6 +118,8 @@
   - Trong call thì chúng ta truyền tham số thứ 2 như bình thường, các phần tử được cách nhau bởi dấu phẩy
   - Còn trong apply thì khi ta truyền tham số thứ 2 thì ta phải truyền vào 1 mảng, và các phần tử trong 1 mảng được phân cách nhau bởi dấu phẩy
 
+- Nói tóm lại là `Bind` nó ràng buộc trong phạm vi 1 `object` nhưng không gọi hàm được, còn `Call` vừa có `Bind` vừa gọi hàm được, `Apply` cũng y chang `Call` nhưng nhận đối số trong mảng
+
 - Từ mới Tiếng anh trong video, xem thêm video để hiểu ý nghĩa nhé:
   - Event Loop
   - Callback Queue, Task Queue, Event Queue
