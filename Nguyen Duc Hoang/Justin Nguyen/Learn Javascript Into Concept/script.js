@@ -313,3 +313,128 @@ callSays_1[2]()
 callSays_1[3]()
 callSays_1[4]()
 console.log('---------------------------------------')
+
+/**
+ * Hàm Bind vs Call vs Apply Trong Javascript | Justin Nguyen 🚀
+ */
+/**
+ * - Trong bài này chúng ta học về JavaScript bind, call and apply
+ * - Dưới đây là ví dụ về gọi hàm và truyền tham số theo cách bình thường ✅
+ */
+function multiply(a, b) {
+  return a * b
+}
+const multiplyByTwo = (a) => multiply(2, a)
+const multiplyByTen = (a) => multiply(10, a)
+console.log(multiplyByTwo(2))
+console.log(multiplyByTen(10))
+console.log('---------------------------------------')
+
+// Dưới đây chúng ta gọi hàm và truyền tham số theo cách dùng method bind()✅
+function multiply_1(a, b) {
+  return a * b
+}
+const multiplyByTwo_1 = multiply_1.bind(this, 2)
+const multiplyByTen_1 = multiply_1.bind(this, 10)
+console.log('Dưới đây là kết quả mình sử dụng method bind()')
+console.log(multiplyByTwo_1(2))
+console.log(multiplyByTen_1(10))
+console.log('---------------------------------------')
+
+// Ví dụ 3✅
+const vanhein = {
+  weapon: 'Phi Tiêu',
+  attack() {
+    console.log('this in function vanhein:', this)
+    console.log('Attacked by:', this.weapon)
+  }
+}
+vanhein.attack()
+
+const yorn = {
+  weapon: 'Bow',
+  attack() {
+    console.log('this in function yorn:', this)
+    console.log('Attacked by:', this.weapon)
+  }
+}
+yorn.attack()
+console.log('---------------------------------------')
+
+/**
+ * - Khi chúng ta sử dụng hàm bind thì trong hàm yorn chúng ta không cần khai báo hàm attack. Mà thay vào đó chúng ta mượn hàm attack đó hàm vanhein, và gọi hàm đó trong hàm yorn.
+ * - Dùng hàm bind trong đó có nghĩa là chúng ta đang copy hàm yorn_1 trong hàm attack ở trong hàm hàm vanhein. Kết quả thì đúng y chang
+ *
+ * - Dòng vanhein.attack.bind(yorn_1)() có ý nghĩa là:❌❌❌
+ *  - Chúng ta bind hàm yorn_1 vào trong hàm vanhein
+ *  - Tiếp theo đó khi nó chạy đến dòng log có this thì nó sẽ log ra các thuộc tính trong hàm yorn_1. Nó sẽ in ra {weapon: 'Bow'}
+ *  - Và trong dòng log tiếp theo có từ this.weapon, thì nó sẽ in ra => Attacked by: Bow
+ *
+ * - Kiến thức này hơi khó hiểu, các bạn có thể search google để xem thêm cho hiểu
+ */
+const yorn_1 = {
+  weapon: 'Bow'
+}
+console.log('Dưới đây chúng ta sử dụng method bind')
+vanhein.attack()
+vanhein.attack.bind(yorn_1)()
+console.log('---------------------------------------')
+
+/**
+ * - Method call có nghĩa là chúng ta mượn hàm vanhein, nhưng chúng ta gọi nó trong cái context (ngữ cảnh) là hàm yorn_1 này, thì cái this nó vẫn y chang khi ta sử dụng method bind vậy thôi
+ *
+ * - Method apply thì cũng như vậy, nhưng có điều là nó khác 1 chút so với phương thức call
+ *  - Nó khác ở chỗ từ tham số thứ 2 trở đi. Thay vì mình truyền từng tham số riêng lẻ -> call(yorn_1, 1, 2, 3). Thì so với hàm apply thì chúng ta không truyền như vậy nữa, mà phải truyền vào hàm apply một mảng các tham số
+ *  - Thì cái call và apply nó chỉ khác nhau như vậy mà thôi
+ *
+ * - Chú ý:❌❌❌
+ *  - Khi chúng ta sử dụng bind thì phải thêm dấu ngoặc để thực thi hàm
+ *  - Còn chúng ta sử dụng call thì không cần phải thêm dấu ngoặc
+ */
+console.log('Dưới đây chúng ta sử dụng method call')
+vanhein.attack()
+vanhein.attack.call(yorn_1)
+console.log('---------------------------------------')
+
+console.log('Dưới đây chúng ta sử dụng method apply')
+vanhein.attack()
+vanhein.attack.apply(yorn_1)
+console.log('---------------------------------------')
+
+// Tiếp nối ví dụ trước, nhưng mình tách ra cho dễ hình dung✅
+const vanhein_1 = {
+  weapon: 'Phi Tiêu',
+  attack(skill) {
+    if (skill) {
+      console.log('this in function vanhein:', this)
+      console.log('Skill Attacked by:', this.weapon)
+    } else {
+      console.log('Attacked by:', this.weapon)
+    }
+  }
+}
+vanhein_1.attack()
+console.log('Dưới đây chúng ta sử dụng method call và có tham số thứ 2')
+vanhein_1.attack.call(yorn_1, true)
+console.log('---------------------------------------')
+
+vanhein_1.attack()
+console.log('Dưới đây chúng ta sử dụng method apply và có tham số thứ 2')
+vanhein_1.attack.apply(yorn_1, [true])
+console.log('---------------------------------------')
+
+console.log(
+  'Vẫn gọi method apply như thế, nhưng chúng ta biến tấu 1 xíu, đặt tham số thứ 2 ra thành 1 biến'
+)
+vanhein_1.attack()
+const params = [true]
+vanhein_1.attack.apply(yorn_1, params)
+console.log('---------------------------------------')
+
+console.log(
+  'Vẫn gọi method call như thế, nhưng chúng ta biến tấu 1 xíu, đặt tham số thứ 2 ra thành 1 biến. Nếu khi ta dùng method call thì ta phải sử dụng toán tử spread (ES6), thì nó sẽ chuyển cái mảng này những tham số riêng lẻ'
+)
+const params_1 = [true]
+vanhein_1.attack()
+vanhein_1.attack.call(yorn_1, ...params_1)
+console.log('---------------------------------------')

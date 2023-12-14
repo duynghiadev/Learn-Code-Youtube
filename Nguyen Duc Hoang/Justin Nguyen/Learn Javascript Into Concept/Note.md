@@ -1,6 +1,6 @@
 ## Trong khóa này có nhiều từ thuật ngữ tiếng anh. Các bạn có thể search google hoặc chat-GPT để tìm hiểu thêm nhé ✅✅✅
 
-1. Javascript Execution Context và Lexical Environment Là Gì
+### 1. Javascript Execution Context và Lexical Environment Là Gì
 
 - Biên dịch code
 
@@ -17,7 +17,7 @@
   - Execution Context
   - Hoisting
 
-2. Javascript Execution Stack, Invocation và Variable Environment | Justin Nguyen
+### 2. Javascript Execution Stack, Invocation và Variable Environment | Justin Nguyen
 
 - Dưới đây là code chạy đồng bộ
 
@@ -33,7 +33,7 @@
   - Execution Stack
   - Variable environment
 
-3. Scope Chain và Block Scope Trong Javascript | Justin Nguyen
+### 3. Scope Chain và Block Scope Trong Javascript | Justin Nguyen
 
 - Ví dụ về javascript về Scope Chain và Block Scope trong javascript
 
@@ -51,7 +51,7 @@
   - Execution Stack
   - Variable environment
 
-4. By Value vs By Reference Trong Javascript | Justin Nguyen
+### 4. By Value vs By Reference Trong Javascript | Justin Nguyen
 
 - Ở trong bài này thì chúng ta cùng tìm hiểu về Static types, Dynamic types, Primitive types (kiểu nguyên thủy), Object
 - By value và By references
@@ -70,7 +70,7 @@
   - Dynamic Type, Static Type
   - Primitive Type
 
-5. Tại Sao 2 + 2 = 22 Trong Javascript | Justin Nguyen
+### 5. Tại Sao 2 + 2 = 22 Trong Javascript | Justin Nguyen
 
 - Trong bài này thì chúng ta cùng tìm hiểu về bài so Sánh Strict Equality hay '==='
 - Dù sao đi chăng nữa thì chúng ta nên luôn luôn sử dụng 3 dấu bằng (`===`). Khi dùng cách đó thì khi kiểm tra thì nó nghiêm ngặt hơn và chính xác hơn
@@ -87,7 +87,7 @@
   - Precedence, Associativity
   - Hoisting
 
-6. CLOSURE Trong Javascript Là Gì?
+### 6. CLOSURE Trong Javascript Là Gì?
 
 - Nếu các bạn muốn trở thành senior trong JavaScript thì nên nắm thật chắc về closure nhé
 - Khái niệm trong javascript về closure là gì, lexical environment, inheritance
@@ -103,3 +103,22 @@
   - Closure
   - Hoisting
   - Execution Context, Lexical Environment, Scope Chain
+
+### 7. Hàm Bind vs Call vs Apply Trong Javascript | Justin Nguyen
+
+- Khái niệm trong javascript về sự khác nhau giữa hàm bind, apply, call trong javascript
+
+- Giống nhau giữa call và apply ở chổ:
+
+  - Là một lời gọi hàm nào đấy với 1 cái context nào đấy mà các bạn truyền vào là tham số đầu tiên, và bạn có thể thay đổi context (ngữ cảnh) lời gọi hàm đó
+
+- Khác nhau giữa call và apply ở chổ:
+
+  - Khác biệt duy nhất giữa cái call và apply là từ tham số thứ 2 trở đi. Các bạn có thể truyền vào 1 mảng hoặc từng cái riêng lẻ
+  - Trong call thì chúng ta truyền tham số thứ 2 như bình thường, các phần tử được cách nhau bởi dấu phẩy
+  - Còn trong apply thì khi ta truyền tham số thứ 2 thì ta phải truyền vào 1 mảng, và các phần tử trong 1 mảng được phân cách nhau bởi dấu phẩy
+
+- Từ mới Tiếng anh trong video, xem thêm video để hiểu ý nghĩa nhé:
+  - Event Loop
+  - Callback Queue, Task Queue, Event Queue
+  - Spread operator
