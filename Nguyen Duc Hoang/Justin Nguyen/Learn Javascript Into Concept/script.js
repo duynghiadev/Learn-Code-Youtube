@@ -438,3 +438,165 @@ const params_1 = [true]
 vanhein_1.attack()
 vanhein_1.attack.call(yorn_1, ...params_1)
 console.log('---------------------------------------')
+
+/**
+ * Giới Thiệu Prototypal Inheritance Trong Javascript | Justin Nguyen🚀
+ */
+/**
+ * - Trong bài này thì chúng ta cùng nhau tìm hiểu: JavaScript Prototypal Inheritance (__proto__ và prototype)
+ * - prototype, Object.create, Constructor Functions, Class
+ * - Ví dụ:
+ *  - Trong liên minh huyền thoại ta có 2 tướng Velhein, Yorn
+ *  - 2 tướng đó nó là children của thằng Ad
+ *  - Vậy từ ví dụ ta suy ra: Velhein -> Yorn -> Object
+ */
+/**
+ * - Nhìn chung thì 2 object ta vừa khai báo thì nó bị lặp đi lặp lại nhiều. Khác nhau mỗi cái giá trị thôi
+ * - Chúng ta đổi cái này thành lập trình hướng đối tượng trong JavaScript
+ */
+let valhein_2 = {
+  name: 'Valhein',
+  weapon: 'Phi Tiêu',
+  attack() {
+    console.log(`${this.name} attack using ${this.weapon}`)
+  },
+  baoPhiTieu() {
+    console.log(`${this.name} attack BaoPhiTieu`)
+  }
+}
+valhein_2.attack()
+valhein_2.baoPhiTieu()
+console.log('---------------------------------------')
+
+let yorn_2 = {
+  name: 'Yorn 2',
+  weapon: 'Bow',
+  attack() {
+    console.log(`${this.name} attack using ${this.weapon}`)
+  },
+  muaTen() {
+    console.log(`${this.name} use Mua Ten`)
+  }
+}
+yorn_2.attack()
+yorn_2.muaTen()
+console.log('---------------------------------------')
+
+console.log('---------Dưới đây là chúng ta sử dụng lập trình hướng đối tượng trong JS---------')
+
+let Ad = {
+  name: 'Ad',
+  weapon: 'Weapon',
+  attack() {
+    console.log(`${this.name} attack using ${this.weapon}`)
+  }
+}
+
+/**
+ * - valhein_3 được thừa hưởng tử template object của Ad
+ * - Players -> valhein_3 (__proto__) -> ad (prototype)  -> Object
+ */
+let valhein_3 = Object.create(Ad)
+valhein_3.name = 'Valhein_3'
+valhein_3.weapon = 'Phi Tiêu_3'
+valhein_3.baoPhiTieu_3 = function () {
+  console.log(`${this.name} use Bao Phi Tieu`)
+}
+
+let player_1 = Object.create(valhein_3)
+player_1.name = 'Player_1'
+player_1.attack()
+
+let yorn_3 = Object.create(Ad)
+yorn_3.name = 'Yorn_3'
+yorn_3.weapon = 'Bow_3'
+yorn_3.muaTen_3 = function () {
+  console.log(`${this.name} use Mua Ten`)
+}
+
+valhein_3.attack()
+valhein_3.baoPhiTieu_3()
+yorn_3.attack()
+yorn_3.muaTen_3()
+
+console.log('-------------Kết thúc sử dụng lập trình hướng đối tượng trong JS-------------')
+console.log('------------------------------------------------------------------------------')
+
+/**
+ * - Tất cả ví dụ trong đoạn code hướng đối tượng trên: Chúng ta đang sử dụng Object.create(), đó là cú pháp của ES5
+ * - Bây giờ thì chúng ta không còn sử dụng phương pháp đó nữa
+ */
+
+/**
+ * - Nhưng bây giờ mình sẽ dùng cách constructor function✅✅✅
+ *
+ * - Trong ví dụ dưới này chúng ta đang tạo constructor function hay còn có thể gọi là template trong 1 đối tượng là Ad_1
+ * - constructor function đó là 1 function. Nó khác biệt với cái object hồi nảy
+ * - Thì function nó sẽ có prototype. Cái thuộc tính prototype này nó chỉ có ở function (function bình thường) thôi nha mấy bạn, chứ trong arrow function thì hoàn toàn không có prototype nha mấy bạn
+ *
+ * - Vì sao chúng ta phải sài từ this ở đây?
+ *  - Khi chúng ta sử dụng từ this thì nó sẽ giúp cho chúng ta tạo ra 1 cái đối tượng mà có thể thừa hường được cái name và cái weapon trong đó
+ */
+
+function Ad_1(name, weapon) {
+  this.name = name
+  this.weapon = weapon
+}
+
+Ad_1.prototype.attack = function () {
+  console.log(`${this.name} attack by ${this.weapon}`)
+}
+
+const Ad_2 = () => {
+  this.name = name
+  this.weapon = weapon
+}
+
+console.log('Ad_1.prototype:', Ad_1.prototype) // {}
+console.log('Ad_2.prototype:', Ad_2.prototype) // undefined
+
+/**
+ * - Tại đây chúng ta có thể hiểu như là:
+ *  - valhein_4 (__proto__) -> Ad_1.prototype -> Object.prototype
+ *
+ * - Khi chúng ta gọi toString() thì nó sẽ được như này, chúng ta hình dung nhé
+ *  - valhein_4 (__proto__) -> Ad_1.prototype (attack) -> Object.prototype (toString)
+ *  - yorn_4 thì cũng tương tự như vậy
+ */
+
+const yorn_4 = new Ad_1('Yorn', 'Bow')
+const valhein_4 = new Ad_1('Valhein', 'Phi Tieu')
+
+valhein_4.baoPhiTieu = function () {}
+
+valhein_4.attack()
+yorn_4.attack()
+
+console.log('valhein_4.toString():', valhein_4.toString())
+console.log('yorn_4.toString():', yorn_4.toString())
+console.log('---------------------------------------')
+
+console.log('yorn_4:', yorn_4)
+console.log('valhein_4:', valhein_4)
+console.log('------------------------------------------------------------------------------')
+
+/**
+ * - Dưới đây chúng ta sẽ sử dụng từ khóa Class
+ * - Class xuất hiện từ ES6 trở về sau
+ * - Muốn khai báo 1 class trong JavaScript thì chúng ta phải sử dụng từ khóa constructor
+ */
+console.log('--------Dưới đây chúng ta sẽ sử dụng từ khóa Class trong JavaScript (ES6)---------')
+class Ad_3 {
+  constructor(name, weapon) {
+    this.name = name
+    this.weapon = weapon
+  }
+  attack() {
+    console.log(`${this.name} attacks by ${this.weapon}`)
+  }
+}
+// valhein_5 -> Ad_3.prototype -> Object.prototype
+let valhein_5 = new Ad_3('Valhein', 'Phi Tieu')
+console.log('valhein_5:', valhein_5)
+valhein_5.attack()
+console.log('---------------------------------------')
