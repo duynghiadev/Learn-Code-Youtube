@@ -38,7 +38,7 @@
 - Ví dụ về javascript về Scope Chain và Block Scope trong javascript
 
 - Tất cả các ví dụ ở trên là mình dùng biến `var`. Biến `var` được hiểu nôm na là `global scope` hoặc là `function scope`. Nên biến `var` rất ít người dùng. Hầu như là họ không dùng nữa mà chuyển qua dùng `let`, `const`
-- `let`, `const` là ES6 (ES2015) thì nó có hỗ trợ `block scope` 
+- `let`, `const` là ES6 (ES2015) thì nó có hỗ trợ `block scope`
 - `block scope` là gì? Thì nó có nghĩa là các dòng code nằm trong dấu ngoặc nhọn `{}`. Đó là block scope. Ví dụ như các dòng code nằm trong `if else`, `forEach`, `for`,...Mỗi cái block như này thì nó sẽ tạo ra cho mình cái scope riêng
 - Các biến nằm trong block đó thì biến đó chỉ tồn tại trong scope đó thôi. Nó không ảnh hưởng gì, và cũng không liên quan đến các biến bên ngoài
 
@@ -86,3 +86,20 @@
   - Strict Equality, Strict Inequality
   - Precedence, Associativity
   - Hoisting
+
+6. CLOSURE Trong Javascript Là Gì?
+
+- Nếu các bạn muốn trở thành senior trong JavaScript thì nên nắm thật chắc về closure nhé
+- Khái niệm trong javascript về closure là gì, lexical environment, inheritance
+- Những cách sài và vấn đề hay gặp phải khi sử dụng closure.
+
+![example_closure_1](img_7.png)
+![example_closure_2](img_8.png)
+![example_closure_3](image.png)
+
+[MDN về Closure](https://bom.so/3lOFYu)
+
+- Từ mới Tiếng anh trong video, xem thêm video để hiểu ý nghĩa nhé:
+  - Closure
+  - Hoisting
+  - Execution Context, Lexical Environment, Scope Chain
