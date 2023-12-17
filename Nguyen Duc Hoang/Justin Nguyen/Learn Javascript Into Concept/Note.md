@@ -168,3 +168,12 @@
   - Closure, Prototypal Inheritance
   - Garbage Collector, Circular Reference
   - Memory Management, Memory Allocation, Memory Leak
+
+### 12. TRY CATCH Trong Javascript
+
+- Khái niệm trong javascript về xử lý lỗi error handling, cách tạo ra lỗi, bắt lỗi và xử lý như thế nào cho đúng.
+
+- Từ mới Tiếng anh trong video, xem thêm video để hiểu ý nghĩa nhé:
+  - Error Handling
+  - Throw
+  - Clean up
