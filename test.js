@@ -37,3 +37,26 @@ PassByReference(values)
 
 // In ra giá trị của a và b sau khi hàm PassByReference được gọi
 console.log(values.a1, values.b1)
+
+console.log('-------------------------------------------')
+
+/**
+ * Trong ví dụ này, outerFunction nhận một tham số outerVariable và chứa một hàm bên trong gọi là innerFunction. Khi bạn gọi outerFunction("Outer Value"), nó tạo ra một closure với giá trị của outerVariable là "Outer Value". Sau đó, khi innerFunction được gọi bên trong outerFunction với tham số "Inner Value", nó có thể truy cập cả outerVariable và innerVariable.
+ *
+ * Closures cho phép hàm innerFunction truy cập biến outerVariable của hàm bên ngoài của nó, ngay cả khi hàm outerFunction đã kết thúc thực thi. Điều này giúp bảo toàn giá trị của outerVariable trong bối cảnh của closure.
+ */
+function outerFunction(outerVariable) {
+  // Inner function (closure)
+  function innerFunction(innerVariable) {
+    console.log('Outer Variable:', outerVariable)
+    console.log('Inner Variable:', innerVariable)
+  }
+
+  // Gọi innerFunction từ outerFunction
+  innerFunction('Inner Value')
+}
+
+// Gọi outerFunction để tạo một closure
+outerFunction('Outer Value')
+
+console.log('-------------------------------------------')
