@@ -600,3 +600,28 @@ let valhein_5 = new Ad_3('Valhein', 'Phi Tieu')
 console.log('valhein_5:', valhein_5)
 valhein_5.attack()
 console.log('---------------------------------------')
+
+/**
+ * Task Queue và Job Queue Trong Async Javascript | Justin Nguyen🚀
+ */
+// Task Queue and Job Queue in JavaScript
+setTimeout(function () {
+  console.log('A')
+}, 0)
+
+setTimeout(function () {
+  console.log('B')
+  console.log('---------------------------------------')
+}, 2000)
+
+console.log('C')
+
+Promise.resolve().then(function () {
+  console.log('D')
+})
+
+for (let index = 0; index < 10000000; index++) {
+  // Imagine to wait for 500ms
+}
+console.log('E')
+console.log('---------------------------------------')

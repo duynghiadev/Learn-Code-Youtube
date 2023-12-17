@@ -125,7 +125,7 @@
   - Callback Queue, Task Queue, Event Queue
   - Spread operator
 
-### Giới Thiệu Prototypal Inheritance Trong Javascript | Justin Nguyen
+### 8. Giới Thiệu Prototypal Inheritance Trong Javascript | Justin Nguyen
 
 - Học Javascript Qua Khái Niệm về lập trình hướng đối tượng Prototypal Inheritance trong javascript
 
@@ -136,3 +136,12 @@
   - Prototypal Inheritance, Classical Inheritance
   - Prototype Chain
   - Sugar Syntax
+
+### 9. Task Queue và Job Queue Trong Async Javascript | Justin Nguyen
+
+- Khái niệm trong javascript về xử lý bất đồng bộ, task queue, job queue, event loop trong Javascript
+
+- Từ mới Tiếng anh trong video, xem thêm video để hiểu ý nghĩa nhé:
+  - Task Queue, Callback Queue, Event Queue
+  - Job Queue, Microtasks Queue, Promise Queue
+  -  Event Loop
