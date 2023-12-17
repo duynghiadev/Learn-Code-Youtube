@@ -141,7 +141,19 @@
 
 - Khái niệm trong javascript về xử lý bất đồng bộ, task queue, job queue, event loop trong Javascript
 
+![img_9.png](img_9.png)
+
 - Từ mới Tiếng anh trong video, xem thêm video để hiểu ý nghĩa nhé:
   - Task Queue, Callback Queue, Event Queue
   - Job Queue, Microtasks Queue, Promise Queue
   -  Event Loop
+
+### 10. Immediately Invoked Function Expression IIFE Là Gì | Justin Nguyen
+
+- IIFE Là Gì? Series học Javascript Qua Khái Niệm với video lần này về Immediately Invoked Function Expression hay còn gọi là IIFE cùng với cách sử dụng IIFE để tạo ra thư viện JS nhằm sài lại được cho dự án khác tương tự như Jquery nhé.
+
+- Từ mới Tiếng anh trong video, xem thêm video để hiểu ý nghĩa nhé:
+  - Task Queue, Callback Queue, Event Queue
+  - Job Queue, Microtasks Queue, Promise Queue
+  - Closure, Prototypal Inheritance
+  - Function chain
