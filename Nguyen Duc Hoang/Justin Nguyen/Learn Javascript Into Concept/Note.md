@@ -146,7 +146,7 @@
 - Từ mới Tiếng anh trong video, xem thêm video để hiểu ý nghĩa nhé:
   - Task Queue, Callback Queue, Event Queue
   - Job Queue, Microtasks Queue, Promise Queue
-  -  Event Loop
+  - Event Loop
 
 ### 10. Immediately Invoked Function Expression IIFE Là Gì | Justin Nguyen
 
@@ -157,3 +157,14 @@
   - Job Queue, Microtasks Queue, Promise Queue
   - Closure, Prototypal Inheritance
   - Function chain
+
+### 11. Quản Lý Bộ Nhớ Garbage Collector Trong Javascript | Justin Nguyen
+
+- Garbage Collector là gì, ứng dụng ra sao để không bị memory leak? Series học Javascript Qua Khái Niệm với video lần này về cách phân bổ bộ nhớ, garbage collector sẽ xoá rác bộ nhớ ra sao, cũng như là những nguyên nhân và cách khắc phục memory leak.
+
+- Từ mới Tiếng anh trong video, xem thêm video để hiểu ý nghĩa nhé:
+  - Execution Context, Lexical
+  - By Reference
+  - Closure, Prototypal Inheritance
+  - Garbage Collector, Circular Reference
+  - Memory Management, Memory Allocation, Memory Leak
