@@ -1,0 +1,2 @@
+- Trong project này, mình tham khảo Chat-GPT và code theo
+- Code máy tính bỏ túi sử dụng HTML, CSS, JavaScript
