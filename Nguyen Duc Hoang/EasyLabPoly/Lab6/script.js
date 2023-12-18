@@ -1,4 +1,4 @@
-var rotator = document.getElementById('rotator')
+let rotator = document.getElementById('rotator')
 console.log('src', rotator.src)
 
 let out = new Image()
@@ -8,32 +8,30 @@ let over = new Image()
 over.src = 'images/anh2.jpg'
 
 function fover() {
-  let anh = document.getElementById('anh')
-  anh.src = over.src
+  rotator.src = over.src
 }
 
 function fout() {
-  let anh = document.getElementById('anh')
-  anh.src = out.src
+  rotator.src = out.src
 }
 
 let images = []
-for (let i = 0; i < images.length; i++) {
+for (let i = 1; i < 5; i++) {
+  // Adjust the loop limit based on your actual number of images
   images[i] = new Image()
-  images[i].src = 'images/' + i + '.jpg'
+  images[i].src = 'images/' + 'anh' + i + '.jpg'
 }
 
 let index = 0
+
 function first() {
   index = 0
-  let anh_1 = document.getElementById('anh')
-  anh_1.src = images[index].src
+  rotator.src = images[index].src
 }
 
 function last() {
   index = images.length - 1
-  let anh_1 = document.getElementById('anh')
-  anh_1.src = images[index].src
+  rotator.src = images[index].src
 }
 
 function next() {
@@ -41,8 +39,7 @@ function next() {
   if (index >= images.length) {
     index = 0
   }
-  let anh_1 = document.getElementById('anh')
-  anh_1.src = images[index].src
+  rotator.src = images[index].src
 }
 
 function prev() {
@@ -50,6 +47,5 @@ function prev() {
   if (index < 0) {
     index = images.length - 1
   }
-  let anh_1 = document.getElementById('anh')
-  anh_1.src = images[index].src
+  rotator.src = images[index].src
 }
