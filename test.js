@@ -60,3 +60,16 @@ function outerFunction(outerVariable) {
 outerFunction('Outer Value')
 
 console.log('-------------------------------------------')
+
+// ❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌
+
+// Ví dụ về higher-order function nhận hàm làm tham số
+function operationOnArray(array, operation) {
+  return array.map(operation)
+}
+
+const numbers = [1, 2, 3, 4, 5]
+const squaredNumbers = operationOnArray(numbers, function (number) {
+  return number * number
+})
+console.log(squaredNumbers) // Output: [1, 4, 9, 16, 25]
