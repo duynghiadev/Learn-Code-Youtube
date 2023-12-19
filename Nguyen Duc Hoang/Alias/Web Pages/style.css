@@ -1,0 +1,51 @@
+.container {
+  width: 90%;
+  height: auto;
+  border: 1px solid red;
+  display: flex;
+  margin: 0 auto;
+}
+
+.left {
+  width: 70%;
+  height: 300px;
+  border: 1px solid black;
+  background-color: aqua;
+}
+
+.right {
+  width: 30%;
+  height: 300px;
+  border: 1px solid black;
+  background-color: yellow;
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    display: block;
+  }
+
+  .left {
+    width: 100%;
+  }
+
+  .right {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .container {
+    display: block;
+  }
+
+  .left {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .right {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
