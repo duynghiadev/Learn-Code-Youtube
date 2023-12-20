@@ -20,3 +20,14 @@ for (index = 0; index <= group.length; index++) {
     console.log(group[index])
   }
 }
+
+console.log('--------------------------------------')
+
+const getVotersNew = (ages) => {
+  return ages.filter((item) => {
+    return item >= 18
+  })
+}
+
+const votersNew = getVotersNew(group)
+console.log('votersNew:', votersNew)
