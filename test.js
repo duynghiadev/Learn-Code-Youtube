@@ -72,13 +72,12 @@ function operationOnArray(array, operation) {
 }
 
 const numbers = [1, 2, 3, 4, 5]
-const squaredNumbers = operationOnArray(numbers, function(number) {
+const squaredNumbers = operationOnArray(numbers, function (number) {
   return number * number
 })
 console.log(squaredNumbers) // Output: [1, 4, 9, 16, 25]
 
 console.log('-------------------------------------------')
-
 
 // ❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌
 // Example Closure Basic
@@ -115,7 +114,7 @@ function createTaskExecutor(taskName) {
     taskStatus = 'In progress'
 
     // Simulate asynchronous task
-    setTimeout(function() {
+    setTimeout(function () {
       console.log(`Task "${taskName}" is now completed.`)
       taskStatus = 'Completed'
     }, 2000)
@@ -134,7 +133,11 @@ const processTask = createTaskExecutor('Process Data')
 downloadTask() // Output: Task "Download Data" is currently Not started.
 // (Sau 2 giây) Task "Download Data" is now completed.
 
-processTask()  // Output: Task "Process Data" is currently Not started.
+processTask() // Output: Task "Process Data" is currently Not started.
 // (Sau 2 giây) Task "Process Data" is now completed.
 
 // Mỗi closure giữ lại trạng thái của nó, không ảnh hưởng đến closure khác
+
+console.log('-------------------------------------------')
+
+// ❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌
