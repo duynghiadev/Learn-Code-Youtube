@@ -30,7 +30,10 @@ function PassByReference(obj) {
 }
 
 // Khai báo một đối tượng chứa giá trị a và b
-let values = { a1: 1, b1: 2 }
+let values = {
+  a1: 1,
+  b1: 2
+}
 
 // Gọi hàm PassByReference và truyền đối tượng làm tham số
 PassByReference(values)
@@ -69,7 +72,69 @@ function operationOnArray(array, operation) {
 }
 
 const numbers = [1, 2, 3, 4, 5]
-const squaredNumbers = operationOnArray(numbers, function (number) {
+const squaredNumbers = operationOnArray(numbers, function(number) {
   return number * number
 })
 console.log(squaredNumbers) // Output: [1, 4, 9, 16, 25]
+
+console.log('-------------------------------------------')
+
+
+// ❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌
+// Example Closure Basic
+function outerFunction_1(outerVariable) {
+  // innerFunction là một closure
+  function innerFunction(innerVariable) {
+    console.log(outerVariable + ' ' + innerVariable)
+  }
+
+  return innerFunction
+}
+
+// Tạo một closure với outerVariable là 'Hello'
+const closureExample1 = outerFunction_1('Hello')
+
+// Tạo một closure với outerVariable là 'Hi'
+const closureExample2 = outerFunction_1('Hi')
+
+// Gọi các closure với innerVariable
+closureExample1('World') // Output: Hello World
+closureExample2('Universe') // Output: Hi Universe
+
+console.log('-------------------------------------------')
+
+// ❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌
+// Example Closure Advance
+function createTaskExecutor(taskName) {
+  // Biến local được chia sẻ qua closure
+  let taskStatus = 'Not started'
+
+  // Hàm closure để thực hiện công việc và cập nhật trạng thái
+  function taskExecutor() {
+    console.log(`Task "${taskName}" is currently ${taskStatus}.`)
+    taskStatus = 'In progress'
+
+    // Simulate asynchronous task
+    setTimeout(function() {
+      console.log(`Task "${taskName}" is now completed.`)
+      taskStatus = 'Completed'
+    }, 2000)
+  }
+
+  return taskExecutor
+}
+
+// Tạo một closure cho công việc "Download Data"
+const downloadTask = createTaskExecutor('Download Data')
+
+// Tạo một closure cho công việc "Process Data"
+const processTask = createTaskExecutor('Process Data')
+
+// Thực hiện các công việc
+downloadTask() // Output: Task "Download Data" is currently Not started.
+// (Sau 2 giây) Task "Download Data" is now completed.
+
+processTask()  // Output: Task "Process Data" is currently Not started.
+// (Sau 2 giây) Task "Process Data" is now completed.
+
+// Mỗi closure giữ lại trạng thái của nó, không ảnh hưởng đến closure khác
