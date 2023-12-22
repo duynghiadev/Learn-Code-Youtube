@@ -99,3 +99,193 @@ animal.speak.call(dog, 'Gâu gâu') // Output: Buddy kêu: Gâu gâu
 Trong ví dụ này, chúng ta có một đối tượng `animal` với một phương thức `speak` để in ra tiếng kêu của `animal`. Sau đó, chúng ta có một đối tượng `dog` không có phương thức `speak`. Tuy nhiên, chúng ta có thể sử dụng `call` để gọi phương thức `speak` của đối tượng `animal` trên đối tượng `dog`. Kết quả là chúng ta có thể tái sử dụng phương thức từ đối tượng cha và áp dụng nó cho đối tượng con một cách linh hoạt.
 
 ### Ví dụ phức tạp hơn về call
+
+Dưới đây là một ví dụ phức tạp hơn, mô phỏng việc sử dụng `call` để mô phỏng tính chất đa kế thừa trong JavaScript. Trong trường hợp này, chúng ta có ba đối tượng: `"Person",` `"Coder"`, và `"Speaker"`. `"Coder"` và `"Speaker"` kế thừa từ `"Person"`, và mỗi đối tượng có những phương thức và thuộc tính riêng biệt.
+
+```js
+// Đối tượng cơ bản "Person"
+const Person = function (name, age) {
+  this.name = name
+  this.age = age
+}
+
+// Phương thức của "Person"
+Person.prototype.sayHello = function () {
+  console.log(`Xin chào, tôi là ${this.name} và tôi ${this.age} tuổi.`)
+}
+
+// Đối tượng "Coder" kế thừa từ "Person"
+const Coder = function (name, age, skills) {
+  Person.call(this, name, age)
+  this.skills = skills
+}
+
+// Đối tượng "Speaker" kế thừa từ "Person"
+const Speaker = function (name, age, topics) {
+  Person.call(this, name, age)
+  this.topics = topics
+}
+
+// Gọi phương thức của "Person" trên đối tượng "Coder"
+Coder.prototype.introduce = function () {
+  Person.prototype.sayHello.call(this)
+  console.log(`Tôi có kỹ năng: ${this.skills.join(', ')}.`)
+}
+
+// Gọi phương thức của "Person" trên đối tượng "Speaker"
+Speaker.prototype.introduce = function () {
+  Person.prototype.sayHello.call(this)
+  console.log(`Tôi nói về: ${this.topics.join(', ')}.`)
+}
+
+// Tạo các đối tượng
+const coder = new Coder('Alice', 25, ['JavaScript', 'Python'])
+const speaker = new Speaker('Bob', 30, ['Technology', 'Motivation'])
+
+// Gọi phương thức introduce của từng đối tượng
+coder.introduce()
+// Output: Xin chào, tôi là Alice và tôi 25 tuổi.
+// Tôi có kỹ năng: JavaScript, Python.
+
+speaker.introduce()
+// Output: Xin chào, tôi là Bob và tôi 30 tuổi.
+// Tôi nói về: Technology, Motivation.
+```
+
+Trong ví dụ này, chúng ta sử dụng `call` để gọi phương thức của đối tượng "Person" từ cả "Coder" và "Speaker". Điều này giúp tái sử dụng mã nguồn và mô phỏng tính chất đa kế thừa trong JavaScript.
+
+### Ví dụ phức tạp hơn về call và kết hợp với Array Method
+
+Dưới đây là một ví dụ kết hợp sử dụng `call` và một số phương thức mảng (Array method) như `map` để xử lý một mảng các đối tượng. Trong ví dụ này, chúng ta có một mảng các đối tượng "Person", và chúng ta muốn sử dụng phương thức `introduce` của mỗi đối tượng và thu được một mảng các câu giới thiệu.
+
+```js
+// Đối tượng cơ bản "Person"
+const Person = function (name, age) {
+  this.name = name
+  this.age = age
+}
+
+// Phương thức của "Person"
+Person.prototype.introduce = function () {
+  return `Xin chào, tôi là ${this.name} và tôi ${this.age} tuổi.`
+}
+
+// Mảng các đối tượng "Person"
+const people = [new Person('Alice', 25), new Person('Bob', 30), new Person('Charlie', 22)]
+
+// Sử dụng phương thức introduce của mỗi đối tượng và thu được mảng giới thiệu
+const introductions = people.map(function (person) {
+  // Sử dụng phương thức introduce của Person và thiết lập giá trị của this bằng call
+  return Person.prototype.introduce.call(person)
+})
+
+// In ra mảng giới thiệu
+console.log(introductions)
+// Output:
+// [ 'Xin chào, tôi là Alice và tôi 25 tuổi.',
+//   'Xin chào, tôi là Bob và tôi 30 tuổi.',
+//   'Xin chào, tôi là Charlie và tôi 22 tuổi.' ]
+```
+
+Trong ví dụ này, chúng ta sử dụng `map` để lặp qua mảng các đối tượng "Person". Trong callback của `map`, chúng ta sử dụng `call` để gọi phương thức `introduce` của mỗi đối tượng và thu được một mảng mới chứa các câu giới thiệu. Mảng này sau đó được in ra để xem kết quả.
+
+### Ví dụ cơ bản về apply
+
+Trong JavaScript, phương thức `apply()` là một trong ba phương thức cung cấp bởi hàm JavaScript (Function). Các phương thức khác là `call()` và `bind()`. Phương thức `apply()` cho phép bạn gọi một hàm với một ngữ cảnh (context) và một mảng các đối số.
+
+Dưới đây là một ví dụ cơ bản về cách sử dụng `apply()`:
+
+```js
+// Tạo một đối tượng person
+var person = {
+  fullName: function (city, country) {
+    return this.firstName + ' ' + this.lastName + ', ' + city + ', ' + country
+  }
+}
+
+// Đối tượng person có các thuộc tính firstName và lastName
+var person1 = {
+  firstName: 'John',
+  lastName: 'Doe'
+}
+
+var person2 = {
+  firstName: 'Jane',
+  lastName: 'Doe'
+}
+
+// Sử dụng apply để gọi phương thức fullName của đối tượng person
+// person1 và person2 sẽ được sử dụng làm ngữ cảnh (this) của hàm
+var result1 = person.fullName.apply(person1, ['New York', 'USA'])
+var result2 = person.fullName.apply(person2, ['London', 'UK'])
+
+console.log(result1) // Kết quả: John Doe, New York, USA
+console.log(result2) // Kết quả: Jane Doe, London, UK
+```
+
+Ở đây, `apply()` được sử dụng để gọi phương thức `fullName` của đối tượng `person`, nhưng với ngữ cảnh (this) được đặt là `person1` và `person2`. Mảng `["New York", "USA"]` và `["London", "UK"]` là các đối số được truyền vào hàm `fullName`.
+
+### Ví dụ khó hơn về apply
+
+Dưới đây là một ví dụ khó hơn về cách sử dụng `apply()` trong JavaScript. Trong ví dụ này, chúng ta sẽ tận dụng `apply()` để tính giá trị lớn nhất trong một mảng số nguyên:
+
+```js
+// Tạo một mảng số nguyên
+var numbers = [1, 5, 10, 20, 3]
+
+// Sử dụng apply và Math.max để tìm giá trị lớn nhất trong mảng
+var maxNumber = Math.max.apply(null, numbers)
+
+console.log('Giá trị lớn nhất trong mảng là: ' + maxNumber)
+```
+
+Trong ví dụ này, `Math.max` là một hàm có thể nhận một số lượng đối số biến đổi. Tuy nhiên, chúng ta không thể truyền một mảng trực tiếp vào hàm `Math.max`. Thay vào đó, chúng ta sử dụng `apply()` để truyền mảng các số nguyên làm đối số cho hàm `Math.max`.
+
+Lưu ý rằng đối số đầu tiên của `apply()` là ngữ cảnh (context) hoặc đối tượng mà hàm sẽ thực thi trong. Trong trường hợp này, vì `Math.max` không cần một ngữ cảnh cụ thể (nó không thay đổi `this`), nên chúng ta truyền `null`.
+
+Kết quả sẽ là giá trị lớn nhất trong mảng, và trong ví dụ này là `20`.
+
+### Ví dụ phức tạp hơn về apply và kết hợp với Array Method
+
+Dưới đây là một ví dụ phức tạp hơn về cách sử dụng `apply` kết hợp với một số Array Method trong JavaScript. Trong ví dụ này, chúng ta sẽ viết một hàm `calculate` có thể thực hiện các phép tính cơ bản (cộng, trừ, nhân, chia) trên một mảng các số.
+
+```js
+// Hàm thực hiện phép tính theo toán tử và mảng số
+function calculate(operator, ...numbers) {
+  if (operator === 'add') {
+    return numbers.reduce((sum, num) => sum + num, 0)
+  } else if (operator === 'subtract') {
+    return numbers.reduce((difference, num) => difference - num)
+  } else if (operator === 'multiply') {
+    return numbers.reduce((product, num) => product * num, 1)
+  } else if (operator === 'divide') {
+    if (numbers.some((num) => num === 0)) {
+      return 'Không thể chia cho 0'
+    }
+    return numbers.reduce((quotient, num) => quotient / num)
+  } else {
+    return 'Phép toán không hợp lệ'
+  }
+}
+
+// Mảng các số cần thực hiện phép tính
+const numbers = [2, 3, 5, 8]
+
+// Áp dụng hàm calculate sử dụng apply để thực hiện phép cộng
+const sum = calculate.apply(null, ['add', ...numbers])
+console.log('Tổng các số:', sum)
+
+// Áp dụng hàm calculate sử dụng apply để thực hiện phép nhân
+const product = calculate.apply(null, ['multiply', ...numbers])
+console.log('Tích các số:', product)
+
+// Áp dụng hàm calculate sử dụng apply để thực hiện phép chia
+const quotient = calculate.apply(null, ['divide', ...numbers])
+console.log('Thương các số:', quotient)
+
+// Áp dụng hàm calculate sử dụng apply để thực hiện phép trừ
+const difference = calculate.apply(null, ['subtract', ...numbers])
+console.log('Hiệu các số:', difference)
+```
+
+Trong ví dụ này, chúng ta sử dụng `apply` để gọi hàm `calculate` với một mảng đối số. Hàm `calculate` sau đó thực hiện phép tính tương ứng dựa trên toán tử được chọn và mảng các số được chuyển vào. Việc sử dụng `apply` giúp đơn giản hóa quá trình truyền đối số, đặc biệt khi có một số lượng không xác định các đối số.
