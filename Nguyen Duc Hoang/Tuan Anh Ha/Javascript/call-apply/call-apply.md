@@ -289,3 +289,24 @@ console.log('Hiệu các số:', difference)
 ```
 
 Trong ví dụ này, chúng ta sử dụng `apply` để gọi hàm `calculate` với một mảng đối số. Hàm `calculate` sau đó thực hiện phép tính tương ứng dựa trên toán tử được chọn và mảng các số được chuyển vào. Việc sử dụng `apply` giúp đơn giản hóa quá trình truyền đối số, đặc biệt khi có một số lượng không xác định các đối số.
+
+### Bonus thêm về giải thích toán tử spread
+
+Dòng code bạn đưa ra sử dụng toán tử spread (`...`) để giải nén mảng `numbers`. Toán tử spread được sử dụng để chia nhỏ một mảng hoặc iterable thành các phần tử riêng lẻ. Trong trường hợp này, nó được sử dụng để chuyển đối số của hàm `calculate` từ một mảng thành các phần tử riêng lẻ.
+
+Dòng code cụ thể là:
+
+```js
+const difference = calculate.apply(null, ['subtract', ...numbers])
+```
+
+- `'subtract'` là toán tử chuỗi (string).
+- `...numbers` là toán tử spread, giải nén mảng numbers thành các phần tử riêng lẻ.
+
+Sau khi sử dụng toán tử spread, mảng `['subtract', ...numbers]` sẽ trở thành các đối số riêng lẻ cho hàm `calculate.apply`, và nó sẽ tương đương với việc gọi hàm như sau:
+
+```js
+calculate.apply(null, 'subtract', 2, 3, 5, 8)
+```
+
+Nhờ vào toán tử spread, chúng ta có thể truyền một mảng dưới dạng các đối số riêng lẻ vào hàm `calculate.apply`.

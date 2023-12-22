@@ -52,20 +52,24 @@ const numbers = [2, 3, 5, 8]
 
 // Áp dụng hàm calculate sử dụng apply để thực hiện phép cộng
 const sum = calculate.apply(null, ['add', ...numbers])
+console.log('...numbers:', ...numbers)
 console.log('Tổng các số:', sum)
 console.log('----------------------------------')
 
 // Áp dụng hàm calculate sử dụng apply để thực hiện phép trừ
 const difference = calculate.apply(null, ['subtract', ...numbers])
+console.log('...numbers:', ...numbers)
 console.log('Hiệu các số:', difference)
 console.log('----------------------------------')
 
 // Áp dụng hàm calculate sử dụng apply để thực hiện phép nhân
 const product = calculate.apply(null, ['multiply', ...numbers])
+console.log('...numbers:', ...numbers)
 console.log('Tích các số:', product)
 console.log('----------------------------------')
 
 // Áp dụng hàm calculate sử dụng apply để thực hiện phép chia
 const quotient = calculate.apply(null, ['divide', ...numbers])
+console.log('...numbers:', ...numbers)
 console.log('Thương các số:', quotient)
 console.log('----------------------------------')
