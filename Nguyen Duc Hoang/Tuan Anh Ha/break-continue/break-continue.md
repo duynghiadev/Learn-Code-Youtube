@@ -55,6 +55,8 @@ Cả `break` và `continue` đều giúp kiểm soát dòng thực thi trong vò
 
 # Bubble Sort
 
+Đây là thuật toán nổi bọt
+
 Bubble sort là một thuật toán sắp xếp đơn giản được sử dụng để sắp xếp một dãy số theo thứ tự tăng dần hoặc giảm dần. Thuật toán này được gọi là "bubble sort" vì trong quá trình sắp xếp, các phần tử của dãy sẽ "nổi lên" dần dần đến đúng vị trí của chúng như những bong bóng nổi lên trên mặt nước.
 
 ## Ý tưởng chính
@@ -108,3 +110,32 @@ Dưới đây là một ví dụ cách bubble sort hoạt động trên một d�
    - Dãy sau bước 7: [2, 3, 4, 5, 8]
 
 Dãy số sau 7 bước trở nên đã được sắp xếp. Bubble sort có hiệu suất thấp và không được ưa chuộng trong các ứng dụng thực tế với dữ liệu lớn vì có thể đòi hỏi nhiều bước so sánh và hoán đổi.
+
+## Giải thích code trong file break-continue-3.js
+
+`for (let k = 0; k < matrix[i].length - j - 1; k++) {`. Trong dòng code đó vì sao phải trừ 1
+
+Trong vòng lặp sắp xếp bong bóng (bubble sort), điều kiện `k < matrix[i].length - j - 1` là một biện pháp tối ưu để tránh so sánh các phần tử đã được sắp xếp đúng ở cuối mảng trong mỗi lần lặp của `j`.
+
+Cụ thể, sau mỗi lần lặp của `j`, giá trị lớn nhất đã được đưa lên cuối của mảng, vì vậy chúng ta không cần so sánh lại phần tử này. Bằng cách giảm giá trị `j` khỏi `matrix[i].length`, chúng ta có thể tránh so sánh các phần tử cuối cùng của mảng mỗi lần lặp.
+
+Hãy xem xét một ví dụ cụ thể:
+
+```js
+const array = [5, 2, 9, 8, 1, 6, 4, 7, 3]
+
+for (let j = 0; j < array.length; j++) {
+  for (let k = 0; k < array.length - j - 1; k++) {
+    if (array[k] > array[k + 1]) {
+      // Swap giá trị nếu cần
+      const temp = array[k]
+      array[k] = array[k + 1]
+      array[k + 1] = temp
+    }
+  }
+}
+
+console.log('Mảng đã sắp xếp:', array)
+```
+
+Trong ví dụ này, giả sử `array` là `[5, 2, 9, 8, 1, 6, 4, 7, 3]`. Giá trị `j` tăng lên sau mỗi lần lặp, và `array.length - j - 1` đảm bảo rằng chúng ta không so sánh các phần tử cuối cùng đã được sắp xếp đúng.
