@@ -17,34 +17,56 @@ const matrix = [
 
 // Sắp xếp các hàng của ma trận theo thứ tự tăng dần
 for (let i = 0; i < matrix.length; i++) {
-  console.log(`Before sorting: ${matrix[i]}`)
+  console.log(`Array before sorting: ${matrix[i]}`)
 
   // Sử dụng bubble sort cho mỗi hàng
   for (let j = 0; j < matrix[i].length; j++) {
     for (let k = 0; k < matrix[i].length - j - 1; k++) {
       console.log('j:', j)
+      console.log('k:', k)
+      console.log('matrix[0]:', matrix[0])
+      console.log('matrix[1]:', matrix[1])
+      console.log('matrix[2]:', matrix[2])
+      console.log(`i: ${i}, matrix[${i}]: ${matrix[i]}`)
       console.log('matrix[i].length:', matrix[i].length)
       console.log('matrix[i].length - j:', matrix[i].length - j)
       console.log('matrix[i].length - j - 1:', matrix[i].length - j - 1)
-      console.log('matrix[i][k]:', matrix[i][k])
-      console.log('matrix[i][k + 1]:', matrix[i][k + 1])
+      console.log('-----------------------------------------')
+
+      console.log(`matrix[i][k] is matrix[${i}][${k}]: ${matrix[i][k]}`)
+      console.log(`matrix[i][k + 1] is matrix[${i}][${k + 1}]: ${matrix[i][k + 1]}`)
       console.log('matrix[i][k] > matrix[i][k + 1]:', matrix[i][k] > matrix[i][k + 1])
+      console.log('-----------------------------------------')
+
+      console.log(`matrix[i][j] is matrix[${i}][${j}]: ${matrix[i][j]}`)
+      console.log(`matrix[i][j + 1] is matrix[${i}][${j + 1}]: ${matrix[i][j + 1]}`)
+      console.log('matrix[i][j] > matrix[i][j + 1]:', matrix[i][j] > matrix[i][j + 1])
+      console.log('-----------------------------------------')
 
       if (matrix[i][k] > matrix[i][k + 1]) {
         // Swap giá trị nếu cần
+        console.log(`matrix[i][j]: matrix[${i}][${j}] = ${matrix[i][j]}`)
+        console.log(
+          `Before swap: matrix[${i}][${k}] = ${matrix[i][k]}, matrix[${i}][${k + 1}] = ${
+            matrix[i][k + 1]
+          }`
+        )
         const temp = matrix[i][k]
-        console.log('temp before:', temp)
         matrix[i][k] = matrix[i][k + 1]
-        console.log('matrix[i][k] in if - first:', matrix[i][k])
         matrix[i][k + 1] = temp
-        console.log('matrix[i][k + 1] in if:', matrix[i][k + 1])
-        console.log('matrix[i][k] in if - second:', matrix[i][k + 1])
+        console.log(
+          `After swap: matrix[${i}][${k}] = ${matrix[i][k]}, matrix[${i}][${k + 1}] = ${
+            matrix[i][k + 1]
+          }`
+        )
+        console.log(`Array after sorting i: ${i}, matrix[${i}]: ${matrix[i]}`)
         console.log('-----------------------------------------')
       }
     }
   }
 
   console.log(`After sorting: ${matrix[i]}`)
+  console.log('matrix:', matrix)
   console.log('-----------------------------------------')
 }
 
