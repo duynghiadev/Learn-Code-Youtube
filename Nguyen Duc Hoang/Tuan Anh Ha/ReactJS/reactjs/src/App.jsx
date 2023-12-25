@@ -29,6 +29,7 @@ function App() {
       <hr />
       <CustomerOne />
       <CustomerTwo />
+      <hr />
     </div>
   )
 }
