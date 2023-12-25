@@ -1,15 +1,22 @@
 import './App.css'
-import ReactBatchingOne from './react-batching/ReactBatchingOne'
-import ReactBatchingThree from './react-batching/ReactBatchingThree'
-import ReactBatchingTwo from './react-batching/ReactBatchingTwo'
+import ComplexClassComponent from './components/componentFirst/classComponentOne'
+import ComplexLifecycleComponent from './components/componentFirst/classComponentTwo'
+import ComplexFunctionComponent from './components/componentFirst/functionComponent'
+import ReactBatchingOne from './components/react-batching/ReactBatchingOne'
+import ReactBatchingThree from './components/react-batching/ReactBatchingThree'
+import ReactBatchingTwo from './components/react-batching/ReactBatchingTwo'
 
 function App() {
   return (
     <h2>
       This is code in folder principle
+      <hr />
       {/* <ReactBatchingOne /> */}
       {/* <ReactBatchingTwo /> */}
-      <ReactBatchingThree />
+      {/* <ReactBatchingThree /> */}
+      {/* <ComplexClassComponent /> */}
+      {/* <ComplexLifecycleComponent /> */}
+      <ComplexFunctionComponent />
     </h2>
   )
 }
