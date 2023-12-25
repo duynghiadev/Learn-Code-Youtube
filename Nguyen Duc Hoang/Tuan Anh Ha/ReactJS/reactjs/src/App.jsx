@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import './App.css'
+import CustomerOne from './components/CustomerOne'
+import CustomerTwo from './components/CustomerTwo'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -23,6 +25,11 @@ function App() {
       <hr />
       <button onClick={handleSubtract}>- 1</button>
       <h2 style={{ color: textColor }}>Number: ${count} </h2>
+
+      <hr />
+      <CustomerOne />
+      <hr />
+      <CustomerTwo />
     </div>
   )
 }
