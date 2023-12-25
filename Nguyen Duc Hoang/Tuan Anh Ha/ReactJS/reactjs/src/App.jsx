@@ -28,7 +28,6 @@ function App() {
 
       <hr />
       <CustomerOne />
-      <hr />
       <CustomerTwo />
     </div>
   )
