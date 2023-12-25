@@ -1,3 +1,7 @@
+# Đây là khóa học Hướng dẫn React Js 2022
+
+[Link tutorial](https://bom.so/mD4OFX)
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
