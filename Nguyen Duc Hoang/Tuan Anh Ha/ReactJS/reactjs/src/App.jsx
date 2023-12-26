@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './App.css'
-import CustomerOne from './components/CustomerOne'
-import CustomerTwo from './components/CustomerTwo'
+import CustomerOne from './components/Customer/CustomerOne'
+import CustomerTwo from './components/Customer/CustomerTwo'
 
 function App() {
   const [count, setCount] = useState(0)
