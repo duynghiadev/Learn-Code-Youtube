@@ -1,0 +1,36 @@
+/* UserList.css */
+
+div {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+h1 {
+  color: #333;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  background-color: #f4f4f4;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+}
+
+Link button {
+  display: block;
+  margin-top: 10px;
+  text-decoration: none;
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 5px;
+}
+
+Link:hover {
+  background-color: #0056b3;
+}
