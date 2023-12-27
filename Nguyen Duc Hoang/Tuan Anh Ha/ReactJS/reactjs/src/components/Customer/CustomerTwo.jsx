@@ -9,7 +9,7 @@ const CustomerTwo = () => {
     email: 'abc@gmail.com',
     location: 'Vietnam',
     company: 'Example company',
-    isMember: true
+    isMember: false
   }
 
   const handleBuy = () => {
