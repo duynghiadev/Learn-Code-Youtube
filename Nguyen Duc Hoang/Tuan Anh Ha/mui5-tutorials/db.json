@@ -1,0 +1,39 @@
+{
+  "customers": [
+    {
+      "name": "Jon Doe",
+      "details": "He is from America.",
+      "gender": "male",
+      "rating": 5,
+      "id": 1
+    },
+    {
+      "name": "Jane Doe",
+      "details": "She is from the UK.",
+      "gender": "female",
+      "rating": 4,
+      "id": 2
+    },
+    {
+      "name": "Alice White",
+      "details": "She is from Australia.",
+      "gender": "female",
+      "rating": 5,
+      "id": 3
+    },
+    {
+      "name": "Peter White",
+      "details": "He is a web-developer.",
+      "gender": "male",
+      "rating": 3,
+      "id": 4
+    },
+    {
+      "name": "Mary Smith",
+      "details": "She is from America.",
+      "gender": "female",
+      "rating": 2,
+      "id": 6
+    }
+  ]
+}
