@@ -1,0 +1,40 @@
+/* UserDetail.css */
+
+.user-detail-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.user-detail-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.user-details {
+  font-size: 16px;
+}
+
+.detail-label {
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.back-to-list-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 20px;
+}
+
+.back-to-list-btn:hover {
+  background-color: #0056b3;
+}
