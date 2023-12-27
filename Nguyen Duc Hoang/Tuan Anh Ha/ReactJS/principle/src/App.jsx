@@ -1,4 +1,5 @@
 import './App.css'
+import TernaryOperatorApi from './components/Ternary Operator/ternaryOperatorApi'
 import ComplexClassComponent from './components/componentFirst/classComponentOne'
 import ComplexLifecycleComponent from './components/componentFirst/classComponentTwo'
 import ComplexFunctionComponent from './components/componentFirst/functionComponent'
@@ -26,7 +27,8 @@ function App() {
       {/* <AppComponentOne /> */}
       {/* <UserList /> */}
       {/* <UserListOne /> */}
-      <UserListTwo />
+      {/* <UserListTwo /> */}
+      <TernaryOperatorApi />
     </h2>
   )
 }
