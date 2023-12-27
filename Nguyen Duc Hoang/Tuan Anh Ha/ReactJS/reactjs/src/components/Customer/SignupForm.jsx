@@ -1,12 +1,15 @@
+import { useState } from 'react'
+
 const SignupForm = () => {
-  const handleSubmit = (event) => {
-    event.preventDefault() // not reloading the web
-    alert('Thank you for signing up...')
-  }
+  const [customerName, setCustomerName] = useState('')
 
   const handleChange = (event) => {
+    setCustomerName(event.target.value)
+  }
+
+  const handleSubmit = (event) => {
     event.preventDefault() // not reloading the web
-    console.log('handle change...')
+    alert(`Thank you ${customerName} for signing up.`)
   }
 
   return (
@@ -15,7 +18,7 @@ const SignupForm = () => {
       <p>Please sign up to become the member</p>
       <form onSubmit={handleSubmit}>
         <label>Name:</label>
-        <input type='text' onChange={handleChange} />
+        <input type='text' value={customerName} onChange={handleChange} />
         <input type='submit' value='Sign up' />
       </form>
     </div>

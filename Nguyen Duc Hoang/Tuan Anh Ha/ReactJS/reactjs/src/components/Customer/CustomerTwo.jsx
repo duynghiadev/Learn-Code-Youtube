@@ -22,6 +22,7 @@ const CustomerTwo = () => {
       <h2>Customer Two</h2>
       <p>I am a function component</p>
       {info.isMember ? <CustomerInfo info={info} /> : <SignupForm />}
+      <hr />
       <button onClick={handleBuy}>Buy Now</button>
       <ToastContainer />
     </div>
