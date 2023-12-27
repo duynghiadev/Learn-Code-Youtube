@@ -28,3 +28,7 @@ hr {
   height: 1px;
   background-color: #ddd;
 }
+
+ul {
+  list-style-type: none;
+}

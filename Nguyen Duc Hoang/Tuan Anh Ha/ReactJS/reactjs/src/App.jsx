@@ -2,6 +2,12 @@ import { useState } from 'react'
 import './App.css'
 import CustomerOne from './components/Customer/CustomerOne'
 import CustomerTwo from './components/Customer/CustomerTwo'
+import Home from './pages/Home'
+import About from './pages/About'
+import Products from './pages/Products'
+import PageNotFound from './pages/Page404'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Navigation from './pages/Navigation'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -27,9 +33,21 @@ function App() {
       <h2 style={{ color: textColor }}>Number: ${count} </h2>
 
       <hr />
-      <CustomerOne />
+      {/* <CustomerOne />
       <hr />
       <CustomerTwo />
+      <hr /> */}
+
+      <BrowserRouter>
+        <h1>Customer Management App</h1>
+        <Navigation />
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/products' element={<Products />} />
+          <Route path='*' element={<PageNotFound />} />
+        </Routes>
+      </BrowserRouter>
       <hr />
     </div>
   )
