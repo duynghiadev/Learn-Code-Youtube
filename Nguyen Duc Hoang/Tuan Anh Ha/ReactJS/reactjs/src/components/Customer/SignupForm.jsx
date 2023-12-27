@@ -1,15 +1,24 @@
 import { useState } from 'react'
 
 const SignupForm = () => {
-  const [customerName, setCustomerName] = useState('')
+  const [customerInputs, setCustomerInputs] = useState({})
 
   const handleChange = (event) => {
-    setCustomerName(event.target.value)
+    const name = event.target.name
+    const value = event.target.value
+
+    console.log('name:', name)
+    console.log('value:', value)
+
+    setCustomerInputs((inputs) => ({
+      ...inputs,
+      [name]: value
+    }))
   }
 
   const handleSubmit = (event) => {
     event.preventDefault() // not reloading the web
-    alert(`Thank you ${customerName} for signing up.`)
+    console.log('customerInputs:', customerInputs)
   }
 
   return (
@@ -18,7 +27,27 @@ const SignupForm = () => {
       <p>Please sign up to become the member</p>
       <form onSubmit={handleSubmit}>
         <label>Name:</label>
-        <input type='text' value={customerName} onChange={handleChange} />
+        <input type='text' name='name' value={customerInputs.name || ''} onChange={handleChange} />
+        <br />
+
+        <label>Email:</label>
+        <input
+          type='text'
+          name='email'
+          value={customerInputs.email || ''}
+          onChange={handleChange}
+        />
+        <br />
+
+        <label>Address:</label>
+        <input
+          type='text'
+          name='address'
+          value={customerInputs.address || ''}
+          onChange={handleChange}
+        />
+        <br />
+
         <input type='submit' value='Sign up' />
       </form>
     </div>
