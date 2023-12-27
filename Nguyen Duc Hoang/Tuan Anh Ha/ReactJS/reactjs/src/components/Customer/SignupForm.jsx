@@ -4,8 +4,7 @@ const SignupForm = () => {
   const [customerInputs, setCustomerInputs] = useState({})
 
   const handleChange = (event) => {
-    const name = event.target.name
-    const value = event.target.value
+    const { name, value } = event.target
 
     console.log('name:', name)
     console.log('value:', value)
@@ -32,7 +31,7 @@ const SignupForm = () => {
 
         <label>Email:</label>
         <input
-          type='text'
+          type='email'
           name='email'
           value={customerInputs.email || ''}
           onChange={handleChange}
