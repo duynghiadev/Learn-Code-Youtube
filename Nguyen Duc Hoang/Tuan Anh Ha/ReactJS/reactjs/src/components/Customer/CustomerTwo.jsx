@@ -1,13 +1,15 @@
 import CustomerInfo from './CustomerInfo'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import SignupForm from './SignupForm'
 
 const CustomerTwo = () => {
   const info = {
     name: 'Jon Doe',
     email: 'abc@gmail.com',
     location: 'Vietnam',
-    company: 'Example company'
+    company: 'Example company',
+    isMember: true
   }
 
   const handleBuy = () => {
@@ -19,7 +21,7 @@ const CustomerTwo = () => {
     <div>
       <h2>Customer Two</h2>
       <p>I am a function component</p>
-      <CustomerInfo info={info} />
+      {info.isMember ? <CustomerInfo info={info} /> : <SignupForm />}
       <button onClick={handleBuy}>Buy Now</button>
       <ToastContainer />
     </div>
