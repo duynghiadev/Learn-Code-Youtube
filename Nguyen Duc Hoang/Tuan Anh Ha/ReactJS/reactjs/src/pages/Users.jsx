@@ -13,6 +13,12 @@ const Users = () => {
     fetchData()
   }, [])
 
+  const deleteUser = (id) => {
+    console.log('id user delete from parent:', id)
+    setUsers(users.filter((user) => user.id !== id))
+    console.log('user deleted:', id)
+  }
+
   return (
     <div>
       <h3>Users of the App</h3>
@@ -23,7 +29,7 @@ const Users = () => {
       >
         Print users now
       </button>
-      {users && users.map((user) => <User key={user.id} {...user} />)}
+      {users && users.map((user) => <User key={user.id} {...user} handleDelete={deleteUser} />)}
     </div>
   )
 }
