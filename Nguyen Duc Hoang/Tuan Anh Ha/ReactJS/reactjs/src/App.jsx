@@ -9,6 +9,7 @@ import PageNotFound from './pages/Page404'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Navigation from './pages/Navigation'
 import Product from './pages/Product'
+import Users from './pages/Users'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -47,6 +48,7 @@ function App() {
           <Route path='/about' element={<About />} />
           <Route path='/products' element={<Products />} />
           <Route path='/products/:name/:id' element={<Product />} />
+          <Route path='/users' element={<Users />} />
           <Route path='*' element={<PageNotFound />} />
         </Routes>
       </BrowserRouter>
