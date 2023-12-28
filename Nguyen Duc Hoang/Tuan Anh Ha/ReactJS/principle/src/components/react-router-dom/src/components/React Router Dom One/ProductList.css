@@ -1,0 +1,36 @@
+/* ProductList.css */
+
+.product-list-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-list-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.product-list {
+  list-style: none;
+  padding: 0;
+}
+
+.product-link {
+  display: block;
+  padding: 10px;
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  text-decoration: none;
+  color: #333;
+  transition: background-color 0.3s;
+}
+
+.product-link:hover {
+  background-color: #e0e0e0;
+}

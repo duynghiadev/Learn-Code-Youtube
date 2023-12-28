@@ -7,6 +7,8 @@ import UserForm from './UserForm'
 import Home from './Home'
 import NotFound from './NotFound'
 import './AppSuccess.css' // Import file CSS
+import ProductDetail from './ProductDetail'
+import ProductList from './ProductList'
 
 const App = () => {
   return (
@@ -25,6 +27,8 @@ const App = () => {
         <Route path='/users' element={<UserList />} />
         <Route path='/users/:userId' element={<UserDetail />} />
         <Route path='/users/new' element={<UserForm />} />
+        <Route path='/products' element={<ProductList />} />
+        <Route path='/products/:productId' element={<ProductDetail />} />
         <Route path='*' element={<NotFound />} /> {/* Thêm route cho trang 404 */}
       </Routes>
     </Router>

@@ -1,0 +1,24 @@
+/* ProductDetail.css */
+
+.product-detail-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-detail-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.product-details {
+  font-size: 16px;
+}
+
+.detail-label {
+  font-weight: bold;
+  margin-right: 5px;
+}
