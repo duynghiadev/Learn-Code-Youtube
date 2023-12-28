@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import User from '../components/Customer/User'
 
 const Users = () => {
   const [users, setUsers] = useState(null)
@@ -22,6 +23,7 @@ const Users = () => {
       >
         Print users now
       </button>
+      {users && users.map((user) => <User key={user.id} {...user} />)}
     </div>
   )
 }
