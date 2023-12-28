@@ -19,7 +19,13 @@
   margin-bottom: 20px;
 }
 
-.go-to-list-btn {
+.nav-link {
+  display: block;
+  margin-top: 10px;
+  text-decoration: none;
+}
+
+.nav-button {
   display: inline-block;
   padding: 10px 20px;
   background-color: #007bff;
@@ -28,8 +34,9 @@
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s;
+  margin-right: 10px;
 }
 
-.go-to-list-btn:hover {
+.nav-button:hover {
   background-color: #0056b3;
 }

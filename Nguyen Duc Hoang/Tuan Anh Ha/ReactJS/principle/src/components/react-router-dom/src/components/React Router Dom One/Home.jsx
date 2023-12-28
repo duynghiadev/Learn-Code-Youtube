@@ -11,8 +11,11 @@ const Home = () => {
     <div className='home-container'>
       <h2 className='home-title'>Welcome to Home</h2>
       <p className='home-description'>This is the home page of the application.</p>
-      <Link to='/users' className='go-to-list-btn'>
-        Go to User List
+      <Link to='/users' className='nav-link'>
+        <button className='nav-button'>Go to User List</button>
+      </Link>
+      <Link to='/products' className='nav-link'>
+        <button className='nav-button'>View Products</button>
       </Link>
     </div>
   )
