@@ -1,0 +1,84 @@
+/* Home.css */
+
+.home-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.home-header {
+  font-size: 24px;
+  color: #333;
+}
+
+.home-description {
+  margin-bottom: 20px;
+  color: #666;
+}
+
+.home-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-left: 30px;
+}
+
+.home-button:hover {
+  background-color: #0056b3;
+}
+
+.search-form {
+  margin-top: 20px;
+}
+
+.search-form button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-left: 5px;
+  display: inline-block;
+}
+
+.search-form button:hover {
+  background-color: #0056b3;
+}
+
+.search-form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.search-form input {
+  padding: 8px;
+  font-size: 16px;
+  width: 200px;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+.error {
+  color: red;
+  margin-top: 5px;
+}
+
+.found-user {
+  margin-top: 20px;
+}
+
+.found-user-text {
+  font-size: 16px;
+  color: #333;
+}
+
+.found-user-header {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 10px;
+}

@@ -1,0 +1,71 @@
+/* UserProfile.css */
+
+/* Container styling */
+.profile-container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+/* Header styling */
+.profile-header {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 16px;
+}
+
+/* Subheader styling */
+.profile-subheader {
+  font-size: 20px;
+  color: #333;
+  margin-top: 20px;
+  margin-bottom: 12px;
+}
+
+/* Info styling */
+.profile-info {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+/* Post list styling */
+.profile-posts-list {
+  list-style: none;
+  padding: 0;
+}
+
+/* Post item styling */
+.profile-post-item {
+  margin-bottom: 8px;
+}
+
+/* Post link styling */
+.profile-post-link {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.profile-post-link:hover {
+  color: #0056b3;
+}
+
+/* Back button styling */
+.back-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-top: 20px;
+  transition: background-color 0.3s;
+}
+
+.back-button:hover {
+  background-color: #0056b3;
+}
