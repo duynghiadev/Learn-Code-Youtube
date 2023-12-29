@@ -1,0 +1,36 @@
+/* TaskList.css */
+.task-list-container {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 8px;
+}
+
+.task-list-title {
+  color: #333;
+}
+
+.user-data-container {
+  margin-top: 20px;
+  border-top: 1px solid #ddd;
+  padding-top: 10px;
+}
+
+.user-data {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.hide-button {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+}
