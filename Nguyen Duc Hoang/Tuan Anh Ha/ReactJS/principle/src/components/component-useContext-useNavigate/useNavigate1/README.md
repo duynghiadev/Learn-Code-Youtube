@@ -1,3 +1,9 @@
+> **Ôn lại kiến thức của useContext**
+
+> Context cung cấp cho chúng ta cách để thực hiện chia sẻ dữ liệu tới các component trong cây mà không cần truyền dữ liệu qua props theo từng cấp bậc.
+
+> Khi truyền dữ liệu tới các component bằng props thì bạn chỉ có thể truyền từ component cha sang component con. Nếu bạn muốn truyền sang component cháu hoặc sang component họ hàng xa thì điều này rất phức tạp. Bởi vậy context sẽ là kênh giao tiếp cho các component, cho phép bạn truyền dữ liệu một cách đơn giản hơn rất nhiều.
+
 # Tìm hiểu useNavigate trong `react-router-dom`
 
 ## Sử dụng `useNavigate` trong React Router
