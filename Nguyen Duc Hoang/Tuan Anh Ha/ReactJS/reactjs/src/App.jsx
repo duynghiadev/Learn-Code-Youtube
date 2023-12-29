@@ -36,10 +36,10 @@ function App() {
       <h2 style={{ color: textColor }}>Number: ${count} </h2>
 
       <hr />
-      {/* <CustomerOne />
+      <CustomerOne />
       <hr />
       <CustomerTwo />
-      <hr /> */}
+      <hr />
 
       <BrowserRouter>
         <h1>Customer Management App</h1>
