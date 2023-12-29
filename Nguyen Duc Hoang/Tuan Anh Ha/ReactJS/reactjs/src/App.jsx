@@ -1,3 +1,4 @@
+import '../src/assets/scss/styles.scss'
 import { useState } from 'react'
 import './App.css'
 import CustomerOne from './components/Customer/CustomerOne'
