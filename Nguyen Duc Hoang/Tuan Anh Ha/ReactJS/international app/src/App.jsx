@@ -1,5 +1,6 @@
 import { useReducer } from 'react'
 import './App.css'
+import UseRefHook from './components/useRef hook/useRef'
 
 const initialState = 0
 const reducer = (state, action) => {
@@ -36,6 +37,7 @@ function App() {
       <hr />
       <button onClick={() => dispatch('reset')}>Reset</button>
       <hr />
+      <UseRefHook />
     </div>
   )
 }
