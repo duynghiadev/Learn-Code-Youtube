@@ -1,6 +1,7 @@
 import { useReducer } from 'react'
 import './App.css'
 import UseRefHook from './components/useRef hook/useRef'
+import useFetch from './components/hooks/useFetch'
 
 const initialState = 0
 const reducer = (state, action) => {
@@ -21,6 +22,9 @@ const reducer = (state, action) => {
 
 function App() {
   const [number, dispatch] = useReducer(reducer, initialState)
+  const { data, loading, error } = useFetch('https://jsonplaceholder.typicode.com/users')
+
+  console.log('data useFetch loading:', loading, data)
 
   console.log('number in component App:', number)
   console.log('dispatch in component App:', dispatch)
@@ -38,6 +42,8 @@ function App() {
       <button onClick={() => dispatch('reset')}>Reset</button>
       <hr />
       <UseRefHook />
+      <hr />
+      <h2>Custom Hook</h2>
     </div>
   )
 }
