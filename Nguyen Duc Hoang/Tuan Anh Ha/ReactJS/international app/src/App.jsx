@@ -3,6 +3,9 @@ import './App.css'
 
 const initialState = 0
 const reducer = (state, action) => {
+  console.log('state in reducer:', state)
+  console.log('action in reducer:', action)
+
   switch (action) {
     case 'add':
       return state + 1
@@ -17,6 +20,11 @@ const reducer = (state, action) => {
 
 function App() {
   const [number, dispatch] = useReducer(reducer, initialState)
+
+  console.log('number in component App:', number)
+  console.log('dispatch in component App:', dispatch)
+  console.log('reducer in component App:', reducer)
+  console.log('initialState in component App:', initialState)
 
   return (
     <div>
