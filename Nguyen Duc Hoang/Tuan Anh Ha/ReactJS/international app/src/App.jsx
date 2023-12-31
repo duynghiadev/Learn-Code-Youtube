@@ -1,7 +1,7 @@
-import { useReducer, useState, useTransition } from 'react'
+import { useId, useReducer, useState, useTransition } from 'react'
 import './App.css'
 import UseRefHook from './components/useRef hook/useRef'
-import useFetch from './components/hooks/useFetch'
+import useFetch from './components/custom hooks/useFetch'
 import SlowComponent from './components/useTransition hook/slowComponent'
 
 const initialState = 0
@@ -34,6 +34,11 @@ function App() {
     startTransition(() => setValue(value + 1))
   }
 
+  const idName = useId()
+  const idAge = useId()
+  const idMarried = useId()
+  console.log(`idName: ${idName}, idAge: ${idAge}, idMarried: ${idMarried}`)
+
   console.log('data useFetch loading:', loading, data)
 
   console.log('number in component App:', number)
@@ -60,6 +65,18 @@ function App() {
       <div style={{ opacity: isPending ? 0.25 : 1 }}>
         <SlowComponent value={value} />
       </div>
+      <hr />
+      <h2>useId Hook</h2>
+      <form>
+        <label htmlFor={idName}>Name:</label>
+        <input type='text' name='name' id={idName} />
+
+        <label htmlFor={idAge}>Age:</label>
+        <input type='number' name='age' id={idAge} />
+
+        <label htmlFor={idMarried}>Married:</label>
+        <input type='check' name='married' id={idMarried} />
+      </form>
       <hr />
     </div>
   )
