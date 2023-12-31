@@ -3,6 +3,7 @@ import './App.css'
 import UseRefHook from './components/useRef hook/useRef'
 import useFetch from './components/custom hooks/useFetch'
 import SlowComponent from './components/useTransition hook/slowComponent'
+import Suspense from './components/Suspense/Suspense'
 
 const initialState = 0
 const reducer = (state, action) => {
@@ -56,16 +57,20 @@ function App() {
       <hr />
       <button onClick={() => dispatch('reset')}>Reset</button>
       <hr />
+      <br />
       <UseRefHook />
       <hr />
+      <br />
       <h2>Custom Hook</h2>
       <hr />
+      <br />
       <h1>useTransition Hook</h1>
       <button onClick={handleClick}>Click to add: {count}</button>
       <div style={{ opacity: isPending ? 0.25 : 1 }}>
         <SlowComponent value={value} />
       </div>
       <hr />
+      <br />
       <h2>useId Hook</h2>
       <form>
         <label htmlFor={idName}>Name:</label>
@@ -77,6 +82,10 @@ function App() {
         <label htmlFor={idMarried}>Married:</label>
         <input type='check' name='married' id={idMarried} />
       </form>
+      <hr />
+      <br />
+      <h2>Suspense in React 18</h2>
+      <Suspense />
       <hr />
     </div>
   )
