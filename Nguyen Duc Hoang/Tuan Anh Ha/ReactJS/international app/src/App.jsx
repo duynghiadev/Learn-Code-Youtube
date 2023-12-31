@@ -5,6 +5,7 @@ import useFetch from './components/custom hooks/useFetch'
 import SlowComponent from './components/useTransition hook/slowComponent'
 import Suspense from './components/Suspense/Suspense'
 import UseDeferredValueHook from './components/useDeferredValue hook/useDeferredValue'
+import UseMemoHook from './components/useMemo hooks/useMemo'
 
 const initialState = 0
 const reducer = (state, action) => {
@@ -91,6 +92,9 @@ function App() {
       <br />
       <h2>useDefferdValue Hook</h2>
       <UseDeferredValueHook />
+      <hr />
+      <br />
+      <UseMemoHook />
       <hr />
       <br />
     </div>
