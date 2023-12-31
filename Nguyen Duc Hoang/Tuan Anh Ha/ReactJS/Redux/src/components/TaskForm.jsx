@@ -4,11 +4,11 @@ import { addTask } from '../redux/features/tasks/taskSlice'
 
 const TaskForm = () => {
   const [text, setText] = useState('')
-  const dispath = useDispatch()
+  const dispatch = useDispatch()
 
   const addTaskHandler = (e) => {
     e.preventDefault()
-    dispath(addTask(text))
+    dispatch(addTask(text))
     setText('')
   }
 
