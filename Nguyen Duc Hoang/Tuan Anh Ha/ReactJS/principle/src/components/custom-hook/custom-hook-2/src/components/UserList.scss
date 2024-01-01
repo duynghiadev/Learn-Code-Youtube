@@ -1,0 +1,31 @@
+.user-list {
+  list-style: none;
+  padding: 0;
+
+  li {
+    margin-bottom: 10px;
+
+    input {
+      padding: 4px;
+      margin-right: 10px;
+    }
+
+    button {
+      padding: 4px 8px;
+      margin-right: 5px;
+      margin-left: 10px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #0056b3;
+      }
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
