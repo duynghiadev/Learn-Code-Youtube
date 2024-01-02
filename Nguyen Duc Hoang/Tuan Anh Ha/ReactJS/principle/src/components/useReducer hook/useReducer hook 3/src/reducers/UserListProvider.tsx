@@ -5,8 +5,6 @@ import './UserListProvider.scss'
 
 interface UserListProviderProps {
   children: ReactNode
-  className?: string
-  // Add any additional props here
 }
 
 interface User {
@@ -49,15 +47,15 @@ const userListReducer = (state: State, action: Action): State => {
   }
 }
 
-const UserListProvider = ({ children, className }: UserListProviderProps) => {
+const UserListProvider = ({ children }: UserListProviderProps) => {
   const [state, dispatch] = useReducer(userListReducer, initialState)
 
   useEffect(() => {
     const fetchUsers = async () => {
       dispatch({ type: 'FETCH_USERS_START' })
       try {
-        const response = await axios.get('https://jsonplaceholder.typicode.com/users')
-        dispatch({ type: 'FETCH_USERS_SUCCESS', payload: response.data })
+        const { data } = await axios.get<User[]>('https://jsonplaceholder.typicode.com/users')
+        dispatch({ type: 'FETCH_USERS_SUCCESS', payload: data })
       } catch (error) {
         dispatch({ type: 'FETCH_USERS_FAILURE', payload: 'Error fetching users' })
       }
@@ -68,7 +66,7 @@ const UserListProvider = ({ children, className }: UserListProviderProps) => {
 
   return (
     <UserListContext.Provider value={{ state, dispatch }}>
-      <div className={`user-list-provider ${className}`}>{children}</div>
+      <div className='user-list-provider'>{children}</div>
     </UserListContext.Provider>
   )
 }
