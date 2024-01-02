@@ -1,10 +1,19 @@
-import './App.css'
+// App.tsx
+import React from 'react'
+import { UserListProvider } from './reducers/UserListProvider'
+import Header from './components/Header'
+import UserList from './components/UserList'
+import Footer from './components/Footer'
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div>
-      <h3>useReducer hook</h3>
-    </div>
+    <UserListProvider>
+      <div>
+        <Header title='User List' subtitle='A list of all registered users' />
+        <UserList />
+        <Footer />
+      </div>
+    </UserListProvider>
   )
 }
 
