@@ -3,11 +3,7 @@ import React, { useContext } from 'react'
 import { UserListContext } from '../reducers/UserListProvider'
 import './UserList.scss'
 
-interface UserListProps {
-  className?: string
-}
-
-const UserList: React.FC<UserListProps> = ({ className }) => {
+const UserList: React.FC = () => {
   const context = useContext(UserListContext)
 
   if (!context) {
@@ -25,7 +21,7 @@ const UserList: React.FC<UserListProps> = ({ className }) => {
   }
 
   return (
-    <div className={`user-list ${className}`}>
+    <div className='user-list'>
       <h2 className='user-list__title'>User List</h2>
       <ul className='user-list__list'>
         {state.users.map((user) => (
