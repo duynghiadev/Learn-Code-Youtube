@@ -1,0 +1,73 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50vw;
+  height: 80vh;
+  margin-top: 20px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.header {
+  margin-bottom: 20px;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+}
+
+.input {
+  width: 80%;
+  height: 30px;
+  padding: 5px;
+  font-size: 16px;
+}
+
+.button {
+  width: 20%;
+  height: 30px;
+  margin-left: 5px;
+  border-radius: 5px;
+  border: none;
+  background-color: lightblue;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.list {
+  width: 100%;
+  height: 60%;
+  overflow: auto;
+}
+
+.list-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  padding: 5px;
+  border-bottom: 1px solid black;
+  cursor: pointer;
+}
+
+.list-item:hover {
+  background-color: lightgray;
+}
+
+.list-item-text {
+  margin-left: 10px;
+  font-size: 16px;
+}

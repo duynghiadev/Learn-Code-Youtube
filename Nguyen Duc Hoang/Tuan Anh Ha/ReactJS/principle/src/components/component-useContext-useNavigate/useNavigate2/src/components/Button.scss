@@ -1,0 +1,19 @@
+.button {
+  width: 20%;
+  height: 30px;
+  margin-left: 5px;
+  border-radius: 5px;
+  border: none;
+  background-color: lightblue;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+
+  &.primary {
+    background-color: blue;
+  }
+
+  &.secondary {
+    background-color: gray;
+  }
+}
