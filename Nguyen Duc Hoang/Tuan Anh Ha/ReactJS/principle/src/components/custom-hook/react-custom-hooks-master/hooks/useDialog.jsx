@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 
-
 /**
  * @function useDialogHook
  * @description React Hook to handle open and close dialogs
@@ -8,16 +7,16 @@ import React, { useState } from 'react'
  * @author Sarat Chandra Ejjapureddi
  */
 function useDialogHook() {
-    const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = React.useState(false)
 
-    const handleClickOpen = () => {
-        setOpen(true);
-    };
+  const handleClickOpen = () => {
+    setOpen(true)
+  }
 
-    const handleClose = () => {
-        setOpen(false);
-    };
-    return [open, handleClickOpen, handleClose]
+  const handleClose = () => {
+    setOpen(false)
+  }
+  return [open, handleClickOpen, handleClose]
 }
 
 export default useDialogHook
