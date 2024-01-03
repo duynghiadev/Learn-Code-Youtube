@@ -2,6 +2,7 @@ import * as React from 'react'
 import { CharacterType } from './characters'
 
 type TableProps = { children: React.ReactNode }
+
 type TableRowProps = {
   heading: Capitalize<keyof CharacterType>
   value: CharacterType[keyof CharacterType]
