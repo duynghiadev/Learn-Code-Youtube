@@ -1,0 +1,36 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container input[type='text'] {
+  margin: 10px;
+  width: 80%;
+  height: 30px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+.cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  border-radius: 5px;
+  border: 1px solid #ebebeb;
+  padding: 10px;
+  align-items: center;
+}
+
+.nomatch {
+  font-size: 60px;
+}
