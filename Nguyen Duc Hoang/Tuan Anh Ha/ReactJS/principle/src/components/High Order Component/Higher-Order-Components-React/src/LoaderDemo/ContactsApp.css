@@ -1,19 +1,15 @@
 .contactApp {
   width: 1000px;
-  align:center;
-
+  align: center;
 }
 
-.contactApp > *{
+.contactApp > * {
   width: 100%;
 }
 
-
-
-
 ul {
   padding: 10px 10px 10px 50px;
-  align:center;
+  align: center;
 }
 
 li {
@@ -26,8 +22,7 @@ li {
   height: 100px;
 }
 
-
-li img{
+li img {
   border-radius: 50%;
   margin-right: 10px;
   float: left;
