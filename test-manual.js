@@ -158,3 +158,46 @@ console.log(addFive(5)) // Output: 10
 console.log('-------------------------------------------')
 
 // ❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌
+
+/**
+ * POSSIBLE WAYS TO REMOVE DUPLICATE FROM ARRAY USING JAVASCRIPT FUNCTION
+ *
+ * Link video: https://bom.so/VLmpqX
+ */
+const myArray = [1, 2, 3, 4, 5, 6, 5, 1, 4]
+
+// first by using filter
+function removeDuplicates_1(arr) {
+  return arr.filter((value, index, self) => {
+    console.log(`value: ${value}, index: ${index}, self: ${self}`)
+    console.log('self.indexOf(value) === index:', self.indexOf(value) === index)
+    console.log('-------------------------------------------')
+
+    return self.indexOf(value) === index
+  })
+}
+console.log('function removeDuplicates_1:', removeDuplicates_1(myArray))
+
+console.log('-------------------------------------------')
+
+// second method by using set
+function removeDuplicates_2(arr) {
+  return Array.from(new Set(arr))
+}
+console.log('removeDuplicates_2:', removeDuplicates_2(myArray))
+
+console.log('-------------------------------------------')
+
+// third method by using reduce
+function removeDuplicates_3(arr) {
+  return arr.reduce((unique, item) => {
+    console.log('unique:', unique)
+    console.log('item:', item)
+    return unique.includes(item) ? unique : [...unique, item]
+  }, [])
+}
+console.log('function removeDuplicates_3:', removeDuplicates_3(myArray))
+
+console.log('-------------------------------------------')
+
+// ❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌
