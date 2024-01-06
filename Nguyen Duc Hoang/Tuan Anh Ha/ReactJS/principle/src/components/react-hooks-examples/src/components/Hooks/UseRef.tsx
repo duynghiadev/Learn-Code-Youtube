@@ -3,16 +3,21 @@ import React, { useState, useRef } from 'react'
 const UseRef = () => {
   const [number, setNumber] = useState(0)
   const numRef = useRef(0)
+
   let plainNumber = 0
 
   const incrementAndDelayLogging = () => {
     plainNumber++
+
     setNumber((number) => {
-      console.log('setState')
+      console.log('setState number: ', number)
+      console.log('return setState number + 1:', number + 1)
       return number + 1
     })
-    numRef.current++ // 只有current可用
-    // 引用的是当前的state，不受setNumber的影响
+
+    numRef.current++ // Only 'current' is available
+    // It references the current state and is not affected by setNumber
+
     setTimeout(() => {
       alert(`plain number: ${plainNumber}, state number: ${number}, ref number: ${numRef.current}`)
     }, 1000)

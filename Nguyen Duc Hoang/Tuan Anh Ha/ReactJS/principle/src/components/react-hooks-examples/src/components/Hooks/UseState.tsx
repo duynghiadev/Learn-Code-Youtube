@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 const UseState = () => {
-  const [isGreen, setIsGreen] = useState(true) // 每次渲染isGreen的引用会变化
+  const [isGreen, setIsGreen] = useState(true) // The reference to 'isGreen' changes with each render
   console.log('render')
 
   return (

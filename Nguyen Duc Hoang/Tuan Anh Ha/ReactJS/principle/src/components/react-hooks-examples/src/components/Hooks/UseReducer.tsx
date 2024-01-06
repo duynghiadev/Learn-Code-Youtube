@@ -1,36 +1,48 @@
 import React, { useReducer } from 'react'
 
-// 能放外面的就方面，亲
+// Put what you can outside, it's more convenient
 const limitRGB = (num) => (num < 0 ? 0 : num > 255 ? 255 : num)
-const initialState = { r: 0, g: 0, b: 0 }
+const initialState = { red: 0, green: 0, blue: 0 }
+console.log('initialState:', initialState)
+
 const reducer = (state, action) => {
+  console.log('state in reducer:', state)
+  console.log('action in reducer:', action)
   switch (action.type) {
     case 'UP_RED':
-      return { ...state, r: limitRGB(state.r + 50) }
+      return { ...state, red: limitRGB(state.red + 50) }
     case 'DOWN_RED':
-      return { ...state, r: limitRGB(state.r - 50) }
+      return { ...state, red: limitRGB(state.red - 50) }
     case 'UP_GREEN':
-      return { ...state, g: limitRGB(state.r + 50) }
+      return { ...state, green: limitRGB(state.green + 50) }
     case 'DOWN_GREEN':
-      return { ...state, g: limitRGB(state.r - 50) }
+      return { ...state, green: limitRGB(state.green - 50) }
     case 'UP_BLUE':
-      return { ...state, b: limitRGB(state.r + 50) }
+      return { ...state, blue: limitRGB(state.blue + 50) }
     case 'DOWN_BLUE':
-      return { ...state, b: limitRGB(state.r - 50) }
+      return { ...state, blue: limitRGB(state.blue - 50) }
     default:
       return initialState
   }
 }
 
 const UseReducer = () => {
-  const [{ r, g, b }, dispatch] = useReducer(reducer, initialState)
+  const [state, dispatch] = useReducer(reducer, initialState)
+
+  console.log('color red:', state.red)
+  console.log('color green:', state.green)
+  console.log('color blue:', state.blue)
 
   return (
     <div>
-      <h1 style={{ color: `rgb(${r},${g},${b})` }}>useReducer Example</h1>
+      <h1 style={{ color: `rgb(${state.red},${state.green},${state.blue})` }}>
+        useReducer Example
+      </h1>
+
       <button onClick={() => dispatch({ type: 'RESET' })}>Reset</button>
+
       <div>
-        <span>r </span>
+        <span>red</span>
         <button
           onClick={() => {
             dispatch({ type: 'UP_RED' })
@@ -48,7 +60,7 @@ const UseReducer = () => {
       </div>
 
       <div>
-        <span>g </span>
+        <span>green</span>
         <button
           onClick={() => {
             dispatch({ type: 'UP_GREEN' })
@@ -66,7 +78,7 @@ const UseReducer = () => {
       </div>
 
       <div>
-        <span>b </span>
+        <span>blue</span>
         <button
           onClick={() => {
             dispatch({ type: 'UP_BLUE' })

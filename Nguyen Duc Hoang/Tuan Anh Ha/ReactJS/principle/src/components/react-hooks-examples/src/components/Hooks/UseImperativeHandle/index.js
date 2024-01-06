@@ -5,6 +5,7 @@ const UseImperativeHandle = () => {
   const [city, setCity] = useState('Seattle')
   const [state, setState] = useState('WA')
   const [error, setError] = useState('')
+
   const cityEL = useRef()
   const stateEL = useRef()
 
@@ -34,6 +35,7 @@ const UseImperativeHandle = () => {
         update={setCity}
         ref={cityEL}
       />
+
       <ElaborateInput
         hasError={error === 'state'}
         placeholder={'state'}
@@ -41,6 +43,7 @@ const UseImperativeHandle = () => {
         update={setState}
         ref={stateEL}
       />
+
       <button onClick={validate}>Validate</button>
     </div>
   )
