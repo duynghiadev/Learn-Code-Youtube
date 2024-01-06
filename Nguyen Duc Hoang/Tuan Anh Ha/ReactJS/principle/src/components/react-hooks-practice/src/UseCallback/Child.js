@@ -1,11 +1,13 @@
-import React, { useEffect } from "react";
+import React, { useEffect } from 'react'
 
 function Child({ returnComment }) {
-  useEffect(() => {
-    console.log("FUNCTION WAS CALLED");
-  }, [returnComment]);
+  console.log('returnComment:', returnComment)
 
-  return <div>{returnComment("Pedro")}</div>;
+  useEffect(() => {
+    console.log('FUNCTION WAS CALLED')
+  }, [returnComment])
+
+  return <div>{returnComment(' Pedro')}</div>
 }
 
-export default Child;
+export default Child
