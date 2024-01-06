@@ -12,12 +12,16 @@ export default function UseMemo() {
   }, [])
 
   const findLongestName = (comments) => {
+    console.log('comments:', comments)
     if (!comments) return null
 
     let longestName = ''
     for (let i = 0; i < comments.length; i++) {
       let currentName = comments[i].name
       if (currentName.length > longestName.length) {
+        console.log('currentName:', currentName, '👉 currentName.length:', currentName.length)
+        console.log('longestName:', longestName, '👉 longestName.length:', longestName.length)
+
         longestName = currentName
       }
     }
@@ -31,17 +35,16 @@ export default function UseMemo() {
 
   return (
     <div className='App'>
-      <div> {getLongestName} </div>
+      <div>{getLongestName}</div>
 
       <button
         onClick={() => {
           setToggle(!toggle)
         }}
       >
-        {' '}
         Toggle
       </button>
-      {toggle && <h1> toggle </h1>}
+      {toggle && <h1>toggle</h1>}
     </div>
   )
 }

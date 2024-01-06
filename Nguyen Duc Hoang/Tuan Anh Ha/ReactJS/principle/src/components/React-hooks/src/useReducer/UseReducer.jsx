@@ -1,31 +1,45 @@
-import React, { useReducer } from "react";
+import React, { useReducer } from 'react'
 
 function UseReducer() {
   const reducer = (state, action) => {
+    console.log('state before in reducer:', state, '👉 action before in reducer:', action)
+
     switch (action.type) {
-      case "Increment":
-        return { count: state.count + 1, showText: state.showText };
-      case "ToggleText":
-        return { count: state.count, showText: !state.showText };
+      case 'Increment':
+        return { count: state.count + 1, showText: state.showText }
+      case 'ToggleText':
+        return { count: state.count, showText: !state.showText }
       default:
-        return state;
+        return state
     }
-  };
-  const [state, dispatch] = useReducer(reducer, { count: 0, showText: true });
+  }
+
+  const [state, dispatch] = useReducer(reducer, { count: 0, showText: true })
+
+  console.log('state main:', state)
+
   return (
-    <div id="usereduce">
+    <div id='usereduce'>
       <h1>{state.count}</h1>
       <button
         onClick={() => {
-          dispatch({ type: "Increment" });
-          dispatch({ type: "ToggleText" });
+          dispatch({ type: 'Increment' })
         }}
       >
-        Change
+        Increment
       </button>
-      {state.showText && <p> This is a Text </p>}
+
+      <button
+        onClick={() => {
+          dispatch({ type: 'ToggleText' })
+        }}
+      >
+        ToggleText
+      </button>
+
+      {state.showText && <p>This is a Text</p>}
     </div>
-  );
+  )
 }
 
-export default UseReducer;
+export default UseReducer
