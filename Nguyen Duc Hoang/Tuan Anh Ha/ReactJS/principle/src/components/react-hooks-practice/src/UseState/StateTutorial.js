@@ -1,19 +1,21 @@
-import React, { useState } from "react";
+import React, { useState } from 'react'
 
 const StateTutorial = () => {
-  const [inputValue, setInputValue] = useState("Pedro");
+  const [inputValue, setInputValue] = useState('Pedro')
 
   let onChange = (event) => {
-    const newValue = event.target.value;
-    setInputValue(newValue);
-  };
+    const newValue = event.target.value
+    setInputValue(newValue)
+  }
 
   return (
     <div>
-      <input placeholder="enter something..." onChange={onChange} />
+      <h1>useState hook</h1>
+      <input placeholder='enter something...' onChange={onChange} />
       {inputValue}
+      <hr />
     </div>
-  );
-};
+  )
+}
 
-export default StateTutorial;
+export default StateTutorial
