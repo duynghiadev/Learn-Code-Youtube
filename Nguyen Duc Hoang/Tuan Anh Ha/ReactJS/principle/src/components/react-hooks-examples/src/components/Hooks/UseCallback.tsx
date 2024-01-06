@@ -1,6 +1,6 @@
 import React, { useState, useCallback, memo, useEffect } from 'react'
 
-// 完全受控组件
+// fully controlled component
 const ExpensiveComputationComponent = memo(
   ({ compute, count }: { compute: Function; count: number }) => {
     return (
@@ -14,21 +14,24 @@ const ExpensiveComputationComponent = memo(
   }
 )
 
-const fib = (n) => {
-  if (n <= 1) return 1
-  return fib(n - 1) + fib(n - 2)
+const fib = (number: number) => {
+  if (number <= 1) return 1
+  return fib(number - 1) + fib(number - 2)
 }
 
 const UseCallBack = () => {
   const [time, setTime] = useState(new Date())
   const [count, setCount] = useState(1)
-  // 持久化引用不会引起子组件频繁渲染
-  const memorizedFib = useCallback(fib, []) // 单纯传参形式无需添加任何依赖
+  // Persistent references do not cause frequent rendering of child components
+  const memorizedFib = useCallback(fib, []) // Pure parameter passing form without adding any dependencies
+
+  // console.log('new Date():', new Date())
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setTime(new Date())
     }, 1000)
+
     return () => {
       clearTimeout(timer)
     }
@@ -37,6 +40,8 @@ const UseCallBack = () => {
   return (
     <div>
       <h1>useCallback Example {time.toLocaleTimeString()}</h1>
+      {/* {console.log('time.toLocaleTimeString():', time.toLocaleTimeString())} */}
+
       <button onClick={() => setCount(count + 1)}>+</button>
       <ExpensiveComputationComponent compute={memorizedFib} count={count} />
     </div>

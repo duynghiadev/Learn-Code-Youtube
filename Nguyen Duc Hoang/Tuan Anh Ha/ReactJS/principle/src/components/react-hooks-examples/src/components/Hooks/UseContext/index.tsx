@@ -12,6 +12,7 @@ const UseContext = () => {
   return (
     <div>
       <Provider value={user}>
+        {console.log('value user:', user)}
         <h1 className='ft-red'>1st Provider</h1>⬇<Level2></Level2>
       </Provider>
     </div>
@@ -20,13 +21,13 @@ const UseContext = () => {
 
 const Level2 = () => (
   <div>
-    <h4>2nd Level</h4>⬇<Level3></Level3>
+    <h2>2nd Level</h2>⬇<Level3></Level3>
   </div>
 )
 
 const Level3 = () => (
   <div>
-    <h4>3rd Level</h4>⬇<Level4></Level4>
+    <h3>3rd Level</h3>⬇<Level4></Level4>
   </div>
 )
 
@@ -37,8 +38,10 @@ const Level4 = () => (
 )
 
 const Level5 = () => {
-  // 接收context
+  // receive context
   const [user, setUser] = useContext<any>(UserContext)
+  console.log('user from context:', user)
+
   return (
     <div>
       <h5 className='ft-red'>useContext</h5>

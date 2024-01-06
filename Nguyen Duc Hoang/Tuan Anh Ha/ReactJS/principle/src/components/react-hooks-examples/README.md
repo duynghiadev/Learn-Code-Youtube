@@ -1,38 +1,43 @@
-[Link Repo](https://github.com/GeekEast/react-hooks-examples)
+[Link Repo Github](https://github.com/GeekEast/react-hooks-examples)
 
-### variable
- |        特性        | `plain variable` | `state` | `ref` |
- | :----------------: | :--------------: | :-----: | :---: |
- | 渲染后引用是否相同 |        ❎         |    ❎    |   ✔   |
- |   是否可以update   |        ❎         |    ✔    |   ✔   |
+### Variable
+
+|           Feature            | `Plain Variable` | `State` | `Ref` |
+| :--------------------------: | :--------------: | :-----: | :---: |
+| Rendering Reference Sameness |        ❎        |   ❎    |   ✔   |
+|        Can be Updated        |        ❎        |    ✔    |   ✔   |
 
 ### useContext vs redux
-- useContext的变化会引起中间组件的重新渲染
-- store的变化只会引起相关组件的重新渲染
+
+- Changes in useContext cause re-rendering of intermediate components.
+- Changes in the store only trigger re-rendering of relevant components.
 
 ### useRef
-- 持久化的引用，只有`current`可用
-- 可以用来获取或者添加`dom node`
+
+- Persistent reference, only `current` is usable.
+- Can be used to retrieve or add `DOM nodes`.
 
 ### useMemo vs useCallback vs memo
-- `useMemo`用来**缓存**`昂贵计算`的**值**, 也可以缓存`组件`
-- `useCallback`用来**持久化**函数的`引用`
-- `memo`用来缓存`组件`, 可以避免由`父组件渲染`引起的**不必要**的`子组件渲染`
 
+- `useMemo` is used to **cache values** of **expensive calculations**, and can also cache **components**.
+- `useCallback` is used to **persist the reference** of a function.
+- `memo` is used to cache **components**, avoiding **unnecessary re-rendering** caused by **parent component renders**.
 
 ### useEffect vs useLayoutEffect
+
 <div style="text-align:center; margin:auto"><img src="img/2020-01-27-10-16-05.png"></div>
 
-- [useEffect 和 useLayoutEffect 的区别](https://juejin.im/post/5de38c76e51d455f9b335eff)
-- [react hook——你可能不是“我”所认识的useEffect](https://imweb.io/topic/5cd845cadcd62f86299fcd76)
-
+- [Difference between useEffect and useLayoutEffect](https://juejin.im/post/5de38c76e51d455f9b335eff) 👉 Có ví dụ trong folder `Example-UseEffect-UseLayoutEffect`
+- [React Hooks - useEffect](https://imweb.io/topic/5cd845cadcd62f86299fcd76) 👉 Link hỏng rồi ❌
 
 ### useContext
-- 创建context
-  - defaultContext是在没有provider的情况下，传给consumer或者useContext的默认值，但是是不可变的，无法通过setContext来变更。
+
+- Creating context
+  - `defaultContext` is the default value passed to consumers or useContext when there is no provider. However, it is immutable and cannot be changed using setContext.
+
 ```javascript
 // userContext.js
-import { createContext } from 'react';
+import { createContext } from 'react'
 
 const UserContext = createContext([
   {
@@ -41,15 +46,17 @@ const UserContext = createContext([
     suffix: 1,
     email: 'bobberson@example.com'
   },
-  obj => obj
+  (obj) => obj
 ])
-const { Provider } = UserContext;
+const { Provider } = UserContext
 export { Provider, UserContext }
 ```
-- 创建Provider
-```javascript
+
+- Creating Provider
+
+```jsx
 const UseContext = () => {
-  // 这个才是人类理解的默认值，可通过setContext来变更
+  // This is the default value understood by humans and can be changed using setContext.
   const user = useState({
     firstName: 'James',
     lastName: 'Tan',
@@ -64,47 +71,57 @@ const UseContext = () => {
         <Level2></Level2>
       </Provider>
     </div>
-    //  
   )
 }
 ```
-- 创建Consumer
-```javascript
+
+- Creating Consumer
+
+```jsx
 const Level5 = () => {
-  // 接收context
-  const [user, setUser] = useContext<any>(UserContext);
+  // Receiving context
+  const [user, setUser] = useContext < any > UserContext
   return (
     <div>
       <h5>{`${user.firstName} ${user.lastName} the ${user.suffix} born`}</h5>
-      <button onClick={() => { setUser({ ...user, suffix: user.suffix + 1 }) }}>Increment</button>
+      <button
+        onClick={() => {
+          setUser({ ...user, suffix: user.suffix + 1 })
+        }}
+      >
+        Increment
+      </button>
     </div>
   )
 }
 ```
 
 ### forwardRef
-- 能够跟`useRef`一起获得子组件的`DOM`
-- 在`父组件`创建`ref`,传递到`子组件`, 在`父组件`获取`DOM`
-```javascript
+
+- Can be used with `useRef` to obtain the `DOM` of the child component.
+- In the parent component, create a `ref`, pass it to the child component, and get the `DOM` in the parent component.
+
+```jsx
 const FancyButton = React.forwardRef((props, ref) => (
-  <button ref={ref} className="FancyButton">
+  <button ref={ref} className='FancyButton'>
     {props.children}
   </button>
-));
+))
 
 // You can now get a ref directly to the DOM button:
-const ref = React.createRef();
-<FancyButton ref={ref}>Click me!</FancyButton>;
+const ref = React.createRef()
+;<FancyButton ref={ref}>Click me!</FancyButton>
 ```
 
 ### useImperativeHandle
-- 结合`useRef`和`forwardRef`, 允许`子组件`将操作**自身DOM**的`函数`传递给`父组件`(向上传递)
 
-### 零碎
-- `htmlFor` for `for`
-- `Context` + `useReducer` = `Redux`; 其实还是redux的方案更好，context其实只是props多层传递的一种简化而已。
-- `styled-component`: `emotion.sh` 将css复用粒度提升tag层面到了component层面，但是加快了开发速度，可以适用于小型项目。
-- `styled-component`高亮插件: `vscode-styled-component`
-- `sass`: `yarn add node-sass`
-- `setState`: hooks是function之外的又一层，写在代码里的顺序，不一定是它真实的执行顺序
+- Combining `useRef` and `forwardRef`, allows the child component to pass the functions that operate on its own `DOM` to the parent component (upward).
 
+### Miscellaneous
+
+- `htmlFor` for `for`.
+- `Context` + `useReducer` = `Redux`; In fact, the Redux solution is better, and context is just a simplification of multiple props passing.
+- `styled-components`: `emotion.sh` increases the granularity of CSS reuse from tag level to component level, speeding up development. Suitable for small projects.
+- `styled-components` highlighting plugin: `vscode-styled-component`.
+- `sass`: `yarn add node-sass`.
+- `setState`: Hooks are another layer outside the function. The order written in the code is not necessarily its real execution order.

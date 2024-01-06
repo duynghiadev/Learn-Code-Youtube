@@ -2,14 +2,16 @@ import React, { forwardRef, useRef, useImperativeHandle } from 'react'
 
 const ElaborateInput = forwardRef(({ hasError, placeholder, value, update }, ref) => {
   const inputRef = useRef()
+
   useImperativeHandle(ref, () => {
-    // 其实是把子组件ref的操作方法传给父组件的ref
+    // Actually, it is passing the operation methods of the child component's ref to the parent component ref
     return {
       focus() {
         inputRef.current.focus()
       }
     }
   })
+
   return (
     <input
       ref={inputRef}

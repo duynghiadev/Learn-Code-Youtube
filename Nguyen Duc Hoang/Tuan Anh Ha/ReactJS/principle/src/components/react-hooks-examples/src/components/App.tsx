@@ -9,8 +9,11 @@ import UseLayoutEffect from './Hooks/UseLayoutEffect'
 import UseContext from './Hooks/UseContext'
 import UseImperativeHandle from './Hooks/UseImperativeHandle/index.js'
 import '../sass/style.scss'
+import UseEffectExample from './Example-UseEffect-UseLayoutEffect/UseEffectHook'
+import UseLayoutEffectExample from './Example-UseEffect-UseLayoutEffect/UseLayoutEffectHook'
 
 const Main = () => <div>Main Page</div>
+
 const App = () => {
   return (
     <div className='App'>
@@ -43,7 +46,16 @@ const App = () => {
           <Link to='/useImperativeHandle'>
             8. useImperativeHandle & forwardRef <br />
           </Link>
+          <Link to='/examplefromfilemarkdown-1'>
+            9. Compare between useEffect and useLayoutEffect 1<br />
+          </Link>
+          <Link to='/examplefromfilemarkdown-2'>
+            10. Compare between useEffect and useLayoutEffect 2<br />
+          </Link>
         </div>
+
+        <Route path='/examplefromfilemarkdown-1' component={UseEffectExample} />
+        <Route path='/examplefromfilemarkdown-2' component={UseLayoutEffectExample} />
         <Route path='/useImperativeHandle' component={UseImperativeHandle} />
         <Route path='/useContext' component={UseContext} />
         <Route path='/useLayoutEffect' component={UseLayoutEffect} />
@@ -52,7 +64,7 @@ const App = () => {
         <Route path='/useMemo' component={UseMemo} />
         <Route path='/useReducer' component={UseReducer} />
         <Route path='/useState' component={UseState} />
-        <Route path='/' exact component={Main}></Route>
+        <Route path='/' exact component={Main} />
       </Router>
     </div>
   )
