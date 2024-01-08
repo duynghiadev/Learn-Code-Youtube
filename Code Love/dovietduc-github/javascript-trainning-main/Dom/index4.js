@@ -15,11 +15,9 @@ class Tabs {
       tabElement.classList.remove('active')
     })
     // reset content by remove class active
-    this.container
-      .querySelectorAll('.tabcontent')
-      .forEach(function (tabContentElemnent) {
-        tabContentElemnent.classList.remove('active')
-      })
+    this.container.querySelectorAll('.tabcontent').forEach(function (tabContentElemnent) {
+      tabContentElemnent.classList.remove('active')
+    })
   }
 
   handleClickTab = (event) => {
@@ -33,9 +31,7 @@ class Tabs {
       clicked.classList.add('active')
       // find content by elemet click
       const refToContent = clicked.dataset.index
-      this.container
-        .querySelectorAll('.tabcontent')
-        [refToContent].classList.add('active')
+      this.container.querySelectorAll('.tabcontent')[refToContent].classList.add('active')
     }
   }
 }

@@ -4,12 +4,8 @@ function Tabs(options) {
 
   const tabContainerTmp = document.querySelector(tabContainer)
 
-  const tabElementButtonAll = tabContainerTmp.querySelectorAll(
-    '.' + options.tabButton
-  )
-  const tabContentAll = tabContainerTmp.querySelectorAll(
-    '.' + options.tabContent
-  )
+  const tabElementButtonAll = tabContainerTmp.querySelectorAll('.' + options.tabButton)
+  const tabContentAll = tabContainerTmp.querySelectorAll('.' + options.tabContent)
   const length = tabElementButtonAll.length
 
   // function call
@@ -19,11 +15,9 @@ function Tabs(options) {
   function update() {
     const tabContainerSelector = document.querySelector(tabContainer)
 
-    tabContainerSelector
-      .querySelectorAll('.tab')
-      .forEach(function (tabElement, index) {
-        tabElement.setAttribute('data-index', index)
-      })
+    tabContainerSelector.querySelectorAll('.tab').forEach(function (tabElement, index) {
+      tabElement.setAttribute('data-index', index)
+    })
   }
 
   function reset() {
@@ -33,11 +27,9 @@ function Tabs(options) {
       tabElement.classList.remove('active')
     })
     // reset content by remove class active
-    tabContainerSelector
-      .querySelectorAll('.' + options.tabContent)
-      .forEach(function (tabContentElemnent) {
-        tabContentElemnent.classList.remove('active')
-      })
+    tabContainerSelector.querySelectorAll('.' + options.tabContent).forEach(function (tabContentElemnent) {
+      tabContentElemnent.classList.remove('active')
+    })
   }
 
   function handleClickTab(event) {
@@ -53,9 +45,7 @@ function Tabs(options) {
       // find content by elemet click
       const refToContent = clicked.dataset.index
 
-      tabContainerSelector
-        .querySelectorAll('.' + options.tabContent)
-        [refToContent].classList.add('active')
+      tabContainerSelector.querySelectorAll('.' + options.tabContent)[refToContent].classList.add('active')
     }
   }
 

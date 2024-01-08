@@ -13,9 +13,9 @@
 5. password phải có ít nhất 8 kí tự cho bảo mật
 6. password phải có ít nhất 1 chữ hoa, 1 chữ thường, 1 kí tự đặc biệt, 1 kí tự số
 7. confirm password không được để trống
-5. confirm password phải có ít nhất 8 kí tự cho bảo mật
-6. confirm password phải có ít nhất 1 chữ hoa, 1 chữ thường, 1 kí tự đặc biệt, 1 kí tự số
-8. confirm password phải trùng password
+8. confirm password phải có ít nhất 8 kí tự cho bảo mật
+9. confirm password phải có ít nhất 1 chữ hoa, 1 chữ thường, 1 kí tự đặc biệt, 1 kí tự số
+10. confirm password phải trùng password
 
 > Validate sẽ được thông báo như sau:
 
@@ -36,10 +36,6 @@
 
 > Bắt sự kiện keyup và thực hiện validation
 
-
 1. Sự kiện keyup được thực thi khi bạn ghõ bất kì phím nào trên bàn phím
 2. Mục đích: Thông báo hợp lệ hay không hợp lệ ngay lập tức cho người dùng
 3. Nó tăng trải nghiệm cho người dùng
-
-
-
