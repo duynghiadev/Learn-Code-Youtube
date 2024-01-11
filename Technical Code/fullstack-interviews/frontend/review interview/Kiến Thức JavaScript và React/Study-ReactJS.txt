@@ -1,0 +1,864 @@
+################ setState ################
+
+import React from "react";
+
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      index: 1
+    };
+  }
+
+  countDown() {
+    this.setState({
+      index: this.state.index - 1
+    });
+  }
+
+  countUp() {
+    this.setState((prevState, props) => {
+      return {
+        index: prevState.index + 1
+      };
+    });
+  }
+
+  render() {
+    return (
+      <div>
+        <p>Giá trị: {this.state.index}</p>
+        <button onClick={() => this.countDown()}>Down</button>
+        <button onClick={() => this.countUp()}>Up</button>
+      </div>
+    );
+  }
+}
+
+export default App;
+
+
+
+############# BẮT SỰ KIỆN CƠ BẢN ################
+
+import React from "react";
+ 
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    //Khởi tạo inital state
+    this.state = {
+      textareaChange: "",
+      buttonClick : "",
+      mouseOver: ""
+    };
+    //bind this cho function mouseOver để  tránh gặp lỗi 
+    //không tồn tại biến this.
+    this.mouseOver = this.mouseOver.bind(this)
+  }
+  changeText(e) {
+    this.setState({
+      textareaChange: e.target.value
+    });
+  }
+  mouseOver() {
+    this.setState({
+      mouseOver: this.state.mouseOver + "mouseOver..."
+    });
+  }
+  render() {
+    return (
+      <div style={{marginTop: "5%"}}>
+        <button
+          onClick={() => {
+            this.setState({
+              buttonClick: this.state.buttonClick + "onClick..."
+            });
+          }}
+        >
+          Click me..
+        </button>{" "}
+       
+        <p>
+          button: <code>{this.state.buttonClick}</code>
+        </p>
+        <hr />
+        <textarea onChange={e => this.changeText(e)} placeholder="nhập cái gì đó..."></textarea>
+        <p>
+          textarea: <code>{this.state.textareaChange}</code>
+        </p>
+ 
+        <hr />
+        <h6 onMouseOver={this.mouseOver}>Di chuột vào đêyyyy nè :v</h6>
+        <p>
+          mouseOver: <code>{this.state.mouseOver}</code>
+        </p>
+      </div>
+    );
+  }
+}
+ 
+export default App;
+
+
+
+################ XỬ LÝ FORM ################
+
+import React from "react";
+ 
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    //Khởi tạo state chứa giá trị của input
+    this.state = {
+      email: "",
+      password: ""
+    };
+  }
+
+  changeInputValue(e) {
+    this.setState({
+      [e.target.name]: e.target.value
+    });
+}
+
+validationForm() {
+    let returnData = {
+      error : false,
+      msg: ''
+    }
+    const {email, password} = this.state
+    //Kiểm tra email
+    const re = /\S+@\S+\.\S+/;
+    if (!re.test(email)) {
+      returnData = {
+        error: true,
+        msg: 'Không đúng định dạng email'
+      }
+    }
+    //Kiểm tra password
+    if(password.length < 8) {
+      returnData = {
+        error: true,
+        msg: 'Mật khẩu phải lớn hơn 8 ký tự'
+      }
+    }
+    return returnData;
+  }
+
+  submitForm(e) {
+    //Chặn các event mặc định của form
+    e.preventDefault();
+ 
+   //Gọi hàm validationForm() dùng để kiểm tra form
+    const validation = this.validationForm()
+ 
+    //Kiểm tra lỗi của input trong form và hiển thị
+    if (validation.error) {
+      alert(validation.msg)
+    }else{
+      alert('Submit form success')
+    }
+  }
+  render() {
+    return (
+      <div className="container" style={{ paddingTop: "5%" }}>
+        <form
+          onSubmit={e => {
+            this.submitForm(e);
+          }}
+        >
+          <div className="form-group">
+            <label htmlFor="text">Email:</label>
+            <input
+              type="text"
+              className="form-control"
+              name="email"
+              placeholder="Enter email"
+              onChange={e => this.changeInputValue(e)}
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="pwd">Password:</label>
+            <input
+              type="password"
+              className="form-control"
+              name="password"
+              placeholder="Enter password"
+              onChange={e => this.changeInputValue(e)}
+            />
+          </div>
+          <button type="submit" className="btn btn-primary">
+            Submit
+          </button>
+        </form>
+        
+      </div>
+    );
+  }
+}
+export default App;
+
+
+################ RENDER TRONG REACTJS ################
+import React, { Component } from "react";
+
+const Notification = (props) => {
+  // Kiểm tra giá trị của props
+  if (props.isShow) {
+    // Trả về JSX để hiển thị
+    return (
+      <ul>
+        <li>thông báo 1</li>
+        <li>thông báo 2</li>
+      </ul>
+    );
+  } else {
+    // Trả về null để ẩn
+    return null;
+  }
+};
+
+export default class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isShowNotification: false
+    };
+  }
+
+  render() {
+    const { isShowNotification } = this.state;
+    return (
+      <div style={{ margin: 20 }}>
+        <p>Duy Nghia - Learn ReactJS</p>
+        <button
+          onClick={() => {
+            // Cập nhật lại state
+            this.setState({
+              isShowNotification: !isShowNotification
+            });
+          }}
+        >
+          {isShowNotification ? "Show" : "Hide"}
+        </button>
+
+        {/* Gọi component Notification */}
+        <Notification isShow={isShowNotification} />
+      </div>
+    );
+  }
+}
+
+
+################# Lifting State Up trong ReactJS ################
+
+import React, { Component } from "react";
+ 
+const USDtoVND = function (props) {
+  const convert = function (usd) {
+    return usd * 23632;
+  };
+  return (
+    <div>
+      <span>USD </span>
+      <input
+        onChange={(e) => {
+          const usd = e.target.value;
+          const vnd = convert(usd);
+          props.onHandleChange({
+            usd,
+            vnd,
+          });
+        }}
+        value={props.value}
+      />
+    </div>
+  );
+};
+const VNDtoUSD = function (props) {
+  const convert = function (vnd) {
+    return vnd / 23632;
+  };
+  return (
+    <div>
+      <span>VND </span>
+      <input
+        onChange={(e) => {
+          const vnd = e.target.value;
+          const usd = convert(vnd);
+          props.onHandleChange({
+            usd,
+            vnd,
+          });
+        }}
+        value={props.value}
+      />
+    </div>
+  );
+};
+ 
+export default class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      usd: 0,
+      vnd: 0,
+    };
+  }
+  handleChange = (data) => {
+    this.setState(data);
+  };
+ 
+  render() {
+    return (
+      <div style={{margin: "3%"}}>
+        <USDtoVND onHandleChange={this.handleChange} value={this.state.usd} />
+        <VNDtoUSD onHandleChange={this.handleChange} value={this.state.vnd} />
+        <hr />
+        <code>freetuts.net</code>
+      </div>  
+    );
+  }
+}
+
+
+################ Render Props #####################
+import React from "react";
+
+class Counter extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      count: 0
+    };
+    //Bind this
+    this.increment = this.increment.bind(this);
+    this.decrement = this.decrement.bind(this);
+  }
+  //Hàm này sẽ TĂNGiá trị của số
+  increment() {
+    this.setState({
+      count: this.state.count + 1
+    });
+  }
+  //Hàm này sẽ GIẢM giá trị của số
+  decrement() {
+    this.setState({
+      count: this.state.count - 1
+    });
+  }
+  render() {
+    return (
+      <div>
+        {
+          //Trả về giá trị cho props render.
+          this.props.render({
+            count: this.state.count,
+            increment: this.increment,
+            decrement: this.decrement
+          })
+        }
+      </div>
+    );
+  }
+}
+
+export default function App(props) {
+  return (
+    <Counter
+      render={(data) => {
+        //Nhận giá trị trả vê từ Counter
+        //qua props render.
+        const { count, increment, decrement } = data;
+        return (
+          <>
+            <p>Giá trị: {count}</p>
+            <button onClick={increment}>Tăng</button>
+            <button onClick={decrement}>Giảm</button>
+          </>
+        );
+      }}
+    />
+  );
+}
+
+
+##################### Higher Order Component (HOC) #########################
+
+**************** Ví dụ về làm mờ 1 ảnh ****************
+
+import React from "react";
+ 
+const Image = (props) => {
+  return <img src="https://freetuts.net/public/logo/logo.png" alt="freetuts" />;
+};
+ 
+export default class HoverComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      opacity: 1,
+    };
+    //bind this
+    this.onMouseLeave = this.onMouseLeave.bind(this);
+    this.onMouseEnter = this.onMouseEnter.bind(this);
+  }
+  //Được gọi khi chuột được di vào
+  onMouseEnter() {
+    this.setState({
+      opacity: 0.5,
+    });
+  }
+  //Được gọi khi chuột được rời đi
+  onMouseLeave() {
+    this.setState({
+      opacity: 1,
+    });
+  }
+  render() {
+    return (
+      <div
+        style={{ opacity: this.state.opacity }}
+        onMouseEnter={this.onMouseEnter}
+        onMouseLeave={this.onMouseLeave}
+      >
+        <Image />
+      </div>
+    );
+  }
+}
+
+**************** Ví dụ làm mờ nhiều ảnh ****************
+
+import React from "react";
+
+//Đây được gọi là một HOC, nó nhận vào 1 component
+//và trả ra một component
+const withHoverOpacity = (ImageComponent) => {
+  return class extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = {
+        opacity: 1
+      };
+      //bind this
+      this.onMouseLeave = this.onMouseLeave.bind(this);
+      this.onMouseEnter = this.onMouseEnter.bind(this);
+    }
+    //Được gọi khi chuột được di vào
+    onMouseEnter() {
+      this.setState({
+        opacity: 0.5
+      });
+    }
+    //Được gọi khi chuột được rời đi
+    onMouseLeave() {
+      this.setState({
+        opacity: 1
+      });
+    }
+    render() {
+      return (
+        <div
+          style={{ opacity: this.state.opacity }}
+          onMouseEnter={this.onMouseEnter}
+          onMouseLeave={this.onMouseLeave}
+        >
+          <ImageComponent />
+        </div>
+      );
+    }
+  };
+};
+
+//Các component là các ảnh cần Hover
+const Image1 = (props) => {
+  return <img src="https://freetuts.net/public/logo/logo.png" alt="freetuts" />;
+};
+const Image2 = (props) => {
+  return (
+    <img
+      src="https://facebookbrand.com/wp-content/uploads/2019/04/f_logo_RGB-Hex-Blue_512.png?w=512&h=512"
+      alt="facebook"
+    />
+  );
+};
+
+//Lúc này mình truyền vào HOC một component
+//và mình sẽ nhận vào một component mới
+
+//Ở đây mình có thể hiển thị rất nhiều ảnh
+// mà không cần phải xây dựng component hỗ trợ việc làm
+//mờ ảnh quá nhiều
+const ImageWithHoverOpacity1 = withHoverOpacity(Image1);
+const ImageWithHoverOpacity2 = withHoverOpacity(Image2);
+
+//Hiển thi component
+export default function () {
+  return (
+    <>
+      <ImageWithHoverOpacity1 />
+      <ImageWithHoverOpacity2 />
+    </>
+  );
+}
+
+################### React Hooks ##################
+
+************ Random số ngẫu nhiên cách 1 ***********
+
+import React, { useState } from "react";
+ 
+export default function RandomNumberComponent(props) {
+  const [number, setNumber] = useState(0)
+ 
+  return (
+    <div style={{ padding: "10%" }}>
+      <b>{number}</b> <hr />
+      <button onClick={() => {
+        setNumber(Math.round(Math.random() * 100))
+      }}>Random</button>
+    </div>
+  );
+}
+
+
+************ Random số ngẫu nhiên cách 2 ***********
+
+import React, { useState } from "react";
+ 
+export default function RandomNumberComponent(props) {
+  const [number, setNumber] = useState(0)
+ 
+  return (
+    <div style={{ padding: "10%" }}>
+      <b>{number}</b> <hr />
+      <button onClick={() => {
+        setNumber(Math.round(Math.random() * 100))
+      }}>Random</button>
+    </div>
+  );
+}
+
+************ Các Hooks cơ bản ***********
+
+  useState()
+
+cú pháp: const [tenSate, hamCapNhatState] = useState(giaTriBanDauCuaState);
+
+  useEffect()
+
+cú pháp: useEffect(functionDuocKhoiChay, arrayChuaCacGiaTriThayDoi);
+
+  useContext()
+
+cú pháp: const giaTriCuaContext = useContext(TenContext);
+
+  useReducer()
+
+cú pháp: const [state, dispatch] = useReducer(reducer, initialArg, init);
+
+
+############### Tìm hiểu React Hook useState ##################
+
+*************** Ví dụ 1: Hiển thị nút Đọc thêm ********************
+
+//Gọi React và useState
+import React, { useState } from "react";
+//Component hiển thi thêm nội dung
+const MoreContent = () => {
+  return (
+    <p>
+      1500s, when an unknown printer took a galley of type and scrambled it to
+      make a type specimen book. It has survived not only five centuries, but
+      also the leap into electronic typesetting, remaining essentially
+      unchanged. It was popularised in the 1960s with the release of Letraset
+      sheets containing Lorem Ipsum passages, and more recently with desktop
+      publishing software like Aldus PageMaker including versions of Lorem
+      Ipsum.     
+    </p>
+  );
+};
+export default function App(props) {
+  //Sử duụng useState
+  // isShow là một state
+  // setShow là function giúp cập nhật state
+  // Giá trị mặc định ban đầu của state là false
+  const [isShow, setShow] = useState(false);
+  return (
+    <div>
+      <p>
+        Lorem Ipsum is simply dummy text of the printing and typesetting
+        industry. Lorem Ipsum has been the industry's standard dummy text ever
+        since the
+      </p>
+       {isShow === true ? <MoreContent /> : ""}
+      {isShow === false ? (
+        <button
+          onClick={() => {
+            // Khi click vào button
+            // cập nhật state bằng cách gọi hàm
+            // setShow đã được khai báo bên trên/
+            setShow(true);
+          }}
+        >
+          Read more
+        </button>
+      ) : (
+        ""
+      )}
+    </div>
+  );
+}
+
+*********** Ví dụ 2: Lấy dữ liệu từ API và hiển thị ****************
+
+//Gọi React và useState
+import React, { useState } from "react";
+import axios from "axios"; //Sử dụng axios
+
+//Component hiển thị danh sách người dùng
+const ShowUser = (props) => {
+  //Lấy giá tri của props listUser
+  const { listUser } = props; 
+  // Render ra list user 
+  // React.Fragment cho phép bọc JSX lại. 
+  // List Keys :  chỉ định key, giúp loại bỏ cảnh báo.
+  return (
+    <div>
+      {listUser.map((user, index) => {
+        return (
+          <React.Fragment key={user.id}>
+            <ul>
+              <li>{user.name}</li>
+              <li>{user.email}</li>
+            </ul>
+            <hr />
+          </React.Fragment>
+        );
+      })}
+    </div>
+  );
+};
+
+export default function App(props) {
+  //Khai báo state, sử dụng hook: useState
+  const [listUser, setListUser] = useState([]);
+  const [isLoading, setLoading] = useState(false); 
+  //API chứa dữ liệu người dùng
+  const getUserAPI =
+    "https://5df8a4c6e9f79e0014b6a587.mockapi.io/freetuts/users"; 
+    //Hàm fetch API để lấy dữ liệu người dùng
+  const getUser = () => {
+    //Cập nhật lại giá trị của state loading
+    setLoading(true); //Thực hiện gọi api
+    axios
+      .get(getUserAPI)
+      .then((res) => {
+        //Cập nhật giá trị của state listUser
+        setListUser(res.data);
+      })
+      .catch((err) => {
+        //Trường hợp xảy ra lỗi
+        alert("Không thể kết nối tới server");
+      })
+      .finally(() => {
+        // Câu lệnh trong này được khởi chạy mỗi khi call API xong
+        // bất kể thất bại hay không.
+        // ...
+        setLoading(false); //Cập nhật giá trị của state isLoading
+      });
+  };
+  return (
+    <>
+      <code>freetuts.net</code> <br />
+      {isLoading ? "loading..." : <button onClick={getUser}>Get User</button>}
+      <ShowUser listUser={listUser} />
+    </>
+  );
+}
+
+
+############### Tìm hiểu React Hook useEffect ##################
+
+********* Sử dụng useEffect như componentDidMount ********
+
+//Gọi React và useState
+import React, { useState, useEffect } from "react";
+import axios from "axios"; //Sử dụng axios
+
+//Component hiển thị danh sách người dùng
+const ShowUser = (props) => {
+  //Lấy giá tri của props listUser
+  const { listUser } = props; // Render ra list user // React.Fragment cho phép bọc JSX lại. // List Keys :  chỉ định key, giúp loại bỏ cảnh báo.
+  return (
+    <div>
+      {listUser.map((user, index) => {
+        return (
+          <React.Fragment key={user.id}>
+            <ul>
+              <li>{user.name}</li>
+              <li>{user.email}</li>
+            </ul>
+            <hr />
+          </React.Fragment>
+        );
+      })}
+    </div>
+  );
+};
+
+export default function App(props) {
+  //Khai báo state, sử dụng hook: useState
+  const [listUser, setListUser] = useState([]); 
+  //Sử dụng useEffect hook như componentDidMount
+  useEffect(() => {
+    const getUserAPI =
+      "https://5df8a4c6e9f79e0014b6a587.mockapi.io/freetuts/users"; 
+      //Gọi API bằng axios
+    axios
+      .get(getUserAPI)
+      .then((res) => {
+        // Cập nhật lại listUser bằng
+        // Bạn có thể xem lại bài viết về useState()
+        setListUser(res.data);
+      })
+      .catch((err) => {
+        //Trường hợp xảy ra lỗi
+        console.log(err);
+        alert("Xảy ra lỗi");
+      });
+  }, []);
+  return (
+    <>
+      <code>freetuts.net</code> <br />
+      <ShowUser listUser={listUser} />
+    </>
+  );
+}
+
+
+********* Sử dụng useEffect như componentDidUpdate ********
+
+//Gọi React và useState
+import React, { useState, useEffect } from "react";
+
+export default function App() {
+  const [count, setCount] = useState(1);
+  //Sử dụng useEffect() như componentDidUpdate
+  useEffect(() => {
+    document.title = `(${count}) lần click`;
+  });
+  return (
+    <>
+      <code>freetuts.net</code> <br />
+      <h1>Bạn đã click {count} lần</h1>
+      <button
+        onClick={() => {
+          setCount(count + 1);
+        }}
+      >
+        Click me
+      </button>
+    </>
+  );
+}
+
+
+********* Sử dụng useEffect như componentDidUnWillMount ********
+
+import React, { useEffect, useState } from "react";
+
+function LifecycleDemo() {
+  useEffect(() => {
+    //Được gọi khi component render
+    console.log("render!");
+    // useEffect trả về một hàm ,
+    // hàm trả về đó là đóng vai trò như
+    // là componentWillUnmount
+    return () => console.log("unmounting...");
+  });
+
+  return <code>freetuts.net</code>;
+}
+
+export default function App() {
+  const [mounted, setMounted] = useState(true);
+  const toggle = () => setMounted(!mounted);
+  return (
+    <>
+      {mounted && <LifecycleDemo />} <hr />
+      <button onClick={toggle}>Show/Hide LifecycleDemo</button>
+    </>
+  );
+}
+
+
+############### Tìm hiểu React Hook useContext ##################
+
+************ Ví dụ về tăng giảm *****************
+
+import React, { Component, useContext } from "react";
+// Khởi tạo context mới.
+const CounterContext = React.createContext();
+const Counter = () => {
+  // Sử dụng useContext để lấy gía trị của context
+  // Tham số truyền vào là object CounterContext.
+  const counter = useContext(CounterContext);
+
+  return (
+    <div>
+      <code>freetuts.net</code>
+      <h1>{counter.count}</h1>
+      <button
+        onClick={() => {
+          counter.countUp();
+        }}
+      >
+        Tăng
+      </button>
+      <button
+        onClick={() => {
+          counter.countDown();
+        }}
+      >
+        Giảm
+      </button>
+    </div>
+  );
+};
+export default class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      count: 1
+    };
+  }
+  //Cập nhật giá trị của state count - Tăng
+  countUp() {
+    this.setState({
+      count: this.state.count + 1
+    });
+  }
+  //Cập nhật giá trị của state count - Giảm
+  countDown() {
+    this.setState({
+      count: this.state.count - 1
+    });
+  }
+  render() {
+    return (
+      <CounterContext.Provider
+        value={{
+          count: this.state.count,
+          countUp: this.countUp.bind(this),
+          countDown: this.countDown.bind(this)
+        }}
+      >
+        <Counter />
+      </CounterContext.Provider>
+    );
+  }
+}
+
