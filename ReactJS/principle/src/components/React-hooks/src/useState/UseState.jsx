@@ -16,7 +16,3 @@ function UseState() {
 }
 
 export default UseState
-
-// ❌❌Sau khi học xong khóa Hook của anh Hậu Nguyễn thì nên đọc lại code của các ví dụ hook❌❌
-
-// ❌❌Và học tiếng anh❌❌
