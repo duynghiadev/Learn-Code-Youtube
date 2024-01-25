@@ -14,6 +14,7 @@ function UseEffect() {
 
   return (
     <div>
+      <strong>This is a useEffect hook</strong>
       <h1>Hello {data}</h1>
       <button onClick={() => setRefresh(!refresh)}>refresh</button>
     </div>
