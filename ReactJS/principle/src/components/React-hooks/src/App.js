@@ -12,23 +12,14 @@ function App() {
   return (
     <div>
       <UseState />
-      <hr />
       <UseReducer />
-      <hr />
       <UseEffect />
-      <hr />
       <UseRef />
-      <hr />
       <UseLayoutEffect />
-      <hr />
       <UseImperativeHandle />
-      <hr />
       <UseContext />
-      <hr />
       <UseMemo />
-      <hr />
       <UseCallBack />
-      <hr />{' '}
     </div>
   )
 }
