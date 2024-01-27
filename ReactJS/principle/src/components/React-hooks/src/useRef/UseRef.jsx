@@ -13,6 +13,7 @@ function UseRef() {
 
   return (
     <div>
+      <strong>This is a useRef hook 👇</strong>
       <h1>{data}</h1>
       <input type='text' ref={inputRef} />
       <button onClick={changeAndFocus}>Change Name</button>
