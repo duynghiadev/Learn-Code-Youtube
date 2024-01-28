@@ -20,7 +20,7 @@ function UseReducer() {
 
   return (
     <div id='usereduce'>
-      <strong>This is a useReducer hook</strong>
+      <strong>This is a useReducer hook 👇</strong>
       <h1>{state.count}</h1>
       <button
         onClick={() => {
