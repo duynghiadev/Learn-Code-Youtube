@@ -27,7 +27,6 @@ export default function UseMemo() {
     }
 
     console.log('THIS WAS COMPUTED')
-
     return longestName
   }
 
@@ -35,8 +34,8 @@ export default function UseMemo() {
 
   return (
     <div className='App'>
+      <strong>This is a useMemo hook 👇</strong>
       <div>{getLongestName}</div>
-
       <button
         onClick={() => {
           setToggle(!toggle)

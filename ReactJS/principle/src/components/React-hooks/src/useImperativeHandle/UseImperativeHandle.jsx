@@ -6,6 +6,8 @@ function UseImperativeHandle() {
 
   return (
     <div>
+      <strong>This is a useImperativeHandle hook 👇</strong>
+      <br />
       <button
         onClick={() => {
           buttonRef.current.alterToggle()

@@ -13,6 +13,7 @@ function UseLayoutEffect() {
 
   return (
     <div className='App'>
+      <strong>This is a useLayoutEffect hook 👇</strong>
       <h1>{data}</h1>
     </div>
   )
