@@ -11,6 +11,7 @@ function UseContext() {
   return (
     <div>
       <AppContext.Provider value={{ username, setUsername }}>
+        <strong>This is a useContext hook 👇</strong>
         <h1>useContext hook</h1>
         <Login />
         <User />

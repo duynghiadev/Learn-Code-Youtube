@@ -14,6 +14,7 @@ export default function UseCallBack() {
 
   return (
     <div className='App'>
+      <strong>This is a useCallback hook 👇</strong>
       <Child returnComment={returnComment} />
 
       <button
