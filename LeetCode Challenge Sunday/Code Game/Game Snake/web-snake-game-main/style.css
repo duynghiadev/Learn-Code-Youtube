@@ -1,0 +1,51 @@
+body{
+    background-color:  #006172;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:white;
+}
+select,button{
+    margin: 10px;
+    padding: 10px 30px 10px 30px;
+    border: 2px solid white;
+    background: #1e81b0;
+    color: white;
+    font-size: 20px;
+    border-radius: 5px;
+    transition: background 300ms;
+}
+select:hover,button:hover{
+    background: #abdbe3;
+    cursor: pointer;
+    color:#0c1f24;
+}
+
+.gameframe-container{
+    width: 800px;
+    height: 600px;
+    margin: 0 auto;    
+}
+.settings{
+    display: flex;
+    justify-content: center;
+}
+.scores{
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    gap:200px;
+}
+.score{
+    margin:10px;
+}
+
+input[type="number"]{
+    margin: 10px;
+    padding: 10px 10px 10px 10px;
+    border: 2px solid white;
+    background: #1e81b0;
+    color: white;
+    font-size: 20px;
+    border-radius: 5px;
+    transition: background 300ms;
+}
+

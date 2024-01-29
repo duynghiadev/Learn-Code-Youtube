@@ -1,0 +1,54 @@
+body {
+    background-image: url("./img/Refreshing-green-grass-background-vector-01.webp");
+}
+
+h1 {
+    margin: 10px;
+    color: rgb(230, 230, 230);
+    text-shadow: 2px 2px black;
+    text-align: center;
+    font-family: 'VT323', Arial, Helvetica, sans-serif;
+    font-size: 5em;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+canvas {
+    border: 2px solid;
+    box-shadow: 5px 5px 5px black;
+}
+
+#score {
+    background-color: rgb(96, 108, 56);
+    width: 150px;
+    margin: 10px auto;
+    border: 1px solid black;
+    border-radius: 5px;
+    box-shadow: 3px 3px 5px black;
+    text-align: center;
+    color: rgb(230, 230, 230);
+    text-shadow: 2px 2px black;
+    font-family: 'VT323', Arial, Helvetica, sans-serif;
+    font-size: 2em;
+}
+
+#high-score {
+    background-color: rgb(96, 108, 56);
+    width: 200px;
+    margin: 10px auto;
+    border: 1px solid black;
+    border-radius: 5px;
+    box-shadow: 3px 3px 5px black;
+    text-align: center;
+    color: rgb(230, 230, 230);
+    text-shadow: 2px 2px black;
+    font-family: 'VT323', Arial, Helvetica, sans-serif;
+    font-size: 2em;
+}
+
+#score p {
+    margin: 3% 7%;
+}

@@ -1,0 +1,266 @@
+@font-face {
+  font-family: "Nickname";
+  src: url("../fonts/nickname.otf");
+}
+
+/***********/
+/* GENERAL */
+/***********/
+:root {
+  --white: #ffffff;
+  --black: #1f1f1f;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  user-select: none;
+  -webkit-user-drag: none;
+  -moz-user-drag: none;
+  font-family: "Nickname";
+  box-sizing: border-box;
+  color: var(--black);
+  -webkit-tap-highlight-color: transparent; /* for removing the highlight on Android */
+}
+
+html,
+body,
+#root {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(
+    103.3deg,
+    rgba(252, 225, 208, 1) 30%,
+    rgba(255, 173, 214, 1) 55.7%,
+    rgba(162, 186, 245, 1) 81.8%
+  );
+}
+
+/**************/
+/* LOGO       */
+/**************/
+.logo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  margin: 1.2em;
+  pointer-events: none;
+  width: min(10vh, 10vw);
+}
+
+/**************/
+/* AUTHOR     */
+/**************/
+.author {
+  font-family: "Nickname";
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin: 1em;
+  width: min(4vw, 5vh);
+  cursor: pointer;
+  z-index: 2;
+}
+
+/**************/
+/* SCORE      */
+/**************/
+.score {
+  position: fixed;
+  bottom: 0.5vh;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  pointer-events: none;
+}
+
+.individual-score {
+  position: relative;
+  margin-right: 1.5vw;
+  margin-left: 1.5vw;
+  font-size: min(4vw, 5vh);
+}
+
+.mode-info {
+  position: absolute;
+  top: -1.4vh;
+  font-size: min(1.4vw, 2vh);
+}
+
+/*******************/
+/* CONTROL BUTTONS */
+/*******************/
+.control-buttons {
+  background: rgba(0, 0, 0, 0);
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  margin: 1.2rem;
+  display: flex;
+  flex-direction: row;
+}
+
+.control-button {
+  border: 3px solid var(--white);
+  border-radius: 60px;
+  padding: 8px;
+  line-height: 10px;
+  cursor: pointer;
+  transition: opacity 0.5s cubic-bezier(0.19, 1.51, 0.29, 0.99);
+}
+
+.control-button:hover {
+  opacity: 0.6;
+}
+
+/*******************/
+/* MODAL           */
+/*******************/
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  z-index: 2;
+  align-items: center;
+  justify-content: center;
+  background: rgba(31, 31, 31, 0.4);
+}
+
+.modal-box {
+  background: var(--white);
+  width: 30vw;
+  height: fit-content;
+  padding: 1vh 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 50px;
+  z-index: 3;
+  text-align: center;
+  box-shadow: 0 0 20px var(--white);
+}
+
+.modal-title {
+  font-size: min(6vw, 7vh);
+  margin: 3vh;
+}
+
+.section-title {
+  font-size: min(4vw, 5vh);
+  margin-bottom: 1.5vh;
+}
+
+.mode-area {
+  margin-bottom: 4vh;
+  perspective: 1000px;
+  perspective-origin: 50%;
+}
+
+.mode-selection {
+  cursor: pointer;
+  font-size: min(2vw, 2vh);
+  padding: min(0.6vw, 0.6vh);
+}
+
+.selected-mode {
+  color: rgb(191, 191, 191);
+}
+
+.modal-button {
+  cursor: pointer;
+  color: var(--white);
+  background-color: var(--black);
+  border-radius: 50px;
+  font-size: min(2vw, 2vh);
+  padding: min(1.6vw, 1.6vh) min(3vw, 3vh);
+  margin-bottom: 1.5vh;
+}
+
+.mode-selection {
+  transition: transform 0.75s 0.1s cubic-bezier(0.19, 1.51, 0.29, 0.99);
+}
+
+.mode-selection:hover {
+  transform: translateZ(25px);
+}
+
+.modal-button {
+  transition: scale 1s 0.1s cubic-bezier(0.19, 1.51, 0.29, 0.99);
+}
+
+.modal-button:hover {
+  scale: 1.1;
+}
+
+.modal-about-area {
+  margin: 2vh;
+}
+
+.modal-about {
+  font-size: min(1.6vw, 1.6vh);
+}
+
+@media only screen and (max-width: 900px) {
+  .logo {
+    width: 9vh;
+  }
+
+  .individual-score {
+    margin-right: 1.5vw;
+    margin-left: 1.5vw;
+    font-size: 2.75vh;
+  }
+
+  .mode-info {
+    top: -1.3vh;
+    font-size: 1.3vh;
+  }
+
+  .modal-box {
+    width: 75vw;
+    height: 70vh;
+    border-radius: 30px;
+  }
+
+  .modal-title {
+    font-size: 7.5vh;
+    margin: 3vh;
+  }
+
+  .section-title {
+    font-size: 5vh;
+    margin-bottom: 2vh;
+  }
+
+  .mode-area {
+    margin-bottom: 5vh;
+  }
+
+  .mode-selection,
+  .modal-button {
+    font-size: 3vh;
+    padding: 1vh;
+  }
+  .modal-button:hover,
+  .mode-selection:hover {
+    transform: none;
+  }
+
+  .modal-about-area {
+    margin: 2vh;
+  }
+
+  .modal-about {
+    font-size: 1.75vh;
+  }
+}

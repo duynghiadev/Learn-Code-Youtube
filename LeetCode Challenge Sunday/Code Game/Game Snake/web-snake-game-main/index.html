@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <div class="settings">
+                <div class="setting">
+                    <label for="level-select">Choose a level</label>
+                    <select class="game-option" name="level-select" id="level-select">
+                        <option value="level1">Level 1</option>
+                        <option value="level2">Level 2</option>
+                        <option value="level3">Level 3</option>
+                    </select>
+                </div>
+                <div class="setting">
+                    <div class="start-button-container">
+                        <button id="start-button">Start</button>
+                    </div>
+                </div>
+                <div class="setting">
+                    <div class="restart-button-container">
+                        <button id="restart-button" style="display: none;">Restart</button>
+                    </div>
+                </div>
+                <div class="setting">
+                    <div class="stop-button-container">
+                        <button id="stop-button">Stop</button>
+                        <button id="continue-button" style="display:none;">Continue</button>
+                    </div>
+                </div>
+                <div class="setting">
+                    <div class="reset-button-container">
+                        <button id="reset-button">Reset</button>
+                    </div>
+                </div>
+                <div class="setting">
+                    <label for="block-size">Block Size</label>
+                    <input type="number" id="block-size" name="block-size" value="1">
+                </div>
+                <div class="setting" style="display: none;">
+                    <label for="game-tick">Game Tick</label>
+                    <input type="number" id="game-tick" name="game-tick" value="100">
+                </div>
+                <div class="setting">
+                    <div class="warning"  style="display: none;width: 100px;">
+                        Please expect bugs in this setting
+                    </div>
+                </div>
+            </div>
+            <div class="scores">
+                <div class="score">
+                    Your Score : <span id="score">0</span>
+                </div>
+                <div class="score">
+                    High Score : <span id="high-score">0</span>
+                </div>
+                <div class="score">
+                    Your Level : <span id="level"></span>
+                </div>
+                <div class="score">
+                    Time : <span id="time"></span>
+                </div>
+            </div>
+            <div class="gameframme">
+                <div class="gameframe-container">
+                    <canvas id="thegame" width="800" height="600"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>Snake Game</title>
+        <style>
+            
+            body {text-align: center;}
+        </style>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="styles.css" rel="stylesheet">
+    </head>
+    <body>
+        <canvas id="snake" width="608" height="608"></canvas>
+            <div id ='content-desktop'>
+             <div id = "url">Something special awaits here(use arrow keys to navigate): </div><br>
+            </div>
+            <div id ='content-mobile'>
+                <div id = "url">Something special awaits here: </div><br>
+               
+             <div id="buttons">
+                <button id="up" onclick="set('up')">▲</button><br>
+                <button id="left" onclick="set('left')">◀</button>
+                <button id="right" onclick="set('right')">▶</button><br>
+                <button id="down" onclick="set('down')">▼</button>
+             </div>
+            </div>
+    </body>
+        
+    <script src="snake.js"></script>
+</html>

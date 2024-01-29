@@ -1,0 +1,29 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(red, yellow, blue);
+    height: 100vh;
+}
+
+p {
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+canvas {
+    border: 2px solid #000;
+}

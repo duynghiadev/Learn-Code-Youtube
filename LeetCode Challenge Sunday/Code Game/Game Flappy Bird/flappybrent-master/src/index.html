@@ -1,0 +1,250 @@
+<html>
+
+<head>
+	<title>Flappy Brent</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<link rel="manifest" href="manifest.json">
+	<meta name="theme-color" content="#96c93e" />
+	<link rel="icon" sizes="192x192" href="assets/brent0.png">
+	<link rel="apple-touch-icon" href="assets/brent0.png">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="#96c93e">
+	<meta name="apple-mobile-web-app-title" content="Flappy Brent">
+	<meta name="msapplication-TileImage" content="assets/brent0.png">
+	<meta name="msapplication-TileColor" content="#96c93e">
+	<meta property="og:site_name" content="Flappy Brent" />
+	<meta property="og:title" content="Get the beers! Don't get the Brents!" />
+	<meta name="description" content="There is no winning in Flappy Brent. Get the beers, don't get the Brents" />
+	<meta property="og:description"
+		content="There is no winning in Flappy Brent. How many beers can you drink before Brent blocks you?" />
+	<meta property="og:image" content="https://flappybrent.z13.web.core.windows.net/assets/flappybrent.png">
+	<meta property="og:url" content="https://flappybrent.z13.web.core.windows.net/">
+	<meta property="og:type" content="website" />
+
+
+	<style>
+		* {
+			box-sizing: border-box;
+			margin: 0;
+			padding: 0;
+			touch-action: none;
+		}
+
+		body,
+		html {
+			width: 100%;
+			height: 100%;
+			background: #333;
+		}
+
+		body {
+			position: fixed;
+			color: #f99;
+			font-family: 'Verdana, Geneva, Tahoma, sans-serif';
+			-webkit-touch-callout: none;
+			-webkit-user-select: none;
+			-khtml-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+		}
+
+		#container {
+			display: grid;
+			height: 100%;
+		}
+
+		#viewport {
+			max-width: 100%;
+			max-height: 100%;
+			margin: auto;
+			background: #000;
+		}
+
+		#loading {
+			position: absolute;
+			display: block;
+			height: 300px;
+			width: 300px;
+			left: 50%;
+			top: 50%;
+			margin-top: -150px;
+			margin-left: -150px;
+			text-align: center;
+		}
+
+		#settings {
+			margin: 50px;
+		}
+
+		input {
+			width: 75vw;
+			font-size: 2rem;
+			background: transparent;
+			border: none;
+			border-bottom: 1px solid #f99;
+			color: rgb(255, 211, 211);
+		}
+
+		button {
+			font-size: 2rem;
+			background: transparent;
+			border: 1px solid #f99;
+			color: #f99;
+		}
+
+		#actions {
+			position: absolute;
+			text-align: center;
+			top: 0px;
+			width: 100vw;
+			font-size: 1.8rem;
+		}
+
+		#clickToPlay {
+			position: absolute;
+			width: 100vw;
+			height: 100vh;
+			background: transparent;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="loading">
+		<h1>Loading...</h1>
+		<br><br>
+		<img src="assets/brent0.png" />
+	</div>
+	<div id="settings" style="display: none">
+		<h1>What is your name?</h1>
+		<input type="text" id="nameInput" name="name" placeholder="Your name.." autofocus />
+		<br /><br /><br />
+		<button id="saveSettingsButton">Play &#9658;</button>
+	</div>
+
+	<div id="container" style="display: none">
+		<div id="clickToPlay" style="display: none">
+		</div>
+		<div id="actions">
+			<span id="pauseButton" style="display: none;">&nbsp; &#10074;&#10074; &nbsp;</span>			
+			<span>&nbsp;&nbsp;&nbsp;</span>
+			<span id="settingsButton">&#9881;</span>
+		</div>
+
+		<noscript><strong>We're sorry but the web doesn't work properly without JavaScript enabled. Enable it to stop
+				being an idiot.</strong></noscript>
+		<canvas id='viewport' width='1920' height='1080'></canvas>
+	</div>
+
+
+	<script>
+		if ('serviceWorker' in navigator) {
+			navigator.serviceWorker.register('service-worker.js')
+				.then(function () {
+					console.log('Service Worker Registered');
+				});
+		}	
+	</script>
+	<script type='module'>
+
+		import Game from './game.js'
+		import View from './view.js'
+		import Loader from './loader.js'
+
+		const container = document.getElementById('container')
+		const loading = document.getElementById('loading')
+		const settings = document.getElementById('settings')
+		const pauseButton = document.getElementById('pauseButton')
+		const settingsButton = document.getElementById('settingsButton')
+		const saveSettingsButton = document.getElementById('saveSettingsButton')
+		const nameInput = document.getElementById('nameInput')
+		const clickToPlay = document.getElementById('clickToPlay')
+
+		const loader = new Loader(loading, container, start)
+		const canvas = document.getElementById('viewport')
+		const ctx = canvas.getContext('2d', { alpha: false })
+
+		const TICK = 1000 / 240 // 240 updates / second
+		let paused = true;
+		window.game = new Game()
+		const view = new View()
+		const input = []
+		let time = performance.now()
+
+		const inputEventType = ('ontouchstart' in window) ? 'touchstart' : 'click'
+		document.addEventListener(inputEventType, () => input.push(true))
+		pauseButton.addEventListener(inputEventType, () => pauseGame())		
+		clickToPlay.addEventListener(inputEventType, () => playGame())
+		settingsButton.addEventListener(inputEventType, () => showSettings())
+		saveSettingsButton.addEventListener(inputEventType, () => saveSettings())
+		document.addEventListener('keyup', () => input.push(true))
+		nameInput.addEventListener('keyup', () => { if (event.keyCode === 13) { saveSettingsButton.click() } })
+		document.addEventListener('visibilitychange', () => { if (document['hidden']) { pauseGame() } })
+		requestAnimationFrame(gameLoop)
+
+		function start() {
+			loading.style.display = 'none';
+			if (!game.stats.user.name) {
+				settings.style.display = 'block';
+				container.style.display = 'none';
+			} else {
+				playGame()
+			}
+		}
+
+		function playGame() {
+			settings.style.display = 'none';			
+			container.style.display = 'block';
+			while (input.length) { input.pop(); }
+			time = performance.now()
+			paused = false
+		}
+		function pauseGame() {			
+			paused = true;
+			clickToPlay.style.display = 'inline';
+			game.sounds.pauseMusic()
+		}
+		function gameLoop() {
+			requestAnimationFrame(gameLoop)
+			const now = performance.now()
+			game.paused = paused;
+			while (time + TICK <= now) {
+				const flapping = !paused && input.shift()
+				const finished = game.update(flapping)
+				if (finished && flapping && game.gameOver) game = new Game() //start new game
+
+				time += TICK
+			}
+
+			view.render(game, ctx)
+
+			pauseButton.style.display = game.gameOver || paused ? 'none' : 'inline';			
+			clickToPlay.style.display = !paused ? 'none' : 'inline';
+		}
+		function fullscreen() {
+			if (canvas.webkitRequestFullScreen) {
+				canvas.webkitRequestFullScreen()
+			}
+			else if (canvas.mozRequestFullScreen) {
+				canvas.mozRequestFullScreen()
+			}
+		}
+		function showSettings() {
+			pauseGame()
+			document.getElementById("nameInput").value = game.stats.user.name
+			container.style.display = 'none';
+			settings.style.display = 'block';
+		}
+		function saveSettings() {
+			const name = document.getElementById("nameInput").value
+			game.stats.user.name = name
+			game.stats.saveStats()
+			settings.style.display = 'none';
+			container.style.display = 'block';
+			pauseGame()
+		}
+	</script>
+</body>
+
+</html>
