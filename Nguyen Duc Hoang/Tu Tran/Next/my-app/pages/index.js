@@ -4,7 +4,6 @@ import Footer from '../components/Footer'
 export default function Home() {
   return (
     <>
-      <Navbar />
       <div>
         <h1>Home Page</h1>
         <p>
@@ -18,7 +17,6 @@ export default function Home() {
           optio itaque sit quae. Nihil, mollitia.
         </p>
       </div>
-      <Footer />
     </>
   )
 }
