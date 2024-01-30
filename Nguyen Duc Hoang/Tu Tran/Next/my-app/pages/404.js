@@ -20,7 +20,7 @@ export default function NotFound() {
         <Link legacyBehavior href='/'>
           <a> Home Page </a>
         </Link>
-        is 10 seconds...🕑
+        is 5 seconds...🕑
       </p>
     </div>
   )
