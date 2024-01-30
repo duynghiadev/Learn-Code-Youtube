@@ -1,9 +1,15 @@
+import Head from 'next/head'
 import Link from 'next/link'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
   return (
     <>
+      <Head>
+        <title>Coder Wikipedia | Home</title>
+        <meta name='keywords' content='coders' />
+      </Head>
+
       <div>
         <h1 className={styles.title}>Home Page</h1>
 
