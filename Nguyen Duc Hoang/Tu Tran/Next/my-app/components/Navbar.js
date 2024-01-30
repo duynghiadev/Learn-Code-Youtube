@@ -4,16 +4,16 @@ export default function Navbar() {
   return (
     <nav>
       <div>
-        <Link href='/'>
-          <a>Coder Wikipedia</a>
+        <Link legacyBehavior href='/'>
+          Coder Wikipedia
         </Link>
       </div>
       <div>
-        <Link href='/about'>
-          <a>About</a>
+        <Link legacyBehavior href='/about'>
+          About
         </Link>
-        <Link href='/coders'>
-          <a>All Coders</a>
+        <Link legacyBehavior href='/coders'>
+          All Coders
         </Link>
       </div>
     </nav>
