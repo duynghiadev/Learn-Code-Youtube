@@ -52,3 +52,27 @@
 
 ![response structure 1](image-14.png)
 ![response structure 2](image-17.png)
+
+---
+
+> This is course MERN Stack 🤷‍♀️
+
+> Suitable person of this course (Đối tượng phù hợp với khóa này 👨‍💻)
+
+![Suitable person](image-15.png)
+
+---
+
+> There are principle in JavaScript 🚀
+
+![desctructuring](image-16.png)
+![arrow function](image-18.png)
+![async await](image-19.png)
+![Spread operator](image-20.png)
+![Rest parameter](image-21.png)
+![Ternary operator](image-22.png)
+
+Reference: 🌈
+
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript
+- https://javascript.info/
