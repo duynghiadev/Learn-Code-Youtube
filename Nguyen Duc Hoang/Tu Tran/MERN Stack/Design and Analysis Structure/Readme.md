@@ -82,3 +82,15 @@ Reference: 🌈
 > Determine the specific tasks that need to be performed (Xác định các task cụ thể cần thực hiện 🎯) --> Sprint
 
 ![task 1](image-23.png)
+
+---
+
+![task 2](image-24.png)
+
+- ExpressJS là Web framework của NodeJS
+- Trong ExpressJS có những tính năng nổi bật là error handling (xử lý lỗi), middleware, body parse, route,...
+
+**Lưu ý:**
+
+- file `server.js` là file entry point. Khi mà client gửi request lên server thì nó sẽ vào `server.js` đầu tiên
+- entry point -> có nghĩa là điểm bắt đầu
