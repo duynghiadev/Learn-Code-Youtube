@@ -76,3 +76,9 @@ Reference: 🌈
 
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript
 - https://javascript.info/
+
+---
+
+> Determine the specific tasks that need to be performed (Xác định các task cụ thể cần thực hiện 🎯) --> Sprint
+
+![task 1](image-23.png)
