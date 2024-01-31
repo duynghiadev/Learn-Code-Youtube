@@ -163,3 +163,9 @@ Hình ảnh minh họa: 🌈
 ✅ Body parse dùng để chuyển đổi dữ liệu của người dùng thành object. Để từ đó server dễ dàng thao tác với các thuộc tính trong đó
 
 ---
+
+> Setup structure folder (config, middleware, route, controller, model,...)
+
+![task 4 and 5](image-28.png)
+
+---
