@@ -10,3 +10,8 @@
 ![after when login](image-3.png)
 
 ![Introduction and Analysis Project](image-4.png)
+
+**Analysis Back-end**
+
+![1. Analysis source, data structure](image-5.png)
+![2. Design API by standard RESTFUL](image-6.png)
