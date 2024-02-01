@@ -213,3 +213,24 @@ Hình ảnh minh họa: 🌈
 ![Process Login](image-30.png)
 
 ---
+
+> Trong bài học hôm này (Video #13), chúng ta sẽ tìm hiểu về MongoDB
+
+![MongoDB Schema](image-31.png)
+
+![Rule Schema Validation](image-32.png)
+
+- Schema là cấu trúc của bộ khung mà chúng ta lưu dữ liệu vào trong database
+
+- Ví dụ:
+
+- Cấu trúc của User thì có:
+
+  - name, email, password
+  - Ngoài ra thì có thêm Id, mà Id nó tự động tạo bởi mongoseDb, nên chúng ta không cần tạo nữa
+
+- Schema validation nó quy định các quy chế, như là: cấu trúc dữ liệu (string), unique (true,false), trim,...
+
+- timestamps: nó giúp cho mongose tự động tạo 2 cái thuộc tính createdAt (ngày bắt đầu tạo), updatedAt (ngày cập nhật dữ liệu)
+
+---
