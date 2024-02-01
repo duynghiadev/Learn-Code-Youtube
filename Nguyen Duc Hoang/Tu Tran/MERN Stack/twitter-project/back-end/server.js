@@ -3,11 +3,12 @@ import dotenv from 'dotenv'
 // connect DB
 import { connectDB } from './configs/db.js'
 
-dotenv.config()
-connectDB()
-
 import express, { json } from 'express'
 import cors from 'cors'
+import authRoute from './routes/authRoute.js'
+
+dotenv.config()
+connectDB()
 
 const app = express()
 
@@ -17,19 +18,8 @@ app.use(cors())
 // Body parse
 app.use(json())
 
-app.get('/', (req, res, next) => {
-  res.status(200).json({
-    status: 'success',
-    data: {
-      posts: [
-        {
-          content: 'Hello world!!!',
-          date: '31/1/2024'
-        }
-      ]
-    }
-  })
-})
+// Mount the route
+app.use('/api/v1/auth', authRoute)
 
 const port = process.env.APP_PORT
 
