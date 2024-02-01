@@ -279,3 +279,36 @@ Hình ảnh minh họa: 🌈
 - Tất cả ý trên đó là lý thuyết của token key và quy trình trong Mongose DB cụ thể ở đây là chúng ta sử dụng `Pre Middleware` function
 
 ![Token key](image-35.png)
+
+---
+
+> Trong bài học này (video #16) chúng ta sẽ học về Tạo, Thêm, Sửa, Xóa các bài viết từ database
+
+![CRUD image](image-36.png)
+
+- Để tạo ra bài post thì user phải đăng ký/đăng nhập
+
+- Mỗi bài post thì phải có content (nội dung), author (tác giả), created at (ngày tạo), updated at (ngày cập nhật).
+
+  - Nhưng trong đó có created at và updated at là do mongoose db tạo tự động
+  - Còn những mục khác thì nó sẽ tạo kiểu gì? Làm sao chúng ta có thể lấy được id, thông tin tác giả để lưu vào trong bài post?
+
+- Các bạn hãy nhớ lại bài cũ. Khi user đăng ký/đăng nhập thì nó sẽ tạo ra `token key`. Thì trong `token key` này trong đó nó chứa 1 cái `user_id`. Cái `user_id` này nó đã được mã hóa bởi `APP_SECRET`
+
+- Thế thì khi chúng ta tạo bài post thì ngoài lấy những thông tin như content, created at, updated at, và chúng ta lấy thêm author. Author đó nó nằm trong `token key` này.
+
+![post](image-37.png)
+
+---
+
+- Để các bạn hiểu thêm thì mình sẽ giải thích thêm:
+
+- Khi chúng ta tạo bài post thì chúng ta cần phải cung cấp cho nó content, token key, ngày tạo, ngày cập nhật. Token này hiện tại nó đang được mã hóa. Thế thì, khi mà nó vào bước vào tạo post thì cái token key này nó cần được giải mã. Chính vì vậy mà chúng ta cần cái middleware (1 cái hàm ở giữa) để chúng ta giải mã token này, để chúng ta lấy được cái user_id. Và khi mà chúng ta lấy được cái user_id và cộng thêm những cái trước đó (nội dung, ngày tạo, ngày cập nhật) và sau đó chúng ta mới tạo được cái bài post. Trong bài post, có dạng (content, author: user_id, createdAt, updatedAt)
+
+- Trên đó là tất cả quy trình khi chúng ta thực hiện tạo bài post. Ngoài ra, chúng ta vẫn có thể làm update, edit, delete thì cũng tương tự chúng ta vẫn sẽ cần middleware và bên client (browser) nó sẽ gửi token cho cái middleware, và trong middleware đó nó sẽ giải mã để lấy được thông tin của user hiện tại (user_id) mà đang tạo bài post này.
+
+- Sau khi lấy xong, kết hợp với nội dung, ngày tạo, ngày cập nhật, thông tin, mà người ta điền vào trong cái input. Thì cuối cùng chúng ta tiến hành tạo, cũng như update hoặc là xóa
+
+- Đó là những lưu ý mà chúng ta tạo bài post. Có nghĩa là chúng ta sẽ có thêm middleware chen vào giữa để chúng ta giải mã cái token. Bởi vì khi người dùng đăng ký/đăng nhập thành công thì server nó trả về cái token đã được mã hóa. Cho nên chúng ta sẽ giải mã nó, sau đó mới lấy được cái user_id, rồi mới tạo được bài post
+
+![giải thích mã hóa token](image-38.png)
