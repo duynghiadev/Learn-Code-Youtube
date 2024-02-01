@@ -234,3 +234,48 @@ Hình ảnh minh họa: 🌈
 - timestamps: nó giúp cho mongose tự động tạo 2 cái thuộc tính createdAt (ngày bắt đầu tạo), updatedAt (ngày cập nhật dữ liệu)
 
 ---
+
+> Trong bài học hôm nay (Video #15), chún ta sẽ học về Mã hóa password và tạo Token Key
+
+![hash password](image-33.png)
+
+- Quy trình mã hóa password: 🎦
+
+- Khi người dùng đăng ký, thì sẽ gửi lên server (cụ thể là controller) các thông tin như: email, name, password. Thì trong controller này thằng mongoose sẽ nhảy vào. Mongoose sẽ qua 2 bước đó là create (tạo) và save (lưu)
+
+- Nếu đi theo cách bình thường thì sẽ như này:
+
+  - register (name, email, password) 👉 server (controller) 👉 create 👉 save vào trong database
+
+- Tuy nhiên chúng ta cần thêm bước để mã hóa cái password này (hass password) trước khi chúng ta lưu vào trong database. Thì chúng ta sẽ cần 1 hàm nào đấy, đó là `middleware function`, nó nhảy vào giữa để làm có thể mã hóa được cái password này.
+
+- Chúng ta đang dùng NoSQL đó là Mongoose DB, thì trong đó có 1 hàm sẵn đó là `Pre Middleware` nó sẽ nhảy vào giữa create và save. Thì khi mà user tạo thì nó sẽ gửi lên các thông tin của user, sau đó nó sẽ vào thằng `middleware function`. Trong hàm đấy, nó sẽ thực hiện hash password, sau đó nó sẽ trả cái password đó lại user. Thì trong hàm `middleware function` đó, ta sẽ gọi hàm `next()` để nó sẽ lấy thông tin user và cái hash password nó lưu vào trong database
+
+- Tóm lại: 🎯
+
+  - Khi người dùng register thì sẽ vào hàm `middleware function`, cụ thể ở đây là hàm `Pre Middleware` có sẵn trong Mongoose DB.
+  - Thằng hash password (pre middleware) đó nó sẽ nằm ở giữa thằng `create` và `save`. Khi mà mã hóa xong rồi, thì thực hiện gọi hàm `next()`. Trong đó nó sẽ lấy thông tin user đó và password đã mã hóa, xong nó lưu vào trong database
+
+![Hình ảnh](image-34.png)
+
+---
+
+- Quy trình mã hóa Token Key: 🎦
+
+- Khi user đăng ký/đăng nhập thành công thì sẽ tạo 1 token key
+
+- Token key khi được tạo thì sẽ cần 3 thứ: `data`, `app key`, `expire date` (optional).
+
+- Token này nó có khi user đăng ký/đăng nhập thành công thì mình sẽ tạo 1 token key cho user đó. Và cho những lần đăng ký/đăng nhập sau thì họ không phải cần đăng ký/đăng nhập lại nữa, mà họ chỉ cung cấp 1 cái token key này thôi.
+
+- Vậy làm sao để cái token key này thuộc về user nào? Thì lúc đó mình dựa vào 3 thứ mà mình đã nêu ở trên (Data, AppKey, Expire Date)
+
+  - Trong `data` thì ta có `user id`, để khi mà `data` này nó chuyển vào trong token key thì nó sẽ mã hóa cái `data` thì lúc đó ta sẽ lấy được `user id`. Và ta so sánh cái `user id` này có tồn tại trong database không. Nếu nó đúng và tồn tại thì OK
+  - `App Key` thì dùng để giải hóa hoặc giải mã
+  - `Expire Date` là ngày hết hạn của token key
+
+- Thông thường những website thì họ để tăng tính bảo mật thì cái token này có 1 mốc thời gian nhất định. Ví dụ như 1 giờ, 1 ngày, 1 tuần, thì trong khoảng thời gian đó ta chỉ cần cung cấp token key là có thể vào được trang web. Khi mà quá hạn trong khoảng thời gian đó thì user sẽ đăng nhập lại để tạo lại 1 token key mới. Thì đó là tác dụng của `Expire Date`
+
+- Tất cả ý trên đó là lý thuyết của token key và quy trình trong Mongose DB cụ thể ở đây là chúng ta sử dụng `Pre Middleware` function
+
+![Token key](image-35.png)
