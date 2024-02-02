@@ -328,3 +328,37 @@ Hình ảnh minh họa: 🌈
 - Lưu ý:
 
 - Khi chúng ta sử dụng phương thức find thì kết quả nó sẽ trả về 1 mảng. Thì khi đó mình có thể sử dụng `.length` này. Giống như bên trong JavaScript, để đếm xem có bao nhiêu bài post trong mảng đó
+
+---
+
+> Trong bài #18, chúng ta thực hiện test api bên trong ứng dụng Postman
+
+Đây là page login
+
+![Login](image-39.png)
+
+Đồng thời đó, chúng ta qua mục `Tests` để viết đoạn code này vào để nó thể khi user login vào thì token thì động lưu vào biến token
+
+![Write test](image-45.png)
+
+Trước tiên, chúng ta tạo thêm 1 field token để chứa token mỗi khi user đăng nhập vào
+
+![create field token](image-41.png)
+
+Ban đầu, nó sẽ trống trơn như thế này. Sau khi đăng nhập vào thì nó sẽ tự động import token đó vào như này
+
+![current token](image-42.png)
+
+Sau đó, chúng ta vào page Create One Post để tạo 1 bài post và thiết lập Authorization (chọn vào type: Bearer) và page bên cạnh chọn cái `{{token}}` mà chúng ta vừa tạo để lưu token mỗi khi user đăng nhập
+
+![Create One Post](image-40.png)
+
+Đây là chức năng xóa bài post (Delete One Post)
+
+![Delete One Post](image-43.png)
+
+Đây là chức năng cập nhật bài post (Update One Post)
+
+![Update One Post](image-44.png)
+
+---
