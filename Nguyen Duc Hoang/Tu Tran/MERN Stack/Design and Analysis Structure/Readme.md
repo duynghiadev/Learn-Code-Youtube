@@ -420,3 +420,9 @@ Trong project của chúng ta thì cũng có 5 cách xử lý lỗi (error handl
 - Thì đó là cách mà Express hoạt động, nó xử lý lỗi. Có nghĩa là khi mà chúng ta gọi hàm `next` thì ngay lập tức thì nó sẽ truyền cái tham số lỗi vào `function Error Handling` và cái function này nó nhận cái error (đầu vào), tiếp tục nó phân loại từng error là như vậy
 
 🎯 Đó là tất cả Express xử lý lỗi, cũng như chúng ta tìm hiểu về 5 loại lỗi thường gặp nhất trong mọi application và chúng ta bắt buộc phải xử lý nó
+
+---
+
+> Comments này hữu ích khi hỏi về 3 tham số trong controller
+
+![parameter of controller](image-47.png)
