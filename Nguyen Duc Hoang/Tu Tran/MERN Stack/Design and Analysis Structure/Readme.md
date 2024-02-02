@@ -442,3 +442,29 @@ Trong project của chúng ta thì cũng có 5 cách xử lý lỗi (error handl
 ![UI post](image-49.png)
 
 ---
+
+> Trong bài này chúng ta bắt đầu phân tích giao diện người dùng (UI: user interface). Video #24
+
+![Design UI](image-50.png)
+
+- Đây là giao diện chính của trang web
+
+![main page](image-51.png)
+
+- Đây là giao diện của login
+
+![login form](image-52.png)
+
+- Đây là giao diện của register
+
+![register form](image-53.png)
+
+- Đây là giao diện của form tạo bài post
+
+![form create post](image-54.png)
+
+- Tất cả component trong website
+
+![All component](image-55.png)
+
+---
