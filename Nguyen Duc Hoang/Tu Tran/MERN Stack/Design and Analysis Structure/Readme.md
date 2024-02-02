@@ -312,3 +312,19 @@ Hình ảnh minh họa: 🌈
 - Đó là những lưu ý mà chúng ta tạo bài post. Có nghĩa là chúng ta sẽ có thêm middleware chen vào giữa để chúng ta giải mã cái token. Bởi vì khi người dùng đăng ký/đăng nhập thành công thì server nó trả về cái token đã được mã hóa. Cho nên chúng ta sẽ giải mã nó, sau đó mới lấy được cái user_id, rồi mới tạo được bài post
 
 ![giải thích mã hóa token](image-38.png)
+
+---
+
+> Hôm nay chúng ta học bài #17
+
+- Giải thích về phương thức `populate()` trong Mongoose DB?
+
+- Bình thường khi lưu vào trong database thì `author` này chỉ lưu `user_id` của tác giả thôi. Tuy nhiên thì khi chúng ta lấy toàn bộ bài post thì ngoài user_id, chúng ta cần lấy thêm tên tác giả, hình ảnh,...
+
+- Thì để khắc phục điều đó thì mình sử dụng thằng `populate()` để nó giải quyết tất cả các vấn đề trên. Nó lấy cái id của user lưu vào bài post này, và nó truy tìm đến collection (có nghĩa là cái nơi chứa cái thông tin về cái user và nó gán nó vào method find), và cuối cùng nó phản hồi lại cho cái bài post này
+
+---
+
+- Lưu ý:
+
+- Khi chúng ta sử dụng phương thức find thì kết quả nó sẽ trả về 1 mảng. Thì khi đó mình có thể sử dụng `.length` này. Giống như bên trong JavaScript, để đếm xem có bao nhiêu bài post trong mảng đó
