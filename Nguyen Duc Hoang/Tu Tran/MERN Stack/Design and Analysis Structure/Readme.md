@@ -362,3 +362,61 @@ Sau đó, chúng ta vào page Create One Post để tạo 1 bài post và thiế
 ![Update One Post](image-44.png)
 
 ---
+
+> Trong bài này (video #19) chúng ta sẽ học về cách xử lý lỗi (error handling)
+
+![error handling](image-46.png)
+
+> Dù chúng ta code ngôn ngữ nào đi chăng nữa thì cũng có 5 error handling này. Quy trình này rất quan trọng
+
+Trong project của chúng ta thì cũng có 5 cách xử lý lỗi (error handling)
+
+**1. Route**
+
+- Trong project lần này chúng ta có 2 route đó là `user` và `post`
+
+- Nếu như user yêu cầu vào 2 route đó thì chúng ta có thể đáp ứng được. Thế nhưng khi người dùng vào các route mà nó không được tồn tại (chúng ta chưa tạo) như là: comment, like,...Thì chúng ta sẽ in ra thông báo lỗi
+
+**2. Duplication (Trùng)**
+
+- Khi mà user đăng kí thì cái email và name bắt buộc không được trùng
+
+- Mà nếu mà chúng ta phát hiện user đó có email bị trùng thì chúng ta cũng phải xử lý và in ra thông báo lỗi như email đã tồn tại,...
+
+**3. Input validation**
+
+- Trong trường hợp user không điền email chẳng hạn, password không đủ 6 kí tự (yêu cầu lớn hơn 6 character) thì chúng ta cũng phải in ra 1 cái thông báo: email phải bắt buộc điền, password phải từ 6 kí tự trở lên,...
+
+**4. Object ID**
+
+- Trong trường hợp chúng ta update 1 cái bài post. Mà để update được thì chúng ta phải có id tương ứng với bài post đó, và chúng ta tìm và update bài post đó
+
+- Nhưng trong trường hợp user truyền cái id không tồn tại thì sao? Không đúng id thì sẽ không tìm thấy trong database mà update? Thì lúc đó chúng ta sẽ giải quyết như thế nào? Lúc đó chúng ta phải thông báo 1 error trả về cho phía client là id này nhập vào không đúng, chúng tôi không biết id này là id nào để có thể update được
+
+**5. Những lỗi không có trong những lỗi trên**
+
+- Trong trường hợp user login chẳng hạn: email họ nhập không đúng, hoặc password họ nhập không đúng thì chúng ta cũng phải in ra thông báo lỗi
+
+- Ngoài ra chúng ta nếu tạo được bài post thì bắt buộc chúng ta phải có `token key` ở trong `request header`. Nếu như mà chúng ta không tìm được `token key` thì chúng ta cũng phải in ra error.
+
+- Nhưng trong trường hợp có `token key` nhưng `token key` đó nó bị lỗi. Ví dụ token key là `1234`, lỡ nhưng mà user sử dụng mẹo để thay đổi nó thành `12345` chẳng hạn, thì nó sẽ không đúng nữa, thì chúng ta cũng phải in ra thông báo `Invalid Token`
+
+> **🎯 Những mục trên đó là 5 cái lỗi phổ biến và quan trọng nhất mà các bạn cần xử lý trong bất kỳ application nào đều phải có 5 error này**
+
+![error handling](image-46.png)
+
+---
+
+> Như chúng ta đã trình bài ở trước thì có 5 loại error chính, thế thì làm sao để xử lý để nó in message có ý nghĩa.
+
+- Nếu như chúng ta xử lý các loại đó 1 cách riêng biệt, có nghĩa là chúng ta tạo ra từng cái function ứng với từng loại lỗi và chúng ta xử lý trong từng cái function đó. Trong cách dùng đó thì nó không được tối ưu
+
+- Trong ExpressJS thì nó có cách xử lý lỗi rất là hay, đó là bất kể cái lỗi gì, thì bạn có thể truyền cái lỗi đó vào trong function. `Function` đó thường đặt tên là `Error Handling` (có nghĩa là hàm để xử lý lỗi). Trong hàm đó nó xử lý toàn bộ lỗi (5 lỗi mà chúng ta đã nêu ở trên). Khi mà xảy ra error nào thì bên phía Express nó truyền cái lỗi đó trong cái function này (Error Handling)
+
+- Trong cái function đó, nó sẽ phân loại ra. Ví dụ đó là loại 1 thì nó sẽ in ra lỗi 1, loại 2 thì sẽ in ra lỗi 2,...
+
+- Khi nó tạo ra lỗi thì làm sao mà chúng ta truyền được cái lỗi đó vào `function Error Handling` để xử lý lỗi? Thì trong Express có cái `controller` nó có sẵn các tham số `req`, `res`, `next`. `Req` và `res` thì chúng ta dùng nhiều rồi: `req` là user gửi lên server, `res` là server trả dữ liệu về user. Còn `next` có tác dụng là nó sẽ truyền cái error (ví dụ `next(Error)`), thì ngay lập tức Express nó sẽ truyền vào cái `function Error Handling` và trong cái function đó ta lấy được cái lỗi và chúng ta phân loại nó
+
+- Thì đó là cách mà Express hoạt động, nó xử lý lỗi. Có nghĩa là khi mà chúng ta gọi hàm `next` thì ngay lập tức thì nó sẽ truyền cái tham số lỗi vào `function Error Handling` và cái function này nó nhận cái error (đầu vào), tiếp tục nó phân loại từng error là như vậy
+
+🎯 Đó là tất cả Express xử lý lỗi, cũng như chúng ta tìm hiểu về 5 loại lỗi thường gặp nhất trong mọi application và chúng ta bắt buộc phải xử lý nó
