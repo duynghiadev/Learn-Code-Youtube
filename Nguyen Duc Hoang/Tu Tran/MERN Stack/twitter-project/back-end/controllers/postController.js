@@ -3,7 +3,7 @@ import Post from '../models/Post.js'
 // Get all posts
 export const getAllPosts = async (req, res, next) => {
   try {
-    const posts = await Post.find({}).populate('author')
+    const posts = await Post.find({}).populate('author', 'name').select('content createdAt')
     res.status(200).json({
       status: 'success',
       result: posts.length,
