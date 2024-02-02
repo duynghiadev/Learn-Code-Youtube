@@ -423,6 +423,12 @@ Trong project của chúng ta thì cũng có 5 cách xử lý lỗi (error handl
 
 ---
 
-> Comments này hữu ích khi hỏi về 3 tham số trong controller
+> Comments này hữu ích khi hỏi về 3 tham số trong controller (Video #20)
 
 ![parameter of controller](image-47.png)
+
+---
+
+> Video #21
+
+![delete post](image-48.png)

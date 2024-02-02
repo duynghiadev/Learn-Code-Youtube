@@ -19,13 +19,13 @@ export const createOnePost = async (req, res, next) => {
   try {
     const { userId } = req.user
 
-    const post = Post.create({ ...req.body, author: userId })
+    const post = await Post.create({ ...req.body, author: userId })
     res.status(200).json({
       status: 'success',
       data: { post }
     })
   } catch (error) {
-    res.json(error)
+    next(error)
   }
 }
 
