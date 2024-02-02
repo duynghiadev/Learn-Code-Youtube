@@ -432,3 +432,13 @@ Trong project của chúng ta thì cũng có 5 cách xử lý lỗi (error handl
 > Video #21
 
 ![delete post](image-48.png)
+
+---
+
+> Video #23
+
+Đây là bước tìm hiểu về back-end cuối cùng của lộ trình MERN STACK này. Ở những video tiếp theo thì mình cùng nhau tìm hiểu về front-end
+
+![UI post](image-49.png)
+
+---
