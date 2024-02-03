@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./header.css" />
     <link rel="stylesheet" href="./form.css" />
     <link rel="stylesheet" href="./post.css" />
+    <link rel="stylesheet" href="./auth.css" />
   </head>
   <body>
     <div class="container">
@@ -81,6 +82,29 @@
             </div>
           </div>
         </div>
+      </section>
+
+      <!-- LOGIN -->
+      <section class="auth-container">
+        <form class="auth-form">
+          <h2>Enter Your Account</h2>
+          <div class="error-message">Error: Your Password is not correct</div>
+          <input type="email" name="email" id="" required placeholder="Email" />
+          <input type="password" name="password" id="" required placeholder="Password" />
+          <button class="btn" type="submit">Login</button>
+        </form>
+      </section>
+
+      <!-- REGISTER -->
+      <section class="auth-container">
+        <form class="auth-form">
+          <h2>Register New Account</h2>
+          <div class="error-message">Error: Your Password is not correct</div>
+          <input type="text" name="name" id="" placeholder="Name" />
+          <input type="email" name="email" id="" required placeholder="Email" />
+          <input type="password" name="password" id="" required placeholder="Password" />
+          <button class="btn" type="button">Register</button>
+        </form>
       </section>
     </div>
   </body>

@@ -468,3 +468,7 @@ Trong project của chúng ta thì cũng có 5 cách xử lý lỗi (error handl
 ![All component](image-55.png)
 
 ---
+
+> Bình luận từ video #27
+
+![comment youtube](image-56.png)
