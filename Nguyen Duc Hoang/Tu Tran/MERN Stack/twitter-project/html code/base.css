@@ -41,6 +41,7 @@ body {
   color: inherit;
   background-color: var(--color-dark-blue);
   border: 1px solid var(--color-light-grey);
+  border-radius: 3px;
   font-family: inherit;
   font-weight: bold;
   font-size: var(--fs-medium);
