@@ -201,3 +201,16 @@ console.log('function removeDuplicates_3:', removeDuplicates_3(myArray))
 console.log('-------------------------------------------')
 
 // ❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌
+
+// Chú ý đoạn code này, nhiều người chưa hiểu cách nó hoạt động ra sao. Nên tìm hiểu
+
+let counter = (function () {
+  let k = 0
+  return () => k++
+})()
+
+console.log(counter())
+console.log(counter())
+console.log(counter())
+
+// ❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌
