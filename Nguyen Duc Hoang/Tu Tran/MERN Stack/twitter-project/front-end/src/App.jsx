@@ -6,6 +6,7 @@ import Main from './components/Main'
 import Register from './components/Register'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import AppReducer from './reducers/AppReducer'
+import AppContext from './components/AppContext'
 
 function App() {
   const initialState = { user: null, posts: [] }
@@ -13,23 +14,25 @@ function App() {
 
   return (
     <Router>
-      <div className='container'>
-        <Header />
-        <Switch>
-          <Route exact path='/login'>
-            <Login />
-          </Route>
-          <Route exact path='/register'>
-            <Register />
-          </Route>
-          <Route exact path='/'>
-            <Main />
-          </Route>
-          <Route exact path='*'>
-            <PageNotFound />
-          </Route>
-        </Switch>
-      </div>
+      <AppContext.Provider value={{ state, dispatch }}>
+        <div className='container'>
+          <Header />
+          <Switch>
+            <Route exact path='/login'>
+              <Login />
+            </Route>
+            <Route exact path='/register'>
+              <Register />
+            </Route>
+            <Route exact path='/'>
+              <Main />
+            </Route>
+            <Route exact path='*'>
+              <PageNotFound />
+            </Route>
+          </Switch>
+        </div>
+      </AppContext.Provider>
     </Router>
   )
 }
