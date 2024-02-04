@@ -475,7 +475,7 @@ Trong project của chúng ta thì cũng có 5 cách xử lý lỗi (error handl
 
 ---
 
-> Hôm nay chúng ta tìm hiểu về State, Context, Dispatch, Reducer
+> Hôm nay chúng ta tìm hiểu về State, Context, Dispatch, Reducer (Video #30)
 
 Nếu cảm thấy mình chưa hiểu về những khái niệm đó thì có thể lên search google và tìm hiểu nó
 
