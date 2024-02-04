@@ -472,3 +472,15 @@ Trong project của chúng ta thì cũng có 5 cách xử lý lỗi (error handl
 > Bình luận từ video #27
 
 ![comment youtube](image-56.png)
+
+---
+
+> Hôm nay chúng ta tìm hiểu về State, Context, Dispatch, Reducer
+
+Nếu cảm thấy mình chưa hiểu về những khái niệm đó thì có thể lên search google và tìm hiểu nó
+
+![Introduce 1](image-57.png)
+![Introduce 2](image-58.png)
+![Introduce 3](image-59.png)
+
+---
