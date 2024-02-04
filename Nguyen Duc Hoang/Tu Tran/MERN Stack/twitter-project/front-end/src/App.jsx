@@ -1,18 +1,31 @@
-import Form from './components/Form'
+import PageNotFound from './components/404-page'
 import Header from './components/Header'
 import Login from './components/Login'
-import PostList from './components/PostList'
+import Main from './components/Main'
 import Register from './components/Register'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 function App() {
   return (
-    <div className='container'>
-      <Header />
-      <Form />
-      <PostList />
-      <Login />
-      <Register />
-    </div>
+    <Router>
+      <div className='container'>
+        <Header />
+        <Switch>
+          <Route exact path='/login'>
+            <Login />
+          </Route>
+          <Route exact path='/register'>
+            <Register />
+          </Route>
+          <Route exact path='/'>
+            <Main />
+          </Route>
+          <Route exact path='*'>
+            <PageNotFound />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   )
 }
 

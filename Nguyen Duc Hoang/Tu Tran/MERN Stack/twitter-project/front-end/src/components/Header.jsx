@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import '../css/Header.css'
 
 const Header = () => {
@@ -5,15 +6,15 @@ const Header = () => {
     //  HEADER
     <header className='header'>
       <h1 className='logo'>
-        <a href='#'>twitter</a>
+        <Link to='/'>twitter</Link>
       </h1>
       <nav>
         <ul className='main-nav'>
           <li>
-            <a href='#'>Login</a>
+            <Link to='/login'>Login</Link>
           </li>
           <li>
-            <a href='#'>Register</a>
+            <Link to='/register'>Register</Link>
           </li>
           <li>
             <span href='#' className='user-name'>
