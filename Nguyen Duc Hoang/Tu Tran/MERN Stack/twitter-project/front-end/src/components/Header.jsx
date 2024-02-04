@@ -1,7 +1,18 @@
 import { Link } from 'react-router-dom'
 import '../css/Header.css'
+import { useContext } from 'react'
+import AppContext from './AppContext'
 
 const Header = () => {
+  const { state, dispatch } = useContext(AppContext)
+  const { user } = state
+
+  const signOut = () => {
+    localStorage.removeItem('token')
+    // reset user to null
+    dispatch({ type: 'CURRENT_USER', payload: null })
+  }
+
   return (
     //  HEADER
     <header className='header'>
@@ -10,20 +21,25 @@ const Header = () => {
       </h1>
       <nav>
         <ul className='main-nav'>
-          <li>
-            <Link to='/login'>Login</Link>
-          </li>
-          <li>
-            <Link to='/register'>Register</Link>
-          </li>
-          <li>
-            <span href='#' className='user-name'>
-              Hello, Duy Nghia
-            </span>
-          </li>
-          <li>
-            <a href='#'>Sign out</a>
-          </li>
+          {user ? (
+            <>
+              <li>
+                <span className='user-name'>Hello, {user.userName}</span>
+              </li>
+              <li onClick={() => signOut()}>
+                <a>Sign out</a>
+              </li>
+            </>
+          ) : (
+            <>
+              <li>
+                <Link to='/login'>Login</Link>
+              </li>
+              <li>
+                <Link to='/register'>Register</Link>
+              </li>
+            </>
+          )}
         </ul>
       </nav>
     </header>
