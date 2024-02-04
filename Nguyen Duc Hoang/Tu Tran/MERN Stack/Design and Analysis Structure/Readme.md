@@ -484,3 +484,7 @@ Nếu cảm thấy mình chưa hiểu về những khái niệm đó thì có th
 ![Introduce 3](image-59.png)
 
 ---
+
+> Video #34
+
+![Setup and handle user](image-60.png)
