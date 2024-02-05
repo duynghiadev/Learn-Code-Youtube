@@ -7,51 +7,51 @@
 ## There are some images about of project
 
 ![home](image.png)
-![login](image-1.png)
-![register](image-2.png)
-![after when login](image-3.png)
+![login](./images/image-1.png)
+![register](./images/image-2.png)
+![after when login](./images/image-3.png)
 
 ---
 
-![Introduction and Analysis Project](image-4.png)
+![Introduction and Analysis Project](./images/image-4.png)
 
 ---
 
 **Analysis Back-end**
 
-![1. Analysis source, data structure](image-5.png)
-![2. Design API by standard RESTFUL](image-6.png)
+![1. Analysis source, data structure](./images/image-5.png)
+![2. Design API by standard RESTFUL](./images/image-6.png)
 
 ---
 
 **Back-end work flow**
 
-![flow back-end](image-7.png)
+![flow back-end](./images/image-7.png)
 
-![flow get post 1](image-8.png)
-![flow get post 2](image-9.png)
+![flow get post 1](./images/image-8.png)
+![flow get post 2](./images/image-9.png)
 
 - Tạo mới thì dùng phương thức POST.
 - Phương thức POST thì khi gửi lên thì nó sẽ gửi 1 object (dữ liệu được gửi lên server thì sẽ gọi đó là request)
 - Sau khi vào `router` thì nó sẽ vào `controller`. Nhiệm vụ của `controller` là điều khiển dữ liệu. Controller sẽ truy cập vào `database` sẽ lấy dữ liệu -> và sau khi nó có dữ liệu thì nó sẽ trả ngược về `router` đó -> và cuối cùng nó sẽ render ra giao diện cho người dùng
 
-![flow create post](image-10.png)
+![flow create post](./images/image-10.png)
 
 ---
 
 > Design and Identify Controller
 
-![Design and Identify Controller](image-11.png)
+![Design and Identify Controller](./images/image-11.png)
 
-![Info post controller](image-12.png)
-![Info user controller](image-13.png)
+![Info post controller](./images/image-12.png)
+![Info user controller](./images/image-13.png)
 
 ---
 
 > General agreement on the response structure (Thống nhất chung về cấu trúc phản hồi)
 
-![response structure 1](image-14.png)
-![response structure 2](image-17.png)
+![response structure 1](./images/image-14.png)
+![response structure 2](./images/image-17.png)
 
 ---
 
@@ -59,18 +59,18 @@
 
 > Suitable person of this course (Đối tượng phù hợp với khóa này 👨‍💻)
 
-![Suitable person](image-15.png)
+![Suitable person](./images/image-15.png)
 
 ---
 
 > There are principle in JavaScript 🚀
 
-![desctructuring](image-16.png)
-![arrow function](image-18.png)
-![async await](image-19.png)
-![Spread operator](image-20.png)
-![Rest parameter](image-21.png)
-![Ternary operator](image-22.png)
+![desctructuring](./images/image-16.png)
+![arrow function](./images/image-18.png)
+![async await](./images/image-19.png)
+![Spread operator](./images/image-20.png)
+![Rest parameter](./images/image-21.png)
+![Ternary operator](./images/image-22.png)
 
 Reference: 🌈
 
@@ -81,11 +81,11 @@ Reference: 🌈
 
 > Determine the specific tasks that need to be performed (Xác định các task cụ thể cần thực hiện 🎯) --> Sprint
 
-![task 1](image-23.png)
+![task 1](./images/image-23.png)
 
 ---
 
-![task 2](image-24.png)
+![task 2](./images/image-24.png)
 
 - ExpressJS là Web framework của NodeJS
 - Trong ExpressJS có những tính năng nổi bật là error handling (xử lý lỗi), middleware, body parse, route,...
@@ -97,7 +97,7 @@ Reference: 🌈
 
 ---
 
-![task 3](image-27.png)
+![task 3](./images/image-27.png)
 
 **Lưu ý:**
 
@@ -119,7 +119,7 @@ Reference: 🌈
 
 Hình ảnh minh họa: 🌈
 
-![middleware](image-25.png)
+![middleware](./images/image-25.png)
 
 - Cũng tương tự đó: khi người dùng (client) đăng kí người dùng, người ta sẽ gửi (request) các thông tin như: email, số điện thoại,...
 
@@ -137,7 +137,7 @@ Hình ảnh minh họa: 🌈
 
 Hình ảnh minh họa: 🌈
 
-![middleware](image-26.png)
+![middleware](./images/image-26.png)
 
 ✅ Bởi vậy thằng `middleware` này nó rất quan trọng, nó nằm giữa thằng request và thằng response
 
@@ -166,13 +166,13 @@ Hình ảnh minh họa: 🌈
 
 > Setup structure folder (config, middleware, route, controller, model,...)
 
-![task 4 and 5](image-28.png)
+![task 4 and 5](./images/image-28.png)
 
 ---
 
 > Process login, register (Quy trình đăng ký, đăng nhập) 🔑
 
-![Process Login, Register](image-29.png)
+![Process Login, Register](./images/image-29.png)
 
 **- Quy trình đăng ký: 🎦**
 
@@ -210,15 +210,15 @@ Hình ảnh minh họa: 🌈
 
 - Trong mỗi lần request sau đó, ví dụ như là tạo bài post, thì nó chỉ cần gửi cái token này vào cái request header và sau đó server nó verify. Sau khi server verify thành công thì nó sẽ tiến hành tạo bài post
 
-![Process Login](image-30.png)
+![Process Login](./images/image-30.png)
 
 ---
 
 > Trong bài học hôm này (Video #13), chúng ta sẽ tìm hiểu về MongoDB
 
-![MongoDB Schema](image-31.png)
+![MongoDB Schema](./images/image-31.png)
 
-![Rule Schema Validation](image-32.png)
+![Rule Schema Validation](./images/image-32.png)
 
 - Schema là cấu trúc của bộ khung mà chúng ta lưu dữ liệu vào trong database
 
@@ -237,7 +237,7 @@ Hình ảnh minh họa: 🌈
 
 > Trong bài học hôm nay (Video #15), chún ta sẽ học về Mã hóa password và tạo Token Key
 
-![hash password](image-33.png)
+![hash password](./images/image-33.png)
 
 - Quy trình mã hóa password: 🎦
 
@@ -256,7 +256,7 @@ Hình ảnh minh họa: 🌈
   - Khi người dùng register thì sẽ vào hàm `middleware function`, cụ thể ở đây là hàm `Pre Middleware` có sẵn trong Mongoose DB.
   - Thằng hash password (pre middleware) đó nó sẽ nằm ở giữa thằng `create` và `save`. Khi mà mã hóa xong rồi, thì thực hiện gọi hàm `next()`. Trong đó nó sẽ lấy thông tin user đó và password đã mã hóa, xong nó lưu vào trong database
 
-![Hình ảnh](image-34.png)
+![Hình ảnh](./images/image-34.png)
 
 ---
 
@@ -278,13 +278,13 @@ Hình ảnh minh họa: 🌈
 
 - Tất cả ý trên đó là lý thuyết của token key và quy trình trong Mongose DB cụ thể ở đây là chúng ta sử dụng `Pre Middleware` function
 
-![Token key](image-35.png)
+![Token key](./images/image-35.png)
 
 ---
 
 > Trong bài học này (video #16) chúng ta sẽ học về Tạo, Thêm, Sửa, Xóa các bài viết từ database
 
-![CRUD image](image-36.png)
+![CRUD image](./images/image-36.png)
 
 - Để tạo ra bài post thì user phải đăng ký/đăng nhập
 
@@ -297,7 +297,7 @@ Hình ảnh minh họa: 🌈
 
 - Thế thì khi chúng ta tạo bài post thì ngoài lấy những thông tin như content, created at, updated at, và chúng ta lấy thêm author. Author đó nó nằm trong `token key` này.
 
-![post](image-37.png)
+![post](./images/image-37.png)
 
 ---
 
@@ -311,7 +311,7 @@ Hình ảnh minh họa: 🌈
 
 - Đó là những lưu ý mà chúng ta tạo bài post. Có nghĩa là chúng ta sẽ có thêm middleware chen vào giữa để chúng ta giải mã cái token. Bởi vì khi người dùng đăng ký/đăng nhập thành công thì server nó trả về cái token đã được mã hóa. Cho nên chúng ta sẽ giải mã nó, sau đó mới lấy được cái user_id, rồi mới tạo được bài post
 
-![giải thích mã hóa token](image-38.png)
+![giải thích mã hóa token](./images/image-38.png)
 
 ---
 
@@ -335,37 +335,37 @@ Hình ảnh minh họa: 🌈
 
 Đây là page login
 
-![Login](image-39.png)
+![Login](./images/image-39.png)
 
 Đồng thời đó, chúng ta qua mục `Tests` để viết đoạn code này vào để nó thể khi user login vào thì token thì động lưu vào biến token
 
-![Write test](image-45.png)
+![Write test](./images/image-45.png)
 
 Trước tiên, chúng ta tạo thêm 1 field token để chứa token mỗi khi user đăng nhập vào
 
-![create field token](image-41.png)
+![create field token](./images/image-41.png)
 
 Ban đầu, nó sẽ trống trơn như thế này. Sau khi đăng nhập vào thì nó sẽ tự động import token đó vào như này
 
-![current token](image-42.png)
+![current token](./images/image-42.png)
 
 Sau đó, chúng ta vào page Create One Post để tạo 1 bài post và thiết lập Authorization (chọn vào type: Bearer) và page bên cạnh chọn cái `{{token}}` mà chúng ta vừa tạo để lưu token mỗi khi user đăng nhập
 
-![Create One Post](image-40.png)
+![Create One Post](./images/image-40.png)
 
 Đây là chức năng xóa bài post (Delete One Post)
 
-![Delete One Post](image-43.png)
+![Delete One Post](./images/image-43.png)
 
 Đây là chức năng cập nhật bài post (Update One Post)
 
-![Update One Post](image-44.png)
+![Update One Post](./images/image-44.png)
 
 ---
 
 > Trong bài này (video #19) chúng ta sẽ học về cách xử lý lỗi (error handling)
 
-![error handling](image-46.png)
+![error handling](./images/image-46.png)
 
 > Dù chúng ta code ngôn ngữ nào đi chăng nữa thì cũng có 5 error handling này. Quy trình này rất quan trọng
 
@@ -403,7 +403,7 @@ Trong project của chúng ta thì cũng có 5 cách xử lý lỗi (error handl
 
 > **🎯 Những mục trên đó là 5 cái lỗi phổ biến và quan trọng nhất mà các bạn cần xử lý trong bất kỳ application nào đều phải có 5 error này**
 
-![error handling](image-46.png)
+![error handling](./images/image-46.png)
 
 ---
 
@@ -425,13 +425,13 @@ Trong project của chúng ta thì cũng có 5 cách xử lý lỗi (error handl
 
 > Comments này hữu ích khi hỏi về 3 tham số trong controller (Video #20)
 
-![parameter of controller](image-47.png)
+![parameter of controller](./images/image-47.png)
 
 ---
 
 > Video #21
 
-![delete post](image-48.png)
+![delete post](./images/image-48.png)
 
 ---
 
@@ -439,39 +439,39 @@ Trong project của chúng ta thì cũng có 5 cách xử lý lỗi (error handl
 
 Đây là bước tìm hiểu về back-end cuối cùng của lộ trình MERN STACK này. Ở những video tiếp theo thì mình cùng nhau tìm hiểu về front-end
 
-![UI post](image-49.png)
+![UI post](./images/image-49.png)
 
 ---
 
 > Trong bài này chúng ta bắt đầu phân tích giao diện người dùng (UI: user interface). Video #24
 
-![Design UI](image-50.png)
+![Design UI](./images/image-50.png)
 
 - Đây là giao diện chính của trang web
 
-![main page](image-51.png)
+![main page](./images/image-51.png)
 
 - Đây là giao diện của login
 
-![login form](image-52.png)
+![login form](./images/image-52.png)
 
 - Đây là giao diện của register
 
-![register form](image-53.png)
+![register form](./images/image-53.png)
 
 - Đây là giao diện của form tạo bài post
 
-![form create post](image-54.png)
+![form create post](./images/image-54.png)
 
 - Tất cả component trong website
 
-![All component](image-55.png)
+![All component](./images/image-55.png)
 
 ---
 
 > Bình luận từ video #27
 
-![comment youtube](image-56.png)
+![comment youtube](./images/image-56.png)
 
 ---
 
@@ -479,12 +479,22 @@ Trong project của chúng ta thì cũng có 5 cách xử lý lỗi (error handl
 
 Nếu cảm thấy mình chưa hiểu về những khái niệm đó thì có thể lên search google và tìm hiểu nó
 
-![Introduce 1](image-57.png)
-![Introduce 2](image-58.png)
-![Introduce 3](image-59.png)
+![Introduce 1](./images/image-57.png)
+![Introduce 2](./images/image-58.png)
+![Introduce 3](./images/image-59.png)
 
 ---
 
 > Video #34
 
-![Setup and handle user](image-60.png)
+![Setup and handle user](./images/image-60.png)
+
+---
+
+> Video #39
+
+Trong bài này mình học về Update/Delete Post
+
+![process](./images/image-61.png)
+
+---
