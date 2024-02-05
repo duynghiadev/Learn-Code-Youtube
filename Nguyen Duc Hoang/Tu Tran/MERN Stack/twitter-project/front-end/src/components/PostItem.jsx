@@ -73,7 +73,7 @@ const PostItem = ({ post }) => {
             ) : (
               <>
                 <span onClick={() => setOpenEditForm(true)}>Edit</span>
-                <span onClick={() => deletePost()}>Delete</span>
+                <span onClick={deletePost}>Delete</span>
               </>
             )}
           </div>
@@ -99,7 +99,7 @@ const PostItem = ({ post }) => {
               <button
                 className='btn'
                 type='button'
-                onClick={() => updatePost()}
+                onClick={updatePost}
               >
                 Update
               </button>
