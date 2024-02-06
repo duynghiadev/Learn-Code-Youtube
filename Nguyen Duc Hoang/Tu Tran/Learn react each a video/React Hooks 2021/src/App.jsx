@@ -1,5 +1,6 @@
 import './App.css'
 import UseState from './components/UseState'
+import UseContext from './components/useContext/useContext'
 import UseEffect from './components/useEffect'
 import UseEffect1 from './components/useEffect1'
 import UseRef from './components/useRef'
@@ -18,6 +19,8 @@ function App() {
       <UseEffect1 />
       <hr />
       <UseRef />
+      <hr />
+      <UseContext />
       <hr />
     </div>
   )

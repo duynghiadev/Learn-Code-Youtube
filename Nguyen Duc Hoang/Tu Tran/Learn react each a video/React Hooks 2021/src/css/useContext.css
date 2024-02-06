@@ -1,0 +1,15 @@
+.component {
+  border-radius: 5px;
+}
+
+.large {
+  margin: 40px;
+}
+
+.medium {
+  margin: 30px;
+}
+
+.small {
+  margin: 20px;
+}
