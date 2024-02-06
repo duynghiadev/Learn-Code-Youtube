@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import './App.css'
 import { useForm } from 'react-hook-form'
 
@@ -8,8 +9,11 @@ export default function App() {
     formState: { errors }
   } = useForm()
 
+  const [submissionResult, setSubmissionResult] = useState(null)
+
   const onSubmit = (data) => {
     console.log('data:', data)
+    setSubmissionResult(data)
   }
 
   return (
@@ -24,8 +28,9 @@ export default function App() {
         placeholder='Your Name'
         {...register('name', { required: true })}
       />
+      {errors.name && <span className='error'>Name is required</span>}
 
-      <label htmlFor='name'>Password</label>
+      <label htmlFor='password'>Password</label>
       <input
         type='password'
         name='password'
@@ -33,6 +38,13 @@ export default function App() {
         placeholder='Password'
         {...register('password', { required: true, minLength: 6 })}
       />
+      {errors.password && (
+        <span className='error'>
+          {errors.password.type === 'required' && 'Password is required'}
+          {errors.password.type === 'minLength' &&
+            'Password must be at least 6 characters'}
+        </span>
+      )}
 
       <label htmlFor='email'>Email</label>
       <input
@@ -45,6 +57,12 @@ export default function App() {
           pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i
         })}
       />
+      {errors.email && (
+        <span className='error'>
+          {errors.email.type === 'required' && 'Email is required'}
+          {errors.email.type === 'pattern' && 'Invalid Email Address'}
+        </span>
+      )}
 
       {Object.keys(errors).length !== 0 && (
         <ul className='error-container'>
@@ -61,6 +79,14 @@ export default function App() {
       )}
 
       <button type='submit'>Submit</button>
+
+      {submissionResult && (
+        <div>
+          <h2>Submission Result:</h2>
+          <p>Name: {submissionResult.name}</p>
+          <p>Email: {submissionResult.email}</p>
+        </div>
+      )}
     </form>
   )
 }

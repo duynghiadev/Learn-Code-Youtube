@@ -3,7 +3,12 @@ form {
   margin: 0 auto;
 }
 
-label,
+label {
+  display: block;
+  width: 100%;
+  font-weight: bold;
+}
+
 input {
   display: block;
   width: 100%;
@@ -25,6 +30,10 @@ button {
   border: 1px dashed lightgray;
   padding: 1rem;
   width: 100%;
+}
+
+.error {
+  color: red;
 }
 
 ul {
