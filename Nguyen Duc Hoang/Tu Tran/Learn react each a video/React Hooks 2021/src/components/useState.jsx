@@ -7,6 +7,7 @@ const UseState = () => {
 
   return (
     <div className='container'>
+      <h1>useState hook</h1>
       <h1>{count}</h1>
       <button onClick={() => setCount(count + 1)}>+</button>
       <button onClick={() => setCount(count - 1)}>-</button>
