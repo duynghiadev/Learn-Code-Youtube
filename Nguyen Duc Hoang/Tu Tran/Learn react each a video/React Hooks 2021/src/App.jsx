@@ -2,6 +2,7 @@ import './App.css'
 import UseState from './components/UseState'
 import UseEffect from './components/useEffect'
 import UseEffect1 from './components/useEffect1'
+import UseRef from './components/useRef'
 
 function App() {
   return (
@@ -15,6 +16,8 @@ function App() {
       <UseEffect />
       <hr />
       <UseEffect1 />
+      <hr />
+      <UseRef />
       <hr />
     </div>
   )
