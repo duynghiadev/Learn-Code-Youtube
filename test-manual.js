@@ -214,3 +214,33 @@ console.log(counter())
 console.log(counter())
 
 // ❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌
+
+// Initialize variable a1 with value 10
+let a1 = 10
+
+// Subtract 2 + 1 from a1 and assign the result to b1
+let b1 = (a1 -= 2 + 1)
+
+// Output the value of a1 to the console
+console.log('Result a1:', a1)
+
+// Output the value of b1 to the console
+console.log('Result b1:', b1)
+
+/**
+ * This is a explaint code above:
+ *
+ * // Initialize variable a1 with value 10
+ * let a1 = 10;
+ *
+ * // Calculate the value to subtract from a1
+ * let subtractValue = 2 + 1;
+ *
+ * // Subtract the calculated value from a1 and store the result in a1
+ * a1 = a1 - subtractValue;
+ *
+ * // Assign the result to variable b1
+ * let b1 = a1;
+ */
+
+// ❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌
