@@ -1,6 +1,7 @@
 import express from 'express'
 import homeController from '../controller/homeController'
 import apiController from '../controller/apiController'
+import loginController from '../controller/loginController'
 
 const router = express.Router()
 
@@ -21,6 +22,8 @@ const initWebRoutes = (app) => {
   //rest api
   //GET - R, POST- C, PUT - U, DELETE - D
   router.get('/api/test-api', apiController.testApi)
+
+  router.get('/login', loginController.getLoginPage)
 
   return app.use('/', router)
 }
