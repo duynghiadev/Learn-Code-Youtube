@@ -11,3 +11,9 @@ SSO - Single Sign On, là hình thức đăng nhập tập trung được sử d
 > Mục tiêu của khóa học, đấy chính là mang đến một góc nhìn thực tế về mô hình triển khai quản lý người dùng trong thực tế. Hi vọng các bạn sẽ tìm thấy nhiều điều hữu ích từ khóa học, từ đấy chuẩn bị hành trang tốt nhất trên con đường trở thành một fullstack developer một cách toàn diện.
 
 ![Mô hình Diagram SSO](image.png)
+
+## Hướng Dẫn Cài Đặt Database MySQL Từ A Đến Z - Cấu Hình Hệ Cơ Sở Dữ Liệu Quan Hệ SQL
+
+[Video guide download](https://bom.so/nMscPE)
+
+[Link download](https://drive.google.com/file/d/1c2T2hjO5-Mt9UqBcjFadOJ5ifQTPFxiR/view)
