@@ -17,3 +17,9 @@ SSO - Single Sign On, là hình thức đăng nhập tập trung được sử d
 [Video guide download](https://bom.so/nMscPE)
 
 [Link download](https://drive.google.com/file/d/1c2T2hjO5-Mt9UqBcjFadOJ5ifQTPFxiR/view)
+
+## Import Database - Tạo Data Mẫu Cho Dự Án | Khóa Học Single Sign On Basic (SSO) với Hỏi Dân IT
+
+[Video guide download](https://bom.so/Q7oABF)
+
+[Create data](https://drive.google.com/file/d/1w5Q2uixk9O-pNQPjFXptO-Wvh-oxTXBV/view)
