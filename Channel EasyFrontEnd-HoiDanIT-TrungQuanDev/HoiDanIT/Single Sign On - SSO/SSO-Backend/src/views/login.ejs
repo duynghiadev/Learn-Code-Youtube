@@ -43,22 +43,19 @@
   <body>
     <div class="container">
       <div class="row">
-        <form>
+        <form
+          action="/login"
+          method="POST"
+        >
           <div class="login-container col-6 mx-auto">
             <fieldset class="border rounded-3 p-3">
               <legend class="float-none w-auto px-3">Login Form:</legend>
               <div class="mb-3">
-                <label
-                  for="exampleInputEmail1"
-                  class="form-label"
-                >
-                  Email address
-                </label>
+                <label class="form-label">Email address</label>
                 <input
                   type="email"
                   class="form-control"
-                  id="exampleInputEmail1"
-                  aria-describedby="emailHelp"
+                  name="username"
                 />
                 <div
                   id="emailHelp"
@@ -68,16 +65,11 @@
                 </div>
               </div>
               <div class="mb-3">
-                <label
-                  for="exampleInputPassword1"
-                  class="form-label"
-                >
-                  Password
-                </label>
+                <label class="form-label">Password</label>
                 <input
                   type="password"
                   class="form-control"
-                  id="exampleInputPassword1"
+                  name="password"
                 />
               </div>
               <button
