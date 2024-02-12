@@ -1,5 +1,11 @@
 # Đây là Khóa Học SSO Basic - Single Sign On với Node.JS/React
 
+Khóa học này là sự tiếp nối sau khi học xong khóa FullStack JWT, link ở học có đính kèm ở dưới
+
+**Link to the course `JWT`**: [Link tutorial](https://bom.so/NAtUdS)
+
+Trong khóa học SSO - Single Sign On này, chúng ta tập chung vào phía Back-end là nhiều nhất
+
 SSO - Single Sign On, là hình thức đăng nhập tập trung được sử dụng rất phổ biến hiện nay. Các nội dung trọng tâm của khóa học có thể kể đến như:
 
 - Hiểu rõ cách đăng nhập/đăng xuất người dùng với Node.JS, thông qua việc xác thực người dùng với Passport. Ở đây, việc sử dụng Passport giúp tối ưu hóa quá trình xử lý cũng như đảm bảo hơn về an toàn thông tin. Đồng thời, hỗ trợ đắc lực trong việc kiểm tra trạng thái người dùng thông qua "session" và "cookies".
