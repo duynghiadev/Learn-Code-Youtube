@@ -8,4 +8,6 @@ SSO - Single Sign On, là hình thức đăng nhập tập trung được sử d
 
 - Triển khai mô hình SSO với React và Node.JS , ở đây React sẽ đóng vai trò là client, SSO chính là server Node.js phụ trách việc quản lý đăng nhập người dùng. Server SSO Node.JS sẽ chịu trách nhiệm chính khi người dùng đăng nhập/đăng xuất, đồng thời trao đổi với client React thông qua hình thức xác thực JWT - json web token.
 
-Mục tiêu của khóa học, đấy chính là mang đến một góc nhìn thực tế về mô hình triển khai quản lý người dùng trong thực tế. Hi vọng các bạn sẽ tìm thấy nhiều điều hữu ích từ khóa học, từ đấy chuẩn bị hành trang tốt nhất trên con đường trở thành một fullstack developer một cách toàn diện.
+> Mục tiêu của khóa học, đấy chính là mang đến một góc nhìn thực tế về mô hình triển khai quản lý người dùng trong thực tế. Hi vọng các bạn sẽ tìm thấy nhiều điều hữu ích từ khóa học, từ đấy chuẩn bị hành trang tốt nhất trên con đường trở thành một fullstack developer một cách toàn diện.
+
+![Mô hình Diagram SSO](image.png)
