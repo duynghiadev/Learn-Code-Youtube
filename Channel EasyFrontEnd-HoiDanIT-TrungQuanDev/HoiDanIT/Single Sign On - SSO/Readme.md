@@ -10,7 +10,15 @@ SSO - Single Sign On, là hình thức đăng nhập tập trung được sử d
 
 > Mục tiêu của khóa học, đấy chính là mang đến một góc nhìn thực tế về mô hình triển khai quản lý người dùng trong thực tế. Hi vọng các bạn sẽ tìm thấy nhiều điều hữu ích từ khóa học, từ đấy chuẩn bị hành trang tốt nhất trên con đường trở thành một fullstack developer một cách toàn diện.
 
-![Mô hình Diagram SSO](image.png)
+![Mô hình Diagram SSO 1](image.png)
+
+Đây là mô hinh SSO không tối ưu
+
+![Mô hình Diagram SSO 2](image-1.png)
+
+Đây là mô hinh SSO tối ưu (Single Sign On là phải như thế này)
+
+![Mô hình Diagram SSO 3](image-2.png)
 
 ## Hướng Dẫn Cài Đặt Database MySQL Từ A Đến Z - Cấu Hình Hệ Cơ Sở Dữ Liệu Quan Hệ SQL
 
