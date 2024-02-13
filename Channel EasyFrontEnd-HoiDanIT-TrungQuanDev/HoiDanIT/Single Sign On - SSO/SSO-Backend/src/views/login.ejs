@@ -38,6 +38,10 @@
       cursor: pointer;
       padding: 0 7px;
     }
+
+    .login-container {
+      padding-top: 50px;
+    }
   </style>
 
   <body>
@@ -50,27 +54,36 @@
           <div class="login-container col-6 mx-auto">
             <fieldset class="border rounded-3 p-3">
               <legend class="float-none w-auto px-3">Login Form:</legend>
+              <% if(error != ''){ %>
+              <div
+                class="alert alert-danger my-1"
+                role="alert"
+              >
+                <%= error %>
+              </div>
+              <% } %>
               <div class="mb-3">
-                <label class="form-label">Email address</label>
-                <input
-                  type="email"
-                  class="form-control"
-                  name="username"
-                />
-                <div
-                  id="emailHelp"
-                  class="form-text"
-                >
-                  We'll never share your email with anyone else.
+                <label class="form-label">Username:</label>
+                <div class="input-group has-validation">
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="username"
+                    value="<%= usernameInput %>"
+                  />
+                  <div class="invalid-feedback"> Please choose a username </div>
                 </div>
               </div>
               <div class="mb-3">
                 <label class="form-label">Password</label>
-                <input
-                  type="password"
-                  class="form-control"
-                  name="password"
-                />
+                <div class="input-group has-validation">
+                  <input
+                    type="password"
+                    class="form-control"
+                    name="password"
+                  />
+                  <div class="invalid-feedback"> Please choose a username </div>
+                </div>
               </div>
               <button
                 type="submit"
