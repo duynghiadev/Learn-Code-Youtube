@@ -17,7 +17,8 @@ const configSession = (app) => {
       logging: false,
       define: {
         freezeTableName: true
-      }
+      },
+      timezone: '+07:00'
     }
   )
 
@@ -32,7 +33,9 @@ const configSession = (app) => {
       store: myStore,
       resave: false, // we support the touch method so per the express-session docs this should be set to false
       proxy: true, // if you do SSL outside of node.
-      saveUninitialized: false
+      saveUninitialized: false,
+      expiration: 300 * 1000,
+      cookie: { expires: 300 * 1000 }
     })
   )
   // continue as normal
@@ -42,7 +45,6 @@ const configSession = (app) => {
 
   // mã hóa: chuyển định dạng format
   passport.serializeUser(function (user, cb) {
-    console.log('>>> check before: ', user)
     process.nextTick(function () {
       cb(null, user)
     })
@@ -50,7 +52,6 @@ const configSession = (app) => {
 
   // giải mã hóa: đọc thông tin format
   passport.deserializeUser(function (user, cb) {
-    console.log('>>> check after: ', user)
     process.nextTick(function () {
       return cb(null, user)
     })

@@ -21,4 +21,14 @@ const configPassport = () => {
   )
 }
 
-module.exports = { configPassport }
+const handleLogout = (req, res, next) => {
+  // req.logout()
+  // res.redirect('/login')
+
+  req.session.destroy(function (err) {
+    req.logout()
+    res.redirect('/') // Inside a callback...bulletproof!
+  })
+}
+
+module.exports = { configPassport, handleLogout }
