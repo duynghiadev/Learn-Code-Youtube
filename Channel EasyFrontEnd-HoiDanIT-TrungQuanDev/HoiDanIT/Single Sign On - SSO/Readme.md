@@ -4,7 +4,7 @@ Khóa học này là sự tiếp nối sau khi học xong khóa FullStack JWT, l
 
 **Link to the course `JWT`**: [Link tutorial](https://bom.so/NAtUdS)
 
-Trong khóa học SSO - Single Sign On này, chúng ta tập chung vào phía Back-end là nhiều nhất
+Trong khóa học SSO - Single Sign On này, chúng ta tập chung vào phía `Back-end` là nhiều nhất
 
 SSO - Single Sign On, là hình thức đăng nhập tập trung được sử dụng rất phổ biến hiện nay. Các nội dung trọng tâm của khóa học có thể kể đến như:
 
@@ -25,6 +25,18 @@ SSO - Single Sign On, là hình thức đăng nhập tập trung được sử d
 Đây là mô hinh SSO tối ưu (Single Sign On là phải như thế này)
 
 ![Mô hình Diagram SSO 3](image-2.png)
+
+Mô hình SSO áp dụng trong dự án thực tế
+
+![Infrastructure](image-3.png)
+
+> Ngoài mô hình `SSO` ra thì còn có mô hình `microservice` nữa. Mô hình đó cũng rất phổ biến, nó là dạng chia nhỏ các service ra. Nó không gom chung vào 1 cái, mà nó sẽ chia nhỏ ra. Bởi vậy mới có tên `micro` (micro: vi mô). Nó còn liên quan đến vấn đề scale ứng dụng nữa. Đó là liên quan đến vận hành hệ thống rồi. Kiến thức đó rất rộng và mênh mông.
+
+- Tại sao chúng ta lại xây dựng mô hình SSO?
+
+  - Về bản chất thì nếu chúng ta không có nhiều service không cùng đăng nhập 1 server thì SSO không cần sinh ra
+
+  - Ví dụ: khi chúng ta đăng nhập tài khoản của mình vào youtube, thì sau đó khi vào gmail thì ta vẫn thấy tài khoản của chúng ta được đăng nhập sẵn luôn. Bởi vì chúng là 1 dịch vụ chung của Google
 
 ## Hướng Dẫn Cài Đặt Database MySQL Từ A Đến Z - Cấu Hình Hệ Cơ Sở Dữ Liệu Quan Hệ SQL
 
