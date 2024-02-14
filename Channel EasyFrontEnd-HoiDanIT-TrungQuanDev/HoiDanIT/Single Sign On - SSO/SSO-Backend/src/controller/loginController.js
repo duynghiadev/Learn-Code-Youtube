@@ -1,9 +1,10 @@
 const getLoginPage = (req, res) => {
-  // validate
+  // validate url
   const serviceURL = req.query.serviceURL
-  console.log('>>> check serviceURL:', serviceURL)
 
-  return res.render('login.ejs')
+  return res.render('login.ejs', {
+    redirectURL: serviceURL
+  })
 }
 
 module.exports = { getLoginPage }
