@@ -49,3 +49,13 @@ Mô hình SSO áp dụng trong dự án thực tế
 [Video guide download](https://bom.so/Q7oABF)
 
 [Create data](https://drive.google.com/file/d/1w5Q2uixk9O-pNQPjFXptO-Wvh-oxTXBV/view)
+
+### Nên tìm hiểu về vấn đề này để hiểu những cách bảo mật hệ thống, cũng như là xác thực người dùng
+
+> Những ảnh này thuộc chủ đề: StateFul vs Stateless và Authentication vs Authorization => Single Sign On Basic (SSO)
+
+![CSRF](image-4.png)
+
+![Authentication vs Authorization](image-5.png)
+
+![StateFul vs Stateless](image-6.png)
