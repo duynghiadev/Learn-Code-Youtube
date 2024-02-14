@@ -7,4 +7,12 @@ const getLoginPage = (req, res) => {
   })
 }
 
-module.exports = { getLoginPage }
+const verifySSOToken = (req, res) => {
+  return res.status(200).json({
+    EM: 'OK',
+    EC: 0,
+    DT: req.body.ssoToken
+  })
+}
+
+module.exports = { getLoginPage, verifySSOToken }
