@@ -3,7 +3,6 @@ import db from '../models/index'
 import bcrypt from 'bcryptjs'
 import { Op } from 'sequelize'
 import { getGroupWithRoles } from './JWTService'
-import { createJWT } from '../middleware/JWTAction'
 import { v4 as uuidv4 } from 'uuid'
 
 const salt = bcrypt.genSaltSync(10)
@@ -93,7 +92,7 @@ const handleUserLogin = async (rawData) => {
       let isCorrectPassword = checkPassword(rawData.password, user.password)
       if (isCorrectPassword === true) {
         const code = uuidv4()
-        // let groupWithRoles = await getGroupWithRoles(user)
+        let groupWithRoles = await getGroupWithRoles(user)
         // let payload = {
         //   email: user.email,
         //   groupWithRoles,
@@ -104,11 +103,10 @@ const handleUserLogin = async (rawData) => {
           EM: 'ok!',
           EC: 0,
           DT: {
-            code: code
-            // access_token: token,
-            // groupWithRoles,
-            // email: user.email,
-            // username: user.username
+            code: code,
+            email: user.email,
+            username: user.username,
+            groupWithRoles
           }
         }
       } else {
@@ -135,10 +133,30 @@ const handleUserLogin = async (rawData) => {
   }
 }
 
+const updateUserRefreshToken = async (email, token) => {
+  try {
+    console.log('>>> email: ', email, '>>> token: ', token)
+    let a = await db.User.update(
+      {
+        refreshToken: token
+      },
+      {
+        where: {
+          email: email
+        }
+      }
+    )
+    console.log('>>> a: ', a)
+  } catch (error) {
+    console.log('>>> error:', error)
+  }
+}
+
 module.exports = {
   registerNewUser,
   handleUserLogin,
   hashUserPassword,
   checkEmailExist,
-  checkPhoneExist
+  checkPhoneExist,
+  updateUserRefreshToken
 }
