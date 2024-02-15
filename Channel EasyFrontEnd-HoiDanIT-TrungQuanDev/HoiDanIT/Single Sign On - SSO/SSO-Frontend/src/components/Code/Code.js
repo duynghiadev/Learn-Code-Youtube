@@ -11,7 +11,11 @@ const Code = (props) => {
     if (ssoToken && firstRunRef.current === false) {
       firstRunRef.current = true
       axios
-        .post(process.env.REACT_APP_BACKEND_VERIFY_TOKEN, { ssoToken })
+        .post(
+          process.env.REACT_APP_BACKEND_VERIFY_TOKEN,
+          { ssoToken },
+          { withCredentials: true }
+        )
         .then((res) => {
           console.log('>>> res:', res)
         })
