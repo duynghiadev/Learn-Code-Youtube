@@ -135,7 +135,6 @@ const handleUserLogin = async (rawData) => {
 
 const updateUserRefreshToken = async (email, token) => {
   try {
-    console.log('>>> email: ', email, '>>> token: ', token)
     let a = await db.User.update(
       {
         refreshToken: token

@@ -65,3 +65,4 @@ Mô hình SSO áp dụng trong dự án thực tế
 Chúng ta đang theo mô hình stateless
 
 ![#22 Customize Axios và Store Token - Lưu Token vào cookies | Khóa Học Single Sign On Basic](image-7.png)
+![#23 Login Complete - Lưu User với Redux | Khóa Học Single Sign On Basic (SSO) với Hỏi Dân IT](image-8.png)
