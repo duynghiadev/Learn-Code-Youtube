@@ -40,12 +40,14 @@ const verifySSOToken = async (req, res) => {
 
       // set cookies
       res.cookie('access_token', token, {
-        maxAge: +process.env.MAX_AGE_ACCESS_TOKEN,
+        // maxAge: +process.env.MAX_AGE_ACCESS_TOKEN,
+        maxAge: 900 * 1000,
         httpOnly: true
       })
 
       res.cookie('refresh_token', refreshToken, {
-        maxAge: +process.env.MAX_AGE_REFRESH_TOKEN,
+        // maxAge: +process.env.MAX_AGE_REFRESH_TOKEN,
+        maxAge: 3600 * 1000,
         httpOnly: true
       })
 
