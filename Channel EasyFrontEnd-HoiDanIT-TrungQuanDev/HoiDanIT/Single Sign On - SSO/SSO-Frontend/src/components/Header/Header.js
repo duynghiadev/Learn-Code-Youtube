@@ -1,5 +1,6 @@
 import './Header.scss'
 import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap'
+import { useSelector } from 'react-redux'
 import { NavLink } from 'react-router-dom'
 
 const Header = () => {
@@ -8,6 +9,10 @@ const Header = () => {
     // http://localhost:8080/login?serviceURL=http://localhost:3000/
     window.location.href = `${process.env.REACT_APP_BACKEND_SSO}?serviceURL=${process.env.REACT_APP_SERVICE_URL}`
   }
+
+  const user = useSelector((state) => state.account.userInfo)
+
+  const handleLogout = () => {}
 
   return (
     <>
@@ -24,11 +29,24 @@ const Header = () => {
                 About
               </NavLink>
             </Nav>
+
+            {user && user.access_token && (
+              <Nav>
+                <Nav.Link href='#'>Welcome {user.email}</Nav.Link>
+              </Nav>
+            )}
+
             <Nav>
               <NavDropdown title='Settings' id='basic-nav-dropdown'>
-                <NavDropdown.Item onClick={() => handleLogin()}>
-                  Login
-                </NavDropdown.Item>
+                {user && user.access_token ? (
+                  <NavDropdown.Item onClick={() => handleLogout()}>
+                    Logout
+                  </NavDropdown.Item>
+                ) : (
+                  <NavDropdown.Item onClick={() => handleLogin()}>
+                    Login
+                  </NavDropdown.Item>
+                )}
               </NavDropdown>
             </Nav>
           </Navbar.Collapse>
