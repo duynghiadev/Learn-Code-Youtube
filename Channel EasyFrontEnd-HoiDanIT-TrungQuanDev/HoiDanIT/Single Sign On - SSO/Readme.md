@@ -59,3 +59,9 @@ Mô hình SSO áp dụng trong dự án thực tế
 ![Authentication vs Authorization](image-5.png)
 
 ![StateFul vs Stateless](image-6.png)
+
+#### Các hình ảnh từ mỗi bài học
+
+Chúng ta đang theo mô hình stateless
+
+![#22 Customize Axios và Store Token - Lưu Token vào cookies | Khóa Học Single Sign On Basic](image-7.png)
