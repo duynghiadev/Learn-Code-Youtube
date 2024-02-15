@@ -1,0 +1,121 @@
+.App {
+  text-align: center;
+  /* min-width: 300px;
+  max-width: 600px; */
+  /* margin: auto; */
+  /* padding:40px;
+  padding-top:0px; */
+
+}
+
+body {
+  background-color: #0cbaba;
+background-image: linear-gradient(315deg, #0cbaba 0%, #380036 74%)
+  /* background-image: url("https://www.4kwallpapers.com/images/walls/thumbs_2t/1455.jpg");
+  background-repeat: no-repeat;
+  background-size: cover; */
+}
+.todoInputContainer{
+  margin:40px auto;
+  display: flex;
+  justify-content: center;
+
+}
+
+.addTodoBtn{
+  color: #fff;
+  background-color: #537895;
+background-image: linear-gradient(315deg, #537895 0%, #09203f 74%);
+  padding: 10px 20px;
+  margin-left: 5px;
+  border:none;
+  border-radius:5px;
+  font-size: 18px;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+}
+.addTodoBtn:hover{ 
+  background-color:rgb(255, 189, 48);
+}
+.todoinput{
+  width: 60%;
+  height: 50px;
+  padding: 10px 20px;
+  border-radius:5px;
+  font-size: 18px;
+  border: none;
+  outline:2px solid  rgb(9, 9, 9);
+}
+.boxmain{
+  border: 1px solid rgb(194, 190, 190);
+  width: 40%;
+  margin: auto;
+  padding-bottom: 10px;
+  border-radius: 10px;
+}
+.todolistContainer{
+  width: 70%;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  margin: 10px auto;
+  padding : 10px 20px;  
+  font-size: 18px;
+  border: 1px solid #ddd;
+  align-items: center;
+  transition: all 0.2s ease-in;
+  border-radius: 5px;
+  border: 2px solid black;
+}
+.todolistContainer:hover{
+  
+box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.deletBtn{
+  color: rgb(255, 0, 0);
+  background-color:#eee;
+  padding: 10px 20px;
+  margin-left: 5px;
+  margin-top: 5px;
+  border:1px solid red;
+  border-radius:5px;
+  font-size: 16px;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+}
+
+.deletBtn:hover {
+  color:#fff;
+  background-color:rgb(255, 0, 0);
+}
+.doneBtn {
+  color: #fff;
+  background-color: rgb(0, 184, 0);
+  padding: 10px 20px;
+  margin-left: 5px;
+  border: 1px solid rgb(7, 55, 7);
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+}
+.doneBtn:hover {
+  color: #fff;
+  background-color: green;
+}
+.navbar{
+  
+  width: 100%;
+  height: 100px;
+  margin-top: -40px;
+  background-color: #7f5a83;
+  background-image: linear-gradient(315deg, #7f5a83 0%, #0d324d 74%);
+  border-bottom: 3px solid rgb(179, 165, 165);
+
+}
+
+
+button {
+  cursor: pointer;  
+}

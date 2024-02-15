@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Styles for Plane Carousel */
+
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.card {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card__content {
+  font-size: 20px;
+  color: white;
+  text-transform: capitalize;
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.btn-grp {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.btn {
+  padding: 8px 16px;
+  background-color: blueviolet;
+  color: white;
+  cursor: pointer;
+  border-radius: 10%;
+} */

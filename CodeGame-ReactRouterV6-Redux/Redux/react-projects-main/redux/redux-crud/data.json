@@ -1,0 +1,67 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Cid",
+      "email": "cid@gmail.com",
+      "contact": "456789",
+      "address": "shadow garden"
+    },
+    {
+      "id": 2,
+      "name": "Rimuru",
+      "email": "rimuru@gmail.com",
+      "contact": "123456",
+      "address": "Jura Forest"
+    },
+    {
+      "id": 3,
+      "name": "Kiyotaka",
+      "email": "kipon@gmail.com",
+      "contact": "345678",
+      "address": "Japan"
+    },
+    {
+      "name": "Alpha",
+      "email": "alpha@shadow.com",
+      "contact": "123",
+      "address": "Shadow Garden",
+      "id": 5
+    },
+    {
+      "name": "beta",
+      "email": "beta@shadow.com",
+      "contact": "4053",
+      "address": "Shadow Garden",
+      "id": 6
+    },
+    {
+      "name": "gamma",
+      "email": "gamma@shadow.com",
+      "contact": "475",
+      "address": "Shadow Garden",
+      "id": 7
+    },
+    {
+      "name": "nu",
+      "email": "nu@numbers.com",
+      "contact": "450438",
+      "address": "Shadow Garden",
+      "id": 8
+    },
+    {
+      "name": "delta",
+      "email": "delta@shadow.com",
+      "contact": "243820",
+      "address": "Shadow Garden",
+      "id": 9
+    },
+    {
+      "name": "zeta",
+      "email": "zeta@shadow.com",
+      "contact": "394729",
+      "address": "Shadow Garden",
+      "id": 10
+    }
+  ]
+}

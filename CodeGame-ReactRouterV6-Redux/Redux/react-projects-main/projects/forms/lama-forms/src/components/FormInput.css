@@ -1,0 +1,18 @@
+input {
+  padding: 15px;
+  margin: 10px 0;
+}
+
+span {
+  display: none;
+  color: red;
+  font-size: 12px;
+}
+
+input:invalid + span {
+  color: pink;
+}
+
+input:invalid ~ span {
+  display: block;
+}

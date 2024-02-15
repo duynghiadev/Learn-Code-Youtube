@@ -1,0 +1,73 @@
+@use "../../styles/" as s;
+
+.intro {
+  background-color: s.$introBg;
+  padding: 0 s.rem(34) s.rem(117);
+
+  position: relative;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  &::after {
+    content: "";
+    background-image: url("../../images/bg-curvy-mobile.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom center;
+    width: 100%;
+
+    // using relative units instead of px
+    height: 40vw;
+    position: absolute;
+    bottom: 0;
+
+    @include s.breakpoint-up(medium) {
+      background-image: url("../../images/bg-curvy-desktop.svg");
+      // height: s.rem(480);
+    }
+  }
+
+  // mobile has curvy img above and then below dark bg
+  // how to handle this?
+
+  > * {
+    z-index: 1;
+  }
+
+  @include s.breakpoint-up(medium) {
+    padding-bottom: s.rem(155);
+  }
+
+  &__img {
+    width: 100%;
+    max-width: s.rem(715);
+  }
+
+  &__heading {
+    max-width: s.rem(678);
+    line-height: 1.5;
+    margin-top: s.rem(40);
+
+    @include s.breakpoint-up(medium) {
+      margin-top: s.rem(62);
+    }
+  }
+
+  &__desc {
+    max-width: s.rem(578);
+  }
+
+  &__cta {
+    margin-top: s.rem(32);
+
+    @include s.breakpoint-up(medium) {
+      margin-top: s.rem(28);
+      padding: s.rem(21) s.rem(95);
+    }
+  }
+}

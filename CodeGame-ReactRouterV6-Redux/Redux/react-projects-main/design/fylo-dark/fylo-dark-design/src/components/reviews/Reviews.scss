@@ -1,0 +1,44 @@
+@use "../../styles" as s;
+
+.reviews {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 0 s.rem(42);
+  gap: s.rem(20);
+
+  @include s.breakpoint-up(medium) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .review {
+    background-color: s.$testimonialsBg;
+    border-radius: 5px;
+    padding: s.rem(20) s.rem(18);
+
+    @include s.breakpoint-up(medium) {
+      padding: s.rem(44) s.rem(24) s.rem(24) s.rem(24);
+    }
+
+    &__profile {
+      display: flex;
+      margin-top: s.rem(14);
+      align-items: center;
+      gap: s.rem(10);
+
+      &-img {
+        border-radius: 50%;
+        height: s.rem(20);
+      }
+
+      &-info {
+        p {
+          margin-top: 0;
+        }
+
+        .post {
+          font-size: 0.7rem;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<body>
+<table border="1">
+	<thead>
+	  <tr id="form-row" style="display: none;">
+			<td><b>Add/Edit</b></td>
+			<td><input type="text" placeholder="Book Title" name="title" /></td>
+			<td><input type="text" placeholder="Author Name" name="author" /></td>
+			<td>
+			    <select name="status">
+			   	 <option value="READ">Read</option>
+			   	 <option value="UNREAD">Unread</option>
+			   </select>
+			</td>
+			<td><input type="hidden" name="id" value="" /><button id="save-btn">Save</button></td>
+		</tr>
+	   <tr id="search-row" >
+			<td colspan="3"></td>
+			<td>Filter</td>
+			<td>
+			   <select id="filter">
+			   	 <option value="ALL">All</option>
+			   	 <option value="READ">Read</option>
+			   	 <option value="UNREAD">Unread</option>
+			   </select>
+			 </td>
+		</tr>
+		<tr id="heading-row">
+			<td>ID</td>
+			<td>Title</td>
+			<td>Author</td>
+			<td>Read Status</td>
+			<td>Action</td>
+		</tr>
+	</thead>
+	<tbody id="container">
+		
+	</tbody>
+	<tfoot>
+		<tr>
+			<td colspan="4"></td>
+			<td><button id="add-btn">Add New</button></td>
+		</tr>
+	</tfoot>
+</table>
+<style type="text/css">
+    table {
+    	border-collapse:collapse;
+    }
+    table td {
+    	padding: 5px;
+    }
+	#form-row td,
+	#search-row td,
+	tfoot td { 
+		border: none;
+	}
+	#form-row td {
+		border-bottom: 1px solid #000;
+	}
+	#heading-row td {
+		background: #e8e8e8; font-weight: bold;
+	}
+</style>
+</body>
+</html>

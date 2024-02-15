@@ -1,0 +1,68 @@
+.app {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 100vh;
+  background: url("https://images.unsplash.com/photo-1676365695013-882b033f5b4a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=736&q=80");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.form {
+  width: 600px;
+  padding: 20px 60px;
+  border-radius: 10px;
+  background-color: white;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 10px;
+  color: #800080;
+}
+
+.form__input {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.form__input label {
+  font-size: 12px;
+  color: gray;
+}
+
+.form__input input {
+  padding: 15px;
+  border-radius: 5px;
+  border: 1px solid grey;
+}
+
+button {
+  width: 100%;
+  height: 50px;
+  padding: 10px;
+  background-color: #bd04bd;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+span {
+  font-size: 12px;
+  color: red;
+  display: none;
+}
+
+input:invalid[focused="true"] ~ span {
+  display: block;
+}
+
+button:disabled {
+  background-color: #f180f1;
+  cursor: not-allowed;
+}
