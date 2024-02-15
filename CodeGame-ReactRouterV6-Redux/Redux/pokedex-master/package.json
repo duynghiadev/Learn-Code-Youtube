@@ -1,0 +1,23 @@
+{
+  "name": "pokedex",
+  "version": "3.0.0",
+  "private": true,
+  "author": "Ali Gasymov <alik0211alik@gmail.com> (https://www.gasymov.com/)",
+  "homepage": "https://alik0211.github.io/pokedex/",
+  "dependencies": {
+    "hardtack": "5.0.1",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "react-ga": "2.7.0"
+  },
+  "devDependencies": {
+    "prettier": "2.2.1",
+    "react-scripts": "2.1.8"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}

@@ -1,0 +1,28 @@
+@use "variables" as v;
+@use "functions" as f;
+
+h1,
+h2,
+h3 {
+  font-family: v.$font-title;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: clamp(f.rem(20), 1rem + 2vw, f.rem(40));
+}
+
+h3 {
+  font-size: clamp(f.rem(18), 1rem + 1.5vw, f.rem(22));
+}
+
+p {
+  font-size: clamp(1rem, 1rem + 0.02vw, f.rem(18));
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-bottom: 0;
+}

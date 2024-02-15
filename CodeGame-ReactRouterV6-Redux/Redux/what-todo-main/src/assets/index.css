@@ -1,0 +1,293 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap");
+:root {
+  --title-font: "DM Serif Display", serif;
+  --body-bg: #e3dafc;
+  --white: #ffffff;
+  --green: #5cc6bf;
+  --red: #ff0000;
+  --glass-gray: #ffffff26;
+  --bright-purple: #6c46ff;
+  --dark-purple: #402a9c;
+  --light-purple: #9a7ef5;
+  --rose-purple: #c9b7f6;
+  --box-shadow: 1px 8px 26px -8px rgba(0, 0, 0, 0.7);
+  --purple-gradient: linear-gradient(6deg, rgba(108, 70, 255, 1) 31%, rgb(102, 69, 211) 67%, rgb(108, 85, 168) 100%);
+  --light-purple-gradient: linear-gradient(
+    6deg,
+    rgba(108, 70, 255, 1) 31%,
+    rgba(163, 137, 250, 1) 67%,
+    rgba(201, 183, 246, 1) 100%
+  );
+  --two-color-gradient: linear-gradient(6deg, rgba(108, 70, 255, 1) 7%, rgba(201, 183, 246, 1) 100%);
+}
+/* GENERAL STYLING */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  -ms-overflow-style: none; /* for Internet Explorer, Edge */
+  scrollbar-width: none; /* for Firefox */
+  overflow-y: scroll;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--body-bg);
+}
+body::-webkit-scrollbar {
+  display: none; /* for Chrome, Safari, and Opera */
+}
+
+image {
+  display: block;
+}
+
+ul,
+ol,
+li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+/* APP */
+main {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+.title-section {
+  padding: 2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--title-font);
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+/* TOGGLE MODE */
+.toggle-light,
+.toggle-dark {
+  font-size: 1.7rem;
+  cursor: pointer;
+}
+.dark {
+  background-color: var(--dark-purple);
+  color: var(--light-purple);
+}
+.dark .todo-section {
+  background: var(--bright-purple);
+  background: var(--purple-gradient);
+}
+.dark .toggle-light {
+  color: var(--light-purple);
+}
+
+/* TODO SECTION */
+.todo-section {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 1rem;
+  background: var(--bright-purple);
+  background: var(--light-purple-gradient);
+  border-radius: 25px;
+  padding: 1.2rem;
+  margin: 0 auto;
+  width: auto;
+  max-width: 22rem;
+  -webkit-box-shadow: var(--box-shadow);
+  -moz-box-shadow: var(--box-shadow);
+  box-shadow: var(--box-shadow);
+}
+
+/* FORM */
+.form-input {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  -webkit-box-shadow: var(--box-shadow);
+  -moz-box-shadow: var(--box-shadow);
+  box-shadow: var(--box-shadow);
+  border-radius: 10px;
+}
+
+.form-input input {
+  background-color: var(--glass-gray);
+  backdrop-filter: blur(5px);
+  border: 1px solid transparent;
+  outline: none;
+  border-radius: 10px 0 0 10px;
+  padding: 1rem;
+  width: 100%;
+}
+.form-input input::placeholder,
+.form-input input[type="text"] {
+  color: var(--white);
+  font-family: var(--body-font);
+  font-weight: 400;
+  font-size: 1.2rem;
+  padding: 5px;
+}
+
+.form-input button {
+  cursor: pointer;
+  border: none;
+  border-radius: 0 10px 10px 0;
+  background: var(--bright-purple);
+  background: var(--two-color-gradient);
+  padding: 1.3rem;
+  color: var(--rose-purple);
+  font-size: 1.2rem;
+}
+
+/* TodoList */
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+/* TodoItem */
+.todo-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--white);
+  background-color: var(--glass-gray);
+  backdrop-filter: blur(5px);
+  -webkit-box-shadow: var(--box-shadow);
+  -moz-box-shadow: var(--box-shadow);
+  box-shadow: var(--box-shadow);
+  border-radius: 10px;
+  padding: 1rem;
+  font-family: var(--body-font);
+  font-size: 1.2rem;
+}
+.todo-item.completed {
+  background-color: var(--green);
+}
+
+.todo-item section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+/* CUSTOM CHECKBOX */
+.item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+.item-name {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.item-name input {
+  display: none;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  height: 20px;
+  width: 20px;
+  background-color: var(--glass-gray);
+  backdrop-filter: blur(5px);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* When the radio button is checked, add a blue background */
+.item-name input:checked ~ .checkmark {
+  background-color: var(--white);
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid var(--white);
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+/* TotalCompleteItems */
+.total-complete-items {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  align-items: center;
+  height: 5rem;
+  max-width: 22rem;
+  margin: auto;
+}
+/* DELETE BUTTON */
+.todo-item {
+  font-size: 1.1rem;
+}
+.delete-btn {
+  color: var(--bright-purple);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1.3rem;
+  padding: 5px;
+}
+.todo-item.completed .delete-btn {
+  color: var(--red);
+  padding: 5px;
+}
+.todo-item.completed p {
+  text-decoration: line-through;
+}
+/* TRANSITIONS */
+.smooth-transition,
+.checkmark,
+.delete-btn,
+.todo-item.completed .delete-btn {
+  transition: all ease-in-out 0.3s;
+}
+
+@media (hover: hover) {
+  .form-input button:hover {
+    opacity: 0.6;
+    transition: all ease-in-out 0.3s;
+  }
+  .checkmark:hover {
+    background-color: var(--bright-purple);
+    transition: all ease-in-out 0.3s;
+  }
+  .delete-btn:hover,
+  .todo-item.completed .delete-btn:hover {
+    color: var(--white);
+    transition: all ease-in-out 0.3s;
+  }
+}

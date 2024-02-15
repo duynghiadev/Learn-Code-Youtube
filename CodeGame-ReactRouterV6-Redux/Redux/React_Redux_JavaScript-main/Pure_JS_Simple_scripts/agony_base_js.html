@@ -1,0 +1,59 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AGONy</title>
+
+</head>
+<body id="bg" style="background-image: url('{% static "dungeon_entrance_2.jpg" %}'); background-position: center top; background-repeat: no-repeat; background-size: 1200px 900px ">
+
+<div class="topnav">
+
+    <a class="bg-primary" href="{% url 'AGONy_create_user' %}"> New user</a>
+    <a class="bg-primary" href="{% url 'AGONy_hero_list' %}">Leaderboard</a>
+    <a class="bg-primary" href="{% url 'AGONy_contact' %}">Contact</a>
+    {% if user.is_authenticated %}
+    <a class="bg-secondary" href="{% url 'AGONy_comment_list' %}">Comments</a>
+    <a class="bg-secondary" href="{% url 'AGONy_create_monster' %}">Create Monster</a>
+    <a class="bg-secondary" href="{% url 'AGONy_monster_list' %}">Monsters in AGONy</a>
+    <a class="bg-secondary" href="{% url 'AGONy_create_event' %}">Create Event</a>
+    <a class="bg-secondary" href="{% url 'AGONy_event_list' %}">Events in AGONy</a>
+    <a class="bg-secondary" href="{% url 'AGONy_create_origin' %}">Create Origin</a>
+    <a class="bg-secondary" href="{% url 'AGONy_origin_list' %}">Origins of AGONy</a>
+
+    {% endif %}
+    {% if user.is_authenticated %}
+        <a class="bg-danger" href="{% url 'AGONy_create_hero' %}"> Create Hero</a>
+        <a class="bg-danger" href="{% url 'AGONy_my_hero_list' %}">My Heroes</a>
+        <a class="bg-danger" href="{% url 'AGONy_create_defaults' %}">Create Defaults</a>
+        <a class="bg-danger" href="{% url 'AGONy_WIP' %}"> WIP </a>
+        <a class="bg-warning" href="{% url 'AGONy_logout' %}">Logout</a>
+    {% else %}
+        <a class="bg-warning" href="{% url 'AGONy_login' %}">Login</a>
+    {% endif %}
+
+
+</div>
+<div class="container" style="color: darkred" align="center">
+
+    {%  if user.is_authenticated %}
+        <p>Logged in as: {{ user.username }}</p>
+    {% endif %}
+
+    <p> {{ message }} </p>
+
+    {% block content %}
+        <h1>AGONy</h1>
+        <h2>(Absurd Generator Of Nonsense Journey)</h2>
+        <p ></p>
+    {% endblock %}
+
+</div>
+
+<script src="js.js"></script>
+</body>
+</html>

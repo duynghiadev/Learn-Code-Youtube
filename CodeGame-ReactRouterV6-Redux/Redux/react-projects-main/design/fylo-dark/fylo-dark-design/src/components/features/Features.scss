@@ -1,0 +1,44 @@
+@use "../../styles" as s;
+
+.features {
+  // padding: 0 s.rem(34) s.rem(110);
+  padding-left: s.rem(34);
+  padding-right: s.rem(34);
+
+  @include s.breakpoint-up(medium) {
+    // padding: 0 s.rem(280);
+    max-width: s.rem(870);
+    margin-inline: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: s.rem(150);
+    row-gap: s.rem(93);
+    // padding-bottom: s.rem(140);
+  }
+
+  .feature {
+    // display: flex;
+    // flex-direction: column;
+    // align-items: center;
+    text-align: center;
+
+    &__logo {
+      height: s.rem(90);
+
+      // display: flex;
+      // align-items: center;
+      // justify-content: center;
+
+      img {
+        height: 100%;
+        width: auto;
+      }
+    }
+
+    @include s.breakpoint-down(small) {
+      &:not(:first-child) {
+        margin-top: s.rem(77);
+      }
+    }
+  }
+}
