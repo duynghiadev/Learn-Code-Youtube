@@ -9,6 +9,7 @@ import cookieParser from 'cookie-parser'
 import { configPassport } from './controller/passportController'
 import configSession from './config/session'
 import flash from 'connect-flash'
+import configLoginWithGoogle from './controller/social/GoogleController'
 
 const app = express()
 const PORT = process.env.PORT || 8080
@@ -38,6 +39,7 @@ initWebRoutes(app)
 initApiRoutes(app)
 
 configPassport()
+configLoginWithGoogle()
 
 //req => middleware => res
 app.use((req, res) => {
