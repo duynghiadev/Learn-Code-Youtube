@@ -145,7 +145,6 @@ const updateUserRefreshToken = async (email, token) => {
         }
       }
     )
-    console.log('>>> a: ', a)
   } catch (error) {
     console.log('>>> error:', error)
   }
