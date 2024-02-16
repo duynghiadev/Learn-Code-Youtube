@@ -150,11 +150,39 @@ const updateUserRefreshToken = async (email, token) => {
   }
 }
 
+const upsertUserSocialMedia = async (typeAcc, dataRaw) => {
+  try {
+    let user = null
+    if (typeAcc === 'GOOGLE') {
+      user = await db.User.findOne({
+        where: {
+          email: dataRaw.email,
+          type: typeAcc
+        },
+        raw: true
+      })
+      if (!user) {
+        // Create a new user
+        ;(user = await db.User.create({
+          email: dataRaw.email,
+          username: dataRaw.username,
+          type: typeAcc
+        })),
+          (user = user.get({ plain: true }))
+      }
+    }
+    return user
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 module.exports = {
   registerNewUser,
   handleUserLogin,
   hashUserPassword,
   checkEmailExist,
   checkPhoneExist,
-  updateUserRefreshToken
+  updateUserRefreshToken,
+  upsertUserSocialMedia
 }
