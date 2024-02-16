@@ -66,3 +66,4 @@ Chúng ta đang theo mô hình stateless
 
 ![#22 Customize Axios và Store Token - Lưu Token vào cookies | Khóa Học Single Sign On Basic](image-7.png)
 ![#23 Login Complete - Lưu User với Redux | Khóa Học Single Sign On Basic (SSO) với Hỏi Dân IT](image-8.png)
+![#26 Google Project - Tạo Google App | Khóa Học Single Sign On Basic (SSO) với Hỏi Dân IT](image-9.png)

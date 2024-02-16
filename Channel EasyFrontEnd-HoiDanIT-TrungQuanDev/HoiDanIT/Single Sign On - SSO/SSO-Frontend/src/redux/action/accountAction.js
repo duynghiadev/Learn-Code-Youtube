@@ -70,6 +70,7 @@ export const doLogOut = () => {
         if (res && +res.EC === 0) {
           // success
           dispatch({ type: USER_LOGOUT_SUCCESS })
+          window.location.href = '/'
         } else {
           // failed
           dispatch({ type: USER_LOGOUT_FAILED, error: res.EM })
