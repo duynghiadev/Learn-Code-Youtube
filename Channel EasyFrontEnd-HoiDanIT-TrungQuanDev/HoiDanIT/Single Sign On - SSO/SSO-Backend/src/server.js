@@ -10,6 +10,7 @@ import { configPassport } from './controller/passportController'
 import configSession from './config/session'
 import flash from 'connect-flash'
 import configLoginWithGoogle from './controller/social/GoogleController'
+import configLoginWithFacebook from './controller/social/FacebookController'
 
 const app = express()
 const PORT = process.env.PORT || 8080
@@ -40,6 +41,7 @@ initApiRoutes(app)
 
 configPassport()
 configLoginWithGoogle()
+configLoginWithFacebook()
 
 //req => middleware => res
 app.use((req, res) => {
