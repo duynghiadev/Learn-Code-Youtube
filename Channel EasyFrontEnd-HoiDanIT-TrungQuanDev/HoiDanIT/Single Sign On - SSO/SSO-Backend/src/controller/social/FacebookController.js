@@ -3,18 +3,19 @@ import passport from 'passport'
 import loginRegisterService from '../../service/loginRegisterService'
 import { v4 as uuidv4 } from 'uuid'
 
-const GoogleStrategy = require('passport-google-oauth20').Strategy
+const FacebookStrategy = require('passport-facebook').Strategy
 
-const configLoginWithGoogle = () => {
+const configLoginWithFacebook = () => {
   passport.use(
-    new GoogleStrategy(
+    new FacebookStrategy(
       {
-        clientID: process.env.GOOGLE_APP_CLIENT_ID,
-        clientSecret: process.env.GOOGLE_APP_CLIENT_SECRET,
-        callbackURL: process.env.GOOGLE_APP_REDIRECT_LOGIN
+        clientID: process.env.FACEBOOK_APP_ID,
+        clientSecret: process.env.FACEBOOK_APP_SECRET,
+        callbackURL: process.env.FACEBOOK_APP_REDIRECT_LOGIN,
+        profileFields: ['id', 'emails', 'name', 'displayName']
       },
       async function (accessToken, refreshToken, profile, cb) {
-        const typeAcc = 'GOOGLE'
+        const typeAcc = 'FACEBOOK'
         let dataRaw = {
           username: profile.displayName,
           email:
@@ -33,4 +34,4 @@ const configLoginWithGoogle = () => {
   )
 }
 
-export default configLoginWithGoogle
+export default configLoginWithFacebook
