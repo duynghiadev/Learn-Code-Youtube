@@ -58,8 +58,8 @@ const initWebRoutes = (app) => {
     passport.authenticate('google', { failureRedirect: '/login' }),
     function (req, res) {
       // successful authentication, redirect home
-      console.log('>>> check req.user:', req.user)
-      res.redirect('/')
+      // save cookie
+      return res.render('social.ejs', { ssoToken: req.user.code })
     }
   )
 
