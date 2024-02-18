@@ -1,4 +1,5 @@
 require('dotenv').config()
+import axios from 'axios'
 
 const nonSecurePaths = ['/']
 
@@ -12,35 +13,29 @@ const extractToken = (req) => {
   return null
 }
 
-const checkUserJWT = (req, res, next) => {
+const checkUserJWT = async (req, res, next) => {
   if (nonSecurePaths.includes(req.path)) return next()
 
   let tokenFromHeader = extractToken(req)
-  console.log('token From Header:', tokenFromHeader)
-
   if (tokenFromHeader) {
     let access_token = tokenFromHeader
-    next()
+    axios.defaults.headers.common['Authorization'] = `Bearer ${access_token}`
     // call sso to verify token
-
-    // let decoded = verifyToken(access_token)
-    // if (decoded) {
-    //   decoded.access_token = access_token
-    //   decoded.refresh_token = cookies.refresh_token
-    //   req.user = decoded
-    //   next()
-    // } else {
-    //   return res.status(401).json({
-    //     EC: -1,
-    //     DT: '',
-    //     EM: 'Not authenticated the user'
-    //   })
-    // }
+    let resAPI = await axios.post(process.env.API_SSO_VERIFY_ACCESS_TOKEN)
+    if (resAPI && resAPI.data && +resAPI.data.EC === 0) {
+      next()
+    } else {
+      return res.status(401).json({
+        EC: -1,
+        DT: '',
+        EM: 'Not authenticated the user'
+      })
+    }
   } else {
-    return res.status(401).json({
+    return res.status(400).json({
       EC: -1,
       DT: '',
-      EM: 'Not authenticated the user'
+      EM: 'Not provide auth header token'
     })
   }
 }

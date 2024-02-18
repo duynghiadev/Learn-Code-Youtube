@@ -18,9 +18,7 @@ instance.interceptors.request.use(
     let headerToken = store.getState()?.account?.userInfo?.access_token ?? ''
 
     if (headerToken) {
-      instance.defaults.headers.common[
-        'Authorization'
-      ] = `Bearer ${headerToken}`
+      config.headers.Authorization = `Bearer ${headerToken}`
     }
 
     // Do something before request is sent
@@ -40,9 +38,17 @@ instance.interceptors.response.use(
     return response && response.data ? response.data : response
   },
   function (error) {
-    console.log('>>> check error:', error)
     // Any status codes that falls outside the range of 2xx cause this function to trigger
     // Do something with response error
+    if (error.response.status === 400) {
+      // If the error has status code 429, retry the request
+      let headerToken = store.getState()?.account?.userInfo?.access_token ?? ''
+      if (headerToken) {
+        error.config.headers.Authorization = `Bearer ${headerToken}`
+      }
+      return axios.request(error.config)
+    }
+
     if (error && error.response && error.response.data) {
       return error.response.data
     }
