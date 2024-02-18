@@ -77,9 +77,8 @@ const initWebRoutes = (app) => {
     }
   )
 
-  router.get('/forgot-password', (req, res) => {
-    return res.render('forgot-password.ejs')
-  })
+  router.get('/forgot-password', loginController.getResetPasswordPage)
+  router.post('/send-code', loginController.sendCode)
 
   return app.use('/', router)
 }

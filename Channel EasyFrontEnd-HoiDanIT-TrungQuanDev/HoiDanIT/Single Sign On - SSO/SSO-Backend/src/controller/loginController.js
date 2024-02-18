@@ -90,4 +90,22 @@ const verifySSOToken = async (req, res) => {
   }
 }
 
-module.exports = { getLoginPage, verifySSOToken }
+const getResetPasswordPage = (req, res) => {
+  return res.render('forgot-password.ejs')
+}
+
+const sendCode = (req, res) => {
+  // validate email, check type account equal LOCAL
+  // send code via email
+  return res.status(200).json({
+    EC: 0,
+    DT: { email: req.body.email }
+  })
+}
+
+module.exports = {
+  getLoginPage,
+  verifySSOToken,
+  getResetPasswordPage,
+  sendCode
+}
