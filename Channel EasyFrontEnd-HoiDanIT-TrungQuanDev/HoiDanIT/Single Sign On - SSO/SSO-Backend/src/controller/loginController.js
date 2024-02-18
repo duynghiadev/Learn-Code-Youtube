@@ -3,6 +3,9 @@ import loginRegisterService from '../service/loginRegisterService'
 import { createJWT } from '../middleware/JWTAction'
 import 'dotenv/config'
 import nodemailer from 'nodemailer'
+import * as handlebars from 'handlebars'
+import * as fs from 'fs'
+import * as path from 'path'
 
 const getLoginPage = (req, res) => {
   // validate url
@@ -99,7 +102,18 @@ const sendCode = async (req, res) => {
   // validate email, check type account equal LOCAL
 
   // send code via email
-  const transporter = nodemailer.createTransport({
+  const OTP = Math.floor(100000 + Math.random() * 900000)
+
+  const filePath = path.join(__dirname, '../templates/reset-password.html')
+  const soure = fs.readFileSync(filePath, 'utf-8').toString()
+  const template = handlebars.compile(soure)
+  const replacements = {
+    email: req.body.email,
+    otp: OTP
+  }
+  const htmlToSend = template(replacements)
+
+  let transporter = nodemailer.createTransport({
     host: 'smtp.gmail.com',
     port: 587,
     secure: false,
@@ -109,22 +123,21 @@ const sendCode = async (req, res) => {
     }
   })
 
-  const OTP = Math.floor(100000 + Math.random() * 900000)
+  res.status(200).json({
+    EC: 0,
+    DT: { email: req.body.email }
+  })
 
   console.log('>>> Start sending email')
 
   try {
     // send mail with defined transport object
     await transporter.sendMail({
-      from: 'Duy Nghia Dev 👻', // sender address
+      from: `Duy Nghia Dev 👻 <${process.env.GOOGLE_APP_EMAIL}>`, // sender address
       to: `${req.body.email}`, // list of receivers
-      subject: 'Hello ✔', // Subject line
+      subject: 'Reset Password SSO Tutorial', // Subject line
       text: 'Hello world?', // plain text body
-      html: `
-        <div>Bạn nhận được email này do yêu cầu reset lại mật khẩu trong series SSO.</div>
-        <br />
-        <div>Your OTP: ${OTP}</div>
-      ` // html body
+      html: htmlToSend // html body
     })
     console.log('>>> End sending email')
 
@@ -133,11 +146,6 @@ const sendCode = async (req, res) => {
   } catch (error) {
     console.log('>>> error: ', error)
   }
-
-  return res.status(200).json({
-    EC: 0,
-    DT: { email: req.body.email }
-  })
 }
 
 module.exports = {
