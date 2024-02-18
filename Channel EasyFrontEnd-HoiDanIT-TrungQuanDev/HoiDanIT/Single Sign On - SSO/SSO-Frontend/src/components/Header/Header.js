@@ -5,14 +5,14 @@ import { NavLink } from 'react-router-dom'
 import { doLogOut } from '../../redux/action/accountAction'
 
 const Header = () => {
+  const user = useSelector((state) => state.account.userInfo)
+  const dispatch = useDispatch()
+
   const handleLogin = () => {
     // redirect to sso
     // http://localhost:8080/login?serviceURL=http://localhost:3000/
-    window.location.href = `${process.env.REACT_APP_BACKEND_SSO_LOGIN}?serviceURL=${process.env.REACT_APP_SERVICE_URL}`
+    window.location.href = `${process.env.REACT_APP_BACKEND_SSO_LOGIN}?serviceURL=${process.env.REACT_APP_CURRENT_PROJECT_URL}`
   }
-
-  const user = useSelector((state) => state.account.userInfo)
-  const dispatch = useDispatch()
 
   const handleLogout = () => {
     dispatch(doLogOut())
