@@ -175,6 +175,29 @@ const upsertUserSocialMedia = async (typeAcc, dataRaw) => {
   }
 }
 
+const getUserByRefreshToken = async (token) => {
+  try {
+    let user = await db.User.findOne({
+      where: {
+        refreshToken: token
+      }
+    })
+
+    if (user) {
+      let groupWithRoles = await getGroupWithRoles(user)
+
+      return {
+        email: user.email,
+        groupWithRoles: groupWithRoles,
+        username: user.username
+      }
+    }
+    return null
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 module.exports = {
   registerNewUser,
   handleUserLogin,
@@ -182,5 +205,6 @@ module.exports = {
   checkEmailExist,
   checkPhoneExist,
   updateUserRefreshToken,
-  upsertUserSocialMedia
+  upsertUserSocialMedia,
+  getUserByRefreshToken
 }
