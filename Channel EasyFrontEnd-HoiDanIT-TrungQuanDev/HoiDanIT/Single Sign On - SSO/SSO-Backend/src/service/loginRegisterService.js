@@ -198,6 +198,23 @@ const getUserByRefreshToken = async (token) => {
   }
 }
 
+const updateUserCode = async (code, email) => {
+  try {
+    await db.User.update(
+      {
+        code: code
+      },
+      {
+        where: {
+          email: email.trim()
+        }
+      }
+    )
+  } catch (error) {
+    console.log('>>> error:', error)
+  }
+}
+
 module.exports = {
   registerNewUser,
   handleUserLogin,
@@ -206,5 +223,6 @@ module.exports = {
   checkPhoneExist,
   updateUserRefreshToken,
   upsertUserSocialMedia,
-  getUserByRefreshToken
+  getUserByRefreshToken,
+  updateUserCode
 }
