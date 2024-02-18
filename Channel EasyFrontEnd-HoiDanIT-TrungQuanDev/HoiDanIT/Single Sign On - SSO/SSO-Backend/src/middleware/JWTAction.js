@@ -1,7 +1,12 @@
 require('dotenv').config()
 import jwt, { decode } from 'jsonwebtoken'
 
-const nonSecurePaths = ['/logout', '/login', '/register']
+const nonSecurePaths = [
+  '/logout',
+  '/login',
+  '/register',
+  '/verify-services-jwt'
+]
 
 const createJWT = (payload) => {
   let key = process.env.JWT_SECRET
@@ -106,9 +111,39 @@ const checkUserPermission = (req, res, next) => {
   }
 }
 
+const checkServiceJWT = (req, res, next) => {
+  let tokenFromHeader = extractToken(req)
+
+  if (tokenFromHeader) {
+    let access_token = tokenFromHeader
+    let decoded = verifyToken(access_token)
+    // todo: refresh_token
+    if (decoded) {
+      return res.status(200).json({
+        EC: 0,
+        DT: '',
+        EM: 'Verify the user'
+      })
+    } else {
+      return res.status(401).json({
+        EC: -1,
+        DT: '',
+        EM: 'Not authenticated the user'
+      })
+    }
+  } else {
+    return res.status(401).json({
+      EC: -1,
+      DT: '',
+      EM: 'Not authenticated the user'
+    })
+  }
+}
+
 module.exports = {
   createJWT,
   verifyToken,
   checkUserJWT,
-  checkUserPermission
+  checkUserPermission,
+  checkServiceJWT
 }

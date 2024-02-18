@@ -16,14 +16,6 @@ const App = () => {
     }
   }, [])
 
-  useEffect(() => {
-    setTimeout(() => {
-      axios.get('http://localhost:8081/health').then((res) => {
-        console.log(res)
-      })
-    }, 5000)
-  }, [])
-
   const style = {
     position: 'fixed',
     top: '50%',
