@@ -1,0 +1,26 @@
+.weather-container {
+  width: 50vw;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+
+  .carousel-inner {
+    height: 75vh;
+
+    .carousel-item {
+      height: 75vh;
+
+      img {
+        max-height: 100%;
+        object-fit: contain;
+      }
+    }
+  }
+
+  .item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-height: 300px;
+  }
+}
