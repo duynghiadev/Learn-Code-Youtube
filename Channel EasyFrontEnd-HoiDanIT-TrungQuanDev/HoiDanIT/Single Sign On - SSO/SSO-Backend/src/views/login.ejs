@@ -48,6 +48,10 @@
     .none-flash {
       display: none;
     }
+
+    #spanResetPassword {
+      cursor: pointer;
+    }
   </style>
 
   <script>
@@ -90,6 +94,24 @@
         localStorage.removeItem('clientURL')
         localStorage.setItem('clientURL', $('#redirectURL').val())
         window.location.href = '/auth/facebook'
+      })
+
+      // Get the input field
+      const input = document.getElementById('password')
+
+      // Execute a function when the user releases a key on the keyboard
+      input.addEventListener('keypress', function (event) {
+        // If the user presses the "Enter" key on the keyboard
+        if (event.key === 'Enter') {
+          // Cancel the default action, if needed
+          event.preventDefault()
+          // Trigger the button element with a click
+          document.getElementById('btnLogin').click()
+        }
+      })
+
+      $('#spanResetPassword').on('click', function () {
+        $('#resetPasswordModal').modal('show')
       })
     })
   </script>
@@ -142,6 +164,9 @@
             >
               Login
             </button>
+            <div class="mt-3">
+              <span id="spanResetPassword">Forgot Password ?</span>
+            </div>
             <hr />
             <div>
               <div style="text-align: center">
@@ -164,6 +189,47 @@
               </div>
             </div>
           </fieldset>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="resetPasswordModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5
+              class="modal-title"
+              id="exampleModalLabel"
+              >Modal title</h5
+            >
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body"> ... </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+              >Close</button
+            >
+            <button
+              type="button"
+              class="btn btn-primary"
+              >Save changes</button
+            >
+          </div>
         </div>
       </div>
     </div>

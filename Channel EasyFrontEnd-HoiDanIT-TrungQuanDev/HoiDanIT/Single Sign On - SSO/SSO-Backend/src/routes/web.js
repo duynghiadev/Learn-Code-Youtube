@@ -77,6 +77,10 @@ const initWebRoutes = (app) => {
     }
   )
 
+  router.get('/forgot-password', (req, res) => {
+    return res.render('forgot-password.ejs')
+  })
+
   return app.use('/', router)
 }
 
