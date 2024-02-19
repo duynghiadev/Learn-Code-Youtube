@@ -46,7 +46,7 @@ const Header = () => {
 
             {user && user.access_token && (
               <Nav>
-                <Nav.Link href='#'>Welcome {user.email}</Nav.Link>
+                <Nav.Link href='#'>Welcome {user.username}</Nav.Link>
               </Nav>
             )}
 
