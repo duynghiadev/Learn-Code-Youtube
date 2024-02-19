@@ -1,3 +1,0 @@
-- Trước khi Run thì bật máy ảo xampp lên
-- Sau đó vào CSDL MySql để xem dữ liệu
-- Bước cuối cùng là: npm start
