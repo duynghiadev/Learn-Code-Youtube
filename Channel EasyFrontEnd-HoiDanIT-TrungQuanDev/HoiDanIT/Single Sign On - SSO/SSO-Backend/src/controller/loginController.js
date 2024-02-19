@@ -100,6 +100,15 @@ const getResetPasswordPage = (req, res) => {
 
 const sendCode = async (req, res) => {
   // validate email, check type account equal LOCAL
+  let checkEmailLocal = await loginRegisterService.isEmailLocal(req.body.email)
+
+  if (!checkEmailLocal) {
+    return res.status(401).json({
+      DT: '',
+      EC: -1,
+      EM: `Not found the email: ${req.body.email} in the system`
+    })
+  }
 
   // send code via email
   const OTP = Math.floor(100000 + Math.random() * 900000)
@@ -148,9 +157,36 @@ const sendCode = async (req, res) => {
   }
 }
 
+const handleResetPassword = async (req, res) => {
+  try {
+    let result = await loginRegisterService.resetUserPassword(req.body)
+    if (result) {
+      return res.status(200).json({
+        EC: 0
+      })
+    } else {
+      return res.status(500).json({
+        EC: -1,
+        EM: 'Something wrong...please try again',
+        DT: ''
+      })
+    }
+    return res.status(200).json({
+      EC: 0
+    })
+  } catch (error) {
+    return res.status(500).json({
+      EC: -2,
+      EM: 'Internal error',
+      DT: ''
+    })
+  }
+}
+
 module.exports = {
   getLoginPage,
   verifySSOToken,
   getResetPasswordPage,
-  sendCode
+  sendCode,
+  handleResetPassword
 }
