@@ -1,19 +1,21 @@
 import { useDispatch, useSelector } from 'react-redux'
 import Header from './components/Header/Header'
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 import { doGetAccount } from './redux/action/accountAction'
 import HashLoader from 'react-spinners/HashLoader'
-import axios from './customize/axios.js'
+import { Outlet } from 'react-router-dom'
 
 const App = () => {
   const dispatch = useDispatch()
   const user = useSelector((state) => state.account.userInfo)
   const isLoading = useSelector((state) => state.account.isLoading)
+  const firstRenderRef = useRef(true)
 
   useEffect(() => {
     if (user && !user.access_token) {
       dispatch(doGetAccount())
     }
+    firstRenderRef.current = false
   }, [])
 
   const style = {
@@ -30,9 +32,14 @@ const App = () => {
           <HashLoader color={'#36D7B7'} loading={true} size={100} />
         </div>
       ) : (
-        <div className='App'>
-          <Header />
-        </div>
+        <>
+          {firstRenderRef.current === false && (
+            <div className='App'>
+              <Header />
+              <Outlet />
+            </div>
+          )}
+        </>
       )}
     </>
   )

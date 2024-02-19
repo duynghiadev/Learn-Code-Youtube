@@ -49,6 +49,9 @@ export const doGetAccount = () => {
         } else {
           // failed
           dispatch({ type: USER_LOGIN_FAILED, error: res.EM })
+          if (window.location.pathname !== '/') {
+            window.location.href = `${process.env.REACT_APP_BACKEND_SSO_LOGIN}?serviceURL=${process.env.REACT_APP_CURRENT_PROJECT_URL}`
+          }
         }
       })
       .catch((err) => {

@@ -3,6 +3,7 @@ import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap'
 import { useSelector, useDispatch } from 'react-redux'
 import { NavLink } from 'react-router-dom'
 import { doLogOut } from '../../redux/action/accountAction'
+import logoSvg from '../../logo.svg'
 
 const Header = () => {
   const user = useSelector((state) => state.account.userInfo)
@@ -22,15 +23,24 @@ const Header = () => {
     <>
       <Navbar expand='lg' bg='light'>
         <Container>
-          <Navbar.Brand href='/'>React-Bootstrap</Navbar.Brand>
+          <NavLink to='/' className='navbar-brand'>
+            <img
+              src={logoSvg}
+              width='30px'
+              height='30px'
+              className='d-inline-block align-top'
+              alt=''
+            />
+            Duy Nghia Dev SSO
+          </NavLink>
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <Navbar.Collapse id='basic-navbar-nav'>
             <Nav className='me-auto'>
               <NavLink to='/' className='nav-link'>
                 Home
               </NavLink>
-              <NavLink to='/about' className='nav-link'>
-                About
+              <NavLink to='/weather' className='nav-link'>
+                Weather
               </NavLink>
             </Nav>
 
