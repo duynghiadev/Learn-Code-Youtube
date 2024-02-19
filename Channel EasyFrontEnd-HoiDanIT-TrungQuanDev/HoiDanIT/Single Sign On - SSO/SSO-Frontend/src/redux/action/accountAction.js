@@ -21,6 +21,7 @@ export const doLogin = (ssoToken) => {
         if (res && +res.EC === 0) {
           // success
           dispatch({ type: USER_LOGIN_SUCCESS, user: res.DT })
+          dispatch(doGetAccount())
         } else {
           // failed
           dispatch({ type: USER_LOGIN_FAILED, error: res.EM })
