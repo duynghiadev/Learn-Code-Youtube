@@ -1,3 +1,7 @@
+Link Tutorial: [Redux Ultimate - Redux Siêu Dễ Cho Beginners Từ Z đến A](https://bom.so/5CZgxk)
+
+---
+
 # Khóa Học "All in One - Gánh Team Tất Cả Version của Redux (Redux & Redux Toolkit) Kết Hợp React.JS"
 
 ## Các Nội Dung Trọng Tâm
@@ -20,7 +24,3 @@ Khi kết thúc khóa học này, các bạn mới bắt đầu sẽ hiểu đư
 Làm được điều này, thì cho dù chúng ta vào công ty nào, sử dụng công nghệ gì (Redux thuần, Redux Toolkit, Redux với Class component, Redux với Hook), thì chúng ta đều tự tin và có thể làm chủ được công nghệ.
 
 Hi vọng các bạn sẽ học được nhiều điều hữu ích từ khóa học này, phục vụ đắc lực cho việc trở thành một FrontEnd Developer một cách toàn diện.
-
----
-Link Tutorial: [Redux Ultimate](https://bom.so/5CZgxk)
-
