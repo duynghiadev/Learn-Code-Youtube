@@ -43,3 +43,16 @@ Khi kết thúc khóa học này, các bạn mới bắt đầu sẽ hiểu đư
 Làm được điều này, thì cho dù chúng ta vào công ty nào, sử dụng công nghệ gì (Redux thuần, Redux Toolkit, Redux với Class component, Redux với Hook), thì chúng ta đều tự tin và có thể làm chủ được công nghệ.
 
 Hi vọng các bạn sẽ học được nhiều điều hữu ích từ khóa học này, phục vụ đắc lực cho việc trở thành một FrontEnd Developer một cách toàn diện.
+
+---
+
+![Flow Redux](image.png)
+![Redux Application Data Flow](image-1.png)
+
+Reference:
+
+- [React Js - Redux: Basic Concepts and Data Flow](https://www.codingninjas.com/studio/library/redux-basic-concepts-and-data-flow)
+
+- [Concepts of Redux](https://www.codingninjas.com/studio/library/concepts-of-redux)
+
+- [Redux Fundamentals, Part 2: Concepts and Data Flow](https://redux.js.org/tutorials/fundamentals/part-2-concepts-data-flow)
