@@ -1,7 +1,8 @@
 import { INCREMENT, DECREMENT } from '../action/types'
 
 const INITIAL_STATE = {
-  count: 0
+  count: 0,
+  name: 'duynghiadev'
 }
 
 const counterReducer = (state = INITIAL_STATE, action) => {
