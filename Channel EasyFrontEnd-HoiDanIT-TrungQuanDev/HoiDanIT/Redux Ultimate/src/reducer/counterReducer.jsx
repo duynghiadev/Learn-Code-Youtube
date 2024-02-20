@@ -7,12 +7,14 @@ const INITIAL_STATE = {
 const reducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case INCREMENT:
+      console.log("I'm running INCREMENT")
       return {
         ...state,
         count: state.count + 1
       }
 
     case DECREMENT:
+      console.log("I'm running DECREMENT")
       return {
         ...state,
         count: state.count - 1
