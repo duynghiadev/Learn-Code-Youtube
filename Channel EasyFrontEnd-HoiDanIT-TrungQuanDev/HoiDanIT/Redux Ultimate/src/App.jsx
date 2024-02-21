@@ -5,6 +5,7 @@ import store from './redux/store'
 import { useSelector, useDispatch } from 'react-redux'
 import axios from 'axios'
 import { useEffect } from 'react'
+import Home from './components/Home'
 
 const App = (props) => {
   const newCount = useSelector((state) => state.counter.count)
@@ -33,10 +34,11 @@ const App = (props) => {
 
   return (
     <div className='App'>
-      <div>Count: {newCount}</div>
-
+      {/* <div>Count: {newCount}</div>
       <button onClick={() => handleIncrease()}>Increase Count</button>
-      <button onClick={() => handleDecrease()}>Decrease Count</button>
+      <button onClick={() => handleDecrease()}>Decrease Count</button> */}
+
+      <Home />
     </div>
   )
 }
