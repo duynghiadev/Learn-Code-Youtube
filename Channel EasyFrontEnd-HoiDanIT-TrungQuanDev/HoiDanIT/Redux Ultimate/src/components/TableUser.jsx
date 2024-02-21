@@ -1,7 +1,25 @@
 import Table from 'react-bootstrap/Table'
 import Container from 'react-bootstrap/Container'
+import { useEffect, useState } from 'react'
+import axios from 'axios'
 
 const TableUser = (props) => {
+  const [listUsers, setListUsers] = useState()
+
+  const fetchAllUser = async () => {
+    const res = await axios.get('http://localhost:8080/users/all')
+    const data = res && res.data ? res.data : []
+    setListUsers(data)
+  }
+
+  useEffect(() => {
+    fetchAllUser()
+  }, [])
+
+  const handleDeleteUser = (user) => {
+    console.log(user)
+  }
+
   return (
     <Container>
       <hr />
@@ -9,29 +27,28 @@ const TableUser = (props) => {
         <thead>
           <tr>
             <th>#</th>
-            <th>First Name</th>
-            <th>Last Name</th>
+            <th>Email</th>
             <th>Username</th>
+            <th>Action</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>Larry the Bird</td>
-            <td>@twitter</td>
-          </tr>
+          {listUsers &&
+            listUsers.length > 0 &&
+            listUsers.map((item, index) => {
+              return (
+                <tr key={`users-${index}`}>
+                  <td>{index + 1}</td>
+                  <td>{item.email}</td>
+                  <td>{item.username}</td>
+                  <td>
+                    <button className='btn btn-danger' onClick={() => handleDeleteUser(item)}>
+                      Delete
+                    </button>
+                  </td>
+                </tr>
+              )
+            })}
         </tbody>
       </Table>
     </Container>
