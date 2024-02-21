@@ -1,3 +1,6 @@
+// ❌ Bài này khác bài solution-1.js ở chỗ -> Bài này: Khi chạy code lên thì nhập những số cách nhau bằng dấu cách (ví dụ: 2 5 3) -> Còn bài solution-1.1.js các số được cách nhau bởi dấu mũi tên (->) (ví dụ: 2 -> 5 -> 3)
+// Bởi vì trong đoạn code thực thi, mình có sử dụng hàm split() để thiết kế cách nhập số
+
 /**
  * - This code defines a ListNode class to represent each node in the linked list, and then defines the addTwoNumbers function to perform the addition of two linked lists. It also provides helper functions createLinkedListFromArray and printLinkedList to create and print linked lists, respectively.
  *
@@ -49,19 +52,19 @@ function addTwoNumbers(l1, l2) {
   return dummyHead.next
 }
 
-// Helper function to create a linked list from an array
+// Helper function to create a linked list from an array of numbers
 function createLinkedListFromArray(arr) {
   let dummyHead = new ListNode(0)
   let current = dummyHead
 
   for (let num of arr) {
-    current.next = new ListNode(num)
+    current.next = new ListNode(parseInt(num))
     current = current.next
   }
   return dummyHead.next
 }
 
-// Helper function to print a linked list
+// Helper function to print the linked list
 function printLinkedList(head) {
   let current = head
   let result = []
@@ -73,16 +76,15 @@ function printLinkedList(head) {
   console.log(result.join(' -> '))
 }
 
-// Taking input from the user
 const readline = require('readline').createInterface({
   input: process.stdin,
   output: process.stdout
 })
 
-readline.question('Enter the first number as a linked list (e.g., 2 -> 4 -> 3): ', (num1) => {
-  const l1 = createLinkedListFromArray(num1.split(' -> ').map(Number))
-  readline.question('Enter the second number as a linked list (e.g., 5 -> 6 -> 4): ', (num2) => {
-    const l2 = createLinkedListFromArray(num2.split(' -> ').map(Number))
+readline.question('Enter the first number as a linked list (e.g., 2 4 3): ', (num1) => {
+  const l1 = createLinkedListFromArray(num1.split(' ').map(Number))
+  readline.question('Enter the second number as a linked list (e.g., 5 6 4): ', (num2) => {
+    const l2 = createLinkedListFromArray(num2.split(' ').map(Number))
     const result = addTwoNumbers(l1, l2)
     console.log('Result:')
     printLinkedList(result)
