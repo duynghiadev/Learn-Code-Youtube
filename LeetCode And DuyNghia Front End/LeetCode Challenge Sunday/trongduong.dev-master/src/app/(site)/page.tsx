@@ -16,7 +16,7 @@ export default function Home() {
       <Smoother.ScrollSection className="py-24 min-h-[calc(100vh-72px)] flex items-center justify-center">
         <Container className="relative">
           <RotatePersonal className="ml-8 md:ml-0 mb-16 md:mb-0 md:absolute bottom-12 right-8" />
-          
+
           <TextLegend className="mb-12">HEY THERE!</TextLegend>
 
           <TextMain className="mb-10">
@@ -27,11 +27,10 @@ export default function Home() {
           <TextDescription className="mb-16">
             I develope websites that gets you real results.
           </TextDescription>
-                    
-          <Button rounded="base" color="base" className="min-w-[170px]" asChild>
-            <a href="mailto:duongductrong06@gmail.com">Let me help you</a>
-          </Button>
 
+          <Button rounded="base" color="base" className="min-w-[170px]" asChild>
+            <a href="mailto:duynghia22302@gmail.com">Let me help you</a>
+          </Button>
         </Container>
       </Smoother.ScrollSection>
 
@@ -39,8 +38,10 @@ export default function Home() {
         <Container className="relative">
           <TextLegend className="mb-12">MY EXPERTISE</TextLegend>
           <h2 className="text-4xl mb-12 font-normal leading-normal	">
-            With three years of experience, <br /> I specialize in building
-            comprehensive online solutions <br /> for the many domains.
+            With 2 years of studying and exploring React technology, <br /> I
+            have completed several personal projects, and <br /> I hope in the
+            future I can create large-scale products using React to contribute
+            to the company.
           </h2>
         </Container>
       </Smoother.ScrollSection>

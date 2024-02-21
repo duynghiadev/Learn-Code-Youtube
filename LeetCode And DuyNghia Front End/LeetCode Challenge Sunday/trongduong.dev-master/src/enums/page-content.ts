@@ -1,157 +1,148 @@
 export const PAGE_CONTENT_ABOUT_ME = {
   WORKS_EXPERIENCE: [
     {
-      id: "whammytech",
-      name: "Whammy Tech",
-      date: "Sep 2022 - Present",
-      position: "Software Engineer",
-      description: `
-      As a Software Engineer at Whammy Tech, 
-      my mission is to contribute to the company's success by leveraging my technical skills. 
-      I work with software developers and testers to design and develop robust solutions that meet client requirements. 
-      Collaborating with fellow engineers, I clarify requirements, conduct code reviews, and ensure adherence to best practices. 
-      I use technologies like Meteor.js, Remix-run, and Next.js to contribute to projects. 
-      Following Agile scrum methodology, I actively participate in project development, delivering assigned tasks within the sprint week.
-      `
-    },
-    {
-      id: "rio-technology",
-      name: "RIO Technology",
-      date: "Apr 2021 - Sep 2022",
-      position: "Fullstack Developer",
-      description: `
-      As a Software Engineer at RIO Technology, I am responsible for learning and applying new technologies, 
-      collaborating with Back-end Developers to design and integrate Mockups & APIs, maintaining and upgrading features in existing products, 
-      proposing technology improvements, and 
-      contributing to projects using Vue.js, React.js, JQuery, and Laravel.
-      `
-    },
-    {
-      id: "anflash-technology",
-      name: "Anflash Technology",
-      date: "Jun 2020 - Apr 2021",
+      id: "examination",
+      name: "Website to schedule medical examination – Frontend Developer",
+      date: "Sep 2022 - Jan 2023",
       position: "Front-end Developer",
       description: `
-      As a Front-end Developer at Anflash Technology, I coordinate software deployments, 
-      design APIs with back-end developers, collaborate with team members to plan 
-      and develop project features and user interfaces, adjust design parameters, work with designers on product interfaces, 
-      deploy client projects using Filezilla, and design feature interfaces and APIs using React.js and Laravel.
-      `
+      With our appointment booking page, you can easily and quickly book an appointment. Simply visit our website and select the doctor or clinic closest to you, then choose the time and date that work best for you. And contributing to projects using ReactJS, NodeJS, SCSS, Vercel.
+      `,
     },
     {
-      id: "canawan",
-      name: "Canawan",
-      date: "May 2020 - Jun 2020",
+      id: "Spotify-Clone",
+      name: "Spotify Clone",
+      date: "July 2022 - Aug 2022",
       position: "Front-end Developer",
       description: `
-      As a Frontend intern at Canawan Office, I develop GUI software using Vue.js and React.js, enhancing web page functionality and user experience. 
-      Collaborate with Back-End Developer to build a Vue.js-based CMS.
-      `
-    }
-  ]
+      A front-end clone project of the Spotify Web Player, and contributing to projects using CSS, React.js, Github Page.
+      `,
+    },
+    {
+      id: "app-chat-funny",
+      name: "App Chat Funny",
+      date: "March 2022 - May 2022",
+      position: "Front-end Developer",
+      description: `
+      I coordinate software deployments,
+      collaborate with team members to plan
+      and develop project features and user interfaces, adjust design parameters, work with designers on product interfaces, deploy client projects using Filezilla, and design feature interfaces and APIs using React.js and contributing to projects using ReactJS, CSS, Firebase
+      `,
+    },
+    {
+      id: "laptop-shop",
+      name: "LapTop Shop Java Spring Boot – Final project of the Java web course",
+      date: "Nov 2021 - Jan 2022",
+      position: "Front-end Developer",
+      description: `
+      This is a final project of the Java web course. This project I worked on as a team. My group has 3 members. My position Design & code user interface components and add, remove, and
+      edit product functions. Contributing to projects using Java, Spring Boot, JSP-Servlet
+      `,
+    },
+  ],
 };
 
 export const PAGE_CONTENT_PROJECTS = {
   PROJECTS: [
     {
-      id: "casio.anhkhue.com",
+      id: "shoppe-clone",
       slug: "casio-anhkhue-com",
-      detailedName: "Anh khue Casio",
-      title: "Casio Anh Khue",
-      referenceSiteUrl: "//casio.anhkhue.com",
-      description: "The store sales the watches",
+      detailedName: "Shoppe Clone",
+      title: "Shoppe Clone",
+      referenceSiteUrl: "https://shopee-clone-reactjs.vercel.app/",
+      description: "The store sales the phone the watches",
       image:
-        "https://res.cloudinary.com/xskill/image/upload/v1658076646/statics/casio-anhkhue_xcye2u.webp",
+        "https://res.cloudinary.com/dgilz3ksx/image/upload/v1708508848/image%20for%20cv/n7t9vtbkcxxfjwyzbnn5.png",
       theResult:
         "Improved speed and user experience compared to the previous version. Enhanced user experience",
       metadata: {
         services: ["E-commerce"],
-        location: "Ho Chi Minh City",
-        website: "https://casio.anhkhue.com",
+        location: "Da Nang City",
+        website: "https://shopee-clone-reactjs.vercel.app/",
         thumbnails: [
-          "https://res.cloudinary.com/xskill/image/upload/v1687277369/meee/casio-1_vam33e.webp",
-          "https://res.cloudinary.com/xskill/image/upload/v1687277370/meee/casio-2_kbrgrz.webp",
-          "https://res.cloudinary.com/xskill/image/upload/v1687277368/meee/casio-3_ah4ihe.webp",
-          "https://res.cloudinary.com/xskill/image/upload/v1687277368/meee/casio-4_tgrr77.webp"
-        ]
-      }
+          "https://res.cloudinary.com/dgilz3ksx/image/upload/v1708508847/image%20for%20cv/nobskcuwbas3dzpjpods.png",
+          "https://res.cloudinary.com/dgilz3ksx/image/upload/v1708508847/image%20for%20cv/zgoga1h43jfpt33ketes.png",
+          "https://res.cloudinary.com/dgilz3ksx/image/upload/v1708508848/image%20for%20cv/n7t9vtbkcxxfjwyzbnn5.png",
+          "https://res.cloudinary.com/dgilz3ksx/image/upload/v1708508848/image%20for%20cv/k4w7n3ejmjhj4dyec9yh.png",
+        ],
+      },
     },
-    {
-      id: "gambox",
-      slug: "gambox",
-      detailedName: "Gambox Solutions",
-      title: "The Gambox solutions",
-      referenceSiteUrl: "none",
-      description: "The game campaign event solution for the brands",
-      image:
-        "https://res.cloudinary.com/xskill/image/upload/v1658076049/statics/gambox-desktop_vzgq24.webp",
-      theResult:
-        "Achieved an award in a start-up competition for software solutions",
-      metadata: {
-        services: ["Solutions"],
-        location: "Ho Chi Minh City",
-        website: null,
-        thumbnails: [
-          "https://res.cloudinary.com/xskill/image/upload/v1658076049/statics/gambox-desktop_vzgq24.webp"
-        ]
-      }
-    },
-    {
-      id: "codestus",
-      slug: "codestus",
-      detailedName: "Codestus",
-      title: "Codestus.com",
-      referenceSiteUrl: "https://codestus.com",
-      description:
-        "The personal blog to sharing the tips, knowledged in programming.",
-      image:
-        "https://res.cloudinary.com/xskill/image/upload/v1658076386/statics/codestus.com_okjdb0.webp",
-      theResult:
-        "Effective programming knowledge transfer, high website traffic, top Google ranking.",
-      metadata: {
-        services: ["Blog"],
-        location: "Unknown",
-        website: "https://codestus.com",
-        thumbnails: [
-          "https://res.cloudinary.com/xskill/image/upload/v1687275936/meee/codestus-1_tho7lj.webp",
-          "https://res.cloudinary.com/xskill/image/upload/v1687275936/meee/codestus-2_xoffk0.webp",
-          "https://res.cloudinary.com/xskill/image/upload/v1687275936/meee/codestus-4_m2u2up.webp"
-          // "https://res.cloudinary.com/xskill/image/upload/v1687275936/meee/codestus-3_pybl5u.webp",
-        ]
-      }
-    }
-  ]
+    // {
+    //   id: "gambox",
+    //   slug: "gambox",
+    //   detailedName: "Gambox Solutions",
+    //   title: "The Gambox solutions",
+    //   referenceSiteUrl: "none",
+    //   description: "The game campaign event solution for the brands",
+    //   image:
+    //     "https://res.cloudinary.com/xskill/image/upload/v1658076049/statics/gambox-desktop_vzgq24.webp",
+    //   theResult:
+    //     "Achieved an award in a start-up competition for software solutions",
+    //   metadata: {
+    //     services: ["Solutions"],
+    //     location: "Ho Chi Minh City",
+    //     website: null,
+    //     thumbnails: [
+    //       "https://res.cloudinary.com/xskill/image/upload/v1658076049/statics/gambox-desktop_vzgq24.webp",
+    //     ],
+    //   },
+    // },
+    // {
+    //   id: "codestus",
+    //   slug: "codestus",
+    //   detailedName: "Codestus",
+    //   title: "Codestus.com",
+    //   referenceSiteUrl: "https://codestus.com",
+    //   description:
+    //     "The personal blog to sharing the tips, knowledged in programming.",
+    //   image:
+    //     "https://res.cloudinary.com/xskill/image/upload/v1658076386/statics/codestus.com_okjdb0.webp",
+    //   theResult:
+    //     "Effective programming knowledge transfer, high website traffic, top Google ranking.",
+    //   metadata: {
+    //     services: ["Blog"],
+    //     location: "Unknown",
+    //     website: "https://codestus.com",
+    //     thumbnails: [
+    //       "https://res.cloudinary.com/xskill/image/upload/v1687275936/meee/codestus-1_tho7lj.webp",
+    //       "https://res.cloudinary.com/xskill/image/upload/v1687275936/meee/codestus-2_xoffk0.webp",
+    //       "https://res.cloudinary.com/xskill/image/upload/v1687275936/meee/codestus-4_m2u2up.webp",
+    //       // "https://res.cloudinary.com/xskill/image/upload/v1687275936/meee/codestus-3_pybl5u.webp",
+    //     ],
+    //   },
+    // },
+  ],
 };
 
 export const PAGE_CONTENT_HOME = {
   CODEPENS: [
     {
-      href: "https://codepen.io/CodeEN/pen/gOzByzm",
-      src: "https://res.cloudinary.com/xskill/image/upload/v1687279185/meee/codepen-1_lqljph.webp"
+      href: "https://codepen.io/DuyNghia123/pen/rNRbbGe",
+      src: "https://res.cloudinary.com/dgilz3ksx/image/upload/v1708508114/image%20for%20cv/vkkqbry3us5pwrmepali.png",
     },
     {
-      href: "https://codepen.io/CodeEN/pen/vYpYRbZ",
-      src: "https://res.cloudinary.com/xskill/image/upload/v1687279185/meee/codepen-2_jxfxbo.webp"
+      href: "https://codepen.io/DuyNghia123/pen/dyrLLZZ",
+      src: "https://res.cloudinary.com/dgilz3ksx/image/upload/v1708508115/image%20for%20cv/zbuesgk2j5tr9mcqp3sg.png",
     },
     {
-      href: "https://codepen.io/CodeEN/pen/ZEagjJE",
-      src: "https://res.cloudinary.com/xskill/image/upload/v1687279185/meee/codepen-3_qz57bd.webp"
+      href: "https://codepen.io/DuyNghia123/pen/WNmWWzq",
+      src: "https://res.cloudinary.com/dgilz3ksx/image/upload/v1708508114/image%20for%20cv/wancd5vq44gg1fc5thxv.png",
     },
     {
-      href: "https://codepen.io/CodeEN/pen/ZEaPXXW",
-      src: "https://res.cloudinary.com/xskill/image/upload/v1687279185/meee/codepen-4_toc1wv.webp"
+      href: "https://codepen.io/DuyNghia123/pen/poYBBKJ",
+      src: "https://res.cloudinary.com/dgilz3ksx/image/upload/v1708508114/image%20for%20cv/aiyzndr9oyuy4kvpsih0.png",
     },
     {
-      href: "https://codepen.io/CodeEN/pen/JjXmojm",
-      src: "https://res.cloudinary.com/xskill/image/upload/v1687279185/meee/codepen-6_wvde3w.webp"
+      href: "https://codepen.io/DuyNghia123/pen/xxBeeJr",
+      src: "https://res.cloudinary.com/dgilz3ksx/image/upload/v1708508114/image%20for%20cv/zlakjnf9grepqs1uwcvv.png",
     },
     {
-      href: "https://codepen.io/CodeEN/pen/XWdxBap",
-      src: "https://res.cloudinary.com/xskill/image/upload/v1687279185/meee/codepen-5_qqcoqi.webp"
+      href: "https://codepen.io/DuyNghia123/pen/WNmWWae",
+      src: "https://res.cloudinary.com/dgilz3ksx/image/upload/v1708508114/image%20for%20cv/rvm1lexms8z37umw7yfp.png",
     },
     {
-      href: "https://codepen.io/CodeEN/pen/wvMqLEE",
-      src: "https://res.cloudinary.com/xskill/image/upload/v1687279186/meee/codepen-7_xrljqs.webp"
-    }
-  ]
+      href: "https://codepen.io/DuyNghia123/pen/qBvwwJV",
+      src: "https://res.cloudinary.com/dgilz3ksx/image/upload/v1708508114/image%20for%20cv/bzotccyhkocwl88wjddj.png",
+    },
+  ],
 };

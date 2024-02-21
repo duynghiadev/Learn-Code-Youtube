@@ -19,9 +19,9 @@ const ProjectList = (props: ProjectListProps) => {
           <TextLegend className="mb-12">Portfolio</TextLegend>
           <TextMain className="mb-10">My recent works</TextMain>
           <TextDescription>
-            I've helped many clients scale and accelerate their businesses over
-            the past few years and here is a handpicked selection of my best
-            work.
+            Recently, I have built an e-commerce website where users can log in,
+            register, view products, filter as desired, make purchases, and
+            manage orders.
           </TextDescription>
         </Container>
       </Smoother.ScrollSection>
