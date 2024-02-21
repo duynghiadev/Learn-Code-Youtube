@@ -30,7 +30,7 @@ const ContactSection: FC<ContactSectionProps> = (props) => {
         className="min-w-[170px] mb-8"
         asChild
       >
-        <a target="_blank" href="mailto:duongductrong06@gmail.com">
+        <a target="_blank" href="mailto:duynghia22302@gmail.com">
           Get in touch <ArrowRight className="w-4 h-4 ml-2" />
         </a>
       </Button>

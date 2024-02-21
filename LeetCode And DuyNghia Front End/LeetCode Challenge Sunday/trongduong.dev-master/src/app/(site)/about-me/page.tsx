@@ -22,12 +22,13 @@ const AboutMe = (props: AboutMeProps) => {
         <Container>
           <TextLegend className="mb-12">About me</TextLegend>
           <TextMain className="mb-10">
-            Hello, I'm Duong Duc Trong <br /> a Front-End Developer
+            Hello, I'm Le Nguyen Duy Nghia <br /> a Front-End Developer
           </TextMain>
           <TextDescription>
-            with 3 years of experience. I have a passion for contributing to
-            open-source projects
-            <br /> and developing high-quality products.
+            With 2 years of studying and exploring React technology, I have
+            completed several personal projects,
+            <br /> and I hope in the future I can create large-scale products
+            using React to contribute to the company.
           </TextDescription>
         </Container>
       </Smoother.ScrollSection>
@@ -39,7 +40,7 @@ const AboutMe = (props: AboutMeProps) => {
         <Container className="flex flex-col md:flex-row gap-24">
           <div className="flex-1 overflow-hidden">
             <Image
-              src="/avatar-full.png"
+              src="/avatar-full.jpg"
               alt="Avatar"
               width={500}
               height={500}
@@ -56,19 +57,19 @@ const AboutMe = (props: AboutMeProps) => {
               clients.
             </p>
             <p className="text-lg text-gray-800 dark:text-gray-200 mb-8">
-              Received trust and recognition as a promising individual at RIO
-              Technology company where I have participated and contributed
-              during my work tenure.
+              I have garnered trust and recognition for my potential as an
+              individual while actively engaging in self-learning endeavors.
+              Despite being a student, I have not had the opportunity to work
+              for any company yet.
             </p>
             <p className="text-lg text-gray-800 dark:text-gray-200 mb-16">
-              Currently, I am working at WhammyTech as a Software Engineer,
-              gaining experience in various project domains such as Logistics,
-              Drag & drop applications, etc. My goal is to continue developing
-              my skills and professional knowledge!.
+              Currently, I am a fourth-year student with experience working on
+              course projects in previous semesters. My goal is to continue
+              developing my skills and professional knowledge!.
             </p>
             <p className="text-lg text-gray-800 dark:text-gray-200 mb-16">
-              I also enjoy contributing to open source projects and developing
-              products for personal growth
+              I also enjoy doing projects and developing products for personal
+              growth
             </p>
             <Button className="min-w-[170px] mb-16">
               Get in touch. <ArrowRight className="w-4 h-4 ml-2" />
@@ -123,74 +124,17 @@ const AboutMe = (props: AboutMeProps) => {
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4">
             <p className="text-lg font-medium mb-2">React.js</p>
             <p className="text-lg font-medium mb-2">Next.js</p>
-            <p className="text-lg font-medium mb-2">Remix.run</p>
+            {/* <p className="text-lg font-medium mb-2">Remix.run</p> */}
             <p className="text-lg font-medium mb-2">Tailwind.CSS</p>
             <p className="text-lg font-medium mb-2">SASS</p>
             <p className="text-lg font-medium mb-2">GSAP</p>
             <p className="text-lg font-medium mb-2">Typescript</p>
-            <p className="text-lg font-medium mb-2">Vue.js</p>
+            {/* <p className="text-lg font-medium mb-2">Vue.js</p> */}
             <p className="text-lg font-medium mb-2">Laravel</p>
             <p className="text-lg font-medium mb-2">Problem Solving</p>
           </div>
-          {/* {PAGE_CONTENT_ABOUT_ME.WORKS_EXPERIENCE.map((content) => (
-            <div>12</div>
-          ))} */}
         </Container>
       </Smoother.ScrollSection>
-
-      {/* <Smoother.ScrollSection asHorizontalScroll>
-        <div className="flex">
-          <div className="min-w-[500px] h-[500px]"></div>
-          <div className="relative min-w-[500px] h-[500px]">
-            <div className="w-4 h-4 rounded-full dark:bg-white absolute top-1/2 left-0 transform -translate-y-1/2"></div>
-            <div className="w-full h-[1px] bg-white absolute top-1/2 left-0"></div>
-
-            <div className="text-center absolute w-full top-[calc(50%-112px-24px)] left-1/2 -translate-x-1/2">
-              <p className="text-lg font-medium mb-2">Software Engineer</p>
-              <h2 className="text-3xl font-bold mb-4">Whammy Tech</h2>
-              <p className="text-base font-normal dark:text-gray-500">
-                09/2022 - Present
-              </p>
-            </div>
-          </div>
-          <div className="relative min-w-[500px] h-[500px]">
-            <div className="w-4 h-4 rounded-full dark:bg-white absolute top-1/2 left-0 transform -translate-y-1/2"></div>
-            <div className="w-full h-[1px] bg-white absolute top-1/2 left-0"></div>
-
-            <div className="text-center absolute w-full top-[calc(50%+24px)] left-1/2 -translate-x-1/2">
-              <p className="text-base font-normal dark:text-gray-500 mb-2">
-                04/2021 - 09/2022
-              </p>
-              <h2 className="text-3xl font-bold mb-4">RIO Technology</h2>
-              <p className="text-lg font-medium mb-2">Fullstack Developer</p>
-            </div>
-          </div>
-          <div className="relative min-w-[500px] h-[500px]">
-            <div className="w-4 h-4 rounded-full dark:bg-white absolute top-1/2 left-0 transform -translate-y-1/2"></div>
-            <div className="w-full h-[1px] bg-white absolute top-1/2 left-0"></div>
-
-            <div className="text-center absolute w-full top-[calc(50%-112px-24px)] left-1/2 -translate-x-1/2">
-              <p className="text-lg font-medium mb-2">Frontend Developer</p>
-              <h2 className="text-3xl font-bold mb-4">Anflash Technology</h2>
-              <p className="text-base font-normal dark:text-gray-500">
-                04/2020 - 04/2021
-              </p>
-            </div>
-          </div>
-          <div className="relative min-w-[500px] h-[500px]">
-            <div className="w-4 h-4 rounded-full dark:bg-white absolute top-1/2 left-0 transform -translate-y-1/2"></div>
-            <div className="w-full h-[1px] bg-white absolute top-1/2 left-0"></div>
-
-            <div className="text-center absolute w-full top-[calc(50%+24px)] left-1/2 -translate-x-1/2">
-              <p className="text-base font-normal dark:text-gray-500 mb-2">
-                02/2020 - 04/2022
-              </p>
-              <h2 className="text-3xl font-bold mb-4">Kha Kim</h2>
-              <p className="text-lg font-medium mb-2">Front-end Developer</p>
-            </div>
-          </div>
-        </div>
-      </Smoother.ScrollSection> */}
     </>
   );
 };

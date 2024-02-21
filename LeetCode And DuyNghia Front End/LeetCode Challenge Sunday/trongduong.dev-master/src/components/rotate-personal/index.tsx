@@ -26,7 +26,7 @@ const RotatePersonal: FC<RotatePersonalProps> = ({ enableLogo, ...props }) => {
             width={170}
             height={170}
             className="rounded-full max-w-[100px] md:max-w-[170px] max-h-[100px] md:max-h-[170px] object-cover"
-            src="/avatar-small.png"
+            src="/avatar-small.jpg"
             alt="Personal"
           />
         ) : (
@@ -58,7 +58,7 @@ const RotatePersonal: FC<RotatePersonalProps> = ({ enableLogo, ...props }) => {
           </defs>
           <text fontSize="11.5" className="text-gray-950 dark:fill-gray-50">
             <textPath xlinkHref="#circle">
-              - Duong Duc Trong - Front-end Developer
+              - Le Nguyen Duy Nghia - Front-end Developer
             </textPath>
           </text>
         </svg>

@@ -23,7 +23,7 @@ const HeaderSection: FC<HeaderSectionProps> = () => {
   return (
     <Container className="relative flex gap-4">
       <h1 className="font-bold tracking-widest text-2xl whitespace-nowrap">
-        <Link href={"/"}>Trong Duong.</Link>
+        <Link href={"/"}>Duy Nghia.</Link>
       </h1>
       <div className="ml-auto flex items-center gap-6">
         <HeaderNavItem>
@@ -41,7 +41,7 @@ const HeaderSection: FC<HeaderSectionProps> = () => {
         <HeaderNavItem>
           <a
             target="_blank"
-            href="/Duong%20Duc%20Trong%20-%20Software%20Engineer.pdf"
+            href="/LeNguyenDuyNghia%20-%20Software%20Engineer.pdf"
           >
             <span className="hidden md:inline-block">Resume</span>
             <Box className="inline-block md:hidden w-5 h-5" />

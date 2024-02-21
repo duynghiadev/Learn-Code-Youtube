@@ -8,7 +8,7 @@ const ReferenceSocialsGroup: FC<ReferenceSocialsGroupProps> = () => {
     <div className="flex flex-wrap items-center gap-6">
       <a
         target="_blank"
-        href="https://www.linkedin.com/in/duongductrong/"
+        href="https://www.linkedin.com/in/duynghiale/"
         className="inline-flex items-center gap-2"
       >
         <ArrowUpRight className="w-4 h-4" />
@@ -16,7 +16,7 @@ const ReferenceSocialsGroup: FC<ReferenceSocialsGroupProps> = () => {
       </a>
       <a
         target="_blank"
-        href="https://twitter.com/duongductrong_"
+        href="https://twitter.com/nghia_dian"
         className="inline-flex items-center gap-2"
       >
         <ArrowUpRight className="w-4 h-4" />
@@ -24,7 +24,7 @@ const ReferenceSocialsGroup: FC<ReferenceSocialsGroupProps> = () => {
       </a>
       <a
         target="_blank"
-        href="https://github.com/duongductrong"
+        href="https://github.com/duynghiadev/"
         className="inline-flex items-center gap-2"
       >
         <ArrowUpRight className="w-4 h-4" />
@@ -32,7 +32,7 @@ const ReferenceSocialsGroup: FC<ReferenceSocialsGroupProps> = () => {
       </a>
       <a
         target="_blank"
-        href="https://codepen.io/codeEN"
+        href="https://codepen.io/DuyNghia123"
         className="inline-flex items-center gap-2"
       >
         <ArrowUpRight className="w-4 h-4" />
