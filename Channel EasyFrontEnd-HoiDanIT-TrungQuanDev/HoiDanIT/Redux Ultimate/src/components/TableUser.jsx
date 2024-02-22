@@ -9,7 +9,6 @@ const TableUser = (props) => {
   const listUsers = useSelector((state) => {
     return state.user.listUsers
   })
-  console.log('test')
 
   useEffect(() => {
     dispatch(fetchAllUser())
