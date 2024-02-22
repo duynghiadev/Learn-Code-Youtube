@@ -1,0 +1,28 @@
+{
+  "name": "next-14-empty-starter-template",
+  "version": "0.1.0",
+  "author": {
+    "name": "Hỏi Dân IT",
+    "url": "https://hoidanit.com.vn"
+  },
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "next": "14.0.2"
+  },
+  "devDependencies": {
+    "typescript": "5.2.2",
+    "@types/node": "20.9.0",
+    "@types/react": "18.2.37",
+    "@types/react-dom": "18.2.15",
+    "eslint": "8.53.0",
+    "eslint-config-next": "14.0.2"
+  }
+}
