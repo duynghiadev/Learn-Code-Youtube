@@ -7,7 +7,8 @@ import {
   FETCH_USER_ERROR,
   CREATE_USER_REQUEST,
   CREATE_USER_SUCCESS,
-  CREATE_USER_ERROR
+  CREATE_USER_ERROR,
+  DELETE_USER_SUCCESS
 } from './types'
 
 export const increaseCounter = () => {
@@ -90,5 +91,25 @@ export const createNewUserRedux = (email, password, username) => {
       console.log(error)
       dispatch(createUserError())
     }
+  }
+}
+
+export const deleteUserRedux = (id) => {
+  return async (dispatch, getState) => {
+    try {
+      let res = await axios.post(`http://localhost:8080/users/delete/${id}`)
+      if (res && res.data.errCode === 0) {
+        dispatch(deleteUserSuccess())
+        dispatch(fetchAllUser())
+      }
+    } catch (error) {
+      console.log(error)
+    }
+  }
+}
+
+export const deleteUserSuccess = () => {
+  return {
+    type: DELETE_USER_SUCCESS
   }
 }

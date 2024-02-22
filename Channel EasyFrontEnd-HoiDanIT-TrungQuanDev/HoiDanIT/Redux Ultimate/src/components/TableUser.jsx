@@ -2,7 +2,7 @@ import Table from 'react-bootstrap/Table'
 import Container from 'react-bootstrap/Container'
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { fetchAllUser } from '../action/actions'
+import { deleteUserRedux, fetchAllUser } from '../action/actions'
 
 const TableUser = (props) => {
   const dispatch = useDispatch()
@@ -22,7 +22,7 @@ const TableUser = (props) => {
   }, [])
 
   const handleDeleteUser = (user) => {
-    console.log(user)
+    dispatch(deleteUserRedux(user.id))
   }
 
   if (isError === false && isLoading === true) {
@@ -38,12 +38,10 @@ const TableUser = (props) => {
               <th>Action</th>
             </tr>
           </thead>
-          <tbody>
-            <>
-              <div>Loading data...</div>
-            </>
-          </tbody>
         </Table>
+        <>
+          <div>Loading data...</div>
+        </>
       </Container>
     )
   }
@@ -99,12 +97,10 @@ const TableUser = (props) => {
               <th>Action</th>
             </tr>
           </thead>
-          <tbody>
-            <>
-              <div>Something wrongs, please try again...</div>
-            </>
-          </tbody>
         </Table>
+        <>
+          <div>Something wrongs, please try again...</div>
+        </>
       </Container>
     )
   }
