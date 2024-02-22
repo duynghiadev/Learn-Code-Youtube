@@ -1,19 +1,18 @@
 import Table from 'react-bootstrap/Table'
 import Container from 'react-bootstrap/Container'
-import { useEffect, useState } from 'react'
-import axios from 'axios'
+import { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { fetchAllUser } from '../action/actions'
 
 const TableUser = (props) => {
-  const [listUsers, setListUsers] = useState()
-
-  const fetchAllUser = async () => {
-    const res = await axios.get('http://localhost:8080/users/all')
-    const data = res && res.data ? res.data : []
-    setListUsers(data)
-  }
+  const dispatch = useDispatch()
+  const listUsers = useSelector((state) => {
+    return state.user.listUsers
+  })
+  console.log('test')
 
   useEffect(() => {
-    fetchAllUser()
+    dispatch(fetchAllUser())
   }, [])
 
   const handleDeleteUser = (user) => {
