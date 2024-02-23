@@ -1,0 +1,68 @@
+section {
+  margin-bottom: 70px;
+}
+
+.Slider-skeleton {
+  height: 100vh;
+  width: 100%;
+}
+
+.page {
+  margin: 150px 0 50px;
+  min-height: calc(100vh - 390px);
+}
+.minPage{
+  min-height: calc(100vh - 190px);
+  display: flex;
+  justify-content: center;
+align-items: center;
+margin: 0;
+}
+
+.error,
+.noResults {
+  text-transform: capitalize;
+  color: rgb(145, 145, 145);
+}
+
+.searchRes {
+  color: var(--orange);
+  text-transform: capitalize;
+}
+
+.categoryTitle {
+  text-transform: capitalize;
+  color: var(--orange);
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.sectionCard {
+  display: grid;
+  justify-content: center;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 250px));
+}
+
+.spinner {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.notFound{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: capitalize;
+    color: #777;
+height:calc( 100vh - 190px);
+
+}
+.notFound span{
+  text-align: center;
+  font-size: 80px;
+  font-weight: 700;
+  display: block;
+}

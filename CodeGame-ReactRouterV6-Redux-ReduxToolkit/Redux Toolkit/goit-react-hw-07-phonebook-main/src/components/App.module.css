@@ -1,0 +1,30 @@
+.container {
+    background-color: white;
+    border-radius: 7px;
+    box-shadow: 5px 5px 19px -5px rgba(0,0,0,0.5);
+    -webkit-box-shadow: 5px 5px 19px -5px rgba(0,0,0,0.5);
+    -moz-box-shadow: 5px 5px 19px -5px rgba(0,0,0,0.5);
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    width: 100%;
+}
+
+.phoneBook {
+    text-transform: uppercase;
+    color: white;
+    padding: 5px;
+    background-color: #04AA6D;
+    border-radius: 7px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.phoneBook__options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+}

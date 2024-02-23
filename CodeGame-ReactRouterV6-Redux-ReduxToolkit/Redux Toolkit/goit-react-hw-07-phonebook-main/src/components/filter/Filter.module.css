@@ -1,0 +1,34 @@
+.filter {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.label {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 3% 10%;
+    color: white;
+    border-radius: 7px;
+    background-color: #04AA6D;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+label:focus-within {
+    background-color: #3e8e41;
+}
+
+.input {
+    outline: none;
+    color: #04AA6D;
+    padding: 2%;
+    font-weight: 600;
+    border-radius: 7px;
+    border: none;
+}

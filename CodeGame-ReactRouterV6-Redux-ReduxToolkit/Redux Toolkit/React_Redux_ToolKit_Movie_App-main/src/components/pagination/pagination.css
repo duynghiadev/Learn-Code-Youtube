@@ -1,0 +1,38 @@
+.customPagination .pageNum{
+    display: flex;
+    justify-content: center;
+    padding: 2px;
+    flex-wrap: wrap;
+  
+  }
+  .customPagination .pageNum li{
+    border-radius: 10px;
+    /* border: 2px solid var(--orange); */
+    background-color: var(--dark-gray-6);
+    margin: 0 2px;
+
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin-bottom: 5px;
+  
+  }
+  .customPagination .pageNum  li a{
+  display: block;
+  padding: 6px 16px;
+  color: white;
+  text-align: center;
+  font-size: 17px;
+  font-weight: 500;
+  cursor: pointer;
+  line-height: 1.2;
+  
+  }
+  .customPagination .pageNum li:hover{
+  background-color:var(--orange);
+  transition: .2s ;
+  }
+
+  .customPagination .pageNum .active{
+    background-color:var(--orange);
+
+  }

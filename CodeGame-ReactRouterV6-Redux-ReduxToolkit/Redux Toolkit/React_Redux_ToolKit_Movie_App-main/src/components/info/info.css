@@ -1,0 +1,243 @@
+/* start info */
+.info {
+  min-height: 480px;
+  position: relative;
+  background-attachment: fixed !important;
+  background-size: cover !important;
+  background-position: left center !important;
+  background-repeat: no-repeat !important;
+}
+
+.info::after,
+.info::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  z-index: 0;
+}
+.info::after {
+  width: 70%;
+  background: linear-gradient(to right, #161619, rgba(255, 255, 255, 0));
+}
+.info::before {
+  width: 100%;
+  background: linear-gradient(to top, #161619, rgba(255, 255, 255, 0));
+}
+
+.info .container {
+  position: relative;
+  z-index: 3;
+  padding-top: 150px;
+}
+
+.infoTitle {
+  position: relative;
+  text-transform: capitalize;
+  font-size: 3rem;
+  font-weight: 400;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.infoContent {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.infoContent img {
+  width: 180px;
+  object-fit: contain;
+  border-radius: 6px;
+}
+.infoDetails {
+  flex-grow: 1;
+}
+.infoDetails div {
+  margin-top: 10px;
+}
+.infoDetails span {
+  font-size: 20px;
+  color: rgb(224, 224, 224);
+  text-transform: capitalize;
+  margin-left: 10px;
+}
+
+.infoDetails .genre{
+    margin-left: 10px;
+    text-transform: capitalize;
+    font-size: 20px;
+    color: rgb(224, 224, 224);
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.infoDetails .genre span{
+    margin-bottom: 5px;
+    margin-top: 5px;
+    display: block;
+border: 1px solid var(--orange);
+padding: 4px 12px;
+font-size: .875rem;
+    font-weight: 400;
+    line-height: 1.25rem;
+    letter-spacing: .01786em;
+    border-radius: 1rem;
+}
+
+.infoDetails .rating i {
+  color: var(--orange);
+  margin-left: 5px;
+}
+/* end info */
+
+/* start Story */
+.movieStory {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.movieStory h2 {
+  margin-bottom: 15px;
+  color: var(--orange);
+  letter-spacing: 1.5px;
+  border-bottom: 2px solid var(--orange);
+  padding-bottom: 5px;
+  width: fit-content;
+}
+.movieStory p {
+  color: white;
+  word-spacing: 2px;
+}
+/* end Story */
+
+/* start download */
+.download {
+  display: flex;
+  justify-content: center;
+}
+.downloadBox {
+  display: flex;
+
+  align-items: center;
+  background-color: var(--dark-gray-6);
+  padding: 15px;
+  border-radius: 10px;
+  flex-wrap: wrap;
+}
+.downloadBox .quality {
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  margin-right: 120px;
+  margin-bottom: 5px;
+}
+.qualityLink {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.downloadBox a {
+  font-size: 20px;
+  text-transform: uppercase;
+  padding: 6px 12px;
+  border-radius: 20px;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  cursor: pointer;
+}
+.downloadBox a i {
+  font-size: 30px;
+}
+
+.downloadBox .downloadLink {
+  background-color: var(--dark-blue);
+}
+.downloadBox .watchLink {
+  background-color: var(--green);
+}
+/* end download */
+
+/* start cast */
+.cast {
+}
+.cast h2 {
+  color: var(--orange);
+  margin-bottom: 15px;
+}
+.castContent {
+  background-color: var(--dark-gray-1);
+  border-radius: 10px;
+  padding: 20px 10px;
+ display: grid;
+ grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
+  gap: 20px;
+
+}
+.castContent li {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.castContent img {
+  width: 80px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+.castContent li > p {
+  text-transform: capitalize;
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+}
+
+.castContent li > p > span {
+  color: white;
+  display: block;
+  font-weight: 500;
+  color: #777;
+}
+
+/* end cast */
+
+
+/* start keywords  */
+.keywords {
+}
+
+.keywords h4 {
+  text-transform: capitalize;
+  color: var(--orange);
+  margin-bottom: 10px;
+}
+
+.keywords span {
+  display: inline-block;
+  padding: 4px 12px;
+  color: #c4c4c4;
+  border: 1px solid #ffffff;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.25rem;
+  letter-spacing: 0.01786em;
+  margin-bottom: 8px;
+  margin-right: 8px;
+}
+
+/* end keywords  */
+
+.lineBR{
+    margin: 50px 0;
+width: 100%;
+height: 3px;
+background: radial-gradient(circle, rgba(30,30,33,1) 0%, rgba(30,30,33,0) 100%);
+}
