@@ -1,0 +1,40 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/components/*": ["src/components/*"],
+      "@/pages/*": ["src/pages/*"]
+    }
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "src/components/layout/ActiveLink.js",
+    "src/components/ProductDetail",
+    "src/components/ProductCategory/MainContent/Filter/Accordions",
+    "src/components/layout/Navigation.tsx",
+    "src/components/ProductCategory/ProductList.js",
+    "src/hooks/useHttp.js",
+    "src/components/common/utils.js",
+    "src/components/login/Auth.js",
+    "src/components/common/Modal.tsx",
+    "src/components/common/SizeAndColor",
+    "src/pages/index.js"
+  ],
+  "exclude": ["node_modules"]
+}

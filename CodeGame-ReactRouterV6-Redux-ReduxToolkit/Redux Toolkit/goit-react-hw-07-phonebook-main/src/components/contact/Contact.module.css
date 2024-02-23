@@ -1,0 +1,50 @@
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  padding: 3% 10%;
+  color: white;
+  border-radius: 7px;
+  background-color: #04aa6d;
+  font-weight: 600;
+}
+
+.btn {
+  padding: 3% 5%;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-align: center;
+  text-transform: capitalize;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #ff0000c0;
+  border: none;
+  border-radius: 7px;
+}
+
+.btn:hover {
+  background-color: #ff0000;
+}
+
+.blockInfo {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.blocked {
+  text-decoration: line-through;
+}
+
+.btnBlocked {
+  background-color: #3e8e41;
+}
+
+.btnBlocked:hover {
+  background-color: #00b306;
+}

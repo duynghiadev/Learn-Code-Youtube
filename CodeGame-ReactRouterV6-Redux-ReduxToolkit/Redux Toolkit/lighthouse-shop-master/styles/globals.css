@@ -1,0 +1,100 @@
+@import url("https://cdn.jsdelivr.net/npm/@xz/fonts@1/serve/plus-jakarta-display.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *,
+  ::after,
+  ::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: "Plus Jakarta Display", sans-serif;
+    line-height: 1;
+    font-size: 16px;
+    font-weight: 400;
+    color: #000;
+    overflow-x: hidden;
+  }
+
+  input,
+  select,
+  button {
+    font-family: inherit;
+    color: inherit;
+    outline: none;
+  }
+
+  textarea {
+    font-family: "Roboto", sans-serif !important;
+    outline: none;
+  }
+}
+
+@layer components {
+  .layout-container {
+    @apply max-w-[1239px] mx-auto xl:px-8;
+  }
+
+  .absolute-x-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .absolute-y-center {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .absolute-center {
+    @apply absolute-x-center absolute-y-center;
+  }
+
+  .flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .flex-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .crossed {
+    background: linear-gradient(
+      to top left,
+      rgba(156, 163, 175, 0) 0%,
+      rgba(156, 163, 175, 0) calc(50% - 1px),
+      rgba(156, 163, 175, 1) 50%,
+      rgba(156, 163, 175, 0) calc(50% + 1px),
+      rgba(156, 163, 175, 0) 100%
+    );
+  }
+}
+
+@layer utilities {
+  .drop-shadow-logo {
+    filter: drop-shadow(0 4px 4px rgb(0, 0, 0, 0.25));
+  }
+
+  .translate3d-rotate {
+    transform: translate3d(-525%, 0, 0) rotate(35deg);
+  }
+
+  .translate3d-rotate-hover {
+    transform: translate3d(2000%, 0, 0) rotate(35deg);
+  }
+
+  .shape-outside-round {
+    shape-outside: circle();
+  }
+}

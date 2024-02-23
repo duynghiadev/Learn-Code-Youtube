@@ -1,0 +1,199 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 60vh;
+  gap: 20px;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  gap: 1rem;
+}
+
+.wrapper:hover {
+  transform: scale(1.02);
+}
+
+.vehicle-header {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  margin-top: 30px;
+}
+
+.vehicle-subheader {
+  text-align: center;
+  font-size: 18px;
+}
+
+.dot-header {
+  text-align: center;
+}
+
+.sliderWrapper {
+  overflow: auto;
+}
+
+.swiper-wrapper,
+.swiper {
+  width: 100% !important;
+  height: 65vh;
+  display: flex;
+  align-items: center;
+}
+
+.swiper {
+  position: relative;
+}
+
+.swiper-prev,
+.swiper-next {
+  position: absolute;
+  top: 50%;
+
+  /* transform: translateY(-50%); */
+
+  /* z-index: 10; */
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  background-color: #97bf0f;
+}
+
+.swiper-prev {
+  border-top-right-radius: 1.5rem;
+  border-bottom-right-radius: 1.5rem;
+  width: 3rem;
+  height: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  margin-right: 10px;
+}
+
+.swiper-next {
+  right: calc(-30px - 1.5em);
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+  width: 3rem;
+  height: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 0;
+}
+
+.car-description {
+  width: 18rem;
+  font-size: smaller;
+
+  /* margin: 20px; */
+}
+
+.slide-container {
+  background-color: #807d7d;
+  border-radius: 50%;
+  width: fit-content;
+  height: 15rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10%;
+}
+
+.slide-socials {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.car {
+  width: 20rem;
+  border-radius: 30rem;
+}
+
+.dot {
+  color: #727171;
+}
+
+.icon {
+  width: 2rem;
+  height: 2rem;
+}
+
+.car-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: auto;
+}
+
+.reservation-page {
+  width: 500px;
+  margin: 0 auto;
+}
+
+.reservation-form {
+  margin-top: 20px;
+}
+
+.reservation-form label {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.reservation-form input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.reservation-form button {
+  background-color: #000;
+  color: #fff;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.active {
+  background: #97bf0f;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

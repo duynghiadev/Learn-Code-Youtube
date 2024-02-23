@@ -1,0 +1,42 @@
+.mainTitle {
+  margin-bottom: 60px;
+  display: flex;
+  justify-content: center;
+}
+
+.mainTitle h2 {
+  width: fit-content;
+  cursor: default;
+  position: relative;
+}
+
+.mainTitle h2 span {
+  font-size: 40px;
+  text-transform: uppercase;
+  color: var(--white);
+  letter-spacing: 0.4rem;
+  transition: 1s;
+  padding-left: 2px;
+  text-align: center;
+  display: block;
+}
+
+.mainTitle h2::before {
+  position: absolute;
+  left: -25%;
+  bottom: 0;
+  z-index: -1;
+  content: "";
+  background: var(--orange);
+  height: 100%;
+  min-width: 28px;
+  width: 0%;
+  transition: 1s linear;
+  border-radius: 0;
+}
+
+.mainTitle h2:hover::before {
+  left: 0%;
+  width: 100%;
+  border-radius: 2px;
+}
