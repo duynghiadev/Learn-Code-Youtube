@@ -3,20 +3,25 @@ import './App.css'
 import { decrement, increment } from './redux/slices/counterSlice'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
+import { fetchAllUsers } from './redux/slices/userSlice'
 
 const App = () => {
   const dispatch = useDispatch()
-  const count = useSelector((state) => state.counter.value)
 
-  const [listUsers, setListUsers] = useState([])
+  const listUsers = useSelector((state) => state.user.listUsers)
+  const isLoading = useSelector((state) => state.user.isLoading)
+  const isError = useSelector((state) => state.user.isError)
 
   useEffect(() => {
-    fetchAllUser()
+    dispatch(fetchAllUsers())
   }, [])
 
-  const fetchAllUser = async () => {
-    const res = await axios('http://localhost:8080/users/all')
-    setListUsers(res.data ? res.data : [])
+  if (isError === true && isLoading === false) {
+    return <div>Something wrongs. Please try again!</div>
+  }
+
+  if (isError === false && isLoading === true) {
+    return <div>Loading data...</div>
   }
 
   return (
