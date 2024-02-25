@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { deleteProduct } from '../Product/actions/action'
+
 function Cart(props) {
   return (
     <div>
@@ -39,9 +40,11 @@ const mapStateToProps = (state) => {
     total: state.cart.total
   }
 }
+
 const mapDispatchToProps = (dispatch) => {
   return {
     deleteProduct: (product_current) => dispatch(deleteProduct(product_current))
   }
 }
+
 export default connect(mapStateToProps, mapDispatchToProps)(Cart)

@@ -4,6 +4,7 @@ import Cart from './Cart/index'
 import { product } from './dummy/product'
 import { Provider } from 'react-redux'
 import store from './store'
+
 function App() {
   return (
     <Provider store={store}>
