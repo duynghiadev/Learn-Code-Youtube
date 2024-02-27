@@ -47,7 +47,6 @@ const getDataLevel2 = async () => {
 getDataLevel2()
 
 // Level 3
-
 const handlerRequest = (promise) => {
   return promise.then((data) => [undefined, data]).catch((error) => [error, undefined])
 }
@@ -70,7 +69,7 @@ const handlerRequest = (promise) => {
   }
 })()
 
-// custom code level 3 (I do it yourself)
+// ✅✅✅✅ custom code level 3 (I do it yourself) ✅✅✅✅
 
 // Define a function to handle requests asynchronously
 const handleRequest = async (requestData) => {
