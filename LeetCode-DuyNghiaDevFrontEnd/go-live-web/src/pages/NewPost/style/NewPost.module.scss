@@ -1,0 +1,26 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 10px;
+
+  .left {
+    //
+  }
+
+  .right {
+    position: relative;
+    background-color: var(--web-light);
+    padding: 16px;
+    max-height: calc(100vh - 116px);
+    overflow-y: auto;
+
+    .publish-btn {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      padding: 10px 24px;
+      border-radius: 20px;
+      background-color: var(--web-active);
+    }
+  }
+}
