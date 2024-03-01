@@ -1,3 +1,3 @@
 ## Đây là series học về JavaScript
 
-[Link tutorial](https://bit.ly/46LswLe)
+[Link tutorial](https://bit.ly/3P1a7nD)

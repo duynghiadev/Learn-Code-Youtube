@@ -77,7 +77,7 @@
 - Nếu chúng ta sử dụng 2 dấu bằng (`==`) trừ khi chúng ta đang biết là ta đang làm gì đó, và hiểu được cách sử dụng của nó hoặc là đang hướng dẫn ai đó hiểu 2 dấu bằng khác nhau như thế nào với 3 dấu bằng
 - Trong thực tế thì mọi người hầu như đều sử dụng 3 dấu bằng (`===`) để so sánh cái gì đó
 
-- [MDN bảng so sánh bằng](https://bit.ly/3uVL7XD)
+- [MDN bảng so sánh bằng](https://mzl.la/4bXGuNN)
 - [MDN bảng Precedence](https://bom.so/0kf88Q)
 - ![img_6.png](img_6.png)
 

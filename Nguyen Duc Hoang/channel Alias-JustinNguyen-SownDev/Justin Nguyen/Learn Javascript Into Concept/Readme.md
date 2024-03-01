@@ -1,10 +1,11 @@
 ## Trong đây là mình sẽ học về JavaScript trên kênh youtube của Justin Nguyen
 
-[Link tutorial](https://bit.ly/3v29K4R)
+[Link tutorial](https://bit.ly/3SXl22S)
 
 # Series Video Học JavaScript Qua Khái Niệm
 
 ## Đối tượng hướng đến:
+
 - Bạn là người chưa biết về JavaScript?
 - Muốn ôn lại những khái niệm trong JavaScript?
 - Bạn chưa tìm được video ưng ý ngắn gọn để học JavaScript một cách bài bản để hiểu tận gốc?
@@ -17,6 +18,7 @@ Vâng, đây là series video học JavaScript thông qua những khái niệm q
 ### [Học JavaScript Qua Ví Dụ](https://www.youtube.com/watch?v=QXwotZn5WrY&list=PL80CNtS5d8_yEuis6Cc4xTnNB4ePE5obx)
 
 ## Nội dung trong series Học Javascript Qua Khái Niệm:
+
 - Phần Giới Thiệu
 - Lexical Environment, Execution Context, Hoisting, Context Parser
 - Execution Stack, Invocation và Variable Environment
@@ -34,6 +36,7 @@ Vâng, đây là series video học JavaScript thông qua những khái niệm q
 - ...Liên tục cập nhật
 
 ## Theo dõi và Liên hệ:
+
 - [Website](https://appsindie.com/)
 - [Twitter](https://twitter.com/apps_indie)
 - [Facebook](https://www.facebook.com/AppsIndie)
