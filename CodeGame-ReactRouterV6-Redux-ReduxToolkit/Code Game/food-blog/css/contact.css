@@ -1,0 +1,127 @@
+/****************** CONTACT PAGE ******************/
+
+.contact {
+    padding-top: 80px;
+    padding-bottom: 100px;
+}
+
+/********** Contact Form ***********/
+
+.contact__form input,
+.contact__form textarea {
+    border: none;
+    padding: 0 30px;
+    margin-bottom: 25px;
+    width: 100%;
+    height: 50px;
+
+    background-color: #eff3f7;
+
+    font-size: 14px;
+    font-style: italic;
+    font-family: inherit;
+}
+
+h2.contact__title {
+    margin-bottom: 70px;
+    font-size: 24px;
+}
+
+textarea.contact__form-message {
+    padding: 30px;
+    height: 200px;
+    resize: vertical;
+}
+
+button.contact__form-btn {
+    border: none;
+    padding: 18px 60px;
+    
+    color: #fff;
+    background-color: #ff2a6b;
+    
+    font-size: 14px;
+    font-family: inherit;
+
+    cursor: pointer;
+}
+
+/********* Contact Info ************/
+
+.contact__logo {
+    margin-bottom: 30px;
+    padding-top: 50px;
+}
+
+/* Laptop */
+@media only screen and (min-width: 992px) {
+    .contact__logo {
+        padding-top: 0;
+    }
+}
+
+/* Laptop */
+@media only screen and (min-width: 992px) {
+    .contact__info {
+        padding-left: 100px;
+    }
+}
+
+ul.contact__info-list {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+/* Tablet */
+@media only screen and (min-width: 768px) {
+    ul.contact__info-list {
+        flex-flow: row nowrap;
+    }
+}
+
+/* Laptop */
+@media only screen and (min-width: 992px) {
+    ul.contact__info-list {
+        flex-flow: column nowrap;
+    }
+}
+
+ul.contact__info-list > li {
+    width: 100%;
+    padding-bottom: 20px;
+}
+
+ul.contact__info-list h3 {
+    display: inline-block;
+    border-bottom: 1px solid #ff2a6b;
+    margin-bottom: 5px;
+    
+    color: #ff2a6b;
+    font-weight: 500;
+    font-size: 16px;
+}
+ul.contact__info-list p {
+    color: #474747;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 2;
+}
+
+ul.contact__info-social {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    padding-top: 30px;
+}
+
+ul.contact__info-social > li {
+    padding-right: 25px;
+}
+
+ul.contact__info-social a {
+    color: #474747;
+}
+
+ul.contact__info-social a:hover {
+    color: #ff2a6b;
+}

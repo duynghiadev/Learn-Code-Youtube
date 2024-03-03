@@ -1,0 +1,231 @@
+/***************** SECTION HERO *********************/
+
+.hero {
+    height: 767px;
+
+    background-image: url(../images/recipes/single-big.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+}
+
+/********** Recipe detail section ***********/
+.recipe-detail {
+    padding-top: 100px;
+    padding-bottom: 60px;
+}
+
+.recipe-detail__header {
+    padding-bottom: 50px;
+}
+
+.recipe-detail__heading {
+    position: relative;
+
+    color: #474747;
+    font-size: 36px;
+    font-weight: 600;
+}
+
+.recipe-detail__heading::before {
+    content: "For Begginers";
+    position: absolute;
+    top: -50px;
+    left: 0;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 50px;
+
+    background-color: #ff2a6b;
+
+    font-size: 16px;
+    font-weight: normal;
+    color: #fff;
+}
+
+.recipe-detail__heading::after {
+    content: "";
+    position: absolute;
+    top: -50px;
+    left: 150px;
+
+    width: 0;
+    border-width: 25px 15px;
+    border-style: solid;
+    border-color: #ff2a6b transparent transparent #ff2a6b;
+}
+
+.recipe-detail__date {
+    color: #a4a4a4;
+}
+
+ul.recipe-detail__rating {
+    display: flex;
+    flex-flow: row nowrap;
+    padding-top: 25px;
+}
+
+ul.recipe-detail__rating > li {
+    padding-right: 3px;
+}
+
+ul.recipe-detail__rating i {
+    color: #fbb710;
+}
+
+ul.recipe-detail__rating > li:last-child i {
+    color: #e0e3e4;
+}
+
+.recipe-detail__box {
+    position: relative;
+    padding: 50px 35px 50px 50px;
+    background-color: #eff3f7;
+}
+
+.recipe-detail__title {
+    padding-top: 120px;
+}
+
+.recipe-detail__summary {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    padding: 20px 118px 20px 50px;
+    background-color: #ff2a6b;
+    color: #fff;
+
+    font-size: 15px;
+    font-weight: normal;
+    line-height: 2;
+}
+
+/* Tablet */
+@media only screen and (min-width: 768px) {
+    .recipe-detail__summary {
+        padding: 20px 400px 20px 50px;
+    }
+}
+
+/* Laptop */
+@media only screen and (min-width: 992px) {
+    .recipe-detail__summary {
+        padding: 20px 170px 20px 50px;
+    }
+}
+
+.recipe-detail__summary::after {
+    content: "";
+    position: absolute;
+    right: -58px;
+    top: 0;
+
+    width: 0;
+    border-width: 62px 29px;
+    border-style: solid;
+    border-color: #ff2a6b transparent transparent #ff2a6b;
+}
+
+.recipe-detail__summary p {
+    color: #ffffff;
+}
+
+/*********** Recipe-detail check-box-list **********/
+
+ul.recipe-detail__check-box-list > li {
+    position: relative;
+    padding-top: 35px;
+}
+
+ul.recipe-detail__check-box-list input[type="checkbox"] {
+    position: absolute;
+    padding: 30px;
+    visibility: hidden;
+}
+
+ul.recipe-detail__check-box-list label.square {
+    display: inline-block;
+    padding-left: 50px;
+    color: #212529;
+    font-size: 16px;
+
+    cursor: pointer;
+}
+ul.recipe-detail__check-box-list label.square::before {
+    content: "";
+    position: absolute;
+    top: 33px;
+    left: 0;
+
+    width: 25px;
+    height: 25px;
+    border: 1px solid #aaaaaa;
+    background-color: #fff;
+
+    cursor: pointer;
+}
+
+ul.recipe-detail__check-box-list label.square::after {
+    content: "";
+    position: absolute;
+    top: 35px;
+    left: 9px;
+
+    width: 7px;
+    height: 15px;
+    border-width: 0 2px 2px 0;
+    border-style: solid;
+    border-color: #fff;
+
+    visibility: hidden;
+    transform: rotate(45deg);
+}
+
+.recipe-detail__check-box input[type="checkbox"]:checked + label.square::before {
+    border-color: transparent;
+    background-color: #ff2a6b;
+}
+
+.recipe-detail__check-box input[type="checkbox"]:checked + label.square::after {
+    visibility: visible;
+}
+
+/************* Recipe-detail content *************/
+
+.recipe-detail__content {
+    padding-top: 50px;
+}
+
+/* Tablet */
+@media only screen and (min-width: 768px) {
+    .recipe-detail__content {
+        padding-left: 15px;
+    }
+}
+
+/* Laptop */
+@media only screen and (min-width: 992px) {
+    .recipe-detail__content {
+        padding-top: 0;
+    }
+}
+
+.recipe-detail__content > li {
+    padding-bottom: 50px;
+}
+
+.recipe-detail__item {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.recipe-detail__description {
+    padding-top: 20px;
+    padding-left: 15px;
+    line-height: 2;
+}

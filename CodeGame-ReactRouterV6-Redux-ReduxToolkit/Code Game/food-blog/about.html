@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Page - Food Blog | Front-end Development Course at Nordic Coder School</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-176427515-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-176427515-1');
+    </script>
+
+    <!-- Primary Meta Tags -->
+    <title>About us - Food Blog | HTML5 & CSS3 Course</title>
+    <meta name="title" content="About us - Food Blog | HTML5 & CSS3 Course">
+    <meta name="description"
+        content="Food Blog has gone through a process of continuous formation and development to be where it is today. The Food Blog team is constantly updating new recipes to serve the needs of customers.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://food-blog.vercel.app/about.html">
+    <meta property="og:title" content="About us - Food Blog | HTML5 & CSS3 Course">
+    <meta property="og:description"
+        content="Food Blog has gone through a process of continuous formation and development to be where it is today. The Food Blog team is constantly updating new recipes to serve the needs of customers.">
+    <meta property="og:image" content="https://food-blog.vercel.app/images/about.jpg">
+    <meta property="og:image:alt" content="About us - Food Blog thumbnail">
+    <meta property="fb:app_id" content="312288953554749">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://food-blog.vercel.app/about.html">
+    <meta property="twitter:title" content="About us - Food Blog | HTML5 & CSS3 Course">
+    <meta property="twitter:description"
+        content="Food Blog has gone through a process of continuous formation and development to be where it is today. The Food Blog team is constantly updating new recipes to serve the needs of customers.">
+    <meta property="twitter:image" content="https://food-blog.vercel.app/images/about.jpg">
+
+    <!-- Fontawesome -->
+    <script src="https://kit.fontawesome.com/4a9d18e4fd.js" crossorigin="anonymous"></script>
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
+
+    <!-- AOS Animate Library -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!-- CSS Stylesheets  -->
+    <link rel="stylesheet" href="css/grid/container.css">
+    <link rel="stylesheet" href="css/grid/row.css">
+    <link rel="stylesheet" href="css/grid/col.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/recipes.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="css/about.css">
+
+</head>
+
+<body>
+    <!-- Header section start -->
+    <header>
+        <!-- Top-bar section start -->
+        <section class="top-bar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <ul class="top-bar__social-list">
+                            <li><a href="#"><i class="fab fa-pinterest"></i></a></li>
+                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fab fa-dribbble"></i></a></li>
+                            <li><a href="#"><i class="fab fa-behance"></i></a></li>
+                            <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="top-bar__links">
+                            <a href="#">Register</a>
+                            <span>/</span>
+                            <a href="#">Login</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Top-bar section end -->
+
+        <!-- Navigation section start -->
+        <nav class="top-nav">
+            <div class="container">
+                <div class="row">
+                    <div class="col-4 col-md-2 col-lg-2">
+                        <a href="index.html" class="top-nav___link-logo">
+                            <img class="top-nav__logo" src="./images/logo.svg" alt="">
+                        </a>
+                    </div>
+
+                    <div class="col-md-9 col-lg-8">
+                        <ul class="top-nav__menu">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="recipes.html">Recipes</a></li>
+                            <li><a href="recipe-detail.html">Recipe Detail</a></li>
+                            <li class="active"><a href="#">About</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-2 col-md-1 col-lg-2">
+                        <div class="top-nav__search">
+                            <button>
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="col-3">
+                        <div class="top-nav__toggle" id="showMenu">
+                            <div class="top-nav__toggle-bars">
+                                <div class="top-nav__toggle-bar" id="barTop"></div>
+                                <div class="top-nav__toggle-bar" id="hideBar"></div>
+                                <div class="top-nav__toggle-bar" id="barBottom"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <ul class="top-nav__menu-toggle" id="navLinks">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="recipes.html">Recipes</a></li>
+                        <li><a href="recipe-detail.html">Recipe Detail</a></li>
+                        <li class="active"><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Navigation section end -->
+    </header>
+    <!-- Header section end -->
+
+    <main>
+        <!-- Hero section start -->
+        <section class="hero">
+            <h1 class="hero__title">About us</h1>
+        </section>
+        <!-- Hero section end -->
+
+        <!-- About section start -->
+        <section class="about" style="overflow-x: hidden;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-lg-6" data-aos="fade-right" data-aos-easing="linear" data-aos-delay="0">
+                        <div class="about__content">
+                            <h2 class="about__title">About our great team</h2>
+                            <p class="about__description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut
+                                sunt corporis consequuntur iure, eos voluptates officiis illum sapiente ea hic eligendi
+                                consequatur? Totam nemo laboriosam enim commodi corporis eveniet, iste veniam soluta
+                                officia nostrum quasi veritatis eius odit cupiditate, doloremque, ad ipsa mollitia sequi
+                                voluptatibus aperiam. Cum ducimus nesciunt iure facere quae illo nulla reprehenderit
+                                voluptas. Blanditiis velit quod, beatae, dolor accusantium labore quae inventore, alias
+                                recusandae minima doloribus nostrum.</p>
+                            <div class="about__link">
+                                <a href="#">Read more</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-6" data-aos="fade-left" data-aos-easing="linear" data-aos-delay="150">
+                        <img class="about__thumbnail" src="./images/about.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- About section end -->
+
+        <!-- Facts section start -->
+        <section class="facts" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-delay="0">
+            <div class="container">
+                <ul class="facts__list-items">
+                    <li data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-delay="0">
+                        <div class="fact-item">
+                            <img class="fact-item__image" src="./images/icon/1.png" alt="">
+                            <h2 class="fact-item__big-number">1287</h2>
+                            <p class="fact-item__name">Amazing Receipies</p>
+                        </div>
+                    </li>
+
+                    <li data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-delay="150">
+                        <div class="fact-item">
+                            <img class="fact-item__image" src="./images/icon/2.png" alt="">
+                            <h2 class="fact-item__big-number">25</h2>
+                            <p class="fact-item__name">Wine pairings</p>
+                        </div>
+                    </li>
+
+                    <li data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-delay="300">
+                        <div class="fact-item">
+                            <img class="fact-item__image" src="./images/icon/3.png" alt="">
+                            <h2 class="fact-item__big-number">471</h2>
+                            <p class="fact-item__name">Meat Receipies</p>
+                        </div>
+                    </li>
+
+                    <li data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-delay="450">
+                        <div class="fact-item">
+                            <img class="fact-item__image" src="./images/icon/4.png" alt="">
+                            <h2 class="fact-item__big-number">326</h2>
+                            <p class="fact-item__name">Desert receipies</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <!-- Facts section end -->
+    </main>
+
+    <!-- Footer start -->
+    <footer>
+        <section class="app-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-lg-6">
+                        <div class="app-footer__logo-wrapper">
+                            <img src="images/logo.svg" alt="">
+                        </div>
+                        <ul class="app-footer__social-list">
+                            <li><a href="#"><i class="fab fa-pinterest"></i></a></li>
+                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fab fa-dribbble"></i></a></li>
+                            <li><a href="#"><i class="fab fa-behance"></i></a></li>
+                            <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <div class="app-footer__right">
+                            <ul class="app-footer__menu">
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="recipes.html">Recipes</a></li>
+                                <li><a href="recipe-detail.html">Recipe Detail</a></li>
+                                <li class="active"><a href="#">About</a></li>
+                                <li><a href="contact.html">Contact</a></li>
+                            </ul>
+                            <p>Copyright © 2020 All rights reserved | This template is made with <i
+                                    class="far fa-heart"></i> by <a href="#">Colorlib</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </footer>
+    <!-- Footer end -->
+
+    <!-- Scroll-to-top button start -->
+    <div class="scroll-to-top">
+        <button id="scrollButton">
+            <i class="fas fa-chevron-up"></i>
+        </button>
+    </div>
+    <!-- Scroll-to-top button end -->
+
+    <!-- Javascript -->
+    <script src="js/main.js"></script>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            easing: 'ease-in-out',
+            duration: 600,
+            once: true
+        });
+    </script>
+</body>
+
+</html>

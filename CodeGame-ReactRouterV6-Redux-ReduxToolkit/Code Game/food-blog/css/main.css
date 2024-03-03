@@ -1,0 +1,49 @@
+/**************** Reset CSS *****************/
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: #838383;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+}
+
+h1 {
+    color: #ffffff;
+    font-size: 72px;
+    font-weight: bold;
+}
+
+h2 {
+    color: #474747;
+    font-size: 36px;
+    font-weight: 600;
+}
+
+h3 {
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+p {
+    color: #838383;
+    font-size: 14px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    transition: all 0.25s ease 0s;
+}
+
+a:hover {
+    opacity: 0.8;
+}
