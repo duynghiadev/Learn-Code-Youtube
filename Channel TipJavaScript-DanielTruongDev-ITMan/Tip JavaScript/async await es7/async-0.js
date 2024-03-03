@@ -2,14 +2,14 @@ function slowAddition(n1, n2) {
   return new Promise((resolve, reject) => {
     // setTimeout( ()=> resolve(n1 + n2), 3000)
     setTimeout(() => {
-      reject(new Error("kế hoạch tan vỡ, nhanh chóng tăng lương"));
-    }, 3000);
-  });
+      reject(new Error('kế hoạch tan vỡ, nhanh chóng tăng lương'))
+    }, 3000)
+  })
 }
 
 async function increaseSalary(base, increase) {
-  const newSalary = await slowAddition(base, increase);
-  return newSalary;
+  const newSalary = await slowAddition(base, increase)
+  return newSalary
   // let newSalary;
   // try {
   //   newSalary = await slowAddition(base, increase);
@@ -24,7 +24,7 @@ async function increaseSalary(base, increase) {
 
 increaseSalary(1000, 100)
   .then()
-  .catch((e) => console.log(`Error get newSalary ${e.message}`));
+  .catch((e) => console.log(`Error get newSalary ${e.message}`))
 
 /**
  * - Lưu ý:
