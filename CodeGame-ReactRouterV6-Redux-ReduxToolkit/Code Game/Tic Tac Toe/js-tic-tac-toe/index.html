@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>tic tac toe game | Easy Frontend</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <section class="game-page">
+      <div class="game">
+        <div class="chalk-board">
+          <img src="images/chalk-board-bg.jpg" alt="Chalk board" />
+        </div>
+
+        <div class="overlay-content">
+          <h1>tic tac toe</h1>
+
+          <p class="game-status">
+            Status: <span id="gameStatus">LOADING</span>
+          </p>
+
+          <div class="game-details">
+            <p class="current-turn">
+              <span>TURN: </span>
+              <span id="currentTurn" class="cross"></span>
+            </p>
+          </div>
+
+          <div class="game-board">
+            <ul id="cellList" class="board-cells-list">
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+            </ul>
+          </div>
+
+          <div class="game-replay">
+            <button id="replayGame">Replay</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>
