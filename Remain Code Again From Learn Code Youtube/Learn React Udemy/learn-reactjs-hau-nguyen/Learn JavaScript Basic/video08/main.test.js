@@ -15,13 +15,17 @@ describe('function isOddNumber()', () => {
 })
 
 describe('function countEvenNumbers()', () => {
-  before(() => {})
+  before(() => {
+  })
 
-  after(() => {})
+  after(() => {
+  })
 
-  beforeEach(() => {})
+  beforeEach(() => {
+  })
 
-  afterEach(() => {})
+  afterEach(() => {
+  })
 
   it('should equal 0 if null', () => {
     const result = countEvenNumbers(null)
