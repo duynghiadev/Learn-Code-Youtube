@@ -7,6 +7,8 @@ const main = async () => {
   } catch (error) {
     console.log('Failed to fetch student list:', error)
   }
-}
+};
 
-main()
+(async () => {
+  await main()
+})()
