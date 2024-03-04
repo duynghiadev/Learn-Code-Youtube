@@ -1,8 +1,8 @@
-import { ErrorMessage } from 'formik';
-import PropTypes from 'prop-types';
-import React from 'react';
-import Select from 'react-select';
-import { FormFeedback, FormGroup, Label } from 'reactstrap';
+import { ErrorMessage } from 'formik'
+import PropTypes from 'prop-types'
+import React from 'react'
+import Select from 'react-select'
+import { FormFeedback, FormGroup, Label } from 'reactstrap'
 
 SelectField.propTypes = {
   field: PropTypes.object.isRequired,
@@ -11,34 +11,34 @@ SelectField.propTypes = {
   label: PropTypes.string,
   placeholder: PropTypes.string,
   disabled: PropTypes.bool,
-  options: PropTypes.array,
-};
+  options: PropTypes.array
+}
 
 SelectField.defaultProps = {
   label: '',
   placeholder: '',
   disabled: false,
-  options: [],
+  options: []
 }
 
 function SelectField(props) {
-  const { field, form, options, label, placeholder, disabled } = props;
-  const { name, value } = field;
-  const { errors, touched } = form;
-  const showError = errors[name] && touched[name];
+  const { field, form, options, label, placeholder, disabled } = props
+  const { name, value } = field
+  const { errors, touched } = form
+  const showError = errors[name] && touched[name]
 
-  const selectedOption = options.find(option => option.value === value);
+  const selectedOption = options.find((option) => option.value === value)
 
   const handleSelectedOptionChange = (selectedOption) => {
-    const selectedValue = selectedOption ? selectedOption.value : selectedOption;
+    const selectedValue = selectedOption ? selectedOption.value : selectedOption
 
     const changeEvent = {
       target: {
         name: name,
         value: selectedValue
       }
-    };
-    field.onChange(changeEvent);
+    }
+    field.onChange(changeEvent)
   }
 
   return (
@@ -50,17 +50,15 @@ function SelectField(props) {
         {...field}
         value={selectedOption}
         onChange={handleSelectedOptionChange}
-
         placeholder={placeholder}
         isDisabled={disabled}
         options={options}
-
         className={showError ? 'is-invalid' : ''}
       />
 
       <ErrorMessage name={name} component={FormFeedback} />
     </FormGroup>
-  );
+  )
 }
 
-export default SelectField;
+export default SelectField

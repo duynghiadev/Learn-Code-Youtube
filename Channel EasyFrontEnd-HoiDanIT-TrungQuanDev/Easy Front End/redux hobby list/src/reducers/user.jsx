@@ -1,5 +1,5 @@
 const userReducer = (state = {}, action) => {
-  return state;
-};
+  return state
+}
 
-export default userReducer;
+export default userReducer

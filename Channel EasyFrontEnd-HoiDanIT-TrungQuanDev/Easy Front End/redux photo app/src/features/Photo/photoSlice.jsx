@@ -1,11 +1,12 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit'
 
 const initialPhotos = [
   {
     id: 91176,
     categoryId: 5,
     photo: 'https://picsum.photos/id/532/300/300',
-    title: 'Enim laboris dolore consectetur et fugiat do amet eiusmod anim proident do culpa irure consectetur.'
+    title:
+      'Enim laboris dolore consectetur et fugiat do amet eiusmod anim proident do culpa irure consectetur.'
   },
   {
     id: 82605,
@@ -41,13 +42,15 @@ const initialPhotos = [
     id: 62419,
     categoryId: 3,
     photo: 'https://picsum.photos/id/515/300/300',
-    title: 'Excepteur nisi aliquip ex aliqua consectetur id laboris cillum elit dolor dolor anim sint.'
+    title:
+      'Excepteur nisi aliquip ex aliqua consectetur id laboris cillum elit dolor dolor anim sint.'
   },
   {
     id: 12569,
     categoryId: 5,
     photo: 'https://picsum.photos/id/730/300/300',
-    title: 'Occaecat exercitation Lorem cupidatat adipisicing elit duis consequat esse et tempor eu enim cupidatat.'
+    title:
+      'Occaecat exercitation Lorem cupidatat adipisicing elit duis consequat esse et tempor eu enim cupidatat.'
   },
   {
     id: 47434,
@@ -72,8 +75,8 @@ const initialPhotos = [
     categoryId: 5,
     photo: 'https://picsum.photos/id/649/300/300',
     title: 'Id ex enim non dolore reprehenderit eu ullamco.'
-  },
-];
+  }
+]
 
 const photo = createSlice({
   name: 'photos',
@@ -81,24 +84,24 @@ const photo = createSlice({
   reducers: {
     addPhoto: (state, action) => {
       // const newPhoto = action.payload;
-      state.push(action.payload);
+      state.push(action.payload)
     },
     removePhoto: (state, action) => {
-      console.log(action.payload);
-      const removePhotoId = action.payload;
-      return state.filter(photo => photo.id !== removePhotoId);
+      console.log(action.payload)
+      const removePhotoId = action.payload
+      return state.filter((photo) => photo.id !== removePhotoId)
     },
     updatePhoto: (state, action) => {
-      const newPhoto = action.payload;
-      const photoIndex = state.findIndex(photo => photo.id === newPhoto.id);
+      const newPhoto = action.payload
+      const photoIndex = state.findIndex((photo) => photo.id === newPhoto.id)
 
       if (photoIndex >= 0) {
-        state[photoIndex] = newPhoto;
+        state[photoIndex] = newPhoto
       }
     }
   }
-});
+})
 
-const { reducer, actions } = photo;
-export const { addPhoto, removePhoto, updatePhoto } = actions;
-export default reducer;
+const { reducer, actions } = photo
+export const { addPhoto, removePhoto, updatePhoto } = actions
+export default reducer
