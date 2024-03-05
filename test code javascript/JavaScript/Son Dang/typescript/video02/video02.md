@@ -1,3 +1,5 @@
+# typescript p.2 - Kiểu chung, một số cách vận dụng kiểu trong Typescript
+
 Học typescript dành cho người đã có kiến thức cơ bản về Javascript.
 
 Giới thiệu về kiểu chung (generic type) trong typescript, dựa trên kiểu chung, chúng ta có thể viết
