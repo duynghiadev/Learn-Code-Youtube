@@ -2,8 +2,7 @@
 
 Để xác thực một request thì backend thường sẽ xác thực qua 2 cách:
 
-1. FE gửi token qua header của request như `Authorization: Bearer <token>` (token thường được lưu
-   trong localStorage của trình duyệt)
+1. FE gửi token qua header của request như `Authorization: Bearer <token>` (token thường được lưu trong localStorage của trình duyệt)
 2. FE gửi token qua cookie của request (sự thật là cookie cũng nằm trong header của request)
 
 Cách dùng Cookie có ưu điểm là an toàn hơn 1 chút so với cách dùng localStorage, nhưng đòi hỏi setup
@@ -28,8 +27,7 @@ hay chưa? Để giải quyết vấn đề này chúng ta cần thiết kế m�
 
 Middleware ở Next.js thì có 2 loại:
 
-1. Middleware hoạt động ở client next (giống như những gì chúng ta đã làm trước đây ở React.js
-   truyền thống)
+1. Middleware hoạt động ở client next (giống như những gì chúng ta đã làm trước đây ở React.js truyền thống)
 2. Middleware hoạt động ở server next
 
 #### Middleware ở client next
@@ -90,8 +88,7 @@ export const config = {
 }
 
 export function middleware(request: NextRequest) {
-  const isLogged =
-    (request.cookies.get('isLogged')?.value as string | undefined) === 'true'
+  const isLogged = (request.cookies.get('isLogged')?.value as string | undefined) === 'true'
   if (!isLogged) return new Response('Chưa đăng nhập', { status: 401 })
 }
 ```
