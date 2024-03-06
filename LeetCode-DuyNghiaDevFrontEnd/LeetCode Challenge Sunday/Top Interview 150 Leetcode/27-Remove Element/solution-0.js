@@ -1,10 +1,12 @@
 // Solution 1
+
 /**
  * @param {number[]} nums
  * @param {number} val
  * @return {number}
  */
-var removeElement = function (nums, val) {
+
+var removeElement_1 = function (nums, val) {
   var removeNum = 0
   var len = nums.length
 
@@ -39,7 +41,8 @@ var removeElement = function (nums, val) {
  * @param {number} val
  * @return {number}
  */
-var removeElement = function (nums, val) {
+
+var removeElement_2 = function (nums, val) {
   var len = nums.length
   if (len === 0) {
     return len
