@@ -6,10 +6,17 @@ const grade = (avg_mark) => {
   }
 
   // Dữ liệu ok => [0;10] => điểm từ 0 đến 10
-  if (avg_mark < 5) return 'Yếu'
-  if (avg_mark < 7) return 'Trung bình'
-  if (avg_mark < 8) return 'Khá'
-  else return 'Giỏi'
+  if (avg_mark < 5) {
+    return 'Yếu'
+  }
+  if (avg_mark < 7) {
+    return 'Trung bình'
+  }
+  if (avg_mark < 8) {
+    return 'Khá'
+  } else {
+    return 'Giỏi'
+  }
 }
 
 const frmStudent = document.forms.frmStudent
@@ -39,4 +46,4 @@ frmStudent.addEventListener('submit', (e) => {
       Xếp loại: <b>${grade(avg_mark)}</b>
     `
   }
-})
+}) 
