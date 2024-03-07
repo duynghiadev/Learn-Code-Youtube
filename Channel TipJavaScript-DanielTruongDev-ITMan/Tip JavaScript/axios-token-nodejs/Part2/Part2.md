@@ -2,6 +2,8 @@
 
 > Trong video này mình có custom code lại 1 tí, nhưng code lõi code thì vẫn giống như video. Mình có thêm `console.log` vào cho code log ra cho dễ hiểu và viết lại code clean hơn
 
+> Link chat-GPT to refactor code: https://chat.openai.com/share/be6986ae-6884-44b7-aaa8-683f3284ed17
+
 [Link part 2](https://s.net.vn/AGeA)
 
 VIdeo này là phương pháp thứ hai giúp các lập trình viên có thể lấy lại accessToken nếu hết hạn thông qua RefreshToken mà không ép buộc người dùng phải login lại. Ưu điểm là rất rõ ràng có bảo mật cao, nhưng ở đây có một nhược điểm....
