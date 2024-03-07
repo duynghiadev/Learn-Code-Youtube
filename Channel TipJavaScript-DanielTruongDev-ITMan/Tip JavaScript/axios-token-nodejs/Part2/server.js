@@ -12,14 +12,21 @@ app.get('/', (req, res) => {
   res.sendFile(path.resolve(__dirname, 'index.html'))
 })
 
-// START API
+// API routes
 app.get('/api/refreshToken', async (req, res) => {
-  return res.status(200).json({
-    status: 'success',
-    elements: {
-      accessToken: await signAccessToken()
-    }
-  })
+  try {
+    const accessToken = await signAccessToken()
+    return res.status(200).json({
+      status: 'success',
+      elements: { accessToken }
+    })
+  } catch (error) {
+    console.error('Error refreshing token:', error)
+    return res.status(500).json({
+      status: 'error',
+      msg: 'Internal Server Error'
+    })
+  }
 })
 
 app.get('/api/users', verifyToken, (req, res) => {
@@ -37,14 +44,20 @@ app.get('/api/users', verifyToken, (req, res) => {
 })
 
 app.get('/api/login', async (req, res) => {
-  return res.status(200).json({
-    status: 'success',
-    elements: {
-      accessToken: await signAccessToken()
-    }
-  })
+  try {
+    const accessToken = await signAccessToken()
+    return res.status(200).json({
+      status: 'success',
+      elements: { accessToken }
+    })
+  } catch (error) {
+    console.error('Error logging in:', error)
+    return res.status(500).json({
+      status: 'error',
+      msg: 'Internal Server Error'
+    })
+  }
 })
-// END API
 
 app.listen(PORT, () => {
   console.log(`Server running at ${PORT}`)

@@ -27,24 +27,18 @@ const signRefreshToken = async () => {
 
 const verifyToken = async (req, res, next) => {
   try {
-    if (req.headers['x-token']) {
-      const token = req.headers['x-token']
-      console.log(`Token is ${token}`)
-      const payload = await JWT.verify(token, process.env.KEY_ACCESSTOKEN)
-      req.user = payload
-      return next()
-    }
+    const token = req.headers['x-token']
+    if (!token) throw new Error('Token not provided')
+
+    console.log(`Token received: ${token}`)
+    const payload = await JWT.verify(token, process.env.KEY_ACCESSTOKEN)
+    req.user = payload
+    next()
   } catch (error) {
     if (error.name === 'TokenExpiredError') {
-      return res.status(200).json({
-        code: 401,
-        msg: error.message
-      })
+      return res.status(401).json({ code: 401, msg: error.message })
     }
-    return res.status(200).json({
-      code: 500,
-      msg: error
-    })
+    return res.status(500).json({ code: 500, msg: error.message })
   }
 }
 
