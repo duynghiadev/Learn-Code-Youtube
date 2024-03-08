@@ -1,8 +1,25 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+// import { Roboto } from 'next/font/google'
 import './globals.css'
+import localFont from 'next/font/local'
 
-const inter = Inter({ subsets: ['latin'] })
+// Font files can be colocated inside of `app`
+const myFont = localFont({
+  src: [
+    {
+      path: './Roboto-Thin.ttf',
+      weight: '100'
+    },
+    {
+      path: './Roboto-Regular.ttf',
+      weight: '400'
+    }
+  ],
+  display: 'swap',
+  variable: '--font-roboto'
+})
+
+// const roboto = Roboto({ subsets: ['vietnamese'], weight: ['100', '300'] })
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -16,7 +33,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={inter.className}>{children}</body>
+      <body className={`${myFont.variable}`}>{children}</body>
     </html>
   )
 }
