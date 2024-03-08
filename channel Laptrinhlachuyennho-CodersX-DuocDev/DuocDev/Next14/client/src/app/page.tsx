@@ -1,9 +1,19 @@
+import Image from 'next/image'
+
 export default function Home() {
   return (
     <main>
-      <h1 className='font-sans text-4xl font-normal text-center'>
-        Xin chào mọi người, Duy Nghĩa đây!!
-      </h1>
+      <div className='w-[700px] h-[700px] bg-red-300'>
+        <Image
+          src='https://i.pinimg.com/564x/ac/27/1d/ac271de883faa03617b212beeda73db3.jpg'
+          alt='pexels'
+          width={600}
+          height={400}
+          quality={100}
+          className='w-[500px] h-[500px]'
+          title='pexels'
+        />
+      </div>
     </main>
   )
 }
