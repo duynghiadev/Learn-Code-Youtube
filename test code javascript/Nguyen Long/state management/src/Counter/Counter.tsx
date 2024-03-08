@@ -1,53 +1,40 @@
-import React from 'react'
+import { useEffect, useState } from 'react'
 import { store } from '../configureStore'
 import { decrement, increment } from './actions'
+import './Counter.css'
 
-interface CounterProps {}
+const Counter = () => {
+  const [count, setCount] = useState(store.getState().counter.count)
 
-interface CounterState {
-  count: number
-}
-
-export default class Counter extends React.Component<CounterProps, CounterState> {
-  constructor(props: CounterProps) {
-    super(props)
-    this.state = {
-      count: store.getState().counter.count
-    }
-    this.handleIncrement = this.handleIncrement.bind(this)
-    this.handleDecrement = this.handleDecrement.bind(this)
-  }
-
-  componentDidMount() {
-    this.unsubscribe = store.subscribe(() => {
-      this.setState({ count: store.getState().counter.count })
+  useEffect(() => {
+    const unsubscribe = store.subscribe(() => {
+      setCount(store.getState().counter.count)
     })
-  }
 
-  componentWillUnmount() {
-    this.unsubscribe()
-  }
+    return () => {
+      unsubscribe()
+    }
+  }, [])
 
-  render() {
-    const { count } = this.state
-    return (
-      <div>
-        <button className='decrement' onClick={this.handleDecrement}>
-          -
-        </button>
-        <span>{count}</span>
-        <button className='increment' onClick={this.handleIncrement}>
-          +
-        </button>
-      </div>
-    )
-  }
-
-  private handleIncrement() {
+  const handleIncrement = () => {
     increment(1)
   }
 
-  private handleDecrement() {
+  const handleDecrement = () => {
     decrement(1)
   }
+
+  return (
+    <div className='counter-container'>
+      <button className='counter-button decrement' onClick={handleDecrement}>
+        -
+      </button>
+      <span className='counter-value'>{count}</span>
+      <button className='counter-button increment' onClick={handleIncrement}>
+        +
+      </button>
+    </div>
+  )
 }
+
+export default Counter

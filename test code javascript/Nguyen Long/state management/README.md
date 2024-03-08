@@ -1,5 +1,8 @@
 # Tạo 1 thư viện quản lý state giống như redux với typescript
 
+> Trong những đọạn code trong project mình đã custom code lại rồi, cho nên code sẽ không giống code
+> trong video !!!
+
 [Link video](https://s.net.vn/eEMJ)
 
 Dạo này covid tối rảnh nên mình có làm 1 video hướng dẫn các bạn viết ra 2 hàm createStore và

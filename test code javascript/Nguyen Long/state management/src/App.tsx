@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import ReactDOM from 'react-dom/client'
 import { store } from './configureStore'
 import Counter from './Counter/Counter'
-import './index.css'
+import './App.css'
 
 const App: React.FC = () => {
   useEffect(() => {
