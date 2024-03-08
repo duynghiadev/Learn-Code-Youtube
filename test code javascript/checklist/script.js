@@ -46,4 +46,4 @@ frmStudent.addEventListener('submit', (e) => {
       Xếp loại: <b>${grade(avg_mark)}</b>
     `
   }
-}) 
+})
