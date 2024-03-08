@@ -1,19 +1,25 @@
-import Image from 'next/image'
+import ButtonRedirect from '@/app/components/ButtonRedirect'
+import Link from 'next/link'
+import { redirect } from 'next/navigation'
+
+const isAuth = false
 
 export default function Home() {
+  // if (!isAuth) {
+  //   redirect('/login')
+  // }
+
   return (
     <main>
-      <div className='w-[700px] h-[700px] bg-red-300'>
-        <Image
-          src='https://i.pinimg.com/564x/ac/27/1d/ac271de883faa03617b212beeda73db3.jpg'
-          alt='pexels'
-          width={600}
-          height={400}
-          quality={100}
-          className='w-[500px] h-[500px]'
-          title='pexels'
-        />
-      </div>
+      <ul>
+        <li>
+          <Link href={'/login'}>Login</Link>
+        </li>
+        <li>
+          <Link href={'/register'}>Register</Link>
+        </li>
+      </ul>
+      <ButtonRedirect />
     </main>
   )
 }
