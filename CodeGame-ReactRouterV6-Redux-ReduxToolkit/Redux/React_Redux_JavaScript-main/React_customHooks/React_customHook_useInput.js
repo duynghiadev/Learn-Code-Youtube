@@ -1,21 +1,21 @@
-import { useState } from "react";
+import { useState } from 'react'
 
 const useInput = () => {
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState('')
 
   return [
     {
-      background: "red",
-      height: "100px",
-      width: value + "px",
+      background: 'red',
+      height: '100px',
+      width: value + 'px'
     },
     {
       value,
       onChange: (e) => {
-        setValue(+e.target.value);
-      },
-    },
-  ];
-};
+        setValue(+e.target.value)
+      }
+    }
+  ]
+}
 
-export default useInput;
+export default useInput
