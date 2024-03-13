@@ -7,5 +7,6 @@ CHỈ 1 GIẢI THUẬT - NHƯNG SỬ DỤNG CHO TẤT CẢ CÁC NGÔN NGỮ
 - Giải thuật tốt: Code trong sáng và ngắn gọn, dễ bảo trì
 - Giải thuật kém: Code phức tạp, khó bảo trì (như mớ bòng bong)
 - Level của bài toán đang tăng dần
+- Sắp xếp dãy số tăng dần là bài toán đòi hỏi nhiều bước giải thuật hơn và ở 1 trình độ cao hơn
 
 [Link tutorial](https://bom.so/CU9GcZ)
