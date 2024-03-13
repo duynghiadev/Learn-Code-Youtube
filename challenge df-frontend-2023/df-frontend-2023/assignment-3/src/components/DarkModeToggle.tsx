@@ -1,4 +1,3 @@
-import React from 'react'
 import '../assets/styles/toggle.css'
 import { useTheme } from '../contexts/ThemeProvider'
 

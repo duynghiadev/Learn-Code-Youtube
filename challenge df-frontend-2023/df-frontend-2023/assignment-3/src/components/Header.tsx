@@ -1,6 +1,5 @@
-import React from 'react'
-import Container from './Container'
 import IMAGES from '../assets/images'
+import Container from './Container'
 import DarkModeToggle from './DarkModeToggle'
 
 const Header = () => {

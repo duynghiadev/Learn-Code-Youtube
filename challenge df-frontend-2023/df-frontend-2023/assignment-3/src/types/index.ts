@@ -1,2 +1,2 @@
-export * from './common.type'
 export * from './book.type'
+export * from './common.type'

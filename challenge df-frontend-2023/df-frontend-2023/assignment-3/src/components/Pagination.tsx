@@ -1,6 +1,6 @@
-import React, { useLayoutEffect, useState } from 'react'
-import '../assets/styles/pagination.css'
+import { useLayoutEffect, useState } from 'react'
 import ReactPaginate from 'react-paginate'
+import '../assets/styles/pagination.css'
 
 export interface PaginationProps {
   totalItems: number

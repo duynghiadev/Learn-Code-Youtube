@@ -15,4 +15,4 @@ const COLORS = {
 
 const BOOKS_PER_PAGE = 5
 
-export { COLORS, BOOKS_PER_PAGE }
+export { BOOKS_PER_PAGE, COLORS }
