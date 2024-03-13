@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
-import { useForm, useFieldArray } from "react-hook-form";
-import { DevTool } from "@hookform/devtools";
-import { Button, Container } from "../../globalStyles";
+import React, { useEffect } from 'react'
+import { useForm, useFieldArray } from 'react-hook-form'
+import { DevTool } from '@hookform/devtools'
+import { Button, Container } from '../../globalStyles'
 import {
   FormTitle,
   Form,
@@ -12,10 +12,10 @@ import {
   FormFieldControl,
   RemoveFieldButton,
   FormFieldContainer,
-  ButtonContainer,
-} from "./SampleForm.elements";
+  ButtonContainer
+} from './SampleForm.elements'
 
-let numberOfTimeRender = 0;
+let numberOfTimeRender = 0
 
 const SampleForm = () => {
   const {
@@ -26,20 +26,20 @@ const SampleForm = () => {
     watch,
     getValues,
     setValue,
-    trigger,
+    trigger
   } = useForm({
     defaultValues: {
-      username: "test-user",
+      username: 'test-user'
     },
-    mode: "onSubmit",
-  });
+    mode: 'onSubmit'
+  })
 
   const { fields, append, remove } = useFieldArray({
-    name: "visited",
-    control,
-  });
+    name: 'visited',
+    control
+  })
 
-  numberOfTimeRender++;
+  numberOfTimeRender++
 
   // const username = watch("username");
 
@@ -48,107 +48,97 @@ const SampleForm = () => {
   // }, [username]);
 
   const validFormSubmissionHandler = (data) => {
-    console.log("submitted data:- ", data);
-  };
+    console.log('submitted data:- ', data)
+  }
 
   const invalidFormSubmissionHandler = (errorFound) => {
-    console.log(
-      "Errors found on form submission as for is invalid:- ",
-      errorFound
-    );
-  };
+    console.log('Errors found on form submission as for is invalid:- ', errorFound)
+  }
 
   const handleSetUserNameValue = () => {
-    setValue("username", "", {
+    setValue('username', '', {
       shouldDirty: true,
       shouldValidate: true,
-      shouldTouch: true,
-    });
-  };
+      shouldTouch: true
+    })
+  }
 
   const handleGetValues = () => {
-    console.log(getValues());
-    console.log(getValues(["username", "address"]));
-    console.log(getValues("address.city"));
-    console.log(getValues("visited.0.place"));
-  };
+    console.log(getValues())
+    console.log(getValues(['username', 'address']))
+    console.log(getValues('address.city'))
+    console.log(getValues('visited.0.place'))
+  }
 
   return (
     <>
       <Container>
         <FormTitle>Sample Form {numberOfTimeRender / 2}</FormTitle>
         <Form
-          onSubmit={handleSubmit(
-            validFormSubmissionHandler,
-            invalidFormSubmissionHandler
-          )}
+          onSubmit={handleSubmit(validFormSubmissionHandler, invalidFormSubmissionHandler)}
           noValidate
         >
           <FormControl>
-            <FormLabel htmlFor="username">Username</FormLabel>
+            <FormLabel htmlFor='username'>Username</FormLabel>
             <FormTextInput
-              type="text"
-              id="username"
-              {...register("username", {
+              type='text'
+              id='username'
+              {...register('username', {
                 required: {
                   value: true,
-                  message: "Username is required",
-                },
+                  message: 'Username is required'
+                }
               })}
             />
             <FormError>{errors.username?.message}</FormError>
           </FormControl>
 
           <FormControl>
-            <FormLabel htmlFor="email">E-mail</FormLabel>
+            <FormLabel htmlFor='email'>E-mail</FormLabel>
             <FormTextInput
-              type="email"
-              id="email"
-              {...register("email", {
+              type='email'
+              id='email'
+              {...register('email', {
                 pattern: {
                   value: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g,
-                  message: "Inavlid Email format",
+                  message: 'Inavlid Email format'
                 },
                 required: {
                   value: true,
-                  message: "Email is required",
+                  message: 'Email is required'
                 },
                 validate: {
                   admin: (fieldValue) => {
                     return (
-                      !fieldValue.toLowerCase().includes("admin") ||
-                      "Admin email id is not allowed"
-                    );
+                      !fieldValue.toLowerCase().includes('admin') || 'Admin email id is not allowed'
+                    )
                   },
                   badDomain: (fieldValue) => {
-                    return (
-                      !fieldValue.endsWith("@test.com") ||
-                      "This email domain is unsupported"
-                    );
+                    return !fieldValue.endsWith('@test.com') || 'This email domain is unsupported'
                   },
                   isEmailAlreadyRegistered: async (fieldvalue) => {
                     const response = await fetch(
                       `https://jsonplaceholder.typicode.com/users?email=${fieldvalue}`
-                    );
-                    const data = await response.json();
-                    return data.length === 0 || "Email is already registered";
-                  },
-                },
+                    )
+                    const data = await response.json()
+                    return data.length === 0 || 'Email is already registered'
+                  }
+                }
               })}
             />
             <FormError>{errors.email?.message}</FormError>
           </FormControl>
 
           <FormControl>
-            <FormLabel htmlFor="channel">Channel</FormLabel>
+            <FormLabel htmlFor='channel'>Channel</FormLabel>
             <FormTextInput
-              type="text"
-              id="channel"
-              {...register("channel", {
+              type='text'
+              id='channel'
+              {...register('channel', {
                 required: {
                   value: true,
-                  message: "Channel is a required",
-                },
+                  message: 'Channel is a required'
+                }
               })}
             />
             <FormError>{errors.channel?.message}</FormError>
@@ -157,30 +147,30 @@ const SampleForm = () => {
           {/* address field which is a nested object */}
 
           <FormControl>
-            <FormLabel htmlFor="street">Street</FormLabel>
+            <FormLabel htmlFor='street'>Street</FormLabel>
             <FormTextInput
-              type="text"
-              id="street"
-              {...register("address.street", {
+              type='text'
+              id='street'
+              {...register('address.street', {
                 required: {
                   value: true,
-                  message: "Street is a required",
-                },
+                  message: 'Street is a required'
+                }
               })}
             />
             <FormError>{errors.address?.street?.message}</FormError>
           </FormControl>
 
           <FormControl>
-            <FormLabel htmlFor="city">City</FormLabel>
+            <FormLabel htmlFor='city'>City</FormLabel>
             <FormTextInput
-              type="text"
-              id="city"
-              {...register("address.city", {
+              type='text'
+              id='city'
+              {...register('address.city', {
                 required: {
                   value: true,
-                  message: "city is a required",
-                },
+                  message: 'city is a required'
+                }
               })}
             />
             <FormError>{errors.address?.city?.message}</FormError>
@@ -188,30 +178,30 @@ const SampleForm = () => {
 
           {/* Phone number is an array */}
           <FormControl>
-            <FormLabel htmlFor="primary-phone">Primary Phone Number</FormLabel>
+            <FormLabel htmlFor='primary-phone'>Primary Phone Number</FormLabel>
             <FormTextInput
-              type="text"
-              id="primary-phone"
-              {...register("phoneNumbers.0", {
+              type='text'
+              id='primary-phone'
+              {...register('phoneNumbers.0', {
                 required: {
                   value: true,
-                  message: "Primary phone number is required",
-                },
+                  message: 'Primary phone number is required'
+                }
               })}
             />
             <FormError>{errors.phoneNumbers?.[0]?.message}</FormError>
           </FormControl>
 
           <FormControl>
-            <FormLabel htmlFor="sec-phone">Secondary Phone Number</FormLabel>
+            <FormLabel htmlFor='sec-phone'>Secondary Phone Number</FormLabel>
             <FormTextInput
-              type="text"
-              id="sec-phone"
-              {...register("phoneNumbers.1", {
+              type='text'
+              id='sec-phone'
+              {...register('phoneNumbers.1', {
                 required: {
                   value: true,
-                  message: "Secondary phone number is required",
-                },
+                  message: 'Secondary phone number is required'
+                }
               })}
             />
             <FormError>{errors.phoneNumbers?.[1]?.message}</FormError>
@@ -224,13 +214,11 @@ const SampleForm = () => {
             {fields.map((field, index) => (
               <FormFieldContainer key={field.id}>
                 <FormFieldControl>
-                  <FormLabel htmlFor={`visited.${index}.place`}>
-                    Place
-                  </FormLabel>
+                  <FormLabel htmlFor={`visited.${index}.place`}>Place</FormLabel>
                   <FormTextInput
                     id={`visited.${index}.place`}
                     {...register(`visited.${index}.place`, {
-                      required: "Place is a required field",
+                      required: 'Place is a required field'
                     })}
                   />
                 </FormFieldControl>
@@ -242,65 +230,57 @@ const SampleForm = () => {
                   />
                 </FormFieldControl>
                 <FormFieldControl>
-                  <FormLabel htmlFor={`visited.${index}.country`}>
-                    Country
-                  </FormLabel>
+                  <FormLabel htmlFor={`visited.${index}.country`}>Country</FormLabel>
                   <FormTextInput
                     id={`visited.${index}.country`}
                     {...register(`visited.${index}.country`, {
-                      required: "Country is a required field",
+                      required: 'Country is a required field'
                     })}
                   />
                 </FormFieldControl>
                 {index > 0 && (
-                  <RemoveFieldButton
-                    type="button"
-                    onClick={() => remove(index)}
-                  >
+                  <RemoveFieldButton type='button' onClick={() => remove(index)}>
                     Remove Place
                   </RemoveFieldButton>
                 )}
               </FormFieldContainer>
             ))}
-            <Button
-              type="button"
-              onClick={() => append({ city: "", place: "", country: "" })}
-            >
+            <Button type='button' onClick={() => append({ city: '', place: '', country: '' })}>
               Add Place
             </Button>
           </FormControl>
 
           <FormControl>
-            <FormLabel htmlFor="age">Age</FormLabel>
+            <FormLabel htmlFor='age'>Age</FormLabel>
             <FormTextInput
-              id="age"
-              type="number"
-              {...register("age", {
+              id='age'
+              type='number'
+              {...register('age', {
                 valueAsNumber: true,
-                required: "Age is a required field",
+                required: 'Age is a required field',
                 min: {
                   value: 0,
-                  message: "Age cannot be negative",
-                },
+                  message: 'Age cannot be negative'
+                }
               })}
             />
             <FormError>{errors.age?.message}</FormError>
           </FormControl>
 
           <ButtonContainer>
-            <Button $primary type="submit">
+            <Button $primary type='submit'>
               Submit
             </Button>
-            <Button type="button" onClick={handleSetUserNameValue}>
+            <Button type='button' onClick={handleSetUserNameValue}>
               SetUserName
             </Button>
-            <Button type="button" onClick={handleGetValues}>
+            <Button type='button' onClick={handleGetValues}>
               GetData
             </Button>
             <Button
-              type="button"
+              type='button'
               onClick={() => {
-                trigger(["address.street", "address.city"]);
+                trigger(['address.street', 'address.city'])
               }}
             >
               Validate
@@ -310,7 +290,7 @@ const SampleForm = () => {
         <DevTool control={control} />
       </Container>
     </>
-  );
-};
+  )
+}
 
-export default SampleForm;
+export default SampleForm

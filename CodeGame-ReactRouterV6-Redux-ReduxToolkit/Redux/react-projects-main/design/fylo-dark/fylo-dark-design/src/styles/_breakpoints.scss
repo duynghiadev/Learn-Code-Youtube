@@ -1,10 +1,10 @@
-@use "./functions" as f;
+@use './functions' as f;
 
 // starting values for screens
 $breakpoints-up-value: (
-  "medium": f.rem(700),
-  "large": f.rem(900),
-  "xLarge": f.rem(1440),
+  'medium': f.rem(700),
+  'large': f.rem(900),
+  'xLarge': f.rem(1440)
 );
 
 @mixin breakpoint-up($size) {
@@ -15,9 +15,9 @@ $breakpoints-up-value: (
 
 // ending value for screens
 $breakpoints-down-value: (
-  "small": f.rem(699.98),
-  "medium": f.rem(899.98),
-  "large": f.rem(1439.98),
+  'small': f.rem(699.98),
+  'medium': f.rem(899.98),
+  'large': f.rem(1439.98)
 );
 
 @mixin breakpoint-down($size) {

@@ -1,5 +1,5 @@
-import { SampleForm, ShipThruForm } from "./components";
-import GlobalStyle from "./globalStyles";
+import { SampleForm } from './components'
+import GlobalStyle from './globalStyles'
 
 const App = () => {
   return (
@@ -8,7 +8,7 @@ const App = () => {
       <SampleForm />
       {/* <ShipThruForm /> */}
     </>
-  );
-};
+  )
+}
 
-export default App;
+export default App

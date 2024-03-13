@@ -1,4 +1,4 @@
-@use "../../styles" as s;
+@use '../../styles' as s;
 
 .prod {
   max-width: s.rem(1200);
@@ -41,7 +41,7 @@
 
       align-self: flex-start;
 
-      background-image: url("../../images/icon-arrow.svg");
+      background-image: url('../../images/icon-arrow.svg');
       background-repeat: no-repeat;
       background-position: right center;
       padding-right: s.rem(25);

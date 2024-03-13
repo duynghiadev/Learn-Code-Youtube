@@ -1,21 +1,15 @@
-import {
-  FormControl,
-  FormHelperText,
-  FormLabel,
-  MenuItem,
-  Select,
-} from "@mui/material";
-import React from "react";
-import { Controller, useFormContext } from "react-hook-form";
+import { FormControl, FormHelperText, FormLabel, MenuItem, Select } from '@mui/material'
+import React from 'react'
+import { Controller, useFormContext } from 'react-hook-form'
 
 const FormInputDropdown = ({
   label,
   fieldName,
 
   rules = {},
-  options,
+  options
 }) => {
-  const { control } = useFormContext();
+  const { control } = useFormContext()
 
   return (
     <FormControl>
@@ -24,10 +18,7 @@ const FormInputDropdown = ({
         name={fieldName}
         control={control}
         rules={rules}
-        render={({
-          field: { value, onChange, onBlur, ref, name },
-          fieldState: { error },
-        }) => (
+        render={({ field: { value, onChange, onBlur, ref, name }, fieldState: { error } }) => (
           <>
             <Select
               autoWidth={true}
@@ -42,16 +33,12 @@ const FormInputDropdown = ({
                 </MenuItem>
               ))}
             </Select>
-            {error && (
-              <FormHelperText sx={{ color: "red" }}>
-                {error.message}
-              </FormHelperText>
-            )}
+            {error && <FormHelperText sx={{ color: 'red' }}>{error.message}</FormHelperText>}
           </>
         )}
       />
     </FormControl>
-  );
-};
+  )
+}
 
-export default FormInputDropdown;
+export default FormInputDropdown

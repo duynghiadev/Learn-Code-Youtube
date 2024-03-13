@@ -1,24 +1,21 @@
-import { TextField } from "@mui/material";
-import React from "react";
-import { Controller, useFormContext } from "react-hook-form";
+import { TextField } from '@mui/material'
+import React from 'react'
+import { Controller, useFormContext } from 'react-hook-form'
 
 const FormInputText = ({ label, fieldName, rules = {} }) => {
-  const { control } = useFormContext();
+  const { control } = useFormContext()
 
   return (
     <Controller
       name={fieldName}
       control={control}
       rules={rules}
-      defaultValue=""
-      render={({
-        field: { value, onChange, onBlur, name, ref },
-        fieldState: { error },
-      }) => (
+      defaultValue=''
+      render={({ field: { value, onChange, onBlur, name, ref }, fieldState: { error } }) => (
         <TextField
           name={name}
           label={label}
-          variant="outlined"
+          variant='outlined'
           value={value}
           fullWidth
           onChange={(e) => onChange(e.target.value.toUpperCase())}
@@ -30,7 +27,7 @@ const FormInputText = ({ label, fieldName, rules = {} }) => {
         />
       )}
     />
-  );
-};
+  )
+}
 
-export default FormInputText;
+export default FormInputText

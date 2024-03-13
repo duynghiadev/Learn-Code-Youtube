@@ -1,4 +1,4 @@
-@use "../../styles/" as s;
+@use '../../styles/' as s;
 
 .intro {
   background-color: s.$introBg;
@@ -14,8 +14,8 @@
   }
 
   &::after {
-    content: "";
-    background-image: url("../../images/bg-curvy-mobile.svg");
+    content: '';
+    background-image: url('../../images/bg-curvy-mobile.svg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: bottom center;
@@ -27,7 +27,7 @@
     bottom: 0;
 
     @include s.breakpoint-up(medium) {
-      background-image: url("../../images/bg-curvy-desktop.svg");
+      background-image: url('../../images/bg-curvy-desktop.svg');
       // height: s.rem(480);
     }
   }

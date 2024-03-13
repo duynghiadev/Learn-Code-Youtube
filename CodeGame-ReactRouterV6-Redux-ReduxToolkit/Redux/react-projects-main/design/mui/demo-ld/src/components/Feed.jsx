@@ -1,6 +1,6 @@
-import { Box } from "@mui/material";
-import React from "react";
-import Post from "./Post";
+import { Box } from '@mui/material'
+import React from 'react'
+import Post from './Post'
 
 const Feed = () => {
   return (
@@ -10,7 +10,7 @@ const Feed = () => {
       <Post />
       <Post />
     </Box>
-  );
-};
+  )
+}
 
-export default Feed;
+export default Feed

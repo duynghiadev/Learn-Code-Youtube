@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
 
@@ -13,7 +13,7 @@ const GlobalStyle = createGlobalStyle`
     color: #fff;
     background-color: #000;
   }
-`;
+`
 
 export const Container = styled.div`
   width: 100%;
@@ -24,12 +24,12 @@ export const Container = styled.div`
   @media (max-width: 968px) {
     padding: 15px;
   }
-`;
+`
 
 export const Button = styled.button`
-  background-color: ${({ $primary }) => ($primary ? "#4B59F7" : "#0467FB")};
-  padding: ${({ $big }) => ($big ? "12px 64px" : "10px 20px")};
-  font-size: ${({ $fontBig }) => ($fontBig ? "1.25rem" : "1rem")};
+  background-color: ${({ $primary }) => ($primary ? '#4B59F7' : '#0467FB')};
+  padding: ${({ $big }) => ($big ? '12px 64px' : '10px 20px')};
+  font-size: ${({ $fontBig }) => ($fontBig ? '1.25rem' : '1rem')};
   color: #fff;
   border-radius: 0.25rem;
   outline: none;
@@ -37,7 +37,7 @@ export const Button = styled.button`
   cursor: pointer;
 
   &:hover {
-    background-color: ${({ $primary }) => ($primary ? "#0467FB" : "#4B59F7")};
+    background-color: ${({ $primary }) => ($primary ? '#0467FB' : '#4B59F7')};
   }
 
   &:disabled {
@@ -48,6 +48,6 @@ export const Button = styled.button`
   @media screen and (max-width: 968px) {
     width: 100%;
   }
-`;
+`
 
-export default GlobalStyle;
+export default GlobalStyle

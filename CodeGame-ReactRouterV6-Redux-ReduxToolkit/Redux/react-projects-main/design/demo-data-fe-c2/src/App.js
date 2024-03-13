@@ -1,14 +1,5 @@
-import "./App.css";
-import {
-  Hero,
-  NavBar,
-  IntroductionFlex,
-  IntroductionGrid,
-  NewsLetterFlex,
-  NewsLetterGrid,
-  PriceOptions,
-  Footer,
-} from "./components";
+import './App.css'
+import { Footer, Hero, IntroductionGrid, NavBar, NewsLetterFlex, PriceOptions } from './components'
 
 function App() {
   return (
@@ -22,7 +13,7 @@ function App() {
       <PriceOptions />
       <Footer />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

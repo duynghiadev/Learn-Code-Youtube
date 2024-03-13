@@ -1,8 +1,8 @@
-import React from "react";
-import "./FormInput.css";
+import React from 'react'
+import './FormInput.css'
 
 const FormInput = (props) => {
-  console.log(props);
+  console.log(props)
 
   return (
     <div>
@@ -11,7 +11,7 @@ const FormInput = (props) => {
       <span>Its an error</span>
       <span>Its an error</span>
     </div>
-  );
-};
+  )
+}
 
-export default FormInput;
+export default FormInput

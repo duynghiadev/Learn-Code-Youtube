@@ -1,6 +1,6 @@
-@use "./functions" as f;
-@use "variables" as v;
-@use "breakpoints" as b;
+@use './functions' as f;
+@use 'variables' as v;
+@use 'breakpoints' as b;
 
 html {
   box-sizing: border-box;

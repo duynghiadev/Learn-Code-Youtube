@@ -1,7 +1,7 @@
-import { CssBaseline } from "@mui/material";
-import Header from "./components/NavBar/NavBar";
-import FilterBar from "./components/FilterBar";
-import TravelLocations from "./components/TravelLocations";
+import { CssBaseline } from '@mui/material'
+import FilterBar from './components/FilterBar'
+import Header from './components/NavBar/NavBar'
+import TravelLocations from './components/TravelLocations'
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
       <FilterBar />
       <TravelLocations />
     </>
-  );
+  )
 }
 
-export default App;
+export default App

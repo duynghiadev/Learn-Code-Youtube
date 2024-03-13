@@ -1,6 +1,5 @@
-import { createContext, useContext, useEffect, useState } from "react";
-import Modal from "../components/Modal";
-import * as mealsService from "../services/meals.service";
+import { createContext, useContext, useEffect, useState } from 'react'
+import * as mealsService from '../services/meals.service'
 
 export const AppContext = createContext({
   meals: [],
@@ -12,62 +11,60 @@ export const AppContext = createContext({
   setSearchTerm: () => {},
   getRandomMeal: () => {},
   onModalClose: () => {},
-  setModalProperties: () => {},
-});
+  setModalProperties: () => {}
+})
 
 export const AppContextProvider = (props) => {
-  const [meals, setMeals] = useState([]);
+  const [meals, setMeals] = useState([])
 
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchTerm, setSearchTerm] = useState('')
 
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false)
 
   const [modalProperties, setModalProperties] = useState({
     isOpen: false,
-    meal: null,
-  });
+    meal: null
+  })
 
-  const [favorites, setFavorites] = useState([]);
+  const [favorites, setFavorites] = useState([])
 
   const fetchMeals = async (term) => {
-    setIsLoading(true);
-    const data = await mealsService.searchMealsBy(term);
-    setIsLoading(false);
-    setMeals(data);
-  };
+    setIsLoading(true)
+    const data = await mealsService.searchMealsBy(term)
+    setIsLoading(false)
+    setMeals(data)
+  }
 
   const getRandomMeal = async () => {
-    const data = await mealsService.getRandomMeal();
-    setMeals(data);
-  };
+    const data = await mealsService.getRandomMeal()
+    setMeals(data)
+  }
 
   // 2 useEffect to handle bug when we click on surprise me and change searchTerm state to ""
   // at that time we don't want useEffect to run
   // but initially when searchTerm is empty it shoudl run
   useEffect(() => {
-    fetchMeals();
-  }, []);
+    fetchMeals()
+  }, [])
 
   useEffect(() => {
     if (!searchTerm) {
-      return;
+      return
     }
-    fetchMeals(searchTerm);
-  }, [searchTerm]);
+    fetchMeals(searchTerm)
+  }, [searchTerm])
 
   const onModalClose = () => {
-    setModalProperties({ isOpen: false, meal: null });
-  };
+    setModalProperties({ isOpen: false, meal: null })
+  }
 
   const addToFavorites = (newItem) => {
-    setFavorites((prev) => [...prev, newItem]);
-  };
+    setFavorites((prev) => [...prev, newItem])
+  }
 
   const removeFromFavorites = (itemToBeRemoved) => {
-    setFavorites((prev) =>
-      prev.filter((m) => m.idMeal !== itemToBeRemoved.idMeal)
-    );
-  };
+    setFavorites((prev) => prev.filter((m) => m.idMeal !== itemToBeRemoved.idMeal))
+  }
 
   const context = {
     favorites,
@@ -79,15 +76,13 @@ export const AppContextProvider = (props) => {
     getRandomMeal,
     modalProperties,
     onModalClose,
-    setModalProperties,
-  };
+    setModalProperties
+  }
 
-  return (
-    <AppContext.Provider value={context}>{props.children}</AppContext.Provider>
-  );
-};
+  return <AppContext.Provider value={context}>{props.children}</AppContext.Provider>
+}
 
 export const useGlobalContext = () => {
-  const context = useContext(AppContext);
-  return context;
-};
+  const context = useContext(AppContext)
+  return context
+}

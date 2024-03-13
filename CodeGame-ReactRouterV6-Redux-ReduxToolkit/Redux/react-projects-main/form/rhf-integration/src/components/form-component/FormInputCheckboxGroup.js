@@ -1,15 +1,9 @@
-import {
-  Checkbox,
-  FormControl,
-  FormControlLabel,
-  FormHelperText,
-  FormLabel,
-} from "@mui/material";
-import React, { useState } from "react";
-import { Controller, useFormContext } from "react-hook-form";
+import { Checkbox, FormControl, FormControlLabel, FormHelperText, FormLabel } from '@mui/material'
+import React from 'react'
+import { Controller, useFormContext } from 'react-hook-form'
 
 const FormInputCheckboxGroup = ({ label, fieldName, rules = {}, options }) => {
-  const { control } = useFormContext();
+  const { control } = useFormContext()
 
   return (
     <FormControl sx={{ m: 3 }}>
@@ -18,10 +12,7 @@ const FormInputCheckboxGroup = ({ label, fieldName, rules = {}, options }) => {
         name={fieldName}
         control={control}
         rules={rules}
-        render={({
-          field: { value, onChange, onBlur, ref, name },
-          fieldState: { error },
-        }) => (
+        render={({ field: { value, onChange, onBlur, ref, name }, fieldState: { error } }) => (
           <>
             {options.map(({ label: opLabel, value: opValue }) => (
               <FormControlLabel
@@ -30,9 +21,9 @@ const FormInputCheckboxGroup = ({ label, fieldName, rules = {}, options }) => {
                     checked={value.includes(opLabel)}
                     onChange={(e) => {
                       if (e.target.checked) {
-                        onChange([...value, opLabel]);
+                        onChange([...value, opLabel])
                       } else {
-                        onChange(value.filter((a) => a !== opLabel));
+                        onChange(value.filter((a) => a !== opLabel))
                       }
                     }}
                   />
@@ -41,16 +32,12 @@ const FormInputCheckboxGroup = ({ label, fieldName, rules = {}, options }) => {
                 key={opLabel}
               />
             ))}
-            {error && (
-              <FormHelperText sx={{ color: "red" }}>
-                {error.message}
-              </FormHelperText>
-            )}
+            {error && <FormHelperText sx={{ color: 'red' }}>{error.message}</FormHelperText>}
           </>
         )}
       />
     </FormControl>
-  );
-};
+  )
+}
 
-export default FormInputCheckboxGroup;
+export default FormInputCheckboxGroup
