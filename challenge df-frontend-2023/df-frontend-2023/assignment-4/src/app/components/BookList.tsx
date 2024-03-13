@@ -1,8 +1,8 @@
 import { FC } from 'react';
-import Book from './Book';
 import { BookStoreType } from '../../common/Types';
-import { BookTableHeader } from './BookTableHeader';
+import Book from './Book';
 import { BookTableFooter } from './BookTableFooter';
+import { BookTableHeader } from './BookTableHeader';
 
 interface BookListProps {
   bookStore: BookStoreType;

@@ -2,9 +2,11 @@
 
 Adapt the CMS Bookstore interface from [Assignment 02's React Project](../assignment-2/) into a NextJS application. This transition will highlight the flexibility and power of the framework. Enhance the UI using TailwindCSS to ensure a responsive and modern design.
 
+```js
 <p align="center">
   <img src="../assets/bookstore-next.png">
 </p>
+```
 
 ## Requirements
 

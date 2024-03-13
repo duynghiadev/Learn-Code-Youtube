@@ -1,7 +1,7 @@
 'use client';
 
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { useCallback, useEffect, useState } from 'react';
-import { useRouter, usePathname, useSearchParams } from 'next/navigation';
 
 export const BookSearch = () => {
   const router = useRouter();

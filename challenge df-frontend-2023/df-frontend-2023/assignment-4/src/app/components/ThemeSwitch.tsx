@@ -1,5 +1,5 @@
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { useCallback, useEffect, useMemo } from 'react';
-import { useRouter, usePathname, useSearchParams } from 'next/navigation';
 
 const ThemeSwitch = () => {
   const router = useRouter();

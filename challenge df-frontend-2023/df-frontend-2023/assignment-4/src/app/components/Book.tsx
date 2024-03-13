@@ -1,5 +1,5 @@
-import { FC } from 'react';
 import Link from 'next/link';
+import { FC } from 'react';
 import { BookType } from '../../common/Types';
 
 interface BookProps {
