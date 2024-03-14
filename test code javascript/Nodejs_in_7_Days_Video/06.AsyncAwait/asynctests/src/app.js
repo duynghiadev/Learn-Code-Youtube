@@ -10,6 +10,7 @@ const timeoutPromiseWithData = (timeout, data) => {
       if (data === 'jelly') {
         return reject(new Error('no jelly allowed'))
       }
+
       return resolve(data)
     }, timeout)
   })
