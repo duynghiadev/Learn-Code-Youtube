@@ -12,12 +12,12 @@ const delay = async (timeout = 1000) => {
 
 const main = async () => {
   try {
-    const result = await delay(1000)
+    const result = await delay(2000)
     console.log(result)
   } catch (err) {
     console.log(err)
   } finally {
-    console.log('finally!')
+    console.log('finally!') // run anyway, so that error or success
   }
 }
 

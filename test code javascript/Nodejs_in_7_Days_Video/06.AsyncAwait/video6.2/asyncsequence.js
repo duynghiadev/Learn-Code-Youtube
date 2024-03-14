@@ -11,7 +11,6 @@ const sequencer = async (arr) => {
 
   for (let func of arr) {
     const result = await func()
-
     results.push(result)
   }
 
