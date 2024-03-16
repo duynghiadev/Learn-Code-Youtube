@@ -17,7 +17,7 @@ const users = [
 ]
 
 const newUsers = users.filter((user) => {
-  return user.name && user.age && user.address
+  return Object.values(user).every((value) => Boolean(value))
 })
 
 console.log('newUsers:', newUsers)
