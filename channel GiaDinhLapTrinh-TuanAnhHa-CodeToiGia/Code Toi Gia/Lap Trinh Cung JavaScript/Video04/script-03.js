@@ -2,7 +2,11 @@ const array = [1, 2, 3]
 const repetitions = 2
 
 // Create a new array with the desired number of repetitions
-const newArray = Array.from({ length: repetitions }, () => array).reduce((acc, curr) => {
+
+const arrayFrom = Array.from({ length: repetitions }, () => array)
+console.log('😆 arrayFrom:', arrayFrom)
+
+const newArray = arrayFrom.reduce((acc, curr) => {
   console.log('curr:', curr)
   console.log('✅ acc.concat(curr):', acc.concat(curr))
   return acc.concat(curr)
