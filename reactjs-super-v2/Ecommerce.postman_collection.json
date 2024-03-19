@@ -226,12 +226,7 @@
                 "url": {
                   "raw": "{{host}}/admin/products/delete/60af6fe6f1a3041b289d8b9d",
                   "host": ["{{host}}"],
-                  "path": [
-                    "admin",
-                    "products",
-                    "delete",
-                    "60af6fe6f1a3041b289d8b9d"
-                  ]
+                  "path": ["admin", "products", "delete", "60af6fe6f1a3041b289d8b9d"]
                 }
               },
               "response": []
@@ -341,12 +336,7 @@
                 "url": {
                   "raw": "{{host}}/admin/categories/delete/6072f4218fbbd63dc4a07f02",
                   "host": ["{{host}}"],
-                  "path": [
-                    "admin",
-                    "categories",
-                    "delete",
-                    "6072f4218fbbd63dc4a07f02"
-                  ]
+                  "path": ["admin", "categories", "delete", "6072f4218fbbd63dc4a07f02"]
                 }
               },
               "response": []
