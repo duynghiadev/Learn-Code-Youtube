@@ -61,6 +61,41 @@ module.exports = {
 
 ## Sử dụng HTML Webpack Plugin để tự động tạo ra file HTML
 
+- Bây giờ có 1 vấn đề là chúng ta đang chỉnh sửa các đường dẫn css và js bằng tay trong file `index.html`. Điều này không hay chút nào vì sau này các tên file sẽ là các hash name thì việc cập nhật lại file `index.html` khá mất thời gian.
+- `html-webpack-plugin` sẽ giúp chúng ta tự tạo ra 1 file html bằng webpack theo cấu hình của chúng ta.
+- Chạy câu lệnh `yarn add html-webpack-plugin -D` để cài
+
+```js
+const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+
+module.exports = {
+  mode: 'production',
+  entry: {
+    app: path.resolve('src/index.js')
+  },
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: '[name].js'
+  },
+  module: {
+    rules: [
+      {
+        test: /\.s[ac]ss|css$/,
+        use: ['style-loader', 'css-loader', 'sass-loader']
+      }
+    ]
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: 'Webpack App',
+      filename: 'index.html',
+      template: 'src/template.html'
+    })
+  ]
+}
+```
+
 ## Xử lý caching ở trình duyệt bằng hash name file
 
 ## Tạo một server bằng webpack để dev

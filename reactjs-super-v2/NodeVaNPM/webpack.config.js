@@ -1,9 +1,5 @@
 const path = require('path')
-
-// when build so that me see these log below in terminal
-console.log('__dirname:', __dirname)
-console.log('path.resolve():', path.resolve())
-console.log(`path.resolve(__dirname, 'dist'):`, path.resolve(__dirname, 'dist'))
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   mode: 'production',
@@ -21,5 +17,12 @@ module.exports = {
         use: ['style-loader', 'css-loader', 'sass-loader']
       }
     ]
-  }
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: 'Webpack App',
+      filename: 'index.html',
+      template: 'src/template.html'
+    })
+  ]
 }
