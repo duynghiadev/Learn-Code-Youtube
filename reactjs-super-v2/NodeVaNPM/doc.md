@@ -65,6 +65,8 @@ module.exports = {
 - `html-webpack-plugin` sẽ giúp chúng ta tự tạo ra 1 file html bằng webpack theo cấu hình của chúng ta.
 - Chạy câu lệnh `yarn add html-webpack-plugin -D` để cài
 
+**`webpack.config.js`**
+
 ```js
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
@@ -96,7 +98,62 @@ module.exports = {
 }
 ```
 
+## Tách CSS ra những file riêng
+
+### Vấn đề khi chèn `style` bằng JS
+
+- Vấn đề hiện tại là CSS đang được JS DOM vào nên xảy ra tình trạng "chớp trắng" khi mới load trang.
+- Tăng size file JS lên rất nhiều
+
+### Cách fix
+
+- Dùng `mini-css-extract-plugin` để tách nó ra thành những file riêng
+- Chạy câu lệnh `yarn add mini-css-extract-plugin -D` để cài
+
+### Lưu ý:
+
+- Hãy đảm bảo bạn đã cài và đang dùng plugin `html-webpack-plugin`, vì nó cần plugin này để tự động generate ra thẻ `<link>` trong file `index.html`
+- Không dùng plugin `style-loader` cùng với `mini-css-extract-plugin`. Nếu đang dùng `style-loader` thì xóa nó đi, 2 thằng này xung đột với nhau
+
+**`webpack.config.js`**
+
+```js
+const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+
+module.exports = {
+  mode: 'production',
+  entry: {
+    app: path.resolve('src/index.js')
+  },
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: '[name].js'
+  },
+  module: {
+    rules: [
+      {
+        test: /\.s[ac]ss|css$/,
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
+      }
+    ]
+  },
+  plugins: [
+    new MiniCssExtractPlugin(),
+    new HtmlWebpackPlugin({
+      title: 'Webpack App',
+      filename: 'index.html',
+      template: 'src/template.html'
+    })
+  ]
+}
+```
+
 ## Xử lý caching ở trình duyệt bằng hash name file
+
+- Hiện tại những file css hay js sau khi build đều có 1 cái tên cố định, điều này dẫn đến trình duyệt hoặc server sẽ thực hiện caching. Caching là tốt, điều này giúp cho web chúng ta load nhanh hơn nhưng nó không đúng với ngữ cảnh hiện tại. Chúng ta thường build lại webpack khi có một cập nhật mới gì đó trên website và chúng ta muốn người dùng sẽ thấy ngay lập tức bản cập nhật này. Vì thế chúng ta cần phải xử lý caching.
+- Cách xử lý dễ nhất là mỗi lần build webpack chúng ta lại tạo ra một tên file mới. Webpack cho phép chúng ta chỉnh sửa điều này trong `output.filename` bằng `[contenthash]`
 
 ## Tạo một server bằng webpack để dev
 
