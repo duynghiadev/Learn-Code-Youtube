@@ -562,3 +562,31 @@ Tham khảo cách viết template string cho [filename](https://webpack.js.org/c
 - Thực ra trong đa số trường hợp các bạn chỉ cần dùng `[file]` là đủ rồi. `[query]` và `[fragment]` cực ít dùng, chưa kể nếu chỉ áp dụng fragment khi import file còn làm tên file bị lỗi => 404 not found
 
 ## Phân tích file build với Webpack Bundle Analyzer
+
+- Cài `yarn add -D webpack-bundle-analyzer`
+
+**`webpack.config.js`**
+
+```js
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
+
+module.exports = (env) => {
+  const basePlugins = [
+    new MiniCssExtractPlugin({
+      filename: '[name].[contenthash].css'
+    }),
+    new HtmlWebpackPlugin({
+      title: 'Webpack App',
+      filename: 'index.html',
+      template: 'src/template.html'
+    })
+  ]
+
+  const isDevelopment = Boolean(env.development)
+  const plugins = isDevelopment ? basePlugins : [...basePlugins, new BundleAnalyzerPlugin()]
+  return {
+    //...
+    plugins
+  }
+}
+```
