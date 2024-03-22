@@ -482,6 +482,83 @@ console.log('personClone', personClone)
 console.log('Object.values', Object.values(personClone))
 ```
 
-## Sử dụng các tài nguyên như ảnh trong webpack
+## [Sử dụng các tài nguyên như ảnh trong webpack](https://webpack.js.org/guides/asset-modules/)
+
+- Webpack 5 cho phép chúng ta sử dụng các file như (ảnh, fonts, pdf...) trong webpack mà không cần cài thêm các loader (trước webpack 5 thì cần cài các loader như [file-loader](https://v4.webpack.js.org/loaders/file-loader/))
+
+**`style.css`**
+
+```css
+@font-face {
+  font-family: 'Roboto';
+  src: url('../fonts/Roboto-Regular.ttf') format('truetype');
+  font-weight: 400;
+}
+
+body {
+  background-color: aqua;
+  font-family: 'Roboto', sans-serif;
+}
+```
+
+**`dom.js`**
+
+```js
+import wallpaper from './images/pexels-maxime-francis.jpg'
+import bitcoinWhitepaper from './pdfs/bitcoin.pdf'
+
+const domHandler = () => {
+  console.log(wallpaper)
+  console.log(bitcoinWhitepaper)
+  document.body.style.backgroundImage = `url(${wallpaper})`
+  const link = document.createElement('a')
+  link.href = bitcoinWhitepaper
+  link.textContent = 'Bitcoin Whitepaper'
+  document.body.appendChild(link)
+}
+
+export default domHandler
+```
+
+**`webpack.config.js`**
+
+```js
+module.exports = {
+  //...
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: '[name].[contenthash].js',
+    clean: true,
+    assetModuleFilename: '[file]'
+  },
+  module: {
+    rules: [
+      {
+        test: /\.(png|svg|jpg|jpeg|gif|pdf)$/i,
+        type: 'asset/resource'
+      }
+    ]
+  }
+}
+```
+
+- Mình không bỏ phần mở rộng của file font vào `test` font mình import trong file css và webpack nó tự động load cho mình rồi.
+
+Tham khảo cách viết template string cho [filename](https://webpack.js.org/configuration/output/#template-strings) và [assetModuleFilename](https://webpack.js.org/configuration/output/#outputassetmodulefilename)
+
+> **Tip**
+>
+> - `[file]`: tên file và đường dẫn, không có query và fragment
+> - `[query]`: query bắt đầu với dấu `?`. Ví dụ: abc.com/bitcoin.pdf?id=abcdef, khi người dùng click vào link này sẽ xem được file pdf và server cũng nhận được một request có query string id=abcdef để thực hiện một hành động gì đó.
+> - `[fragment]`: fragment bắt đầu với dấu `#`. Ví dụ abc.com/bitcoin.pdf#page=4, khi người dùng click vào link này thì mở file pdf và chuyển ngay đến page 4. Tham khảo thêm về URI fragment [tại đây](https://en.wikipedia.org/wiki/URI_fragment)
+> - `[base]`: Chỉ tên file (bao gồm phần mở rộng), không có đường dẫn
+> - `[path]`: Chỉ có đường dẫn, không có tên file
+> - `[name]`: Chỉ có tên file mà không có phần đuôi mở rộng hay đường dẫn
+> - `[ext]`: Phần đuôi mở rộng bắt đầu với dấu `.` (tính năng này không có sẵn cho [output,filename](https://webpack.js.org/configuration/output/#outputfilename))
+
+- `[file]` = `[path][base]`
+- `[base]` = `[name][ext]`
+- Full path: `[path][name][ext][query][fragment]` = `[path][base][query][fragment]` = `[file][query][fragment]`.
+- Thực ra trong đa số trường hợp các bạn chỉ cần dùng `[file]` là đủ rồi. `[query]` và `[fragment]` cực ít dùng, chưa kể nếu chỉ áp dụng fragment khi import file còn làm tên file bị lỗi => 404 not found
 
 ## Phân tích file build với Webpack Bundle Analyzer
