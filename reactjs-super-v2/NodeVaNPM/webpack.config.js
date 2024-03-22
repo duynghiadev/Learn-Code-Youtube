@@ -9,7 +9,8 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].[contenthash].js'
+    filename: '[name].[contenthash].js',
+    clean: true
   },
   module: {
     rules: [
@@ -21,9 +22,7 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      path: path.resolve(__dirname, 'dist'),
-      filename: '[name].[contenthash].js',
-      clean: true
+      filename: '[name].[contenthash].css'
     }),
     new HtmlWebpackPlugin({
       title: 'Webpack App',
