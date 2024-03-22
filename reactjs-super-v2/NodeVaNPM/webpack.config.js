@@ -3,12 +3,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = (env) => {
-  console.log('env.development:', env.development)
-  console.log('env.production:', env.production)
-
-  const isDevelopment = process.env.NODE_ENV === 'development'
+  const isDevelopment = Boolean(env.development)
   return {
-    mode: isDevelopment ? 'development' : 'production',
+    mode: 'development',
     entry: {
       app: path.resolve('src/index.js')
     },
@@ -23,6 +20,25 @@ module.exports = (env) => {
         {
           test: /\.s[ac]ss|css$/,
           use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
+        },
+        {
+          test: /\.js$/,
+          exclude: /node_modules/,
+          use: {
+            loader: 'babel-loader',
+            options: {
+              presets: [
+                [
+                  '@babel/preset-env',
+                  {
+                    debug: true, // Hiển thị debug lên terminal để dễ debug
+                    useBuiltIns: 'entry',
+                    corejs: '3.36.1' // nên quy định verson core-js để babel-preset-env nó hoạt động tối ưu
+                  }
+                ]
+              ]
+            }
+          }
         }
       ]
     },

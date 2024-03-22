@@ -261,6 +261,7 @@ module.exports = {
 - Ngoài `source-map` ra thì còn có các giá trị khác như `eval`, `eval-cheap-source-map`,...tùy thuộc vào mục đích sử dụng.
 - **Khuyên dùng**: Chỉ nên để `source-map` khi dev, khi build ra production thì hãy disable nó đi vì `source-map` sẽ làm lộ mã nguồn gốc cũng như là tăng kích thước các file build.
 - Webpack nhận các biến môi trường thông qua `--env` trong câu lệnh script khi chạy webpack. Vì thế bạn hãy thêm `"start": "webpack serve --env development"` trong script của `package.json` để truyền `development = true` vào webpack. `module.exports` ở file `webpack.config.js` ngoài bằng một object thì nó còn có thể là một function với tham số là biến object môi trườn env.
+- Bạn cũng có thể truyền biến môi trường vào webpack thông qua `process.env` của NodeJs. Nếu máy windows thì `"start": "SET NODE_ENV=production&webpack serve"`, còn Linux thì `"start": "NODE_ENV=production webpack serve"`. Bên file `webpack.config.js` chỉ cần dùng `process.env.NODE_ENV` để nhận giá trị.
 
 **`webpack.config.js`**
 
@@ -314,7 +315,172 @@ module.exports = (env) => {
 }
 ```
 
-## Dùng Babel để tạo biên dịch code JS thành các phiên bản cũ hơn
+## Dùng Babel để dịch code JS thành các phiên bản cũ hơn
+
+- Nếu như chúng ta viết code JS có các cú pháp của phiên bản ES2022 thì những trình duyệt cũ chỉ chạy được ES6 sẽ không thể hiểu được code và dẫn đến lỗi. Vì thế transpile code thành các version cũ hơn là cần thiết. Công cụ transpile phổ biến nhất là **Babel**
+- Để sử dụng Babel ở webpack các bạn cần cài `yarn add @babel/core @babel/preset-env babel-loader -D`.
+
+- Để mình giải thích luôn thằng `@babel/core` là lõi của Babel
+- `@babel/preset-env` là bộ preset (thiết lập sẵn) cho từng đối tượng môi trường
+- `babel-loader` dùng để tích hợp Babel vào webpack.
+- Tiếp theo các bạn thêm cái này vào rules là được.
+
+```js
+{
+  test: /\.js$/,
+  exclude: /node_modules/,
+  use: {
+    loader: 'babel-loader',
+    options: {
+      presets: ['@babel/preset-env']
+    }
+  }
+}
+```
+
+- Chúng ta exclude `node_modules` vì quá trình dịch code là quá trình rất nặng và chậm. Hãy đảm bảo chúng ta cần dịch ít code nhất có thể, vì thế chúng ta không cần dịch code từ các package trong `node_module`, những package này đa số đã được dịch để chạy được ở đa số trình duyệt phổ biến rồi.
+
+- Trừ những trường hợp đặc biệt bạn vẫn phải dịch một số thư viện trong `node_module`. Lúc này có thể kết hợp `test` và `not` như dưới đây.
+
+```js
+{
+    test: /\.m?js$/,
+    exclude: {
+      and: [/node_modules/], // Exclude libraries in node_modules ...
+      not: [
+        // Except for a few of them that needs to be transpiled because they use modern syntax
+        /unfetch/,
+        /d3-array|d3-scale/,
+        /@hapi[\\/]joi-date/,
+      ]
+    },
+    use: {
+      loader: 'babel-loader',
+      options: {
+        presets: [
+          ['@babel/preset-env']
+        ]
+      }
+    }
+  }
+```
+
+- Nếu không đặt `target` cho `@babel/preset-env` thì [Babel sẽ cho rằng bạn đang target đến các trình duyệt cũ nhất có thể, ví dụ `@babel/preset-env` sẽ dịch code ES2015-ES2020 sang ES5](https://babeljs.io/docs/en/options#no-targets). Vậy nên bạn nên đặt `target` để có thể giảm kích thước file build.
+
+- Ở phần [doc `targets` của @babel/preset-env](https://babeljs.io/docs/en/babel-preset-env#targets) thì chúng ta có thể truyền thằng targets vào cái option này kiểu như phía dưới
+
+```js
+presets: [['@babel/preset-env', { targets: 'ie 11' }]]
+```
+
+- Nhưng theo mình test thì nó không hiệu quả, arrow function vẫn xuất hiển ở file build cho **ie 11**. Có vẻ cái targets option này không hoạt động tốt đối với những trình duyệt cũ. Nhưng nếu chúng ta làm theo [doc nó recommend là tạo file `.browserslistrc`](https://babeljs.io/docs/en/babel-preset-env#browserslist-integration) để setting cho cái targets thì lại hoạt động tốt.
+
+- **Browserslist** là một thư viện giúp chúng ta config target browsers hoặc node.js. Cách viết Browserslist có thể tham khảo tại [doc của nó](https://github.com/browserslist/browserslist)
+
+**`.browserslistrc`**
+
+```bash
+ie 11
+```
+
+### Lưu ý với @babel/preset-env
+
+- Không phải chỉ cần set targets là tất cả code chạy được trên môi trường mong muốn, đôi lúc bạn phải setting một số thứ.
+
+- Ví dụ sử dụng cú pháp ES6 Spread Operator có thể dịch sang để tương thích với **ie 11** mà không cần setting gì nhiều cho `@babel/preset-env`
+
+**`index.js`**
+
+```js
+// ES6 Spread Operator
+const person = { name: 'Duoc' }
+const personClone = { ...person }
+console.log('personClone', personClone)
+```
+
+**`webpack.config.js`**
+
+```js
+module: {
+  rules: [
+    {
+      test: /\.js$/,
+      exclude: /node_modules/,
+      use: {
+        loader: 'babel-loader',
+        options: {
+          presets: [['@babel/preset-env']]
+        }
+      }
+    }
+  ]
+}
+```
+
+- Nhưng nếu bạn dùng cú pháp ES7 `Object.values` thì bạn phải setting một chút nó mới hoạt động.
+
+- Trước tiên bạn cần cài `yarn add core-js -D`. **`core-js`** là một thư viện tiêu chuẩn chứa các tính năng của javascript, nó còn chứa các polyfill (những đoạn code dự phòng cho những tính năng mới mà môi trường hiện tại không hỗ trợ)
+
+**`index.js`**
+
+```js
+// ES6 Spread Operator
+const person = { name: 'Duoc' }
+const personClone = { ...person }
+console.log('personClone', personClone)
+
+// ES7 Object.values
+console.log('Object.values', Object.values(personClone))
+```
+
+**`webpack.config.js`**
+
+```js
+module: {
+  rules: [
+    {
+      test: /\.js$/,
+      exclude: /node_modules/,
+      use: {
+        loader: 'babel-loader',
+        options: {
+          presets: [
+            [
+              '@babel/preset-env',
+              {
+                debug: true, // Hiển thị debug lên terminal để dễ debug
+                useBuiltIns: 'usage', // Dùng cái này thì đơn giản nhất, không cần import core-js vào code
+                corejs: '3.23.4' // nên quy định verson core-js để babel-preset-env nó hoạt động tối ưu
+              }
+            ]
+          ]
+        }
+      }
+    }
+  ]
+}
+```
+
+Ngoài ra để cho thuận tiện việc tối ưu kích thước file build bạn cũng có thể dùng `useBuiltIns: 'entry'`, lúc này thì bạn phải tự tay import các tính năng cần dùng. Ví dụ
+
+**`index.js`**
+
+```js
+import 'core-js/modules/es.object.values'
+import 'core-js/modules/es.promise'
+
+import sum from './utils'
+import './styles/style.css'
+import './styles/style.scss'
+console.log(sum(100, 10))
+// ES6 Spread Operator
+const person = { name: 'Duoc' }
+const personClone = { ...person }
+console.log('personClone', personClone)
+
+// ES7 Object.values
+console.log('Object.values', Object.values(personClone))
+```
 
 ## Sử dụng các tài nguyên như ảnh trong webpack
 
