@@ -8,7 +8,7 @@ let charmax = ''
 // Bước 1: Duyệt qua toàn bộ chuỗi và lưu tạm vào object
 for (let char of string) {
   // nên tìm hiểu thêm for...in
-  console.log('char of:', char)
+  console.log('char in string:', char)
 
   if (charObj[char]) {
     charObj[char] = charObj[char] + 1
@@ -25,9 +25,10 @@ console.log('charObj:', charObj)
 // key in Object
 
 for (let key in charObj) {
+  console.log('key in charObj:', key)
   if (charObj[key] > max) {
     max = charObj[key]
     charmax = key
   }
 }
-console.log('charmax:', charmax, 'and max:', max)
+console.log('👉 Result: 👉 charmax:', charmax, 'and max:', max)
