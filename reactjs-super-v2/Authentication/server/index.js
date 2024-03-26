@@ -12,6 +12,7 @@ if (dbExist) {
 } else {
   console.log(chalk.red(`Không phát hiện file database.json`))
   console.log(chalk.cyan(`Server sẽ tiến hành khởi tạo database`))
+
   fs.writeFile('./database.json', JSON.stringify(config.initialDatabase), (err) => {
     if (err) throw console.log(chalk.red(`Khởi tạo database thất bại!`))
     console.log(chalk.green(`Khởi tạo database thành công và kết nối thành công`))
@@ -19,6 +20,7 @@ if (dbExist) {
 }
 
 const app = express()
+
 app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
