@@ -9,7 +9,15 @@ function App() {
       <Header />
       <div className='row'>
         <div className='col-lg-7 leftlayout'>left</div>
-        <div className='col-lg-5 rightlayout'>right</div>
+        <div className='col-lg-5 rightlayout'>
+          <p>CÁC TÍNH NĂNG</p>
+          <div className='rightlayout-item'>
+            <a>Căn bậc 2</a>
+          </div>
+          <div className='rightlayout-item'>
+            <a>Máy tính cộng</a>
+          </div>
+        </div>
       </div>
     </div>
   )
