@@ -38,12 +38,12 @@ JWT hay JSON Web Token là một tiêu chuẩn mở [RFC 7519](https://datatrack
 
 Nói một cách khác JWT là một cách để tạo ra token và kiểm tra token có đúng hay không.
 
-Một số đặc điểm của JWT
+- Một số đặc điểm của JWT
 
-- Một chuỗi JWT có 3 phần tách nhau bằng dấu chấm: `header.payload.signature`
-- **header** chứa thông tin thuật toán mã hóa. Nó được tạo ra bằng thuật toán và dễ dàng giải mã
-- **payload** chứa thông tin người dùng và thời gian hết hạn token. Nó cũng được tạo ra bằng thuật toán và dễ dàng giải mã.
-- **signature** là chữ ký, phần quan trọng nhất. Cái này không thể giải mã, vì nó là mã hóa 1 chiều. Chỉ có thể kiểm tra nó có đúng hay không bằng cách mã hóa **header**, **payload** kết hợp với một private key (private key thì thường server sẽ lưu trữ). Vậy nên nếu **header** hoặc **payload** thay đổi thì **signature** sẽ thay đổi.
+  - Một chuỗi JWT có 3 phần tách nhau bằng dấu chấm: `header.payload.signature`
+  - **header** chứa thông tin thuật toán mã hóa. Nó được tạo ra bằng thuật toán và dễ dàng giải mã
+  - **payload** chứa thông tin người dùng và thời gian hết hạn token. Nó cũng được tạo ra bằng thuật toán và dễ dàng giải mã.
+  - **signature** là chữ ký, phần quan trọng nhất. Cái này không thể giải mã, vì nó là mã hóa 1 chiều. Chỉ có thể kiểm tra nó có đúng hay không bằng cách mã hóa **header**, **payload** kết hợp với một private key (private key thì thường server sẽ lưu trữ). Vậy nên nếu **header** hoặc **payload** thay đổi thì **signature** sẽ thay đổi.
 
 Vậy nên nếu bạn là người code server thì đừng bao giờ lưu thông tin nhạy cảm ở payload JWT
 
