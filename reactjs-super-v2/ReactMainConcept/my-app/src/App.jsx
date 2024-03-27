@@ -1,13 +1,13 @@
 import './App.css'
-
-const comment = `<script>console.log('send token')</script>`
+import Welcome from './Welcome'
 
 function App() {
   return (
-    <>
-      <p>Hello</p>
-      <p>This is text script {comment}</p>
-    </>
+    <div>
+      <Welcome name='Ronaldo' age={10} />
+      <Welcome name='Messi' age={32} />
+      <Welcome name='Mbape' age={20} />
+    </div>
   )
 }
 
