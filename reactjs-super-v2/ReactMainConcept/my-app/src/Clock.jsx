@@ -21,7 +21,8 @@ export default class Clock extends React.Component {
         created: new Date().getSeconds()
       },
       name: this.props.name,
-      lists: []
+      lists: [],
+      darkMode: false
     }
     this.date = '22/8/2022'
     this.getTime = this.getTime.bind(this)
@@ -29,7 +30,7 @@ export default class Clock extends React.Component {
 
   componentDidMount() {
     const seconds = document.getElementById('seconds')
-    console.log('seconds:', seconds)
+    console.log(seconds)
 
     fetchApi().then((res) =>
       this.setState((prevState) => ({
@@ -37,6 +38,21 @@ export default class Clock extends React.Component {
         lists: res
       }))
     )
+  }
+
+  componentDidUpdate() {
+    // if (this.state.darkMode) {
+    //   const value = document.querySelector('input').value
+    //   console.log('Value in Input', value)
+    // }
+    if (this.state.lists.length === 0) {
+      fetchApi().then((res) =>
+        this.setState((prevState) => ({
+          ...prevState,
+          lists: res
+        }))
+      )
+    }
   }
 
   getTime() {
@@ -53,10 +69,15 @@ export default class Clock extends React.Component {
     this.setState(newState)
   }
 
-  render() {
-    console.log('this.props:', this.props)
-    console.log('this.state:', this.state)
+  toggleDarkMode = () => {
+    this.setState((prevState) => ({
+      ...prevState,
+      darkMode: !prevState.darkMode
+    }))
+  }
 
+  render() {
+    console.log(this.state)
     return (
       <div>
         <h1>Hello, world! {this.state.name}</h1>
@@ -64,6 +85,8 @@ export default class Clock extends React.Component {
         <h2 id='seconds'>It is {this.state.seconds.created}</h2>
         <h3>Is is {this.date}</h3>
         <button onClick={this.getTime}>Get Time</button>
+        <button onClick={this.toggleDarkMode}>Toggle</button>
+        {this.state.darkMode && <input value={this.state.darkMode} type='text' />}
       </div>
     )
   }
