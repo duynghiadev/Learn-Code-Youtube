@@ -3,7 +3,7 @@ import React from 'react'
 const lists = ['BMW', 'Toyota', 'Honda']
 
 const fetchApi = () => {
-  return new Promise((reject, resolve) => {
+  return new Promise((resolve) => {
     setTimeout(() => {
       resolve(lists)
     }, 1000)
@@ -62,7 +62,6 @@ export default class Clock extends React.Component {
         <h1>Hello, world! {this.state.name}</h1>
         <h2>It is {this.state.time.created}</h2>
         <h2 id='seconds'>It is {this.state.seconds.created}</h2>
-
         <h3>Is is {this.date}</h3>
         <button onClick={this.getTime}>Get Time</button>
       </div>
