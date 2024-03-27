@@ -1,12 +1,10 @@
 import './App.css'
-import Welcome from './Welcome'
+import Clock from './Clock'
 
 function App() {
   return (
-    <div>
-      <Welcome name='Ronaldo' age={10} />
-      <Welcome name='Messi' age={32} />
-      <Welcome name='Mbape' age={20} />
+    <div className='App'>
+      <Clock />
     </div>
   )
 }
