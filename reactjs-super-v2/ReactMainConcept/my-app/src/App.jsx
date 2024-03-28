@@ -4,11 +4,13 @@ import Clock from './Clock'
 
 function App() {
   const [name, setName] = useState('Casio')
+  const [visible, setVisible] = useState(true)
 
   return (
     <div className='App'>
       <button onClick={() => setName('Apple')}>Change name</button>
-      <Clock name={name} />
+      <button onClick={() => setVisible(false)}>Hide Clock component</button>
+      {visible && <Clock name={name} />}
     </div>
   )
 }
