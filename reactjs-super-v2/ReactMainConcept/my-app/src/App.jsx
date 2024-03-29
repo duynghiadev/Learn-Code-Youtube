@@ -4,6 +4,7 @@ import BareButton from './BareButton'
 import BareInput from './BareInput'
 import Clock from './Clock'
 import Layout from './Layout'
+import LoginControl from './LoginControl'
 
 function App() {
   const [name, setName] = useState('Casio')
@@ -27,6 +28,8 @@ function App() {
 
         <BareButton />
       </Layout>
+
+      <LoginControl isLoggedIn={true} hidden={false} />
     </div>
   )
 }
