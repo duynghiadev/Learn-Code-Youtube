@@ -21,3 +21,7 @@
   cursor: pointer;
   text-decoration: underline;
 }
+
+.my-container {
+  padding: 0px 10% 0px 10%;
+}
