@@ -6,6 +6,7 @@ import Clock from './Clock'
 import CorrectlyState from './CorrectlyState'
 import Layout from './Layout'
 import LoginControl from './LoginControl'
+import { ProductList } from './ProductList/ProductList'
 
 function App() {
   const [name, setName] = useState('Casio')
@@ -33,6 +34,8 @@ function App() {
       <LoginControl isLoggedIn={true} hidden={false} />
 
       <CorrectlyState />
+
+      <ProductList />
     </div>
   )
 }
