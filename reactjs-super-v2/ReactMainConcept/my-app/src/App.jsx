@@ -4,6 +4,8 @@ import BareButton from './BareButton'
 import BareInput from './BareInput'
 import Calculator from './Calculator/Calculator'
 import Clock from './Clock'
+import Composition from './CompositionvsInheritance/Composition'
+import Inheritance from './CompositionvsInheritance/Inheritance'
 import CorrectlyState from './CorrectlyState'
 import { Form } from './Form/Form'
 import { UncontrolledComponent } from './Form/UncontrolledComponent'
@@ -19,9 +21,9 @@ function App() {
     <div className='App'>
       <button onClick={() => setName('Apple')}>Change name</button>
       <button onClick={() => setVisible(false)}>Hide Clock component</button>
-      {visible && <Clock name={name} />}
+      {visible && <Clock className='Clock' name={name} />}
 
-      <Layout>
+      <Layout className='Layout'>
         <h1>Hello</h1>
         <BareInput
           type='text'
@@ -31,20 +33,23 @@ function App() {
           onChange={() => {}}
         />
 
-        <BareButton />
+        <BareButton className='BareButton' />
       </Layout>
 
-      <LoginControl isLoggedIn={true} hidden={false} />
+      <LoginControl className='LoginControl' isLoggedIn={true} hidden={false} />
 
-      <CorrectlyState />
+      <CorrectlyState className='CorrectlyState' />
 
-      <ProductList />
+      <ProductList className='ProductList' />
 
-      <Form />
+      <Form className='Form' />
 
-      <UncontrolledComponent />
+      <UncontrolledComponent className='UncontrolledComponent' />
 
-      <Calculator />
+      <Calculator className='Calculator' />
+
+      <Inheritance className='Inheritance' />
+      <Composition className='Composition' />
     </div>
   )
 }
