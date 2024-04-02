@@ -1,15 +1,13 @@
-import { createContext } from "react";
+import { createContext } from 'react'
 
 const UserContext = createContext({
   user: {
-    name: "Admin",
-    email: "admin@instafood.com",
-    isAuthenticated : false
+    name: 'Admin',
+    email: 'admin@instafood.com',
+    isAuthenticated: false
   }
-});
+})
 
-UserContext.displayName = "UserContext";
+UserContext.displayName = 'UserContext'
 
-
-
-export default UserContext;
+export default UserContext

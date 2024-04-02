@@ -1,11 +1,9 @@
-import { useState } from "react";
-
 const Contact = () => {
-  return(
-    <div className="container">
+  return (
+    <div className='container'>
       <h1>Contact</h1>
     </div>
   )
 }
 
-export default Contact;
+export default Contact

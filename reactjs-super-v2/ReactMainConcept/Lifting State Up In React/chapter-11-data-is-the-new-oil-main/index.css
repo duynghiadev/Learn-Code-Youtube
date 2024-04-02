@@ -17,7 +17,7 @@
 }
 
 .btn--primary {
-  @apply bg-yellow ;
+  @apply bg-yellow;
 }
 
 .btn--secondary {
