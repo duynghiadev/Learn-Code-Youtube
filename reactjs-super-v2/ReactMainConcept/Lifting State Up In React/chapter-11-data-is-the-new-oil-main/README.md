@@ -1,4 +1,4 @@
-Source code: https://github.com/Learn-React-With-Harshi/chapter-11-data-is-the-new-oil
+[This is source code](https://github.com/Learn-React-With-Harshi/chapter-11-data-is-the-new-oil)
 
 # `Learn React With Harshi 👩🏻‍💻 Series`
 
