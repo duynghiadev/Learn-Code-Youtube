@@ -266,6 +266,8 @@ render() {
 
         <Summary tasksCompleted={this.state.tasksCompleted}/>
         {/*		⤤   PASS "TASKS COMPLETED" AS A PROP 		⤣			*/}
+    )
+  }
 ```
 
 <br>
@@ -275,19 +277,19 @@ render() {
 ##### `components/Summary.js`
 
 ```jsx
-import React from "react";
+import React from 'react'
 
 function summary(props) {
   return (
     <div>
       <h1>TASKS COMPLETED:</h1>
-      <p className="tasks-completed">{props.tasksCompleted}</p>
+      <p className='tasks-completed'>{props.tasksCompleted}</p>
       {/*                            ⤤    HERE    ⤣        */}
     </div>
-  );
+  )
 }
 
-export default summary;
+export default summary
 ```
 
 <br>
