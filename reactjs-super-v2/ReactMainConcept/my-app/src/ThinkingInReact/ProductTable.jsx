@@ -10,6 +10,7 @@ export class ProductTable extends Component {
     let lastCategory = null
     const rows = []
 
+    // using method forEach 🚀
     productList.forEach((productItem) => {
       if (inStock && !productItem.stocked) {
         return
@@ -24,6 +25,7 @@ export class ProductTable extends Component {
       lastCategory = productItem.category
     })
 
+    // using method map 🚀
     // const rows = productList.map((productItem) => {
     //   if (productItem.category !== lastCategory) {
     //     lastCategory = productItem.category
