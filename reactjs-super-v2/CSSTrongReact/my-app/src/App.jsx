@@ -6,7 +6,7 @@ function App() {
   return (
     <div>
       <ProductList />
-      <Cart />
+      <Cart isShow={true} />
     </div>
   )
 }
