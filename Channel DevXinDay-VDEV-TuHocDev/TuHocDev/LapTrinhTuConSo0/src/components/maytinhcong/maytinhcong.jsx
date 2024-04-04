@@ -1,11 +1,16 @@
+import { useDispatch } from 'react-redux'
 import './maytinhcong.css'
+import { useEffect } from 'react'
+import { setTieude } from '../../redux/redux.root'
 
 const Maytinhcong = () => {
-  return (
-    <div>
-      <div>May tinh cong</div>
-    </div>
-  )
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(setTieude('Máy tính cộng'))
+  }, [])
+
+  return <div></div>
 }
 
 export default Maytinhcong
