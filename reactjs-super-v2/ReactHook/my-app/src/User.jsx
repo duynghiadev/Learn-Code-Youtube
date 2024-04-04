@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { useState } from 'react'
 
 const initialAddress = () => {
@@ -8,6 +9,20 @@ const initialAddress = () => {
       house: 'Building'
     }
   }
+}
+
+const getAddress = () => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve({
+        nation: 'USA',
+        city: {
+          street: '100 Nicolas, New York City',
+          house: 'Vilage'
+        }
+      })
+    }, 3000)
+  })
 }
 
 export default function User() {
@@ -24,6 +39,8 @@ export default function User() {
     setAge((prevAge) => prevAge + 1)
   }
 
+  const profile = 100
+
   const changeStreet = () => {
     setAddress((prevAddress) => {
       const newCity = { ...prevAddress.city }
@@ -37,6 +54,38 @@ export default function User() {
   }
 
   console.log('re-render')
+
+  // Giống componentDidUpdate, effect function chạy lại, mỗi khi component re-render
+  // useEffect(() => {
+  //   console.log(document.getElementsByTagName('li'))
+  //   console.log('useEffect Giống componentDidUpdate')
+  // })
+
+  // Thường dùng để gọi API
+  useEffect(() => {
+    console.log('useEffect Giống componentDidMount')
+    console.log(profile)
+    getAddress().then((res) => {
+      setAddress((prevAddress) => {
+        const newAddress = { ...prevAddress }
+        newAddress.city = res.city
+        return newAddress
+      })
+    })
+
+    // cleanup function
+    return () => {
+      console.log('Huy goi API')
+    }
+  }, [])
+
+  useEffect(() => {
+    console.log('age:', age)
+
+    return () => {
+      console.log('Clean age')
+    }
+  }, [age])
 
   return (
     <div>
