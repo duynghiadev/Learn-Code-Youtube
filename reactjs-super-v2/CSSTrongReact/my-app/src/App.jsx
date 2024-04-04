@@ -5,8 +5,8 @@ import ProductList from './ProductList'
 function App() {
   return (
     <div>
-      <Cart />
       <ProductList />
+      <Cart />
     </div>
   )
 }
