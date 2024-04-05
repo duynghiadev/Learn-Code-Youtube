@@ -4,6 +4,7 @@ import User from './User'
 import UserClassComponent from './User.class'
 import UserUseContext from './UseContext/User'
 import RuleOfHook from './ruleOfHook'
+import AutoBatching from './AutoBatching'
 
 function App() {
   const [isShow, setIsShow] = useState(true)
@@ -17,6 +18,8 @@ function App() {
       <UserUseContext />
 
       <RuleOfHook />
+
+      <AutoBatching />
     </div>
   )
 }
