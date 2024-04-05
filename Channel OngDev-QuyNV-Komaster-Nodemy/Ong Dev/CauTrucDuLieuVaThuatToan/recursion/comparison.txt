@@ -7,4 +7,3 @@
 - Termination: false condition
 - Memory: Each loop doesn't require more memory
 - Infinite: Just run
-
