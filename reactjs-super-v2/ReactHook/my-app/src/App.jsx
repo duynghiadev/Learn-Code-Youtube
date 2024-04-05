@@ -11,13 +11,13 @@ function App() {
 
   return (
     <div>
-      <UserClassComponent />
-      {isShow && <User />}
-      <button onClick={() => setIsShow((prevState) => !prevState)}>Change isShow</button>
+      {/* <UserClassComponent /> */}
+      {/* {isShow && <User />} */}
+      {/* <button onClick={() => setIsShow((prevState) => !prevState)}>Change isShow</button> */}
 
-      <UserUseContext />
+      {/* <UserUseContext /> */}
 
-      <RuleOfHook />
+      {/* <RuleOfHook /> */}
 
       <AutoBatching />
     </div>
