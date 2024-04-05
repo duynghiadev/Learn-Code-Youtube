@@ -5,6 +5,8 @@ import UserClassComponent from './User.class'
 import UserUseContext from './UseContext/User'
 import RuleOfHook from './ruleOfHook'
 import AutoBatching from './AutoBatching'
+import Cart from './CustomHook/Header/Cart'
+import Navigation from './CustomHook/Header/Navigation'
 
 function App() {
   const [isShow, setIsShow] = useState(true)
@@ -19,7 +21,11 @@ function App() {
 
       {/* <RuleOfHook /> */}
 
-      <AutoBatching />
+      {/* <AutoBatching /> */}
+
+      {/* Bài 106: Custom Hook */}
+      <Cart />
+      <Navigation />
     </div>
   )
 }
