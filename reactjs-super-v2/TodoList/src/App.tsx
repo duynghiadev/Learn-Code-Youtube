@@ -1,9 +1,9 @@
-import styles from './app.module.scss'
+import TodoList from './components/TodoList'
 
 function App() {
   return (
-    <div className={styles.app}>
-      <p>Hello world</p>
+    <div>
+      <TodoList />
     </div>
   )
 }
