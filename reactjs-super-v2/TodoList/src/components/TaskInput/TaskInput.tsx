@@ -1,7 +1,7 @@
 import { useState } from 'react'
-import styles from './taskInput.module.scss'
-import { Todo } from '../../@types/todo.type'
 import PropTypes from 'prop-types'
+import { Todo } from '../../@types/todo.type'
+import styles from './taskInput.module.scss'
 import { TodoTypes } from '../../PropTypes/todo.proptype'
 
 interface TaskInputProps {

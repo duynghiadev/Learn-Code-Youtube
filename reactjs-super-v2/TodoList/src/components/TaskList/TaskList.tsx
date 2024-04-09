@@ -1,7 +1,7 @@
+import PropTypes from 'prop-types'
 import { Todo } from '../../@types/todo.type'
 import { TodoTypes } from '../../PropTypes/todo.proptype'
 import styles from './taskList.module.scss'
-import PropTypes from 'prop-types'
 
 interface TaskListProps {
   doneTaskList?: boolean
@@ -21,7 +21,6 @@ export default function TaskList(props: TaskListProps) {
   return (
     <div className='mb-2'>
       <h2 className={styles.title}>{doneTaskList ? 'Hoàn thành' : 'Chưa hoàn thành'}</h2>
-
       <div className={styles.tasks}>
         {todos.map((todo) => (
           <div className={styles.task} key={todo.id}>
@@ -31,9 +30,7 @@ export default function TaskList(props: TaskListProps) {
               checked={todo.done}
               onChange={onChangeCheckbox(todo.id)}
             />
-
             <span className={`${styles.taskName} ${todo.done ? styles.taskNameDone : ''}`}>{todo.name}</span>
-
             <div className={styles.taskActions}>
               <button className={styles.taskBtn} onClick={() => startEditTodo(todo.id)}>
                 🖊️

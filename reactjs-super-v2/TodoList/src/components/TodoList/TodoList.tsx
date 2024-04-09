@@ -20,7 +20,6 @@ const syncReactToLocal = (handleNewTodos: HandleNewTodos) => {
 export default function TodoList() {
   const [todos, setTodos] = useState<Todo[]>([])
   const [currentTodo, setCurrentTodo] = useState<Todo | null>(null)
-
   const doneTodos = todos.filter((todo) => todo.done)
   const notdoneTodos = todos.filter((todo) => !todo.done)
 
@@ -37,10 +36,7 @@ export default function TodoList() {
       id: new Date().toISOString()
     }
     setTodos((prev) => [...prev, todo])
-
-    syncReactToLocal((todosObj: Todo[]) => {
-      return [...todosObj, todo]
-    })
+    syncReactToLocal((todosObj: Todo[]) => [...todosObj, todo])
   }
 
   const handleDoneTodo = (id: string, done: boolean) => {
@@ -63,18 +59,14 @@ export default function TodoList() {
 
   const editTodo = (name: string) => {
     setCurrentTodo((prev) => {
-      if (prev) {
-        return { ...prev, name }
-      }
+      if (prev) return { ...prev, name }
       return null
     })
   }
 
   const finishEditTodo = () => {
     const handler = (todoObj: Todo[]) => {
-      console.log('🔄 Updating todos in setTodos of finishEditTodo:', todoObj)
       return todoObj.map((todo) => {
-        console.log('➡️ Processing todo in prev.map() of finishEditTodo:', todo)
         if (todo.id === (currentTodo as Todo).id) {
           return currentTodo as Todo
         }
@@ -90,7 +82,6 @@ export default function TodoList() {
     if (currentTodo) {
       setCurrentTodo(null)
     }
-
     const handler = (todoObj: Todo[]) => {
       const findedIndexTodo = todoObj.findIndex((todo) => todo.id === id)
       if (findedIndexTodo > -1) {
