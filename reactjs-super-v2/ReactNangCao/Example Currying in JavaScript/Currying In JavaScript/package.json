@@ -1,0 +1,17 @@
+{
+  "name": "currying-in-javascript",
+  "version": "1.0.0",
+  "description": "currying in javascript and the as library ReactJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "currying"
+  ],
+  "author": "duynghiadev",
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}
