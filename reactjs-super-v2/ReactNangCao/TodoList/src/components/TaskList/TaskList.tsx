@@ -2,10 +2,10 @@ import PropTypes from 'prop-types'
 import { Todo } from '../../@types/todo.type'
 import { TodoTypes } from '../../PropTypes/todo.proptype'
 import styles from './taskList.module.scss'
-import connect, { InjectedType } from '../../HOC/connect'
+import connect from '../../HOC/connect'
 import React from 'react'
 
-interface TaskListProps extends InjectedType {
+interface TaskListProps {
   doneTaskList?: boolean
   todos: Todo[]
   handleDoneTodo: (id: string, done: boolean) => void
@@ -13,7 +13,7 @@ interface TaskListProps extends InjectedType {
   deleteTodo: (id: string) => void
 }
 
-function TaskList(props: TaskListProps) {
+function TaskList(props: TaskListProps & typeof injectedProp) {
   const { doneTaskList, todos, handleDoneTodo, startEditTodo, deleteTodo } = props
 
   const onChangeCheckbox = (idTodo: string) => (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -56,4 +56,10 @@ TaskList.propTypes = {
   deleteTodo: PropTypes.func.isRequired
 }
 
-export default connect({ user: { name: 'duynghiadev' } })(TaskList)
+const injectedProp = {
+  user: {
+    name: 'duynghiadev'
+  }
+}
+
+export default connect(injectedProp)(TaskList)
