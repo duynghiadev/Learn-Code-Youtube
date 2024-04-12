@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useMemo, useState } from 'react'
 import PropTypes from 'prop-types'
 import { Todo } from '../../@types/todo.type'
 import styles from './taskInput.module.scss'
@@ -19,9 +19,11 @@ function TaskInput(props: TaskInputProps & typeof injectedProps) {
   const [name, setName] = useState<string>('')
   log(debug)
 
-  const address = {
-    street: '10 Tran Hung Dao'
-  }
+  const address = useMemo(() => {
+    return {
+      street: '10 Tran Hung Dao'
+    }
+  }, [])
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
