@@ -1,7 +1,7 @@
+import { Divider, List, Paper } from '@material-ui/core'
 import React, { useContext } from 'react'
-import { Paper, List, Divider } from '@material-ui/core'
-import Todo from './Todo'
-import { TodosContext } from './context/todos.context'
+import { TodosContext } from '../../context/todos.context'
+import Todo from '../Todo'
 
 function TodoList() {
   const todos = useContext(TodosContext)

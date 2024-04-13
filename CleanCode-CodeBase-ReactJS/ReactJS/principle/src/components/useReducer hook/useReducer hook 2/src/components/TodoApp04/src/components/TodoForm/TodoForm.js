@@ -1,7 +1,7 @@
 import { Paper, TextField } from '@material-ui/core'
 import React, { useContext } from 'react'
-import { DispatchContext } from './context/todos.context'
-import useInputState from './hooks/useInputState'
+import { DispatchContext } from '../../context/todos.context'
+import useInputState from '../../hooks/useInputState'
 
 function TodoForm() {
   const [value, handleChange, reset] = useInputState('')

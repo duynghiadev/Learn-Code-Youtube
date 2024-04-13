@@ -1,8 +1,8 @@
 import { AppBar, Grid, Paper, Toolbar, Typography } from '@material-ui/core'
 import React from 'react'
-import TodoForm from './TodoForm'
-import TodoList from './TodoList'
-import { TodosProvider } from './context/todos.context'
+import TodoForm from '../TodoForm/TodoForm'
+import TodoList from '../TodoList/TodoList'
+import { TodosProvider } from '../../context/todos.context'
 
 function TodoApp() {
   return (
