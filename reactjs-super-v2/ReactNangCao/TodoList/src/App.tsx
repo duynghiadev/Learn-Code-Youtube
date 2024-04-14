@@ -6,6 +6,7 @@ import Counter from './components/Counter'
 import WelcomeOld from './components/Welcome/Type Old No useContext/Welcome'
 import WelcomeNew from './components/Welcome/Type New useContext/Welcome'
 import AutoInput from './components/AutoInput'
+import WelcomeUseDebugValue from './components/useDebugValue/Welcome'
 
 function App() {
   return (
@@ -17,7 +18,8 @@ function App() {
       {/* <Counter /> */}
       {/* <WelcomeOld /> */}
       {/*<WelcomeNew />*/}
-      <AutoInput />
+      {/*<AutoInput />*/}
+      <WelcomeUseDebugValue />
     </div>
   )
 }
