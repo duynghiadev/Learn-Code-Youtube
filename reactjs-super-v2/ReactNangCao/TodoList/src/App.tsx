@@ -5,6 +5,7 @@ import Count from './components/Count'
 import Counter from './components/Counter'
 import WelcomeOld from './components/Welcome/Type Old No useContext/Welcome'
 import WelcomeNew from './components/Welcome/Type New useContext/Welcome'
+import AutoInput from './components/AutoInput'
 
 function App() {
   return (
@@ -15,7 +16,8 @@ function App() {
       {/* <Count /> */}
       {/* <Counter /> */}
       {/* <WelcomeOld /> */}
-      <WelcomeNew />
+      {/*<WelcomeNew />*/}
+      <AutoInput />
     </div>
   )
 }
