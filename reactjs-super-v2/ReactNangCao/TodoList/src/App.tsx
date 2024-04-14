@@ -9,6 +9,8 @@ import AutoInput from './components/AutoInput'
 import WelcomeUseDebugValue from './components/useDebugValue/Welcome'
 import ProductList from './components/ProductList useDeferredValue'
 import ProductListUseTransition from './components/ProductList useTransition'
+import MainLayout from './layouts/MainLayout'
+import Manager from './components/Manager/Manager'
 
 function App() {
   return (
@@ -23,7 +25,10 @@ function App() {
       {/*<AutoInput />*/}
       {/*<WelcomeUseDebugValue />*/}
       {/*<ProductList />*/}
-      <ProductListUseTransition />
+      {/*<ProductListUseTransition />*/}
+      <MainLayout>
+        <Manager />
+      </MainLayout>
     </div>
   )
 }
