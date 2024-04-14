@@ -1,20 +1,21 @@
-import { memo, useContext } from 'react'
+import { memo, useContext, useId } from 'react'
 import { ThemeContext } from './ThemeContext'
 
 export const Label = memo(() => {
   const { theme, onChangeTheme } = useContext(ThemeContext)
-  console.log('label re-render')
+  const id = useId()
 
   return (
-    <label>
+    <div>
       <input
         type='checkbox'
         checked={theme.color === 'dark'}
         onChange={(e) => {
           onChangeTheme(e.target.checked ? 'dark' : 'light')
         }}
+        id={id}
       />
-      Use dark mode
-    </label>
+      <label htmlFor={id}>Use dark mode</label>
+    </div>
   )
 })
