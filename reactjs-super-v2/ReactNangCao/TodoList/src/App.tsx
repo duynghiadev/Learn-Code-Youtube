@@ -3,6 +3,8 @@ import Watch from './components/Watch'
 import Slider from './components/Slider/Slider'
 import Count from './components/Count'
 import Counter from './components/Counter'
+import WelcomeOld from './components/Welcome/Type Old No useContext/Welcome'
+import WelcomeNew from './components/Welcome/Type New useContext/Welcome'
 
 function App() {
   return (
@@ -11,7 +13,9 @@ function App() {
       {/*<Watch />*/}
       {/*<Slider />*/}
       {/* <Count /> */}
-      <Counter />
+      {/* <Counter /> */}
+      {/* <WelcomeOld /> */}
+      <WelcomeNew />
     </div>
   )
 }
