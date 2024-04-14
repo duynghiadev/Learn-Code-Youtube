@@ -7,6 +7,7 @@ import WelcomeOld from './components/Welcome/Type Old No useContext/Welcome'
 import WelcomeNew from './components/Welcome/Type New useContext/Welcome'
 import AutoInput from './components/AutoInput'
 import WelcomeUseDebugValue from './components/useDebugValue/Welcome'
+import ProductList from './components/ProductList'
 
 function App() {
   return (
@@ -19,7 +20,8 @@ function App() {
       {/* <WelcomeOld /> */}
       {/*<WelcomeNew />*/}
       {/*<AutoInput />*/}
-      <WelcomeUseDebugValue />
+      {/*<WelcomeUseDebugValue />*/}
+      <ProductList />
     </div>
   )
 }
