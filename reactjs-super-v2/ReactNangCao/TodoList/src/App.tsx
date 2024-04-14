@@ -1,34 +1,49 @@
-import TodoList from './components/TodoList'
-import Watch from './components/Watch'
-import Slider from './components/Slider/Slider'
-import Count from './components/Count'
-import Counter from './components/Counter'
-import WelcomeOld from './components/Welcome/Type Old No useContext/Welcome'
-import WelcomeNew from './components/Welcome/Type New useContext/Welcome'
-import AutoInput from './components/AutoInput'
-import WelcomeUseDebugValue from './components/useDebugValue/Welcome'
-import ProductList from './components/ProductList useDeferredValue'
-import ProductListUseTransition from './components/ProductList useTransition'
+// import Count from './components/Count'
+// import Counter from './components/Counter'
+// import AutoInput from './components/AutoInput'
+// import ProductList from './components/ProductList'
+// import Welcome from './components/Welcome'
+// import Slider from './components/Slider'
+// import TodoList from './components/TodoList'
+// import Watch from './components/Watch'
+
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import Ads from './components/Render Prop/Ads'
+import Manager from './components/Manager'
+import MouseTracker from './components/Render Prop/MouseTracker'
+import { PositionType } from './components/Render Prop/MouseTracker/MouseTracker'
 import MainLayout from './layouts/MainLayout'
-import Manager from './components/Manager/Manager'
+
+// const renderAds = (value: PositionType) => <Ads {...value} visible />
 
 function App() {
+  const [, render] = useState({})
+  const renderRef = useRef<any>((value: PositionType) => <Ads {...value} visible />)
+  // const renderAds = useCallback((value: PositionType) => <Ads {...value} visible />, [])
+  // const renderAds = useMemo(() => {
+  //   return (value: PositionType) => <Ads {...value} visible />
+  // }, [])
+
   return (
     <div>
-      {/*<TodoList />*/}
-      {/*<Watch />*/}
-      {/*<Slider />*/}
+      {/* <Watch /> */}
+      {/* <TodoList /> */}
+      {/* <Slider /> */}
       {/* <Count /> */}
       {/* <Counter /> */}
-      {/* <WelcomeOld /> */}
-      {/*<WelcomeNew />*/}
-      {/*<AutoInput />*/}
-      {/*<WelcomeUseDebugValue />*/}
-      {/*<ProductList />*/}
-      {/*<ProductListUseTransition />*/}
-      <MainLayout>
+      {/* {<Welcome />} */}
+      {/* <AutoInput /> */}
+      {/* <ProductList /> */}
+
+      {/* <MainLayout>
         <Manager />
-      </MainLayout>
+      </MainLayout> */}
+
+      <div>
+        <button onClick={() => render({})}>Force Rerender</button>
+      </div>
+      <MouseTracker render={renderRef.current} />
+      {/* <Ads visible /> */}
     </div>
   )
 }
