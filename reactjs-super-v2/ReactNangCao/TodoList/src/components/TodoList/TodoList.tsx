@@ -27,6 +27,11 @@ export default function TodoList() {
     const todosString = localStorage.getItem('todos')
     const todosObj: Todo[] = JSON.parse(todosString || '[]')
     setTodos(todosObj)
+    // setTimeout(() => {
+    //   // let a: any = null
+    //   // a.b = 0
+    //   setTodos(null)
+    // })
   }, [])
 
   const addTodo = (name: string) => {
@@ -35,6 +40,13 @@ export default function TodoList() {
       done: false,
       id: new Date().toISOString()
     }
+    // try {
+    //   let a: any = null
+    //   a.b = 0
+    // } catch (error) {
+    //   console.log('Loi roi')
+    // }
+
     setTodos((prev) => [...prev, todo])
     syncReactToLocal((todosObj: Todo[]) => [...todosObj, todo])
   }
@@ -59,9 +71,7 @@ export default function TodoList() {
 
   const editTodo = (name: string) => {
     setCurrentTodo((prev) => {
-      if (prev) {
-        return { ...prev, name }
-      }
+      if (prev) return { ...prev, name }
       return null
     })
   }
