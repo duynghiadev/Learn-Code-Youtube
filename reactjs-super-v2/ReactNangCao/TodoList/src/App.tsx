@@ -13,12 +13,14 @@ import Manager from './components/Manager'
 import MouseTracker from './components/Render Prop/MouseTracker'
 import { PositionType } from './components/Render Prop/MouseTracker/MouseTracker'
 import MainLayout from './layouts/MainLayout'
+import User from './components/User'
 
 // const renderAds = (value: PositionType) => <Ads {...value} visible />
 
 function App() {
-  const [, render] = useState({})
-  const renderRef = useRef<any>((value: PositionType) => <Ads {...value} visible />)
+  const [visible, setVisible] = useState(true)
+  // const [, render] = useState({})
+  // const renderRef = useRef<any>((value: PositionType) => <Ads {...value} visible />)
   // const renderAds = useCallback((value: PositionType) => <Ads {...value} visible />, [])
   // const renderAds = useMemo(() => {
   //   return (value: PositionType) => <Ads {...value} visible />
@@ -39,11 +41,16 @@ function App() {
         <Manager />
       </MainLayout> */}
 
-      <div>
+      {/* <div>
         <button onClick={() => render({})}>Force Rerender</button>
       </div>
-      <MouseTracker render={renderRef.current} />
+      <MouseTracker render={renderRef.current} /> */}
       {/* <Ads visible /> */}
+
+      <div>
+        <button onClick={() => setVisible((prev) => !prev)}>Change visible</button>
+      </div>
+      {visible && <User />}
     </div>
   )
 }
