@@ -1,25 +1,9 @@
+import { ThemeProvider } from '@/components/theme-provider'
 import type { Metadata } from 'next'
-// import { Roboto } from 'next/font/google'
+import { Inter } from 'next/font/google'
 import './globals.css'
-import localFont from 'next/font/local'
 
-// Font files can be colocated inside of `app`
-const myFont = localFont({
-  src: [
-    {
-      path: './Roboto-Thin.ttf',
-      weight: '100'
-    },
-    {
-      path: './Roboto-Regular.ttf',
-      weight: '400'
-    }
-  ],
-  display: 'swap',
-  variable: '--font-roboto'
-})
-
-// const roboto = Roboto({ subsets: ['vietnamese'], weight: ['100', '300'] })
+const inter = Inter({ subsets: ['vietnamese'] })
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -32,10 +16,16 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang='en'>
-      <body className={`${myFont.variable}`}>
-        <header>Header</header>
-        {children}
+    <html lang='en' suppressHydrationWarning>
+      <body className={`${inter.className}`}>
+        <ThemeProvider
+          attribute='class'
+          defaultTheme='system'
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   )
