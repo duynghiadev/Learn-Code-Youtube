@@ -1,13 +1,13 @@
 package com.ongdev.stack;
 
 public interface StackADT<T> extends Iterable<T> {
-  void push(T element);
+    void push(T element);
 
-  T pop();
+    T pop();
 
-  T top();
+    T top();
 
-  int size();
+    int size();
 
-  boolean isEmpty();
+    boolean isEmpty();
 }

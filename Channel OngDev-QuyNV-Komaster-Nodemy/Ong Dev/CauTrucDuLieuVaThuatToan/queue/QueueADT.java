@@ -1,13 +1,13 @@
 package com.ongdev.queue;
 
 public interface QueueADT<T> extends Iterable<T> {
-  void enQueue(T element);
+    void enQueue(T element);
 
-  T deQueue();
+    T deQueue();
 
-  T peek();
+    T peek();
 
-  int size();
+    int size();
 
-  boolean isEmpty();
+    boolean isEmpty();
 }

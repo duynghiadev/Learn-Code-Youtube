@@ -1,19 +1,19 @@
 package com.ongdev.hashtable;
 
 public interface HashTableADT<K, V> extends Iterable<K> {
-  int size();
+    int size();
 
-  boolean isEmpty();
+    boolean isEmpty();
 
-  int hashCodeToIndex(int hashedKey);
+    int hashCodeToIndex(int hashedKey);
 
-  void clear();
+    void clear();
 
-  boolean has(K key);
+    boolean has(K key);
 
-  V insert(K key, V value);
+    V insert(K key, V value);
 
-  V get(K key);
+    V get(K key);
 
-  V remove(K key);
+    V remove(K key);
 }
