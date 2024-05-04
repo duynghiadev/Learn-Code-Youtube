@@ -2,4 +2,4 @@
 
 Trong khóa này Ông Dev code bằng ngôn ngữ Java
 
-[Link Video](https://s.net.vn/TFB5)
+[Link Video](https://short.com.vn/FG8c)
