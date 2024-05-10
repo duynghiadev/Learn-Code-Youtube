@@ -7,3 +7,11 @@ Trong quá trình giới thiệu này, chúng ta sẽ khám phá khái niệm c�
 Chúng ta sẽ xem xét cách xây dựng và triển khai hàm đệ quy, cũng như điều quan trọng là cách kiểm soát việc gọi đệ quy để tránh việc lặp vô hạn. Hàm đệ quy không chỉ là một khía cạnh quan trọng của lập trình, mà còn giúp chúng ta hiểu rõ hơn về cách tiếp cận giải quyết các vấn đề phức tạp trong khoa học máy tính và toán học.
 
 ---
+
+![alt text](image.png)
+![alt text](image-1.png)
+![alt text](image-2.png)
+![alt text](image-3.png)
+![alt text](image-4.png)
+![alt text](image-5.png)
+![alt text](image-6.png)
