@@ -17,7 +17,9 @@ Chúng ta sẽ tìm hiểu về cách thuật toán đệ quy tính giai thừa 
 
 ---
 
-# Độ phức tạp thời gian (Time-Complexity) của thuật toán
+# Giải thích bài toán
+
+## Độ phức tạp thời gian (Time-Complexity) của thuật toán
 
 - Nếu giai thừa của 5 thì thuật toán gọi 5 lần
 - Nếu giai thừa của 4 thì thuật toán gọi 4 lần
