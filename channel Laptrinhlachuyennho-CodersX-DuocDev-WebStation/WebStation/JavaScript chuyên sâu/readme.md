@@ -9,3 +9,5 @@ Tìm hiểu JavaScript chuyên sâu, các khái niệm nâng cao, để nắm r�
 Ngoài ra, nắm chắc JavaScript giúp chúng ta tiếp cận các framework như React, Vue hay Angular nhanh chóng hơn rất nhiều.
 
 ---
+
+Đây là github của tác giả: [Profile GitHub](https://github.com/yeungon)
