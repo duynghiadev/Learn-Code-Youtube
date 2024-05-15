@@ -8,8 +8,8 @@ Chúng ta sẽ tìm hiểu lí do vì sao JavaScript là ngôn ngữ single-thre
 
 ---
 
-![alt text](image-17.png)
-![alt text](image-18.png)
+![alt text](images/image-17.png)
+![alt text](images/image-18.png)
 
 - Về cơ bản thì JavaScript nó không chạy bất đồng bộ được.
 
@@ -25,7 +25,7 @@ Chúng ta sẽ tìm hiểu lí do vì sao JavaScript là ngôn ngữ single-thre
 
 # Phân biệt giữa Browser và NodeJS
 
-![alt text](image-19.png)
+![alt text](images/image-19.png)
 
 - V8 nó biên dịch mã JavaScript thành mã máy
 - Task Queue nó là những hành động, trong đó có: Micro Task, Macro Task
@@ -34,7 +34,7 @@ Chúng ta sẽ tìm hiểu lí do vì sao JavaScript là ngôn ngữ single-thre
 
 # Trong bài này thì chúng ta tập trung vào kiến thức `Event Loop` trong JavaScript
 
-![alt text](image-20.png)
+![alt text](images/image-20.png)
 
 Độ ưu tiên khi có các task trong Web API -> sau khi nó xử lý xong -> và sau đó nó sẽ render ra màn hình cho user
 
@@ -48,11 +48,11 @@ Về cơ bản thì trong những trường hợp mình gặp thì ít khi gặp
 
 1. Ví dụ 1
 
-![alt text](image-21.png)
+![alt text](images/image-21.png)
 
 Đây là ví dụ của file `script_1.js`
 
-![alt text](image-22.png)
+![alt text](images/image-22.png)
 
 Trong callstack thì nó thực thi theo phương pháp LIFO (Last In First Out -> Vào sau ra trước)
 
@@ -62,36 +62,36 @@ setTimeout luôn thực hiện cuối cùng
 
 2. Ví dụ 2
 
-![alt text](image-23.png)
+![alt text](images/image-23.png)
 
 - Đây là thứ tự code chạy trong file `script_2.js`
 
-![alt text](image-24.png)
-![alt text](image-25.png)
-![alt text](image-26.png)
-![alt text](image-27.png)
-![alt text](image-28.png)
-![alt text](image-29.png)
-![alt text](image-30.png)
+![alt text](images/image-24.png)
+![alt text](images/image-25.png)
+![alt text](images/image-26.png)
+![alt text](images/image-27.png)
+![alt text](images/image-28.png)
+![alt text](images/image-29.png)
+![alt text](images/image-30.png)
 
 Tuy 2 cái setTimeout nó vẫn log ra sau dòng log `Sync` nhưng mà cách ta viết code bất đồng bộ nhìn code nó sẽ tối ưu hơn, và thời gian thực thi code bất đồng bộ nhanh hơn xí. Còn nếu chúng ta viết code đồng bộ thì nó sẽ mất nhiều thời gian hơn.
 
 - Đây là thứ tự chạy trong file `script_3.js`
 
-![alt text](image-31.png)
-![alt text](image-32.png)
-![alt text](image-33.png)
-![alt text](image-34.png)
+![alt text](images/image-31.png)
+![alt text](images/image-32.png)
+![alt text](images/image-33.png)
+![alt text](images/image-34.png)
 
 ---
 
 # Sự khác biệt giữa Micro Task và Macro Task trên Browser
 
-![alt text](image-35.png)
+![alt text](images/image-35.png)
 
 Code này trong file `script_4.js`
 
-![alt text](image-36.png)
+![alt text](images/image-36.png)
 
 `Micro Task` thực hiện trước, sau đó đó tới `Macro Task`
 
@@ -104,22 +104,22 @@ Code này trong file `script_4.js`
 
 Đây là kết quả khi mình sử dụng method `addEventListener`, thì khi mình bấm `click` thứ tự chạy sẽ là nó code đồng bộ in ra trước, code bất đồng bộ in ra sau --> dễ hiểu đúng không? (nhìn vào mũi tên **màu tím**)
 
-![alt text](image-37.png)
+![alt text](images/image-37.png)
 
 Đây là code sử dụng method `click()`, thì khi mình bấm `click` nó sẽ chạy từ trên xuống dưới lun, code nào mà đồng bộ thì nó sẽ in ra hết, sau đó nó sẽ chạy code bất đồng bộ sau (nhìn vào mũi tên **màu xanh**)
 
-![alt text](image-37.png)
+![alt text](images/image-37.png)
 
 ---
 
 # Kiến trúc NodeJS
 
 Kiến trúc của NodeJS
-![alt text](image-38.png)
+![alt text](images/image-38.png)
 
 Event Loop trên NodeJS
-![alt text](image-39.png)
-![alt text](image-40.png)
+![alt text](images/image-39.png)
+![alt text](images/image-40.png)
 
 Event Loop là 1 cái hệ thống quan sát sự thay đổi của các file -> từ đó nó sẽ đưa ra các bước xử lý (đó là khái niệm thôi)
 
@@ -127,19 +127,19 @@ Event Loop là 1 cái hệ thống quan sát sự thay đổi của các file ->
 
 # Các API của NodeJS được thiết kế bất đồng bộ
 
-![alt text](image-41.png)
-![alt text](image-42.png)
-![alt text](image-43.png)
+![alt text](images/image-41.png)
+![alt text](images/image-42.png)
+![alt text](images/image-43.png)
 
 Giải thích Pending callback
-![alt text](image-44.png)
-![alt text](image-45.png)
+![alt text](images/image-44.png)
+![alt text](images/image-45.png)
 
 ---
 
 # Sơ đồ về Event Loop
 
-![alt text](image-46.png)
+![alt text](images/image-46.png)
 
 Trong ảnh này có 4 giai đoạn xảy ra: timer -> pause -> set immediate -> close. Thì trong 4 giai đoạn này thì giai đoạn `pause` sẽ sử dụng pause hệ điều hành để xử lý
 
@@ -147,16 +147,16 @@ Trong ảnh này có 4 giai đoạn xảy ra: timer -> pause -> set immediate ->
 
 # Đây là các giai đoạn trong vòng lặp (Event Loop)
 
-![alt text](image-47.png)
-![alt text](image-49.png)
-![alt text](image-48.png)
+![alt text](images/image-47.png)
+![alt text](images/image-49.png)
+![alt text](images/image-48.png)
 
 - Giai đoạn này, khi mới bắt đầu chạy thì nó sẽ thực hiện 2 nhiệm vụ đó là: `Kiểm tra thời gian block để chờ` và `Xử lý sự kiện trong poll queue`
 
 # Đây là một mô phỏng khác về Event Loop
 
 hình này trông trực quan hơn và dễ hiểu hơn
-![alt text](image-50.png)
+![alt text](images/image-50.png)
 
 - **Chú ý:** cái thằng `nextTickQueue` là của thằng NodeJS, còn thằng `microTask` là của thằng V8. Trong Event Loop thì 2 thằng này có độ ưu tiên cao hơn, khi thằng này
 
@@ -168,43 +168,43 @@ hình này trông trực quan hơn và dễ hiểu hơn
 
 # Sự khác biệt giữa Micro Task và Macro Task
 
-![alt text](image-51.png)
-![alt text](image-52.png)
-![alt text](image-53.png)
-![alt text](image-54.png)
-![alt text](image-55.png)
+![alt text](images/image-51.png)
+![alt text](images/image-52.png)
+![alt text](images/image-53.png)
+![alt text](images/image-54.png)
+![alt text](images/image-55.png)
 
 ---
 
 # Các ví dụ ở mỗi version khác nhau của NodeJS
 
-![alt text](image-56.png)
+![alt text](images/image-56.png)
 
 Đây là dụ rất hay về sử lý các cái phase (giai đoạn) của NodeJS và các phase của Event Loop
-![alt text](image-57.png)
+![alt text](images/image-57.png)
 
 Code này trong file `node6.js`
-![alt text](image-58.png)
+![alt text](images/image-58.png)
 
 ---
 
 # Thread Pool
 
-![alt text](image-59.png)
-![alt text](image-60.png)
+![alt text](images/image-59.png)
+![alt text](images/image-60.png)
 
 ---
 
 # Đây là video có ví dụ rất hay -> bạn nên xem qua
 
-![alt text](image-61.png)
-![alt text](image-62.png)
+![alt text](images/image-61.png)
+![alt text](images/image-62.png)
 
 ---
 
 # Best Practices
 
-![alt text](image-63.png)
+![alt text](images/image-63.png)
 
 - Tránh các tác vụ lặp đi lặp lại
 - Chúng ta nên viết đồng bộ và bất đồng bộ riêng -> không nên viết chung
@@ -217,35 +217,35 @@ Code này trong file `node6.js`
 
 # Tài liệu tham khảo
 
-![alt text](image-64.png)
+![alt text](images/image-64.png)
 
 ---
 
 # Những bình luận hay trong video
 
-![alt text](image.png)
+![alt text](images/image.png)
 
-![alt text](image-1.png)
+![alt text](images/image-1.png)
 -> Link code trong video tác giả đã xóa code rồi, mình vô không thấy code nữa
 
-![alt text](image-2.png)
-![alt text](image-3.png)
-![alt text](image-4.png)
-![alt text](image-5.png)
-![alt text](image-6.png)
+![alt text](images/image-2.png)
+![alt text](images/image-3.png)
+![alt text](images/image-4.png)
+![alt text](images/image-5.png)
+![alt text](images/image-6.png)
 
 Đây là phần bình luận dài nhất trong video
-![alt text](image-7.png)
-![alt text](image-8.png)
-![alt text](image-9.png)
-![alt text](image-10.png)
-![alt text](image-11.png)
+![alt text](images/image-7.png)
+![alt text](images/image-8.png)
+![alt text](images/image-9.png)
+![alt text](images/image-10.png)
+![alt text](images/image-11.png)
 
 Phần này thảo luận về khi ta chạy code JavaScript thì trình biên dịch V8 sẽ dịch ra code C++...và từ đó trình duyệt sẽ dịch code từ C++ ra kết quả
-![alt text](image-12.png)
+![alt text](images/image-12.png)
 
 Phần này hỏi về Event Loop trong NodeJS
-![alt text](image-13.png)
-![alt text](image-14.png)
-![alt text](image-15.png)
-![alt text](image-16.png)
+![alt text](images/image-13.png)
+![alt text](images/image-14.png)
+![alt text](images/image-15.png)
+![alt text](images/image-16.png)
