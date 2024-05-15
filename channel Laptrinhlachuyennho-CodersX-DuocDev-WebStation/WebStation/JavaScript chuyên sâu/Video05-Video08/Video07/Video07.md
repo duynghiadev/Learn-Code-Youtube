@@ -8,6 +8,64 @@ Chúng ta sẽ tìm hiểu lí do vì sao JavaScript là ngôn ngữ single-thre
 
 ---
 
+![alt text](image-17.png)
+![alt text](image-18.png)
+
+- Về cơ bản thì JavaScript nó không chạy bất đồng bộ được.
+
+- Nếu nó chạy được thì nó phải nhờ vào cái môi trường của nó (`browser`) thì mới có thể chạy được. Môi trường đấy nó sử dụng môi trường `libevent`.
+
+- Còn trên `NodeJS` thì nó sử dụng thư viện `libuv`.
+
+- Còn trên `deno` thì chạy `Tokio`
+
+- **Lưu ý:** NodeJS nó chỉ là môi trường runtime thôi. Ngoài NodeJS thì vẫn còn những môi trường khác
+
+---
+
+# Phân biệt giữa Browser và NodeJS
+
+![alt text](image-19.png)
+
+- V8 nó biên dịch mã JavaScript thành mã máy
+- Task Queue nó là những hành động, trong đó có: Micro Task, Macro Task
+
+---
+
+# Trong bài này thì chúng ta tập trung vào kiến thức `Event Loop` trong JavaScript
+
+![alt text](image-20.png)
+
+Độ ưu tiên khi có các task trong Web API -> sau khi nó xử lý xong -> và sau đó nó sẽ render ra màn hình cho user
+
+👉 Rendering Queue (Browser) 👉 Micro Task 👉 Macro Task
+
+Về cơ bản thì trong những trường hợp mình gặp thì ít khi gặp trường hợp `Rendering Queue` (Browser). Chúng ta thường xuyên phải xử lý `Micro Task` và `Macro Task` là nhiều nhất
+
+---
+
+# Các ví dụ cơ bản về Event Loop (code đồng bộ và bất đồng bộ)
+
+1. Ví dụ 1
+
+![alt text](image-21.png)
+
+Đây là ví dụ của file `script_1.js`
+
+![alt text](image-22.png)
+
+Trong callstack thì nó thực thi theo phương pháp LIFO (Last In First Out -> Vào sau ra trước)
+
+Thì code chạy tới đoạn có setTimeout thì callstack sẽ chuyển nó qua Web API. Khi mà callstack trống (không còn task nào thực thi nữa) thì lúc đó Web API sẽ chuyển setTimeout đó qua bên callstack -> và thực hiện nó.
+
+setTimeout luôn thực hiện cuối cùng
+
+2. Ví dụ 2
+
+![alt text](image-23.png)
+
+---
+
 # Những bình luận hay trong video
 
 ![alt text](image.png)
