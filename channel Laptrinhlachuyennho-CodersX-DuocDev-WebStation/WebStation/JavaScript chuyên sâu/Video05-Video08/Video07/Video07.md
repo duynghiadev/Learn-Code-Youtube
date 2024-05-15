@@ -182,7 +182,42 @@ hình này trông trực quan hơn và dễ hiểu hơn
 
 Đây là dụ rất hay về sử lý các cái phase (giai đoạn) của NodeJS và các phase của Event Loop
 ![alt text](image-57.png)
+
+Code này trong file `node6.js`
 ![alt text](image-58.png)
+
+---
+
+# Thread Pool
+
+![alt text](image-59.png)
+![alt text](image-60.png)
+
+---
+
+# Đây là video có ví dụ rất hay -> bạn nên xem qua
+
+![alt text](image-61.png)
+![alt text](image-62.png)
+
+---
+
+# Best Practices
+
+![alt text](image-63.png)
+
+- Tránh các tác vụ lặp đi lặp lại
+- Chúng ta nên viết đồng bộ và bất đồng bộ riêng -> không nên viết chung
+- không nên gọi quá nhiều nextTick. Bởi vì gọi theo kiểu recursive thì có thể khiến block I/O này, làm cho nó không truyền qua được cái key loop tiếp theo
+- Nếu chúng ta xử lý các tác vụ liên quan đến fs hay là crypto -> thì chúng ta nên cân nhắc tăng kích cở `UV_THREADPOOL_SIZE` (cái này có sẵn trong JavaScript) nếu cần
+- Nên cẩn thận với những file JSON có kích cở lớn -> thời gian và tốc độ xử lý nó gặp vấn đề (nên tính toán trước khi sử dụng)
+- Kiểm soát Event Loop nhờ những cái package mà nó giúp cho chúng ta theo dõi cái thời gian hoặc tốc độ xử lý -> nó tính size bao nhiêu đó, mà nó sẽ giúp tốc độ xử lý code của chúng ta
+
+---
+
+# Tài liệu tham khảo
+
+![alt text](image-64.png)
 
 ---
 
