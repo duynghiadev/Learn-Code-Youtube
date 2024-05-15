@@ -170,6 +170,19 @@ hình này trông trực quan hơn và dễ hiểu hơn
 
 ![alt text](image-51.png)
 ![alt text](image-52.png)
+![alt text](image-53.png)
+![alt text](image-54.png)
+![alt text](image-55.png)
+
+---
+
+# Các ví dụ ở mỗi version khác nhau của NodeJS
+
+![alt text](image-56.png)
+
+Đây là dụ rất hay về sử lý các cái phase (giai đoạn) của NodeJS và các phase của Event Loop
+![alt text](image-57.png)
+![alt text](image-58.png)
 
 ---
 
