@@ -64,6 +64,52 @@ setTimeout luôn thực hiện cuối cùng
 
 ![alt text](image-23.png)
 
+- Đây là thứ tự code chạy trong file `script_2.js`
+
+![alt text](image-24.png)
+![alt text](image-25.png)
+![alt text](image-26.png)
+![alt text](image-27.png)
+![alt text](image-28.png)
+![alt text](image-29.png)
+![alt text](image-30.png)
+
+Tuy 2 cái setTimeout nó vẫn log ra sau dòng log `Sync` nhưng mà cách ta viết code bất đồng bộ nhìn code nó sẽ tối ưu hơn, và thời gian thực thi code bất đồng bộ nhanh hơn xí. Còn nếu chúng ta viết code đồng bộ thì nó sẽ mất nhiều thời gian hơn.
+
+- Đây là thứ tự chạy trong file `script_3.js`
+
+![alt text](image-31.png)
+![alt text](image-32.png)
+![alt text](image-33.png)
+![alt text](image-34.png)
+
+---
+
+# Sự khác biệt giữa Micro Task và Macro Task trên Browser
+
+![alt text](image-35.png)
+
+Code này trong file `script_4.js`
+
+![alt text](image-36.png)
+
+`Micro Task` thực hiện trước, sau đó đó tới `Macro Task`
+
+- `Micro Task` gồm: Promise, queueMicrotask,...(tự tìm hiểu thêm)
+- `Macro Task` gồm: setTimeout
+
+---
+
+# Những sự khác biệt giữa các hành động `onClick`
+
+Đây là kết quả khi mình sử dụng method `addEventListener`, thì khi mình bấm `click` thứ tự chạy sẽ là nó code đồng bộ in ra trước, code bất đồng bộ in ra sau --> dễ hiểu đúng không? (nhìn vào mũi tên **màu tím**)
+
+![alt text](image-37.png)
+
+Đây là code sử dụng method `click()`, thì khi mình bấm `click` nó sẽ chạy từ trên xuống dưới lun, code nào mà đồng bộ thì nó sẽ in ra hết, sau đó nó sẽ chạy code bất đồng bộ sau (nhìn vào mũi tên **màu xanh**)
+
+![alt text](image-37.png)
+
 ---
 
 # Những bình luận hay trong video

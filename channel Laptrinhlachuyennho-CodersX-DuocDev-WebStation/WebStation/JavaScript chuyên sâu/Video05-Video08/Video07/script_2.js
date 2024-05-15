@@ -18,5 +18,3 @@ setTimeout(() => {
 setTimeout(() => {
   console.log(`setTimeout 2st: ${Date.now() - s}`)
 }, 3000)
-
-// ⌚⏲⏲⏲⏲⏲ học tới phút 23:18 ⌚⏲⏲⏲⏲⏲
