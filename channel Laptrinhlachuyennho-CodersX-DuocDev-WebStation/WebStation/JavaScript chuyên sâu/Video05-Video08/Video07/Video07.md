@@ -112,6 +112,67 @@ Code này trong file `script_4.js`
 
 ---
 
+# Kiến trúc NodeJS
+
+Kiến trúc của NodeJS
+![alt text](image-38.png)
+
+Event Loop trên NodeJS
+![alt text](image-39.png)
+![alt text](image-40.png)
+
+Event Loop là 1 cái hệ thống quan sát sự thay đổi của các file -> từ đó nó sẽ đưa ra các bước xử lý (đó là khái niệm thôi)
+
+---
+
+# Các API của NodeJS được thiết kế bất đồng bộ
+
+![alt text](image-41.png)
+![alt text](image-42.png)
+![alt text](image-43.png)
+
+Giải thích Pending callback
+![alt text](image-44.png)
+![alt text](image-45.png)
+
+---
+
+# Sơ đồ về Event Loop
+
+![alt text](image-46.png)
+
+Trong ảnh này có 4 giai đoạn xảy ra: timer -> pause -> set immediate -> close. Thì trong 4 giai đoạn này thì giai đoạn `pause` sẽ sử dụng pause hệ điều hành để xử lý
+
+---
+
+# Đây là các giai đoạn trong vòng lặp (Event Loop)
+
+![alt text](image-47.png)
+![alt text](image-49.png)
+![alt text](image-48.png)
+
+- Giai đoạn này, khi mới bắt đầu chạy thì nó sẽ thực hiện 2 nhiệm vụ đó là: `Kiểm tra thời gian block để chờ` và `Xử lý sự kiện trong poll queue`
+
+# Đây là một mô phỏng khác về Event Loop
+
+hình này trông trực quan hơn và dễ hiểu hơn
+![alt text](image-50.png)
+
+- **Chú ý:** cái thằng `nextTickQueue` là của thằng NodeJS, còn thằng `microTask` là của thằng V8. Trong Event Loop thì 2 thằng này có độ ưu tiên cao hơn, khi thằng này
+
+- Khi `timer` nó gọi xong thì nó lập tức gọi qua `nextTickQueue`, xong `nextTickQueue` thì nó chạy qua `microTaskQueue`. Đấy, tuần tự của nó là như thế, chứ không phải như này nhé (khi `timer` chạy xong thì nó chưa chạy qua `I/O Cycle` đâu -> cái này nó không phải chạy như thế)
+
+- Nên nhớ là khi mà 2 thằng đó xuất hiện trong queue thì nó luôn luôn đứng đầu trong queue -> Nó luôn có sự ưu tiên cao nhất
+
+---
+
+# Sự khác biệt giữa Micro Task và Macro Task
+
+![alt text](image-51.png)
+![alt text](image-52.png)
+
+---
+
 # Những bình luận hay trong video
 
 ![alt text](image.png)
