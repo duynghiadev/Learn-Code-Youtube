@@ -160,6 +160,26 @@ Nếu như chúng ta dùng `reject` thì vẫn bắt được lỗi, còn dùng 
 
 ---
 
+Phân biệt sự khác nhau giữa các `return` trong callback của `then()`
+
+![alt text](image-28.png)
+![alt text](image-29.png)
+
+---
+
+Phân biệt return hàm và return value/data trong `then()`
+
+![alt text](image-30.png)
+![alt text](image-31.png)
+
+---
+
+Bọc promise để có thể tái sử dụng
+
+![alt text](image-32.png)
+
+---
+
 # Những bình luận hay trong video
 
 ![alt text](image.png)
