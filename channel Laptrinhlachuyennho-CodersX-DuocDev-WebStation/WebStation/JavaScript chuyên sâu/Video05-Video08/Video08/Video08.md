@@ -103,6 +103,63 @@ Trong JavaScript thì chúng ta có 2 cách tạo class
 
 ---
 
+đây là ví dụ trong file `promise_1.js`
+
+![alt text](image-12.png)
+
+Trong ví dụ này chúng ta kiểm tra biến job có đúng với điều kiện mà chúng ta cần kiểm tra hay không. Nếu đúng thì nó sẽ thực thi hàm `then()` -> và nó sẽ thực thi hàm `resolve()` ngay lập tức. Còn thất bại thì nó sẽ thực thi hàm `catch()` -> và nó sẽ thực thi hàm `reject()`. Còn hàm `finally`() thì dù nó có `success` hay `fail` đi chăng nữa thì nó vẫn sẽ thực thi
+
+![alt text](image-13.png)
+
+`new Promise` là 1 `function constructor` (hoặc class) có sẵn. Nó nhận vào 2 hàm callback đó là `resolve` và `reject`. Promise là nó sẽ fix trường hợp mà chúng ta gặp `callback hell` nhưng thật chất nó dựa vào `callback pattern`, bởi vì `callback pattern` là 1 dạng rất là đặc trưng của JavaScript
+
+Trong callback đó có `resolve` và `reject` -> và khi thực thi thì nó sẽ thực thi chỉ 1 cái mà thôi. 1 là `resolve` -> nếu không phải là `resolve` -> vậy thì chạy `reject` (Lưu ý: không có trường hợp chạy cả 2 hàm callback)
+
+![alt text](image-14.png)
+![alt text](image-15.png)
+![alt text](image-16.png)
+![alt text](image-17.png)
+
+Trong promise nó có sẵn phương thức như là: `then()`, `catch()`, `finally()`
+Trong `then()`, `catch()`, `finally()`, thì luôn luôn phải là 1 `callback`
+
+![alt text](image-18.png)
+
+trong callback thì luôn luôn nhận vào 1 tham số (`parameter`), nếu như chúng ta có nhiều dữ liệu thì sao? thì chúng ta phải truyền vào 1 `object` hoặc 1 `array`
+
+![alt text](image-19.png)
+
+Chúng ta sử dụng `catch()` để bắt lỗi, còn `then()` để nhận kết quả
+
+---
+
+Một ví dụ khác trong file `promise_2.js`
+
+![alt text](image-20.png)
+![alt text](image-21.png)
+![alt text](image-22.png)
+![alt text](image-23.png)
+
+Đây là sự phân biệt khi chúng ta dùng `callback` để bắt lỗi và dùng `catch()` để bắt lỗi
+
+![alt text](image-24.png)
+![alt text](image-25.png)
+
+Sự khác biệt giữa dùng `callback` và `catch()` để bắt lỗi
+Tuy nhiên 2 thằng này được coi là tương đương nhau nhưng mà có 1 trường hợp nó khác nhau
+
+![alt text](image-26.png)
+
+---
+
+đây là ví dụ trong file `promise_3.js`
+
+![alt text](image-27.png)
+
+Nếu như chúng ta dùng `reject` thì vẫn bắt được lỗi, còn dùng `resolve` thì chỉ bắt được lỗi chỗ `catch()` mà thôi
+
+---
+
 # Những bình luận hay trong video
 
 ![alt text](image.png)
