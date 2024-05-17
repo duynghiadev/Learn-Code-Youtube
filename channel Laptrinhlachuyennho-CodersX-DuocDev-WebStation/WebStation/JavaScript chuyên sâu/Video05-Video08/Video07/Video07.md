@@ -46,7 +46,7 @@ Về cơ bản thì trong những trường hợp mình gặp thì ít khi gặp
 
 # Các ví dụ cơ bản về Event Loop (code đồng bộ và bất đồng bộ)
 
-1. Ví dụ 1
+## 1. Ví dụ 1
 
 ![alt text](images/image-21.png)
 
@@ -60,11 +60,18 @@ Thì code chạy tới đoạn có setTimeout thì callstack sẽ chuyển nó q
 
 setTimeout luôn thực hiện cuối cùng
 
-2. Ví dụ 2
+## 2. Ví dụ 2
 
 ![alt text](images/image-23.png)
 
 - Đây là thứ tự code chạy trong file `script_2.js`
+
+- Dưới đây ở những bước thứ tự mà code thực thi
+
+  - Những code đồng bộ thì nó vào `callstack` và log ra kết quả
+  - Còn những code bất đồng bộ (`setTimeout`,...) thì nó cũng sẽ vào `callback` và -> sau đó nó sẽ chuyển `setTimeout` quá bên `Web API`. Khi mà bên nó chạy xong thời gian `setTimeout` mà chúng ta đã quy định thì nó sẽ được chuyển xuống hàng đợi (`queue`) -> nó sẽ đợi khi mà `callstack` trống thì nó sẽ thực thi -> có thể hiểu code bất đồng bộ nó sẽ chạy cuối cùng khi mà code đồng bộ chạy xong hết
+
+=> Lời khuyên là khi mà chúng ta thực thi đoạn code nào lâu thì chúng ta nên sử dụng code bất đồng bộ
 
 ![alt text](images/image-24.png)
 ![alt text](images/image-25.png)
@@ -141,7 +148,7 @@ Giải thích Pending callback
 
 ![alt text](images/image-46.png)
 
-Trong ảnh này có 4 giai đoạn xảy ra: timer -> pause -> set immediate -> close. Thì trong 4 giai đoạn này thì giai đoạn `pause` sẽ sử dụng pause hệ điều hành để xử lý
+Trong ảnh này có 4 giai đoạn xảy ra: timer -> pause -> set immediate -> close. Thì trong 4 giai đoạn này thì giai đoạn `pause` sẽ sử dụng `pause` hệ điều hành để xử lý
 
 ---
 
@@ -158,7 +165,7 @@ Trong ảnh này có 4 giai đoạn xảy ra: timer -> pause -> set immediate ->
 hình này trông trực quan hơn và dễ hiểu hơn
 ![alt text](images/image-50.png)
 
-- **Chú ý:** cái thằng `nextTickQueue` là của thằng NodeJS, còn thằng `microTask` là của thằng V8. Trong Event Loop thì 2 thằng này có độ ưu tiên cao hơn, khi thằng này
+- **Chú ý:** cái thằng `nextTickQueue` là của thằng NodeJS, còn thằng `microTask` là của thằng V8. Trong Event Loop thì 2 thằng này có độ ưu tiên cao hơn, khi thằng này chạy xong thì mới đến lượt các thằng `timer` và `poll` tiếp tục xử lý. Việc hiểu rõ sự khác biệt giữa `nextTickQueue` và `microTask` giúp tối ưu hóa hiệu suất và tránh các vấn đề không mong muốn trong ứng dụng NodeJS.
 
 - Khi `timer` nó gọi xong thì nó lập tức gọi qua `nextTickQueue`, xong `nextTickQueue` thì nó chạy qua `microTaskQueue`. Đấy, tuần tự của nó là như thế, chứ không phải như này nhé (khi `timer` chạy xong thì nó chưa chạy qua `I/O Cycle` đâu -> cái này nó không phải chạy như thế)
 
