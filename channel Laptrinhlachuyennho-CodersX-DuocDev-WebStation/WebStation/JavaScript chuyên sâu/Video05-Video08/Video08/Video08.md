@@ -244,6 +244,40 @@ Bọc promise để có thể tái sử dụng
 
 ---
 
+# Lưu ý về các method trong `Promise`
+
+- `Promise.race([])`: Bất kì một resolve/reject sớm nhất => Okey
+- `Promise.all([])`: Tất cả các promise done thì mới => Okey
+- `Promise.allSettled([])`: Trả về kết quả của tất cả promise, dù thành công hay thất bại thì nó cũng trả về hết (trả về 1 mảng)
+
+---
+
+# Truyền data giữa các promise
+
+Với phương pháp này thì chúng ta dùng lại data ở các `then()` trước đó
+
+![alt text](image-44.png)
+
+Nếu chúng ta hiểu được `promise` thì cũng sẽ hiểu được `async/await`
+
+---
+
+# Đây là 1 ví dụ khác về callback hell -> được chuyển thành promise trong NodeJS
+
+![alt text](image-45.png)
+![alt text](image-46.png)
+
+---
+
+# Những cái ghi chú quan trọng
+
+![alt text](image-47.png)
+
+- `promise` chính là `async/await`. Mà `async/await` là chính là dạng `single syntax` của JavaScript như chúng ta xử lý code bất đồng bộ dễ chịu hơn. Các bạn nếu muốn nắm được `async/await` thì trước tiên phải nắm được `promise`
+- Viết 1 callback và truyền vào `then`, `catch`, `finally`
+
+---
+
 # Những bình luận hay trong video
 
 ![alt text](image.png)
