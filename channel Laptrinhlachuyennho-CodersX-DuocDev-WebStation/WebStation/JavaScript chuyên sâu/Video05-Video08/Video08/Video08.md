@@ -184,7 +184,57 @@ Phân biệt return hàm và return value/data trong `then()`
 
 # Ví dụ về Promise và việc quản lý nhiều tác vụ bất đồng bộ
 
+đây là code trong file `promise_dependency.js`
+
 ![alt text](image-34.png)
+
+---
+
+# Đây là ví dụ nói về trường hợp callback hell
+
+Ví dụ này mình sẽ tìm hiểu về vấn đề callback hell và từ đó mình sẽ transfer code về dạng promise
+
+Đoạn code này trong file `callback_hell_to_promise.js`
+Trong đoạn code này gặp phải trường hợp `callback hell` các bạn khi code thì nhớ đừng code như này
+
+![alt text](image-35.png)
+
+Còn code này là mình chuyển từ code `callback hell` sang `promise`
+
+![alt text](image-36.png)
+
+Sau khi chuyển đổi code thành Promise thì nhìn code rất dễ chịu và dễ nhìn
+
+Còn 1 cách khác khi viết là sử dụng cách này, truyền vào 1 object (nằm trong file code `callback_hell_to_promise_2.js`)
+
+![alt text](image-37.png)
+![alt text](image-38.png)
+![alt text](image-39.png)
+
+---
+
+Một ví dụ khác, code này trong folder `Example`
+
+![alt text](image-40.png)
+
+Như vậy thì có 3 cách viết return trong hàm callback của then
+Trong 3 tấm ảnh dọc đó thì mọi người nên viết theo tấm ảnh ở giữa. Bởi vì viết như thế làm cho mình dễ đọc code hơn và cảm thấy dễ chịu
+
+![alt text](image-41.png)
+
+Đây là tấm hình bàn luận trên `StackOverFlow`
+
+---
+
+# Tóm tắt về việc xử lý dữ liệu trong `then()`
+
+![alt text](image-42.png)
+
+---
+
+# Tìm hiểu về 6 method của Promise
+
+![alt text](image-43.png)
 
 ---
 
