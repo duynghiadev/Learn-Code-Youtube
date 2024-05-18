@@ -264,6 +264,8 @@ Nếu chúng ta hiểu được `promise` thì cũng sẽ hiểu được `async
 
 # Đây là 1 ví dụ khác về callback hell -> được chuyển thành promise trong NodeJS
 
+Code này trong folder `fs callback`
+
 ![alt text](image-45.png)
 ![alt text](image-46.png)
 
