@@ -174,6 +174,20 @@ Phân biệt return hàm và return value/data trong `then()`
 
 ---
 
+# Bọc promise trong hàm để tái sử dụng
+
+Đây là code trong file `promise_4.js` và `promise_5.js`
+
+![alt text](image-33.png)
+
+---
+
+# Ví dụ về Promise và việc quản lý nhiều tác vụ bất đồng bộ
+
+![alt text](image-34.png)
+
+---
+
 Bọc promise để có thể tái sử dụng
 
 ![alt text](image-32.png)
