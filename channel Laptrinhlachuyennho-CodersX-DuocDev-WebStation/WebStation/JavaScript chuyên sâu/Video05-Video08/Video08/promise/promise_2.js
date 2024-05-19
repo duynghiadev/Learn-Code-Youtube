@@ -10,16 +10,16 @@ const p4 = new Promise((resolve, reject) => {
 
 Promise.race([p4, p2, p3, p1])
   .then((data) => {
-    console.log('data:', data)
+    console.log('data in race 1:', data)
   })
   .catch((error) => {
-    console.log('error:', error)
+    console.log('error in race 1:', error)
   })
 
 Promise.race([p3, p2, p4, p1])
   .then((data) => {
-    console.log('data:', data)
+    console.log('data in race 2:', data)
   })
   .catch((error) => {
-    console.log('error:', error)
+    console.log('error in race 2:', error)
   })
