@@ -17,8 +17,10 @@ button.addEventListener('click', function () {
 function doIt() {
   updateStatus('Chuẩn bị pha cà phê...')
   updateResult('Đang pha cà phê...')
+
   result.style.color = 'brown'
   result.style.fontSize = '15px'
+
   xayCaPhe()
     .then(function (xayxong) {
       return vatSua(xayxong)
@@ -37,8 +39,10 @@ function doIt() {
 function xayCaPhe() {
   return new Promise(function (resolve, reject) {
     setTimeout(function () {
-      updateStatus('Xay xong cà phê trong... 2 giây')
-      resolve({ cafe: ['Robusta', 'Arabica'] })
+      updateStatus('Xây xong cà phê trong... 2 giây')
+      resolve({
+        cafe: ['Robusta', 'Arabica']
+      })
     }, 2000)
   })
 }
@@ -47,7 +51,9 @@ function vatSua(dataResolveMot) {
   const promise = new Promise(function (resolve, reject) {
     setTimeout(function () {
       updateStatus('Đã lấy sữa và trộn với cà phê hết... 2 giây')
-      resolve({ newData: dataResolveMot.cafe[0] + ' + sữa ông thọ' })
+      resolve({
+        newData: dataResolveMot.cafe[0] + ' + sữa ông thọ'
+      })
     }, 2000)
   })
   return promise
