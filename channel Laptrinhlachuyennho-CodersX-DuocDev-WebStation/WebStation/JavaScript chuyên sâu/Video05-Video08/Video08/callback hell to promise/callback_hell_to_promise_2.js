@@ -5,7 +5,7 @@ function xayCaPhe() {
       resolve({
         cafe: ['Robusta', 'Arabica']
       })
-      console.log('Bước 1: DONE')
+      console.log('Bước 1: DONE ✅')
     }, 2000)
   })
 }
@@ -18,7 +18,7 @@ xayCaPhe()
         resolve({
           newData: dataResolveMot.cafe[0] + ' + sữa ông thọ'
         })
-        console.log('Bước 2: DONE')
+        console.log('Bước 2: DONE ✅')
       }, 2000)
     })
   })
@@ -29,7 +29,7 @@ xayCaPhe()
         resolve({
           result: dataResolveHai.newData + ' + pha bằng phin'
         })
-        console.log('Bước 3: DONE')
+        console.log('Bước 3: DONE ✅')
       }, 3000)
     })
   })
