@@ -177,7 +177,7 @@ Nếu như chúng ta dùng `reject` thì vẫn bắt được lỗi, còn dùng 
 
 # Bọc promise trong hàm để tái sử dụng
 
-Đây là 1 ví dụ khác
+Đây là 1 ví dụ khác thực hiện bọc promise để có thể tái sử dụng
 
 ![alt text](images/image-33.png)
 
@@ -195,7 +195,8 @@ Nếu như chúng ta dùng `reject` thì vẫn bắt được lỗi, còn dùng 
 
 Ví dụ này mình sẽ tìm hiểu về vấn đề callback hell và từ đó mình sẽ transfer code về dạng promise
 
-Đoạn code này trong file `callback_hell_to_promise.js`
+Đoạn code này trong file `callback_hell_to_promise_1.js`
+
 Trong đoạn code này gặp phải trường hợp `callback hell` các bạn khi code thì nhớ đừng code như này
 
 ![alt text](images/image-35.png)
@@ -219,11 +220,12 @@ Một ví dụ khác, code này trong folder `Example`
 ![alt text](images/image-40.png)
 
 Như vậy thì có 3 cách viết return trong hàm callback của then
-Trong 3 tấm ảnh dọc đó thì mọi người nên viết theo tấm ảnh ở giữa. Bởi vì viết như thế làm cho mình dễ đọc code hơn và cảm thấy dễ chịu
+
+Trong 3 tấm ảnh dọc đó thì mọi người nên viết theo tấm ảnh ở giữa. Bởi vì viết như thế làm cho mình dễ đọc code hơn và cảm thấy dễ chịu. Còn nếu sử dụng `arrow function` để viết thì phải hiểu rõ cách hoạt động
 
 ![alt text](images/image-41.png)
 
-Đây là tấm hình bàn luận trên `StackOverFlow`
+Đây là tấm hình được tác giả nào đó thảo luận trên forum `StackOverFlow`
 
 ---
 
@@ -236,12 +238,6 @@ Trong 3 tấm ảnh dọc đó thì mọi người nên viết theo tấm ảnh 
 # Tìm hiểu về 6 method của Promise
 
 ![alt text](images/image-43.png)
-
----
-
-Bọc promise để có thể tái sử dụng
-
-![alt text](images/image-32.png)
 
 ---
 
@@ -275,6 +271,10 @@ Code này trong folder `fs callback`
 # Những cái ghi chú quan trọng
 
 ![alt text](images/image-47.png)
+
+- Bài viết tham khảo:
+
+  - [Bài viết 1](https://hackernoon.com/should-i-use-promises-or-async-await-126ab5c98789)
 
 - `promise` chính là `async/await`. Mà `async/await` là chính là dạng `single syntax` của JavaScript như chúng ta xử lý code bất đồng bộ dễ chịu hơn. Các bạn nếu muốn nắm được `async/await` thì trước tiên phải nắm được `promise`
 - Viết 1 callback và truyền vào `then`, `catch`, `finally`
