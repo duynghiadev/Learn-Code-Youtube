@@ -47,7 +47,7 @@ Các bạn hình dung như này cho dễ hiểu về cơ chế promise này:
 
 Đấy là cái ví dụ rất dễ hiểu trong cuộc sống của chúng ta
 
-Nhưng mà khi làm việc gì thì cũng có 2 trạng thái đó là `resolve` (thành công) và `reject` (thất bại). Nếu thành công thì nó sẽ trả về resolve, còn thất bại thì sẽ trả về `reject`
+Nhưng mà khi làm việc gì thì cũng có 2 trạng thái đó là `resolve` (thành công) và `reject` (thất bại). Nếu thành công thì nó sẽ trả về `resolve`, còn thất bại thì sẽ trả về `reject`
 
 ---
 
@@ -65,11 +65,11 @@ Nhưng mà khi làm việc gì thì cũng có 2 trạng thái đó là `resolve`
 
 đây là ví dụ trong file `callback.js`
 
-Trong code JavaScript thì nó sẽ ưu tiên xử lý code đồng bộ trước, rồi sau đó nó mới thực thi các đoạn code bất đồng bộ. Code bất đồng bộ chỉ xuất hiện khi các code đồng bộ chạy xong. Trong code bất đồng bộ thì nó ưu tiên về macro task, micro task -> thì macro task sẽ được chạy trước
+Trong code JavaScript thì nó sẽ ưu tiên xử lý code đồng bộ trước, rồi sau đó nó mới thực thi các đoạn code bất đồng bộ. Code bất đồng bộ chỉ xuất hiện khi các code đồng bộ chạy xong. Trong code bất đồng bộ thì nó ưu tiên về `macro task`, `micro task` -> thì `micro task` sẽ được chạy trước
 
 ![alt text](images/image-8.png)
 
-Trong JavaScript thì 1 hàm có thể được truyền vào hàm khác như 1 tham số -> đó được gọi là callback
+Trong JavaScript thì 1 hàm có thể được truyền vào hàm khác như 1 tham số -> đó được gọi là `callback`
 
 Nhìn vào ví dụ đó. Chúng ta có 2 cách truyền hàm vào tham số: 1 là truyền callback vào hàm, 2 là viết callback trực tiếp vào hàm
 
