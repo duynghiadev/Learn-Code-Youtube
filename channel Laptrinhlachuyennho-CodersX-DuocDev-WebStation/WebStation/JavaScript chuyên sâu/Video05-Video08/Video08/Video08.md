@@ -107,7 +107,7 @@ Trong JavaScript thì chúng ta có 2 cách tạo class
 
 ![alt text](images/image-12.png)
 
-Trong ví dụ này chúng ta kiểm tra biến job có đúng với điều kiện mà chúng ta cần kiểm tra hay không. Nếu đúng thì nó sẽ thực thi hàm `then()` -> và nó sẽ thực thi hàm `resolve()` ngay lập tức. Còn thất bại thì nó sẽ thực thi hàm `catch()` -> và nó sẽ thực thi hàm `reject()`. Còn hàm `finally`() thì dù nó có `success` hay `fail` đi chăng nữa thì nó vẫn sẽ thực thi
+Trong ví dụ này chúng ta kiểm tra biến job có đúng với điều kiện mà chúng ta cần kiểm tra hay không. Nếu đúng thì nó sẽ thực thi hàm `then()` -> và nó sẽ thực thi hàm `resolve()` ngay lập tức. Còn thất bại thì nó sẽ thực thi hàm `catch()` -> và nó sẽ thực thi hàm `reject()`. Còn hàm `finally()` thì dù nó có `success` hay `failed` đi chăng nữa thì nó vẫn sẽ thực thi
 
 ![alt text](images/image-13.png)
 
@@ -146,13 +146,14 @@ Một ví dụ khác trong file `promise_2.js`
 ![alt text](images/image-25.png)
 
 Sự khác biệt giữa dùng `callback` và `catch()` để bắt lỗi
+
 Tuy nhiên 2 thằng này được coi là tương đương nhau nhưng mà có 1 trường hợp nó khác nhau
 
 ![alt text](images/image-26.png)
 
 ---
 
-đây là ví dụ trong file `promise_3.js`
+đây là ví dụ khác
 
 ![alt text](images/image-27.png)
 
@@ -160,14 +161,14 @@ Nếu như chúng ta dùng `reject` thì vẫn bắt được lỗi, còn dùng 
 
 ---
 
-Phân biệt sự khác nhau giữa các `return` trong callback của `then()`
+# Phân biệt sự khác nhau giữa các `return` trong callback của `then()`
 
 ![alt text](images/image-28.png)
 ![alt text](images/image-29.png)
 
 ---
 
-Phân biệt return hàm và return value/data trong `then()`
+# Phân biệt return hàm và return value/data trong `then()`
 
 ![alt text](images/image-30.png)
 ![alt text](images/image-31.png)
@@ -176,7 +177,7 @@ Phân biệt return hàm và return value/data trong `then()`
 
 # Bọc promise trong hàm để tái sử dụng
 
-Đây là code trong file `promise_4.js` và `promise_5.js`
+Đây là 1 ví dụ khác
 
 ![alt text](images/image-33.png)
 
