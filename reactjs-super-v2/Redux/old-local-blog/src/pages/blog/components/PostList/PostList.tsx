@@ -1,6 +1,11 @@
+import { useSelector } from 'react-redux'
 import PostItem from '../PostItem/PostItem'
+import { RootState } from '../../../../store'
 
 export default function PostList() {
+  const postList = useSelector((state: RootState) => state.blog.postList)
+  console.log('postList:', postList)
+
   return (
     <div className='bg-white py-6 sm:py-8 lg:py-12'>
       <div className='mx-auto max-w-screen-xl px-4 md:px-8'>
@@ -14,10 +19,9 @@ export default function PostList() {
           </p>
         </div>
         <div className='grid gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-2 xl:grid-cols-2 xl:gap-8'>
-          <PostItem />
-          <PostItem />
-          <PostItem />
-          <PostItem />
+          {postList.map((post) => (
+            <PostItem post={post} key={post.id} />
+          ))}
         </div>
       </div>
     </div>
