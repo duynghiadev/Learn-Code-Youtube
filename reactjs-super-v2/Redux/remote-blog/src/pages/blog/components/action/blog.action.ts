@@ -28,3 +28,10 @@ export const updatePost = createAsyncThunk(
     return response.data
   }
 )
+
+export const deletePost = createAsyncThunk('blog/deletePost', async (postId: string, thunkAPI) => {
+  const response = await http.delete<Post>(`posts/${postId}`, {
+    signal: thunkAPI.signal
+  })
+  return response.data
+})

@@ -1,8 +1,8 @@
 import { useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import PostItem from '../PostItem/PostItem'
-import { getPostList } from '../action/blog.action'
-import { deletePost, startEditingPost } from '../reducers/blog.slice'
+import { deletePost, getPostList } from '../action/blog.action'
+import { startEditingPost } from '../reducers/blog.slice'
 import { RootState, useAppDispatch } from '../store/store'
 
 // Gọi API trong useEffect()
