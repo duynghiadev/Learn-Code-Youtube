@@ -2,10 +2,47 @@ import { useDispatch, useSelector } from 'react-redux'
 import PostItem from '../PostItem/PostItem'
 import { RootState } from '../../../../store'
 import { deletePost, startEditingPost } from '../../reducers/blog.slice'
+import { useEffect } from 'react'
+import http from '../../../../utils/http'
+
+// Gọi API trong useEffect()
+// Nếu gọi thành công thì dispatch action type: 'blog/getPostListSuccess'
+// Nếu gọi thất bại thì dispatch action type: 'blog/getPostListFailed'
+
+// cách này không được dùng -> vì trong reducer chỉ được dùng code đồng bộ -> còn code bất đồng bộ không sử dụng được 👇
+// ❌ Dispatch action type: 'blog/getPostList'
 
 export default function PostList() {
   const postList = useSelector((state: RootState) => state.blog.postList)
   const dispatch = useDispatch()
+
+  useEffect(() => {
+    const controller = new AbortController()
+    http
+      .get('posts', {
+        signal: controller.signal
+      })
+      .then((res) => {
+        console.log('res:', res)
+        const postListResult = res.data
+        dispatch({
+          type: 'blog/getPostListSuccess',
+          payload: postListResult
+        })
+      })
+      .catch((error) => {
+        if (!(error.code === 'ERR_CANCELED')) {
+          dispatch({
+            type: 'blog/getPostListFailed',
+            payload: error
+          })
+        }
+      })
+
+    return () => {
+      controller.abort()
+    }
+  }, [dispatch])
 
   const handleDelete = (postId: string) => {
     dispatch(deletePost(postId))

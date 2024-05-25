@@ -1,5 +1,4 @@
 import { PayloadAction, createSlice, current, nanoid } from '@reduxjs/toolkit'
-import { initialPostList } from '../../../constants/blog'
 import { Post } from '../../../types/blog.type'
 
 interface BlogState {
@@ -8,7 +7,7 @@ interface BlogState {
 }
 
 const initialState: BlogState = {
-  postList: initialPostList,
+  postList: [],
   editingPost: null
 }
 
@@ -57,6 +56,9 @@ const blogSlice = createSlice({
   },
   extraReducers(builder) {
     builder
+      .addCase('blog/getPostListSuccess', (state, action: any) => {
+        state.postList = action.payload
+      })
       .addMatcher(
         (action) => action.type.includes('cancel'),
         (state, action) => {
