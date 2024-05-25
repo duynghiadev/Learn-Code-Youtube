@@ -1,26 +1,27 @@
-import { useEffect } from 'react'
+import { Fragment, useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import PostItem from '../PostItem/PostItem'
+import SkeletonPost from '../SkeletonPost'
 import { deletePost, getPostList } from '../action/blog.action'
 import { startEditingPost } from '../reducers/blog.slice'
 import { RootState, useAppDispatch } from '../store/store'
 
-// Gọi API trong useEffect()
-// Nếu gọi thành công thì dispatch action type: 'blog/getPostListSuccess'
-// Nếu gọi thất bại thì dispatch action type: 'blog/getPostListFailed'
-
-// cách này không được dùng -> vì trong reducer chỉ được dùng code đồng bộ -> còn code bất đồng bộ không sử dụng được 👇
-// ❌ Dispatch action type: 'blog/getPostList'
-
 export default function PostList() {
   const postList = useSelector((state: RootState) => state.blog.postList)
+  const loading = useSelector((state: RootState) => state.blog.loading)
   const dispatch = useAppDispatch()
+  const [showSkeleton, setShowSkeleton] = useState(true)
 
   useEffect(() => {
     const promise = dispatch(getPostList())
 
+    const timer = setTimeout(() => {
+      setShowSkeleton(false)
+    }, 3000)
+
     return () => {
       promise.abort()
+      clearTimeout(timer)
     }
   }, [dispatch])
 
@@ -45,14 +46,22 @@ export default function PostList() {
           </p>
         </div>
         <div className='grid gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-2 xl:grid-cols-2 xl:gap-8'>
-          {postList.map((post) => (
-            <PostItem
-              post={post}
-              key={post.id}
-              handleDelete={handleDelete}
-              handleStartEditing={handleStartEditing}
-            />
-          ))}
+          {showSkeleton ? (
+            <Fragment>
+              <SkeletonPost />
+              <SkeletonPost />
+            </Fragment>
+          ) : (
+            !loading &&
+            postList.map((post) => (
+              <PostItem
+                post={post}
+                key={post.id}
+                handleDelete={handleDelete}
+                handleStartEditing={handleStartEditing}
+              />
+            ))
+          )}
         </div>
       </div>
     </div>
