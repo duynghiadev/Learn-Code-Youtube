@@ -1,5 +1,6 @@
-import { PayloadAction, createSlice, current, nanoid } from '@reduxjs/toolkit'
-import { Post } from '../../../types/blog.type'
+import { PayloadAction, createSlice, current } from '@reduxjs/toolkit'
+import { Post } from '../../../../types/blog.type'
+import { addPost, getPostList, updatePost } from '../action/blog.action'
 
 interface BlogState {
   postList: Post[]
@@ -40,24 +41,25 @@ const blogSlice = createSlice({
         return false
       })
       state.editingPost = null
-    },
-    addPost: {
-      reducer: (state, action: PayloadAction<Post>) => {
-        const post = action.payload
-        state.postList.push(post)
-      },
-      prepare: (post: Omit<Post, 'id'>) => ({
-        payload: {
-          ...post,
-          id: nanoid()
-        }
-      })
     }
   },
   extraReducers(builder) {
     builder
-      .addCase('blog/getPostListSuccess', (state, action: any) => {
+      .addCase(getPostList.fulfilled, (state, action) => {
         state.postList = action.payload
+      })
+      .addCase(addPost.fulfilled, (state, action) => {
+        state.postList.push(action.payload)
+      })
+      .addCase(updatePost.fulfilled, (state, action) => {
+        state.postList.find((post, index) => {
+          if (post.id === action.payload.id) {
+            state.postList[index] = action.payload
+            return true
+          }
+          return false
+        })
+        state.editingPost = null
       })
       .addMatcher(
         (action) => action.type.includes('cancel'),
@@ -71,7 +73,7 @@ const blogSlice = createSlice({
   }
 })
 
-export const { addPost, cancelEditingPost, deletePost, finishEditingPost, startEditingPost } =
+export const { cancelEditingPost, deletePost, finishEditingPost, startEditingPost } =
   blogSlice.actions
 const blogReducer = blogSlice.reducer
 

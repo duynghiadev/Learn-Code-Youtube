@@ -1,9 +1,9 @@
-import { useDispatch, useSelector } from 'react-redux'
-import PostItem from '../PostItem/PostItem'
-import { RootState } from '../../../../store'
-import { deletePost, startEditingPost } from '../../reducers/blog.slice'
 import { useEffect } from 'react'
-import http from '../../../../utils/http'
+import { useSelector } from 'react-redux'
+import PostItem from '../PostItem/PostItem'
+import { getPostList } from '../action/blog.action'
+import { deletePost, startEditingPost } from '../reducers/blog.slice'
+import { RootState, useAppDispatch } from '../store/store'
 
 // Gọi API trong useEffect()
 // Nếu gọi thành công thì dispatch action type: 'blog/getPostListSuccess'
@@ -14,33 +14,13 @@ import http from '../../../../utils/http'
 
 export default function PostList() {
   const postList = useSelector((state: RootState) => state.blog.postList)
-  const dispatch = useDispatch()
+  const dispatch = useAppDispatch()
 
   useEffect(() => {
-    const controller = new AbortController()
-    http
-      .get('posts', {
-        signal: controller.signal
-      })
-      .then((res) => {
-        console.log('res:', res)
-        const postListResult = res.data
-        dispatch({
-          type: 'blog/getPostListSuccess',
-          payload: postListResult
-        })
-      })
-      .catch((error) => {
-        if (!(error.code === 'ERR_CANCELED')) {
-          dispatch({
-            type: 'blog/getPostListFailed',
-            payload: error
-          })
-        }
-      })
+    const promise = dispatch(getPostList())
 
     return () => {
-      controller.abort()
+      promise.abort()
     }
   }, [dispatch])
 
