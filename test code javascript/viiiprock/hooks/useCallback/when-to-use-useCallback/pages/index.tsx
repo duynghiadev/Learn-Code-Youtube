@@ -17,7 +17,8 @@ function Home() {
     });
   }, []);
 
-  const [postData, { loading: createLoading, error: createError }] = usePost(ADD_TODO);
+  const [postData, { loading: createLoading, error: createError }] =
+    usePost(ADD_TODO);
 
   const handleAddTask = async (task: TaskPropsType) => {
     // update local

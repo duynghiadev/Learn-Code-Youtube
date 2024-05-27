@@ -17,7 +17,8 @@ function UseCallback() {
     });
   }, []);
 
-  const [postData, { loading: createLoading, error: createError }] = usePost(ADD_TODO);
+  const [postData, { loading: createLoading, error: createError }] =
+    usePost(ADD_TODO);
 
   const handleAddTask = useCallback(
     async (task: TaskPropsType) => {
@@ -27,7 +28,7 @@ function UseCallback() {
 
       return postData(task);
     },
-    [tasks],
+    [tasks]
   );
 
   if (createError) {
