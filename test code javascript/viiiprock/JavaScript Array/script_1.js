@@ -1,3 +1,7 @@
+/**
+ * Đây là những đoạn code từ blog 1
+ */
+
 // array 1 chiều
 const array = ["foo", "bar"];
 
