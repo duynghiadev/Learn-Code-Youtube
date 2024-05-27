@@ -22,7 +22,9 @@ function TaskListItem({ children, status, taskId }: TaskListItemProps) {
   return (
     <ListItem>
       <ListItemIcon>
-        <Icon style={{ color: STATUS_COLORS[statusState] }}>{STATUS_ICONS[statusState]}</Icon>
+        <Icon style={{ color: STATUS_COLORS[statusState] }}>
+          {STATUS_ICONS[statusState]}
+        </Icon>
       </ListItemIcon>
       <ListItemText style={{ color: STATUS_COLORS[statusState] }}>
         {children}
