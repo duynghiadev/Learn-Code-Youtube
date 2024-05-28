@@ -1,0 +1,19 @@
+
+6 | AREA – Diện tích tốt nhất
+Đề bài
+Anh Nhàn có 1 mảnh đất kích thước N dòng x M cột.
+Ô ở dòng i và cột j là Aj có giá trị 0 hoặc 1:
+• Aj= 0 thì đó là ô đất xấu, không thể trồng trọt cây nào cũng không làm được gì cả.
+• Aj = 1 thì đó là ô đất tốt muốn trồng cây gì cũng được.
+Anh Nhàn muốn chọn một phần đất hình chữ nhật để làm vườn sao cho tất cả các ô của phần đất đó đều là ô đất tốt. Hãy tìm ra phương án có diện tích tốt nhất giúp anh Nhàn nhé.
+Để cho đơn giản bạn chỉ cần tìm ra diện tích lớn nhất có thể có là được.
+Dữ liệu
+• Dòng đầu tiên chứa 2 số nguyên N và M (1 < N, M = 2000)
+• N dòng tiếp theo, mỗi dòng chứa M số nguyên 0 hoặc 1.
+Kết quả
+• 1 số nguyên duy nhất là diện tích của phương án tốt nhất nên làm vườn.
+Subtask
+• 20% số test N < 20
+• 20% số test N < 80
+• 20% số test N < 200
+• 60% số test còn lại không giới hạn gì thêm

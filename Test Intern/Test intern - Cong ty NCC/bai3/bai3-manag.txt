@@ -1,0 +1,21 @@
+
+5| MANAGING – Quản lý dự án
+Đề bài
+Anh Nhàn là giám đốc một công ty hàng đầu về công nghệ. Mỗi năm đều nhận được rất nhiều các dự án từ nước ngoài. Nửa cuối của năm 2023 cũng ngoại lệ, công ty đã nhận được thông tin của N dự án tiềm năng, dự án thứ i sẽ mang về lợi nhuận là Vị.
+Tuy nhiên, Vì các vấn đề về nhân lực và quản lý nên công ty không được chọn quá K dự án liên tiếp (theo đúng thứ tự của đã cho).
+Ví dụ: K=2 và thông tin các dự án lần lượt là 8,6,2,5,7 thì công ty không thể chọn liên tiếp 3 dự án (8,6,2), (6,2,5), (2,5,7) để làm; hoặc 4 dự án liên tiếp là (8,6,2,5), ... phương án tốt nhất là bỏ dự án có lợi nhuận là 2 đi, cụ thể như sau: làm liên tiếp 2 dự án (8,6), bỏ dự án (2), làm liên tiếp 2 dự án (5,7);
+Hãy giúp anh Nhàn tìm ra phương án chọn các dự án trong N dự án đã cho để đem lại lợi nhuận lớn nhất về cho công ty nhé. Để cho đơn giản, bạn chỉ cần đưa ra con số lợi nhuận tốt nhất có thể đạt được.
+Dữ liệu
+• Dòng đầu tiên là hai số N và K, trong đó N < 105, K<N
+• N dòng tiếp theo, dòng thứ i chứa một số nguyên duy nhất vi là lợi nhuận sau khi chọn dự án thứ i, trong đó Vi < 2*109
+Kết quả
+• In ra một số nguyên duy nhất là lợi nhuận lớn nhất có thể được.
+SubTask
+• Subtask 1 (70% số điểm) N ≤ 104, subtask 2 không giới hạn gì thêm.
+Ví dụ
+Input 1
+52
+8
+86257
+7
+Output 1 26

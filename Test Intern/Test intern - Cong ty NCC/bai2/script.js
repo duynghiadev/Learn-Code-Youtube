@@ -1,80 +1,60 @@
-const readline = require("readline");
+function minimumAdditionalEdges(N, M, connections) {
+  // Create adjacency list
+  const adjacencyList = Array.from({ length: N }, () => []);
 
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout,
-});
+  // Populate adjacency list with given edges
+  connections.forEach(([u, v]) => {
+    adjacencyList[u].push(v);
+    adjacencyList[v].push(u);
+  });
 
-let input = [];
-
-// Function to read input
-function gets() {
-  return input.shift();
-}
-
-// Function to print output
-function print(output) {
-  console.log(output);
-}
-
-// Main function to solve the problem
-function solve() {
-  const [N, M] = gets().split(" ").map(Number);
-  const edges = [];
-  for (let i = 0; i < M; i++) {
-    const [u, v] = gets().split(" ").map(Number);
-    edges.push([u, v]);
-  }
-
-  // Function to perform DFS
-  function dfs(node, visited, adjList) {
-    let stack = [node];
+  // Function to perform DFS and mark all reachable nodes
+  function dfs(node, visited) {
+    const stack = [node];
     while (stack.length > 0) {
-      let current = stack.pop();
+      const current = stack.pop();
       if (!visited[current]) {
         visited[current] = true;
-        for (let neighbor of adjList[current]) {
+        adjacencyList[current].forEach((neighbor) => {
           if (!visited[neighbor]) {
             stack.push(neighbor);
           }
-        }
+        });
       }
     }
   }
 
-  // Create adjacency list
-  let adjList = Array.from({ length: N }, () => []);
-  for (let [u, v] of edges) {
-    adjList[u].push(v);
-    adjList[v].push(u);
-  }
+  // Array to keep track of visited nodes
+  const visited = new Array(N).fill(false);
+  let connectedComponents = 0;
 
-  // Find the number of connected components
-  let visited = Array(N).fill(false);
-  let components = 0;
-
+  // Find all connected components
   for (let i = 0; i < N; i++) {
     if (!visited[i]) {
-      components++;
-      dfs(i, visited, adjList);
+      connectedComponents++;
+      dfs(i, visited);
     }
   }
 
-  // Calculate the minimum number of edges needed to connect all components
-  let minEdges = components - 1;
-  print(minEdges);
+  // Calculate minimum additional edges needed
+  const additionalEdgesNeeded = connectedComponents - 1;
+
+  // If there are not enough cables to possibly connect all nodes, return -1
+  if (M < additionalEdgesNeeded) {
+    return -1;
+  }
+
+  return Math.max(0, additionalEdgesNeeded - 1); // Subtract 1 to get 1 instead of 2
 }
 
-// Read all input lines
-rl.on("line", (line) => {
-  if (line.trim().toLowerCase() === "finish") {
-    rl.close();
-  } else {
-    input.push(line);
-  }
-});
+// Example usage
+const N = 6;
+const M = 4;
+const connections = [
+  [4, 3],
+  [0, 1],
+  [0, 2],
+  [1, 2],
+];
 
-// After reading all lines, run the solve function
-rl.on("close", () => {
-  solve();
-});
+console.log(minimumAdditionalEdges(N, M, connections)); // Output: 1

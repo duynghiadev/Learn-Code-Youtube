@@ -1,0 +1,12 @@
+
+Output Specification
+Output N lines of one integer each, the solutions to the addition problems in order.
+Sample Input
+2
+1 1
+-1 0
+Sample Output
+2
+-1
+Sao chép
+Sao chép
