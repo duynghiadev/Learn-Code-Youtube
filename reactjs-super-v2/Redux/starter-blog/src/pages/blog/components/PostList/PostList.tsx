@@ -2,12 +2,20 @@ import { useGetPostsQuery } from 'pages/services/blog.service'
 import PostItem from '../PostItem'
 import SkeletonPost from 'pages/blog/components/SkeletonPost'
 import { Fragment } from 'react'
+import { useDispatch } from 'react-redux'
+import { startEditPost } from 'pages/blog/action/blog.slice'
 
 export default function PostList() {
   // isLoading chỉ dành cho lần load đầu tiên
   // isFetching chỉ dành cho mỗi lần gọi API
   const { data, isLoading, isFetching } = useGetPostsQuery()
   // console.log(data, isLoading, isFetching)
+
+  const dispatch = useDispatch()
+
+  const startEdit = (id: string) => {
+    dispatch(startEditPost(id))
+  }
 
   return (
     <div className='bg-white py-6 sm:py-8 lg:py-12'>
@@ -25,7 +33,7 @@ export default function PostList() {
               <SkeletonPost />
             </Fragment>
           )}
-          {!isFetching && data?.map((post) => <PostItem key={post.id} post={post} />)}
+          {!isFetching && data?.map((post) => <PostItem key={post.id} post={post} startEdit={startEdit} />)}
         </div>
       </div>
     </div>
