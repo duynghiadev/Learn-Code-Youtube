@@ -7,7 +7,7 @@ export default function PostList() {
   // isLoading chỉ dành cho lần load đầu tiên
   // isFetching chỉ dành cho mỗi lần gọi API
   const { data, isLoading, isFetching } = useGetPostsQuery()
-  console.log(data, isLoading, isFetching)
+  // console.log(data, isLoading, isFetching)
 
   return (
     <div className='bg-white py-6 sm:py-8 lg:py-12'>
