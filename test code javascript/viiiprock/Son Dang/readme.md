@@ -1,1 +1,0 @@
-[Link channel](https://www.youtube.com/@sondang2546/videos)
