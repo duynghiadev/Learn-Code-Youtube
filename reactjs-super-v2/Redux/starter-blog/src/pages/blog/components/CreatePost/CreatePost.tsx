@@ -1,7 +1,8 @@
 import { useAddPostMutation, useGetPostQuery, useUpdatePostMutation } from 'pages/services/blog.service'
 import { RootState } from 'pages/store/store'
 import { Post } from 'pages/types/blog.type'
-import { Fragment, useEffect, useState } from 'react'
+import { isFetchBaseQueryError } from 'pages/utils/helpers'
+import { Fragment, useEffect, useMemo, useState } from 'react'
 import { useSelector } from 'react-redux'
 
 const initialState: Omit<Post, 'id'> = {
@@ -12,6 +13,12 @@ const initialState: Omit<Post, 'id'> = {
   title: ''
 }
 
+type FormError =
+  | {
+      [key in keyof typeof initialState]: string
+    }
+  | null
+
 export default function CreatePost() {
   const [formData, setFormData] = useState<Omit<Post, 'id'> | Post>(initialState)
   const [addPost, addPostResult] = useAddPostMutation()
@@ -19,13 +26,30 @@ export default function CreatePost() {
   const { data } = useGetPostQuery(postId, { skip: !postId })
   const [updatePost, updatePostResult] = useUpdatePostMutation()
 
+  /**
+   * Lỗi có thể đến từ `addPostResult` hoặc `updatePostResult`
+   * Vậy chúng ta sẽ dựa vào điều kiện có postId hoặc không có (tức là đang trong chế độ edit hay không) để show lỗi
+   *
+   * Chúng ta không cần thiết phải tạo một state errorForm
+   * Vì errorForm phụ thuộc vào `addPostResult`, `updatePostResult` và `postId` nên có thể dùng 1 biến để tính toán
+   */
+
+  const errorForm: FormError = useMemo(() => {
+    const errorResult = postId ? updatePostResult.error : addPostResult.error
+    // Vì errorResult có thể là FetchBaseQueryError | SerializedError|undefined, mỗi kiểu lại có cấu trúc khác nhau, -> nên chúng ta cần kiểm tra để hiển thị cho đúng
+
+    if (isFetchBaseQueryError(errorResult)) {
+      // errorResult
+    }
+    return errorResult as any
+  }, [postId, updatePostResult, addPostResult])
+
   useEffect(() => {
     if (data) {
       setFormData(data)
     }
   }, [data])
 
-  console.log(data)
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     if (postId) {
