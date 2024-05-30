@@ -1,5 +1,6 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import { Post } from 'pages/types/blog.type'
+import { CustomError } from 'pages/utils/helpers'
 
 // Nếu bên slice chúng ta dùng createSlice để tạo slice thì bên RTK query dùng createApi
 // Với createApi chúng ta gọi là slice api
@@ -87,10 +88,14 @@ export const blogApi = createApi({
      */
     addPost: build.mutation<Post, Omit<Post, 'id'>>({
       query(body) {
-        return {
-          url: 'posts',
-          method: 'POST',
-          body
+        try {
+          return {
+            url: 'posts',
+            method: 'POST',
+            body
+          }
+        } catch (error: any) {
+          throw new CustomError(error.message)
         }
       },
       /**
