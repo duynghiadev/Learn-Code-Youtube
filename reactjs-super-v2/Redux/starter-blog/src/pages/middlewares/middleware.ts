@@ -21,6 +21,7 @@ export const rtkQueryErrorLogger: Middleware = (api: MiddlewareAPI) => (next) =>
    * `isRejectedWithValue` là một function giúp chúng ta kiểm tra những action có rejectedWithValue = true từ createAsyncThunk
    * RTK Query sử dụng `createAsyncThunk` bên trong nên chúng ta có thể dùng `isRejectedWithValue` để kiểm tra lỗi
    */
+  // Option: Trong thực tế không bắt buộc đến mức này
   if (isRejected(action)) {
     if (action.error.name === 'CustomError') {
       // Những lỗi liên quan đến quá trình thực thi
