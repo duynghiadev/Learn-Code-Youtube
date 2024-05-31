@@ -26,7 +26,11 @@ export default function CreatePost() {
   const postId = useSelector((state: RootState) => state.blog.postId)
 
   const [addPost, addPostResult] = useAddPostMutation()
-  const { data, refetch } = useGetPostQuery(postId, { skip: !postId, refetchOnMountOrArgChange: 5 })
+  const { data, refetch } = useGetPostQuery(postId, {
+    skip: !postId,
+    refetchOnMountOrArgChange: 5,
+    pollingInterval: 1000
+  })
   const [updatePost, updatePostResult] = useUpdatePostMutation()
 
   /**
