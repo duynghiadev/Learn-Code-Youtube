@@ -1,11 +1,11 @@
 function someFunc<T>(arg: T): T {
-  return arg
+  return arg;
 }
 
 interface GenericFunc<Input> {
-  (arg: Input): Input
+  (arg: Input): Input;
 }
 
-const myFunc: GenericFunc<number> = someFunc
+const myFunc: GenericFunc<number> = someFunc;
 
-console.log(myFunc(4))
+console.log(myFunc(4));
