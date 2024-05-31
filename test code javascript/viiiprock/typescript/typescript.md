@@ -1,3 +1,3 @@
 # Typescript
 
-[Link course](https://s.net.vn/pVbz)
+[Link course](https://bom.so/0ZHfBZ)
