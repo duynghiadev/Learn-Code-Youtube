@@ -47,7 +47,7 @@ import { CustomError } from 'pages/utils/helpers'
 export const blogApi = createApi({
   reducerPath: 'blogApi', // Tên field trong Redux state
   tagTypes: ['Posts'], // Những kiểu tag cho phép dùng trong blogApi
-  keepUnusedDataFor: 10,
+  keepUnusedDataFor: 10, // Giữ data trong 10 giây sẽ xóa (mặc định 60s)
   baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:4000/' }),
   endpoints: (build) => ({
     // Generic type theo thứ tự là kiểu response trả về và argument
