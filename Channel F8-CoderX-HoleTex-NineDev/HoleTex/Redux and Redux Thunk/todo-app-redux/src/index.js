@@ -2,12 +2,17 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
+import App1 from "./App1";
 import store from "./react-redux-core/redux/store";
 import { Provider } from "react-redux";
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    {/* this is component for folder react-redux-core 1️⃣ */}
+    {/* <App /> */}
+
+    {/* this is component for folder react-redux-toolkit 2️⃣ */}
+    <App1 />
   </Provider>,
   document.getElementById("root")
 );
