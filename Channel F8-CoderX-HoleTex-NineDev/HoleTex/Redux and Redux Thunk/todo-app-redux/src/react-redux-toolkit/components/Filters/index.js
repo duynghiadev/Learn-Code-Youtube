@@ -1,11 +1,11 @@
-import { Col, Row, Input, Typography, Radio, Select, Tag } from "antd";
+import { Col, Input, Radio, Row, Select, Tag, Typography } from "antd";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import {
-  priorityFilterChange,
+  prioritiesFilterChange,
   searchFilterChange,
   statusFilterChange,
-} from "../../redux/actions";
+} from "./filtersSlice";
 
 const { Search } = Input;
 
@@ -28,7 +28,7 @@ export default function Filters() {
 
   const handlePriorityChange = (value) => {
     setFilterPriorities(value);
-    dispatch(priorityFilterChange(value));
+    dispatch(prioritiesFilterChange(value));
   };
 
   return (

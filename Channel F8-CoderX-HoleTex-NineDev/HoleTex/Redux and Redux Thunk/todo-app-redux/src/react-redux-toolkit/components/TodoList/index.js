@@ -2,9 +2,9 @@ import { Button, Col, Input, Row, Select, Tag } from "antd";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { v4 as uuidv4 } from "uuid";
-import { addTodo } from "../../redux/actions";
 import { todosRemainingSelector } from "../../redux/selectors";
 import Todo from "../Todo/";
+import { addTodo } from "./todosSlice";
 
 export default function TodoList() {
   const [todoName, setTodoName] = useState("");
@@ -29,7 +29,6 @@ export default function TodoList() {
   };
 
   const handleInputChange = (e) => {
-    console.log("handleInputChange", e.target.value);
     setTodoName(e.target.value);
   };
 
