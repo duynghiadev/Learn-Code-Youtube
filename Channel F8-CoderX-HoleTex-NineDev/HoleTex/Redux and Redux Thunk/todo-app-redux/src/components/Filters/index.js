@@ -1,8 +1,15 @@
 import { Col, Row, Input, Typography, Radio, Select, Tag } from "antd";
+import { useState } from "react";
 
 const { Search } = Input;
 
 export default function Filters() {
+  const [searchText, setSearchText] = useState("");
+
+  const handleSearchTextChange = (e) => {
+    setSearchText(e.target.value);
+  };
+
   return (
     <Row justify="center">
       <Col span={24}>
@@ -11,7 +18,11 @@ export default function Filters() {
         >
           Search
         </Typography.Paragraph>
-        <Search placeholder="input search text" />
+        <Search
+          placeholder="input search text"
+          value={searchText}
+          onChange={handleSearchTextChange}
+        />
       </Col>
       <Col sm={24}>
         <Typography.Paragraph
