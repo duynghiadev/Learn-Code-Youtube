@@ -1,13 +1,18 @@
 import { Col, Row, Input, Typography, Radio, Select, Tag } from "antd";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { searchFilterChange } from "../../redux/actions";
 
 const { Search } = Input;
 
 export default function Filters() {
   const [searchText, setSearchText] = useState("");
 
+  const dispatch = useDispatch();
+
   const handleSearchTextChange = (e) => {
     setSearchText(e.target.value);
+    dispatch(searchFilterChange(e.target.value));
   };
 
   return (
