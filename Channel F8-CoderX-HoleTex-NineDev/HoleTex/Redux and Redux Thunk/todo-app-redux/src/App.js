@@ -1,7 +1,7 @@
 import { Divider, Typography } from "antd";
 import "./App.css";
-import Filters from "./components/Filters";
-import TodoList from "./components/TodoList";
+import Filters from "./react-redux-core/components/Filters";
+import TodoList from "./react-redux-core/components/TodoList";
 
 const { Title } = Typography;
 
