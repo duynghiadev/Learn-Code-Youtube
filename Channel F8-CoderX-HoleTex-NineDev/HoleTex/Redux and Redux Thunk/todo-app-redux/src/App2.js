@@ -20,7 +20,7 @@ function App2() {
         height: "90vh",
       }}
     >
-      <Title style={{ textAlign: "center" }}>TODO APP2 with REDUX</Title>
+      <Title style={{ textAlign: "center" }}>TODO APP with REDUX THUNK</Title>
       <Filters />
       <Divider />
       <TodoList />

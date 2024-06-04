@@ -28,3 +28,24 @@ export const {
 } = filtersSlice.actions;
 
 export default filtersSlice.reducer;
+
+/**
+ * => {
+ *  reducer,
+ *  actions
+ * }
+ *
+ * action là 1 object nó sẽ có dạng như này:
+ * {
+ *  type: 'abc',
+ *  payload: value
+ * }
+ *
+ * action creator là 1 function -> và nó sẽ trả về 1 function
+ * () => {
+ *  return {
+ *    type: 'abc',
+ *    payload: value
+ *  }
+ * }
+ */
