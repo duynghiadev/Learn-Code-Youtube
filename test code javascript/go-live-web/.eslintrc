@@ -1,0 +1,9 @@
+{
+  "extends": ["react-app", "prettier"],
+  "rules": {
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "off",
+    "import/no-anonymous-default-export": "off",
+    "no-unused-expressions": "off"
+  }
+}

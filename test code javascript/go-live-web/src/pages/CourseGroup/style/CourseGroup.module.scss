@@ -1,0 +1,14 @@
+.wrapper {
+  position: relative;
+  .title {
+    font-size: 24px;
+    margin-bottom: 30px;
+    // position: sticky;
+  }
+
+  .courses-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+}
