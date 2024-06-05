@@ -3,8 +3,8 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { v4 as uuidv4 } from "uuid";
 import { todosRemainingSelector } from "../../redux/selectors";
-import Todo from "../Todo/";
-import { addTodo } from "./todosSlice";
+import Todo from "../Todo";
+import { addNewTodo } from "./todosSlice";
 
 export default function TodoList() {
   const [todoName, setTodoName] = useState("");
@@ -16,7 +16,7 @@ export default function TodoList() {
 
   const handleAddButtonClick = () => {
     dispatch(
-      addTodo({
+      addNewTodo({
         id: uuidv4(),
         name: todoName,
         priority: priority,
@@ -29,6 +29,7 @@ export default function TodoList() {
   };
 
   const handleInputChange = (e) => {
+    console.log("handleInputChange", e.target.value);
     setTodoName(e.target.value);
   };
 

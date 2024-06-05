@@ -15,7 +15,7 @@ ReactDOM.render(
     {/* this is component for folder react-redux-toolkit 2️⃣ */}
     {/* <App1 /> */}
 
-    {/* this is component for folder react-redux-toolkit 3️⃣ */}
+    {/* this is component for folder react-redux-thunk 3️⃣ */}
     <App2 />
   </Provider>,
   document.getElementById("root")

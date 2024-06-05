@@ -61,3 +61,62 @@ Và chúng ta sẽ dùng thằng redux thunk. Đây sẽ là thư viện mà ch�
 Thì trong `configuration` của `redux-toolkit` thì nó đã cấu hình tự động `redux-thunk` của chúng ta rồi. Nên chúng ta sẽ không cần cài bất kỳ thư viện nào khác nữa
 
 Ngoài ra chúng ta còn nhiều middleware khác dùng để xử lý bất đồng bộ như là `redux-saga`,...
+
+---
+
+## Lưu ý:
+
+1. action và action creators
+
+- `action` là 1 cái object
+- `action creatos` là 1 function, mà cái function này nó sẽ trả về cho chúng ta 1 cái action
+
+ví dụ action creator:
+
+```jsx
+const actionCreator = () => {
+  return action;
+};
+```
+
+=> Tóm lại: thằng `action creators` nó sẽ bao bọc lại cái thằng `action`
+
+2. thunk action và thunk action creators
+
+- `thunk action` là 1 cái function bình thường
+- `thunk action creators` là 1 function, mà function này nó sẽ trả về cho chúng ta 1 cái thunk action
+
+ví dụ thunk action creators:
+
+```jsx
+const thunkActionCreators = () => {
+  return thunk action
+}
+```
+
+=> Tóm lại: thằng `thunk action creators` nó sẽ bao bọc lại cái thằng `thunk action`
+
+---
+
+## Sử dụng thunk function trong trường hợp nào
+
+```md
+Chúng ta thường sử dụng thunk function để sử dụng trong code bất đồng bộ
+```
+
+---
+
+## Các tác vụ trả về khi chúng ta gọi fetch API
+
+```js
+export const fetchTodos = createAsyncThunk("todos/fetchTodos", async () => {
+  const res = await fetch("/api/todos");
+  return res;
+});
+```
+
+Thì chúng ta sẽ có 3 trường hợp trả về:
+
+- todos/fetchTodos/pending
+- todos/fetchTodos/fullfilled
+- todos/fetchTodos/rejected

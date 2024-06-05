@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const filtersSlice = createSlice({
+export default createSlice({
   name: "filters",
   initialState: {
     search: "",
@@ -9,9 +9,9 @@ const filtersSlice = createSlice({
   },
   reducers: {
     searchFilterChange: (state, action) => {
-      // mutation -> trong thư viện redux toolkit nó cài đặt sẵn cho chúng ta thư viện immer
+      // mutation || IMMER
       state.search = action.payload;
-    }, // { type: 'filters/searchFilterChange' }
+    },
     statusFilterChange: (state, action) => {
       state.status = action.payload;
     },
@@ -20,32 +20,31 @@ const filtersSlice = createSlice({
     },
   },
 });
-
-export const {
-  prioritiesFilterChange,
-  searchFilterChange,
-  statusFilterChange,
-} = filtersSlice.actions;
-
-export default filtersSlice.reducer;
-
 /**
+ * => (payload) => {
+ *  return {
+ *    type: 'filters/searchFilterChange',
+ *    payload: payload
+ *  }
+ * }
+ *
+ *
+ *
  * => {
  *  reducer,
  *  actions
  * }
+ * action => object
  *
- * action là 1 object nó sẽ có dạng như này:
  * {
  *  type: 'abc',
  *  payload: value
  * }
  *
- * action creator là 1 function -> và nó sẽ trả về 1 function
- * () => {
+ * action creator => function :  () => {
  *  return {
  *    type: 'abc',
  *    payload: value
- *  }
+ * }
  * }
  */
