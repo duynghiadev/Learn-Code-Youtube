@@ -22,11 +22,11 @@
 
 // export default todoListReducer;
 
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 const todosSlice = createSlice({
-  name: 'todoList',
-  initialState: { status: 'idle', todos: [] },
+  name: "todoList",
+  initialState: { status: "idle", todos: [] },
   reducers: {
     // IMMER
     addTodo: (state, action) => {
@@ -42,34 +42,36 @@ const todosSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(fetchTodos.pending, (state, action) => {
-        state.status = 'loading';
+        state.status = "loading";
       })
       .addCase(fetchTodos.fulfilled, (state, action) => {
         console.log({ action });
         state.todos = action.payload;
-        state.status = 'idle';
+        state.status = "idle";
       })
       .addCase(addNewTodo.fulfilled, (state, action) => {
         state.todos.push(action.payload);
       })
       .addCase(updateTodo.fulfilled, (state, action) => {
-        let currentTodo = state.todos.find((todo) => todo.id === action.payload);
+        let currentTodo = state.todos.find(
+          (todo) => todo.id === action.payload
+        );
         currentTodo = action.payload;
       });
   },
 });
 
-export const fetchTodos = createAsyncThunk('todos/fetchTodos', async () => {
-  const res = await fetch('/api/todos');
+export const fetchTodos = createAsyncThunk("todos/fetchTodos", async () => {
+  const res = await fetch("/api/todos");
   const data = await res.json();
   return data.todos;
 });
 
 export const addNewTodo = createAsyncThunk(
-  'todos/addNewTodo',
+  "todos/addNewTodo",
   async (newTodo) => {
-    const res = await fetch('/api/todos', {
-      method: 'POST',
+    const res = await fetch("/api/todos", {
+      method: "POST",
       body: JSON.stringify(newTodo),
     });
     const data = await res.json();
@@ -79,15 +81,15 @@ export const addNewTodo = createAsyncThunk(
 );
 
 export const updateTodo = createAsyncThunk(
-  'todos/updateTodo',
+  "todos/updateTodo",
   async (updatedTodo) => {
-    const res = await fetch('/api/updateTodo', {
-      method: 'POST',
+    const res = await fetch("/api/updateTodo", {
+      method: "POST",
       body: JSON.stringify(updatedTodo),
     });
 
     const data = await res.json();
-    console.log('[updateTodo]', {data})
+    console.log("[updateTodo]", { data });
     return data.todos;
   }
 );

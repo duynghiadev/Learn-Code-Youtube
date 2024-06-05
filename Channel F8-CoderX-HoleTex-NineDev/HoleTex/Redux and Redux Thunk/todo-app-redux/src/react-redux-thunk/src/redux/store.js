@@ -8,9 +8,9 @@
 
 // export default store;
 
-import { configureStore } from '@reduxjs/toolkit';
-import filtersSlice from '../components/Filters/filtersSlice';
-import todosSlice from '../components/TodoList/todosSlice';
+import { configureStore } from "@reduxjs/toolkit";
+import filtersSlice from "../components/Filters/filtersSlice";
+import todosSlice from "../components/TodoList/todosSlice";
 
 const store = configureStore({
   reducer: {
