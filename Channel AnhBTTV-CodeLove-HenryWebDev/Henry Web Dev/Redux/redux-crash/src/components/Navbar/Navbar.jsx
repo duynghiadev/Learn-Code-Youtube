@@ -1,14 +1,27 @@
-const Navbar = () => {
+import { connect } from "react-redux";
+import PropsType from "prop-types";
+
+const Navbar = ({ todos }) => {
+  const length = todos.length;
+
   return (
     <div className="navbar">
       <h1>My Redux App</h1>
       <ul>
         <li>Home</li>
         <li>About</li>
-        <li>Total todos: 3</li>
+        <li>Total todos: {length}</li>
       </ul>
     </div>
   );
 };
 
-export default Navbar;
+Navbar.propTypes = {
+  todos: PropsType.array.isRequired,
+};
+
+const mapStateToProps = (state) => ({
+  todos: state.myTodos.todos,
+});
+
+export default connect(mapStateToProps, {})(Navbar);
