@@ -19,7 +19,14 @@ const initialState = {
 };
 
 const todoReducer = (state = initialState, action) => {
-  return state;
+  switch (action.type) {
+    case "MARK_COMPLETE":
+      console.log("nguoi dung muon mark completed");
+      return state;
+
+    default:
+      return state;
+  }
 };
 
 export default todoReducer;
