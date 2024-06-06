@@ -5,6 +5,14 @@ Live Demo: https://focused-engelbart-3d0ac1.netlify.app/
 
 ---
 
+## Deploy
+
+Mình đã deploy code này trên tài khoản github [kidbuck](https://github.com/kidbuck)
+
+[Link deploy](https://kidbuck.github.io/todo-app-redux-redux-thunk/)
+
+---
+
 ## Redux Thunk - Middleware trong Redux Toolkit (2022)
 
 Ở video trước chúng ta đã học về Redux. Và chúng ta có 1 ràng buộc là ở trong Store chúng ta không được có bất kì đoạn code bất đồng bộ hoặc bất kì side-effect nào. Bất kì các tác vụ bất đồng bộ nào thì đều phải thực hiện phía bên ngoài của store.
