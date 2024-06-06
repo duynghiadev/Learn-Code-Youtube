@@ -8,7 +8,7 @@ const initialState = {
     {
       id: 2,
       title: "viec 2",
-      completed: true,
+      completed: false,
     },
     {
       id: 3,
@@ -21,8 +21,15 @@ const initialState = {
 const todoReducer = (state = initialState, action) => {
   switch (action.type) {
     case "MARK_COMPLETE":
-      console.log("nguoi dung muon mark completed");
-      return state;
+      return {
+        ...state,
+        todos: state.todos.map((todo) => {
+          if (todo.id === action.payload) {
+            todo.completed = !todo.completed;
+          }
+          return todo;
+        }),
+      };
 
     default:
       return state;

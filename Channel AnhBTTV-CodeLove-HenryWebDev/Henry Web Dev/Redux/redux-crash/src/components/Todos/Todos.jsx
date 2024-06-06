@@ -9,9 +9,9 @@ const Todos = ({ todos, markComplete }) => {
       <TodoForm />
       <ul>
         {todos.map((todo) => (
-          <li key={todo.id}>
+          <li key={todo.id} className={todo.completed ? "completed" : ""}>
             {todo.title}
-            <input type="checkbox" onChange={markComplete} />
+            <input type="checkbox" onChange={() => markComplete(todo.id)} />
             <button>Delete</button>
           </li>
         ))}

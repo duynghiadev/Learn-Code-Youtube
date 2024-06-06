@@ -9,9 +9,9 @@
 // };
 
 // type write more quickly
-export const markComplete = () => (dispatch) => {
+export const markComplete = (id) => (dispatch) => {
   dispatch({
     type: "MARK_COMPLETE",
-    payload: "my payload",
+    payload: id,
   });
 };
