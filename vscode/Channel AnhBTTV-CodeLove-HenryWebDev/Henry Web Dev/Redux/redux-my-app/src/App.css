@@ -1,42 +1,75 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+/* Todos */
+.todo-list ul {
+  padding: 0 10px 10px 10px;
+  list-style-type: none;
+}
+
+.todo-list li {
+  padding: 10px;
+  cursor: pointer;
+  margin: 10px 0;
+  border-radius: 4px;
+  background: rgb(240, 240, 240);
+  color: black;
+}
+
+.todo-list li input[type="checkbox"] {
+  -ms-transform: scale(2); /* IE */
+  -moz-transform: scale(2); /* FF */
+  -webkit-transform: scale(2); /* Safari and Chrome */
+  -o-transform: scale(2); /* Opera */
+  transform: scale(2);
+  padding: 10px;
+  float: right;
+}
+
+.todo-list li.completed {
+  background: rgb(119, 218, 243);
+}
+
+.todo-list li button {
+  float: right;
+  margin-right: 20px;
+}
+
+.todo-list li button:hover {
+  cursor: pointer;
+  background: red;
+  color: white;
+}
+
+/* Navbar */
+.navbar {
+  padding: 5px;
   text-align: center;
+  background: rgb(240, 240, 240);
+  color: black;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.navbar ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+  padding: 0;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* TodoForm */
+form {
+  padding: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+input[type="text"] {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  margin: 6px 0;
+  border: 0;
 }
 
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+input[type="submit"] {
+  margin: 10px auto;
+  padding: 10px;
+  border: 0;
+  display: block;
 }
