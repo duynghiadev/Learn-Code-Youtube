@@ -1,0 +1,416 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    height: max-content !important;
+}
+/* LOGIN - HEADER ___________________________________________ */
+.login-header{
+    height: 84px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.login-header__title{
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+    
+}
+.login-header__title__logo svg{
+    height: 42px;
+    fill: var(--primary-color);
+    margin-right: 20px;
+}
+.login-header__title__logo {
+
+}
+.login-header__title__name{
+    font-size: 24px;
+    transform: translateY(2px);
+}
+.login-header__help{
+    font-size: 14px;
+    color: var(--primary-color);
+}
+
+
+/* LOGIN - BODY ____________________________________________________ */
+.login-body {
+    background-color: var(--primary-color);
+}
+
+/* Modal login */
+.modal {
+    z-index: 2;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.bg {
+    background-image: url(../img/login-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 600px;
+    width: 1040px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.modal__body {
+    margin: auto;
+    position: absolute;
+    background-color: var(--white-color);
+    border-radius: 4px;
+    /* animation: zoomOut ease 0.2s; */
+    width: 400px;
+    /* height: 472px; */
+    right: 0;
+}
+.auth-form {
+    /* display: none; */
+}
+.auth-form__header {
+    padding: 22px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.auth-form__heading {
+    font-size: 2rem;
+    text-align: left;
+    font-weight: 400;
+    
+}
+.auth-form__qr {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+    cursor: pointer;
+}
+.auth-form__qr-text {
+    font-size: 1.4rem;
+    padding: 11px 14px;
+    margin-right: 16px;
+    border: 2px solid #ffbf00;
+    font-weight: 500;
+    color: #ffbf00;
+    position: relative;
+    background-color: #fefaec;
+    border-radius: 2px;
+    cursor: default;
+    font-weight: 550 !important;
+}
+.auth-form__qr-text::before {
+    position: absolute;
+    right: 1px;
+    content: "";
+    height: 14px;
+    width: 14px;
+    background-color: #fefaec;
+    box-sizing: border-box;
+    border-top: 2px solid #ffbf00;
+    border-right: 2px solid #ffbf00;
+    transform: rotate(45deg) translateX(85%);
+}
+.auth-form__qr-code img{
+    width: 42px;
+}
+.auth-form__form {
+    padding: 0 30px 30px;
+
+}
+.auth-form__group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 14px;
+    border: 1px solid rgba(0, 0, 0, 0.14);
+    box-shadow: inset 0 2px 0 rgba(0,0,0,.02);
+    border-radius: 2px;
+}
+.auth-form__input {
+    padding: 12px;
+    width: 100%;
+    border: 0;
+    border-radius: 2px;
+    outline: none;
+    font-size: 1.4rem;
+    
+}
+.auth-form__input::placeholder {
+    color: rgba(0, 0, 0, 0.26);
+}
+.auth-form__group__icon {
+    width: 20px;
+    height: 20px;
+    margin: 0 15px 0 12px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.auth-form__controls {
+    padding: 0 30px 0;
+    
+}
+.auth-form__btn {
+    padding: 0 10px 0;
+    color: var(--white-color);
+    border: none;
+    background-color: var(--primary-color);
+    width: 100%;
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    height: 40px;
+    cursor: pointer;
+    border-radius: 2px;
+    user-select: none;
+}
+.auth-form__controls-text {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+.auth-form__controls-text-link {
+    text-decoration: none;
+    color: #05a;
+    font-size: 1.2rem; 
+    user-select: none;
+}
+.auth-form--separate {
+    margin: 10px 30px 14px;
+    /* text-align: center; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.auth-form--separate-line {
+    height: 1px;
+    background-color: rgb(0, 0, 0, 0.1);
+    flex: 1;
+    width: 100%;
+}
+.auth-form--separate-text {
+    line-height: 1.2rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: rgb(0, 0, 0, 0.15);
+    padding: 0 16px;
+}
+.auth-form__socials {
+    padding: 0 25px 30px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.socials__btn {
+    margin: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    width: 50%;
+    height: 40px;
+    border-radius: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4rem;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+.socials__btn:hover {
+    background-color: rgba(0,0,0,.02);
+}
+.socials__btn-img {
+    width: 22px;
+    margin: 0 4px;
+}
+.auth-form__footer {
+    font-size: 1.4rem;
+    color: rgba(0, 0, 0, 0.26);
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding-bottom: 30px;
+}
+.auth-form__footer-link {
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    margin-left: 4px;
+    text-decoration: none;
+}
+
+.auth-form__notification{
+    padding: 12px 15px;
+    border: 1px solid rgba(255,66,79,.2);
+    margin: 0 30px 25px;
+    display: none;
+    /* flex */
+    background-color: #fff9fa;
+}
+.auth-form__notification__icon svg{
+    height: 16px;
+    margin-right: 10px;
+}
+.auth-form__notification__content{
+    font-size: 1.4rem;
+    color: var(--primary-color);
+}   
+
+
+
+
+/* QR form */
+.qr-form {
+    display: none;
+}
+.qr-form__header {
+    padding: 22px 30px;
+    display: flex;
+    align-items: center;
+}
+.qr-form__heading {
+    font-size: 2rem;
+    text-align: left;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.qr-form__qr {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+    cursor: pointer;
+}
+.qr-form__qr-text {
+    font-size: 1.4rem;
+    font-weight: 550 !important;
+    padding: 11px 14px;
+    margin-right: 16px;
+    border: 2px solid #ffbf00;
+    font-weight: 500;
+    color: #ffbf00;
+    position: relative;
+    background-color: #fefaec;
+    border-radius: 2px;
+    cursor: default;
+}
+.qr-form__qr-text::before {
+    position: absolute;
+    right: 1px;
+    content: "";
+    height: 14px;
+    width: 14px;
+    background-color: #fefaec;
+    box-sizing: border-box;
+    border-top: 2px solid #ffbf00;
+    border-right: 2px solid #ffbf00;
+    transform: rotate(45deg) translateX(85%);
+}
+.qr-form__qr-code img{
+    width: 42px;
+}
+
+.qr-form__content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 30px 30px;
+}
+.qr-form__content__qr-code{
+    height: 180px;
+    width: 180px;
+    background-image: url(../img/qrcode4.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 8px 0 30px 0;
+}
+.qr-form__content__text:nth-child(2){
+    font-size: 20px;
+}
+.qr-form__content__text:last-child{
+    font-size: 18px;
+    margin-top: 30px;
+    color: #0055aa;
+}
+
+
+.qr-form__footer{
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+.qr-form__footer__text:first-child{
+    color: rgba(0, 0, 0, 0.26);
+}
+.qr-form__footer__text:last-child{
+    color: var(--primary-color);
+}
+/* LOGIN - FOOTER _________________________________________________ */
+.footer {
+    margin-top: 40px;
+}
+.footer__information {
+    display: flex;
+}
+.footer__information__transport {
+    display: flex;
+    flex-direction: column;
+}
+.footer__information__trans__header {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    display: block;
+}
+.footer__information__socials__list-item {
+    display: flex;
+    align-items: center;
+}
+
+
+.footer__information__download {
+    width: 200px;
+}
+.footer__information__download-header {
+
+}
+.footer__information__download__list {
+    display: flex;
+}
+.footer__information__download__list-qr {
+    height: 88px;
+    width: 88px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding: 4px;
+    background-color: #fff;
+    box-shadow: 0 1px 1px rgba(0,0,0,.2);
+    border-radius: 2px;
+    margin-right: 12px;
+    cursor: pointer;
+}
+.footer__information__download__list-store {
+
+}
+.footer__information__download__list-store-item {
+    margin-bottom: 8px;
+    width: 76px;
+    height: 24px;
+    padding: 4px;
+    background-color: #fff;
+    box-shadow: 0 1px 1px rgba(0,0,0,.2);
+    border-radius: 2px;
+    cursor: pointer;
+}
+.footer__information__download__list-store-item-img {
+    height: 100%;
+    width: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
