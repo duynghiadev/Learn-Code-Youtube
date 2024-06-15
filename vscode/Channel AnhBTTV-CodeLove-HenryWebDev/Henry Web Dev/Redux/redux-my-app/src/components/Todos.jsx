@@ -1,6 +1,8 @@
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   deleteTodo,
+  getTodos,
   markComplete,
   todosSelector,
 } from "../store/reducers/todoSlice";
@@ -9,6 +11,11 @@ import TodoForm from "./TodoForm";
 const Todos = () => {
   const todos = useSelector(todosSelector);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    // send request to jsonplaceholder
+    dispatch(getTodos());
+  }, [dispatch]);
 
   const toggleTodoCompleted = (todoId) => {
     dispatch(markComplete(todoId));
