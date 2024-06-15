@@ -1,10 +1,11 @@
 import "./App.css";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
-    <>
-      <p>Duy Nghia Dev</p>
-    </>
+    <div>
+      <Navbar />
+    </div>
   );
 }
 
