@@ -1,30 +1,28 @@
-import { ReactNode, createContext } from "react";
+import { createContext, ReactNode } from 'react'
 
 interface ProgressContextProviderProps {
-  children: ReactNode;
+	children: ReactNode
 }
 
-interface ProgressContextDefault {
-  lastTime: string;
-  status: string;
+export interface ProgressContextDefault {
+	lastTime: string
+	status: string
 }
 
 const progressDefault = {
-  lastTime: "30/5/2024",
-  status: "In Progress",
-};
+	lastTime: '22/5/21',
+	status: 'In progress'
+}
 
 export const ProgressContext =
-  createContext<ProgressContextDefault>(progressDefault);
+	createContext<ProgressContextDefault>(progressDefault)
 
 const ProgressContextProvider = ({
-  children,
-}: ProgressContextProviderProps) => {
-  return (
-    <ProgressContext.Provider value={progressDefault}>
-      {children}
-    </ProgressContext.Provider>
-  );
-};
+	children
+}: ProgressContextProviderProps) => (
+	<ProgressContext.Provider value={progressDefault}>
+		{children}
+	</ProgressContext.Provider>
+)
 
-export default ProgressContextProvider;
+export default ProgressContextProvider
