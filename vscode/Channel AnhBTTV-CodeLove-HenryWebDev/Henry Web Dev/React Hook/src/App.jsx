@@ -1,10 +1,13 @@
 import "./App.css";
+import Navbar from "./components/Navbar";
+import Todos from "./components/Todos";
 
 function App() {
   return (
-    <>
-      <p>Duy Nghia Dev</p>
-    </>
+    <div className="App">
+      <Navbar />
+      <Todos />
+    </div>
   );
 }
 
