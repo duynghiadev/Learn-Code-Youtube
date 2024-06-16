@@ -1,38 +1,38 @@
-import { PropTypes } from '@material-ui/core'
-import { createContext, ReactNode, useState } from 'react'
+import { PropTypes } from "@material-ui/core";
+import { createContext, ReactNode, useState } from "react";
 
 interface ThemeContextProps {
-	children: ReactNode
+  children: ReactNode;
 }
 
 export interface ThemeContextDefault {
-	theme: PropTypes.Color
-	toggleTheme: (theme: PropTypes.Color) => void
+  theme: PropTypes.Color;
+  toggleTheme: (theme: PropTypes.Color) => void;
 }
 
 const themeContextDataDefault = {
-	theme: 'primary' as PropTypes.Color,
-	toggleTheme: () => {}
-}
+  theme: "primary" as PropTypes.Color,
+  toggleTheme: () => {},
+};
 
 export const ThemeContext = createContext<ThemeContextDefault>(
-	themeContextDataDefault
-)
+  themeContextDataDefault
+);
 
 const ThemeContextProvider = ({ children }: ThemeContextProps) => {
-	const [theme, setTheme] = useState<PropTypes.Color>(
-		themeContextDataDefault.theme
-	)
+  const [theme, setTheme] = useState<PropTypes.Color>(
+    themeContextDataDefault.theme
+  );
 
-	const toggleTheme = (theme: PropTypes.Color) => setTheme(theme)
+  const toggleTheme = (theme: PropTypes.Color) => setTheme(theme);
 
-	const themeContextData = { theme, toggleTheme }
+  const themeContextData = { theme, toggleTheme };
 
-	return (
-		<ThemeContext.Provider value={themeContextData}>
-			{children}
-		</ThemeContext.Provider>
-	)
-}
+  return (
+    <ThemeContext.Provider value={themeContextData}>
+      {children}
+    </ThemeContext.Provider>
+  );
+};
 
-export default ThemeContextProvider
+export default ThemeContextProvider;
