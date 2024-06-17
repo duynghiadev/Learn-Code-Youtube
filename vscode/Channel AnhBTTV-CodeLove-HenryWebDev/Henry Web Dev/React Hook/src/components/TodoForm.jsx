@@ -1,14 +1,22 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
+import { ThemeContext } from "../contexts/ThemeContext";
+import { TodoContext } from "../contexts/TodoContext";
 
-const TodoForm = ({ addTodo }) => {
+const TodoForm = () => {
   const [title, setTitle] = useState("");
 
-  const style = {
-    background: "rgb(240, 240, 240)",
-    color: "black",
-  };
+  // load theme context
+  const { theme } = useContext(ThemeContext);
+  const { isLightTheme, light, dark } = theme;
 
+  // style
+  const style = isLightTheme ? light : dark;
+
+  // load context todo
+  const { addTodo } = useContext(TodoContext);
+
+  // for this component only
   const onTitleChange = (event) => {
     setTitle(event.target.value);
   };
