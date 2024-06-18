@@ -1,12 +1,15 @@
-import { createContext, useEffect, useReducer } from "react";
-import { TodoReducer } from "../reducers/TodoReducer";
+import React, { createContext, useEffect, useReducer } from "react";
+import { todoReducer } from "../reducers/TodoReducer";
 import { GET_TODOS, SAVE_TODOS } from "../reducers/types";
 
 export const TodoContext = createContext();
 
 const TodoContextProvider = ({ children }) => {
-  const [todos, dispatch] = useReducer(TodoReducer, []);
+  // State
+  // const [todos, setTodos] = useState([])
+  const [todos, dispatch] = useReducer(todoReducer, []);
 
+  // useEffect
   useEffect(() => {
     dispatch({
       type: GET_TODOS,
@@ -26,6 +29,7 @@ const TodoContextProvider = ({ children }) => {
     dispatch,
   };
 
+  // return
   return (
     <TodoContext.Provider value={todoContextData}>
       {children}

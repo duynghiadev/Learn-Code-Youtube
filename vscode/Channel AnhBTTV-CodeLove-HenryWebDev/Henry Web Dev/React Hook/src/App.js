@@ -1,4 +1,3 @@
-import "./App.css";
 import Navbar from "./components/Navbar";
 import ThemeToggle from "./components/ThemeToggle";
 import Todos from "./components/Todos";
@@ -15,8 +14,8 @@ function App() {
           <TodoContextProvider>
             <Todos />
           </TodoContextProvider>
-          <ThemeToggle />
         </AuthContextProvider>
+        <ThemeToggle />
       </ThemeContextProvider>
     </div>
   );

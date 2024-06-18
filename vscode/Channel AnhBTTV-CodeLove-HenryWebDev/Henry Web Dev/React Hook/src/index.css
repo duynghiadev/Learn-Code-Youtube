@@ -64,35 +64,6 @@ input[type="submit"] {
 }
 
 .toggle-btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 15vh;
-  background-color: #f0f0f0;
-}
-
-.theme-toggle-button {
-  width: 50px;
-  height: 30px;
-  border-radius: 5px;
-  background: linear-gradient(
-    135deg,
-    #6e8efb,
-    #a777e3
-  ); /* Gradient background */
-  border: none;
-  color: white;
-  cursor: pointer;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  transition: all 0.3s ease; /* Smooth transition */
-}
-
-.theme-toggle-button:hover {
-  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Larger shadow on hover */
-  transform: scale(1.05); /* Slightly larger on hover */
-}
-
-.theme-toggle-button:active {
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Smaller shadow when active */
-  transform: scale(0.95); /* Slightly smaller when active */
+  text-align: center;
+  padding-bottom: 10px;
 }

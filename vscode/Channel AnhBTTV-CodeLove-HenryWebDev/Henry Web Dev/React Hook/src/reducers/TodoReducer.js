@@ -1,6 +1,6 @@
 import { ADD_TODO, DELETE_TODO, GET_TODOS, SAVE_TODOS } from "./types";
 
-export const TodoReducer = (state, action) => {
+export const todoReducer = (state, action) => {
   const { type, payload } = action;
 
   switch (type) {
@@ -16,7 +16,7 @@ export const TodoReducer = (state, action) => {
       return state;
 
     case ADD_TODO:
-      return [...state, payload.todos];
+      return [...state, payload.todo];
 
     case DELETE_TODO:
       return state.filter((todo) => todo.id !== payload.id);

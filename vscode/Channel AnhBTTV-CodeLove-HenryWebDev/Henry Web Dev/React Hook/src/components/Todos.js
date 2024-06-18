@@ -1,14 +1,14 @@
-import { useContext } from "react";
+import React, { useContext } from "react";
 import { TodoContext } from "../contexts/TodoContext";
+import { AuthContext } from "../contexts/AuthContext";
 import TodoForm from "./TodoForm";
 import TodoItem from "./TodoItem";
-import { AuthContext } from "../contexts/AuthContext";
 
 const Todos = () => {
-  // load todos context
+  // Load context
   const { todos } = useContext(TodoContext);
 
-  // load auth context
+  // Load auth context
   const { isAuthenticated } = useContext(AuthContext);
 
   return (
@@ -17,7 +17,7 @@ const Todos = () => {
       {isAuthenticated ? (
         <ul>
           {todos.map((todo) => (
-            <TodoItem key={todo.id} todo={todo} />
+            <TodoItem todo={todo} key={todo.id} />
           ))}
         </ul>
       ) : (

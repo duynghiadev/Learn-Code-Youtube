@@ -1,23 +1,20 @@
-import { useContext, useState } from "react";
-import { v4 as uuidv4 } from "uuid";
+import React, { useState, useContext } from "react";
 import { ThemeContext } from "../contexts/ThemeContext";
 import { TodoContext } from "../contexts/TodoContext";
+import { v4 as uuidv4 } from "uuid";
 import { ADD_TODO } from "../reducers/types";
 
 const TodoForm = () => {
-  const [title, setTitle] = useState("");
-
-  // load theme context
+  // Load context
   const { theme } = useContext(ThemeContext);
   const { isLightTheme, light, dark } = theme;
 
-  // style
-  const style = isLightTheme ? light : dark;
-
-  // load context todo
+  // Load context todos
   const { dispatch } = useContext(TodoContext);
 
-  // for this component only
+  // For this component only
+  const [title, setTitle] = useState("");
+
   const onTitleChange = (event) => {
     setTitle(event.target.value);
   };
@@ -36,6 +33,9 @@ const TodoForm = () => {
     setTitle("");
   };
 
+  // Style
+  const style = isLightTheme ? light : dark;
+
   return (
     <form onSubmit={handleSubmit}>
       <input
@@ -44,6 +44,7 @@ const TodoForm = () => {
         placeholder="Enter a new todo..."
         onChange={onTitleChange}
         value={title}
+        required
       />
       <input type="submit" value="Add" style={style} />
     </form>
