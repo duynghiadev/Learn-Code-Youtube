@@ -4,6 +4,8 @@
 
 ---
 
+# JavaScript bất đồng bộ - Callback, Promise, Async/Await - Bài 1 - Giới thiệu
+
 BẤT ĐỒNG BỘ (ASYNCHRONOUS JAVASCRIPT)
 
 Đặc điểm quan trọng mạnh mẽ của JavaScript
@@ -19,3 +21,5 @@ Khó, kể cả học xong
 Dần dần sử dụng sẽ biết
 
 Nên quay lại, đọc lại, xem lại, càng nhiều lần càng nhanh hiểu
+
+---
