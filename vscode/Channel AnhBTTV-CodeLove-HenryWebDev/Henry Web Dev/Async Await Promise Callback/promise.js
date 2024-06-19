@@ -26,3 +26,4 @@ xinSoDt()
   .catch((error) => console.log(error));
 
 // ask for phone number -> then, charge the phone baterry -> then, call
+// code này trong file promise_1.js (đây là code của video thứ 5)
