@@ -1,7 +1,7 @@
-import Layout from "../../components/Layout";
-import Card from "react-bootstrap/Card";
-import { getPosts } from "../../lib/post";
 import Link from "next/link";
+import Card from "react-bootstrap/Card";
+import Layout from "../../components/Layout";
+import { getPosts } from "../../lib/post";
 
 const Posts = ({ posts }) => {
   return (

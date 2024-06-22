@@ -1,7 +1,7 @@
-import Card from "react-bootstrap/Card";
-import Button from "react-bootstrap/Button";
-import Layout from "../../components/Layout";
 import Link from "next/link";
+import Button from "react-bootstrap/Button";
+import Card from "react-bootstrap/Card";
+import Layout from "../../components/Layout";
 import { getBooks } from "../../lib/book";
 
 const Books = ({ books }) => {

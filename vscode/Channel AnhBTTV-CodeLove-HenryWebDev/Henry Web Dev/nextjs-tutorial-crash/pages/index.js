@@ -1,7 +1,7 @@
-import Layout from "../components/Layout";
 import Link from "next/link";
-import Jumbotron from "react-bootstrap/Jumbotron";
 import Button from "react-bootstrap/Button";
+import Jumbotron from "react-bootstrap/Jumbotron";
+import Layout from "../components/Layout";
 
 export default function Home() {
   return (

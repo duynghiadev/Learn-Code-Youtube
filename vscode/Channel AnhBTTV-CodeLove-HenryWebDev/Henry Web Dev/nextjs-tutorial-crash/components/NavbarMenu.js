@@ -1,6 +1,6 @@
-import Navbar from "react-bootstrap/Navbar";
-import Nav from "react-bootstrap/Nav";
 import Link from "next/link";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
 
 const NavbarMenu = () => (
   <Navbar bg="dark" variant="dark">

@@ -1,10 +1,10 @@
 import Link from "next/link";
-import Card from "react-bootstrap/Card";
-import Button from "react-bootstrap/Button";
-import Layout from "../../components/Layout";
-import { getPostIds, getPostById } from "../../lib/post";
 import { useRouter } from "next/router";
+import Button from "react-bootstrap/Button";
+import Card from "react-bootstrap/Card";
 import Spinner from "react-bootstrap/Spinner";
+import Layout from "../../components/Layout";
+import { getPostById, getPostIds } from "../../lib/post";
 import spinnerStyles from "../../styles/Spinner.module.css";
 
 const Post = ({ post }) => {

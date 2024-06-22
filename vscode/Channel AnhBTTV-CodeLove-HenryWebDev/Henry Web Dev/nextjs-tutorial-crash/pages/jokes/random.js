@@ -1,8 +1,8 @@
-import Card from "react-bootstrap/Card";
-import { getRandomJoke } from "../../lib/joke";
-import Button from "react-bootstrap/Button";
-import Layout from "../../components/Layout";
 import Link from "next/link";
+import Button from "react-bootstrap/Button";
+import Card from "react-bootstrap/Card";
+import Layout from "../../components/Layout";
+import { getRandomJoke } from "../../lib/joke";
 
 const Random = ({ joke }) => {
   return (
