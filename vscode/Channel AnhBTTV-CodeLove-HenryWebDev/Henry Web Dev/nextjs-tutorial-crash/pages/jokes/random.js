@@ -20,10 +20,9 @@ const Random = ({ joke }) => {
   );
 };
 
-// Du lieu phu thuoc vao moi request, nhung ma van tao ra HTML tinh cho front-end, nen van tot cho SEO
+// Dữ liệu phụ thuộc vào mỗi request, nhưng mà vẫn tạo ra HTML tĩnh cho front-end, nên vẫn tốt cho SEO
 export const getServerSideProps = async () => {
   const joke = await getRandomJoke();
-  // joke = false
 
   if (!joke)
     return {

@@ -43,16 +43,16 @@ const Post = ({ post }) => {
   );
 };
 
-// Lay du lieu kieu tinh, nhung du lieu tinh nao thi con phu thuoc vao path params
+// Lấy dữ liệu kiểu tĩnh, nhưng dữ liệu tĩnh nào thì còn phụ thuộc vào path params
 export const getStaticPaths = async () => {
   const paths = await getPostIds(5);
   console.log(paths);
 
   return {
     paths,
-    // fallback: false // bat ki path nao k returned boi getStaticPaths se toi trang 404
-    fallback: true, // path nao k returned ngay lap tuc se show trang "tam thoi" => doi getStaticProps chay
-    // => getStaticProps chay xong => return trang hoan chinh
+    // fallback: false // bất kỳ path nào không returned bởi getStaticPaths sẽ tới trang 404
+    fallback: true, // path nào không returned ngay lập tức sẽ show trang "tạm thời" => đợi getStaticProps chạy
+    // => getStaticProps chạy xong => return trang hoàn chỉnh
   };
 };
 
