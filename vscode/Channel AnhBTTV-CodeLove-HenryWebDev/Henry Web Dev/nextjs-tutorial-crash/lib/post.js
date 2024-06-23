@@ -14,6 +14,7 @@ export const getPosts = async (limit) => {
 export const getPostIds = async (limit) => {
   const posts = await getPosts(limit);
 
+  // data example
   // return
   // [
   // 	{

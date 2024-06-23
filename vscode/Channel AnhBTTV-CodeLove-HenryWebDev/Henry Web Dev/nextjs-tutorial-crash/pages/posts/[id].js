@@ -10,8 +10,8 @@ import spinnerStyles from "../../styles/Spinner.module.css";
 const Post = ({ post }) => {
   const router = useRouter();
 
-  // Neu trang chua tao ra, isFallback cua router === true
-  // Va trang tam thoi sau day se duoc render
+  // Nếu trang chưa tạo ra, isFallback của router luôn luôn là true (router === true)
+  // Và trang tạm thời sau đây sẽ được render
 
   if (router.isFallback) {
     return (
@@ -21,13 +21,13 @@ const Post = ({ post }) => {
         variant="dark"
         className={spinnerStyles.spinnerLg}
       >
-        <span className="sr-only">LOADING ....</span>
+        <span className="sr-only">LOADING....</span>
       </Spinner>
     );
   }
 
-  // Khi getStaticProps() chay xong lan dau tien.
-  // Cac lan sau thi trang so 6 (vi du) se duoc dua vao danh sach prerendered
+  // Khi getStaticProps() chạy xong lần đầu tiên
+  // Các lần sau thì trang số 6 (ví dụ) sẽ được đưa vào danh sách prerendered
   return (
     <Layout>
       <Card className="my-3 shadow">
