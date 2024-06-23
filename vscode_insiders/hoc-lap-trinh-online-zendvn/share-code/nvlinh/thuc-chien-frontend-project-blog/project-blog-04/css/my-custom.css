@@ -1,0 +1,9 @@
+.pointer-events-none {
+  pointer-events: none;
+}
+
+.mark,
+mark {
+  background-color: gold;
+  padding: 0;
+}
