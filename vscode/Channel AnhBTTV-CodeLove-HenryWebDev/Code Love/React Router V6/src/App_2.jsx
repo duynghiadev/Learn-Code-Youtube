@@ -1,5 +1,7 @@
-import { useState } from 'react'
+import { createContext, useState } from 'react'
 import Counter from './components/store global/Counter'
+
+export const ForceRenderContext = createContext()
 
 const App_2 = () => {
   const [forceRender, setForceRender] = useState(false)
@@ -9,10 +11,12 @@ const App_2 = () => {
   }
 
   return (
-    <div className='App'>
-      <p>This is App_2</p>
-      <Counter callbackForceRender={callbackForceRender} />
-    </div>
+    <ForceRenderContext.Provider value={{ callbackForceRender: callbackForceRender }}>
+      <div className='App'>
+        <p>This is App_2</p>
+        <Counter />
+      </div>
+    </ForceRenderContext.Provider>
   )
 }
 

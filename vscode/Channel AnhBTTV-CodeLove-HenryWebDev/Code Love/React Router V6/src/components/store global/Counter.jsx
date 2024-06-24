@@ -2,15 +2,13 @@ import Button from './Button'
 import ButtonDecrement from './ButtonDecrement.'
 import CounterShow from './CounterShow'
 
-const Counter = (props) => {
-  const { callbackForceRender } = props
-
+const Counter = () => {
   return (
     <div>
       <CounterShow />
       <div>
-        <Button callbackForceRender={callbackForceRender} />
-        <ButtonDecrement callbackForceRender={callbackForceRender} />
+        <Button />
+        <ButtonDecrement />
       </div>
     </div>
   )
