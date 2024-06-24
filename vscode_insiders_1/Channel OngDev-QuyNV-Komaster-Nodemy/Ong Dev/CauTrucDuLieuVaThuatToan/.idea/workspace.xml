@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3d3bc3db-dd23-4948-8e1a-e50e5f0f3db7" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/prettier.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/prettier.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/array/DynamicArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/array/DynamicArray.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/.idea/prettier.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/.idea/prettier.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/array/ArrayMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/array/ArrayMain.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/array/DynamicArray$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/array/DynamicArray$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/array/DynamicArray.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/array/DynamicArray.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/array/LinearProbingHashTable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/array/LinearProbingHashTable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/array/QuadraticProbingHashTable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/array/QuadraticProbingHashTable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/hashtable/HashTableADT.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/hashtable/HashTableADT.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/hashtable/Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/hashtable/Node.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/hashtable/OpenAddressingHashTableBase$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/hashtable/OpenAddressingHashTableBase$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/hashtable/OpenAddressingHashTableBase.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/hashtable/OpenAddressingHashTableBase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/hashtable/SeparateChainingHashTable$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/hashtable/SeparateChainingHashTable$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/hashtable/SeparateChainingHashTable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/hashtable/SeparateChainingHashTable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/hashtable/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/hashtable/Test.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/hashtable/TestOpenAddressing.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/hashtable/TestOpenAddressing.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/linkedlist/DefaultDoublyLinkedList$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/linkedlist/DefaultDoublyLinkedList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/linkedlist/DoublyLinkedList.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/linkedlist/DoublyLinkedList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/linkedlist/Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/linkedlist/Node.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/queue/CircularArrayBasedQueue$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/queue/CircularArrayBasedQueue.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/queue/LinkedListBasedQueue.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/queue/QueueADT.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/queue/QueueTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/stack/ArrayBasedStack.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/stack/LinkedListBasedStack.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/stack/StackADT.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/stack/StackTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/tree/BinarySearchTree$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/tree/BinarySearchTree$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/tree/BinarySearchTree$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/tree/BinarySearchTree.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/tree/BinarySearchTreeTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/tree/Node.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/tree/TreeADT.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/tree/TreeTraverseType.class" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FormatOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 8
+}]]></component>
+  <component name="ProjectId" id="2iKYxEJ3S5Q2N06zrtgEd0GVySl" />
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="autoscrollToSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="openDirectoriesWithSingleClick" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.ArrayMain.executor": "Run",
+    "Application.QueueTest.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/study code/Study Code Project Youtube/Learn-Code-Youtube/vscode_insiders_1/Channel OngDev-QuyNV-Komaster-Nodemy/Ong Dev/CauTrucDuLieuVaThuatToan",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.stylelint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.stylelint": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "rearrange.code.on.save": "true",
+    "settings.editor.selected.configurable": "actions.on.save",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager" selected="Application.ArrayMain">
+    <configuration name="ArrayMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.ongdev.array.ArrayMain" />
+      <module name="CauTrucDuLieuVaThuatToan" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ongdev.array.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="QueueTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.ongdev.queue.QueueTest" />
+      <module name="CauTrucDuLieuVaThuatToan" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ongdev.queue.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.ArrayMain" />
+        <item itemvalue="Application.QueueTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.17890.1" />
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.17890.1" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3d3bc3db-dd23-4948-8e1a-e50e5f0f3db7" name="Changes" comment="" />
+      <created>1719240979725</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1719240979725</updated>
+      <workItem from="1719240980981" duration="434000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

@@ -96,8 +96,8 @@ public class DefaultDoublyLinkedList<T> implements DoublyLinkedList<T> {
 
     @Override
     public T remove(Node<T> node) {
-        if (node.getPrev() == null) removeFirst();
-        if (node.getNext() == null) removeLast();
+        if (node.getPrev() == null) return removeFirst();
+        if (node.getNext() == null) return removeLast();
 
         node.getPrev().setNext(node.getNext());
         node.getNext().setPrev(node.getPrev());
@@ -108,7 +108,6 @@ public class DefaultDoublyLinkedList<T> implements DoublyLinkedList<T> {
         node.setData(null);
         node.setNext(null);
         node.setPrev(null);
-        node = null;
 
         return data;
     }
@@ -127,7 +126,7 @@ public class DefaultDoublyLinkedList<T> implements DoublyLinkedList<T> {
             }
         } else {
             while (currentNode != null) {
-                if (currentNode.getData() == object) {
+                if (currentNode.getData().equals(object)) {
                     remove(currentNode);
                     return true;
                 }
@@ -178,7 +177,7 @@ public class DefaultDoublyLinkedList<T> implements DoublyLinkedList<T> {
             }
         } else {
             while (currentNode != null) {
-                if (currentNode.getData() == object) {
+                if (currentNode.getData().equals(object)) {
                     return index;
                 }
                 currentNode = currentNode.getNext();
@@ -195,7 +194,7 @@ public class DefaultDoublyLinkedList<T> implements DoublyLinkedList<T> {
 
     @Override
     public Iterator<T> iterator() {
-        return new Iterator<>() {
+        return new Iterator<T>() {
             private boolean isEntering = true;
             private Node<T> currentNode = null;
 
@@ -209,7 +208,7 @@ public class DefaultDoublyLinkedList<T> implements DoublyLinkedList<T> {
 
             @Override
             public T next() {
-                T data = null;
+                T data;
                 if (isEntering) {
                     data = head.getData();
                     currentNode = head;
@@ -227,7 +226,7 @@ public class DefaultDoublyLinkedList<T> implements DoublyLinkedList<T> {
     public String toString() {
         if (isEmpty()) return "[]";
         else {
-            StringBuilder sb = new StringBuilder(size);
+            StringBuilder sb = new StringBuilder();
             sb.append("[ ");
 
             Node<T> currentNode = head;

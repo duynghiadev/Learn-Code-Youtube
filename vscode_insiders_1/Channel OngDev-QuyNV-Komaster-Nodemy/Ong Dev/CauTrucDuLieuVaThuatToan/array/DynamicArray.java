@@ -60,7 +60,7 @@ public class DynamicArray<T> implements Iterable<T> {
         T[] newArr = (T[]) new Object[size - 1];
 
         for (int oldArrIndex = 0, newArrIndex = 0; oldArrIndex < size; oldArrIndex++,
-            newArrIndex++) {
+                newArrIndex++) {
             if (oldArrIndex == removeIndex) newArrIndex--;
             else newArr[newArrIndex] = arr[oldArrIndex];
         }
@@ -78,7 +78,9 @@ public class DynamicArray<T> implements Iterable<T> {
 
     public void remove(Object object) {
         int removeIndex = indexOf(object);
-        removeAt(removeIndex);
+        if (removeIndex != -1) {
+            removeAt(removeIndex);
+        }
     }
 
     public int indexOf(Object object) {
@@ -100,7 +102,7 @@ public class DynamicArray<T> implements Iterable<T> {
 
     @Override
     public Iterator<T> iterator() {
-        return new Iterator<>() {
+        return new Iterator<T>() {
             int index = 0;
 
             @Override
