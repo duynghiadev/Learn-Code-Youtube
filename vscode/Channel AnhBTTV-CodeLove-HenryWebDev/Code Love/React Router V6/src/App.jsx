@@ -1,28 +1,44 @@
+import { useState } from 'react'
 import './App.css'
+import About from './components/About'
+import Contact from './components/Contact'
 import Home from './components/Home'
 import News from './components/News'
-import Contact from './components/Contact'
-import About from './components/About'
-import Route from './components/routes/Route'
 import Link from './components/routes/Link'
+import Route from './components/routes/Route'
 
 function App() {
+  // khi click component Link -> thì component App sẽ re-render lại
+  const [flagChangePath, setFlagChangePath] = useState(true)
+
+  const handlePathChange = () => {
+    setFlagChangePath(!flagChangePath)
+  }
+
   return (
     <div>
       <div>
         <nav>
           <ul className='menu container'>
             <li>
-              <Link to='/home'>Home</Link>
+              <Link to='/home' onHandleChangePath={handlePathChange}>
+                Home
+              </Link>
             </li>
             <li>
-              <Link to='/news'>News</Link>
+              <Link to='/news' onHandleChangePath={handlePathChange}>
+                News
+              </Link>
             </li>
             <li>
-              <Link to='/contact'>Contact</Link>
+              <Link to='/contact' onHandleChangePath={handlePathChange}>
+                Contact
+              </Link>
             </li>
             <li>
-              <Link to='/about'>About</Link>
+              <Link to='/about' onHandleChangePath={handlePathChange}>
+                About
+              </Link>
             </li>
           </ul>
         </nav>
