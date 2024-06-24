@@ -1,0 +1,18 @@
+/* body {
+    background-color: red;
+} */
+
+.container {
+    margin: 0 auto;
+    width: 1170px;
+    padding: 50px 0;
+}
+
+.upload {
+    padding: 15px 30px;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    border: 2px solid #333;
+    background-color: #333;
+}

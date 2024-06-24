@@ -1,0 +1,20 @@
+.add-user-form {
+  margin-bottom: 20px;
+
+  input {
+    padding: 8px;
+    margin-right: 10px;
+  }
+
+  button {
+    padding: 8px 12px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #0056b3;
+    }
+  }
+}

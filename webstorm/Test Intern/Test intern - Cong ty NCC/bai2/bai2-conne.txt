@@ -1,0 +1,15 @@
+
+3 | CONNECTION – Kết nối máy tính
+Đề bài
+Máy tính ở văn phòng Hà Nội thường xuyên xảy ra các sự cố về internet, và Thiết được anh Nhàn phân công nhiệm vụ giải quyết vấn đề này.
+Hiện trạng văn phòng Hà Nội thì đang có N máy tính (đánh thứ tự từ 0 đến N-1), và được kết nối với nhau thông qua M đường dây cáp, đường dây cáp thứ i sẽ quy định rõ cặp máy tính Ui và Vi được kết nối với nhau.
+Khái niệm cần lưu ý: “Hai máy tính được coi là được liên kết với nhau, khi chúng được kết nối trực tiếp với nhau thông qua 1 đường dây, hoặc kết nối gián tiếp qua đường dây của các máy khác”.
+Ví dụ: Máy có 2 đường dây kết nối cặp máy (0, 1) và (1,2) thì máy 3 máy 0,1,2 được liên kết với nhau trong đó máy 0 và máy 2 được kết nối gián tiếp
+với nhau.
+Sau khi kiểm tra 1 lượt, Thiết phát hiện ra vấn đề là do các máy tính ở văn phòng đang liên kết không hợp lý: tất cả máy tính ở văn phòng cần phải được liên kết với nhau bất kể trực tiếp hay gián tiếp.
+Anh Nhàn vốn là người tính toán kĩ lưỡng không muốn chưa suy nghĩ mà đã bỏ tiền mua đường dây cáp mới luôn. Anh Nhàn muốn Thiết tái sử dụng M đường dây cáp hiện có, Thiết cần tháo một số đường dây cáp đang có ra và kết nối vào một cặp máy tính khác sao cho tất cả các máy tính được liên kết với nhau.
+Hãy viết một chương trình tìm số đường dây cáp tối thiểu mà Thiết phải tháo ra kết nối lại cặp máy tính khác sao cho tất cả các máy tính được liên kết với nhau. Nếu không có các nào thì trả về -1 để Thiết báo với anh Nhàn xin tiền mua thêm đường dây cáp mới.
+Dữ liệu
+Dòng thứ nhất gồm 2 số nguyên N và M, N < 5*105 và M < 10 và M <N* (N-1)/2
+• M dòng tiếp theo, dòng thứ i là cặp số Ui và Vi mô tả đường dây cáp thứ i (0 ≤ Ui < N-1, 0 ≤ Vis N-1, Ui+Vi )
+• Dữ liệu đảm bảo không có cặp dây cáp (u,v) nào lặp lại

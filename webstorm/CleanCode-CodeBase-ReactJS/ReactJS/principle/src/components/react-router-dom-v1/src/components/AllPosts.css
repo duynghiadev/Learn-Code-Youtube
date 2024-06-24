@@ -1,0 +1,51 @@
+/* AllPosts.css */
+
+.all-posts-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.all-posts-header {
+  font-size: 24px;
+  color: #333;
+}
+
+.all-posts-list {
+  list-style: none;
+  padding: 0;
+}
+
+.all-posts-item {
+  margin-bottom: 12px;
+}
+
+.all-posts-link {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+  display: block;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.all-posts-link:hover {
+  background-color: #f9f9f9;
+}
+
+.back-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-top: 16px;
+}
+
+.back-button:hover {
+  background-color: #0056b3;
+}

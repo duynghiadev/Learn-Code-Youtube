@@ -1,0 +1,92 @@
+.wrapper {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr 1fr;
+}
+
+.defaultContextmenuArea {
+  grid-row: 1;
+  grid-column: 1;
+  background-color: aqua;
+}
+
+.customContextmenuArea1 {
+  grid-row: 1;
+  grid-column: 2;
+  background-color: sandybrown;
+}
+
+.customContextmenuArea2 {
+  grid-row: 2;
+  grid-column: 1;
+  background-color: tomato;
+}
+
+.customContextmenuArea3 {
+  grid-row: 2;
+  grid-column: 2;
+  background-color: powderblue;
+}
+
+.contextMenu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  height: auto;
+  width: fit-content;
+}
+
+.optionsList {
+  padding: 12px;
+  min-width: 107px;
+  border-radius: 4px;
+}
+
+.optionListItem {
+  padding: 4px;
+  border-radius: 3px;
+  list-style-type: none;
+}
+
+.optionListItem:hover {
+  cursor: pointer;
+}
+
+.customContextmenuArea1ListWrapper {
+  background-color: aqua;
+}
+
+.customContextmenuArea1ListItem {
+  list-style-type: disclosure-closed;
+}
+
+.customContextmenuArea1ListItem:hover {
+  background-color: sandybrown;
+}
+
+.customContextmenuArea2ListWrapper {
+  background-color: #5e35b1;
+}
+
+.customContextmenuArea2ListItem {
+  color: white;
+}
+
+.customContextmenuArea2ListItem:hover {
+  background-color: tomato;
+}
+
+.customContextmenuArea3ListWrapper {
+  background-color: #ffeb3b;
+}
+
+.customContextmenuArea3ListItem {
+  list-style-type: disc;
+}
+
+.customContextmenuArea3ListItem:hover {
+  background-color: powderblue;
+}

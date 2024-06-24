@@ -1,0 +1,264 @@
+/* ================================================= */
+/* Custom properties */
+/* ================================================= */
+:root {
+	--body-font: 'Figtree', sans-serif;
+
+	--p-shade-80: #050B12;
+	--p-shade-50: #0e1b2d;
+	--p-shade-30: #13263e;
+	--p-shade-20: #162b47;
+	--primary: #1b3659;
+	--p-tint-40: #76869b;
+	--p-tint-90: #e8ebee;
+	--secondary: #EFA00B;
+	--tertiary: #03B5AA;
+
+	--global-border-radius: 4px;
+	--global-transition: all .2s ease-in-out;
+}
+
+
+
+/* ============================================================ */
+/* General styles */
+/* ============================================================ */
+html {
+	font-size: 16px;
+}
+
+body {
+	font-family: var(--body-font);
+	background-color: var(--primary);
+	color: var(--p-tint-90);
+}
+
+figure {
+	margin: 0;
+	padding: 0;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+.container {
+	padding: 4rem 2rem;
+}
+
+
+
+/* ================================================= */
+/* Typography */
+/* ================================================= */
+p {
+	margin: 0 0 1.5rem;
+}
+
+h1 {
+	font-size: 2.375rem;
+	line-height: 1.25;
+	margin: 0 0 2rem;
+}
+
+h2 {
+	font-size: 1.75rem;
+	line-height: 1.15;
+	margin: 0 0 .5rem;
+}
+
+h3 {
+	font-size: 1rem;
+	line-height: 1.25;
+	margin: 0;
+}
+
+small,
+.form-msg,
+.city__country {
+	font-size: .75rem;
+	line-height: 1.5;
+}
+
+a {
+	color: var(--secondary);
+	text-decoration: none;
+	transition: var(--global-transition);
+}
+
+a:hover {
+	color: var(--p-tint-90);
+}
+
+
+
+/* ================================================= */
+/* Forms */
+/* ================================================= */
+form {
+	width: 100%;
+	margin-bottom: 2rem;
+	max-width: 30rem;
+}
+
+label {
+	margin-bottom: .5rem;
+	display: block;
+}
+
+input {
+	border-radius: var(--global-border-radius);
+	border: 0;
+}
+
+input[type="text"] {
+	height: 2.75rem;
+	background: var(--p-shade-30) url('img/search.svg') .75rem center no-repeat;
+	color: var(--p-tint-90);
+	padding-left: 2.25rem;
+	flex-grow: 1;
+	outline: none;
+	transition: var(--global-transition);
+}
+
+input::placeholder {
+	color: var(--p-tint-40);
+}
+
+input:focus,
+input:hover {
+	background-color: var(--p-shade-50);
+}
+
+form button {
+	height: 2.75rem;
+	width: 2.75rem;
+	background-color: var(--secondary);
+	border: none;
+	border-radius: var(--global-border-radius);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: var(--global-transition);
+	cursor: pointer;
+}
+
+form button:hover {
+	background-color: var(--p-shade-80);
+}
+
+form button:active {
+	background-color: var(--p-shade-50);
+}
+
+.form-msg {
+	background-color: var(--p-shade-20);
+	padding: .5rem 1rem;
+	border-radius: 0 0 var(--global-border-radius) var(--global-border-radius);
+	width: 75%;
+	margin-left: .75rem;
+	transform: translate3d(0, -100%, 0);
+	opacity: 0;
+	transition: var(--global-transition);
+	position: relative;
+	z-index: -1;
+}
+
+.form-msg.visible {
+	transform: translate3d(0, 0, 0);
+	opacity: 1;
+}
+
+.form-row {
+	display: flex;
+	gap: .5rem;
+}
+
+
+
+/* ================================================= */
+/* Header */
+/* ================================================= */
+.notification {
+	background-color: var(--p-shade-80);
+	padding: .5rem 2rem;
+	width: 100%;
+}
+
+.notification p {
+	margin: 0;
+}
+
+
+
+/* ================================================= */
+/* Cities */
+/* ================================================= */
+.cities {
+	display: grid;
+	grid-template-columns: 1fr;
+	padding: 0;
+	margin: 0 0 4rem;
+	gap: 2rem;
+}
+
+.cities li {
+	list-style: none;
+	display: flex;
+	gap: 1.5rem;
+	background-color: #fff;
+	align-items: center;
+	padding: 1.5rem;
+	color: var(--p-shade-80);
+	border-radius: var(--global-border-radius);
+	box-shadow: 8px 8px 0px rgba(255, 255, 255, 0.08);
+}
+
+.city__conditions {
+	color: var(--p-tint-40);
+	margin-bottom: 1rem;
+}
+
+.city__country {
+	color: #fff;
+	background-color: var(--tertiary);
+	border-radius: var(--global-border-radius);
+	padding: .125rem .25rem;
+	margin-left: .5rem;
+}
+
+
+
+/* ================================================= */
+/* 560px+ */
+/* ================================================= */
+@media screen and (min-width: 560px) {
+	.cities {
+		grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+	}
+
+	.cities li {
+		flex-direction: column;
+		text-align: center;
+	}
+
+	.city__conditions {
+		margin-bottom: 1.5rem;
+	}
+}
+
+
+
+/* ================================================= */
+/* 768px+ */
+/* ================================================= */
+@media screen and (min-width: 768px) {
+	.notification {
+		padding: .5rem 4rem;
+	}
+
+	.container {
+		padding: 4rem;
+	}
+}

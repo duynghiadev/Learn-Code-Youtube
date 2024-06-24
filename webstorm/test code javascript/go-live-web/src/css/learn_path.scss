@@ -1,0 +1,104 @@
+.tutorial-item {
+  width: calc(100% / 3 - 20px);
+  max-width: 500px;
+  margin-right: 20px;
+  padding: 20px;
+  border-radius: 15px;
+  border: 2px solid gray;
+  &-image {
+    width: 125px;
+    height: 125px;
+    padding: 20px;
+    border: 4px solid #e23841;
+    border-radius: 50%;
+    & img {
+      // width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+.group-learning-paths {
+  flex-wrap: wrap;
+  // margin-left: -20px;
+}
+.group-official img {
+  width: 420px;
+  height: 420px;
+  object-fit: cover;
+}
+.markdown-paragraph {
+  border-left: 2px solid #e23841;
+  color: gray;
+}
+.learn-paths {
+  & .left {
+    width: 66vw;
+  }
+  & .right {
+    text-align: right;
+  }
+  &-item {
+    &-course {
+      border: 2px solid gray;
+      & .size-default {
+        & img {
+          cursor: pointer;
+          width: 230px;
+          height: fit-content;
+          object-fit: cover;
+          border-radius: 15px;
+          margin-right: 25px;
+        }
+        & h2 {
+          cursor: pointer;
+          font-size: 1.5rem !important;
+        }
+        & .content {
+          -webkit-line-clamp: 2;
+        }
+      }
+
+      & .size-small {
+        margin-bottom: 20px;
+        & h2 {
+          font-size: 1.2rem !important;
+          cursor: pointer;
+        }
+        & img {
+          cursor: pointer;
+          max-width: 130px;
+          height: fit-content;
+          border-radius: 10px;
+          margin-right: 20px;
+        }
+        & .content {
+          -webkit-line-clamp: 1;
+        }
+      }
+      & .current-price {
+        color: #e23841;
+      }
+      & .content {
+        width: 100%;
+        display: block;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+    &-subcourse {
+      padding-left: 25px;
+    }
+  }
+  & .image-ads {
+    margin-bottom: 30px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 300px;
+    height: fit-content;
+    max-height: 250px;
+    cursor: pointer;
+  }
+}

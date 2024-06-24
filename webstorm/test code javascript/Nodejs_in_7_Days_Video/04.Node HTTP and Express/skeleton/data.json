@@ -1,0 +1,44 @@
+{
+  "books": [
+    {
+      "id": 0,
+      "title": "The Art of War"
+    },
+    {
+      "id": 1,
+      "title": "The Great Gatsby"
+    },
+    {
+      "id": 2,
+      "title": "The Adventures of Huckleberry Finn"
+    }
+  ],
+  "loans": [
+    {
+      "bookId": 0,
+      "userId": 0
+    },
+    {
+      "bookId": 1,
+      "userId": 2
+    },
+    {
+      "bookId": 2,
+      "userId": 2
+    }
+  ],
+  "users": [
+    {
+      "id": 0,
+      "name": "Bob Jones"
+    },
+    {
+      "id": 1,
+      "name": "James Jacobson"
+    },
+    {
+      "id": 2,
+      "name": "Charlotte Davies"
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+/* UserForm.css */
+
+.user-form-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.user-form-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.user-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+}
+
+.submit-btn {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+  background-color: #0056b3;
+}
+
+.error-message {
+  color: red;
+  margin-top: 5px; /* Điều chỉnh khoảng cách giữa input và lỗi */
+  font-size: 14px; /* Điều chỉnh kích thước của lỗi */
+}
+
+/* Thêm phần định dạng cho input lỗi */
+.field-error {
+  border: 1px solid red; /* Màu viền đỏ cho input khi có lỗi */
+}
+
+.back-to-list-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #ccc;
+  color: #333;
+  text-decoration: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-align: center;
+  font-size: 14px;
+}
+
+.back-to-list-btn:hover {
+  background-color: #ddd;
+}

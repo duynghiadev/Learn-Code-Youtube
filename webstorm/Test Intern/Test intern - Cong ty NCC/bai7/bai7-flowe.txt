@@ -1,0 +1,21 @@
+
+5 | FLOWERS – Đường hoa trang trí
+Đề bài
+Để sắp tới đón tiếp đoàn đại biểu cấp cao, thành phố NCC quyết định trồng N cây hoa dọc theo 1 con đường để trang trí. Tuy nhiên, chủ tịch thành phố khá khó tính, ông muốn trồng hoa phải thỏa mãn các điều kiện sau:
+• Các cây hoa phải thuộc 5 loại hoa: Hồng, Ly, Mai, Lan và Tulip.
+• Vị trí đầu tiên bạn có thể trồng loại hoa nào cũng được.
+• Tại các vị trí tiếp theo:
+o Hoa Hồng chỉ được trồng liền ngay sau hoa Ly.
+o Hoa Ly chỉ được trồng liền ngay sau hoa Hồng hoặc hoa Mai.
+o Hoa Mai không được trồng liên ngay sau hoa Mai.
+o Hoa Lan chỉ được trồng liền ngay sau hoa Mai hoặc hoa Tulip.
+o Hoa Tulip chỉ được trồng liên ngay sau hoa Hồng.
+Hãy đếm xem có bao nhiêu cách trồng N cây hoa này dọc trên con đường và thỏa mãn yêu cầu trên. Vì số cách là rất lớn nên chỉ cần trả về kết quả sau khi đã mod cho 109 + 7.
+Dữ liệu
+• 1 số nguyên N duy nhất (1 < N < 1012) là số hoa
+Kết quả
+• 1 số nguyên duy nhất là kết quả số cách xếp N cây hoa có thể có sau khi đã mod cho 109 + 7.
+Subtask
+• 30% số test N < 10
+• 50% số test N < 105
+• 20% không giới hạn gì thêm

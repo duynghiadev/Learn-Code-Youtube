@@ -1,0 +1,124 @@
+.course-item {
+  margin-bottom: 16px;
+  width: calc((100vw - 250px) / 5.8);
+  min-width: 362px;
+  max-width: 362px;
+
+  .counter {
+    display: flex;
+    align-items: center;
+    span {
+      margin-left: 8px;
+    }
+  }
+
+  .title {
+    font-size: 16px;
+    height: 20px;
+    line-height: 20px;
+    margin-top: 12px;
+    text-transform: capitalize;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+  }
+
+  .counter {
+    width: 100px;
+    margin-top: 8px;
+    height: 16px;
+    font-size: 14px;
+    line-height: 16px;
+    color: var(--web-subtext);
+  }
+
+  .img-container {
+    position: relative;
+    width: 100%;
+
+    img {
+      border-radius: 8px;
+      width: 100%;
+
+      object-fit: cover;
+    }
+
+    &:hover .overlay {
+      opacity: 1;
+      cursor: pointer;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      opacity: 0;
+      transition: 0.5s ease;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    .text {
+      font-size: 14px;
+      padding: 12px 16px;
+      border-radius: 20px;
+      font-weight: 600;
+      background: var(--web-light);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      text-align: center;
+
+      a {
+        color: var(--web-text);
+      }
+    }
+  }
+}
+
+@media (max-width: 1920px) {
+  .course-item {
+    width: calc((100vw - 250px) / 5);
+    min-width: calc((100vw - 250px) / 5);
+  }
+}
+
+@media (max-width: 1732px) {
+  .course-item {
+    width: calc((100vw - 250px) / 4);
+    min-width: calc((100vw - 250px) / 4);
+  }
+}
+
+@media (max-width: 1400px) {
+  .course-item {
+    width: calc((100vw - 250px) / 3);
+    min-width: calc((100vw - 250px) / 3);
+  }
+}
+
+@media (max-width: 1088px) {
+  .course-item {
+    width: calc((100vw - 200px) / 2.5);
+    min-width: calc((100vw - 200px) / 2.5);
+  }
+}
+
+@media (max-width: 900px) {
+  .course-item {
+    width: calc((100vw - 200px) / 2);
+    min-width: calc((100vw - 200px) / 2);
+  }
+}
+
+@media (max-width: 768px) {
+  .course-item {
+    width: calc((100vw - 250px) / 1);
+    min-width: calc((100vw - 250px) / 1);
+  }
+}
