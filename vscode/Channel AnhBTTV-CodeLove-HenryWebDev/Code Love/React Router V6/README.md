@@ -5,3 +5,8 @@ Sẽ có rất nhiều bạn hỏi mình: "Đừng phát minh lại chiếc bán
 ---
 
 [Link Video](https://www.youtube.com/playlist?list=PL3V6a6RU5ogGu95U18aQ-2oyxsOkHAp2y)
+
+Tóm lại:
+
+- Nói chung khóa này tác giả muốn người học hiểu sâu hơn về core của ReactJS.
+- Tác giả xây dựng lại thư viện React Router nó hoạt động ra sao và như thế nào, để từ đó người học có thể hiểu cơ chế của nó và sau này khi học các ngôn ngữ khác thì sẽ dễ hình dung hơn
