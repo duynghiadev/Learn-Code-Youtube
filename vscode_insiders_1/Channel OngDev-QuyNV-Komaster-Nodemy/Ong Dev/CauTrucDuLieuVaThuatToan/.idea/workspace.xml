@@ -4,55 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3d3bc3db-dd23-4948-8e1a-e50e5f0f3db7" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/prettier.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/prettier.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/array/DynamicArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/array/DynamicArray.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/.idea/prettier.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/.idea/prettier.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/array/ArrayMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/array/ArrayMain.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/array/DynamicArray$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/array/DynamicArray$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/array/DynamicArray.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/array/DynamicArray.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/array/LinearProbingHashTable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/array/LinearProbingHashTable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/array/QuadraticProbingHashTable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/array/QuadraticProbingHashTable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/hashtable/HashTableADT.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/hashtable/HashTableADT.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/hashtable/Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/hashtable/Node.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/hashtable/OpenAddressingHashTableBase$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/hashtable/OpenAddressingHashTableBase$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/hashtable/OpenAddressingHashTableBase.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/hashtable/OpenAddressingHashTableBase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/hashtable/SeparateChainingHashTable$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/hashtable/SeparateChainingHashTable$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/hashtable/SeparateChainingHashTable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/hashtable/SeparateChainingHashTable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/hashtable/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/hashtable/Test.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/hashtable/TestOpenAddressing.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/hashtable/TestOpenAddressing.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/linkedlist/DefaultDoublyLinkedList$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/linkedlist/DefaultDoublyLinkedList.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/linkedlist/DoublyLinkedList.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/linkedlist/DoublyLinkedList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/linkedlist/Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/linkedlist/Node.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/queue/CircularArrayBasedQueue$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/queue/CircularArrayBasedQueue.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/queue/LinkedListBasedQueue.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/queue/QueueADT.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/queue/QueueTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/stack/ArrayBasedStack.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/stack/LinkedListBasedStack.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/stack/StackADT.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/stack/StackTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/tree/BinarySearchTree$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/tree/BinarySearchTree$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/tree/BinarySearchTree$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/tree/BinarySearchTree.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/tree/BinarySearchTreeTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/tree/Node.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/tree/TreeADT.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CauTrucDuLieuVaThuatToan/com/ongdev/tree/TreeTraverseType.class" beforeDir="false" />
-    </list>
+    <list default="true" id="3d3bc3db-dd23-4948-8e1a-e50e5f0f3db7" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -145,7 +97,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1719240979725</updated>
-      <workItem from="1719240980981" duration="434000" />
+      <workItem from="1719240980981" duration="496000" />
     </task>
     <servers />
   </component>
