@@ -1,0 +1,28 @@
+{
+  "name": "back-end",
+  "version": "1.0.0",
+  "description": "Twitter project",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "startDev": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "nodejs"
+  ],
+  "author": "duynghiadev",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.1",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.1.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.3"
+  }
+}

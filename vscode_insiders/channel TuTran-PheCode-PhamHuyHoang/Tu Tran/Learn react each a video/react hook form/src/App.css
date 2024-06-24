@@ -1,0 +1,51 @@
+form {
+  width: 500px;
+  margin: 0 auto;
+}
+
+label {
+  display: block;
+  width: 100%;
+  font-weight: bold;
+}
+
+input {
+  display: block;
+  width: 100%;
+}
+
+input,
+button {
+  display: block;
+  padding: 0.8rem;
+  outline: none;
+  font-size: inherit;
+  font-family: inherit;
+  margin-top: 1rem;
+  margin-bottom: 1.1rem;
+  border: 1px solid lightgrey;
+}
+
+.error-container {
+  border: 1px dashed lightgray;
+  padding: 1rem;
+  width: 100%;
+}
+
+.error {
+  color: red;
+}
+
+ul {
+  list-style-position: inside;
+  color: lightcoral;
+}
+
+button {
+  text-transform: uppercase;
+  background-color: darkslateblue;
+  border: none;
+  border-radius: 3px;
+  color: white;
+  font-weight: bold;
+}
