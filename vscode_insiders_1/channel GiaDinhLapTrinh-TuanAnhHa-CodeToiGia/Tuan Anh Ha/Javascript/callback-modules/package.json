@@ -1,0 +1,11 @@
+{
+  "name": "callback",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "author": "Duynghiadev",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.6.2"
+  }
+}

@@ -1,0 +1,59 @@
+/* style.css */
+
+/* Thiết lập các thuộc tính chung cho trang */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #f2f2f2;
+}
+
+h2 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+form {
+  max-width: 400px;
+  margin: 0 auto; /* Đây là thuộc tính quan trọng để căn giữa form */
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+p {
+  margin-bottom: 15px;
+}
+
+label {
+  display: inline-block;
+  width: 100px;
+  color: #555;
+}
+
+input[type='text'],
+input[type='date'] {
+  width: 200px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+input[type='radio'],
+input[type='checkbox'] {
+  margin-right: 5px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}

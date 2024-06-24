@@ -1,1 +1,0 @@
-let isVerified: boolean = false;

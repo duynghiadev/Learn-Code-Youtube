@@ -1,0 +1,5 @@
+function ahihi() {
+  ahihi()
+}
+
+ahihi()

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <link id="color-skin" rel="stylesheet" href="./css/style-1.css" />
+    <!--
+    - Có 3 cách import CSS cho một phần tử 👍👍👍
+    1. CSS Inline -> <div style='color: red'>CSS Inline</div>
+    2. Internal CSS -> <style>p{color: red}</style>
+    3. External CSS -> Thường dùng -> Đó là viết file riêng ở bên ngoài, rồi mình import file đó vào file html
+  -->
+    <title>Document</title>
+  </head>
+  <body>
+    <img class="class-demo" src="" alt="photo-demo" />
+    <br />
+
+    <div class="container">
+      <!--Cấu trúc DOM trong HTML-->
+      <h1>JavaScript DOM</h1>
+      <a href="#">Link Google</a>
+      <ul>
+        <li>
+          <a href="#">Facebook</a>
+          <ul>
+            <li><a href="#">LinkedIn</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <br />
+
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa eum, harum magni
+        necessitatibus sit tenetur unde? Beatae cum dolorem excepturi ipsum iste iure minus quaerat
+        reprehenderit velit. Consequatur, neque.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis eaque iusto numquam
+        odio, quidem similique veritatis? Atque dignissimos enim magnam, molestias mollitia
+        perferendis perspiciatis quas quia, quisquam repellat, veniam voluptatem!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur, debitis deserunt,
+        dicta dolorum fugit inventore nostrum quidem quo quod recusandae totam voluptatem! Deserunt
+        earum, iusto magni nesciunt porro sint velit!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, aspernatur commodi
+        exercitationem harum laborum necessitatibus vel! Eius, eveniet ex inventore ipsa itaque
+        libero magnam qui recusandae, repellat sit totam velit!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad consectetur consequuntur eum,
+        eveniet, inventore itaque maiores optio quae quaerat repellat sit, vero voluptas voluptatum!
+        Eum excepturi harum sit unde vel.
+      </p>
+
+      <div id="demo" class="test-class">Id Demo</div>
+
+      <div class="demo" data-title="Test 1">Class Demo</div>
+      <div class="demo" data-title="Test 2">Class Demo</div>
+      <div class="demo" data-title="Test 3">Class Demo</div>
+      <div class="demo" data-title="Test 4">Class Demo</div>
+      <div class="demo" data-title="Test 5">Class Demo</div>
+
+      <button onclick="handleClick()">handle click</button>
+
+      <button
+        data-toggle="modal"
+        onclick="changeStyleColor('css/style-1.css')"
+        style="background-color: blue; color: #fff; border-color: blue"
+      >
+        Click me
+      </button>
+
+      <button
+        data-toggle="modal"
+        onclick="changeStyleColor('css/style-2.css')"
+        style="background-color: brown; color: #fff; border-color: brown"
+      >
+        Click me
+      </button>
+
+      <button
+        data-toggle="modal"
+        onclick="changeStyleColor('css/style-3.css')"
+        style="background-color: red; color: #fff; border-color: red"
+      >
+        Click me
+      </button>
+      <br />
+
+      <button
+        data-toggle="modal"
+        onclick="changeStyleContainer('wide')"
+        style="background-color: red; color: #fff; border-color: red"
+      >
+        Wide
+      </button>
+
+      <button
+        data-toggle="modal"
+        onclick="changeStyleContainer('box')"
+        style="background-color: purple; color: #fff; border-color: purple"
+      >
+        Box
+      </button>
+      <br />
+
+      <button data-toggle="modal" onclick="changeBg('./images/photo-1.jpg')">Image 1</button>
+      <button data-toggle="modal" onclick="changeBg('./images/photo-2.jpg')">Image 2</button>
+      <button data-toggle="modal" onclick="changeBg()">No Image</button>
+
+      <div class="dropdown">
+        <button class="btn">Dropdown</button>
+        <ul class="dropdown-menu">
+          <li><a href="#">Dropdown level 2</a></li>
+          <li><a href="#">Dropdown level 3</a></li>
+          <li><a href="#">Dropdown level 4</a></li>
+          <li><a href="#">Dropdown level 5</a></li>
+        </ul>
+      </div>
+      <div class="dropdown">
+        <button class="btn">Dropdown</button>
+        <ul class="dropdown-menu">
+          <li><a href="#">Dropdown level 2</a></li>
+          <li><a href="#">Dropdown level 3</a></li>
+          <li><a href="#">Dropdown level 4</a></li>
+          <li><a href="#">Dropdown level 5</a></li>
+        </ul>
+      </div>
+      <div class="dropdown">
+        <button class="btn">Dropdown</button>
+        <ul class="dropdown-menu">
+          <li><a href="#">Dropdown level 2</a></li>
+          <li><a href="#">Dropdown level 3</a></li>
+          <li><a href="#">Dropdown level 4</a></li>
+          <li><a href="#">Dropdown level 5</a></li>
+        </ul>
+      </div>
+      <div class="dropdown">
+        <button class="btn">Dropdown</button>
+        <ul class="dropdown-menu">
+          <li><a href="#">Dropdown level 2</a></li>
+          <li><a href="#">Dropdown level 3</a></li>
+          <li><a href="#">Dropdown level 4</a></li>
+          <li><a href="#">Dropdown level 5</a></li>
+        </ul>
+      </div>
+      <div class="dropdown">
+        <button class="btn">Dropdown</button>
+        <ul class="dropdown-menu">
+          <li><a href="#">Dropdown level 2</a></li>
+          <li><a href="#">Dropdown level 3</a></li>
+          <li><a href="#">Dropdown level 4</a></li>
+          <li><a href="#">Dropdown level 5</a></li>
+        </ul>
+      </div>
+      <div class="dropdown">
+        <button class="btn">Dropdown</button>
+        <ul class="dropdown-menu">
+          <li><a href="#">Dropdown level 2</a></li>
+          <li><a href="#">Dropdown level 3</a></li>
+          <li><a href="#">Dropdown level 4</a></li>
+          <li><a href="#">Dropdown level 5</a></li>
+        </ul>
+      </div>
+      <div class="dropdown">
+        <button class="btn">Dropdown</button>
+        <ul class="dropdown-menu">
+          <li><a href="#">Dropdown level 2</a></li>
+          <li><a href="#">Dropdown level 3</a></li>
+          <li><a href="#">Dropdown level 4</a></li>
+          <li><a href="#">Dropdown level 5</a></li>
+        </ul>
+      </div>
+      <div class="dropdown">
+        <button class="btn">Dropdown</button>
+        <ul class="dropdown-menu">
+          <li><a href="#">Dropdown level 2</a></li>
+          <li><a href="#">Dropdown level 3</a></li>
+          <li><a href="#">Dropdown level 4</a></li>
+          <li><a href="#">Dropdown level 5</a></li>
+        </ul>
+      </div>
+      <div class="dropdown">
+        <button class="btn">Dropdown</button>
+        <ul class="dropdown-menu">
+          <li><a href="#">Dropdown level 2</a></li>
+          <li><a href="#">Dropdown level 3</a></li>
+          <li><a href="#">Dropdown level 4</a></li>
+          <li><a href="#">Dropdown level 5</a></li>
+        </ul>
+      </div>
+      <div class="dropdown">
+        <button class="btn">Dropdown</button>
+        <ul class="dropdown-menu">
+          <li><a href="#">Dropdown level 2</a></li>
+          <li><a href="#">Dropdown level 3</a></li>
+          <li><a href="#">Dropdown level 4</a></li>
+          <li><a href="#">Dropdown level 5</a></li>
+        </ul>
+      </div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>

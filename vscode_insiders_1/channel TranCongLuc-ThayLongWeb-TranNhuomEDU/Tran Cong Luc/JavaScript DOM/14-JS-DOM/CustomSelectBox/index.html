@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Custom Select Box</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>Header</header>
+      <div class="wrapper-content">
+        <nav>
+          <ul>
+            <li><a href="#">Menu 1</a></li>
+            <li><a href="#">Menu 1</a></li>
+            <li><a href="#">Menu 1</a></li>
+            <li><a href="#">Menu 1</a></li>
+            <li><a href="#">Menu 1</a></li>
+            <li><a href="#">Menu 1</a></li>
+          </ul>
+        </nav>
+        <form action="#">
+          <div class="form-group">
+            <select name="country">
+              <option value="hanoi">Hà Nội</option>
+              <option value="hcm">Hồ Chí Minh</option>
+              <option value="hue">TP. Huế</option>
+              <option value="danang">TP. Đà nẵng</option>
+            </select>
+          </div>
+        </form>
+        <h1>Heading 01</h1>
+
+        <form action="#">
+          <div class="form-group">
+            <select name="country-2">
+              <option value="hanoi-2">Hà Nội - 2</option>
+              <option value="hcm-2" selected>Hồ Chí Minh - 2</option>
+              <option value="hue-2">TP. Huế - 2</option>
+            </select>
+            <!-- <div class="custom-select">
+              <div class="selected" value="hanoi-2">Hà Nội - 2</div>
+              <ul class="options">
+                <li value="hanoi-2">Hà Nội - 2</li>
+                <li value="hcm-2" selected>Hồ Chí Minh - 2</li>
+                <li value="hue-2">TP. Huế - 2</li>
+              </ul>
+            </div> -->
+          </div>
+        </form>
+      </div>
+      <footer>Footer</footer>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
+
+<!--
+  Phần hiệu ứng -> User sẽ thấy thông qua những thẻ <div>,...
+  Phần hoạt động -> Ràng buộc dữ liệu từ 2 chiều từ việc tương tác của người dùng thông qua thẻ <div> -> kết nối với <select> của mình
+ -->

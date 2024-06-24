@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&display=swap');
+
+* {
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background-color: #141824;
+}
+
+.flex {
+  display: flex;
+}
+
+.container {
+  max-width: 600px;
+  margin: 100px auto;
+  color: white;
+}
+
+.container-md {
+  max-width: 300px;
+  margin: 100px auto;
+  color: white;
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.review-userinfo {
+  display: flex;
+  gap: 1rem;
+  position: relative;
+}
+
+.review-reaction {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.review-reaction img {
+  width: 17px;
+  padding: 0 5px;
+  cursor: pointer;
+}
+
+.review-reaction span {
+  font-size: 10px;
+  background-color: #efefef;
+  padding: 0 7px;
+  border-radius: 10px;
+}
+
+.review-username {
+  font-size: 14px;
+  margin: 0.25rem 0 0.5rem 0;
+}
+
+.review-point {
+  display: flex;
+  gap: 5px;
+}
+
+.review-point img {
+  width: 12px;
+}
+
+.review p {
+  font-style: italic;
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+
+.review {
+  padding: 2rem 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.review .carousel {
+  display: flex;
+  gap: 0.5rem;
+  padding-top: 0.5rem;
+}
+
+.review .carousel img {
+  width: 100px;
+  border-radius: 5px;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 300px;
+  padding: 0.5rem 1rem;
+  background: #fff;
+  margin-bottom: 0.5rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.25rem;
+  font-size: 0.825rem;
+}
+
+.btn {
+  border: none;
+  background: #f3f3f3;
+  color: rgb(34, 34, 34);
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+}
+
+.btn:hover {
+  color: rgb(78, 78, 78);
+  background: #dadada;
+}
+
+.btn-delete {
+  border: none;
+  background: none;
+  color: rgb(233, 103, 103);
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+}
+
+.btn-delete:hover {
+  color: rgb(211, 38, 38);
+  background: #f3f3f3;
+}
+
+.todo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #dadada;
+  border-radius: 0.5rem;
+  margin-top: 0.75rem;
+  max-width: 350px;
+}
+
+.todo-action {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.todo.complete {
+  text-decoration: line-through;
+}
+
+.box {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #dadada;
+  border-radius: 0.5rem;
+}
