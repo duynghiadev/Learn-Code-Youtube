@@ -1,5 +1,11 @@
+import { useContext } from 'react'
+import { RouterContext } from './Routes'
+
 const Route = (props) => {
-  const pathName = window.location.pathname
+  const RouterContextStore = useContext(RouterContext)
+  console.log('RouterContextStore:', RouterContextStore)
+
+  const pathName = RouterContextStore.location.pathname
 
   if (pathName === props.path) {
     return props.element

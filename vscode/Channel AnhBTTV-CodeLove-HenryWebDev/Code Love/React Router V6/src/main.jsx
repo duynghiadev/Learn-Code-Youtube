@@ -6,8 +6,8 @@ import App_2 from './App_2.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   // <React.StrictMode>
-  // <App />
+  <App />
   // <App_1 />
-  <App_2 />
+  // <App_2 />
   // </React.StrictMode>
 )

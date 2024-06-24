@@ -6,6 +6,7 @@ import Home from './components/Home'
 import News from './components/News'
 import Link from './components/routes/Link'
 import Route from './components/routes/Route'
+import Routes from './components/routes/Routes'
 
 function App() {
   // khi click component Link -> thì component App sẽ re-render lại
@@ -43,10 +44,12 @@ function App() {
           </ul>
         </nav>
         <div className='container'>
-          <Route path='/home' element={<Home />} />
-          <Route path='/news' element={<News />} />
-          <Route path='/contact' element={<Contact />} />
-          <Route path='/about' element={<About />} />
+          <Routes>
+            <Route path='/home' element={<Home />} />
+            <Route path='/news' element={<News />} />
+            <Route path='/contact' element={<Contact />} />
+            <Route path='/about' element={<About />} />
+          </Routes>
         </div>
       </div>
     </div>
