@@ -1,37 +1,13 @@
-import { Button, StyleSheet, Text, View } from 'react-native';
-import { fontFamilies } from './src/constants/fontFamilies';
+import { StatusBar } from 'react-native';
+import HomeScreen from './src/homes/HomeScreen';
 
 function App(): React.JSX.Element {
   return (
-    <View style={styles.container}>
-      <Text
-        style={{
-          color: '#fafafa',
-          fontSize: 18,
-          // fontFamily: fontFamilies.regular,
-        }}
-      >
-        Welcome to my first app
-      </Text>
-      <Text style={styles.title}>Todo List</Text>
-      <Button title="Hello" onPress={() => {}} />
-    </View>
+    <>
+      <StatusBar translucent barStyle={'light-content'} backgroundColor="transparent" />
+      <HomeScreen />
+    </>
   );
 }
 
 export default App;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: 'coral',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-
-  title: {
-    fontFamily: fontFamilies.bold,
-    fontSize: 32,
-    color: '#fff',
-  },
-});
