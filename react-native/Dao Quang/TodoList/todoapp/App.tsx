@@ -1,4 +1,5 @@
 import { Button, StyleSheet, Text, View } from 'react-native';
+import { fontFamilies } from './src/constants/fontFamilies';
 
 function App(): React.JSX.Element {
   return (
@@ -7,11 +8,13 @@ function App(): React.JSX.Element {
         style={{
           color: '#fafafa',
           fontSize: 18,
+          // fontFamily: fontFamilies.regular,
         }}
       >
         Welcome to my first app
       </Text>
       <Text style={styles.title}>Todo List</Text>
+      <Text style={{ fontSize: 32, color: '#fff' }}>Todo List</Text>
       <Button title="Hello" onPress={() => {}} />
     </View>
   );
@@ -28,7 +31,7 @@ const styles = StyleSheet.create({
   },
 
   title: {
-    fontWeight: '700',
+    fontFamily: fontFamilies.bold,
     fontSize: 32,
     color: '#fff',
   },
