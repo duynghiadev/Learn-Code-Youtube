@@ -1,5 +1,7 @@
 # React Native - Lập trình di động Android & iOS với React Native
 
+[Link Course](https://www.youtube.com/playlist?list=PLwRuTV6YR6x0WG-ZGLcf0kOa_VtaJ9d5C)
+
 React Native - Lập trình di động Android & iOS với React Native thông qua dự án thực tế, live stream mỗi ngày
 
 Trong danh sách phát này các bạn sẽ học được cách tạo ứng dụng to do list app bằng react native từ bắt đầu:
