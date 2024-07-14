@@ -2,6 +2,8 @@
 
 [Link Course](https://www.youtube.com/playlist?list=PLwRuTV6YR6x0WG-ZGLcf0kOa_VtaJ9d5C)
 
+[Link Design Figma](https://www.figma.com/design/hPOxCeCBD9YsI0w3B0MwaM/todo-list-app?node-id=0-1&t=PWemz6AEwMsikcOx-0)
+
 React Native - Lập trình di động Android & iOS với React Native thông qua dự án thực tế, live stream mỗi ngày
 
 Trong danh sách phát này các bạn sẽ học được cách tạo ứng dụng to do list app bằng react native từ bắt đầu:
