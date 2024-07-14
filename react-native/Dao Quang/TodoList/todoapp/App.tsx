@@ -14,7 +14,6 @@ function App(): React.JSX.Element {
         Welcome to my first app
       </Text>
       <Text style={styles.title}>Todo List</Text>
-      <Text style={{ fontSize: 32, color: '#fff' }}>Todo List</Text>
       <Button title="Hello" onPress={() => {}} />
     </View>
   );
