@@ -6,6 +6,7 @@ function findCommonElements(arr1, arr2) {
 
   for (const num of arr2) {
     if (set1.has(num)) {
+      console.log(">>> num of arr2:", num);
       commonElements.push(num);
     }
   }

@@ -4,8 +4,10 @@ function findCommonElements(arr1, arr2) {
   const commonElements = [];
 
   for (const num1 of arr1) {
+    console.log("num1:", num1);
     for (const num2 of arr2) {
       if (num1 === num2) {
+        console.log(">>> num2:", num2);
         commonElements.push(num1);
         break; // Break to avoid duplicates
       }
