@@ -1,1 +1,0 @@
-Low Level Design of Elevator with @Gaurav Sen - Mock System Design Interview

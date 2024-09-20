@@ -1,1 +1,0 @@
-import instance from "./instance";

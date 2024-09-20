@@ -1,2 +1,0 @@
-nhập lệnh run: npm start
-http://memory.freevnn.com
