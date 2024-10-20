@@ -1,0 +1,13 @@
+{
+  "name": "todo",
+  "version": "1.0.0",
+  "source": "src/index.html",
+  "license": "MIT",
+  "scripts": {
+    "start": "parcel",
+    "build": "parcel build"
+  },
+  "devDependencies": {
+    "parcel": "^2.0.1"
+  }
+}

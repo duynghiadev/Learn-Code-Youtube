@@ -1,0 +1,31 @@
+body,html{
+  margin:0;
+  padding:0;
+}
+
+.container{
+  width:1170px;
+  margin:0 auto;
+  padding:100px 0;
+}
+
+[data-toggle='modal']{
+  border:2px dashed dimgrey;
+  padding:15px 25px;
+  background-color: #0a6cf1;
+  color:white;
+  text-transform:uppercase;
+  margin-bottom: 10px;
+}
+
+[data-title]{
+  color: red;
+}
+
+p{
+  padding: 30px;
+}
+
+.container.box{
+  box-shadow: 1px 1px 10px 0 rgba(0,0,0,0.5);
+}
