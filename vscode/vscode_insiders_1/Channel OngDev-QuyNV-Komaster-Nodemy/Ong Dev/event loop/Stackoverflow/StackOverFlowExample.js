@@ -1,5 +1,0 @@
-function ahihi() {
-  ahihi()
-}
-
-ahihi()
