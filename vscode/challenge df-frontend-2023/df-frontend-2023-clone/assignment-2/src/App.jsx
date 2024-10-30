@@ -15,7 +15,7 @@ import {
   getURLParams,
   removeURLParams,
   setURLParams,
-  splitListIntoPages,
+  splitListIntoPages
 } from './utils/functions/index'
 import { useLocalStorage } from './utils/hooks'
 import useProcessDialog from './utils/hooks/useProcessDialog'
@@ -42,7 +42,7 @@ const App = () => {
       setShouldFocusInput(false)
 
       setOpenDialog(false)
-    },
+    }
   })
 
   const filteredBookList = useMemo(() => {
@@ -57,7 +57,9 @@ const App = () => {
   }, [bookList, searchValue])
 
   const paginatedBookList = useMemo(() => {
-    if (filteredBookList?.length === 0) return []
+    if (filteredBookList?.length === 0) {
+      return []
+    }
 
     return splitListIntoPages(filteredBookList)[page - 1] // page - 1 because page starts from 0
   }, [filteredBookList, page])
@@ -92,7 +94,7 @@ const App = () => {
       id: generateRandomString(),
       title: titleValue,
       author: authorValue,
-      genre: genreValue,
+      genre: genreValue
     }
 
     setBookList((prevBookList) => [...prevBookList, newBook])
@@ -110,11 +112,11 @@ const App = () => {
       id: editedBook.id,
       title: titleValue,
       author: authorValue,
-      genre: genreValue,
+      genre: genreValue
     }
 
     setBookList((prevBookList) =>
-      prevBookList.map((book) => (book.id === editedBook.id ? newBook : book)),
+      prevBookList.map((book) => (book.id === editedBook.id ? newBook : book))
     )
     setOpenDialog(false)
     setErrorFormMsg('')
@@ -123,7 +125,11 @@ const App = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
 
-    const { title, author, genre } = e.target.elements
+    const {
+      title,
+      author,
+      genre
+    } = e.target.elements
 
     if (isEditingBook) {
       handleEdit(title.value, author.value, genre.value)

@@ -1,7 +1,9 @@
 import { BOOKS_PER_PAGE } from '../constants'
 
 export function getURLParams(key) {
-  if (typeof window === 'undefined') return null
+  if (typeof window === 'undefined') {
+    return null
+  }
 
   const query = new URLSearchParams(window.location.search)
   const value = query.get(key)
@@ -9,7 +11,9 @@ export function getURLParams(key) {
 }
 
 export function setURLParams(key, value) {
-  if (typeof window === 'undefined') return null
+  if (typeof window === 'undefined') {
+    return null
+  }
 
   const query = new URLSearchParams(window.location.search)
   query.set(key, value)
@@ -17,7 +21,9 @@ export function setURLParams(key, value) {
 }
 
 export function removeURLParams(key) {
-  if (typeof window === 'undefined') return null
+  if (typeof window === 'undefined') {
+    return null
+  }
 
   const query = new URLSearchParams(window.location.search)
   query.delete(key)
