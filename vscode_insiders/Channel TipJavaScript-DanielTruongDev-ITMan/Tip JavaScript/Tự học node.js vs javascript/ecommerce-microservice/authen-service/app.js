@@ -15,8 +15,8 @@ mongoose.connect(
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    connectTimeoutMS: 20000, // Increase connection timeout
-    socketTimeoutMS: 45000, // Increase socket timeout
+    connectTimeoutMS: 20000,
+    socketTimeoutMS: 45000,
   },
   () => {
     console.log("Connected to MongoDB");
@@ -25,80 +25,114 @@ mongoose.connect(
 
 app.use(express.json());
 
-// register
+// Register
 app.post("/user/register", async (req, res) => {
   try {
     const { email, pass } = req.body;
-    // check xem email nay ton tai chua
     const isCheckUser = await User.findOne({ email });
     if (isCheckUser) {
       return res.json({
-        status: "success",
-        message: `User already exist`,
+        status: "failure",
+        message: "User already exists",
       });
     }
 
-    // nếu chưa có thì cho phép đăng ký làm thành viên
-    // const objUser = {
-    //   email,
-    //   pass
-    // }
+    // Create tokens
+    const payload = { email };
+    const accessToken = jwt.sign(payload, process.env.ACCESS_TOKEN_SECRET, {
+      expiresIn: "30d",
+    });
+    const refreshToken = jwt.sign(payload, process.env.REFRESH_TOKEN_SECRET, {
+      expiresIn: "40d",
+    });
 
-    // nên sửa lại chỗ này, nếu mà objUser không được sử dụng lại thì không cần phải khai báo. Vì khai báo sẽ mất thêm memory...
+    // Create new user with tokens
     const creUser = await User.create({
       email,
       pass,
+      accessToken,
+      refreshToken,
     });
 
     return res.json({
       status: "success",
       message: creUser,
+      accessToken,
+      refreshToken,
     });
   } catch (error) {
-    console.error(`Error: `, error);
-    return json.status(500).json({
+    console.error("Error:", error);
+    return res.status(500).json({
       status: "error",
+      message: "Registration failed",
     });
   }
 });
 
-// login
+// Login
 app.post("/user/login", async (req, res) => {
   try {
     const { email, pass } = req.body;
     const isUser = await User.findOne({ email });
-    console.log(">>> User found:", isUser);
+
     if (!isUser) {
       return res.json({
-        status: "success",
-        message: `User doesn't exist`,
+        status: "failure",
+        message: "User doesn't exist",
       });
     }
 
-    // nếu user tồn tại thì check tiếp pass xem có trùng không
     if (pass !== isUser.pass) {
       return res.json({
-        status: "success",
+        status: "failure",
         message: "Password incorrect",
       });
     }
 
-    // is okay thì tạo token, sử dụng jsonwebtoken
-    const payload = {
-      email,
-    };
+    // Check tokens
+    const storedAccessToken = isUser.accessToken;
+    const storedRefreshToken = isUser.refreshToken;
 
-    jwt.sign(payload, "secret", (err, token) => {
-      if (err) console.log(err);
-      else
+    if (!storedAccessToken || !storedRefreshToken) {
+      return res.json({
+        status: "failure",
+        message: "User not authenticated. Please register again.",
+      });
+    }
+
+    // Verify tokens for login
+    jwt.verify(storedAccessToken, process.env.ACCESS_TOKEN_SECRET, (err) => {
+      if (err) {
         return res.json({
-          status: "success",
-          token,
+          status: "failure",
+          message: "Invalid access token. Please login again.",
         });
+      }
+
+      jwt.verify(
+        storedRefreshToken,
+        process.env.REFRESH_TOKEN_SECRET,
+        (err) => {
+          if (err) {
+            return res.json({
+              status: "failure",
+              message: "Invalid refresh token. Please login again.",
+            });
+          }
+
+          // Tokens match, allow login
+          return res.json({
+            status: "success",
+            message: "Login successful",
+            accessToken: storedAccessToken,
+            refreshToken: storedRefreshToken,
+          });
+        }
+      );
     });
   } catch (error) {
-    console.error(`Error: /user/login:`, error);
-    return json.status(500).json({
+    console.error("Error in /user/login:", error);
+    return res.status(500).json({
       status: "error",
     });
   }
@@ -106,5 +140,5 @@ app.post("/user/login", async (req, res) => {
 
 // listen app
 app.listen(PORT, () => {
-  console.log(`Authen at http://localhost:${PORT}`);
+  console.log(`Authen service running at http://localhost:${PORT}`);
 });

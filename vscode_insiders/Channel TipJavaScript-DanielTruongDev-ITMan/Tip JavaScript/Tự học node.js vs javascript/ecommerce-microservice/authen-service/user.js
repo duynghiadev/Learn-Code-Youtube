@@ -10,9 +10,17 @@ const userSchema = new Schema({
     type: String,
     default: "",
   },
-  create_at: {
+  accessToken: {
     type: String,
-    default: Date.now(),
+    default: "",
+  },
+  refreshToken: {
+    type: String,
+    default: "",
+  },
+  create_at: {
+    type: Date,
+    default: Date.now, // Set default to the current date
   },
 });
 
