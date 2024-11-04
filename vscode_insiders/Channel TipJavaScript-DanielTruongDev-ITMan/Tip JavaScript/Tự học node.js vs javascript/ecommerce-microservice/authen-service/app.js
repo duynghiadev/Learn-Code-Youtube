@@ -19,7 +19,7 @@ mongoose.connect(
     socketTimeoutMS: 45000,
   },
   () => {
-    console.log("Connected to MongoDB");
+    console.log("Auth Connected to MongoDB");
   }
 );
 
