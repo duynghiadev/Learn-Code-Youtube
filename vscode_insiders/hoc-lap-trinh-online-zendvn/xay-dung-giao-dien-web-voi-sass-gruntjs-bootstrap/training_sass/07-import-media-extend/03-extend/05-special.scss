@@ -1,9 +1,0 @@
-#context a%extreme {
-  color: blue;
-  font-weight: bold;
-  font-size: 2em;
-}
-
-.notice {
-  @extend %extreme;
-}

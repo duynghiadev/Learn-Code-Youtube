@@ -1,4 +1,0 @@
-Các lưu ý khi sử dụng store để lưu trữ state
-
-1. store sẽ lưu trữ các state global (state đặt ở App component)
-2. Khi có bất kỳ thay đổi nào trên state thì App component sẽ re-render

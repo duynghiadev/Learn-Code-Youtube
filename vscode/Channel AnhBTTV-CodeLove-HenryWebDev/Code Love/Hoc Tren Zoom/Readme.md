@@ -1,2 +1,0 @@
-- Folder này chứa những bài học từ zoom trên nhóm zalo (Codelove FullStack JS Free)
-- Học vào ngày chủ nhật hằng tuần (21h)
