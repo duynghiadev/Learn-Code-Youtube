@@ -4,11 +4,11 @@
 
 > Link chat-GPT to refactor code: https://chat.openai.com/share/be6986ae-6884-44b7-aaa8-683f3284ed17
 
-[Link part 2](https://s.net.vn/AGeA)
+[Link part 2](https://www.youtube.com/watch?v=nONm8yu_9gE&list=PLw0w5s5b9NK4y-9LW2F4io6DWQFvaKKEt&index=34)
 
 VIdeo này là phương pháp thứ hai giúp các lập trình viên có thể lấy lại accessToken nếu hết hạn thông qua RefreshToken mà không ép buộc người dùng phải login lại. Ưu điểm là rất rõ ràng có bảo mật cao, nhưng ở đây có một nhược điểm....
 
-👉 Phương pháp 1 ở đây: [Link part 1](https://s.net.vn/iaKC) 👈
+👉 Phương pháp 1 ở đây: [Link part 1](https://www.youtube.com/watch?v=7fKjiBcBj3E&list=PLw0w5s5b9NK4y-9LW2F4io6DWQFvaKKEt&index=31) 👈
 
 ![image video](image.png)
 
@@ -21,4 +21,10 @@ Timelines:
 
 ```bash
 #axios #jsonwebtoken #nodejs
+```
+
+run code
+
+```bash
+npm run dev
 ```
