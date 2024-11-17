@@ -29,6 +29,7 @@ instance.interceptors.request.use(
 
     if (timeExpired < now) {
       try {
+        console.log("Access token expired");
         console.log("🔄 Refreshing Access Token...");
         const {
           status,
@@ -45,7 +46,6 @@ instance.interceptors.request.use(
           return config;
         }
       } catch (error) {
-        console.error("❌ Error refreshing token:", error);
         return Promise.reject(error);
       }
     } else {
@@ -55,7 +55,6 @@ instance.interceptors.request.use(
     return config;
   },
   (err) => {
-    console.error("❌ Request interceptor error:", err);
     return Promise.reject(err);
   }
 );
@@ -67,7 +66,6 @@ instance.interceptors.response.use(
     return response;
   },
   (err) => {
-    console.error("❌ Response interceptor error:", err);
     return Promise.reject(err);
   }
 );
@@ -106,7 +104,6 @@ async function getUsers() {
     const response = await instance.get("/users");
     return response.data;
   } catch (error) {
-    console.error("❌ Error fetching user data:", error);
     throw error;
   }
 }
@@ -117,7 +114,6 @@ async function login() {
     const response = await instance.get("/login");
     return response.data;
   } catch (error) {
-    console.error("❌ Error logging in:", error);
     throw error;
   }
 }
@@ -128,7 +124,6 @@ async function refreshToken() {
     const response = await instance.get("/refreshToken");
     return response.data;
   } catch (error) {
-    console.error("❌ Error refreshing access token:", error);
     throw error;
   }
 }
