@@ -114,5 +114,7 @@ instance.setLocalAccessToken = async (token) => {
 };
 
 instance.getLocalAccessToken = async () => {
-  return window.localStorage.getItem("accessToken") || null;
+  return window.localStorage.getItem("accessToken")
+    ? window.localStorage.getItem("accessToken")
+    : null;
 };
