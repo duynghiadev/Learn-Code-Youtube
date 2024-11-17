@@ -1,9 +1,9 @@
 const functionCallback = (name) => {
-  console.log(`hello ${name}`)
-}
+  console.log(`hello ${name}`);
+};
 
 function asyncOperation(name, callback) {
-  callback(name)
+  callback(name);
 }
 
-asyncOperation('anonystick', functionCallback)
+asyncOperation("Duy Nghia", functionCallback);
