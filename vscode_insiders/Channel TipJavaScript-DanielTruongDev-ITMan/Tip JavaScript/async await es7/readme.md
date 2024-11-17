@@ -1,6 +1,12 @@
 # Sơ lược vòng đời của Event loop callback promise async await trong Javascript qua chuyện tăng lương
 
-[Link video](https://s.net.vn/h2OC)
+[Link video](https://www.youtube.com/watch?v=HhWDDG52M1E&list=PLw0w5s5b9NK4y-9LW2F4io6DWQFvaKKEt&index=43)
+
+---
+
+Trong video này liên quan đến ES7. Có cách mới để lấy data và bắt lỗi dễ dàng hơn và code dễ đọc hơn
+
+---
 
 Event loop callback promise async await.
 Lẽ ra video này ra sớm hơn cách đây 3 năm thì có lẽ là đẹp hơn, vì nhiều bạn mông lung trong những kiến thức này. Nhưng dù sớm hay muộn cũng nên có video này. Mỗi thế hệ lập trình cũng có lớp này lớp kia phải không.
