@@ -1,8 +1,0 @@
-#Node modules
-node_modules
-
-#Parcel
-.parcel-cache
-dist
-
-.DS_Store 
