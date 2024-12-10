@@ -1,1 +1,0 @@
-Source code: https://github.com/maganezf/Flappy-Bird-JS
