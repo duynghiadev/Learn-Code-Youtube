@@ -19,7 +19,7 @@ const db = {
   ],
 };
 
-// Session
+// Session: file. redis, memcache (sync disk), database
 const sessions = {};
 
 // [GET] /
