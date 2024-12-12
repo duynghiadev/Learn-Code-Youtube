@@ -1,0 +1,11 @@
+.button {
+  &:hover,
+  &:focus {
+    outline: none;
+  }
+  @apply px-[15px] py-1 text-baseText rounded-md border-baseBorder border-solid border-[1px];
+
+  &.btn-primary {
+    @apply bg-primary text-white  border-primary;
+  }
+}

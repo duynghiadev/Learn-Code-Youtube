@@ -1,0 +1,4 @@
+.input {
+  @apply border-solid border-baseBorder border-[1px] rounded-md;
+  @apply px-2 py-2 w-full;
+}
