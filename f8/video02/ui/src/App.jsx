@@ -1,35 +1,95 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useEffect, useState } from "react";
+import "./App.css";
+
+const baseApi = "http://localhost:3001/api";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [user, setUser] = useState(null);
+  const [error, setError] = useState("");
+  const [fields, setFields] = useState({
+    email: "john@example.com",
+    password: "123456",
+  });
+
+  const setFieldValue = ({ target: { name, value } }) => {
+    setFields((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  useEffect(() => {
+    fetch(`${baseApi}/auth/me`, {
+      credentials: "include",
+    })
+      .then((res) => res.json())
+      .then((me) => {
+        setUser(me);
+      });
+  }, []);
+
+  const handleLogin = (event) => {
+    event.preventDefault();
+    setError("");
+
+    fetch(`${baseApi}/auth/login`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      credentials: "include",
+      body: JSON.stringify(fields),
+    })
+      .then((res) => {
+        if (res.ok) return res.json();
+        throw res;
+      })
+      .then((user) => {
+        console.log(user);
+      })
+      .catch((error) => {
+        if (error.status === 401) {
+          setError("Email or password is incorrect");
+        }
+        setError("Error no invalid! Contact the administrator to help");
+      });
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div>
+      {user ? (
+        <h1>Welcome, {user.name}!</h1>
+      ) : (
+        <>
+          <h1>Login</h1>
+          <form onSubmit={handleLogin}>
+            <label htmlFor="email">Email</label>
+            <br />
+            <input
+              type="email "
+              name="email"
+              value={fields.email}
+              onChange={setFieldValue}
+              id="email"
+            />
+            <br />
+            <label htmlFor="password">Password</label>
+            <br />
+            <input
+              type="password "
+              name="password"
+              value={fields.password}
+              onChange={setFieldValue}
+              id="password"
+            />
+            <br />
+            <button>Login</button>
+          </form>
+          {!!error && <p style={{ color: "red" }}>{error}</p>}
+        </>
+      )}
+    </div>
+  );
 }
 
-export default App
+export default App;
