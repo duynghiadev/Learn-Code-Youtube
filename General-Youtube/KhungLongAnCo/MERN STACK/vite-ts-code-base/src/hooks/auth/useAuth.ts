@@ -9,6 +9,7 @@ import { FormLogin } from 'types'
 export const useAuth = () => {
   const navigate = useNavigate()
   const dispatch = useDispatch()
+
   const login = async (params: FormLogin) => {
     const res = await AuthenApis.doLoginRequest(params)
     const token = `Bearer ${res?.data?.data?.accessToken}`
