@@ -76,7 +76,7 @@ app.post("/api/auth/login", (req, res) => {
   sessions[sessionId] = { sub: user.id };
 
   res
-    .setHeader("Set-Cookie", `sessionId=${sessionId}; httpOnly; max-age:3600`)
+    .setHeader("Set-Cookie", `sessionId=${sessionId}; httpOnly; max-age=86400`)
     .json(user);
 });
 

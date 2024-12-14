@@ -18,14 +18,32 @@ function App() {
     }));
   };
 
+  // Kiểm tra session khi khởi động app
   useEffect(() => {
-    fetch(`${baseApi}/auth/me`, {
-      credentials: "include",
-    })
-      .then((res) => res.json())
-      .then((me) => {
-        setUser(me);
-      });
+    const fetchUser = async () => {
+      try {
+        const res = await fetch(`${baseApi}/auth/me`, {
+          credentials: "include",
+        });
+        if (res.ok) {
+          const me = await res.json();
+          setUser(me);
+          localStorage.setItem("user", JSON.stringify(me));
+        } else {
+          setUser(null);
+          localStorage.removeItem("user");
+        }
+      } catch (error) {
+        console.error("Failed to fetch user session", error);
+      }
+    };
+
+    const localUser = localStorage.getItem("user");
+    if (localUser) {
+      setUser(JSON.parse(localUser));
+    } else {
+      fetchUser();
+    }
   }, []);
 
   const handleLogin = (event) => {
@@ -45,48 +63,66 @@ function App() {
         throw res;
       })
       .then((user) => {
-        console.log(user);
+        setUser(user);
+        localStorage.setItem("user", JSON.stringify(user));
       })
       .catch((error) => {
         if (error.status === 401) {
           setError("Email or password is incorrect");
+        } else {
+          setError("Error! Contact the administrator for help.");
         }
-        setError("Error no invalid! Contact the administrator to help");
       });
   };
 
+  const handleLogout = () => {
+    setUser(null);
+    localStorage.removeItem("user");
+  };
+
   return (
-    <div>
+    <div className="app-container">
       {user ? (
-        <h1>Welcome, {user.name}!</h1>
+        <div className="welcome-container">
+          <h1 className="welcome-message">Welcome, {user.name}!</h1>
+          <button className="logout-button" onClick={handleLogout}>
+            Logout
+          </button>
+        </div>
       ) : (
-        <>
-          <h1>Login</h1>
-          <form onSubmit={handleLogin}>
-            <label htmlFor="email">Email</label>
-            <br />
-            <input
-              type="email "
-              name="email"
-              value={fields.email}
-              onChange={setFieldValue}
-              id="email"
-            />
-            <br />
-            <label htmlFor="password">Password</label>
-            <br />
-            <input
-              type="password "
-              name="password"
-              value={fields.password}
-              onChange={setFieldValue}
-              id="password"
-            />
-            <br />
-            <button>Login</button>
+        <div className="login-container">
+          <h1 className="login-title">Login</h1>
+          <form onSubmit={handleLogin} className="login-form">
+            <div className="form-group">
+              <label htmlFor="email" className="form-label">
+                Email
+              </label>
+              <input
+                type="email"
+                name="email"
+                value={fields.email}
+                onChange={setFieldValue}
+                id="email"
+                className="form-input"
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="password" className="form-label">
+                Password
+              </label>
+              <input
+                type="password"
+                name="password"
+                value={fields.password}
+                onChange={setFieldValue}
+                id="password"
+                className="form-input"
+              />
+            </div>
+            <button className="login-button">Login</button>
           </form>
-          {!!error && <p style={{ color: "red" }}>{error}</p>}
-        </>
+          {!!error && <p className="error-message">{error}</p>}
+        </div>
       )}
     </div>
   );
