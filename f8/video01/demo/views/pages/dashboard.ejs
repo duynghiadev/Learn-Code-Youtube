@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #e9ecef;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+      }
+      h1,
+      h2 {
+        color: #343a40;
+      }
+      a {
+        text-decoration: none;
+        color: #007bff;
+        font-weight: bold;
+      }
+      a:hover {
+        color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <% if(user){ %>
+    <h2>Welcome, <%= user.name %></h2>
+    <a href="/logout">Logout</a>
+    <% } %>
+    <h1>Dashboard Page</h1>
+  </body>
+</html>
