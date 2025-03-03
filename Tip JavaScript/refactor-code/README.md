@@ -1,0 +1,1 @@
+[Kinh nghiệm học lập trình - tôi ghé thăm code của một bạn có kinh nghiệm 3 năm và cái kết](https://anonystick.com/blog-developer/kinh-nghiem-hoc-lap-trinh-toi-ghe-tham-code-cua-mot-ban-co-kinh-nghiem-3-nam-va-cai-ket-2020092486095301)
