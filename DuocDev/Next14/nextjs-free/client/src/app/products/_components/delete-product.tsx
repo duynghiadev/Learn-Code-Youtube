@@ -1,7 +1,7 @@
-'use client'
+"use client";
 
-import { Button } from '@/components/ui/button'
-import { ProductResType } from '@/schemaValidations/product.schema'
+import { Button } from "@/components/ui/button";
+import { ProductResType } from "@/schemaValidations/product.schema";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -11,36 +11,36 @@ import {
   AlertDialogFooter,
   AlertDialogHeader,
   AlertDialogTitle,
-  AlertDialogTrigger
-} from '@/components/ui/alert-dialog'
-import productApiRequest from '@/apiRequests/product'
-import { handleErrorApi } from '@/lib/utils'
-import { useToast } from '@/components/ui/use-toast'
-import { useRouter } from 'next/navigation'
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
+import productApiRequest from "@/apiRequests/product";
+import { handleErrorApi } from "@/lib/utils";
+import { useToast } from "@/components/ui/use-toast";
+import { useRouter } from "next/navigation";
 
 export default function DeleteProduct({
-  product
+  product,
 }: {
-  product: ProductResType['data']
+  product: ProductResType["data"];
 }) {
-  const { toast } = useToast()
-  const router = useRouter()
+  const { toast } = useToast();
+  const router = useRouter();
   const deleteProduct = async () => {
     try {
-      const result = await productApiRequest.delete(product.id)
+      const result = await productApiRequest.delete(product.id);
       toast({
-        description: result.payload.message
-      })
-      router.refresh()
+        description: result.payload.message,
+      });
+      router.refresh();
     } catch (error) {
-      handleErrorApi({ error })
+      handleErrorApi({ error });
     }
-  }
+  };
 
   return (
     <AlertDialog>
       <AlertDialogTrigger asChild>
-        <Button variant={'destructive'}>Delete</Button>
+        <Button variant={"destructive"}>Delete</Button>
       </AlertDialogTrigger>
       <AlertDialogContent>
         <AlertDialogHeader>
@@ -57,5 +57,5 @@ export default function DeleteProduct({
         </AlertDialogFooter>
       </AlertDialogContent>
     </AlertDialog>
-  )
+  );
 }

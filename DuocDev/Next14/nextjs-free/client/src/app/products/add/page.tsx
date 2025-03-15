@@ -1,4 +1,4 @@
-import ProductAddForm from '@/app/products/_components/product-add-form'
+import ProductAddForm from "@/app/products/_components/product-add-form";
 
 export default function ProductAddPage() {
   return (
@@ -6,5 +6,5 @@ export default function ProductAddPage() {
       <h1>Thêm sản phẩm</h1>
       <ProductAddForm />
     </div>
-  )
+  );
 }
